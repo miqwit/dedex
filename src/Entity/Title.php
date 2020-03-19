@@ -27,70 +27,57 @@
 namespace DedexBundle\Entity;
 
 /**
- * Description of ResourceList
+ * Models such a structure:
+ * <Title TitleType="DisplayTitle">
+ *   <TitleText>100 VIP</TitleText>
+ * </Title>
  *
  * @author Mickaël Arcos <miqwit>
  */
-class ResourceList {
+class Title {
 
 	/**
-	 * List of all sound recordings
-	 * 
-	 * @var array
+	 *
+	 * @var string
 	 */
-	private array $soundRecordings = [];
-	
-	public function getSoundRecordings(): array {
-		return $this->soundRecordings;
+	private string $TitleType;
+
+	function getTitleType(): string {
+		return $this->TitleType;
 	}
-	
-	public function createSoundRecording(): SoundRecording {
-		$soundRecording = new SoundRecording();
-		$this->soundRecordings[] = $soundRecording;
-		return $soundRecording;
+
+	function setTitleType(string $TitleType): void {
+		$this->TitleType = $TitleType;
 	}
 
 	/**
-	 * List of all images
-	 * 
-	 * @var array
+	 *
+	 * @var string
 	 */
-	private array $images = [];
-	
-	public function getImages($create = false): array {
-		return $this->images;
-	}
-	
-	public function createImage(): Image {
-		$image = new Image();
-		$this->images[] = $image;
-		return $image;
+	private string $TitleText;
+
+	function getTitleText(): string {
+		return $this->TitleText;
 	}
 
-	/**
-	 * List of all texts
-	 * 
-	 * @var array
-	 */
-	private array $texts = [];
-	
-	public function getTexts($create = false): array {
-		return $this->texts;
+	function setTitleText(string $TitleText): void {
+		$this->TitleText = $TitleText;
 	}
 	
-	public function createText(): Text {
-		$text = new Text();
-		$this->texts[] = $text;
-		return $text;
+	/**
+	 * Set to true when this SoundRecording finished parsing. Can't add new
+	 * values to this one in this parsing.
+	 * 
+	 * @var bool 
+	 */
+	private bool $locked = false;
+	
+	function getLocked(): bool {
+		return $this->locked;
 	}
 
-	/**
-	 * Concatenate sound recordings, images and text and return it as an array.
-	 * 
-	 * @return array
-	 */
-	public function getResources(): array {
-		return array_merge($this->soundRecordings, $this->images, $this->texts);
+	function setLocked(bool $locked): void {
+		$this->locked = $locked;
 	}
 
 }

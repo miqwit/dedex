@@ -44,6 +44,8 @@ class SoundRecording extends Resource {
 		$this->soundRecordingType = new NamespacedText();
 		$this->soundRecordingId = new SoundRecordingId();
 		$this->referenceTitle = new ReferenceTitle();
+		$this->CreationDate = new ResourceDate();
+		$this->MasteredDate = new ResourceDate();
 	}
 
 	/**
@@ -156,7 +158,17 @@ class SoundRecording extends Resource {
 	}
 
 	/**
-	 *
+	 * ReferenceTitle - This is part of the 'reference descriptive metadata' for 
+	 * the recording.  It is structured as the TitleText and SubTitle. In the 
+	 * DDEX standards, the TitleText is for the normal title of a recording and 
+	 * the SubTitle is a catch-all for version and/or subtitle information.  
+	 * 
+	 * SubTitle is used to differentiate different recorded versions such as 
+	 * ‘live’, ‘radio edit’, ‘extended mix’ etc.  The language of the title is 
+	 * carried within the tag (represented by an ISO 639 LanguageCode).
+	 * 
+	 * @link https://kb.ddex.net/display/HBK/Implementation%3A+SoundRecording
+	 * 
 	 * @var ReferenceTitle 
 	 */
 	private ReferenceTitle $referenceTitle;
@@ -167,6 +179,202 @@ class SoundRecording extends Resource {
 
 	function setReferenceTitle(ReferenceTitle $referenceTitle): void {
 		$this->referenceTitle = $referenceTitle;
+	}
+
+	/**
+	 *
+	 * @var string
+	 */
+	private string $IsMedley;
+
+	function getIsMedley(): string {
+		return $this->IsMedley;
+	}
+
+	function setIsMedley(string $IsMedley): void {
+		$this->IsMedley = $IsMedley;
+	}
+
+	/**
+	 *
+	 * @var string
+	 */
+	private string $IsPotpourri;
+
+	function getIsPotpourri(): string {
+		return $this->IsPotpourri;
+	}
+
+	function setIsPotpourri(string $IsPotpourri): void {
+		$this->IsPotpourri = $IsPotpourri;
+	}
+
+	/**
+	 *
+	 * @var string
+	 */
+	private string $IsInstrumental;
+
+	function getIsInstrumental(): string {
+		return $this->IsInstrumental;
+	}
+
+	function setIsInstrumental(string $IsInstrumental): void {
+		$this->IsInstrumental = $IsInstrumental;
+	}
+
+	/**
+	 *
+	 * @var string
+	 */
+	private string $IsBackground;
+
+	function getIsBackground(): string {
+		return $this->IsBackground;
+	}
+
+	function setIsBackground(string $IsBackground): void {
+		$this->IsBackground = $IsBackground;
+	}
+
+	/**
+	 *
+	 * @var string
+	 */
+	private string $IsHiddenResource;
+
+	function getIsHiddenResource(): string {
+		return $this->IsHiddenResource;
+	}
+
+	function setIsHiddenResource(string $IsHiddenResource): void {
+		$this->IsHiddenResource = $IsHiddenResource;
+	}
+
+	/**
+	 *
+	 * @var string
+	 */
+	private string $IsBonusResource;
+
+	function getIsBonusResource(): string {
+		return $this->IsBonusResource;
+	}
+
+	function setIsBonusResource(string $IsBonusResource): void {
+		$this->IsBonusResource = $IsBonusResource;
+	}
+
+	/**
+	 *
+	 * @var string
+	 */
+	private string $IsComputerGenerated;
+
+	function getIsComputerGenerated(): string {
+		return $this->IsComputerGenerated;
+	}
+
+	function setIsComputerGenerated(string $IsComputerGenerated): void {
+		$this->IsComputerGenerated = $IsComputerGenerated;
+	}
+
+	/**
+	 *
+	 * @var string
+	 */
+	private string $NoSilenceBefore;
+
+	function getNoSilenceBefore(): string {
+		return $this->NoSilenceBefore;
+	}
+
+	function setNoSilenceBefore(string $NoSilenceBefore): void {
+		$this->NoSilenceBefore = $NoSilenceBefore;
+	}
+
+	/**
+	 *
+	 * @var string
+	 */
+	private string $NoSilenceAfter;
+
+	function getNoSilenceAfter(): string {
+		return $this->NoSilenceAfter;
+	}
+
+	function setNoSilenceAfter(string $NoSilenceAfter): void {
+		$this->NoSilenceAfter = $NoSilenceAfter;
+	}
+
+	/**
+	 *
+	 * @var string
+	 */
+	private string $Duration;
+
+	function getDuration(): string {
+		return $this->Duration;
+	}
+
+	function setDuration(string $Duration): void {
+		$this->Duration = $Duration;
+	}
+
+	/**
+	 * CreationDate - The date of First Fixation / Date of Recording, to the 
+	 * year.  (Ref. Rome Convention.)
+	 * 
+	 * @link https://kb.ddex.net/display/HBK/Implementation%3A+SoundRecording
+	 * 
+	 * @var ResourceDate
+	 */
+	private ResourceDate $CreationDate;
+
+	function getCreationDate(): ResourceDate {
+		return $this->CreationDate;
+	}
+
+	function setCreationDate(string $CreationDate): void {
+		$this->CreationDate->setData($CreationDate);
+	}
+
+	/**
+	 * @var ResourceDate
+	 */
+	private ResourceDate $MasteredDate;
+
+	function getMasteredDate(): ResourceDate {
+		return $this->MasteredDate;
+	}
+
+	function setMasteredDate(string $MasteredDate): void {
+		$this->MasteredDate->setData($MasteredDate);
+	}
+	
+	/**
+	 * Each SoundRecording node must include one or more 
+	 * SoundRecordingDetailsByTerritory nodes.  The first 
+	 * SoundRecordingDetailsByTerritory node includes data which would apply for 
+	 * this SoundRecording in all territories as a default, unless specifically 
+	 * overridden by further information provided in subsequent 
+	 * SoundRecordingDetailsByTerritory nodes. Most implementers of the MLC 
+	 * message currently specify that only one SoundRecordingDetailsByTerritory 
+	 * node should be supplied per SoundRecording. (This does not preclude the 
+	 * delivery of multi-territory rights ownership information.)
+	 * 
+	 * @var array 
+	 */
+	private array $soundRecordingDetailsByTerritorys = [];
+	
+	public function getSoundRecordingDetailsByTerritorys(): array {
+		return $this->soundRecordingDetailsByTerritorys;
+	}
+	
+	public function createSoundRecordingDetailsByTerritory(): SoundRecordingDetailsByTerritory {
+		$srdbt = new SoundRecordingDetailsByTerritory();
+		$this->soundRecordingDetailsByTerritorys[] = $srdbt;
+		return $srdbt;
 	}
 
 }

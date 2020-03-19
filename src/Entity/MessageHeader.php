@@ -48,15 +48,15 @@ class MessageHeader {
 	/**
 	 * Set this to the same value as the batch folder name.
 	 * 
-	 * @var int
+	 * @var string
 	 */
-	private int $messageThreadId;
+	private string $messageThreadId;
 	
-	function getMessageThreadId(): int {
+	function getMessageThreadId(): string {
 		return $this->messageThreadId;
 	}
 
-	function setMessageThreadId(int $messageThreadId): void {
+	function setMessageThreadId(string $messageThreadId): void {
 		$this->messageThreadId = $messageThreadId;
 	}
 
@@ -64,15 +64,15 @@ class MessageHeader {
 	 * Set this to an integer value, incremented sequentially for each distinct 
 	 * message.
 	 * 
-	 * @var int
+	 * @var string
 	 */
-	private int $messageId;
+	private string $messageId;
 	
-	function getMessageId(): int {
+	function getMessageId(): string {
 		return $this->messageId;
 	}
 
-	function setMessageId(int $messageId): void {
+	function setMessageId(string $messageId): void {
 		$this->messageId = $messageId;
 	}
 
@@ -80,15 +80,15 @@ class MessageHeader {
 	 * The file name of the message file (including the sequence number in the 
 	 * batch).
 	 * 
-	 * @var int
+	 * @var string
 	 */
-	private int $messageFileName;
+	private string $messageFileName;
 	
-	function getMessageFileName(): int {
+	function getMessageFileName(): string {
 		return $this->messageFileName;
 	}
 
-	function setMessageFileName(int $messageFileName): void {
+	function setMessageFileName(string $messageFileName): void {
 		$this->messageFileName = $messageFileName;
 	}
 
@@ -114,13 +114,13 @@ class MessageHeader {
 	 * 
 	 * @var string
 	 */
-	private int $messageControlType;
+	private string $messageControlType;
 	
-	function getMessageControlType(): int {
+	function getMessageControlType(): string {
 		return $this->messageControlType;
 	}
 
-	function setMessageControlType(int $messageControlType): void {
+	function setMessageControlType(string $messageControlType): void {
 		$this->messageControlType = $messageControlType;
 	}
 	

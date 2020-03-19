@@ -81,8 +81,12 @@ class SoundRecordingId {
 		return $this->catalogNumber;
 	}
 
-	function setCatalogNumber(NamespacedText $catalogNumber): void {
-		$this->catalogNumber = $catalogNumber;
+	function setCatalogNumber($catalogNumber): void {
+		if (is_string($catalogNumber)) {
+			$this->catalogNumber->setData($catalogNumber);
+		} else {
+			$this->catalogNumber = $catalogNumber;
+		}
 	}
 
 	/**
@@ -98,8 +102,12 @@ class SoundRecordingId {
 		return $this->proprietaryId;
 	}
 
-	function setProprietaryId(NamespacedText $proprietaryId): void {
-		$this->proprietaryId = $proprietaryId;
+	function setProprietaryId($proprietaryId): void {
+		if (is_string($proprietaryId)) {
+			$this->proprietaryId->setData($proprietaryId);
+		} else {
+			$this->proprietaryId = $proprietaryId;
+		}
 	}
 
 }

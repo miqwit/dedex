@@ -110,6 +110,19 @@ class ParserController {
 				
 				if (method_exists($elem, $func_name)) {
 					$elem = $elem->$func_name();
+				} else {
+					// maybe it's a plural (if a list)
+					if (method_exists($elem, $func_name."s")) {
+						$func_name_plural = $func_name."s";
+						$elems = $elem->$func_name_plural();
+						// Take last element in list, or create new one if not available
+						if (empty($elems) || ($elems[count($elems) -1])->getLocked()) {
+							$func_create = "create".$tag;
+							$elem = $elem->$func_create();
+						} else {
+							$elem = $elems[count($elems) -1];
+						}
+					}
 				}
 			}
 		}
@@ -122,9 +135,11 @@ class ParserController {
 	 * @param string $name
 	 */
 	private function callbackEndElement($parser, string $name) {
-		if (in_array($name, ["SOUNDRECORDING", "IMAGE", "TEXT"])) {
-			$last_getter = "get".$name;
-			$elem = $this->getBeforeLastElem()->$last_getter();
+		$last_getter = "get".$name."s";
+		if (method_exists($this->getBeforeLastElem(), $last_getter)) {
+			// There is plural, so it's a list. Lock last element.
+			$elems = $this->getBeforeLastElem()->$last_getter();
+			$elem = $elems[count($elems) -1]; // last object in list
 			$elem->setLocked(true);
 		}
 		
