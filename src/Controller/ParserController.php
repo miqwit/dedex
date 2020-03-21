@@ -77,7 +77,7 @@ class ParserController {
 			// Can by a simple tag but complexified because can have properties
 			$elem->setData($value);
 		} else {
-			echo "Warning. Method not found $func_name\n";
+			echo "Warning. Method not found $func_name in pile ".implode(",", $this->pile)."\n";
 		}
 	}
 	
@@ -140,7 +140,10 @@ class ParserController {
 			// There is plural, so it's a list. Lock last element.
 			$elems = $this->getBeforeLastElem()->$last_getter();
 			$elem = $elems[count($elems) -1]; // last object in list
-			$elem->setLocked(true);
+			
+			if (is_object($elem)) {
+				$elem->setLocked(true);
+			}
 		}
 		
 		if ($this->current_tag_name == $name) {
@@ -157,7 +160,7 @@ class ParserController {
 	 * @param string $data
 	 */
 	private function callbackCharacterData($parser, string $data) {
-		if (empty(trim($data))) {
+		if (trim($data) === "") {
 			// do nothing
 			return;
 		}

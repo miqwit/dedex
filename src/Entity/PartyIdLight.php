@@ -27,48 +27,40 @@
 namespace DedexBundle\Entity;
 
 /**
- * The name of the MLC or company sending/receiving the message.
+ * Models the following structure:
  * 
- * @link https://kb.ddex.net/display/HBK/Implementation%3A+Message+Header 
- * official doccumentation
+ * <PartyId IsISNI="true">0000000114707136</PartyId>
  *
  * @author Mickaël Arcos <miqwit>
  */
-class MessageActor {
-	
-	function __construct() {
-		$this->partyName = new PartyName();
+class PartyIdLight {
+
+	/**
+	 *
+	 * @var string
+	 */
+	private string $IsISNI;
+
+	public function getIsISNI(): string {
+		return $this->IsISNI;
+	}
+
+	public function setIsISNI(string $IsISNI): void {
+		$this->IsISNI = $IsISNI;
 	}
 	
 	/**
-	 * Both sender and receiver will have a unique PartyId assigned by DDEX 
-	 * (i.e. a DPID) when the implementation license was put in place 
-	 * (free of charge).
-	 * 
+	 * The content of the tag
 	 * @var string 
 	 */
-	private string $partyId;
-	
-	function getPartyId(): string {
-		return $this->partyId;
+	private string $data;
+
+	function getData(): string {
+		return $this->data;
 	}
 
-	function setPartyId(string $partyId): void {
-		$this->partyId = $partyId;
-	}
-
-	/**
-	 * Detailed party name of actor
-	 * @var PartyName 
-	 */
-	private PartyName $partyName;
-	
-	function getPartyName(): PartyName {
-		return $this->partyName;
-	}
-
-	function setPartyName(PartyName $partyName): void {
-		$this->partyName = $partyName;
+	function setData(string $data): void {
+		$this->data = $data;
 	}
 
 }

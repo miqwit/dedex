@@ -27,48 +27,28 @@
 namespace DedexBundle\Entity;
 
 /**
- * The name of the MLC or company sending/receiving the message.
+ * This class implements the getLocked and setLocked functions for tags
+ * that can be repeated during parsing, like DisplayArtist.
  * 
- * @link https://kb.ddex.net/display/HBK/Implementation%3A+Message+Header 
- * official doccumentation
+ * When the parser leaves the tag, then the entity is locked, and a new
+ * one will be created by the parser.
  *
  * @author Mickaël Arcos <miqwit>
  */
-class MessageActor {
-	
-	function __construct() {
-		$this->partyName = new PartyName();
-	}
-	
+class Multiple {
 	/**
-	 * Both sender and receiver will have a unique PartyId assigned by DDEX 
-	 * (i.e. a DPID) when the implementation license was put in place 
-	 * (free of charge).
+	 * Set to true when this SoundRecording finished parsing. Can't add new
+	 * values to this one in this parsing.
 	 * 
-	 * @var string 
+	 * @var bool 
 	 */
-	private string $partyId;
+	private bool $locked = false;
 	
-	function getPartyId(): string {
-		return $this->partyId;
+	function getLocked(): bool {
+		return $this->locked;
 	}
 
-	function setPartyId(string $partyId): void {
-		$this->partyId = $partyId;
+	function setLocked(bool $locked): void {
+		$this->locked = $locked;
 	}
-
-	/**
-	 * Detailed party name of actor
-	 * @var PartyName 
-	 */
-	private PartyName $partyName;
-	
-	function getPartyName(): PartyName {
-		return $this->partyName;
-	}
-
-	function setPartyName(PartyName $partyName): void {
-		$this->partyName = $partyName;
-	}
-
 }

@@ -27,48 +27,27 @@
 namespace DedexBundle\Entity;
 
 /**
- * The name of the MLC or company sending/receiving the message.
- * 
- * @link https://kb.ddex.net/display/HBK/Implementation%3A+Message+Header 
- * official doccumentation
+ * Description of ContributorWithPartyId
  *
  * @author Mickaël Arcos <miqwit>
  */
-class MessageActor {
-	
+class ContributorWithPartyId extends Contributor {
 	function __construct() {
-		$this->partyName = new PartyName();
-	}
-	
-	/**
-	 * Both sender and receiver will have a unique PartyId assigned by DDEX 
-	 * (i.e. a DPID) when the implementation license was put in place 
-	 * (free of charge).
-	 * 
-	 * @var string 
-	 */
-	private string $partyId;
-	
-	function getPartyId(): string {
-		return $this->partyId;
-	}
-
-	function setPartyId(string $partyId): void {
-		$this->partyId = $partyId;
+		parent::__construct();
+		$this->PartyId = new PartyId();
 	}
 
 	/**
-	 * Detailed party name of actor
-	 * @var PartyName 
+	 *
+	 * @var PartyId
 	 */
-	private PartyName $partyName;
-	
-	function getPartyName(): PartyName {
-		return $this->partyName;
+	private PartyId $PartyId;
+
+	function getPartyId(): PartyId {
+		return $this->PartyId;
 	}
 
-	function setPartyName(PartyName $partyName): void {
-		$this->partyName = $partyName;
+	function setPartyId(PartyId $PartyId): void {
+		$this->PartyId = $PartyId;
 	}
-
 }

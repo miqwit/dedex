@@ -27,48 +27,24 @@
 namespace DedexBundle\Entity;
 
 /**
- * The name of the MLC or company sending/receiving the message.
- * 
- * @link https://kb.ddex.net/display/HBK/Implementation%3A+Message+Header 
- * official doccumentation
+ * Description of PeriodOfRightsDelegation
  *
  * @author Mickaël Arcos <miqwit>
  */
-class MessageActor {
-	
-	function __construct() {
-		$this->partyName = new PartyName();
-	}
-	
-	/**
-	 * Both sender and receiver will have a unique PartyId assigned by DDEX 
-	 * (i.e. a DPID) when the implementation license was put in place 
-	 * (free of charge).
-	 * 
-	 * @var string 
-	 */
-	private string $partyId;
-	
-	function getPartyId(): string {
-		return $this->partyId;
-	}
-
-	function setPartyId(string $partyId): void {
-		$this->partyId = $partyId;
-	}
+class PeriodOfRightsDelegation {
 
 	/**
-	 * Detailed party name of actor
-	 * @var PartyName 
+	 *
+	 * @var string
 	 */
-	private PartyName $partyName;
-	
-	function getPartyName(): PartyName {
-		return $this->partyName;
+	private string $StartDate;
+
+	public function getStartDate(): string {
+		return $this->StartDate;
 	}
 
-	function setPartyName(PartyName $partyName): void {
-		$this->partyName = $partyName;
+	public function setStartDate(string $StartDate): void {
+		$this->StartDate = $StartDate;
 	}
 
 }

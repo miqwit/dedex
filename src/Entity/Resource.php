@@ -36,20 +36,5 @@ namespace DedexBundle\Entity;
  *
  * @author Mickaël Arcos <miqwit>
  */
-class Resource {
-	/**
-	 * Set to true when this SoundRecording finished parsing. Can't add new
-	 * values to this one in this parsing.
-	 * 
-	 * @var bool 
-	 */
-	private bool $locked = false;
-	
-	function getLocked(): bool {
-		return $this->locked;
-	}
-
-	function setLocked(bool $locked): void {
-		$this->locked = $locked;
-	}
+class Resource  extends Multiple {
 }

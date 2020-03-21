@@ -20,6 +20,9 @@
             </PartyName>
         </MessageSender>
         <MessageRecipient>
+            <PartyName>
+                <FullName>SCPP</FullName>
+            </PartyName>
             <PartyId>PADPIDA2007061302U</PartyId>
             <PartyName>
                 <FullName>SCPP2</FullName>
@@ -68,34 +71,103 @@
                 </Title>
                 <Title TitleType="DisplayTitle">
                     <TitleText>Can you feel ...the Monkey Claw!</TitleText>
-                </Title>
+                </Title>      
+                <DisplayArtistName>Coldplay vs. Swedish House Mafia</DisplayArtistName>     
                 <DisplayArtist SequenceNumber="1">
                     <PartyName>
                         <FullName>Monkey Claw</FullName>
-                    </PartyName>
+                    </PartyName>      
+                    <PartyId>
+                        <ProprietaryId Namespace="PADPIDA2007061301U">6687769</ProprietaryId>
+                    </PartyId>
                     <ArtistRole>MainArtist</ArtistRole>
                 </DisplayArtist>
                 <DisplayArtist SequenceNumber="2">
                     <PartyName>
                         <FullName>Second Artist</FullName>
-                    </PartyName>
+                    </PartyName>      
+                    <PartyId>
+                        <ProprietaryId Namespace="PADPIDA2007061301U">6687759</ProprietaryId>
+                    </PartyId>
                     <ArtistRole>MainArtist</ArtistRole>
-                </DisplayArtist>
+                </DisplayArtist>  
+                <DisplayComposer SequenceNumber="0">
+                    <PartyName>
+                        <FullName>BONDU PIERRE</FullName>
+                    </PartyName>
+                    <PartyId>
+                        <ProprietaryId Namespace="PADPIDA2007061301U">71166</ProprietaryId>
+                    </PartyId>
+                </DisplayComposer>
+                <DisplayComposer SequenceNumber="1">
+                    <PartyName>
+                        <FullName>Frederic Chopin</FullName>
+                    </PartyName>
+                    <PartyId>
+                        <ProprietaryId Namespace="PADPIDA2007061301U">71167</ProprietaryId>
+                    </PartyId>
+                </DisplayComposer>
+                <InitialProducer>
+                    <PartyName>
+                        <FullName>UNIVERSAL MUSIC FRANCE</FullName>
+                    </PartyName>
+                    <PartyId>
+                        <ProprietaryId Namespace="PADPIDA2007061301U">1</ProprietaryId>
+                    </PartyId>
+                    <TerritoryCode>FR</TerritoryCode>
+                </InitialProducer>
+                <RightsController>
+                    <PartyName>
+                        <FullName>LeftRight</FullName>
+                    </PartyName>
+                    <RightSharePercentage>10</RightSharePercentage>
+                    <RightsControllerRole>OriginalCopyrightOwner</RightsControllerRole>
+                    <DelegatedUsageRights>
+                        <UseType>Broadcast</UseType>
+                        <UseType>Simulcast</UseType>
+                        <UseType>PerformInPublic</UseType>
+                        <PeriodOfRightsDelegation>
+                            <StartDate>2008-09-26</StartDate>
+                        </PeriodOfRightsDelegation>
+                        <TerritoryOfRightsDelegation>FR</TerritoryOfRightsDelegation>
+                    </DelegatedUsageRights>
+                </RightsController>
+                <RightsController>
+                    <PartyName>
+                        <FullName>LeftRight</FullName>
+                    </PartyName>
+                    <RightSharePercentage>50</RightSharePercentage>
+                    <DelegatedUsageRights>
+                        <TerritoryOfRightsDelegation>JP</TerritoryOfRightsDelegation>
+                    </DelegatedUsageRights>
+                </RightsController>      
                 <ResourceContributor SequenceNumber="1">
                     <PartyName>
-                        <FullName>Steve Albino</FullName>
+                        <FullName>Chris Martin</FullName>
+                    </PartyName>
+                    <PartyId IsISNI="true">0000000114707136</PartyId>
+                    <ResourceContributorRole>Member</ResourceContributorRole>
+                </ResourceContributor>
+                <ResourceContributor SequenceNumber="2">
+                    <PartyName>
+                        <FullName>Markus Dravs</FullName>
                     </PartyName>
                     <ResourceContributorRole>Producer</ResourceContributorRole>
-                </ResourceContributor>
-				
-                <!-- No DisplayArtistName is shown here as the DisplayArtistName is the same as for the Release -->					
-				
+                </ResourceContributor>      
                 <IndirectResourceContributor SequenceNumber="1">
                     <PartyName>
-                        <FullName>Bob Black</FullName>
+                        <FullName>Chris Martin</FullName>
                     </PartyName>
-                    <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
-                </IndirectResourceContributor>
+                    <PartyId IsISNI="true">0000000114707136</PartyId>
+                    <IndirectResourceContributorRole>ComposerLyricist</IndirectResourceContributorRole>
+                </IndirectResourceContributor>         
+                <IndirectResourceContributor SequenceNumber="2">
+                    <PartyName>
+                        <FullName>Chris Martin 2</FullName>
+                    </PartyName>
+                    <PartyId IsISNI="true">0000000114707136</PartyId>
+                    <IndirectResourceContributorRole>ComposerLyricist</IndirectResourceContributorRole>
+                </IndirectResourceContributor>   
                 <ResourceReleaseDate>2011</ResourceReleaseDate>
                 <PLine>
                     <Year>2010</Year>
@@ -456,7 +528,7 @@
             </TextDetailsByTerritory>
         </Text>
     </ResourceList>
-    <ReleaseList>
+    <!--    <ReleaseList>
         <Release IsMainRelease="true">
             <ReleaseId>
                 <GRid>A1UCASE0000000401X</GRid>
@@ -908,5 +980,5 @@
             </CLine>
             <GlobalOriginalReleaseDate IsApproximate="true">2010-10-01</GlobalOriginalReleaseDate>
         </Release>
-    </ReleaseList>
+    </ReleaseList>-->
 </ern:NewReleaseMessage>

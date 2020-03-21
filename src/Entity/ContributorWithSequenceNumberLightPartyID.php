@@ -27,48 +27,48 @@
 namespace DedexBundle\Entity;
 
 /**
- * The name of the MLC or company sending/receiving the message.
- * 
- * @link https://kb.ddex.net/display/HBK/Implementation%3A+Message+Header 
- * official doccumentation
+ * Same as ContributorWithSequenceNumber but the Party Id is a text with 
+ * and ISNI attribute.
  *
  * @author Mickaël Arcos <miqwit>
  */
-class MessageActor {
+class ContributorWithSequenceNumberLightPartyID extends Contributor {
 	
 	function __construct() {
-		$this->partyName = new PartyName();
-	}
-	
-	/**
-	 * Both sender and receiver will have a unique PartyId assigned by DDEX 
-	 * (i.e. a DPID) when the implementation license was put in place 
-	 * (free of charge).
-	 * 
-	 * @var string 
-	 */
-	private string $partyId;
-	
-	function getPartyId(): string {
-		return $this->partyId;
+		parent::__construct();
+		$this->PartyId = new PartyIdLight();
 	}
 
-	function setPartyId(string $partyId): void {
-		$this->partyId = $partyId;
+	
+	/**
+	 * @var string
+	 */
+	private string $SequenceNumber = "";
+
+	function getSequenceNumber(): string {
+		return $this->SequenceNumber;
+	}
+
+	function setSequenceNumber(string $SequenceNumber): void {
+		$this->SequenceNumber = $SequenceNumber;
 	}
 
 	/**
-	 * Detailed party name of actor
-	 * @var PartyName 
+	 *
+	 * @var PartyIdLight
 	 */
-	private PartyName $partyName;
-	
-	function getPartyName(): PartyName {
-		return $this->partyName;
+	private PartyIdLight $PartyId;
+
+	function getPartyId(): PartyIdLight {
+		return $this->PartyId;
 	}
 
-	function setPartyName(PartyName $partyName): void {
-		$this->partyName = $partyName;
+	function setPartyId($PartyId): void {
+		if (is_string($PartyId)) {
+			$this->PartyId->setData($PartyId);
+		} else {
+			$this->PartyId = $PartyId;
+		}
 	}
 
 }

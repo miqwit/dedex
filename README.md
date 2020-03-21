@@ -40,3 +40,6 @@ php phpDocumentor.phar -d src -t docs
 
 * Integrate monolog and handle logs better
 * Run code coverage
+* Test with UTF8 and accents
+* Integrate rule testing
+* Support types

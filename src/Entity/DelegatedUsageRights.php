@@ -27,48 +27,63 @@
 namespace DedexBundle\Entity;
 
 /**
- * The name of the MLC or company sending/receiving the message.
- * 
- * @link https://kb.ddex.net/display/HBK/Implementation%3A+Message+Header 
- * official doccumentation
+ * Description of DelegatedUsageRights
  *
  * @author Mickaël Arcos <miqwit>
  */
-class MessageActor {
-	
+class DelegatedUsageRights {
+
 	function __construct() {
-		$this->partyName = new PartyName();
+		$this->PeriodOfRightsDelegation = new PeriodOfRightsDelegation();
 	}
-	
+
 	/**
-	 * Both sender and receiver will have a unique PartyId assigned by DDEX 
-	 * (i.e. a DPID) when the implementation license was put in place 
-	 * (free of charge).
+	 *
+	 * @var array
+	 */
+	private array $UseTypes = [];
+
+	public function getUseTypes(): array {
+		return $this->UseTypes;
+	}
+
+	public function createUseType(): string {
+		return $this;
+	}
+
+	public function setUseType(string $UseType): void {
+		$this->UseTypes[] = $UseType;
+	}
+
+	/**
+	 *
+	 * @var PeriodOfRightsDelegation
+	 */
+	private PeriodOfRightsDelegation $PeriodOfRightsDelegation;
+
+	public function getPeriodOfRightsDelegation(): PeriodOfRightsDelegation {
+		return $this->PeriodOfRightsDelegation;
+	}
+
+	public function setPeriodOfRightsDelegation(PeriodOfRightsDelegation $PeriodOfRightsDelegation): void {
+		$this->PeriodOfRightsDelegation = $PeriodOfRightsDelegation;
+	}
+
+	/**
+	 * Expressed as ISO 3166-1 alpha-2 codes or Worldwide
 	 * 
-	 * @var string 
+	 * @link https://kb.ddex.net/pages/viewpage.action?pageId=9505800
+	 * 
+	 * @var string
 	 */
-	private string $partyId;
-	
-	function getPartyId(): string {
-		return $this->partyId;
+	private string $TerritoryOfRightsDelegation;
+
+	public function getTerritoryOfRightsDelegation(): string {
+		return $this->TerritoryOfRightsDelegation;
 	}
 
-	function setPartyId(string $partyId): void {
-		$this->partyId = $partyId;
-	}
-
-	/**
-	 * Detailed party name of actor
-	 * @var PartyName 
-	 */
-	private PartyName $partyName;
-	
-	function getPartyName(): PartyName {
-		return $this->partyName;
-	}
-
-	function setPartyName(PartyName $partyName): void {
-		$this->partyName = $partyName;
+	public function setTerritoryOfRightsDelegation(string $TerritoryOfRightsDelegation): void {
+		$this->TerritoryOfRightsDelegation = $TerritoryOfRightsDelegation;
 	}
 
 }

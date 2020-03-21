@@ -27,48 +27,19 @@
 namespace DedexBundle\Entity;
 
 /**
- * The name of the MLC or company sending/receiving the message.
+ * DisplayComposer is mandatory when the Genre is ‘Classical’.  
+ * (IndirectResourceContributor could also be used in MLC 1.3.1, but it is to 
+ * be removed in MLC 1.4). For classical recordings, this is needed (along with 
+ * the work title) in order to disambiguate the recording and to match usage.
  * 
- * @link https://kb.ddex.net/display/HBK/Implementation%3A+Message+Header 
- * official doccumentation
+ * When the DisplayComposer is provided, the following are mandatory:
+ *   FullName
+ *   RoleCode
+ * 
+ * @link https://kb.ddex.net/pages/viewpage.action?pageId=9505800
  *
  * @author Mickaël Arcos <miqwit>
  */
-class MessageActor {
+class DisplayComposer extends ContributorWithSequenceNumber {
 	
-	function __construct() {
-		$this->partyName = new PartyName();
-	}
-	
-	/**
-	 * Both sender and receiver will have a unique PartyId assigned by DDEX 
-	 * (i.e. a DPID) when the implementation license was put in place 
-	 * (free of charge).
-	 * 
-	 * @var string 
-	 */
-	private string $partyId;
-	
-	function getPartyId(): string {
-		return $this->partyId;
-	}
-
-	function setPartyId(string $partyId): void {
-		$this->partyId = $partyId;
-	}
-
-	/**
-	 * Detailed party name of actor
-	 * @var PartyName 
-	 */
-	private PartyName $partyName;
-	
-	function getPartyName(): PartyName {
-		return $this->partyName;
-	}
-
-	function setPartyName(PartyName $partyName): void {
-		$this->partyName = $partyName;
-	}
-
 }

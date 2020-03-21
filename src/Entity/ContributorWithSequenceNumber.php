@@ -27,23 +27,29 @@
 namespace DedexBundle\Entity;
 
 /**
- * A party name, both for sender and receiver.
+ * Description of ContributorWithSequenceNumber
  *
  * @author Mickaël Arcos <miqwit>
  */
-class MessageActorPartyName {
-	
+class ContributorWithSequenceNumber extends ContributorWithPartyId {
+
 	/**
-	 * Full name of sender or receiver of message.
-	 * @var string 
+	 * Note that the DisplayArtist composite may occur several times with the tag 
+	 * SequenceNumber set to different integer values.  The SequenceNumber value 
+	 * is used as part of the enumeration of the artists to whom the recording is 
+	 * associated.
+	 * 
+	 * @link https://kb.ddex.net/pages/viewpage.action?pageId=9505800
+	 * 
+	 * @var string
 	 */
-	private string $fullName;
-	
-	function getFullName(): string {
-		return $this->fullName;
+	private string $SequenceNumber = "";
+
+	function getSequenceNumber(): string {
+		return $this->SequenceNumber;
 	}
 
-	function setFullName(string $fullName): void {
-		$this->fullName = $fullName;
+	function setSequenceNumber(string $SequenceNumber): void {
+		$this->SequenceNumber = $SequenceNumber;
 	}
 }
