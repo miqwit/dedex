@@ -31,7 +31,7 @@ namespace DedexBundle\Entity;
  *
  * @author Mickaël Arcos <miqwit>
  */
-class NamespacedText {
+class NamespacedText extends TagWithAttributes {
 	/**
 	 * @var string
 	 */
@@ -43,19 +43,5 @@ class NamespacedText {
 
 	function setNamespace(string $namespace): void {
 		$this->namespace = $namespace;
-	}
-	
-	/**
-	 * The content of the tag
-	 * @var string 
-	 */
-	private string $data;
-
-	function getData(): string {
-		return $this->data;
-	}
-
-	function setData(string $data): void {
-		$this->data = $data;
 	}
 }

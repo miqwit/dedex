@@ -32,7 +32,7 @@ namespace DedexBundle\Entity;
  * 
  * @author Mickaël Arcos <miqwit>
  */
-class ResourceDate {
+class ResourceDate extends TagWithAttributes {
 
 	/**
 	 *
@@ -102,20 +102,6 @@ class ResourceDate {
 
 	function setTerritoryCode(string $TerritoryCode): void {
 		$this->TerritoryCode = $TerritoryCode;
-	}
-	
-	/**
-	 * The content of the tag
-	 * @var string 
-	 */
-	private string $data;
-
-	function getData(): string {
-		return $this->data;
-	}
-
-	function setData(string $data): void {
-		$this->data = $data;
 	}
 
 }

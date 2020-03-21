@@ -27,26 +27,52 @@
 namespace DedexBundle\Entity;
 
 /**
- * Models the following structure:
- * 
- * <PartyId IsISNI="true">0000000114707136</PartyId>
+ * Description of PartyNameArtist
  *
  * @author Mickaël Arcos <miqwit>
  */
-class PartyIdLight extends TagWithAttributes {
+class PartyNameArtist {
 
 	/**
 	 *
 	 * @var string
 	 */
-	private string $IsISNI;
+	private string $FullName;
 
-	public function getIsISNI(): string {
-		return $this->IsISNI;
+	public function getFullName(): string {
+		return $this->FullName;
 	}
 
-	public function setIsISNI(string $IsISNI): void {
-		$this->IsISNI = $IsISNI;
+	public function setFullName(string $FullName): void {
+		$this->FullName = $FullName;
+	}
+
+	/**
+	 *
+	 * @var string
+	 */
+	private string $NamesBeforeKeyName;
+
+	public function getNamesBeforeKeyName(): string {
+		return $this->NamesBeforeKeyName;
+	}
+
+	public function setNamesBeforeKeyName(string $NamesBeforeKeyName): void {
+		$this->NamesBeforeKeyName = $NamesBeforeKeyName;
+	}
+
+	/**
+	 *
+	 * @var string
+	 */
+	private string $KeyName;
+
+	public function getKeyName(): string {
+		return $this->KeyName;
+	}
+
+	public function setKeyName(string $KeyName): void {
+		$this->KeyName = $KeyName;
 	}
 
 }

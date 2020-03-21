@@ -3,6 +3,7 @@
 namespace DedexBundle\Tests\Controller;
 
 use DedexBundle\Controller\ParserController;
+use DedexBundle\Entity\FeaturedArtist;
 use DedexBundle\Entity\IndirectResourceContributor;
 use DedexBundle\Entity\ResourceContributor;
 use DedexBundle\Entity\RightsController;
@@ -26,7 +27,7 @@ class ParserControllerTest extends TestCase {
 		// ERN attributes
 		$this->assertEquals("http://ddex.net/xml/ern/382", $ddex->getXmlns_Ern());
 		$this->assertEquals("http://www.w3.org/2001/XMLSchema-instance", $ddex->getXmlns_Xs());
-		$this->assertEquals("http://ddex.net/xml/ern/382 ", $ddex->getXs_SchemaLocation());
+		$this->assertEquals("http://ddex.net/xml/ern/382", $ddex->getXs_SchemaLocation());
 		$this->assertEquals("ern/382", $ddex->getMessageSchemaVersionId());
 		$this->assertEquals("CommonReleaseTypesTypes/14/AudioAlbum", $ddex->getReleaseProfileVersionId());
 		$this->assertEquals("en", $ddex->getLanguageAndScriptCode());
@@ -169,6 +170,37 @@ class ParserControllerTest extends TestCase {
 		$this->assertEquals("true", $resindcont_two->getPartyId()->getIsISNI());
 		$this->assertEquals("0000000114707136", $resindcont_two->getPartyId()->getData());
 		$this->assertEquals("ComposerLyricist", $resindcont_two->getIndirectResourceContributorRole());
+		
+		// Featured artists
+		$this->assertCount(2, $srdbt_zero->getFeaturedArtists());
+		/* @var $feat_one FeaturedArtist */
+		$feat_one = $srdbt_zero->getFeaturedArtists()[0];
+		$this->assertCount(2, $feat_one->getInstrumentTypes());
+		$this->assertEquals("VOC", $feat_one->getInstrumentTypes()[0]);
+		$this->assertEquals("DRU", $feat_one->getInstrumentTypes()[1]);
+		$this->assertEquals("Female", $feat_one->getSex());
+		$this->assertEquals("GB", $feat_one->getDateAndPlaceOfBirth()->getTerritoryCode());
+		$this->assertEquals("1986-08-02", $feat_one->getDateAndPlaceOfBirth()->getData());
+		$this->assertEquals("GB", $feat_one->getTerritoryOfResidency());
+		$this->assertCount(2, $feat_one->getPartyIds());
+		$this->assertEquals("IPN", $feat_one->getPartyIds()[0]->getNamespace());
+		$this->assertEquals("12345678", $feat_one->getPartyIds()[0]->getData());
+		$this->assertEquals("LocalPerformerId", $feat_one->getPartyIds()[1]->getNamespace());
+		$this->assertEquals("12345678", $feat_one->getPartyIds()[1]->getData());
+		$this->assertEquals("Jane Doe", $feat_one->getPartyName()->getFullName());
+		$this->assertEquals("Jane", $feat_one->getPartyName()->getNamesBeforeKeyName());
+		$this->assertEquals("Doe", $feat_one->getPartyName()->getKeyName());
+		$this->assertEquals("SDEGRoleCode", $feat_one->getArtistRole()->getNamespace());
+		$this->assertEquals("MU", $feat_one->getArtistRole()->getUserDefinedValue());
+		$this->assertEquals("UserDefined", $feat_one->getArtistRole()->getData());
+		$this->assertEquals("GB", $feat_one->getTerritoryOfPerformance());
+		$this->assertEquals("2014-06-10", $feat_one->getPerformanceDate());
+		
+		// PLine
+		$pline = $srdbt_zero->getPLine();
+		$this->assertEquals("2010", $pline->getYear());
+		$this->assertEquals("UNIVERSAL MUSIC FRANCE", $pline->getPLineCompany());
+		$this->assertEquals("(P) 2010 Iron Crown Music", $pline->getPLineText());
 		
 	}
 

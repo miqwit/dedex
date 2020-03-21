@@ -90,7 +90,44 @@
                         <ProprietaryId Namespace="PADPIDA2007061301U">6687759</ProprietaryId>
                     </PartyId>
                     <ArtistRole>MainArtist</ArtistRole>
-                </DisplayArtist>  
+                </DisplayArtist>
+                <FeaturedArtist SequenceNumber="0">
+                    <InstrumentType>VOC</InstrumentType>
+                    <InstrumentType>DRU</InstrumentType>
+                    <Sex>Female</Sex>
+                    <DateAndPlaceOfBirth TerritoryCode="GB">1986-08-02
+                    </DateAndPlaceOfBirth>
+                    <TerritoryOfResidency>GB</TerritoryOfResidency>
+                    <PartyId Namespace="IPN">12345678</PartyId>
+                    <PartyId Namespace="LocalPerformerId">12345678</PartyId>
+                    <PartyName>
+                        <FullName>Jane Doe</FullName>
+                        <NamesBeforeKeyName>Jane</NamesBeforeKeyName>
+                        <KeyName>Doe</KeyName>
+                    </PartyName>
+                    <ArtistRole Namespace="SDEGRoleCode" UserDefinedValue="MU">
+                        UserDefined</ArtistRole>
+                    <TerritoryOfPerformance>GB</TerritoryOfPerformance>
+                    <PerformanceDate>2014-06-10</PerformanceDate>
+                </FeaturedArtist>
+                <FeaturedArtist SequenceNumber="1">
+                    <InstrumentType>VOC</InstrumentType>
+                    <Sex>Female</Sex>
+                    <DateAndPlaceOfBirth TerritoryCode="GB">1986-08-02
+                    </DateAndPlaceOfBirth>
+                    <TerritoryOfResidency>GB</TerritoryOfResidency>
+                    <PartyId Namespace="IPN">12345678</PartyId>
+                    <PartyId Namespace="LocalPerformerId">12345678</PartyId>
+                    <PartyName>
+                        <FullName>Jane Doe</FullName>
+                        <NamesBeforeKeyName>Jane</NamesBeforeKeyName>
+                        <KeyName>Doe</KeyName>
+                    </PartyName>
+                    <ArtistRole Namespace="SDEGRoleCode" UserDefinedValue="MU">
+                        UserDefined</ArtistRole>
+                    <TerritoryOfPerformance>GB</TerritoryOfPerformance>
+                    <PerformanceDate>2014-06-10</PerformanceDate>
+                </FeaturedArtist>
                 <DisplayComposer SequenceNumber="0">
                     <PartyName>
                         <FullName>BONDU PIERRE</FullName>
@@ -169,8 +206,10 @@
                     <IndirectResourceContributorRole>ComposerLyricist</IndirectResourceContributorRole>
                 </IndirectResourceContributor>   
                 <ResourceReleaseDate>2011</ResourceReleaseDate>
+                <OriginalResourceReleaseDate>2008-09-26</OriginalResourceReleaseDate>
                 <PLine>
-                    <Year>2010</Year>
+                    <Year>2010</Year>      
+                    <PLineCompany>UNIVERSAL MUSIC FRANCE</PLineCompany>
                     <PLineText>(P) 2010 Iron Crown Music</PLineText>
                 </PLine>
                 <Genre>

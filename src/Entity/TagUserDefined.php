@@ -27,26 +27,24 @@
 namespace DedexBundle\Entity;
 
 /**
- * Models the following structure:
- * 
- * <PartyId IsISNI="true">0000000114707136</PartyId>
+ * Description of TagUserDefined
  *
  * @author Mickaël Arcos <miqwit>
  */
-class PartyIdLight extends TagWithAttributes {
+class TagUserDefined extends NamespacedText {
 
 	/**
 	 *
 	 * @var string
 	 */
-	private string $IsISNI;
+	private string $UserDefinedValue;
 
-	public function getIsISNI(): string {
-		return $this->IsISNI;
+	public function getUserDefinedValue(): string {
+		return $this->UserDefinedValue;
 	}
 
-	public function setIsISNI(string $IsISNI): void {
-		$this->IsISNI = $IsISNI;
+	public function setUserDefinedValue(string $UserDefinedValue): void {
+		$this->UserDefinedValue = $UserDefinedValue;
 	}
 
 }

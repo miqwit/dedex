@@ -6,24 +6,23 @@ use DedexBundle\Entity\Ddex;
 use Exception;
 
 class ParserController {
-	
+
 	/**
 	 * The xml parser as returned by xml_parser_create
 	 * @var resource
 	 */
 	private $xml_parser = null;
-	
+
 	/**
 	 * @var $ddex DedexBundle\Entity\Ddex
 	 */
 	private $ddex = null;
-	
+
 	/**
 	 * Store the current tag we are browsing while parsing
 	 * @var string
 	 */
 	private $current_tag_name = null;
-	
 	private $pile = array();
 
 	/**
@@ -46,7 +45,7 @@ class ParserController {
 			$this->callbackEndElement($parser, $key);
 		}
 	}
-	
+
 	/**
 	 * Return a clean version of tag with symbols compatible with function names.
 	 * : becomes _
@@ -57,7 +56,7 @@ class ParserController {
 	public function cleanTag($tag) {
 		return str_replace(":", "_", $tag);
 	}
-	
+
 	/**
 	 * From the current pile of tag, set the value to the last element.
 	 * If the pile is ['ERN:NEWRELEASEMESSAGE', 'MESSAGEHEADER', 
@@ -67,20 +66,61 @@ class ParserController {
 	 * @param type $value Value to set
 	 */
 	private function setCurrentElement($value) {
-		$elem = $this->getBeforeLastElem();
-		$tag = $this->cleanTag($this->pile[count($this->pile) -1]);
-		$func_name = "set".$tag;
+//		var_dump($value.": ".implode("->", $this->pile));
 
-		if (method_exists($elem, $func_name)) {
-			$elem->$func_name($value);
-		} else if (method_exists($elem, "setData")) {
-			// Can by a simple tag but complexified because can have properties
-			$elem->setData($value);
-		} else {
-			echo "Warning. Method not found $func_name in pile ".implode(",", $this->pile)."\n";
+		$elem = $this->getBeforeLastElem();
+		$tag = $this->cleanTag($this->pile[count($this->pile) - 1]);
+		$func_name = "set" . $tag;
+
+		// Try twice. In first run, just set the last element
+		// If failed, get the last element of list (if plural) and set this element
+		for ($i=1;$i<=2;$i++) {
+			if (method_exists($elem, $func_name)) {
+				$elem->$func_name($value);
+				break;
+			} else if (method_exists($elem, "setData")) {
+				// Can by a simple tag but complexified because can have properties
+				$elem->setData($value);
+				break;
+			}
+			
+			if ($i < 2) {
+				// Retry in the case of last element is plural
+				$elem = $this->getLastOfPlural($elem, $tag);
+				continue;
+			}
+			
+			echo "Warning. Method not found $func_name in pile " . implode(",", $this->pile) . "\n";
 		}
 	}
-	
+
+	/**
+	 * Get the last element of pile if this one is plural.
+	 * Create it if empty.
+	 * 
+	 * @param type $elem
+	 * @param type $tag
+	 * @return type
+	 */
+	private function getLastOfPlural($elem, $tag) {
+		if (method_exists($elem, "get" . $tag . "s")) {
+			// maybe it's a plural (if a list)
+			$func_name_plural = "get" . $tag . "s";
+			$elems = $elem->$func_name_plural();
+			// Take last element in list, or create new one if not available
+			if (empty($elems) || ($elems[count($elems) - 1])->getLocked()) {
+				$func_create = "create" . $tag;
+				$elem = $elem->$func_create();
+			} else {
+				$elem = $elems[count($elems) - 1];
+			}
+			
+			return $elem;
+		}
+		
+		return null;
+	}
+
 	/**
 	 * Get the element in entities corresponding to the one before parsing
 	 * element. If we are in ['ERN:NEWRELEASEMESSAGE', 'MESSAGEHEADER', 
@@ -90,44 +130,31 @@ class ParserController {
 	 * @return array last element (getMESSAGERECIPIENT)
 	 */
 	private function getBeforeLastElem() {
-//		var_dump($value.": ".implode("->", $this->pile));
-		
 		$depth = -1;
 		$elem = $this->ddex;
 		foreach ($this->pile as $tag) {
 			$depth++;
 			$tag = $this->cleanTag($tag);
-			
+
 			if ($tag == "ERN_NEWRELEASEMESSAGE") {
 				continue;
 			}
-			
+
 			if ($depth == (count($this->pile) - 1)) {
 				return $elem;
 			} else {
 				// If last element, call set, else keep getting nested object
-				$func_name = "get".$tag;
-				
+				$func_name = "get" . $tag;
+
 				if (method_exists($elem, $func_name)) {
 					$elem = $elem->$func_name();
 				} else {
-					// maybe it's a plural (if a list)
-					if (method_exists($elem, $func_name."s")) {
-						$func_name_plural = $func_name."s";
-						$elems = $elem->$func_name_plural();
-						// Take last element in list, or create new one if not available
-						if (empty($elems) || ($elems[count($elems) -1])->getLocked()) {
-							$func_create = "create".$tag;
-							$elem = $elem->$func_create();
-						} else {
-							$elem = $elems[count($elems) -1];
-						}
-					}
+					$elem = $this->getLastOfPlural($elem, $tag);
 				}
 			}
 		}
 	}
-	
+
 	/**
 	 * Function called when the parser encounters a tag ending.
 	 * 
@@ -135,21 +162,21 @@ class ParserController {
 	 * @param string $name
 	 */
 	private function callbackEndElement($parser, string $name) {
-		$last_getter = "get".$name."s";
+		$last_getter = "get" . $name . "s";
 		if (method_exists($this->getBeforeLastElem(), $last_getter)) {
 			// There is plural, so it's a list. Lock last element.
 			$elems = $this->getBeforeLastElem()->$last_getter();
-			$elem = $elems[count($elems) -1]; // last object in list
-			
+			$elem = $elems[count($elems) - 1]; // last object in list
+
 			if (is_object($elem)) {
 				$elem->setLocked(true);
 			}
 		}
-		
+
 		if ($this->current_tag_name == $name) {
 			$this->current_tag_name = null;
 		}
-		
+
 		array_pop($this->pile);
 	}
 
@@ -160,12 +187,13 @@ class ParserController {
 	 * @param string $data
 	 */
 	private function callbackCharacterData($parser, string $data) {
-		if (trim($data) === "") {
+		$data_clean = trim($data);
+		if ($data_clean === "") {
 			// do nothing
 			return;
 		}
-		
-		$this->setCurrentElement($data);
+
+		$this->setCurrentElement($data_clean);
 	}
 
 	/**
@@ -185,7 +213,6 @@ class ParserController {
 		xml_set_element_handler($this->xml_parser, [$this, "callbackStartElement"], [$this, "callbackEndElement"]);
 		xml_set_character_data_handler($this->xml_parser, [$this, "callbackCharacterData"]);
 		// xml_set_external_entity_ref_handler($this->xml_parser, "externalEntityRefHandler");
-		
 		// Open file
 		if (!($fp = @fopen($file, "r"))) {
 			return false;
@@ -210,10 +237,10 @@ class ParserController {
 		if (!(list($this->xml_parser, $fp) = $this->newXmlParser($file_path))) {
 			throw new Exception("Can't load XML file: $file_path");
 		}
-		
+
 		// Main entity that will link all entities from XML file
 		$this->ddex = new Ddex();
-		
+
 		// Parse XML now
 		while ($data = fread($fp, 4096)) {
 			if (!xml_parse($this->xml_parser, $data, feof($fp))) {

@@ -27,26 +27,24 @@
 namespace DedexBundle\Entity;
 
 /**
- * Models the following structure:
- * 
- * <PartyId IsISNI="true">0000000114707136</PartyId>
+ * Description of NamespacedTextMultiple
  *
  * @author Mickaël Arcos <miqwit>
  */
-class PartyIdLight extends TagWithAttributes {
-
+class NamespacedTextMultiple extends NamespacedText {
 	/**
-	 *
-	 * @var string
+	 * Set to true when this SoundRecording finished parsing. Can't add new
+	 * values to this one in this parsing.
+	 * 
+	 * @var bool 
 	 */
-	private string $IsISNI;
-
-	public function getIsISNI(): string {
-		return $this->IsISNI;
+	private bool $locked = false;
+	
+	function getLocked(): bool {
+		return $this->locked;
 	}
 
-	public function setIsISNI(string $IsISNI): void {
-		$this->IsISNI = $IsISNI;
+	function setLocked(bool $locked): void {
+		$this->locked = $locked;
 	}
-
 }

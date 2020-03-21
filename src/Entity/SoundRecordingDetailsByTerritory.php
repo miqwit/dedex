@@ -46,6 +46,8 @@ class SoundRecordingDetailsByTerritory extends Multiple {
 
 	function __construct() {
 		$this->InitialProducer = new InitialProducer();
+		$this->OriginalResourceReleaseDate = new DateWithTerritoryCode();
+		$this->PLine = new PLine();
 	}
 
 	/**
@@ -312,6 +314,120 @@ class SoundRecordingDetailsByTerritory extends Multiple {
 	public function createIndirectResourceContributor(): IndirectResourceContributor {
 		$entity = new IndirectResourceContributor();
 		$this->IndirectResourceContributors[] = $entity;
+		return $entity;
+	}
+
+	/**
+	 *
+	 * @var string
+	 */
+	private string $ResourceReleaseDate;
+
+	public function getResourceReleaseDate(): string {
+		return $this->ResourceReleaseDate;
+	}
+
+	public function setResourceReleaseDate(string $ResourceReleaseDate): void {
+		$this->ResourceReleaseDate = $ResourceReleaseDate;
+	}
+
+	/**
+	 * OriginalResourceReleaseDate can be to the nearest year and is used by MLCs 
+	 * in assessing whether the copyright term has expired or not.  The 
+	 * TerritoryCode conveys the country(ies) of (simultaneous) first publication, 
+	 * which is a 'point of attachment' determining eligibility under the treaties.
+	 * 
+	 * @link https://kb.ddex.net/pages/viewpage.action?pageId=9505800
+	 * 
+	 * @var DateWithTerritoryCode
+	 */
+	private DateWithTerritoryCode $OriginalResourceReleaseDate;
+
+	public function getOriginalResourceReleaseDate(): DateWithTerritoryCode {
+		return $this->OriginalResourceReleaseDate;
+	}
+
+	public function setOriginalResourceReleaseDate($OriginalResourceReleaseDate): void {
+		if (is_string($OriginalResourceReleaseDate)) {
+			$this->OriginalResourceReleaseDate = new DateWithTerritoryCode();
+			$this->OriginalResourceReleaseDate->setData($OriginalResourceReleaseDate);
+		} else {
+			$this->OriginalResourceReleaseDate = $OriginalResourceReleaseDate;
+		}
+	}
+
+	/**
+	 * The PLine states the rightsholder detail at the time the time when the 
+	 * recording was published, and is not necessarily the same as the 
+	 * InitialProducer.  It is the nationality of the InitialProducer that is 
+	 * one of the 'points of attachment' determining eligibility under the 
+	 * treaties.  The mandatory fields for PLIne are:
+	 *   - Year
+	 *   - PlineText
+	 * 
+	 * Since PLineText will be deprecated by DDEX in future versions of the 
+	 * standard but remains mandatory for the time being, it may be left blank.
+	 * 
+	 * @link https://kb.ddex.net/pages/viewpage.action?pageId=9505800
+	 * 
+	 * @var PLine
+	 */
+	private PLine $PLine;
+
+	public function getPLine(): PLine {
+		return $this->PLine;
+	}
+
+	public function setPLine(PLine $PLine): void {
+		$this->PLine = $PLine;
+	}
+
+	/**
+	 * FeaturedArtist – Some MLCs need data about the contributors to a recording 
+	 * and the nature of their contributions, so that contributors that are 
+	 * eligible and qualifying for equitable remuneration can be paid.  The 
+	 * ‘contribution category’ of a contributor can be ‘featured’ or 
+	 * ‘non-featured’.  MLCs use the contribution category along with the role 
+	 * and/or roles in determining remuneration.
+	 * 
+	 * A FeaturedArtist is either an individual person or a collective (such as 
+	 * an orchestra), referred to by their name and/or the identifier used to 
+	 * designate them within systems such as SCAPR’s IPD.  A FeaturedArtist is a 
+	 * performer who is prominently featured in relation to the release (as 
+	 * opposed to a session musician, who would be aNonFeaturedArtist).
+	 * 
+	 * There will often be multiple FeaturedArtists, enumerated using the 
+	 * SequenceNumber attribute.  For each FeaturedArtist, the following are 
+	 * mandatory:
+	 * 
+	 * Name/FullName
+   * PartyId/IPN (if available)
+   * PartyId/ProprietaryId with sender’s proprietary ID
+   * InstrumentType
+   * DateAndPlaceOfBirth (if available, place is optional)
+   * Performance
+   * Territory
+	 * 
+	 * Within the DDEX MLC Message it is also possible to carry the information 
+	 * about performative roles within the ‘ResourceContributor’ composite.  
+	 * Under present usage however, the principal way of conveying data about 
+	 * FeaturedArtist and NonFeaturedArtist is within the dedicated composites – 
+	 * ResourceContributor should be used for non-performing roles, such as 
+	 * certain studio roles.
+	 * 
+	 * @link https://kb.ddex.net/pages/viewpage.action?pageId=9505800
+	 * 
+	 * @var array
+	 */
+	private array $FeaturedArtists = [];
+
+	public function getFeaturedArtists(): array {
+		return $this->FeaturedArtists;
+	}
+
+	public function createFeaturedArtist(): FeaturedArtist {
+		$entity = new FeaturedArtist();
+		$this->FeaturedArtists[] = $entity;
 		return $entity;
 	}
 

@@ -27,26 +27,29 @@
 namespace DedexBundle\Entity;
 
 /**
- * Models the following structure:
+ * OriginalResourceReleaseDate can be to the nearest year and is used by MLCs 
+ * in assessing whether the copyright term has expired or not.  The 
+ * TerritoryCode conveys the country(ies) of (simultaneous) first publication, 
+ * which is a 'point of attachment' determining eligibility under the treaties.
  * 
- * <PartyId IsISNI="true">0000000114707136</PartyId>
+ * @link https://kb.ddex.net/pages/viewpage.action?pageId=9505800
  *
  * @author Mickaël Arcos <miqwit>
  */
-class PartyIdLight extends TagWithAttributes {
+class DateWithTerritoryCode extends TagWithAttributes {
 
 	/**
 	 *
 	 * @var string
 	 */
-	private string $IsISNI;
+	private string $TerritoryCode;
 
-	public function getIsISNI(): string {
-		return $this->IsISNI;
+	public function getTerritoryCode(): string {
+		return $this->TerritoryCode;
 	}
 
-	public function setIsISNI(string $IsISNI): void {
-		$this->IsISNI = $IsISNI;
+	public function setTerritoryCode(string $TerritoryCode): void {
+		$this->TerritoryCode = $TerritoryCode;
 	}
 
 }

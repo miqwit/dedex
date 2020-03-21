@@ -27,26 +27,63 @@
 namespace DedexBundle\Entity;
 
 /**
- * Models the following structure:
+ * The PLine states the rightsholder detail at the time the time when the 
+ * recording was published, and is not necessarily the same as the 
+ * InitialProducer.  It is the nationality of the InitialProducer that is 
+ * one of the 'points of attachment' determining eligibility under the 
+ * treaties.  The mandatory fields for PLIne are:
+ *   - Year
+ *   - PlineText
  * 
- * <PartyId IsISNI="true">0000000114707136</PartyId>
+ * Since PLineText will be deprecated by DDEX in future versions of the 
+ * standard but remains mandatory for the time being, it may be left blank.
+ * 
+ * @link https://kb.ddex.net/pages/viewpage.action?pageId=9505800
  *
  * @author Mickaël Arcos <miqwit>
  */
-class PartyIdLight extends TagWithAttributes {
+class PLine {
 
 	/**
 	 *
 	 * @var string
 	 */
-	private string $IsISNI;
+	private string $Year;
 
-	public function getIsISNI(): string {
-		return $this->IsISNI;
+	public function getYear(): string {
+		return $this->Year;
 	}
 
-	public function setIsISNI(string $IsISNI): void {
-		$this->IsISNI = $IsISNI;
+	public function setYear(string $Year): void {
+		$this->Year = $Year;
+	}
+
+	/**
+	 *
+	 * @var string
+	 */
+	private string $PLineCompany;
+
+	public function getPLineCompany(): string {
+		return $this->PLineCompany;
+	}
+
+	public function setPLineCompany(string $PLineCompany): void {
+		$this->PLineCompany = $PLineCompany;
+	}
+
+	/**
+	 *
+	 * @var string
+	 */
+	private string $PLineText;
+
+	public function getPLineText(): string {
+		return $this->PLineText;
+	}
+
+	public function setPLineText(string $PLineText): void {
+		$this->PLineText = $PLineText;
 	}
 
 }
