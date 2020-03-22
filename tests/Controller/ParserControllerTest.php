@@ -196,6 +196,38 @@ class ParserControllerTest extends TestCase {
 		$this->assertEquals("GB", $feat_one->getTerritoryOfPerformance());
 		$this->assertEquals("2014-06-10", $feat_one->getPerformanceDate());
 		
+		// Host sound carriers
+		$this->assertCount(2, $srdbt_zero->getHostSoundCarriers());
+		/* @var $hsc_one \DedexBundle\Entity\HostSoundCarrier */
+		$hsc_one = $srdbt_zero->getHostSoundCarriers()[0];
+		$this->assertEquals("FRUM70701194", $hsc_one->getReleaseId()->getISRC());
+		$this->assertEquals("0042288237846", $hsc_one->getReleaseId()->getICPN());
+		$this->assertEquals("PADPIDA2007061301U", $hsc_one->getReleaseId()->getCatalogNumber()->getNamespace());
+		$this->assertEquals("0042288237846", $hsc_one->getReleaseId()->getCatalogNumber()->getData());
+		$this->assertEquals("PADPIDA2007061301U", $hsc_one->getReleaseId()->getProprietaryId()->getNamespace());
+		$this->assertEquals("5993921", $hsc_one->getReleaseId()->getProprietaryId()->getData());
+		$this->assertEquals("DisplayTitle", $hsc_one->getTitle()->getTitleType());
+		$this->assertEquals("STUDIOLIVE", $hsc_one->getTitle()->getTitleText());
+		$this->assertCount(2, $hsc_one->getDisplayArtists());
+		/* @var $art_one \DedexBundle\Entity\DisplayArtist */
+		$art_one = $hsc_one->getDisplayArtists()[0];
+		$this->assertEquals("0", $art_one->getSequenceNumber());
+		$this->assertEquals("KATERINE", $art_one->getPartyName()->getFullName());
+		$this->assertEquals("PADPIDA2007061301U", $art_one->getPartyId()->getProprietaryId()->getNamespace());
+		$this->assertEquals("6687769", $art_one->getPartyId()->getProprietaryId()->getData());
+		$this->assertEquals("MainArtist", $art_one->getArtistRole());
+		// Do not test artist 2
+		$this->assertEquals("8", $hsc_one->getTrackNumber());
+		$this->assertEquals("1", $hsc_one->getSideNumber());
+		$this->assertEquals("CD", $hsc_one->getCarrierType());
+		$this->assertEquals("15", $hsc_one->getNumberOfSoundRecordingsClaimedInCarrier());
+		$this->assertEquals("NotCompiled", $hsc_one->getCompilationType());
+		$this->assertEquals("true", $hsc_one->getIsPhysicalDistribution());
+		$this->assertEquals("false", $hsc_one->getIsHiddenResource());
+		$this->assertEquals("false", $hsc_one->getIsBonusResource());
+		$this->assertEquals("false", $hsc_one->getIsInternalCompilation());
+		
+		
 		// PLine
 		$pline = $srdbt_zero->getPLine();
 		$this->assertEquals("2010", $pline->getYear());

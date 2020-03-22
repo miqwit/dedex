@@ -128,6 +128,42 @@
                     <TerritoryOfPerformance>GB</TerritoryOfPerformance>
                     <PerformanceDate>2014-06-10</PerformanceDate>
                 </FeaturedArtist>
+                <NonFeaturedArtist SequenceNumber="0">
+                    <InstrumentType>DRU</InstrumentType>
+                    <InstrumentType>GTR</InstrumentType>
+                    <Sex>Male</Sex>
+                    <DateAndPlaceOfBirth TerritoryCode="US">1990-01-18
+                    </DateAndPlaceOfBirth>
+                    <TerritoryOfResidency>FR</TerritoryOfResidency>
+                    <PartyId Namespace="LocalPerformerId">SX1234567</PartyId>
+                    <PartyName>
+                        <FullName>John Smith</FullName>
+                        <NamesBeforeKeyName>John</NamesBeforeKeyName>
+                        <KeyName>Smith</KeyName>
+                    </PartyName>
+                    <ArtistRole Namespace="SDEGRoleCode" UserDefinedValue="MU">
+                        UserDefined</ArtistRole>
+                    <TerritoryOfPerformance>GB</TerritoryOfPerformance>
+                    <PerformanceDate>2014-06-10</PerformanceDate>
+                </NonFeaturedArtist>
+                <NonFeaturedArtist SequenceNumber="1">
+                    <InstrumentType>DRU</InstrumentType>
+                    <InstrumentType>GTR</InstrumentType>
+                    <Sex>Male</Sex>
+                    <DateAndPlaceOfBirth TerritoryCode="US">1990-01-18
+                    </DateAndPlaceOfBirth>
+                    <TerritoryOfResidency>FR</TerritoryOfResidency>
+                    <PartyId Namespace="LocalPerformerId">SX1234567</PartyId>
+                    <PartyName>
+                        <FullName>John Smith</FullName>
+                        <NamesBeforeKeyName>John</NamesBeforeKeyName>
+                        <KeyName>Smith</KeyName>
+                    </PartyName>
+                    <ArtistRole Namespace="SDEGRoleCode" UserDefinedValue="MU">
+                        UserDefined</ArtistRole>
+                    <TerritoryOfPerformance>GB</TerritoryOfPerformance>
+                    <PerformanceDate>2014-06-10</PerformanceDate>
+                </NonFeaturedArtist>
                 <DisplayComposer SequenceNumber="0">
                     <PartyName>
                         <FullName>BONDU PIERRE</FullName>
@@ -205,6 +241,68 @@
                     <PartyId IsISNI="true">0000000114707136</PartyId>
                     <IndirectResourceContributorRole>ComposerLyricist</IndirectResourceContributorRole>
                 </IndirectResourceContributor>   
+                <HostSoundCarrier>
+                    <ReleaseId>
+                        <ISRC>FRUM70701194</ISRC>
+                        <ICPN>0042288237846</ICPN>
+                        <CatalogNumber Namespace="PADPIDA2007061301U">0042288237846</CatalogNumber>
+                        <ProprietaryId Namespace="PADPIDA2007061301U">5993921</ProprietaryId>
+                    </ReleaseId>
+                    <Title TitleType="DisplayTitle">
+                        <TitleText>STUDIOLIVE</TitleText>
+                    </Title>
+                    <DisplayArtist SequenceNumber="0">
+                        <PartyName>
+                            <FullName>KATERINE</FullName>
+                        </PartyName>
+                        <PartyId>
+                            <ProprietaryId Namespace="PADPIDA2007061301U">6687769
+                            </ProprietaryId>
+                        </PartyId>
+                        <ArtistRole>MainArtist</ArtistRole>
+                    </DisplayArtist>
+                    <DisplayArtist SequenceNumber="1">
+                        <PartyName>
+                            <FullName>KATERINE</FullName>
+                        </PartyName>
+                        <PartyId>
+                            <ProprietaryId Namespace="PADPIDA2007061301U">6687769
+                            </ProprietaryId>
+                        </PartyId>
+                        <ArtistRole>MainArtist</ArtistRole>
+                    </DisplayArtist>
+                    <TrackNumber>8</TrackNumber>
+                    <SideNumber>1</SideNumber>
+                    <CarrierType>CD</CarrierType>
+                    <NumberOfSoundRecordingsClaimedInCarrier>15
+                    </NumberOfSoundRecordingsClaimedInCarrier>
+                    <CompilationType>NotCompiled</CompilationType>
+                    <IsPhysicalDistribution>true</IsPhysicalDistribution>
+                    <IsHiddenResource>false</IsHiddenResource>
+                    <IsBonusResource>false</IsBonusResource>
+                    <IsInternalCompilation>false</IsInternalCompilation>
+                </HostSoundCarrier> 
+                <HostSoundCarrier>
+                    <ReleaseId>
+                        <ISRC>FRUM70701194</ISRC>
+                    </ReleaseId>
+                    <Title TitleType="DisplayTitle">
+                        <TitleText>STUDIOLIVE</TitleText>
+                    </Title>
+                    <DisplayArtist SequenceNumber="0">
+                        <PartyName>
+                            <FullName>KATERINE</FullName>
+                        </PartyName>
+                        <PartyId>
+                            <ProprietaryId Namespace="PADPIDA2007061301U">6687769
+                            </ProprietaryId>
+                        </PartyId>
+                        <ArtistRole>MainArtist</ArtistRole>
+                    </DisplayArtist>
+                </HostSoundCarrier>
+  
+<!--                (Multiple further HostSoundCarrier nodes corresponding to all the releases of this SoundRecording)-->
+
                 <ResourceReleaseDate>2011</ResourceReleaseDate>
                 <OriginalResourceReleaseDate>2008-09-26</OriginalResourceReleaseDate>
                 <PLine>
@@ -212,12 +310,14 @@
                     <PLineCompany>UNIVERSAL MUSIC FRANCE</PLineCompany>
                     <PLineText>(P) 2010 Iron Crown Music</PLineText>
                 </PLine>
-                <Genre>
+                <Genre LanguageAndScriptCode="fr-FR">
                     <GenreText>Metal</GenreText>
                     <SubGenre>Progressive Metal</SubGenre>
                 </Genre>
                 <ParentalWarningType>NotExplicit</ParentalWarningType>
+                
                 <!-- TechnicalSoundRecordingDetails are only to be provided when relevant Resource Files are communicated -->
+                
                 <TechnicalSoundRecordingDetails>
                     <TechnicalResourceDetailsReference>T1</TechnicalResourceDetailsReference>
                     <File>

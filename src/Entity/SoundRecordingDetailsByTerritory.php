@@ -401,12 +401,12 @@ class SoundRecordingDetailsByTerritory extends Multiple {
 	 * mandatory:
 	 * 
 	 * Name/FullName
-   * PartyId/IPN (if available)
-   * PartyId/ProprietaryId with sender’s proprietary ID
-   * InstrumentType
-   * DateAndPlaceOfBirth (if available, place is optional)
-   * Performance
-   * Territory
+	 * PartyId/IPN (if available)
+	 * PartyId/ProprietaryId with sender’s proprietary ID
+	 * InstrumentType
+	 * DateAndPlaceOfBirth (if available, place is optional)
+	 * Performance
+	 * Territory
 	 * 
 	 * Within the DDEX MLC Message it is also possible to carry the information 
 	 * about performative roles within the ‘ResourceContributor’ composite.  
@@ -428,6 +428,22 @@ class SoundRecordingDetailsByTerritory extends Multiple {
 	public function createFeaturedArtist(): FeaturedArtist {
 		$entity = new FeaturedArtist();
 		$this->FeaturedArtists[] = $entity;
+		return $entity;
+	}
+
+	/**
+	 *
+	 * @var array
+	 */
+	private array $HostSoundCarriers = [];
+
+	public function getHostSoundCarriers(): array {
+		return $this->HostSoundCarriers;
+	}
+
+	public function createHostSoundCarrier(): HostSoundCarrier {
+		$entity = new HostSoundCarrier();
+		$this->HostSoundCarriers[] = $entity;
 		return $entity;
 	}
 
