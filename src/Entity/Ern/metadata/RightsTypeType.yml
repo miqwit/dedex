@@ -1,0 +1,37 @@
+DedexBundle\Entity\Ern\RightsTypeType:
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: string
+        territoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryCode
+            accessor:
+                getter: getTerritoryCode
+                setter: setTerritoryCode
+            xml_attribute: true
+            type: \AnyTypeType
+        namespace:
+            expose: true
+            access_type: public_method
+            serialized_name: Namespace
+            accessor:
+                getter: getNamespace
+                setter: setNamespace
+            xml_attribute: true
+            type: string
+        userDefinedValue:
+            expose: true
+            access_type: public_method
+            serialized_name: UserDefinedValue
+            accessor:
+                getter: getUserDefinedValue
+                setter: setUserDefinedValue
+            xml_attribute: true
+            type: string

@@ -1,0 +1,13 @@
+DedexBundle\Entity\Ern\ResourceGroupResourceReferenceListType:
+    properties:
+        resourceGroupResourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceGroupResourceReference
+            accessor:
+                getter: getResourceGroupResourceReference
+                setter: setResourceGroupResourceReference
+            xml_list:
+                inline: true
+                entry_name: ResourceGroupResourceReference
+            type: array<string>

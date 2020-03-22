@@ -1,0 +1,55 @@
+DedexBundle\Entity\Ern\IndirectResourceContributorType:
+    properties:
+        sequenceNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumber
+            accessor:
+                getter: getSequenceNumber
+                setter: setSequenceNumber
+            xml_attribute: true
+            type: int
+        partyId:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyId
+            accessor:
+                getter: getPartyId
+                setter: setPartyId
+            xml_list:
+                inline: true
+                entry_name: PartyId
+            type: array<DedexBundle\Entity\Ern\PartyIdType>
+        partyName:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyName
+            accessor:
+                getter: getPartyName
+                setter: setPartyName
+            xml_list:
+                inline: true
+                entry_name: PartyName
+            type: array<DedexBundle\Entity\Ern\PartyNameType>
+        indirectResourceContributorRole:
+            expose: true
+            access_type: public_method
+            serialized_name: IndirectResourceContributorRole
+            accessor:
+                getter: getIndirectResourceContributorRole
+                setter: setIndirectResourceContributorRole
+            xml_list:
+                inline: true
+                entry_name: IndirectResourceContributorRole
+            type: array<DedexBundle\Entity\Ern\MusicalWorkContributorRoleType>
+        nationality:
+            expose: true
+            access_type: public_method
+            serialized_name: Nationality
+            accessor:
+                getter: getNationality
+                setter: setNationality
+            xml_list:
+                inline: true
+                entry_name: Nationality
+            type: array<string>

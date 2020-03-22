@@ -1,0 +1,41 @@
+DedexBundle\Entity\Ern\RelatedReleaseOfferSetType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        releaseId:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseId
+            accessor:
+                getter: getReleaseId
+                setter: setReleaseId
+            xml_list:
+                inline: true
+                entry_name: ReleaseId
+            type: array<DedexBundle\Entity\Ern\ReleaseIdType>
+        releaseDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseDescription
+            accessor:
+                getter: getReleaseDescription
+                setter: setReleaseDescription
+            type: DedexBundle\Entity\Ern\DescriptionType
+        deal:
+            expose: true
+            access_type: public_method
+            serialized_name: Deal
+            accessor:
+                getter: getDeal
+                setter: setDeal
+            xml_list:
+                inline: true
+                entry_name: Deal
+            type: array<DedexBundle\Entity\Ern\DealType>

@@ -1,0 +1,38 @@
+DedexBundle\Entity\Ern\MessagingPartyType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        partyId:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyId
+            accessor:
+                getter: getPartyId
+                setter: setPartyId
+            xml_list:
+                inline: true
+                entry_name: PartyId
+            type: array<DedexBundle\Entity\Ern\PartyIdType>
+        partyName:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyName
+            accessor:
+                getter: getPartyName
+                setter: setPartyName
+            type: DedexBundle\Entity\Ern\PartyNameType
+        tradingName:
+            expose: true
+            access_type: public_method
+            serialized_name: TradingName
+            accessor:
+                getter: getTradingName
+                setter: setTradingName
+            type: DedexBundle\Entity\Ern\NameType

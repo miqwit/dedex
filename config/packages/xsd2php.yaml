@@ -1,0 +1,27 @@
+xsd2php:
+  namespaces:
+    'http://ddex.net/xml/ern/382': 'DedexBundle/Entity/Ern'
+    'http://ddex.net/xml/avs/avs': 'DedexBundle/Entity/Avs'
+  
+  destinations_php: 
+    'DedexBundle\Entity\Ern': src/Entity/Ern
+    'DedexBundle\Entity\Avs': src/Entity/Avs
+
+  destinations_jms:
+    'DedexBundle\Entity\Ern': src/Entity/Ern/metadata
+    'DedexBundle\Entity\Avs': src/Entity/Avs/metadata
+ 
+#  Uncomment this section if you want to have also symfony/validator metadata to be generated from XSD    
+#  destinations_validation:
+#    'TestNs\MyApp': soap/validation
+#    'TestNs\MyApp': soap\validation  #  on Windows
+    
+#  aliases: # optional
+#    'http://www.example.org/test/':
+#      MyCustomXSDType:  'MyCustomMappedPHPType'
+  naming_strategy: long
+#  path_generator: psr4 # optional and default
+#  known_locations: # optional
+#    "http://ddex.net/xml/ern/382": somefile.xsd
+#  known_namespace_locations: # optional
+#    "urn:veloconnect:catalog-1.1": xsd/catalog-1.1.xsd

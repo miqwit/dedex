@@ -1,0 +1,41 @@
+DedexBundle\Entity\Ern\ReleaseDealType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        dealReleaseReference:
+            expose: true
+            access_type: public_method
+            serialized_name: DealReleaseReference
+            accessor:
+                getter: getDealReleaseReference
+                setter: setDealReleaseReference
+            xml_list:
+                inline: true
+                entry_name: DealReleaseReference
+            type: array<string>
+        deal:
+            expose: true
+            access_type: public_method
+            serialized_name: Deal
+            accessor:
+                getter: getDeal
+                setter: setDeal
+            xml_list:
+                inline: true
+                entry_name: Deal
+            type: array<DedexBundle\Entity\Ern\DealType>
+        effectiveDate:
+            expose: true
+            access_type: public_method
+            serialized_name: EffectiveDate
+            accessor:
+                getter: getEffectiveDate
+                setter: setEffectiveDate
+            type: string

@@ -1,0 +1,92 @@
+DedexBundle\Entity\Ern\TypedRightsControllerType:
+    properties:
+        sequenceNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumber
+            accessor:
+                getter: getSequenceNumber
+                setter: setSequenceNumber
+            xml_attribute: true
+            type: int
+        partyId:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyId
+            accessor:
+                getter: getPartyId
+                setter: setPartyId
+            xml_list:
+                inline: true
+                entry_name: PartyId
+            type: array<DedexBundle\Entity\Ern\PartyIdType>
+        partyName:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyName
+            accessor:
+                getter: getPartyName
+                setter: setPartyName
+            xml_list:
+                inline: true
+                entry_name: PartyName
+            type: array<DedexBundle\Entity\Ern\PartyNameType>
+        rightsControllerRole:
+            expose: true
+            access_type: public_method
+            serialized_name: RightsControllerRole
+            accessor:
+                getter: getRightsControllerRole
+                setter: setRightsControllerRole
+            xml_list:
+                inline: true
+                entry_name: RightsControllerRole
+            type: array<string>
+        rightShareUnknown:
+            expose: true
+            access_type: public_method
+            serialized_name: RightShareUnknown
+            accessor:
+                getter: getRightShareUnknown
+                setter: setRightShareUnknown
+            type: bool
+        rightSharePercentage:
+            expose: true
+            access_type: public_method
+            serialized_name: RightSharePercentage
+            accessor:
+                getter: getRightSharePercentage
+                setter: setRightSharePercentage
+            type: DedexBundle\Entity\Ern\PercentageType
+        rightsControllerType:
+            expose: true
+            access_type: public_method
+            serialized_name: RightsControllerType
+            accessor:
+                getter: getRightsControllerType
+                setter: setRightsControllerType
+            type: string
+        territoryOfRegistration:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryOfRegistration
+            accessor:
+                getter: getTerritoryOfRegistration
+                setter: setTerritoryOfRegistration
+            type: DedexBundle\Entity\Ern\AllTerritoryCodeType
+        startDate:
+            expose: true
+            access_type: public_method
+            serialized_name: StartDate
+            accessor:
+                getter: getStartDate
+                setter: setStartDate
+            type: string
+        endDate:
+            expose: true
+            access_type: public_method
+            serialized_name: EndDate
+            accessor:
+                getter: getEndDate
+                setter: setEndDate
+            type: string

@@ -1,0 +1,94 @@
+DedexBundle\Entity\Ern\MessageHeaderType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        messageThreadId:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageThreadId
+            accessor:
+                getter: getMessageThreadId
+                setter: setMessageThreadId
+            type: string
+        messageId:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageId
+            accessor:
+                getter: getMessageId
+                setter: setMessageId
+            type: string
+        messageFileName:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageFileName
+            accessor:
+                getter: getMessageFileName
+                setter: setMessageFileName
+            type: string
+        messageSender:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageSender
+            accessor:
+                getter: getMessageSender
+                setter: setMessageSender
+            type: DedexBundle\Entity\Ern\MessagingPartyType
+        sentOnBehalfOf:
+            expose: true
+            access_type: public_method
+            serialized_name: SentOnBehalfOf
+            accessor:
+                getter: getSentOnBehalfOf
+                setter: setSentOnBehalfOf
+            type: DedexBundle\Entity\Ern\MessagingPartyType
+        messageRecipient:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageRecipient
+            accessor:
+                getter: getMessageRecipient
+                setter: setMessageRecipient
+            xml_list:
+                inline: true
+                entry_name: MessageRecipient
+            type: array<DedexBundle\Entity\Ern\MessagingPartyType>
+        messageCreatedDateTime:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageCreatedDateTime
+            accessor:
+                getter: getMessageCreatedDateTime
+                setter: setMessageCreatedDateTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        messageAuditTrail:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageAuditTrail
+            accessor:
+                getter: getMessageAuditTrail
+                setter: setMessageAuditTrail
+            type: DedexBundle\Entity\Ern\MessageAuditTrailType
+        comment:
+            expose: true
+            access_type: public_method
+            serialized_name: Comment
+            accessor:
+                getter: getComment
+                setter: setComment
+            type: DedexBundle\Entity\Ern\CommentType
+        messageControlType:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageControlType
+            accessor:
+                getter: getMessageControlType
+                setter: setMessageControlType
+            type: string

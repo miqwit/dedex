@@ -1,0 +1,61 @@
+DedexBundle\Entity\Ern\DealType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        dealReference:
+            expose: true
+            access_type: public_method
+            serialized_name: DealReference
+            accessor:
+                getter: getDealReference
+                setter: setDealReference
+            xml_list:
+                inline: true
+                entry_name: DealReference
+            type: array<DedexBundle\Entity\Ern\DealReferenceType>
+        dealTerms:
+            expose: true
+            access_type: public_method
+            serialized_name: DealTerms
+            accessor:
+                getter: getDealTerms
+                setter: setDealTerms
+            type: DedexBundle\Entity\Ern\DealTermsType
+        resourceUsage:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceUsage
+            accessor:
+                getter: getResourceUsage
+                setter: setResourceUsage
+            type: DedexBundle\Entity\Ern\ResourceUsageType
+        dealTechnicalResourceDetailsReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: DealTechnicalResourceDetailsReferenceList
+            accessor:
+                getter: getDealTechnicalResourceDetailsReferenceList
+                setter: setDealTechnicalResourceDetailsReferenceList
+            type: array<string>
+            xml_list:
+                inline: false
+                entry_name: DealTechnicalResourceDetailsReference
+                skip_when_empty: true
+        distributionChannelPage:
+            expose: true
+            access_type: public_method
+            serialized_name: DistributionChannelPage
+            accessor:
+                getter: getDistributionChannelPage
+                setter: setDistributionChannelPage
+            xml_list:
+                inline: true
+                entry_name: DistributionChannelPage
+            type: array<DedexBundle\Entity\Ern\WebPageType>

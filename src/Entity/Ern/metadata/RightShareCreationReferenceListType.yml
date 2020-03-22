@@ -1,0 +1,35 @@
+DedexBundle\Entity\Ern\RightShareCreationReferenceListType:
+    properties:
+        rightShareWorkReference:
+            expose: true
+            access_type: public_method
+            serialized_name: RightShareWorkReference
+            accessor:
+                getter: getRightShareWorkReference
+                setter: setRightShareWorkReference
+            xml_list:
+                inline: true
+                entry_name: RightShareWorkReference
+            type: array<string>
+        rightShareResourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: RightShareResourceReference
+            accessor:
+                getter: getRightShareResourceReference
+                setter: setRightShareResourceReference
+            xml_list:
+                inline: true
+                entry_name: RightShareResourceReference
+            type: array<string>
+        rightShareReleaseReference:
+            expose: true
+            access_type: public_method
+            serialized_name: RightShareReleaseReference
+            accessor:
+                getter: getRightShareReleaseReference
+                setter: setRightShareReleaseReference
+            xml_list:
+                inline: true
+                entry_name: RightShareReleaseReference
+            type: array<string>

@@ -1,0 +1,13 @@
+DedexBundle\Entity\Ern\CatalogReleaseReferenceListType:
+    properties:
+        catalogReleaseReference:
+            expose: true
+            access_type: public_method
+            serialized_name: CatalogReleaseReference
+            accessor:
+                getter: getCatalogReleaseReference
+                setter: setCatalogReleaseReference
+            xml_list:
+                inline: true
+                entry_name: CatalogReleaseReference
+            type: array<string>

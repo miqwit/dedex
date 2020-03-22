@@ -1,0 +1,67 @@
+DedexBundle\Entity\Ern\PartyNameType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        fullName:
+            expose: true
+            access_type: public_method
+            serialized_name: FullName
+            accessor:
+                getter: getFullName
+                setter: setFullName
+            type: DedexBundle\Entity\Ern\NameType
+        fullNameAsciiTranscribed:
+            expose: true
+            access_type: public_method
+            serialized_name: FullNameAsciiTranscribed
+            accessor:
+                getter: getFullNameAsciiTranscribed
+                setter: setFullNameAsciiTranscribed
+            type: string
+        fullNameIndexed:
+            expose: true
+            access_type: public_method
+            serialized_name: FullNameIndexed
+            accessor:
+                getter: getFullNameIndexed
+                setter: setFullNameIndexed
+            type: DedexBundle\Entity\Ern\NameType
+        namesBeforeKeyName:
+            expose: true
+            access_type: public_method
+            serialized_name: NamesBeforeKeyName
+            accessor:
+                getter: getNamesBeforeKeyName
+                setter: setNamesBeforeKeyName
+            type: DedexBundle\Entity\Ern\NameType
+        keyName:
+            expose: true
+            access_type: public_method
+            serialized_name: KeyName
+            accessor:
+                getter: getKeyName
+                setter: setKeyName
+            type: DedexBundle\Entity\Ern\NameType
+        namesAfterKeyName:
+            expose: true
+            access_type: public_method
+            serialized_name: NamesAfterKeyName
+            accessor:
+                getter: getNamesAfterKeyName
+                setter: setNamesAfterKeyName
+            type: DedexBundle\Entity\Ern\NameType
+        abbreviatedName:
+            expose: true
+            access_type: public_method
+            serialized_name: AbbreviatedName
+            accessor:
+                getter: getAbbreviatedName
+                setter: setAbbreviatedName
+            type: DedexBundle\Entity\Ern\NameType

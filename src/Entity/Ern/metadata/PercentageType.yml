@@ -1,0 +1,19 @@
+DedexBundle\Entity\Ern\PercentageType:
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: float
+        hasMaxValueOfOne:
+            expose: true
+            access_type: public_method
+            serialized_name: HasMaxValueOfOne
+            accessor:
+                getter: getHasMaxValueOfOne
+                setter: setHasMaxValueOfOne
+            xml_attribute: true
+            type: bool
