@@ -1,0 +1,58 @@
+DedexBundle\Entity\Ern\PartyNameWithoutCodeType:
+    properties:
+        fullName:
+            expose: true
+            access_type: public_method
+            serialized_name: FullName
+            accessor:
+                getter: getFullName
+                setter: setFullName
+            type: string
+        fullNameAsciiTranscribed:
+            expose: true
+            access_type: public_method
+            serialized_name: FullNameAsciiTranscribed
+            accessor:
+                getter: getFullNameAsciiTranscribed
+                setter: setFullNameAsciiTranscribed
+            type: string
+        fullNameIndexed:
+            expose: true
+            access_type: public_method
+            serialized_name: FullNameIndexed
+            accessor:
+                getter: getFullNameIndexed
+                setter: setFullNameIndexed
+            type: string
+        namesBeforeKeyName:
+            expose: true
+            access_type: public_method
+            serialized_name: NamesBeforeKeyName
+            accessor:
+                getter: getNamesBeforeKeyName
+                setter: setNamesBeforeKeyName
+            type: string
+        keyName:
+            expose: true
+            access_type: public_method
+            serialized_name: KeyName
+            accessor:
+                getter: getKeyName
+                setter: setKeyName
+            type: string
+        namesAfterKeyName:
+            expose: true
+            access_type: public_method
+            serialized_name: NamesAfterKeyName
+            accessor:
+                getter: getNamesAfterKeyName
+                setter: setNamesAfterKeyName
+            type: string
+        abbreviatedName:
+            expose: true
+            access_type: public_method
+            serialized_name: AbbreviatedName
+            accessor:
+                getter: getAbbreviatedName
+                setter: setAbbreviatedName
+            type: string

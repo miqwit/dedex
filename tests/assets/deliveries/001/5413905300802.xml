@@ -1,0 +1,1411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ernm:NewReleaseMessage xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns:ernm="http://ddex.net/xml/ern/382" MessageSchemaVersionId="ern/382" LanguageAndScriptCode="en" xs:schemaLocation="http://ddex.net/xml/ern/382 http://ddex.net/xml/ern/382/release-notification.xsd">
+  <MessageHeader>
+    <MessageThreadId>5</MessageThreadId>
+    <MessageId>20180123134210556</MessageId>
+    <MessageSender>
+      <PartyId>PADPIDA2012110201G</PartyId>
+      <PartyName>
+        <FullName>The Source</FullName>
+      </PartyName>
+    </MessageSender>
+    <MessageRecipient>
+      <PartyId>PADPIDA20180122086</PartyId>
+      <PartyName>
+        <FullName>Musikazoo</FullName>
+      </PartyName>
+    </MessageRecipient>
+    <MessageCreatedDateTime>2018-01-23T15:48:03.2794615+01:00</MessageCreatedDateTime>
+  </MessageHeader>
+  <UpdateIndicator>OriginalMessage</UpdateIndicator>
+  <ResourceList>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>BEAU31300001</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2012110201G">QT02208926</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A1</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>In coena domini - Lectio 1</TitleText>
+      </ReferenceTitle>
+      <Duration>PT0H8M7S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>In coena domini - Lectio 1</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Laudantes Consort</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor>
+          <PartyName>
+            <FullName>Guy Janssens</FullName>
+          </PartyName>
+          <ResourceContributorRole>Conductor</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor>
+          <PartyName>
+            <FullName>Giovanni Pierluigi da Palestrina</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>Laudantes Consort</DisplayArtistName>
+        <LabelName>Sonamusica</LabelName>
+        <PLine>
+          <Year>2013</Year>
+          <PLineText>2013 Sonamusica</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T1</TechnicalResourceDetailsReference>
+          <AudioCodecType UserDefinedValue="FLAC">UserDefined</AudioCodecType>
+          <SamplingRate UnitOfMeasure="kHz">44100</SamplingRate>
+          <File>
+            <FileName>5413905300802_001.flac</FileName>
+            <FilePath>resources</FilePath>
+            <HashSum>
+              <HashSum>A8579898F08EA2E9F4175B88024C1504</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>BEAU31300002</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2012110201G">QT02208936</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A2</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>In coena domini - Lectio 2</TitleText>
+      </ReferenceTitle>
+      <Duration>PT0H10M28S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>In coena domini - Lectio 2</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Laudantes Consort</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor>
+          <PartyName>
+            <FullName>Guy Janssens</FullName>
+          </PartyName>
+          <ResourceContributorRole>Conductor</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor>
+          <PartyName>
+            <FullName>Giovanni Pierluigi da Palestrina</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>Laudantes Consort</DisplayArtistName>
+        <LabelName>Sonamusica</LabelName>
+        <PLine>
+          <Year>2013</Year>
+          <PLineText>2013 Sonamusica</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T2</TechnicalResourceDetailsReference>
+          <AudioCodecType UserDefinedValue="FLAC">UserDefined</AudioCodecType>
+          <SamplingRate UnitOfMeasure="kHz">44100</SamplingRate>
+          <File>
+            <FileName>5413905300802_002.flac</FileName>
+            <FilePath>resources</FilePath>
+            <HashSum>
+              <HashSum>0166018AF33870E20272E32F231DA3D3</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>BEAU31300003</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2012110201G">QT02208946</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A3</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>In coena domini - Lectio 3</TitleText>
+      </ReferenceTitle>
+      <Duration>PT0H9M42S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>In coena domini - Lectio 3</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Laudantes Consort</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor>
+          <PartyName>
+            <FullName>Guy Janssens</FullName>
+          </PartyName>
+          <ResourceContributorRole>Conductor</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor>
+          <PartyName>
+            <FullName>Giovanni Pierluigi da Palestrina</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>Laudantes Consort</DisplayArtistName>
+        <LabelName>Sonamusica</LabelName>
+        <PLine>
+          <Year>2013</Year>
+          <PLineText>2013 Sonamusica</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T3</TechnicalResourceDetailsReference>
+          <AudioCodecType UserDefinedValue="FLAC">UserDefined</AudioCodecType>
+          <SamplingRate UnitOfMeasure="kHz">44100</SamplingRate>
+          <File>
+            <FileName>5413905300802_003.flac</FileName>
+            <FilePath>resources</FilePath>
+            <HashSum>
+              <HashSum>CDE0F0B035E64E325B6B132ACA64BDB7</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>BEAU31300004</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2012110201G">QT02208956</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A4</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>In parasceve - Lectio 1</TitleText>
+      </ReferenceTitle>
+      <Duration>PT0H8M30S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>In parasceve - Lectio 1</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Laudantes Consort</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor>
+          <PartyName>
+            <FullName>Guy Janssens</FullName>
+          </PartyName>
+          <ResourceContributorRole>Conductor</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor>
+          <PartyName>
+            <FullName>Giovanni Pierluigi da Palestrina</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>Laudantes Consort</DisplayArtistName>
+        <LabelName>Sonamusica</LabelName>
+        <PLine>
+          <Year>2013</Year>
+          <PLineText>2013 Sonamusica</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T4</TechnicalResourceDetailsReference>
+          <AudioCodecType UserDefinedValue="FLAC">UserDefined</AudioCodecType>
+          <SamplingRate UnitOfMeasure="kHz">44100</SamplingRate>
+          <File>
+            <FileName>5413905300802_004.flac</FileName>
+            <FilePath>resources</FilePath>
+            <HashSum>
+              <HashSum>4A95C085CA541E62EBD6DF1211B2EEC8</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>BEAU31300005</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2012110201G">QT02208966</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A5</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>In parasceve - Lectio 2</TitleText>
+      </ReferenceTitle>
+      <Duration>PT0H10M27S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>In parasceve - Lectio 2</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Laudantes Consort</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor>
+          <PartyName>
+            <FullName>Guy Janssens</FullName>
+          </PartyName>
+          <ResourceContributorRole>Conductor</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor>
+          <PartyName>
+            <FullName>Giovanni Pierluigi da Palestrina</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>Laudantes Consort</DisplayArtistName>
+        <LabelName>Sonamusica</LabelName>
+        <PLine>
+          <Year>2013</Year>
+          <PLineText>2013 Sonamusica</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T5</TechnicalResourceDetailsReference>
+          <AudioCodecType UserDefinedValue="FLAC">UserDefined</AudioCodecType>
+          <SamplingRate UnitOfMeasure="kHz">44100</SamplingRate>
+          <File>
+            <FileName>5413905300802_005.flac</FileName>
+            <FilePath>resources</FilePath>
+            <HashSum>
+              <HashSum>40E5436EEF1BEF3ACDD8866708627F3D</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>BEAU31300006</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2012110201G">QT02208976</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A6</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>In parasceve - Lectio 3</TitleText>
+      </ReferenceTitle>
+      <Duration>PT0H8M40S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>In parasceve - Lectio 3</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Laudantes Consort</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor>
+          <PartyName>
+            <FullName>Guy Janssens</FullName>
+          </PartyName>
+          <ResourceContributorRole>Conductor</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor>
+          <PartyName>
+            <FullName>Giovanni Pierluigi da Palestrina</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>Laudantes Consort</DisplayArtistName>
+        <LabelName>Sonamusica</LabelName>
+        <PLine>
+          <Year>2013</Year>
+          <PLineText>2013 Sonamusica</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T6</TechnicalResourceDetailsReference>
+          <AudioCodecType UserDefinedValue="FLAC">UserDefined</AudioCodecType>
+          <SamplingRate UnitOfMeasure="kHz">44100</SamplingRate>
+          <File>
+            <FileName>5413905300802_006.flac</FileName>
+            <FilePath>resources</FilePath>
+            <HashSum>
+              <HashSum>F2934EBA4D46E352C5121D17C42C072D</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>BEAU31300007</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2012110201G">QT02208986</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A7</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>Sabbato sancto - Lectio 1</TitleText>
+      </ReferenceTitle>
+      <Duration>PT0H11M19S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Sabbato sancto - Lectio 1</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Laudantes Consort</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor>
+          <PartyName>
+            <FullName>Guy Janssens</FullName>
+          </PartyName>
+          <ResourceContributorRole>Conductor</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor>
+          <PartyName>
+            <FullName>Giovanni Pierluigi da Palestrina</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>Laudantes Consort</DisplayArtistName>
+        <LabelName>Sonamusica</LabelName>
+        <PLine>
+          <Year>2013</Year>
+          <PLineText>2013 Sonamusica</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T7</TechnicalResourceDetailsReference>
+          <AudioCodecType UserDefinedValue="FLAC">UserDefined</AudioCodecType>
+          <SamplingRate UnitOfMeasure="kHz">44100</SamplingRate>
+          <File>
+            <FileName>5413905300802_007.flac</FileName>
+            <FilePath>resources</FilePath>
+            <HashSum>
+              <HashSum>887CC19C0D39C2F725D2A28322E02C2A</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>BEAU31300008</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2012110201G">QT02208996</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A8</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>Sabbato sancto - Lectio 2</TitleText>
+      </ReferenceTitle>
+      <Duration>PT0H9M26S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Sabbato sancto - Lectio 2</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Laudantes Consort</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor>
+          <PartyName>
+            <FullName>Guy Janssens</FullName>
+          </PartyName>
+          <ResourceContributorRole>Conductor</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor>
+          <PartyName>
+            <FullName>Giovanni Pierluigi da Palestrina</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>Laudantes Consort</DisplayArtistName>
+        <LabelName>Sonamusica</LabelName>
+        <PLine>
+          <Year>2013</Year>
+          <PLineText>2013 Sonamusica</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T8</TechnicalResourceDetailsReference>
+          <AudioCodecType UserDefinedValue="FLAC">UserDefined</AudioCodecType>
+          <SamplingRate UnitOfMeasure="kHz">44100</SamplingRate>
+          <File>
+            <FileName>5413905300802_008.flac</FileName>
+            <FilePath>resources</FilePath>
+            <HashSum>
+              <HashSum>03C9CAF64735DD50D372A8626B4560E9</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>BEAU31300009</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2012110201G">QT02209006</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A9</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>Sabbato sancto - Lectio 3</TitleText>
+      </ReferenceTitle>
+      <Duration>PT0H11M2S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Sabbato sancto - Lectio 3</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Laudantes Consort</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor>
+          <PartyName>
+            <FullName>Guy Janssens</FullName>
+          </PartyName>
+          <ResourceContributorRole>Conductor</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor>
+          <PartyName>
+            <FullName>Giovanni Pierluigi da Palestrina</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>Laudantes Consort</DisplayArtistName>
+        <LabelName>Sonamusica</LabelName>
+        <PLine>
+          <Year>2013</Year>
+          <PLineText>2013 Sonamusica</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T9</TechnicalResourceDetailsReference>
+          <AudioCodecType UserDefinedValue="FLAC">UserDefined</AudioCodecType>
+          <SamplingRate UnitOfMeasure="kHz">44100</SamplingRate>
+          <File>
+            <FileName>5413905300802_009.flac</FileName>
+            <FilePath>resources</FilePath>
+            <HashSum>
+              <HashSum>77B670DE29A9CA6D089845CE54BFB621</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <Image>
+      <ImageType>FrontCoverImage</ImageType>
+      <ImageId>
+        <ProprietaryId Namespace="DPID:PADPIDA2012110201G">QT00163997_FrontCover</ProprietaryId>
+      </ImageId>
+      <ResourceReference>A10</ResourceReference>
+      <ImageDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <TechnicalImageDetails>
+          <TechnicalResourceDetailsReference>T10</TechnicalResourceDetailsReference>
+          <ImageCodecType>JPEG</ImageCodecType>
+          <ImageHeight>1500</ImageHeight>
+          <ImageWidth>1500</ImageWidth>
+          <File>
+            <FileName>5413905300802_FrontCoverImage.jpg</FileName>
+            <FilePath>resources</FilePath>
+            <HashSum>
+              <HashSum>25CA63DAEA3EB1B99B7A6FF0D862A775</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalImageDetails>
+      </ImageDetailsByTerritory>
+    </Image>
+  </ResourceList>
+  <ReleaseList>
+    <Release>
+      <ReleaseId>
+        <ICPN IsEan="true">5413905300802</ICPN>
+        <ProprietaryId Namespace="DPID:PADPIDA2012110201G">QT00163997</ProprietaryId>
+      </ReleaseId>
+      <ReleaseReference>R0</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>Palestrina: Lamentationes hieremiae - Liber tertius</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A2</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A3</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A4</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A5</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A6</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A7</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A8</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A9</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>Album</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Laudantes Consort</DisplayArtistName>
+        <LabelName>Sonamusica</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Palestrina: Lamentationes hieremiae - Liber tertius</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Laudantes Consort</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+            <ResourceGroupContentItem>
+              <SequenceNumber>2</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A2</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+            <ResourceGroupContentItem>
+              <SequenceNumber>3</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A3</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+            <ResourceGroupContentItem>
+              <SequenceNumber>4</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A4</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+            <ResourceGroupContentItem>
+              <SequenceNumber>5</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A5</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+            <ResourceGroupContentItem>
+              <SequenceNumber>6</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A6</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+            <ResourceGroupContentItem>
+              <SequenceNumber>7</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A7</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+            <ResourceGroupContentItem>
+              <SequenceNumber>8</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A8</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+            <ResourceGroupContentItem>
+              <SequenceNumber>9</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A9</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+        <OriginalReleaseDate>2013-02-15</OriginalReleaseDate>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2013</Year>
+        <PLineText>2013 Sonamusica</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2013</Year>
+        <CLineText>2013 Sonamusica</CLineText>
+      </CLine>
+    </Release>
+    <Release>
+      <ReleaseId>
+        <ISRC>BEAU31300001</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2012110201G">QT02208926</ProprietaryId>
+      </ReleaseId>
+      <ReleaseReference>R1</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>In coena domini - Lectio 1</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Laudantes Consort</DisplayArtistName>
+        <LabelName>Sonamusica</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>In coena domini - Lectio 1</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Laudantes Consort</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2013</Year>
+        <PLineText>2013 Sonamusica</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2013</Year>
+        <CLineText>2013 Sonamusica</CLineText>
+      </CLine>
+    </Release>
+    <Release>
+      <ReleaseId>
+        <ISRC>BEAU31300002</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2012110201G">QT02208936</ProprietaryId>
+      </ReleaseId>
+      <ReleaseReference>R2</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>In coena domini - Lectio 2</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A2</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Laudantes Consort</DisplayArtistName>
+        <LabelName>Sonamusica</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>In coena domini - Lectio 2</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Laudantes Consort</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A2</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2013</Year>
+        <PLineText>2013 Sonamusica</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2013</Year>
+        <CLineText>2013 Sonamusica</CLineText>
+      </CLine>
+    </Release>
+    <Release>
+      <ReleaseId>
+        <ISRC>BEAU31300003</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2012110201G">QT02208946</ProprietaryId>
+      </ReleaseId>
+      <ReleaseReference>R3</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>In coena domini - Lectio 3</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A3</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Laudantes Consort</DisplayArtistName>
+        <LabelName>Sonamusica</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>In coena domini - Lectio 3</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Laudantes Consort</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A3</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2013</Year>
+        <PLineText>2013 Sonamusica</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2013</Year>
+        <CLineText>2013 Sonamusica</CLineText>
+      </CLine>
+    </Release>
+    <Release>
+      <ReleaseId>
+        <ISRC>BEAU31300004</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2012110201G">QT02208956</ProprietaryId>
+      </ReleaseId>
+      <ReleaseReference>R4</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>In parasceve - Lectio 1</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A4</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Laudantes Consort</DisplayArtistName>
+        <LabelName>Sonamusica</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>In parasceve - Lectio 1</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Laudantes Consort</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A4</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2013</Year>
+        <PLineText>2013 Sonamusica</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2013</Year>
+        <CLineText>2013 Sonamusica</CLineText>
+      </CLine>
+    </Release>
+    <Release>
+      <ReleaseId>
+        <ISRC>BEAU31300005</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2012110201G">QT02208966</ProprietaryId>
+      </ReleaseId>
+      <ReleaseReference>R5</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>In parasceve - Lectio 2</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A5</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Laudantes Consort</DisplayArtistName>
+        <LabelName>Sonamusica</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>In parasceve - Lectio 2</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Laudantes Consort</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A5</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2013</Year>
+        <PLineText>2013 Sonamusica</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2013</Year>
+        <CLineText>2013 Sonamusica</CLineText>
+      </CLine>
+    </Release>
+    <Release>
+      <ReleaseId>
+        <ISRC>BEAU31300006</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2012110201G">QT02208976</ProprietaryId>
+      </ReleaseId>
+      <ReleaseReference>R6</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>In parasceve - Lectio 3</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A6</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Laudantes Consort</DisplayArtistName>
+        <LabelName>Sonamusica</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>In parasceve - Lectio 3</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Laudantes Consort</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A6</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2013</Year>
+        <PLineText>2013 Sonamusica</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2013</Year>
+        <CLineText>2013 Sonamusica</CLineText>
+      </CLine>
+    </Release>
+    <Release>
+      <ReleaseId>
+        <ISRC>BEAU31300007</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2012110201G">QT02208986</ProprietaryId>
+      </ReleaseId>
+      <ReleaseReference>R7</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>Sabbato sancto - Lectio 1</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A7</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Laudantes Consort</DisplayArtistName>
+        <LabelName>Sonamusica</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Sabbato sancto - Lectio 1</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Laudantes Consort</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A7</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2013</Year>
+        <PLineText>2013 Sonamusica</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2013</Year>
+        <CLineText>2013 Sonamusica</CLineText>
+      </CLine>
+    </Release>
+    <Release>
+      <ReleaseId>
+        <ISRC>BEAU31300008</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2012110201G">QT02208996</ProprietaryId>
+      </ReleaseId>
+      <ReleaseReference>R8</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>Sabbato sancto - Lectio 2</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A8</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Laudantes Consort</DisplayArtistName>
+        <LabelName>Sonamusica</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Sabbato sancto - Lectio 2</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Laudantes Consort</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A8</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2013</Year>
+        <PLineText>2013 Sonamusica</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2013</Year>
+        <CLineText>2013 Sonamusica</CLineText>
+      </CLine>
+    </Release>
+    <Release>
+      <ReleaseId>
+        <ISRC>BEAU31300009</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2012110201G">QT02209006</ProprietaryId>
+      </ReleaseId>
+      <ReleaseReference>R9</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>Sabbato sancto - Lectio 3</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A9</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Laudantes Consort</DisplayArtistName>
+        <LabelName>Sonamusica</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Sabbato sancto - Lectio 3</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Laudantes Consort</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A9</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2013</Year>
+        <PLineText>2013 Sonamusica</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2013</Year>
+        <CLineText>2013 Sonamusica</CLineText>
+      </CLine>
+    </Release>
+  </ReleaseList>
+  <DealList>
+    <ReleaseDeal>
+      <DealReleaseReference>R0</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <UseType>NonInteractiveStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>Worldwide</TerritoryCode>
+          <PriceInformation />
+          <ValidityPeriod>
+            <StartDate>2017-02-23</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-02-23</EffectiveDate>
+    </ReleaseDeal>
+    <ReleaseDeal>
+      <DealReleaseReference>R1</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <UseType>NonInteractiveStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>Worldwide</TerritoryCode>
+          <PriceInformation />
+          <ValidityPeriod>
+            <StartDate>2017-02-23</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-02-23</EffectiveDate>
+    </ReleaseDeal>
+    <ReleaseDeal>
+      <DealReleaseReference>R2</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <UseType>NonInteractiveStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>Worldwide</TerritoryCode>
+          <PriceInformation />
+          <ValidityPeriod>
+            <StartDate>2017-02-23</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-02-23</EffectiveDate>
+    </ReleaseDeal>
+    <ReleaseDeal>
+      <DealReleaseReference>R3</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <UseType>NonInteractiveStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>Worldwide</TerritoryCode>
+          <PriceInformation />
+          <ValidityPeriod>
+            <StartDate>2017-02-23</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-02-23</EffectiveDate>
+    </ReleaseDeal>
+    <ReleaseDeal>
+      <DealReleaseReference>R4</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <UseType>NonInteractiveStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>Worldwide</TerritoryCode>
+          <PriceInformation />
+          <ValidityPeriod>
+            <StartDate>2017-02-23</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-02-23</EffectiveDate>
+    </ReleaseDeal>
+    <ReleaseDeal>
+      <DealReleaseReference>R5</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <UseType>NonInteractiveStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>Worldwide</TerritoryCode>
+          <PriceInformation />
+          <ValidityPeriod>
+            <StartDate>2017-02-23</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-02-23</EffectiveDate>
+    </ReleaseDeal>
+    <ReleaseDeal>
+      <DealReleaseReference>R6</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <UseType>NonInteractiveStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>Worldwide</TerritoryCode>
+          <PriceInformation />
+          <ValidityPeriod>
+            <StartDate>2017-02-23</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-02-23</EffectiveDate>
+    </ReleaseDeal>
+    <ReleaseDeal>
+      <DealReleaseReference>R7</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <UseType>NonInteractiveStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>Worldwide</TerritoryCode>
+          <PriceInformation />
+          <ValidityPeriod>
+            <StartDate>2017-02-23</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-02-23</EffectiveDate>
+    </ReleaseDeal>
+    <ReleaseDeal>
+      <DealReleaseReference>R8</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <UseType>NonInteractiveStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>Worldwide</TerritoryCode>
+          <PriceInformation />
+          <ValidityPeriod>
+            <StartDate>2017-02-23</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-02-23</EffectiveDate>
+    </ReleaseDeal>
+    <ReleaseDeal>
+      <DealReleaseReference>R9</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <UseType>NonInteractiveStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>Worldwide</TerritoryCode>
+          <PriceInformation />
+          <ValidityPeriod>
+            <StartDate>2017-02-23</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-02-23</EffectiveDate>
+    </ReleaseDeal>
+  </DealList>
+</ernm:NewReleaseMessage>

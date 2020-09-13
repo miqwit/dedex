@@ -1,0 +1,88 @@
+DedexBundle\Entity\Ern\TechnicalSheetMusicDetailsType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        applicableTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ApplicableTerritoryCode
+            accessor:
+                getter: getApplicableTerritoryCode
+                setter: setApplicableTerritoryCode
+            xml_attribute: true
+            type: string
+        isDefault:
+            expose: true
+            access_type: public_method
+            serialized_name: IsDefault
+            accessor:
+                getter: getIsDefault
+                setter: setIsDefault
+            xml_attribute: true
+            type: bool
+        technicalResourceDetailsReference:
+            expose: true
+            access_type: public_method
+            serialized_name: TechnicalResourceDetailsReference
+            accessor:
+                getter: getTechnicalResourceDetailsReference
+                setter: setTechnicalResourceDetailsReference
+            type: string
+        sheetMusicCodecType:
+            expose: true
+            access_type: public_method
+            serialized_name: SheetMusicCodecType
+            accessor:
+                getter: getSheetMusicCodecType
+                setter: setSheetMusicCodecType
+            type: DedexBundle\Entity\Ern\SheetMusicCodecTypeType
+        bitDepth:
+            expose: true
+            access_type: public_method
+            serialized_name: BitDepth
+            accessor:
+                getter: getBitDepth
+                setter: setBitDepth
+            type: int
+        isPreview:
+            expose: true
+            access_type: public_method
+            serialized_name: IsPreview
+            accessor:
+                getter: getIsPreview
+                setter: setIsPreview
+            type: bool
+        previewDetails:
+            expose: true
+            access_type: public_method
+            serialized_name: PreviewDetails
+            accessor:
+                getter: getPreviewDetails
+                setter: setPreviewDetails
+            type: DedexBundle\Entity\Ern\PreviewDetailsType
+        file:
+            expose: true
+            access_type: public_method
+            serialized_name: File
+            accessor:
+                getter: getFile
+                setter: setFile
+            type: DedexBundle\Entity\Ern\FileType
+        fingerprint:
+            expose: true
+            access_type: public_method
+            serialized_name: Fingerprint
+            accessor:
+                getter: getFingerprint
+                setter: setFingerprint
+            xml_list:
+                inline: true
+                entry_name: Fingerprint
+            type: array<DedexBundle\Entity\Ern\FingerprintType>

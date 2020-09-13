@@ -1,0 +1,18 @@
+DedexBundle\Entity\Ern\AdministratingRecordCompanyWithReferenceType:
+    properties:
+        recordCompanyPartyReference:
+            expose: true
+            access_type: public_method
+            serialized_name: RecordCompanyPartyReference
+            accessor:
+                getter: getRecordCompanyPartyReference
+                setter: setRecordCompanyPartyReference
+            type: string
+        role:
+            expose: true
+            access_type: public_method
+            serialized_name: Role
+            accessor:
+                getter: getRole
+                setter: setRole
+            type: DedexBundle\Entity\Ern\AdministratingRecordCompanyRoleType

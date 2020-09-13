@@ -1,0 +1,347 @@
+DedexBundle\Entity\Ern\ReleaseType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        releaseReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseReference
+            accessor:
+                getter: getReleaseReference
+                setter: setReleaseReference
+            type: string
+        releaseType:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseType
+            accessor:
+                getter: getReleaseType
+                setter: setReleaseType
+            xml_list:
+                inline: true
+                entry_name: ReleaseType
+            type: array<DedexBundle\Entity\Ern\ReleaseTypeForReleaseNotificationType>
+        releaseId:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseId
+            accessor:
+                getter: getReleaseId
+                setter: setReleaseId
+            type: DedexBundle\Entity\Ern\ReleaseIdType
+        displayTitleText:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayTitleText
+            accessor:
+                getter: getDisplayTitleText
+                setter: setDisplayTitleText
+            xml_list:
+                inline: true
+                entry_name: DisplayTitleText
+            type: array<DedexBundle\Entity\Ern\DisplayTitleTextType>
+        displayTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayTitle
+            accessor:
+                getter: getDisplayTitle
+                setter: setDisplayTitle
+            xml_list:
+                inline: true
+                entry_name: DisplayTitle
+            type: array<DedexBundle\Entity\Ern\DisplayTitleType>
+        additionalTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: AdditionalTitle
+            accessor:
+                getter: getAdditionalTitle
+                setter: setAdditionalTitle
+            xml_list:
+                inline: true
+                entry_name: AdditionalTitle
+            type: array<DedexBundle\Entity\Ern\AdditionalTitleType>
+        displayArtistName:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayArtistName
+            accessor:
+                getter: getDisplayArtistName
+                setter: setDisplayArtistName
+            xml_list:
+                inline: true
+                entry_name: DisplayArtistName
+            type: array<DedexBundle\Entity\Ern\DisplayArtistNameWithDefaultType>
+        displayArtist:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayArtist
+            accessor:
+                getter: getDisplayArtist
+                setter: setDisplayArtist
+            xml_list:
+                inline: true
+                entry_name: DisplayArtist
+            type: array<DedexBundle\Entity\Ern\DisplayArtistType>
+        releaseLabelReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseLabelReference
+            accessor:
+                getter: getReleaseLabelReference
+                setter: setReleaseLabelReference
+            xml_list:
+                inline: true
+                entry_name: ReleaseLabelReference
+            type: array<DedexBundle\Entity\Ern\ReleaseLabelReferenceType>
+        administratingRecordCompany:
+            expose: true
+            access_type: public_method
+            serialized_name: AdministratingRecordCompany
+            accessor:
+                getter: getAdministratingRecordCompany
+                setter: setAdministratingRecordCompany
+            xml_list:
+                inline: true
+                entry_name: AdministratingRecordCompany
+            type: array<DedexBundle\Entity\Ern\AdministratingRecordCompanyWithReferenceType>
+        pLine:
+            expose: true
+            access_type: public_method
+            serialized_name: PLine
+            accessor:
+                getter: getPLine
+                setter: setPLine
+            xml_list:
+                inline: true
+                entry_name: PLine
+            type: array<DedexBundle\Entity\Ern\PLineWithDefaultType>
+        cLine:
+            expose: true
+            access_type: public_method
+            serialized_name: CLine
+            accessor:
+                getter: getCLine
+                setter: setCLine
+            xml_list:
+                inline: true
+                entry_name: CLine
+            type: array<DedexBundle\Entity\Ern\CLineWithDefaultType>
+        courtesyLine:
+            expose: true
+            access_type: public_method
+            serialized_name: CourtesyLine
+            accessor:
+                getter: getCourtesyLine
+                setter: setCourtesyLine
+            xml_list:
+                inline: true
+                entry_name: CourtesyLine
+            type: array<DedexBundle\Entity\Ern\CourtesyLineWithDefaultType>
+        duration:
+            expose: true
+            access_type: public_method
+            serialized_name: Duration
+            accessor:
+                getter: getDuration
+                setter: setDuration
+            type: DateInterval
+        genre:
+            expose: true
+            access_type: public_method
+            serialized_name: Genre
+            accessor:
+                getter: getGenre
+                setter: setGenre
+            xml_list:
+                inline: true
+                entry_name: Genre
+            type: array<DedexBundle\Entity\Ern\GenreWithTerritoryType>
+        releaseDate:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseDate
+            accessor:
+                getter: getReleaseDate
+                setter: setReleaseDate
+            xml_list:
+                inline: true
+                entry_name: ReleaseDate
+            type: array<DedexBundle\Entity\Ern\EventDateWithDefaultType>
+        originalReleaseDate:
+            expose: true
+            access_type: public_method
+            serialized_name: OriginalReleaseDate
+            accessor:
+                getter: getOriginalReleaseDate
+                setter: setOriginalReleaseDate
+            xml_list:
+                inline: true
+                entry_name: OriginalReleaseDate
+            type: array<DedexBundle\Entity\Ern\EventDateWithDefaultType>
+        parentalWarningType:
+            expose: true
+            access_type: public_method
+            serialized_name: ParentalWarningType
+            accessor:
+                getter: getParentalWarningType
+                setter: setParentalWarningType
+            xml_list:
+                inline: true
+                entry_name: ParentalWarningType
+            type: array<DedexBundle\Entity\Ern\ParentalWarningTypeWithTerritoryType>
+        avRating:
+            expose: true
+            access_type: public_method
+            serialized_name: AvRating
+            accessor:
+                getter: getAvRating
+                setter: setAvRating
+            xml_list:
+                inline: true
+                entry_name: AvRating
+            type: array<DedexBundle\Entity\Ern\AvRatingType>
+        relatedRelease:
+            expose: true
+            access_type: public_method
+            serialized_name: RelatedRelease
+            accessor:
+                getter: getRelatedRelease
+                setter: setRelatedRelease
+            xml_list:
+                inline: true
+                entry_name: RelatedRelease
+            type: array<DedexBundle\Entity\Ern\RelatedReleaseType>
+        isCompilation:
+            expose: true
+            access_type: public_method
+            serialized_name: IsCompilation
+            accessor:
+                getter: getIsCompilation
+                setter: setIsCompilation
+            type: bool
+        isMultiArtistCompilation:
+            expose: true
+            access_type: public_method
+            serialized_name: IsMultiArtistCompilation
+            accessor:
+                getter: getIsMultiArtistCompilation
+                setter: setIsMultiArtistCompilation
+            type: bool
+        resourceGroup:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceGroup
+            accessor:
+                getter: getResourceGroup
+                setter: setResourceGroup
+            type: DedexBundle\Entity\Ern\ResourceGroupType
+        externalResourceLink:
+            expose: true
+            access_type: public_method
+            serialized_name: ExternalResourceLink
+            accessor:
+                getter: getExternalResourceLink
+                setter: setExternalResourceLink
+            xml_list:
+                inline: true
+                entry_name: ExternalResourceLink
+            type: array<DedexBundle\Entity\Ern\ExternalResourceLinkType>
+        keywords:
+            expose: true
+            access_type: public_method
+            serialized_name: Keywords
+            accessor:
+                getter: getKeywords
+                setter: setKeywords
+            xml_list:
+                inline: true
+                entry_name: Keywords
+            type: array<DedexBundle\Entity\Ern\KeywordsWithTerritoryType>
+        synopsis:
+            expose: true
+            access_type: public_method
+            serialized_name: Synopsis
+            accessor:
+                getter: getSynopsis
+                setter: setSynopsis
+            xml_list:
+                inline: true
+                entry_name: Synopsis
+            type: array<DedexBundle\Entity\Ern\SynopsisWithTerritoryType>
+        raga:
+            expose: true
+            access_type: public_method
+            serialized_name: Raga
+            accessor:
+                getter: getRaga
+                setter: setRaga
+            xml_list:
+                inline: true
+                entry_name: Raga
+            type: array<DedexBundle\Entity\Ern\RagaType>
+        tala:
+            expose: true
+            access_type: public_method
+            serialized_name: Tala
+            accessor:
+                getter: getTala
+                setter: setTala
+            xml_list:
+                inline: true
+                entry_name: Tala
+            type: array<DedexBundle\Entity\Ern\TalaType>
+        deity:
+            expose: true
+            access_type: public_method
+            serialized_name: Deity
+            accessor:
+                getter: getDeity
+                setter: setDeity
+            xml_list:
+                inline: true
+                entry_name: Deity
+            type: array<DedexBundle\Entity\Ern\DeityType>
+        hiResMusicDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: HiResMusicDescription
+            accessor:
+                getter: getHiResMusicDescription
+                setter: setHiResMusicDescription
+            type: string
+        isSoundtrack:
+            expose: true
+            access_type: public_method
+            serialized_name: IsSoundtrack
+            accessor:
+                getter: getIsSoundtrack
+                setter: setIsSoundtrack
+            type: bool
+        isHiResMusic:
+            expose: true
+            access_type: public_method
+            serialized_name: IsHiResMusic
+            accessor:
+                getter: getIsHiResMusic
+                setter: setIsHiResMusic
+            type: bool
+        marketingComment:
+            expose: true
+            access_type: public_method
+            serialized_name: MarketingComment
+            accessor:
+                getter: getMarketingComment
+                setter: setMarketingComment
+            xml_list:
+                inline: true
+                entry_name: MarketingComment
+            type: array<DedexBundle\Entity\Ern\MarketingCommentType>

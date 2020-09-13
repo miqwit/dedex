@@ -1,0 +1,18 @@
+DedexBundle\Entity\Ern\TimingType:
+    properties:
+        startPoint:
+            expose: true
+            access_type: public_method
+            serialized_name: StartPoint
+            accessor:
+                getter: getStartPoint
+                setter: setStartPoint
+            type: DateInterval
+        durationUsed:
+            expose: true
+            access_type: public_method
+            serialized_name: DurationUsed
+            accessor:
+                getter: getDurationUsed
+                setter: setDurationUsed
+            type: DateInterval

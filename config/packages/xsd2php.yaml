@@ -1,6 +1,7 @@
 xsd2php:
   namespaces:
     'http://ddex.net/xml/ern/382': 'DedexBundle/Entity/Ern'
+    'http://ddex.net/xml/ern/41': 'DedexBundle/Entity/Ern'
     'http://ddex.net/xml/avs/avs': 'DedexBundle/Entity/Avs'
   
   destinations_php: 

@@ -3,14 +3,14 @@
 namespace DedexBundle\Tests\Controller;
 
 use DedexBundle\Controller\ErnParserController;
-use DedexBundle\Entity\DisplayArtist;
-use DedexBundle\Entity\FeaturedArtist;
-use DedexBundle\Entity\HostSoundCarrier;
-use DedexBundle\Entity\IndirectResourceContributor;
-use DedexBundle\Entity\ResourceContributor;
-use DedexBundle\Entity\RightsController;
-use DedexBundle\Entity\SoundRecording;
-use DedexBundle\Entity\SoundRecordingDetailsByTerritory;
+use DedexBundle\Entity\Ern382\DisplayArtist;
+use DedexBundle\Entity\Ern382\FeaturedArtist;
+use DedexBundle\Entity\Ern382\HostSoundCarrier;
+use DedexBundle\Entity\Ern382\IndirectResourceContributor;
+use DedexBundle\Entity\Ern382\ResourceContributor;
+use DedexBundle\Entity\Ern382\RightsController;
+use DedexBundle\Entity\Ern382\SoundRecording;
+use DedexBundle\Entity\Ern382\SoundRecordingDetailsByTerritory;
 use PHPUnit\Framework\TestCase;
 
 class ParserControllerTest extends TestCase {
@@ -22,8 +22,10 @@ class ParserControllerTest extends TestCase {
 	}
 	
 	public function testSample001() {
+//    phpinfo();die();
 		$xml_path = "tests/samples/001_audioalbum_complete.xml";
 		$parser_controller = new ErnParserController();
+    $parser_controller->setDisplayLog(true);
 		$ddex = $parser_controller->parse($xml_path);
 		
 		// ERN attributes
@@ -50,7 +52,7 @@ class ParserControllerTest extends TestCase {
 		
 		// Resources
 		$this->assertCount(6, $ddex->getResourceList()->getSoundRecording());
-		/* @var $resource_zero \DedexBundle\Entity\Ern\SoundRecordingType */
+		/* @var $resource_zero \DedexBundle\Entity\Ern382\Ern\SoundRecordingType */
 		$resource_zero = $ddex->getResourceList()->getSoundRecording()[0];
 		$this->assertEquals("true", $resource_zero->getIsUpdated());
 		$this->assertEquals("en", $resource_zero->getLanguageAndScriptCode());
@@ -61,8 +63,8 @@ class ParserControllerTest extends TestCase {
 		$this->assertEquals("CASE00000001", $resource_zero->getSoundRecordingId()[0]->getIsrc());
 		$this->assertEquals("PADPIDA2007061301U", $resource_zero->getSoundRecordingId()[0]->getCatalogNumber()->getNamespace());
 		$this->assertEquals("123456", $resource_zero->getSoundRecordingId()[0]->getCatalogNumber()->value());
-		$this->assertEquals("PADPIDA2007061301U", $resource_zero->getSoundRecordingId()[0]->getProprietaryId()->getNamespace());
-		$this->assertEquals("00010075760152", $resource_zero->getSoundRecordingId()[0]->getProprietaryId()->value());
+		$this->assertEquals("PADPIDA2007061301U", $resource_zero->getSoundRecordingId()[0]->getProprietaryId()[0]->getNamespace());
+		$this->assertEquals("00010075760152", $resource_zero->getSoundRecordingId()[0]->getProprietaryId()[0]->value());
 		$this->assertEquals("A1", $resource_zero->getResourceReference());
 		$this->assertEquals("Can you feel ...the Monkey Claw!", $resource_zero->getReferenceTitle()->getTitleText());
 		$this->assertEquals("false", $resource_zero->getIsMedley());
@@ -73,7 +75,7 @@ class ParserControllerTest extends TestCase {
 		$this->assertEquals("false", $resource_zero->getIsComputerGenerated());
 		$this->assertEquals("true", $resource_zero->getNoSilenceBefore());
 		$this->assertEquals("true", $resource_zero->getNoSilenceAfter());
-		$this->assertEquals("PT13M31S", $resource_zero->getDuration());
+		$this->assertEquals("PT13M31S", $resource_zero->getDuration()->format("PT%iM%sS"));
 		$this->assertEquals("false", $resource_zero->getCreationDate()->getIsApproximate());
 		$this->assertEquals("false", $resource_zero->getCreationDate()->getIsBefore());
 		$this->assertEquals("false", $resource_zero->getCreationDate()->getIsAfter());
@@ -84,7 +86,7 @@ class ParserControllerTest extends TestCase {
 		$this->assertEquals("false", $resource_zero->getMasteredDate()->getIsAfter());
 		$this->assertEquals("2008-09-27", $resource_zero->getMasteredDate()->value());
 		/* @var $srdbt_zero SoundRecordingDetailsByTerritory */
-		$srdbt_zero = $resource_zero->getSoundRecordingDetailsByTerritorys()[0];
+		$srdbt_zero = $resource_zero->getSoundRecordingDetailsByTerritory()[0];
 		$this->assertEquals("Worldwide", $srdbt_zero->getTerritoryCode());
 		$this->assertCount(2, $srdbt_zero->getTitles());
 		$this->assertEquals("FormalTitle", $srdbt_zero->getTitles()[0]->getTitleType());

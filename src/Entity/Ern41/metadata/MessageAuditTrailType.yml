@@ -1,0 +1,13 @@
+DedexBundle\Entity\Ern\MessageAuditTrailType:
+    properties:
+        messageAuditTrailEvent:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageAuditTrailEvent
+            accessor:
+                getter: getMessageAuditTrailEvent
+                setter: setMessageAuditTrailEvent
+            xml_list:
+                inline: true
+                entry_name: MessageAuditTrailEvent
+            type: array<DedexBundle\Entity\Ern\MessageAuditTrailEventType>

@@ -1,0 +1,37 @@
+DedexBundle\Entity\Ern\EventDateWithDefaultType:
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: string
+        isApproximate:
+            expose: true
+            access_type: public_method
+            serialized_name: IsApproximate
+            accessor:
+                getter: getIsApproximate
+                setter: setIsApproximate
+            xml_attribute: true
+            type: bool
+        applicableTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ApplicableTerritoryCode
+            accessor:
+                getter: getApplicableTerritoryCode
+                setter: setApplicableTerritoryCode
+            xml_attribute: true
+            type: string
+        isDefault:
+            expose: true
+            access_type: public_method
+            serialized_name: IsDefault
+            accessor:
+                getter: getIsDefault
+                setter: setIsDefault
+            xml_attribute: true
+            type: bool

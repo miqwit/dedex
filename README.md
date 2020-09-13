@@ -14,15 +14,16 @@ And run it with:
 ```
 docker run \
   --name=dedex \
-  -v /full/path/to/dedex:/usr/src/dedex \
-  --user 1000:1000 \
+  --network=host \
+  -v /home/mickael/dev/dedex/dedex:/home/mickael/dev/dedex/dedex \
+  -v /home/mickael/dev/dedex/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
   -ti dedex-img \
   bash
 ```
 
 ## Running Tests
 
-Run the phpunit test command:
+In the docker, run the phpunit test command:
 
 ```
 ./bin/phpunit

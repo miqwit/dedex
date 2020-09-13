@@ -1,0 +1,34 @@
+DedexBundle\Entity\Ern\ConditionForRightsClaimPolicyType:
+    properties:
+        value:
+            expose: true
+            access_type: public_method
+            serialized_name: Value
+            accessor:
+                getter: getValue
+                setter: setValue
+            type: float
+        unit:
+            expose: true
+            access_type: public_method
+            serialized_name: Unit
+            accessor:
+                getter: getUnit
+                setter: setUnit
+            type: string
+        referenceCreation:
+            expose: true
+            access_type: public_method
+            serialized_name: ReferenceCreation
+            accessor:
+                getter: getReferenceCreation
+                setter: setReferenceCreation
+            type: string
+        relationalRelator:
+            expose: true
+            access_type: public_method
+            serialized_name: RelationalRelator
+            accessor:
+                getter: getRelationalRelator
+                setter: setRelationalRelator
+            type: string
