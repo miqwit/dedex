@@ -74,6 +74,13 @@ class ErnParserController {
   
   private bool $set_to_parent = false;
   private string $set_to_parent_tag = "";
+  
+  private array $ignore_these_tags_or_attributes = [
+      "xmlns:ern",
+      "xmlns:xs",
+      "xs:schemaLocation",
+      "ReleaseResourceReferenceList"  // TODO generic
+  ];
 
   /**
    * Function called when the parser encounters a tag opening
@@ -83,19 +90,18 @@ class ErnParserController {
    * @param array $attrs The attributes of the tag
    */
   private function callbackStartElement($parser, string $name, array $attrs) {
+    if (in_array($name, $this->ignore_these_tags_or_attributes)) {
+      return;
+    }
+      
     // Create element here. But to know its type, call its parent getter if any.
     // There is only one case when there is no parent: ern:NewReleaseMessage.
     if ($name === "ern:NewReleaseMessage") {
-      $class_name = "\\DedexBundle\\Entity\\Ern\\NewReleaseMessage";
+      $class_name = $this->ern;
       $name = "NewReleaseMessage";
     } else {
       $parent = end($this->pile);
       $class_name = $this->getTypeOfElementFromDoc(get_class($parent), $name);
-      
-//      if ($name === "ReleaseResourceReference") {
-//        array_pop($this->pile);
-//        $class_name = null;
-//      }
       
       if (!class_exists($class_name)) {
         // Set element to parent class
@@ -105,7 +111,13 @@ class ErnParserController {
       }
     }
     $elem = $this->instanciateClass($class_name);
-    $this->pile[$name] = $elem;
+    
+    // Tags can have the same names in the hierarchy (like ResourceGroup)
+    if (!array_key_exists($name, $this->pile)) {
+      $this->pile[$name] = $elem;
+    } else {
+      $this->pile[$name."##". random_int(2, 99999)] = $elem;
+    }
     
     // Will process attributes later
     $this->attrs_to_process[count($this->pile)] = $attrs;
@@ -127,6 +139,10 @@ class ErnParserController {
    * @param string $name
    */
   private function callbackEndElement($parser, string $name) {
+    if (in_array($name, $this->ignore_these_tags_or_attributes)) {
+      return;
+    }
+    
     if (!$this->set_to_parent) {
       // Process attributes now.
       // Consider each attribute as a setter of current element
@@ -134,6 +150,10 @@ class ErnParserController {
       // then will call $this->ern->setMESSAGESCHEMAVERSIONID
       if (array_key_exists(count($this->pile), $this->attrs_to_process)) {
         foreach ($this->attrs_to_process[count($this->pile)] as $key => $val) {
+          if (in_array($key, $this->ignore_these_tags_or_attributes)) {
+            continue;
+          }
+          
           $this->callbackStartElement($parser, $key, []);
           $this->callbackCharacterData($parser, $val);
           $this->callbackEndElement($parser, $key);
@@ -153,6 +173,8 @@ class ErnParserController {
   
   private function attachToParent() {
     if (count($this->pile) < 2) {
+      // We are done, attach it to $this->ern
+      $this->ern = end($this->pile);
       return;
     }
     
@@ -186,6 +208,12 @@ class ErnParserController {
   }
   
   private function listPossibleFunctionNames($prefix, $tag) {
+    // It's possible this script added a ##\d+ information at the end of
+    // the tag to avoid key duplicate. Remove it here.
+    if (strpos($tag, "##") !== false) {
+      $tag = preg_replace("/##\d+/", "", $tag);
+    }
+    
     $func_names = [
         $prefix . $tag, 
         $prefix . $tag . "s", 
@@ -286,9 +314,6 @@ class ErnParserController {
 
   private function getTypeOfElementFromDoc($class, $tag) {
     $function = $this->getValidFunctionName("get", $tag, $class);
-//    if ($function == null) {
-//      return null;
-//    }
     
     $rc = new \ReflectionMethod($class, $function);
     $doc = $rc->getDocComment();

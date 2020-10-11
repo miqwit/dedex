@@ -33,7 +33,7 @@ class ParserControllerTest extends TestCase {
 //		$this->assertEquals("http://www.w3.org/2001/XMLSchema-instance", $ddex->getXmlns_Xs());
 //		$this->assertEquals("http://ddex.net/xml/ern/382", $ddex->getXs_SchemaLocation());
 		$this->assertEquals("ern/382", $ddex->getMessageSchemaVersionId());
-		$this->assertEquals("CommonReleaseTypesTypes/14/AudioAlbum", $ddex->getReleaseProfileVersionId());
+		$this->assertEquals("CommonReleaseTypesTypes/14/AudioAlbumMusicOnly", $ddex->getReleaseProfileVersionId());
 		$this->assertEquals("en", $ddex->getLanguageAndScriptCode());
 
 		// Message header
