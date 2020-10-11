@@ -32,6 +32,11 @@ class ErnParserController {
    * @var string
    */
   private $current_tag_name = null;
+  
+  /**
+   * key=tag_name and value=current element (object)
+   * @var type 
+   */
   private $pile = array();
 
   /**
@@ -82,7 +87,7 @@ class ErnParserController {
    */
   private function callbackStartElement($parser, string $name, array $attrs) {
     $this->current_tag_name = $name;
-    $this->pile[] = $name;
+    $this->pile[$name] = null;
 
     // Will process attributes later
     $this->attrs_to_process[count($this->pile)] = $attrs;
@@ -109,14 +114,14 @@ class ErnParserController {
     }
 
     if ($this->current_tag_name == $name) {
-      $this->log("close tag " . implode(",", $this->pile));
+      $this->log("close tag " . implode(",", array_keys($this->pile)));
       $this->closed_objects[$name] = true;
     }
 
     array_pop($this->pile);
 
     if (count($this->pile) > 0) {
-      $this->current_tag_name = $this->pile[count($this->pile) - 1];
+      $this->current_tag_name = array_keys($this->pile)[count($this->pile) - 1];
     }
   }
 
@@ -130,6 +135,19 @@ class ErnParserController {
   public function cleanTag($tag) {
     return str_replace(":", "_", $tag);
   }
+  
+  private function listPossibleFunctionNames($prefix, $tag) {
+    $func_names = [$prefix . $tag, $prefix . $tag . "s", $prefix . $tag . "Type"];
+
+    // Add to func names also the addTo, because can be array. Will be tested first
+    if ($prefix == "set") {
+      $func_names = array_merge(["addTo" . $tag, "create" . $tag], $func_names);
+    }
+    
+    return $func_names;
+  }
+  
+  private $tag_to_skip = null;
 
   /**
    * From the current pile of tag, set the value to the last element.
@@ -145,9 +163,13 @@ class ErnParserController {
     $depth = -1;
     $elem = $this->ern;
 
-    foreach ($this->pile as $tag) {
+    foreach ($this->pile as $tag => $elem_pile) {
       $depth++;
       $tag = $this->cleanTag($tag);
+      
+      if ($tag == $this->tag_to_skip) {
+        continue;
+      }
 
       if (strtoupper($tag) == "ERN_NEWRELEASEMESSAGE") {
         continue;
@@ -157,62 +179,91 @@ class ErnParserController {
       if ($depth == (count($this->pile) - 1)) {
         $prefix = "set";
       }
+      
+      $func_names = $this->listPossibleFunctionNames($prefix, $tag);
 
-      $func_names = [$prefix . $tag, $prefix . $tag . "s", $prefix . $tag . "Type"];
-
-      // Add to func names also the addTo, because can be array. Will be tested first
-      if ($prefix == "set") {
-        $func_names = array_merge(["addTo" . $tag, "create" . $tag], $func_names);
-      }
-
+      $function_used = false;
       foreach ($func_names as $func_name) {
         if (!method_exists($elem, $func_name)) {
           continue;
         }
+        $function_used = true;
 
         if ($prefix == "set") {
           // It's possible we're trying to set a text but it's expecting an
           // object (where text should be placed in value).
           $value_inst = $this->instanciateTypeFromDoc($elem, $func_name, $value);
           $elem->$func_name($value_inst);
+          
           return;
-        } else {
-          // get
-          $elem_use = $elem->$func_name($value);
+        } 
+        
+        // get
+        $elem_use = $elem->$func_name($value);
 
-          // If array, take last element if not empty
-          if (is_array($elem_use) && count($elem_use) > 0) {
-            $elem_use = $elem_use[count($elem_use) - 1];
+        // If array, take last element if not empty
+        if (is_array($elem_use) && count($elem_use) > 0) {
+          $elem_use = $elem_use[count($elem_use) - 1];
 
-            // Maybe the last element is closed, if so, consider $elem_use as
-            // null and will create a new element to be added to the list
-            if (array_key_exists($tag, $this->closed_objects)) {
-              unset($this->closed_objects[$tag]);
-              $elem_use = []; // fake empty array to create new object in next case below
-            }
+          // Maybe the last element is closed, if so, consider $elem_use as
+          // null and will create a new element to be added to the list
+          if (array_key_exists($tag, $this->closed_objects)) {
+            unset($this->closed_objects[$tag]);
+            $elem_use = []; // fake empty array to create new object in next case below
           }
-
-          // If this element is null, create a new instance for it
-          if ($elem_use === null || $elem_use === []) {
-            $class_name = $this->getTypeOfElementFromDoc($elem, $func_name, $tag);
-//						$class_name = "\\DedexBundle\\Entity\\Ern\\" . $tag . "Type";
-            $new_elem = new $class_name($value); // Give value as default param. Needed for simple tags
-            if (is_array($elem_use)) {
-              $setter = "addTo" . $tag;
-            } else {
-              $setter = "set" . $tag;
-            }
-            $elem->$setter($new_elem);
-            $elem = $new_elem;
-            break;
-          }
-
-          $elem = $elem_use;
         }
+
+        // If this element is null, create a new instance for it
+        if ($elem_use === null || $elem_use === []) {
+          $class_name = $this->getTypeOfElementFromDoc($elem, $func_name, $tag);
+          $new_elem = new $class_name($value); // Give value as default param. Needed for simple tags
+          if (is_array($elem_use)) {
+            $setter = "addTo" . $tag;
+          } else {
+            $setter = "set" . $tag;
+          }
+          
+          // Set value as an array if array is expected
+          if ($this->expectedParamIsArray($elem, $setter)) {
+            $elem->$setter([$new_elem]);
+            $this->tag_to_skip = $this->pile[$depth + 1];
+            return;
+          } else {
+            $elem->$setter($new_elem);
+          }
+          $elem = $new_elem;
+          break;
+        }
+
+        $elem = $elem_use;
 
         break;
       }
+      
+      if (!$function_used) {
+        throw new Exception("No functions found for this tag: $tag. Path is ".implode(",", $this->pile));
+      }
     }
+  }
+  
+  private function endsWithList(string $tag) {
+    $end = substr($tag, -4);
+    return strlen($tag) > 4 && $end === "List";
+  }
+  
+  private function expectedParamIsArray($class, $func_name) {
+    $method = new \ReflectionMethod($class, $func_name);
+    
+    if (count($method->getParameters()) != 1) {
+      throw new Exception("This reflection method only supports 1 parameter");
+    }
+    
+    /* @var $param \ReflectionParameter */
+    $param = $method->getParameters()[0];
+    $type = $param->getType();
+    
+    $is_array = $param->isArray();
+    return $is_array;
   }
 
   private function getTypeOfElementFromDoc($class, $function, $tag) {

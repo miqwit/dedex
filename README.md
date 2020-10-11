@@ -37,6 +37,12 @@ Run the phpDocumentator command:
 php phpDocumentor.phar -d src -t docs
 ```
 
+## Generating DDEX classes
+
+```
+vendor/bin/xsd2php convert config.yml /home/my/ota/OTA_Air*.xsd
+```
+
 ## Still TODO
 
 * Integrate monolog and handle logs better
