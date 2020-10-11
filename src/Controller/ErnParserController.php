@@ -26,12 +26,6 @@ class ErnParserController {
    * @var $ern \DedexBundle\Entity\Ern\NewReleaseMessage
    */
   private $ern = null;
-
-  /**
-   * Store the current tag we are browsing while parsing
-   * @var string
-   */
-  private $current_tag_name = null;
   
   /**
    * key=tag_name and value=current element (object)
@@ -51,7 +45,7 @@ class ErnParserController {
    * If true, display logs (for debugging purpose mainly)
    * @var bool
    */
-  private $display_log = false;
+  private $display_log = true;
 
   /**
    * Array of arrays (by depth level) of attributes to process.
@@ -77,6 +71,9 @@ class ErnParserController {
   public function setDisplayLog(bool $val) {
     $this->display_log = $val;
   }
+  
+  private bool $set_to_parent = false;
+  private string $set_to_parent_tag = "";
 
   /**
    * Function called when the parser encounters a tag opening
@@ -86,11 +83,41 @@ class ErnParserController {
    * @param array $attrs The attributes of the tag
    */
   private function callbackStartElement($parser, string $name, array $attrs) {
-    $this->current_tag_name = $name;
-    $this->pile[$name] = null;
-
+    // Create element here. But to know its type, call its parent getter if any.
+    // There is only one case when there is no parent: ern:NewReleaseMessage.
+    if ($name === "ern:NewReleaseMessage") {
+      $class_name = "\\DedexBundle\\Entity\\Ern\\NewReleaseMessage";
+      $name = "NewReleaseMessage";
+    } else {
+      $parent = end($this->pile);
+      $class_name = $this->getTypeOfElementFromDoc(get_class($parent), $name);
+      
+//      if ($name === "ReleaseResourceReference") {
+//        array_pop($this->pile);
+//        $class_name = null;
+//      }
+      
+      if (!class_exists($class_name)) {
+        // Set element to parent class
+        $this->set_to_parent = true;
+        $this->set_to_parent_tag = $name;
+        return; // no attributes in this case
+      }
+    }
+    $elem = $this->instanciateClass($class_name);
+    $this->pile[$name] = $elem;
+    
     // Will process attributes later
     $this->attrs_to_process[count($this->pile)] = $attrs;
+  }
+  
+  private function instanciateClass($class_name) {
+    if ($class_name === "\DateInterval") {
+      // For DateInterval can't instanciate with null
+      return new \DateInterval("PT0M0S");  // will be erased
+    }
+    
+    return new $class_name(null);
   }
 
   /**
@@ -100,29 +127,51 @@ class ErnParserController {
    * @param string $name
    */
   private function callbackEndElement($parser, string $name) {
-    // Process attributes now.
-    // Consider each attribute as a setter of current element
-    // if attribute is MessageSchemaVersionId on ern:NewReleaseMessage
-    // then will call $this->ern->setMESSAGESCHEMAVERSIONID
-    if (array_key_exists(count($this->pile), $this->attrs_to_process)) {
-      foreach ($this->attrs_to_process[count($this->pile)] as $key => $val) {
-        $this->callbackStartElement($parser, $key, []);
-        $this->callbackCharacterData($parser, $val);
-        $this->callbackEndElement($parser, $key);
+    if (!$this->set_to_parent) {
+      // Process attributes now.
+      // Consider each attribute as a setter of current element
+      // if attribute is MessageSchemaVersionId on ern:NewReleaseMessage
+      // then will call $this->ern->setMESSAGESCHEMAVERSIONID
+      if (array_key_exists(count($this->pile), $this->attrs_to_process)) {
+        foreach ($this->attrs_to_process[count($this->pile)] as $key => $val) {
+          $this->callbackStartElement($parser, $key, []);
+          $this->callbackCharacterData($parser, $val);
+          $this->callbackEndElement($parser, $key);
+        }
+        array_pop($this->attrs_to_process);
       }
-      $this->attrs_to_process[count($this->pile)] = [];
+    
+      $this->attachToParent();
+      
+      array_pop($this->pile);
     }
-
-    if ($this->current_tag_name == $name) {
-      $this->log("close tag " . implode(",", array_keys($this->pile)));
-      $this->closed_objects[$name] = true;
+    
+    // Reset parent setting
+    $this->set_to_parent = false;
+    $this->set_to_parent_tag = "";
+  }
+  
+  private function attachToParent() {
+    if (count($this->pile) < 2) {
+      return;
     }
-
-    array_pop($this->pile);
-
-    if (count($this->pile) > 0) {
-      $this->current_tag_name = array_keys($this->pile)[count($this->pile) - 1];
+    
+    $keys = array_keys($this->pile);
+    $parent_tag = $keys[count($keys) - 2];
+    $child_tag = end($keys);
+    
+    $parent = $this->pile[$parent_tag];
+    $child = $this->pile[$child_tag];
+    
+    $func_names = $this->listPossibleFunctionNames("set", $child_tag);
+    foreach ($func_names as $func_name) {
+      if (!method_exists($parent, $func_name)) {
+        continue;
+      }
+      break;
     }
+    
+    $parent->$func_name($child);
   }
 
   /**
@@ -137,11 +186,22 @@ class ErnParserController {
   }
   
   private function listPossibleFunctionNames($prefix, $tag) {
-    $func_names = [$prefix . $tag, $prefix . $tag . "s", $prefix . $tag . "Type"];
+    $func_names = [
+        $prefix . $tag, 
+        $prefix . $tag . "s", 
+        $prefix . $tag . "Type",
+        $prefix . $tag . "List"
+        ];
 
     // Add to func names also the addTo, because can be array. Will be tested first
     if ($prefix == "set") {
-      $func_names = array_merge(["addTo" . $tag, "create" . $tag], $func_names);
+      $func_names = array_merge([
+          "addTo" . $tag, 
+          "addTo" . $tag . "List", 
+          "create" . $tag,
+          "create" . $tag . "List"
+              ], 
+        $func_names);
     }
     
     return $func_names;
@@ -158,92 +218,50 @@ class ErnParserController {
    * @param type $value Value to set
    */
   private function setCurrentElement($value) {
-    $this->log($value . ": " . implode("->", $this->pile));
+    $this->log($value . ": " . implode("->", array_keys($this->pile)));
 
-    $depth = -1;
-    $elem = $this->ern;
+    // Use last element in pile
+    $keys = array_keys($this->pile);
 
-    foreach ($this->pile as $tag => $elem_pile) {
-      $depth++;
-      $tag = $this->cleanTag($tag);
-      
-      if ($tag == $this->tag_to_skip) {
-        continue;
-      }
-
-      if (strtoupper($tag) == "ERN_NEWRELEASEMESSAGE") {
-        continue;
-      }
-
-      $prefix = "get";
-      if ($depth == (count($this->pile) - 1)) {
-        $prefix = "set";
-      }
-      
-      $func_names = $this->listPossibleFunctionNames($prefix, $tag);
-
-      $function_used = false;
-      foreach ($func_names as $func_name) {
-        if (!method_exists($elem, $func_name)) {
-          continue;
-        }
-        $function_used = true;
-
-        if ($prefix == "set") {
-          // It's possible we're trying to set a text but it's expecting an
-          // object (where text should be placed in value).
-          $value_inst = $this->instanciateTypeFromDoc($elem, $func_name, $value);
-          $elem->$func_name($value_inst);
-          
-          return;
-        } 
-        
-        // get
-        $elem_use = $elem->$func_name($value);
-
-        // If array, take last element if not empty
-        if (is_array($elem_use) && count($elem_use) > 0) {
-          $elem_use = $elem_use[count($elem_use) - 1];
-
-          // Maybe the last element is closed, if so, consider $elem_use as
-          // null and will create a new element to be added to the list
-          if (array_key_exists($tag, $this->closed_objects)) {
-            unset($this->closed_objects[$tag]);
-            $elem_use = []; // fake empty array to create new object in next case below
-          }
-        }
-
-        // If this element is null, create a new instance for it
-        if ($elem_use === null || $elem_use === []) {
-          $class_name = $this->getTypeOfElementFromDoc($elem, $func_name, $tag);
-          $new_elem = new $class_name($value); // Give value as default param. Needed for simple tags
-          if (is_array($elem_use)) {
-            $setter = "addTo" . $tag;
-          } else {
-            $setter = "set" . $tag;
-          }
-          
-          // Set value as an array if array is expected
-          if ($this->expectedParamIsArray($elem, $setter)) {
-            $elem->$setter([$new_elem]);
-            $this->tag_to_skip = $this->pile[$depth + 1];
-            return;
-          } else {
-            $elem->$setter($new_elem);
-          }
-          $elem = $new_elem;
-          break;
-        }
-
-        $elem = $elem_use;
-
-        break;
-      }
-      
-      if (!$function_used) {
-        throw new Exception("No functions found for this tag: $tag. Path is ".implode(",", $this->pile));
-      }
+    if ($this->set_to_parent) {
+      $elem = end($this->pile);
+      $tag = $this->set_to_parent_tag;
+    } else {
+      $elem = $this->pile[$keys[count($keys) - 2]];
+      $tag = end($keys);
     }
+
+    $func_name = $this->getValidFunctionName("set", $tag, $elem);
+
+    // It's possible we're trying to set a text but it's expecting an
+    // object (where text should be placed in value).
+    $value_inst = $this->instanciateTypeFromDoc($elem, $func_name, $value);
+
+    if ($this->set_to_parent) {
+      $elem->$func_name($value_inst);
+    } else {
+      $this->pile[$tag] = $value_inst;
+    }
+  }
+   
+  private function getValidFunctionName($prefix, $tag, $elem) {
+    $func_names = $this->listPossibleFunctionNames($prefix, $tag);
+    
+    $function_used = false;
+    foreach ($func_names as $func_name) {
+      if (!method_exists($elem, $func_name)) {
+        continue;
+      }
+      $function_used = true;
+      break;
+    }
+    
+    if (!$function_used) {
+//      return null;
+      throw new Exception("No functions found for this tag: $tag. Path is ".implode(",", array_keys($this->pile)));
+    }
+    
+    return $func_name;
   }
   
   private function endsWithList(string $tag) {
@@ -266,7 +284,12 @@ class ErnParserController {
     return $is_array;
   }
 
-  private function getTypeOfElementFromDoc($class, $function, $tag) {
+  private function getTypeOfElementFromDoc($class, $tag) {
+    $function = $this->getValidFunctionName("get", $tag, $class);
+//    if ($function == null) {
+//      return null;
+//    }
+    
     $rc = new \ReflectionMethod($class, $function);
     $doc = $rc->getDocComment();
     preg_match("/@return (\S+).*/", $doc, $matches);
@@ -285,7 +308,11 @@ class ErnParserController {
     if (count($matches) > 1 && !in_array($matches[1], ["string", "int", "bool", "float", "mixed"])) {
       $type = $matches[1];
       $this->log("create type $type");
-      $new_elem = new $type($value_default);
+      if ($type == "\DateTime") {
+        $new_elem = \DateTime::createFromFormat("Y-m-d\TH:i:sP", $value_default);
+      } else {
+        $new_elem = new $type($value_default);
+      }
       return $new_elem;
     } else {
       return $value_default;

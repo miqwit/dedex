@@ -10,7 +10,7 @@
 	ReleaseProfileVersionId="CommonReleaseTypesTypes/14/AudioAlbumMusicOnly"
 	LanguageAndScriptCode="en">
 
-	<MessageHeader>
+<!--	<MessageHeader>
 		<MessageThreadId/>
 		<MessageId/>
 		<MessageSender>
@@ -20,11 +20,11 @@
 			<PartyId>DPID_OF_THE_RECIPIENT</PartyId>
 		</MessageRecipient>
 		<MessageCreatedDateTime>2012-12-11T15:50:00+00:00</MessageCreatedDateTime>
-	</MessageHeader>
+	</MessageHeader>-->
 
 	<!-- The IsBackfill flag is optional and should only be used for indicating that an XML file is part of
 		a special backfill of a (typically large) catalogue -->
-	<IsBackfill>true</IsBackfill>
+	<!--<IsBackfill>true</IsBackfill>-->
 
 	<ResourceList>
 		<SoundRecording>
@@ -412,6 +412,7 @@
 			</ImageDetailsByTerritory>
 		</Image>
 	</ResourceList>
+
 	<ReleaseList>
 		<Release IsMainRelease="true">
 			<ReleaseId>
