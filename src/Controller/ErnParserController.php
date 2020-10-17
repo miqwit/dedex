@@ -72,11 +72,29 @@ class ErnParserController {
     $this->display_log = $val;
   }
   
+  /**
+   * Indicates that the next parsed data must be attached to the parent and not
+   * as a new object.
+   * @var bool
+   */
   private bool $set_to_parent = false;
+  
+  /**
+   * Indicates the tag name under which the next parsed data must be attached to 
+   * the parent. If it's isBackFill, then will attach to $parent->setIsBackFill().
+   * This property is used to guess the function name.
+   * 
+   * @var type 
+   */
   private string $set_to_parent_tag = "";
   
+  /**
+   * These tags and attributes should not be parsed like the other ones.
+   * @var array
+   */
   private array $ignore_these_tags_or_attributes = [
       "xmlns:ern",
+      "xmlns:ernm",
       "xmlns:xs",
       "xs:schemaLocation",
       "ReleaseResourceReferenceList"  // TODO generic
@@ -96,7 +114,7 @@ class ErnParserController {
       
     // Create element here. But to know its type, call its parent getter if any.
     // There is only one case when there is no parent: ern:NewReleaseMessage.
-    if ($name === "ern:NewReleaseMessage") {
+    if ($name === "ern:NewReleaseMessage" || $name === "ernm:NewReleaseMessage") {
       $class_name = $this->ern;
       $name = "NewReleaseMessage";
     } else {
@@ -123,6 +141,19 @@ class ErnParserController {
     $this->attrs_to_process[count($this->pile)] = $attrs;
   }
   
+  /**
+   * From a class name, instanciate it with a parameter null.
+   * DDEX classes for simple elements take the text value as a parameter.
+   * When we create an element (callbackStartElement), we don't have access to that
+   * textual value yet, so we pass null and the actual valu will be set later
+   * (in the callbackCharacterData).
+   * 
+   * Handles a special case for DateInterval which needs a specific string for
+   * construction. Instanciate it with 0 seconds.
+   * 
+   * @param type $class_name
+   * @return \DateInterval|\DedexBundle\Controller\class_name
+   */
   private function instanciateClass($class_name) {
     if ($class_name === "\DateInterval") {
       // For DateInterval can't instanciate with null
@@ -134,6 +165,8 @@ class ErnParserController {
 
   /**
    * Function called when the parser encounters a tag ending.
+   * Will process attributes of the current element (last in pile) and attach it
+   * to its parent. Will delete this element (contained in the parent now).
    * 
    * @param type $parser
    * @param string $name
@@ -171,6 +204,14 @@ class ErnParserController {
     $this->set_to_parent_tag = "";
   }
   
+  /**
+   * Attach the last element in pile to the one above it.
+   * Guess the function of the parent to attach the child.
+   * If only one element, set it to this->ern and return. This is the end
+   * of the parsing.
+   * 
+   * @return type
+   */
   private function attachToParent() {
     if (count($this->pile) < 2) {
       // We are done, attach it to $this->ern
@@ -207,6 +248,13 @@ class ErnParserController {
     return str_replace(":", "_", $tag);
   }
   
+  /**
+   * Guess functions for a getter or a setter in the DDEX classes.
+   * 
+   * @param type $prefix "get" or "set"
+   * @param type $tag
+   * @return type
+   */
   private function listPossibleFunctionNames($prefix, $tag) {
     // It's possible this script added a ##\d+ information at the end of
     // the tag to avoid key duplicate. Remove it here.
@@ -235,8 +283,6 @@ class ErnParserController {
     return $func_names;
   }
   
-  private $tag_to_skip = null;
-
   /**
    * From the current pile of tag, set the value to the last element.
    * If the pile is ['ERN:NEWRELEASEMESSAGE', 'MESSAGEHEADER', 
@@ -272,6 +318,17 @@ class ErnParserController {
     }
   }
    
+  /**
+   * Tries all funtion of listPossibleFunctionNames on the current element and
+   * return the first one that exists.
+   * If none exist, throws an exception
+   * 
+   * @param string $prefix "set" or "get"
+   * @param type $tag
+   * @param type $elem
+   * @return type
+   * @throws Exception
+   */
   private function getValidFunctionName($prefix, $tag, $elem) {
     $func_names = $this->listPossibleFunctionNames($prefix, $tag);
     
@@ -285,16 +342,10 @@ class ErnParserController {
     }
     
     if (!$function_used) {
-//      return null;
       throw new Exception("No functions found for this tag: $tag. Path is ".implode(",", array_keys($this->pile)));
     }
     
     return $func_name;
-  }
-  
-  private function endsWithList(string $tag) {
-    $end = substr($tag, -4);
-    return strlen($tag) > 4 && $end === "List";
   }
   
   private function expectedParamIsArray($class, $func_name) {
@@ -312,6 +363,14 @@ class ErnParserController {
     return $is_array;
   }
 
+  /**
+   * From the doc of a class and function (guessed from $tag), return the type
+   * as a string of the element.
+   * 
+   * @param type $class
+   * @param type $tag
+   * @return string
+   */
   private function getTypeOfElementFromDoc($class, $tag) {
     $function = $this->getValidFunctionName("get", $tag, $class);
     
@@ -326,6 +385,15 @@ class ErnParserController {
     return $type;
   }
 
+  /**
+   * Instanciate an object with type guessed from doc. Use $value_default during
+   * instanciation. Special case for DateTime.
+   * 
+   * @param type $class
+   * @param type $function
+   * @param type $value_default
+   * @return \DedexBundle\Controller\type
+   */
   private function instanciateTypeFromDoc($class, $function, $value_default) {
     $rc = new \ReflectionMethod($class, $function);
     $doc = $rc->getDocComment();
@@ -334,7 +402,9 @@ class ErnParserController {
       $type = $matches[1];
       $this->log("create type $type");
       if ($type == "\DateTime") {
-        $new_elem = \DateTime::createFromFormat("Y-m-d\TH:i:sP", $value_default);
+        // Remove milliseconds if any
+        $value = preg_replace("/\.\d+\+/", "+", $value_default);
+        $new_elem = \DateTime::createFromFormat("Y-m-d\TH:i:sP", $value);
       } else {
         $new_elem = new $type($value_default);
       }
@@ -401,7 +471,7 @@ class ErnParserController {
       }
       
       // Try to find version in this line
-      $re = '/xmlns:ern="https?:\/\/ddex.net\/xml\/ern\/(\d+)"/m';
+      $re = '/xmlns:ernm?="https?:\/\/ddex.net\/xml\/ern\/(\d+)"/m';
       preg_match_all($re, $trimed, $matches, PREG_SET_ORDER, 0);
 
       if (empty($matches)) {
