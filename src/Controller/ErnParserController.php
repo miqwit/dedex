@@ -6,10 +6,12 @@ use DateInterval;
 use DateTime;
 use DedexBundle\Entity\Ddex;
 use DedexBundle\Exception\FileNotFoundException;
+use DedexBundle\Exception\RuleValidationException;
 use DedexBundle\Exception\VersionNotSupportedException;
 use DedexBundle\Exception\XmlLoadException;
 use DedexBundle\Exception\XmlParseException;
 use DedexBundle\Exception\XsdCompliantException;
+use DedexBundle\Rule\Rule;
 use Exception;
 use ReflectionMethod;
 use ReflectionParameter;
@@ -61,6 +63,18 @@ class ErnParserController {
    * @var type 
    */
   private $xsd_validation = false;
+  
+  /**
+   * List of rules applied to this parser to validate
+   * @var Rule[]
+   */
+  private $rules = array();
+  
+  /**
+   * Messages from rules
+   * @var string[] 
+   */
+  private $rule_messages = [Rule::LEVEL_ERROR => [], Rule::LEVEL_WARNING => []];
 
   /**
    * Array of arrays (by depth level) of attributes to process.
@@ -77,6 +91,14 @@ class ErnParserController {
     if ($this->display_log) {
       echo $message . "\n";
     }
+  }
+  
+  /**
+   * Add a new rule to validate
+   * @param Rule $rule
+   */
+  public function addRule(Rule $rule) {
+    $this->rules[] = $rule;
   }
 
   /**
@@ -544,6 +566,44 @@ class ErnParserController {
       throw new XsdCompliantException("This XML file $file_path does not validates XSD $xsd_file_path. Error: {$ex->getMessage()}");
     }
   }
+  
+  /**
+   * Display all warning messages then error messages, one per line.
+   * 
+   * @return type
+   */
+  private function getInvalidatedRuleMessages() {
+    $message = implode("-\n", $this->rule_messages[Rule::LEVEL_WARNING]);
+    $message .= !empty($message) ? "\n-" : "";
+    $message .= implode("-\n", $this->rule_messages[Rule::LEVEL_ERROR]);
+    
+    return $message;
+  }
+  
+  /**
+   * Check the new release message validates all rules.
+   * Will raise an exception and display all messages if one error pops up.
+   * 
+   * @throws RuleValidationException
+   */
+  private function validateRules() {
+    foreach ($this->rules as $rule) {
+      if (!in_array($this->version, $rule->getSupportedVersions())) {
+        continue;
+      }
+      
+      $valid = $rule->validates($this->ern);
+      if (!$valid) {
+        $this->rule_messages[$rule->getLevel()][] = $rule->getMessage();
+      }
+    }
+    
+    if (count($this->rule_messages[Rule::LEVEL_ERROR]) > 0) {
+      throw new RuleValidationException("Some rules with level ERROR did not pass.\n"
+              . $this->getInvalidatedRuleMessages()
+      );
+    }
+  }
 
   /**
    * This is the main parsing function that will go through the whole XML
@@ -581,6 +641,9 @@ class ErnParserController {
 
     // Free parser memory
     xml_parser_free($this->xml_parser);
+    
+    // Check for rules
+    $this->validateRules();
 
     return $this->ern;
   }
