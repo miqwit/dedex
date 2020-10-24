@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+	(c) Digital Data Exchange, LLC (DDEX)
+	This file forms part of the DDEX Standard defining Release Profiles for Common Release Types (Version 1.4)	
+-->
+<ern:NewReleaseMessage xmlns:ern="http://ddex.net/xml/ern/382"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+	xs:schemaLocation="http://ddex.net/xml/ern/382 http://ddex.net/xml/ern/382/release-notification.xsd"
+	MessageSchemaVersionId="ern/382"
+	ReleaseProfileVersionId="CommonReleaseTypesTypes/14/AudioAlbumMusicOnly"
+	LanguageAndScriptCode="en">
+
+	<MessageHeader>
+		<MessageThreadId/>
+		<MessageId/>
+		<MessageSender>
+			<PartyId>DPID_OF_THE_SENDER</PartyId>
+		</MessageSender>
+		<MessageRecipient>
+			<PartyId>DPID_OF_THE_RECIPIENT</PartyId>
+		</MessageRecipient>
+		<MessageCreatedDateTime>2012-12-11T15:50:00+00:00</MessageCreatedDateTime>
+	</MessageHeader>
+
+	<!-- The IsBackfill flag is optional and should only be used for indicating that an XML file is part of
+		a special backfill of a (typically large) catalogue -->
+	<IsBackfill>true</IsBackfill>
+
+	<ResourceList>
+		<SoundRecording>
+			<SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+			<SoundRecordingId>
+				<ISRC>CASE00000001</ISRC>
+			</SoundRecordingId>
+			<IndirectSoundRecordingId>
+				<ISWC>T1234567890</ISWC>
+			</IndirectSoundRecordingId>
+			<ResourceReference>A1</ResourceReference>
+			<ReferenceTitle>
+				<TitleText>Can you feel ...the Monkey Claw!</TitleText>
+			</ReferenceTitle>
+			<Duration>PT13M31S</Duration>
+			<SoundRecordingDetailsByTerritory>
+				<TerritoryCode>Worldwide</TerritoryCode>
+				<Title TitleType="FormalTitle">
+					<TitleText>Can you feel ...the Monkey Claw! formal</TitleText>
+				</Title>
+				<Title TitleType="DisplayTitle">
+					<TitleText>Can you feel ...the Monkey Claw!</TitleText>
+				</Title>
+				<DisplayArtist SequenceNumber="1">
+					<PartyName>
+						<FullName>Monkey Claw</FullName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+				</DisplayArtist>
+				<DisplayArtist SequenceNumber="2">
+					<PartyName>
+						<FullName>Second Artist</FullName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+				</DisplayArtist>
+				<ResourceContributor SequenceNumber="1">
+					<PartyName>
+						<FullName>Steve Albino</FullName>
+					</PartyName>
+					<ResourceContributorRole>Producer</ResourceContributorRole>
+				</ResourceContributor>
+
+				<!-- No DisplayArtistName is shown here as the DisplayArtistName is the same as for the Release -->
+
+				<IndirectResourceContributor SequenceNumber="1">
+					<PartyName>
+						<FullName>Bob Black</FullName>
+					</PartyName>
+					<IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+				</IndirectResourceContributor>
+				<ResourceReleaseDate>2011</ResourceReleaseDate>
+				<PLine>
+					<Year>2010</Year>
+					<PLineText>(P) 2010 Iron Crown Music</PLineText>
+				</PLine>
+				<Genre>
+					<GenreText>Metal</GenreText>
+					<SubGenre>Progressive Metal</SubGenre>
+				</Genre>
+				<ParentalWarningType>NotExplicit</ParentalWarningType>
+				<!-- TechnicalSoundRecordingDetails are only to be provided when relevant Resource Files are communicated -->
+				<TechnicalSoundRecordingDetails>
+					<TechnicalResourceDetailsReference>T1</TechnicalResourceDetailsReference>
+					<File>
+						<FileName>A1UCASE0000000401X_01_01.wav</FileName>
+					</File>
+				</TechnicalSoundRecordingDetails>
+			</SoundRecordingDetailsByTerritory>
+		</SoundRecording>
+		<SoundRecording>
+			<SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+			<SoundRecordingId>
+				<ISRC>CASE00000002</ISRC>
+			</SoundRecordingId>
+			<IndirectSoundRecordingId>
+				<ISWC>T1234567890</ISWC>
+			</IndirectSoundRecordingId>
+			<ResourceReference>A2</ResourceReference>
+			<ReferenceTitle>
+				<TitleText>Red top mountain, blown sky high</TitleText>
+			</ReferenceTitle>
+			<Duration>PT6M6S</Duration>
+			<SoundRecordingDetailsByTerritory>
+				<TerritoryCode>Worldwide</TerritoryCode>
+				<Title TitleType="FormalTitle">
+					<TitleText>Red top mountain, blown sky high</TitleText>
+				</Title>
+				<Title TitleType="DisplayTitle">
+					<TitleText>Red top mountain, blown sky high</TitleText>
+				</Title>
+				<DisplayArtist SequenceNumber="1">
+					<PartyName>
+						<FullName>Monkey Claw</FullName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+				</DisplayArtist>
+				<ResourceContributor SequenceNumber="1">
+					<PartyName>
+						<FullName>Steve Albino</FullName>
+					</PartyName>
+					<ResourceContributorRole>Producer</ResourceContributorRole>
+				</ResourceContributor>
+
+				<!-- No DisplayArtistName is shown here as the DisplayArtistName is the same as for the Release -->
+
+				<IndirectResourceContributor SequenceNumber="1">
+					<PartyName>
+						<FullName>Bob Black</FullName>
+					</PartyName>
+					<IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+				</IndirectResourceContributor>
+				<ResourceReleaseDate>2011</ResourceReleaseDate>
+				<PLine>
+					<Year>2010</Year>
+					<PLineText>(P) 2010 Iron Crown Music</PLineText>
+				</PLine>
+				<Genre>
+					<GenreText>Metal</GenreText>
+					<SubGenre>Progressive Metal</SubGenre>
+				</Genre>
+				<ParentalWarningType>NotExplicit</ParentalWarningType>
+				<!-- TechnicalSoundRecordingDetails are only to be provided when relevant Resource Files are communicated -->
+				<TechnicalSoundRecordingDetails>
+					<TechnicalResourceDetailsReference>T2</TechnicalResourceDetailsReference>
+					<File>
+						<FileName>A1UCASE0000000401X_01_02.wav</FileName>
+					</File>
+				</TechnicalSoundRecordingDetails>
+			</SoundRecordingDetailsByTerritory>
+		</SoundRecordin

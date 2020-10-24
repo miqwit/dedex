@@ -2,6 +2,20 @@
 
 Dedex is a DDEX XML file parser. DDEX is a standard used in the music industry to deliver rich media content. See more info at (ddex.net)[https://ddex.net/].
 
+## Usage
+
+TODO
+
+## Parser config
+
+Here are handy function before parsing the XML.
+
+`$parser=new ErnParserController();`
+
+- `$parser->setDisplayLog(true);` displays parsing logs. For debugging purpose mainly. (default: `false`)
+- `$parser->setXsdValidation(true);` validates XML against XSD. (default: `false` because will load XSD and XML in memory)
+
+
 ## Development Environment
 
 Generate an image with the provided `Dockerfile`: 

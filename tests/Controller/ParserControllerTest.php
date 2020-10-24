@@ -3,8 +3,19 @@
 namespace DedexBundle\Tests\Controller;
 
 use DedexBundle\Controller\ErnParserController;
+use DedexBundle\Entity\Ern382\GenreType;
+use DedexBundle\Entity\Ern382\ImageDetailsByTerritoryType;
+use DedexBundle\Entity\Ern382\ImageType;
 use DedexBundle\Entity\Ern382\IndirectResourceContributor;
+use DedexBundle\Entity\Ern382\NewReleaseMessage;
+use DedexBundle\Entity\Ern382\ReleaseDetailsByTerritoryType;
+use DedexBundle\Entity\Ern382\ReleaseType;
 use DedexBundle\Entity\Ern382\ResourceContributor;
+use DedexBundle\Entity\Ern382\SoundRecordingDetailsByTerritoryType;
+use DedexBundle\Entity\Ern382\TechnicalSoundRecordingDetailsType;
+use DedexBundle\Exception\FileNotFoundException;
+use DedexBundle\Exception\XmlLoadException;
+use DedexBundle\Exception\XmlParseException;
 use PHPUnit\Framework\TestCase;
 
 class ParserControllerTest extends TestCase {
@@ -20,7 +31,7 @@ class ParserControllerTest extends TestCase {
     $parser_controller = new ErnParserController();
     // Set this to true to see logs from the parser
     $parser_controller->setDisplayLog(false);
-    /* @var $ddex \DedexBundle\Entity\Ern382\NewReleaseMessage */
+    /* @var $ddex NewReleaseMessage */
     $ddex = $parser_controller->parse($xml_path);
 
     // ERN attributes
@@ -50,7 +61,7 @@ class ParserControllerTest extends TestCase {
     $this->assertEquals("A1", $resource_zero->getResourceReference());
     $this->assertEquals("Can you feel ...the Monkey Claw!", $resource_zero->getReferenceTitle()->getTitleText());
     $this->assertEquals("PT13M31S", $resource_zero->getDuration()->format("PT%iM%sS"));
-    /* @var $srdbt_zero \DedexBundle\Entity\Ern382\SoundRecordingDetailsByTerritoryType */
+    /* @var $srdbt_zero SoundRecordingDetailsByTerritoryType */
     $srdbt_zero = $resource_zero->getSoundRecordingDetailsByTerritory()[0];
     $this->assertEquals("Worldwide", $srdbt_zero->getTerritoryCode()[0]);
     $this->assertCount(2, $srdbt_zero->getTitle());
@@ -93,7 +104,7 @@ class ParserControllerTest extends TestCase {
     
     // Genres
     $this->assertCount(1, $srdbt_zero->getGenre());
-    /* @var $genre \DedexBundle\Entity\Ern382\GenreType */
+    /* @var $genre GenreType */
     $genre = $srdbt_zero->getGenre()[0];
     $this->assertEquals("Metal", $genre->getGenreText());
     $this->assertEquals("Progressive Metal", $genre->getSubGenre());
@@ -104,14 +115,14 @@ class ParserControllerTest extends TestCase {
     
     // TechnicalSoundRecordingDetails
     $this->assertCount(1, $srdbt_zero->getTechnicalSoundRecordingDetails());
-    /* @var $technicalSRD \DedexBundle\Entity\Ern382\TechnicalSoundRecordingDetailsType */
+    /* @var $technicalSRD TechnicalSoundRecordingDetailsType */
     $technicalSRD = $srdbt_zero->getTechnicalSoundRecordingDetails()[0];
     $this->assertEquals("T1", $technicalSRD->getTechnicalResourceDetailsReference());
     $this->assertEquals("A1UCASE0000000401X_01_01.wav", $technicalSRD->getFile()[0]->getFileName());
     
     // Image
     $this->assertCount(1, $ddex->getResourceList()->getImage());
-    /* @var $image \DedexBundle\Entity\Ern382\ImageType */
+    /* @var $image ImageType */
     $image = $ddex->getResourceList()->getImage()[0];
     $this->assertEquals("FrontCoverImage", $image->getImageType());
     $this->assertCount(1, $image->getImageId());
@@ -121,7 +132,7 @@ class ParserControllerTest extends TestCase {
     
     // ImageDetailsByTerritory
     $this->assertCount(1, $image->getImageDetailsByTerritory());
-    /* @var $image_dbt \DedexBundle\Entity\Ern382\ImageDetailsByTerritoryType */
+    /* @var $image_dbt ImageDetailsByTerritoryType */
     $image_dbt = $image->getImageDetailsByTerritory()[0];
     $this->assertCount(1, $image_dbt->getTerritoryCode());
     $this->assertEquals("Worldwide", $image_dbt->getTerritoryCode()[0]);
@@ -136,7 +147,7 @@ class ParserControllerTest extends TestCase {
     $this->assertCount(7, $ddex->getReleaseList()->getRelease());
     
     // Main release
-    /* @var $main_release \DedexBundle\Entity\Ern382\ReleaseType */
+    /* @var $main_release ReleaseType */
     $main_release = $ddex->getReleaseList()->getRelease()[0];
     $this->assertEquals("true", $main_release->getIsMainRelease());
     $this->assertCount(1, $main_release->getReleaseId());
@@ -156,7 +167,7 @@ class ParserControllerTest extends TestCase {
     $this->assertEquals("Album", $main_release->getReleaseType()[0]);
 
     $this->assertCount(1, $main_release->getReleaseDetailsByTerritory());
-    /* @var $release_dbt \DedexBundle\Entity\Ern382\ReleaseDetailsByTerritoryType */
+    /* @var $release_dbt ReleaseDetailsByTerritoryType */
     $release_dbt = $main_release->getReleaseDetailsByTerritory()[0];
     $this->assertCount(1, $release_dbt->getTerritoryCode());
     $this->assertEquals("Worldwide", $release_dbt->getTerritoryCode()[0]);
