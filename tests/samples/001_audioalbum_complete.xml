@@ -24,7 +24,7 @@
 
 	<!-- The IsBackfill flag is optional and should only be used for indicating that an XML file is part of
 		a special backfill of a (typically large) catalogue -->
-	<!--<IsBackfill>true</IsBackfill>-->
+	<IsBackfill>true</IsBackfill>
 
 	<ResourceList>
 		<SoundRecording>
@@ -43,7 +43,7 @@
 			<SoundRecordingDetailsByTerritory>
 				<TerritoryCode>Worldwide</TerritoryCode>
 				<Title TitleType="FormalTitle">
-					<TitleText>Can you feel ...the Monkey Claw!</TitleText>
+					<TitleText>Can you feel ...the Monkey Claw! formal</TitleText>
 				</Title>
 				<Title TitleType="DisplayTitle">
 					<TitleText>Can you feel ...the Monkey Claw!</TitleText>
@@ -51,6 +51,12 @@
 				<DisplayArtist SequenceNumber="1">
 					<PartyName>
 						<FullName>Monkey Claw</FullName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+				</DisplayArtist>
+				<DisplayArtist SequenceNumber="2">
+					<PartyName>
+						<FullName>Second Artist</FullName>
 					</PartyName>
 					<ArtistRole>MainArtist</ArtistRole>
 				</DisplayArtist>
@@ -444,7 +450,7 @@
 				<DisplayArtistName>Monkey Claw</DisplayArtistName>
 				<LabelName>Iron Crown Music</LabelName>
 				<Title TitleType="FormalTitle">
-					<TitleText>A Monkey Claw in a Velvet Glove</TitleText>
+					<TitleText>A Monkey Claw in a Velvet Glove formal</TitleText>
 				</Title>
 				<Title TitleType="DisplayTitle">
 					<TitleText>A Monkey Claw in a Velvet Glove</TitleText>
