@@ -3,14 +3,8 @@
 namespace DedexBundle\Tests\Controller;
 
 use DedexBundle\Controller\ErnParserController;
-use DedexBundle\Entity\Ern382\DisplayArtist;
-use DedexBundle\Entity\Ern382\FeaturedArtist;
-use DedexBundle\Entity\Ern382\HostSoundCarrier;
 use DedexBundle\Entity\Ern382\IndirectResourceContributor;
 use DedexBundle\Entity\Ern382\ResourceContributor;
-use DedexBundle\Entity\Ern382\RightsController;
-use DedexBundle\Entity\Ern382\SoundRecording;
-use DedexBundle\Entity\Ern382\SoundRecordingDetailsByTerritory;
 use PHPUnit\Framework\TestCase;
 
 class ParserControllerTest extends TestCase {
