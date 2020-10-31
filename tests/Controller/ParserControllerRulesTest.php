@@ -18,9 +18,13 @@ use DedexBundle\Exception\RuleValidationException;
 use DedexBundle\Exception\XmlLoadException;
 use DedexBundle\Exception\XmlParseException;
 use DedexBundle\Rule\AllResourceFileExist;
+use DedexBundle\Rule\AllResourcesUsedInReleases;
+use DedexBundle\Rule\AllSoundRecordingsHaveIsrc;
+use DedexBundle\Rule\AtLeastOneAlbumRelease;
 use DedexBundle\Rule\AtLeastOneImage;
 use DedexBundle\Rule\AtLeastOneImageFrontCover;
 use DedexBundle\Rule\AtLeastOneSoundRecordingRule;
+use DedexBundle\Rule\OnlyOneMainRelease;
 use DedexBundle\Rule\Rule;
 use PHPUnit\Framework\TestCase;
 
@@ -142,6 +146,113 @@ class ParserControllerRulesTest extends TestCase {
     $parser->addRule(new AllResourceFileExist(Rule::LEVEL_ERROR, "tests/samples/with_assets/003_image_wrong_ext/"));
     
     /* @var $ddex NewReleaseMessage */
+    try {
+      $ddex = $parser->parse($xml_path);
+      $this->assertTrue(false);
+    } catch (RuleValidationException $ex) {
+      $this->assertTrue(true);
+    }
+  }
+  
+  /**
+   * XML must describe one image of type FrontCoverImage
+   */
+  public function testRuleOneMainRelease() {
+    $xml_path = "tests/samples/001_audioalbum_complete.xml";
+    $parser = new ErnParserController();
+    $parser->addRule(new OnlyOneMainRelease(Rule::LEVEL_ERROR));
+    
+    $ddex = $parser->parse($xml_path);
+    $this->assertTrue(true);
+    
+    // No main release
+    $xml_path = "tests/samples/009_no_main_release.xml";
+    $parser = new ErnParserController();
+    $parser->addRule(new OnlyOneMainRelease(Rule::LEVEL_ERROR));
+    try {
+      $ddex = $parser->parse($xml_path);
+      $this->assertTrue(false);
+    } catch (RuleValidationException $ex) {
+      $this->assertTrue(true);
+    }
+  }
+  
+  /**
+   * XML must describe one image of type FrontCoverImage
+   */
+  public function testRuleOneAlbumRelease() {
+    $xml_path = "tests/samples/001_audioalbum_complete.xml";
+    $parser = new ErnParserController();
+    $parser->addRule(new AtLeastOneAlbumRelease(Rule::LEVEL_ERROR));
+    
+    $ddex = $parser->parse($xml_path);
+    $this->assertTrue(true);
+    
+    // No main release
+    $xml_path = "tests/samples/010_no_album_release.xml";
+    $parser = new ErnParserController();
+    $parser->addRule(new AtLeastOneAlbumRelease(Rule::LEVEL_ERROR));
+    try {
+      $ddex = $parser->parse($xml_path);
+      $this->assertTrue(false);
+    } catch (RuleValidationException $ex) {
+      $this->assertTrue(true);
+    }
+  }
+  
+  /**
+   * All resources must be used
+   */
+  public function testRuleAllResourcesUsed() {
+    $xml_path = "tests/samples/001_audioalbum_complete.xml";
+    $parser = new ErnParserController();
+    $parser->addRule(new AllResourcesUsedInReleases(Rule::LEVEL_ERROR));
+    
+    $ddex = $parser->parse($xml_path);
+    $this->assertTrue(true);
+    
+    // A2 is unused
+    /* @var $ddex NewReleaseMessage */
+    $xml_path = "tests/samples/011_one_resource_unused.xml";
+    $parser = new ErnParserController();
+    $parser->addRule(new AllResourcesUsedInReleases(Rule::LEVEL_ERROR));
+    try {
+      $ddex = $parser->parse($xml_path);
+      $this->assertTrue(false);
+    } catch (RuleValidationException $ex) {
+      $this->assertContains("A2 not used or not defined", $parser->getRuleMessages());
+      $this->assertTrue(true);
+    }
+  }
+  
+  /**
+   * All resources must be used
+   */
+  public function testRuleAllSoundRecordingIsrc() {
+    $xml_path = "tests/samples/001_audioalbum_complete.xml";
+    $parser = new ErnParserController();
+    $parser->addRule(new AllSoundRecordingsHaveIsrc(Rule::LEVEL_ERROR));
+    
+    $ddex = $parser->parse($xml_path);
+    $this->assertTrue(true);
+    
+    // A3 has no ISRC
+    /* @var $ddex NewReleaseMessage */
+    $xml_path = "tests/samples/012_missing_isrc.xml";
+    $parser = new ErnParserController();
+    $parser->addRule(new AllSoundRecordingsHaveIsrc(Rule::LEVEL_ERROR));
+    try {
+      $ddex = $parser->parse($xml_path);
+      $this->assertTrue(false);
+    } catch (RuleValidationException $ex) {
+      $this->assertTrue(true);
+    }
+    
+    // A2 has empty ISRC
+    /* @var $ddex NewReleaseMessage */
+    $xml_path = "tests/samples/013_isrc_empty_string.xml";
+    $parser = new ErnParserController();
+    $parser->addRule(new AllSoundRecordingsHaveIsrc(Rule::LEVEL_ERROR));
     try {
       $ddex = $parser->parse($xml_path);
       $this->assertTrue(false);

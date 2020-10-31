@@ -27,56 +27,49 @@ namespace DedexBundle\Rule;
  */
 
 /**
- * All files described in resources (SoundRecording and Image) actually exist
- * on disc
+ * All the resources described must be used in releases. Otherwise, it is 
+ * suspicious and probably an unexpected thing.
+ * 
+ * Also checks that all references used in releases are described in resources.
  *
  * @author Mickaël Arcos <@miqwit>
  */
-class AllResourceFileExist extends Rule {
+class AllResourcesUsedInReleases extends Rule {
   protected $supported_versions = ["382", "41"];
-  protected $level = Rule::LEVEL_WARNING;
-  protected $message = "Missing files described in the resource:";
-  
-  private $root_folder;
-  
-  /**
-   * @param string|null $level
-   * @param string $root_folder Folder where to look for assets
-   */
-  public function __construct(?string $level = null, string $root_folder = "") {
-    parent::__construct($level);
-    $this->root_folder = $root_folder;
-  }
+  protected $message = "All resources must be used in releases.";
   
   public function validates($newReleaseMessage): bool {
+    $references = [];
+    $references_used = [];
     $valid = true;
     
-    // SoundRecording
+    // First get all resource references from SoundRecordings and Images
     foreach ($newReleaseMessage->getResourceList()->getSoundRecording() as $sr) {
-      foreach ($sr->getSoundRecordingDetailsByTerritory() as $srt) {
-        foreach ($srt->getTechnicalSoundRecordingDetails() as $srtd) {
-          foreach ($srtd->getFile() as $file) {
-            if (!file_exists($this->root_folder.DIRECTORY_SEPARATOR.$file->getFilePath().DIRECTORY_SEPARATOR.$file->getFileName())) {
-              $this->message .= " ".$file->getFileName();
-              $valid = false;
-            }
-          }
-        }
-      }
+      $references[] = $sr->getResourceReference();
+    }
+    foreach ($newReleaseMessage->getResourceList()->getImage() as $im) {
+      $references[] = $im->getResourceReference();
     }
     
-    //Image
-    foreach ($newReleaseMessage->getResourceList()->getImage() as $im) {
-      foreach ($im->getImageDetailsByTerritory() as $imt) {
-        foreach ($imt->getTechnicalImageDetails() as $imtd) {
-          foreach ($imtd->getFile() as $file) {
-            if (!file_exists($this->root_folder.DIRECTORY_SEPARATOR.$file->getFilePath().DIRECTORY_SEPARATOR.$file->getFileName())) {
-              $this->message .= " ".$file->getFileName();
-              $valid = false;
-            }
-          }
+    // Second, browse all releases to check all references are used at least once.
+    foreach ($newReleaseMessage->getReleaseList()->getRelease() as $rel) {
+      foreach ($rel->getReleaseResourceReferenceList() as $rrrl) {
+        $val = $rrrl->value();
+        
+        if (!in_array($val, $references)) {
+          $this->message .= " The reference $val is used in a release and has not been described.";
+          $valid = false;
         }
+        
+        $references_used[] = $val;
       }
+    }
+    $references_used = array_unique($references_used);
+    
+    // All references must be in references_used
+    if (array_intersect($references_used, $references) != $references) {
+      $this->message .= " ".implode(", ", array_diff($references, $references_used))." not used or not defined.";
+      $valid = false;
     }
     
     return $valid;
