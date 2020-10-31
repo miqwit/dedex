@@ -6,7 +6,7 @@ Dedex is a DDEX XML file parser. DDEX is a standard used in the music industry t
 
 ### Parse a file without XSD validation
 
-```
+```php
 $xml_path = "tests/samples/001_audioalbum_complete.xml";
 $parser = new ErnParserController();
 $ern = $parser->parse($xml_path);
@@ -16,7 +16,7 @@ $ern = $parser->parse($xml_path);
 
 XSD validation will load all XML and XSD in memory, making this library less efficient. Use with care. Is not adapted to gigantic files.
 
-```
+```php
 $xml_path = "tests/samples/001_audioalbum_complete.xml";
 $parser = new ErnParserController();
 $parser->setXsdValidation(true);
