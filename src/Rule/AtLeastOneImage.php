@@ -27,16 +27,16 @@ namespace DedexBundle\Rule;
  */
 
 /**
- * There must be at least one SoundRecording in the ResourceList
+ * Description of AtLeastOneSoundRecording
  *
  * @author Mickaël Arcos <@miqwit>
  */
-class AtLeastOneSoundRecordingRule extends Rule {
+class AtLeastOneImage extends Rule {
   protected $supported_versions = ["382", "41"];
   protected $level = Rule::LEVEL_ERROR;
   protected $message = "Must have at least one SoundRecording";
   
   public function validates($newReleaseMessage): bool {
-    return count($newReleaseMessage->getResourceList()->getSoundRecording()) > 0;
+    return count($newReleaseMessage->getResourceList()->getImage()) > 0;
   }
 }

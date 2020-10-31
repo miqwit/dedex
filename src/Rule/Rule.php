@@ -69,6 +69,16 @@ abstract class Rule {
   abstract protected function validates($newReleaseMessage): bool;
   
   /**
+   * Pass level in the constructor to override default level
+   * @param int|null $level
+   */
+  public function __construct(?string $level = null) {
+    if ($level !== null) {
+      $this->level = $level;
+    }
+  }
+  
+  /**
    * Return level of rule
    * @return int
    */

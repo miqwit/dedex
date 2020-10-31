@@ -27,16 +27,24 @@ namespace DedexBundle\Rule;
  */
 
 /**
- * There must be at least one SoundRecording in the ResourceList
+ * The ResourceList must contain at least one image of type FrontCoverImage
  *
  * @author Mickaël Arcos <@miqwit>
  */
-class AtLeastOneSoundRecordingRule extends Rule {
+class AtLeastOneImageFrontCover extends Rule {
   protected $supported_versions = ["382", "41"];
-  protected $level = Rule::LEVEL_ERROR;
-  protected $message = "Must have at least one SoundRecording";
+  protected $level = Rule::LEVEL_WARNING;
+  protected $message = "Must have at least one Image in the ResourceList of type FrontCoverImage";
   
   public function validates($newReleaseMessage): bool {
-    return count($newReleaseMessage->getResourceList()->getSoundRecording()) > 0;
+    $valid = false;
+    foreach ($newReleaseMessage->getResourceList()->getImage() as $image) {
+      if ($image->getImageType() === "FrontCoverImage") {
+        $valid = true;
+        break;
+      }
+    }
+    
+    return $valid;
   }
 }
