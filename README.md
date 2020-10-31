@@ -1,6 +1,16 @@
 # Dedex
 
-Dedex is a DDEX XML file parser. DDEX is a standard used in the music industry to deliver rich media content. See more info at [ddex.net](https://ddex.net/).
+Dedex is a DDEX XML file parser. DDEX is a standard used in the music industry to deliver rich media content. See more info at [ddex.net](https://ddex.net/). This covers only the ERN (Electronic Release Notification) standard, for versions 3.8.2 and 4.1.
+
+In my past experiences as a developer, I always had to develop or enhanced a DDEX parser for ERN. I created one here that is as convenient to use as I always hoped for.
+
+The **Rule** mechanism is pretty useful and flexible. The DDEX ERN standard is extremely vast and there are many ways to use it. Most providers generate a simplified yet comprehensive XML file covering most of the needs. The Rules helps checking during the parsing that not only the XML is valid, but contain the minimal consistent information.
+
+It is possible to implement your own rules (contribute to this repository if you think other developers could make a use of it), and to implement a different set of rules for different provider.
+
+For instance, it is possible to enforce that for a given XML the ISRC is provided for all recordings, but not for another one. Providers rules can be modelled in a **Rules Set**.
+
+If you find this useful, please star this repository, and contribute.
 
 ## Usage
 
@@ -68,7 +78,11 @@ If one of the `ERROR` rules fail, the parser will throw an exception with these 
 In the case of only `WARNING` raised during the parsing, this function is the only way to read them. 
 
 
-## Development Environment
+## Contribute
+
+If you want to contribute, here are some elements to start with.
+
+### Setup a dev environment with Docker
 
 Generate an image with the provided `Dockerfile`: 
 
@@ -87,7 +101,7 @@ docker run \
   bash
 ```
 
-## Running Tests
+### Running Tests
 
 In the docker, run the phpunit test command:
 
@@ -95,7 +109,7 @@ In the docker, run the phpunit test command:
 ./bin/phpunit
 ```
 
-## Generating Documentation
+### Generating Documentation
 
 Run the phpDocumentator command:
 
@@ -103,16 +117,12 @@ Run the phpDocumentator command:
 php phpDocumentor.phar -d src -t docs
 ```
 
-## Generating DDEX classes
+### Generating DDEX classes
+
+I used the superb `xsd2php` package to generate classes based on the XSD provided by DDEX.
+
+The parser is "filling" these objects while parsing the XML file line by line.
 
 ```
 vendor/bin/xsd2php convert config.yml /home/my/ota/OTA_Air*.xsd
 ```
-
-## Still TODO
-
-* Integrate monolog and handle logs better
-* Run code coverage
-* Test with UTF8 and accents
-* Integrate rule testing
-* Support types

@@ -17,6 +17,7 @@ use DedexBundle\Exception\FileNotFoundException;
 use DedexBundle\Exception\RuleValidationException;
 use DedexBundle\Exception\XmlLoadException;
 use DedexBundle\Exception\XmlParseException;
+use DedexBundle\Rule\AllReleasesUsedInDeals;
 use DedexBundle\Rule\AllResourceFileExist;
 use DedexBundle\Rule\AllResourcesUsedInReleases;
 use DedexBundle\Rule\AllSoundRecordingsHaveIsrc;
@@ -257,6 +258,41 @@ class ParserControllerRulesTest extends TestCase {
       $ddex = $parser->parse($xml_path);
       $this->assertTrue(false);
     } catch (RuleValidationException $ex) {
+      $this->assertTrue(true);
+    }
+    
+    // On another file
+    $xml_path = "tests/samples/with_assets/004_complete/1199119911991.xml";
+    $parser = new ErnParserController();
+    $parser->addRule(new AllSoundRecordingsHaveIsrc(Rule::LEVEL_ERROR));
+    
+    $ddex = $parser->parse($xml_path);
+    $this->assertTrue(true);
+  }
+  
+  
+  
+  /**
+   * All resources must be used
+   */
+  public function testRuleAllReleasesCoveredByDeal() {
+    $xml_path = "tests/samples/with_assets/004_complete/1199119911991.xml";
+    $parser = new ErnParserController();
+    $parser->addRule(new AllReleasesUsedInDeals(Rule::LEVEL_ERROR));
+    
+    $ddex = $parser->parse($xml_path);
+    $this->assertTrue(true);
+    
+    // R9 has no deal
+    /* @var $ddex NewReleaseMessage */
+    $xml_path = "tests/samples/014_missing_deal.xml";
+    $parser = new ErnParserController();
+    $parser->addRule(new AllReleasesUsedInDeals(Rule::LEVEL_ERROR));
+    try {
+      $ddex = $parser->parse($xml_path);
+      $this->assertTrue(false);
+    } catch (RuleValidationException $ex) {
+      $this->assertContains("R9 not used in deals or not defined in ReleaseList", $parser->getRuleMessages());
       $this->assertTrue(true);
     }
   }

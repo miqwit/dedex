@@ -1,0 +1,1389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ernm:NewReleaseMessage xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns:ernm="http://ddex.net/xml/ern/382" MessageSchemaVersionId="ern/382" LanguageAndScriptCode="en" xs:schemaLocation="http://ddex.net/xml/ern/382 http://ddex.net/xml/ern/382/release-notification.xsd">
+  <MessageHeader>
+    <MessageThreadId>5</MessageThreadId>
+    <MessageId>20189999999999999</MessageId>
+    <MessageSender>
+      <PartyId>PADPIDA20129999999</PartyId>
+      <PartyName>
+        <FullName>Name 1</FullName>
+      </PartyName>
+    </MessageSender>
+    <MessageRecipient>
+      <PartyId>PADPIDA20189999999</PartyId>
+      <PartyName>
+        <FullName>Name 2</FullName>
+      </PartyName>
+    </MessageRecipient>
+    <MessageCreatedDateTime>2018-01-23T15:48:00.1234567+01:00</MessageCreatedDateTime>
+  </MessageHeader>
+  <UpdateIndicator>OriginalMessage</UpdateIndicator>
+  <ResourceList>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>BE0000000001</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA20129999999">00000000</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A1</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>Track Title 1</TitleText>
+      </ReferenceTitle>
+      <Duration>PT0H8M7S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Track Title 1</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Artist 1</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor>
+          <PartyName>
+            <FullName>Artist 2</FullName>
+          </PartyName>
+          <ResourceContributorRole>Conductor</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor>
+          <PartyName>
+            <FullName>Composer 1</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>Artist 1</DisplayArtistName>
+        <LabelName>Label 1</LabelName>
+        <PLine>
+          <Year>2013</Year>
+          <PLineText>2013 Label 1</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T1</TechnicalResourceDetailsReference>
+          <AudioCodecType UserDefinedValue="FLAC">UserDefined</AudioCodecType>
+          <SamplingRate UnitOfMeasure="kHz">44100</SamplingRate>
+          <File>
+            <FileName>1199119911991_001.flac</FileName>
+            <FilePath>assets</FilePath>
+            <HashSum>
+              <HashSum>AABBCCDDEEFF11223344556677889900</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>BE0000000002</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA20129999999">00000000</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A2</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>Track Title 2</TitleText>
+      </ReferenceTitle>
+      <Duration>PT0H10M28S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Track Title 2</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Artist 1</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor>
+          <PartyName>
+            <FullName>Artist 2</FullName>
+          </PartyName>
+          <ResourceContributorRole>Conductor</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor>
+          <PartyName>
+            <FullName>Composer 1</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>Artist 1</DisplayArtistName>
+        <LabelName>Label 1</LabelName>
+        <PLine>
+          <Year>2013</Year>
+          <PLineText>2013 Label 1</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T2</TechnicalResourceDetailsReference>
+          <AudioCodecType UserDefinedValue="FLAC">UserDefined</AudioCodecType>
+          <SamplingRate UnitOfMeasure="kHz">44100</SamplingRate>
+          <File>
+            <FileName>1199119911991_002.flac</FileName>
+            <FilePath>assets</FilePath>
+            <HashSum>
+              <HashSum>AABBCCDDEEFF11223344556677889900</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>BE0000000003</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA20129999999">00000000</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A3</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>Track Title 3</TitleText>
+      </ReferenceTitle>
+      <Duration>PT0H9M42S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Track Title 3</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Artist 1</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor>
+          <PartyName>
+            <FullName>Artist 2</FullName>
+          </PartyName>
+          <ResourceContributorRole>Conductor</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor>
+          <PartyName>
+            <FullName>Composer 1</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>Artist 1</DisplayArtistName>
+        <LabelName>Label 1</LabelName>
+        <PLine>
+          <Year>2013</Year>
+          <PLineText>2013 Label 1</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T3</TechnicalResourceDetailsReference>
+          <AudioCodecType UserDefinedValue="FLAC">UserDefined</AudioCodecType>
+          <SamplingRate UnitOfMeasure="kHz">44100</SamplingRate>
+          <File>
+            <FileName>1199119911991_003.flac</FileName>
+            <FilePath>assets</FilePath>
+            <HashSum>
+              <HashSum>AABBCCDDEEFF11223344556677889900</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>BE0000000004</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA20129999999">00000000</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A4</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>Track Title 4</TitleText>
+      </ReferenceTitle>
+      <Duration>PT0H8M30S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Track Title 4</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Artist 1</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor>
+          <PartyName>
+            <FullName>Artist 2</FullName>
+          </PartyName>
+          <ResourceContributorRole>Conductor</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor>
+          <PartyName>
+            <FullName>Composer 1</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>Artist 1</DisplayArtistName>
+        <LabelName>Label 1</LabelName>
+        <PLine>
+          <Year>2013</Year>
+          <PLineText>2013 Label 1</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T4</TechnicalResourceDetailsReference>
+          <AudioCodecType UserDefinedValue="FLAC">UserDefined</AudioCodecType>
+          <SamplingRate UnitOfMeasure="kHz">44100</SamplingRate>
+          <File>
+            <FileName>1199119911991_004.flac</FileName>
+            <FilePath>assets</FilePath>
+            <HashSum>
+              <HashSum>AABBCCDDEEFF11223344556677889900</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>BE0000000005</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA20129999999">00000000</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A5</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>Track Title 5</TitleText>
+      </ReferenceTitle>
+      <Duration>PT0H10M27S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Track Title 5</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Artist 1</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor>
+          <PartyName>
+            <FullName>Artist 2</FullName>
+          </PartyName>
+          <ResourceContributorRole>Conductor</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor>
+          <PartyName>
+            <FullName>Composer 1</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>Artist 1</DisplayArtistName>
+        <LabelName>Label 1</LabelName>
+        <PLine>
+          <Year>2013</Year>
+          <PLineText>2013 Label 1</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T5</TechnicalResourceDetailsReference>
+          <AudioCodecType UserDefinedValue="FLAC">UserDefined</AudioCodecType>
+          <SamplingRate UnitOfMeasure="kHz">44100</SamplingRate>
+          <File>
+            <FileName>1199119911991_005.flac</FileName>
+            <FilePath>assets</FilePath>
+            <HashSum>
+              <HashSum>AABBCCDDEEFF11223344556677889900</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>BE0000000006</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA20129999999">00000000</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A6</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>Track Title 6</TitleText>
+      </ReferenceTitle>
+      <Duration>PT0H8M40S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Track Title 6</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Artist 1</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor>
+          <PartyName>
+            <FullName>Artist 2</FullName>
+          </PartyName>
+          <ResourceContributorRole>Conductor</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor>
+          <PartyName>
+            <FullName>Composer 1</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>Artist 1</DisplayArtistName>
+        <LabelName>Label 1</LabelName>
+        <PLine>
+          <Year>2013</Year>
+          <PLineText>2013 Label 1</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T6</TechnicalResourceDetailsReference>
+          <AudioCodecType UserDefinedValue="FLAC">UserDefined</AudioCodecType>
+          <SamplingRate UnitOfMeasure="kHz">44100</SamplingRate>
+          <File>
+            <FileName>1199119911991_006.flac</FileName>
+            <FilePath>assets</FilePath>
+            <HashSum>
+              <HashSum>AABBCCDDEEFF11223344556677889900</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>BE0000000007</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA20129999999">00000000</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A7</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>Track Title 7</TitleText>
+      </ReferenceTitle>
+      <Duration>PT0H11M19S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Track Title 7</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Artist 1</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor>
+          <PartyName>
+            <FullName>Artist 2</FullName>
+          </PartyName>
+          <ResourceContributorRole>Conductor</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor>
+          <PartyName>
+            <FullName>Composer 1</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>Artist 1</DisplayArtistName>
+        <LabelName>Label 1</LabelName>
+        <PLine>
+          <Year>2013</Year>
+          <PLineText>2013 Label 1</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T7</TechnicalResourceDetailsReference>
+          <AudioCodecType UserDefinedValue="FLAC">UserDefined</AudioCodecType>
+          <SamplingRate UnitOfMeasure="kHz">44100</SamplingRate>
+          <File>
+            <FileName>1199119911991_007.flac</FileName>
+            <FilePath>assets</FilePath>
+            <HashSum>
+              <HashSum>AABBCCDDEEFF11223344556677889900</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>BE0000000008</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA20129999999">00000000</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A8</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>Track Title 8</TitleText>
+      </ReferenceTitle>
+      <Duration>PT0H9M26S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Track Title 8</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Artist 1</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor>
+          <PartyName>
+            <FullName>Artist 2</FullName>
+          </PartyName>
+          <ResourceContributorRole>Conductor</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor>
+          <PartyName>
+            <FullName>Composer 1</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>Artist 1</DisplayArtistName>
+        <LabelName>Label 1</LabelName>
+        <PLine>
+          <Year>2013</Year>
+          <PLineText>2013 Label 1</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T8</TechnicalResourceDetailsReference>
+          <AudioCodecType UserDefinedValue="FLAC">UserDefined</AudioCodecType>
+          <SamplingRate UnitOfMeasure="kHz">44100</SamplingRate>
+          <File>
+            <FileName>1199119911991_008.flac</FileName>
+            <FilePath>assets</FilePath>
+            <HashSum>
+              <HashSum>AABBCCDDEEFF11223344556677889900</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>BE0000000009</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA20129999999">00000000</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A9</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>Track Title 9</TitleText>
+      </ReferenceTitle>
+      <Duration>PT0H11M2S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Track Title 9</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Artist 1</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor>
+          <PartyName>
+            <FullName>Artist 2</FullName>
+          </PartyName>
+          <ResourceContributorRole>Conductor</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor>
+          <PartyName>
+            <FullName>Composer 1</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>Artist 1</DisplayArtistName>
+        <LabelName>Label 1</LabelName>
+        <PLine>
+          <Year>2013</Year>
+          <PLineText>2013 Label 1</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T9</TechnicalResourceDetailsReference>
+          <AudioCodecType UserDefinedValue="FLAC">UserDefined</AudioCodecType>
+          <SamplingRate UnitOfMeasure="kHz">44100</SamplingRate>
+          <File>
+            <FileName>1199119911991_009.flac</FileName>
+            <FilePath>assets</FilePath>
+            <HashSum>
+              <HashSum>AABBCCDDEEFF11223344556677889900</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <Image>
+      <ImageType>FrontCoverImage</ImageType>
+      <ImageId>
+        <ProprietaryId Namespace="DPID:PADPIDA20129999999">0123456789_FrontCover</ProprietaryId>
+      </ImageId>
+      <ResourceReference>A10</ResourceReference>
+      <ImageDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <TechnicalImageDetails>
+          <TechnicalResourceDetailsReference>T10</TechnicalResourceDetailsReference>
+          <ImageCodecType>JPEG</ImageCodecType>
+          <ImageHeight>1500</ImageHeight>
+          <ImageWidth>1500</ImageWidth>
+          <File>
+            <FileName>1199119911991_FrontCoverImage.jpg</FileName>
+            <FilePath>assets</FilePath>
+            <HashSum>
+              <HashSum>AABBCCDDEEFF11223344556677889900</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalImageDetails>
+      </ImageDetailsByTerritory>
+    </Image>
+  </ResourceList>
+  <ReleaseList>
+    <Release>
+      <ReleaseId>
+        <ICPN IsEan="true">1199119911991</ICPN>
+        <ProprietaryId Namespace="DPID:PADPIDA20129999999">00000000</ProprietaryId>
+      </ReleaseId>
+      <ReleaseReference>R0</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>Album Title</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A2</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A3</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A4</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A5</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A6</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A7</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A8</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A9</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>Album</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Artist 1</DisplayArtistName>
+        <LabelName>Label 1</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Album Title</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Artist 1</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+            <ResourceGroupContentItem>
+              <SequenceNumber>2</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A2</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+            <ResourceGroupContentItem>
+              <SequenceNumber>3</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A3</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+            <ResourceGroupContentItem>
+              <SequenceNumber>4</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A4</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+            <ResourceGroupContentItem>
+              <SequenceNumber>5</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A5</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+            <ResourceGroupContentItem>
+              <SequenceNumber>6</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A6</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+            <ResourceGroupContentItem>
+              <SequenceNumber>7</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A7</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+            <ResourceGroupContentItem>
+              <SequenceNumber>8</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A8</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+            <ResourceGroupContentItem>
+              <SequenceNumber>9</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A9</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+        <OriginalReleaseDate>2013-01-01</OriginalReleaseDate>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2013</Year>
+        <PLineText>2013 Label 1</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2013</Year>
+        <CLineText>2013 Label 1</CLineText>
+      </CLine>
+    </Release>
+    <Release>
+      <ReleaseId>
+        <ISRC>BE0000000001</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA20129999999">00000000</ProprietaryId>
+      </ReleaseId>
+      <ReleaseReference>R1</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>Track Title 1</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Artist 1</DisplayArtistName>
+        <LabelName>Label 1</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Track Title 1</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Artist 1</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2013</Year>
+        <PLineText>2013 Label 1</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2013</Year>
+        <CLineText>2013 Label 1</CLineText>
+      </CLine>
+    </Release>
+    <Release>
+      <ReleaseId>
+        <ISRC>BE0000000002</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA20129999999">00000000</ProprietaryId>
+      </ReleaseId>
+      <ReleaseReference>R2</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>Track Title 2</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A2</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Artist 1</DisplayArtistName>
+        <LabelName>Label 1</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Track Title 2</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Artist 1</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A2</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2013</Year>
+        <PLineText>2013 Label 1</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2013</Year>
+        <CLineText>2013 Label 1</CLineText>
+      </CLine>
+    </Release>
+    <Release>
+      <ReleaseId>
+        <ISRC>BE0000000003</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA20129999999">00000000</ProprietaryId>
+      </ReleaseId>
+      <ReleaseReference>R3</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>Track Title 3</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A3</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Artist 1</DisplayArtistName>
+        <LabelName>Label 1</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Track Title 3</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Artist 1</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A3</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2013</Year>
+        <PLineText>2013 Label 1</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2013</Year>
+        <CLineText>2013 Label 1</CLineText>
+      </CLine>
+    </Release>
+    <Release>
+      <ReleaseId>
+        <ISRC>BE0000000004</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA20129999999">00000000</ProprietaryId>
+      </ReleaseId>
+      <ReleaseReference>R4</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>Track Title 4</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A4</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Artist 1</DisplayArtistName>
+        <LabelName>Label 1</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Track Title 4</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Artist 1</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A4</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2013</Year>
+        <PLineText>2013 Label 1</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2013</Year>
+        <CLineText>2013 Label 1</CLineText>
+      </CLine>
+    </Release>
+    <Release>
+      <ReleaseId>
+        <ISRC>BE0000000005</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA20129999999">00000000</ProprietaryId>
+      </ReleaseId>
+      <ReleaseReference>R5</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>Track Title 5</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A5</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Artist 1</DisplayArtistName>
+        <LabelName>Label 1</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Track Title 5</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Artist 1</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A5</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2013</Year>
+        <PLineText>2013 Label 1</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2013</Year>
+        <CLineText>2013 Label 1</CLineText>
+      </CLine>
+    </Release>
+    <Release>
+      <ReleaseId>
+        <ISRC>BE0000000006</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA20129999999">00000000</ProprietaryId>
+      </ReleaseId>
+      <ReleaseReference>R6</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>Track Title 6</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A6</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Artist 1</DisplayArtistName>
+        <LabelName>Label 1</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Track Title 6</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Artist 1</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A6</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2013</Year>
+        <PLineText>2013 Label 1</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2013</Year>
+        <CLineText>2013 Label 1</CLineText>
+      </CLine>
+    </Release>
+    <Release>
+      <ReleaseId>
+        <ISRC>BE0000000007</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA20129999999">00000000</ProprietaryId>
+      </ReleaseId>
+      <ReleaseReference>R7</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>Track Title 7</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A7</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Artist 1</DisplayArtistName>
+        <LabelName>Label 1</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Track Title 7</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Artist 1</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A7</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2013</Year>
+        <PLineText>2013 Label 1</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2013</Year>
+        <CLineText>2013 Label 1</CLineText>
+      </CLine>
+    </Release>
+    <Release>
+      <ReleaseId>
+        <ISRC>BE0000000008</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA20129999999">00000000</ProprietaryId>
+      </ReleaseId>
+      <ReleaseReference>R8</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>Track Title 8</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A8</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Artist 1</DisplayArtistName>
+        <LabelName>Label 1</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Track Title 8</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Artist 1</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A8</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2013</Year>
+        <PLineText>2013 Label 1</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2013</Year>
+        <CLineText>2013 Label 1</CLineText>
+      </CLine>
+    </Release>
+    <Release>
+      <ReleaseId>
+        <ISRC>BE0000000009</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA20129999999">00000000</ProprietaryId>
+      </ReleaseId>
+      <ReleaseReference>R9</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>Track Title 9</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A9</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Artist 1</DisplayArtistName>
+        <LabelName>Label 1</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Track Title 9</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>Artist 1</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A9</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A10</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Classical</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2013</Year>
+        <PLineText>2013 Label 1</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2013</Year>
+        <CLineText>2013 Label 1</CLineText>
+      </CLine>
+    </Release>
+  </ReleaseList>
+  <DealList>
+    <ReleaseDeal>
+      <DealReleaseReference>R0</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <UseType>NonInteractiveStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>Worldwide</TerritoryCode>
+          <PriceInformation />
+          <ValidityPeriod>
+            <StartDate>2017-01-01</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-01-01</EffectiveDate>
+    </ReleaseDeal>
+    <ReleaseDeal>
+      <DealReleaseReference>R1</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <UseType>NonInteractiveStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>Worldwide</TerritoryCode>
+          <PriceInformation />
+          <ValidityPeriod>
+            <StartDate>2017-01-01</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-01-01</EffectiveDate>
+    </ReleaseDeal>
+    <ReleaseDeal>
+      <DealReleaseReference>R2</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <UseType>NonInteractiveStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>Worldwide</TerritoryCode>
+          <PriceInformation />
+          <ValidityPeriod>
+            <StartDate>2017-01-01</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-01-01</EffectiveDate>
+    </ReleaseDeal>
+    <ReleaseDeal>
+      <DealReleaseReference>R3</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <UseType>NonInteractiveStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>Worldwide</TerritoryCode>
+          <PriceInformation />
+          <ValidityPeriod>
+            <StartDate>2017-01-01</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-01-01</EffectiveDate>
+    </ReleaseDeal>
+    <ReleaseDeal>
+      <DealReleaseReference>R4</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <UseType>NonInteractiveStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>Worldwide</TerritoryCode>
+          <PriceInformation />
+          <ValidityPeriod>
+            <StartDate>2017-01-01</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-01-01</EffectiveDate>
+    </ReleaseDeal>
+    <ReleaseDeal>
+      <DealReleaseReference>R5</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <UseType>NonInteractiveStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>Worldwide</TerritoryCode>
+          <PriceInformation />
+          <ValidityPeriod>
+            <StartDate>2017-01-01</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-01-01</EffectiveDate>
+    </ReleaseDeal>
+    <ReleaseDeal>
+      <DealReleaseReference>R6</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <UseType>NonInteractiveStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>Worldwide</TerritoryCode>
+          <PriceInformation />
+          <ValidityPeriod>
+            <StartDate>2017-01-01</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-01-01</EffectiveDate>
+    </ReleaseDeal>
+    <ReleaseDeal>
+      <DealReleaseReference>R7</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <UseType>NonInteractiveStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>Worldwide</TerritoryCode>
+          <PriceInformation />
+          <ValidityPeriod>
+            <StartDate>2017-01-01</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-01-01</EffectiveDate>
+    </ReleaseDeal>
+    <ReleaseDeal>
+      <DealReleaseReference>R8</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <UseType>NonInteractiveStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>Worldwide</TerritoryCode>
+          <PriceInformation />
+          <ValidityPeriod>
+            <StartDate>2017-01-01</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-01-01</EffectiveDate>
+    </ReleaseDeal>
+  </DealList>
+</ernm:NewReleaseMessage>
