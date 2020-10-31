@@ -48,10 +48,13 @@ abstract class Rule {
    * To which version this rule is applicable to
    * @var array 
    */
-  protected $supported_versions = array();
+  protected $supported_versions = ["382", "41"];
   
   /**
-   * Level of the rule
+   * Level of the rule.
+   * It is recommended to create a rule as WARNING per default.
+   * During instanciation, this rule can be overriden with ERROR.
+   * 
    * @var int 
    */
   protected $level = Rule::LEVEL_WARNING;

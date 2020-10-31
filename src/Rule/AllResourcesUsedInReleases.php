@@ -35,7 +35,6 @@ namespace DedexBundle\Rule;
  * @author Mickaël Arcos <@miqwit>
  */
 class AllResourcesUsedInReleases extends Rule {
-  protected $supported_versions = ["382", "41"];
   protected $message = "All resources must be used in releases.";
   
   public function validates($newReleaseMessage): bool {

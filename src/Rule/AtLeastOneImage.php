@@ -32,8 +32,6 @@ namespace DedexBundle\Rule;
  * @author Mickaël Arcos <@miqwit>
  */
 class AtLeastOneImage extends Rule {
-  protected $supported_versions = ["382", "41"];
-  protected $level = Rule::LEVEL_ERROR;
   protected $message = "Must have at least one SoundRecording";
   
   public function validates($newReleaseMessage): bool {

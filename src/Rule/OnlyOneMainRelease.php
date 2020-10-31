@@ -32,8 +32,6 @@ namespace DedexBundle\Rule;
  * @author Mickaël Arcos <@miqwit>
  */
 class OnlyOneMainRelease extends Rule {
-  protected $supported_versions = ["382", "41"];
-  protected $level = Rule::LEVEL_ERROR;
   protected $message = "Must have one and only one main release";
   
   public function validates($newReleaseMessage): bool {

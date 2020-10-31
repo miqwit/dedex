@@ -32,7 +32,6 @@ namespace DedexBundle\Rule;
  * @author Mickaël Arcos <@miqwit>
  */
 class AtLeastOneAlbumRelease extends Rule {
-  protected $supported_versions = ["382", "41"];
   protected $message = "Must have at least one release of type Album";
   
   public function validates($newReleaseMessage): bool {

@@ -33,7 +33,6 @@ namespace DedexBundle\Rule;
  * @author Mickaël Arcos <@miqwit>
  */
 class AllSoundRecordingsHaveIsrc extends Rule {
-  protected $supported_versions = ["382", "41"];
   protected $message = "All tracks (SoundRecording) must have an ISRC.";
   
   public function validates($newReleaseMessage): bool {

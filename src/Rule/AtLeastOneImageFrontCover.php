@@ -32,8 +32,6 @@ namespace DedexBundle\Rule;
  * @author Mickaël Arcos <@miqwit>
  */
 class AtLeastOneImageFrontCover extends Rule {
-  protected $supported_versions = ["382", "41"];
-  protected $level = Rule::LEVEL_WARNING;
   protected $message = "Must have at least one Image in the ResourceList of type FrontCoverImage";
   
   public function validates($newReleaseMessage): bool {

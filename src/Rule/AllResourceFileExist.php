@@ -33,8 +33,6 @@ namespace DedexBundle\Rule;
  * @author Mickaël Arcos <@miqwit>
  */
 class AllResourceFileExist extends Rule {
-  protected $supported_versions = ["382", "41"];
-  protected $level = Rule::LEVEL_WARNING;
   protected $message = "Missing files described in the resource:";
   
   private $root_folder;
