@@ -1,6 +1,6 @@
 # Dedex
 
-Dedex is a DDEX XML file parser. DDEX is a standard used in the music industry to deliver rich media content. See more info at (ddex.net)[https://ddex.net/].
+Dedex is a DDEX XML file parser. DDEX is a standard used in the music industry to deliver rich media content. See more info at [ddex.net](https://ddex.net/).
 
 ## Usage
 
