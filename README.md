@@ -36,7 +36,7 @@ use DedexBundle\Exception\RuleValidationException;
 
 $xml_path = "tests/samples/001_audioalbum_complete.xml";
 $parser = new ErnParserController();
-$parset->addRule(new AtLeastOneImage(Rule::LEVEL_ERROR));
+$parser->addRule(new AtLeastOneImage(Rule::LEVEL_ERROR));
 // ... can add multiple rules
 $ern = $parser->parse($xml_path);  // will raise an RuleValidationException if rule is broken
 ```
