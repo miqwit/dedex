@@ -1,8 +1,8 @@
 {
     "type": "symfony-bundle",
     "name": "miqwit/dedex",
-    "description": "Parse DDEX files and provide a convenient API to read it",
-    "license": "proprietary",
+    "description": "Parse DDEX ERN files and provide a convenient API to read it",
+    "license": "MIT",
     "require": {
         "php": "^7.2.5",
         "ext-ctype": "*",
