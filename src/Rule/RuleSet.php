@@ -1,11 +1,9 @@
 <?php
 
-namespace DedexBundle\Rule;
-
 /*
  * The MIT License
  *
- * Copyright 2020 Mickaël Arcos <@miqwit>.
+ * Copyright 2020 Mickaël Arcos <miqwit>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,23 +24,25 @@ namespace DedexBundle\Rule;
  * THE SOFTWARE.
  */
 
+namespace DedexBundle\Rule;
+
 /**
- * The ResourceList must contain at least one image of type FrontCoverImage
+ * Each rule set implement a set of rules with its own parameters (WARNING
+ * or ERROR). Each given provider could have a RuleSet attached.
  *
- * @author Mickaël Arcos <@miqwit>
+ * @author Mickaël Arcos <miqwit>
  */
-class AtLeastOneImageFrontCover extends Rule {
-  protected $message = "Must have at least one Image in the ResourceList of type FrontCoverImage";
-  
-  public function validates($newReleaseMessage): bool {
-    $valid = false;
-    foreach ($newReleaseMessage->getResourceList()->getImage() as $image) {
-      if ($image->getImageType()->value() === "FrontCoverImage") {
-        $valid = true;
-        break;
-      }
-    }
-    
-    return $valid;
-  }
+class RuleSet {
+	static function MUSICAL_ALBUM($root_folder = "") {
+		return [
+				new AllResourceFileExist(Rule::LEVEL_WARNING, $root_folder),
+				new AllReleasesUsedInDeals(),
+				new AllResourcesUsedInReleases(),
+				new AllSoundRecordingsHaveIsrc(),
+				new AtLeastOneAlbumRelease(),
+				new AtLeastOneImage(),
+				new AtLeastOneImageFrontCover(),
+				new OnlyOneMainRelease()
+		];
+	}
 }

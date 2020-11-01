@@ -100,6 +100,12 @@ class ErnParserController {
   public function addRule(Rule $rule) {
     $this->rules[] = $rule;
   }
+	
+	public function addRuleSet(array $rules) {
+		foreach ($rules as $rule) {
+			$this->addRule($rule);
+		}
+	}
 
   /**
    * Activate or deactivate logs
@@ -573,9 +579,11 @@ class ErnParserController {
    * @return type
    */
   private function getInvalidatedRuleMessages() {
-    $message = implode("-\n", $this->rule_messages[Rule::LEVEL_WARNING]);
-    $message .= !empty($message) ? "\n-" : "";
-    $message .= implode("-\n", $this->rule_messages[Rule::LEVEL_ERROR]);
+    $message = "";
+		
+		foreach (array_merge($this->rule_messages[Rule::LEVEL_WARNING], $this->rule_messages[Rule::LEVEL_ERROR]) as $msg) {
+			$message .= "\n- ".$msg;
+		}
     
     return $message;
   }

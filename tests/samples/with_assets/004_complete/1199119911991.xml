@@ -576,7 +576,7 @@
     </Image>
   </ResourceList>
   <ReleaseList>
-    <Release>
+    <Release IsMainRelease="true">
       <ReleaseId>
         <ICPN IsEan="true">1199119911991</ICPN>
         <ProprietaryId Namespace="DPID:PADPIDA20129999999">00000000</ProprietaryId>

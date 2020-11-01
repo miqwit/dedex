@@ -3,20 +3,8 @@
 namespace DedexBundle\Tests\Controller;
 
 use DedexBundle\Controller\ErnParserController;
-use DedexBundle\Entity\Ern382\GenreType;
-use DedexBundle\Entity\Ern382\ImageDetailsByTerritoryType;
-use DedexBundle\Entity\Ern382\ImageType;
-use DedexBundle\Entity\Ern382\IndirectResourceContributor;
 use DedexBundle\Entity\Ern382\NewReleaseMessage;
-use DedexBundle\Entity\Ern382\ReleaseDetailsByTerritoryType;
-use DedexBundle\Entity\Ern382\ReleaseType;
-use DedexBundle\Entity\Ern382\ResourceContributor;
-use DedexBundle\Entity\Ern382\SoundRecordingDetailsByTerritoryType;
-use DedexBundle\Entity\Ern382\TechnicalSoundRecordingDetailsType;
-use DedexBundle\Exception\FileNotFoundException;
 use DedexBundle\Exception\RuleValidationException;
-use DedexBundle\Exception\XmlLoadException;
-use DedexBundle\Exception\XmlParseException;
 use DedexBundle\Rule\AllReleasesUsedInDeals;
 use DedexBundle\Rule\AllResourceFileExist;
 use DedexBundle\Rule\AllResourcesUsedInReleases;
@@ -27,6 +15,7 @@ use DedexBundle\Rule\AtLeastOneImageFrontCover;
 use DedexBundle\Rule\AtLeastOneSoundRecordingRule;
 use DedexBundle\Rule\OnlyOneMainRelease;
 use DedexBundle\Rule\Rule;
+use DedexBundle\Rule\RuleSet;
 use PHPUnit\Framework\TestCase;
 
 class ParserControllerRulesTest extends TestCase {
@@ -295,6 +284,40 @@ class ParserControllerRulesTest extends TestCase {
       $this->assertContains("R9 not used in deals or not defined in ReleaseList", $parser->getRuleMessages());
       $this->assertTrue(true);
     }
+  }
+  
+  /**
+   * All resources must be used
+   */
+  public function testRuleSetAllReleasesCoveredByDeal() {
+    // R9 has no deal
+    /* @var $ddex NewReleaseMessage */
+    $xml_path = "tests/samples/014_missing_deal.xml";
+    $parser = new ErnParserController();
+		
+    $parser->addRuleSet(RuleSet::MUSICAL_ALBUM());
+		
+		$ddex = $parser->parse($xml_path);
+		$this->assertTrue(true); // Will pass because all rules are WARNING
+
+		$this->assertContains("R9 not used in deals or not defined in ReleaseList", $parser->getRuleMessages());
+  }
+  
+  /**
+   * RuleSet all good
+   */
+  public function testRuleSetAllGood() {
+    // R9 has no deal
+    /* @var $ddex NewReleaseMessage */
+    $xml_path = "tests/samples/with_assets/004_complete/1199119911991.xml";
+    $parser = new ErnParserController();
+		
+    $parser->addRuleSet(RuleSet::MUSICAL_ALBUM("tests/samples/with_assets/004_complete/"));
+		
+		$ddex = $parser->parse($xml_path);
+		$this->assertTrue(true); // Will pass because all rules are WARNING
+		
+		$this->assertEquals("", $parser->getRuleMessages());
   }
 
 }
