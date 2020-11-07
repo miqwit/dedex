@@ -14,7 +14,7 @@ class DetailedCueSheetType
     /**
      * A Composite containing details of a CueSheetId of the CueSheet.
      *
-     * @var \DedexBundle\Entity\Ern\ProprietaryIdType[] $cueSheetId
+     * @var \DedexBundle\Entity\Ern41\ProprietaryIdType[] $cueSheetId
      */
     private $cueSheetId = [
         
@@ -30,14 +30,14 @@ class DetailedCueSheetType
     /**
      * A Composite containing details of a Type of the CueSheet.
      *
-     * @var \DedexBundle\Entity\Ern\CueSheetTypeType $cueSheetType
+     * @var \DedexBundle\Entity\Ern41\CueSheetTypeType $cueSheetType
      */
     private $cueSheetType = null;
 
     /**
      * A Composite containing details of a Cue.
      *
-     * @var \DedexBundle\Entity\Ern\DetailedCueType[] $cue
+     * @var \DedexBundle\Entity\Ern41\DetailedCueType[] $cue
      */
     private $cue = [
         
@@ -49,9 +49,9 @@ class DetailedCueSheetType
      * A Composite containing details of a CueSheetId of the CueSheet.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\ProprietaryIdType $cueSheetId
+     * @param \DedexBundle\Entity\Ern41\ProprietaryIdType $cueSheetId
      */
-    public function addToCueSheetId(\DedexBundle\Entity\Ern\ProprietaryIdType $cueSheetId)
+    public function addToCueSheetId(\DedexBundle\Entity\Ern41\ProprietaryIdType $cueSheetId)
     {
         $this->cueSheetId[] = $cueSheetId;
         return $this;
@@ -88,7 +88,7 @@ class DetailedCueSheetType
      *
      * A Composite containing details of a CueSheetId of the CueSheet.
      *
-     * @return \DedexBundle\Entity\Ern\ProprietaryIdType[]
+     * @return \DedexBundle\Entity\Ern41\ProprietaryIdType[]
      */
     public function getCueSheetId()
     {
@@ -100,7 +100,7 @@ class DetailedCueSheetType
      *
      * A Composite containing details of a CueSheetId of the CueSheet.
      *
-     * @param \DedexBundle\Entity\Ern\ProprietaryIdType[] $cueSheetId
+     * @param \DedexBundle\Entity\Ern41\ProprietaryIdType[] $cueSheetId
      * @return self
      */
     public function setCueSheetId(array $cueSheetId)
@@ -140,7 +140,7 @@ class DetailedCueSheetType
      *
      * A Composite containing details of a Type of the CueSheet.
      *
-     * @return \DedexBundle\Entity\Ern\CueSheetTypeType
+     * @return \DedexBundle\Entity\Ern41\CueSheetTypeType
      */
     public function getCueSheetType()
     {
@@ -152,10 +152,10 @@ class DetailedCueSheetType
      *
      * A Composite containing details of a Type of the CueSheet.
      *
-     * @param \DedexBundle\Entity\Ern\CueSheetTypeType $cueSheetType
+     * @param \DedexBundle\Entity\Ern41\CueSheetTypeType $cueSheetType
      * @return self
      */
-    public function setCueSheetType(\DedexBundle\Entity\Ern\CueSheetTypeType $cueSheetType)
+    public function setCueSheetType(\DedexBundle\Entity\Ern41\CueSheetTypeType $cueSheetType)
     {
         $this->cueSheetType = $cueSheetType;
         return $this;
@@ -167,9 +167,9 @@ class DetailedCueSheetType
      * A Composite containing details of a Cue.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DetailedCueType $cue
+     * @param \DedexBundle\Entity\Ern41\DetailedCueType $cue
      */
-    public function addToCue(\DedexBundle\Entity\Ern\DetailedCueType $cue)
+    public function addToCue(\DedexBundle\Entity\Ern41\DetailedCueType $cue)
     {
         $this->cue[] = $cue;
         return $this;
@@ -206,7 +206,7 @@ class DetailedCueSheetType
      *
      * A Composite containing details of a Cue.
      *
-     * @return \DedexBundle\Entity\Ern\DetailedCueType[]
+     * @return \DedexBundle\Entity\Ern41\DetailedCueType[]
      */
     public function getCue()
     {
@@ -218,7 +218,7 @@ class DetailedCueSheetType
      *
      * A Composite containing details of a Cue.
      *
-     * @param \DedexBundle\Entity\Ern\DetailedCueType[] $cue
+     * @param \DedexBundle\Entity\Ern41\DetailedCueType[] $cue
      * @return self
      */
     public function setCue(array $cue)

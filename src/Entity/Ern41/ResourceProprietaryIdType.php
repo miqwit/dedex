@@ -21,7 +21,7 @@ class ResourceProprietaryIdType
     /**
      * A Composite containing details of a ProprietaryIdentifier of the Resource.
      *
-     * @var \DedexBundle\Entity\Ern\ProprietaryIdType[] $proprietaryId
+     * @var \DedexBundle\Entity\Ern41\ProprietaryIdType[] $proprietaryId
      */
     private $proprietaryId = [
         
@@ -59,9 +59,9 @@ class ResourceProprietaryIdType
      * A Composite containing details of a ProprietaryIdentifier of the Resource.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\ProprietaryIdType $proprietaryId
+     * @param \DedexBundle\Entity\Ern41\ProprietaryIdType $proprietaryId
      */
-    public function addToProprietaryId(\DedexBundle\Entity\Ern\ProprietaryIdType $proprietaryId)
+    public function addToProprietaryId(\DedexBundle\Entity\Ern41\ProprietaryIdType $proprietaryId)
     {
         $this->proprietaryId[] = $proprietaryId;
         return $this;
@@ -98,7 +98,7 @@ class ResourceProprietaryIdType
      *
      * A Composite containing details of a ProprietaryIdentifier of the Resource.
      *
-     * @return \DedexBundle\Entity\Ern\ProprietaryIdType[]
+     * @return \DedexBundle\Entity\Ern41\ProprietaryIdType[]
      */
     public function getProprietaryId()
     {
@@ -110,7 +110,7 @@ class ResourceProprietaryIdType
      *
      * A Composite containing details of a ProprietaryIdentifier of the Resource.
      *
-     * @param \DedexBundle\Entity\Ern\ProprietaryIdType[] $proprietaryId
+     * @param \DedexBundle\Entity\Ern41\ProprietaryIdType[] $proprietaryId
      * @return self
      */
     public function setProprietaryId(array $proprietaryId)

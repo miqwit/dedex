@@ -35,7 +35,7 @@ class ResourceContainedResourceReferenceType
     /**
      * A Composite containing details of the Purpose of the usage.
      *
-     * @var \DedexBundle\Entity\Ern\PurposeType $purpose
+     * @var \DedexBundle\Entity\Ern41\PurposeType $purpose
      */
     private $purpose = null;
 
@@ -122,7 +122,7 @@ class ResourceContainedResourceReferenceType
      *
      * A Composite containing details of the Purpose of the usage.
      *
-     * @return \DedexBundle\Entity\Ern\PurposeType
+     * @return \DedexBundle\Entity\Ern41\PurposeType
      */
     public function getPurpose()
     {
@@ -134,10 +134,10 @@ class ResourceContainedResourceReferenceType
      *
      * A Composite containing details of the Purpose of the usage.
      *
-     * @param \DedexBundle\Entity\Ern\PurposeType $purpose
+     * @param \DedexBundle\Entity\Ern41\PurposeType $purpose
      * @return self
      */
-    public function setPurpose(\DedexBundle\Entity\Ern\PurposeType $purpose)
+    public function setPurpose(\DedexBundle\Entity\Ern41\PurposeType $purpose)
     {
         $this->purpose = $purpose;
         return $this;

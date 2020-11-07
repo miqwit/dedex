@@ -42,28 +42,28 @@ class TechnicalImageDetailsType
     /**
      * A Composite containing details of a Type of ImageCodec.
      *
-     * @var \DedexBundle\Entity\Ern\ImageCodecTypeType $imageCodecType
+     * @var \DedexBundle\Entity\Ern41\ImageCodecTypeType $imageCodecType
      */
     private $imageCodecType = null;
 
     /**
      * A Composite containing the vertical Extent of an Image of the Image and a UnitOfMeasure (the default is Pixels).
      *
-     * @var \DedexBundle\Entity\Ern\ExtentType $imageHeight
+     * @var \DedexBundle\Entity\Ern41\ExtentType $imageHeight
      */
     private $imageHeight = null;
 
     /**
      * A Composite containing the horizontal Extent of an Image of the Image and a UnitOfMeasure (the default is Pixels).
      *
-     * @var \DedexBundle\Entity\Ern\ExtentType $imageWidth
+     * @var \DedexBundle\Entity\Ern41\ExtentType $imageWidth
      */
     private $imageWidth = null;
 
     /**
      * A Composite containing the ratio formed by dividing the ImageHeight by the ImageWidth.
      *
-     * @var \DedexBundle\Entity\Ern\AspectRatioType $aspectRatio
+     * @var \DedexBundle\Entity\Ern41\AspectRatioType $aspectRatio
      */
     private $aspectRatio = null;
 
@@ -98,21 +98,21 @@ class TechnicalImageDetailsType
     /**
      * A Composite containing details of a preview.
      *
-     * @var \DedexBundle\Entity\Ern\PreviewDetailsType $previewDetails
+     * @var \DedexBundle\Entity\Ern41\PreviewDetailsType $previewDetails
      */
     private $previewDetails = null;
 
     /**
      * A Composite containing details of a File containing the Image that a DSP can obtain.
      *
-     * @var \DedexBundle\Entity\Ern\FileType $file
+     * @var \DedexBundle\Entity\Ern41\FileType $file
      */
     private $file = null;
 
     /**
      * A Composite containing details of a Fingerprint and its governing algorithm.
      *
-     * @var \DedexBundle\Entity\Ern\FingerprintType[] $fingerprint
+     * @var \DedexBundle\Entity\Ern41\FingerprintType[] $fingerprint
      */
     private $fingerprint = [
         
@@ -227,7 +227,7 @@ class TechnicalImageDetailsType
      *
      * A Composite containing details of a Type of ImageCodec.
      *
-     * @return \DedexBundle\Entity\Ern\ImageCodecTypeType
+     * @return \DedexBundle\Entity\Ern41\ImageCodecTypeType
      */
     public function getImageCodecType()
     {
@@ -239,10 +239,10 @@ class TechnicalImageDetailsType
      *
      * A Composite containing details of a Type of ImageCodec.
      *
-     * @param \DedexBundle\Entity\Ern\ImageCodecTypeType $imageCodecType
+     * @param \DedexBundle\Entity\Ern41\ImageCodecTypeType $imageCodecType
      * @return self
      */
-    public function setImageCodecType(\DedexBundle\Entity\Ern\ImageCodecTypeType $imageCodecType)
+    public function setImageCodecType(\DedexBundle\Entity\Ern41\ImageCodecTypeType $imageCodecType)
     {
         $this->imageCodecType = $imageCodecType;
         return $this;
@@ -253,7 +253,7 @@ class TechnicalImageDetailsType
      *
      * A Composite containing the vertical Extent of an Image of the Image and a UnitOfMeasure (the default is Pixels).
      *
-     * @return \DedexBundle\Entity\Ern\ExtentType
+     * @return \DedexBundle\Entity\Ern41\ExtentType
      */
     public function getImageHeight()
     {
@@ -265,10 +265,10 @@ class TechnicalImageDetailsType
      *
      * A Composite containing the vertical Extent of an Image of the Image and a UnitOfMeasure (the default is Pixels).
      *
-     * @param \DedexBundle\Entity\Ern\ExtentType $imageHeight
+     * @param \DedexBundle\Entity\Ern41\ExtentType $imageHeight
      * @return self
      */
-    public function setImageHeight(\DedexBundle\Entity\Ern\ExtentType $imageHeight)
+    public function setImageHeight(\DedexBundle\Entity\Ern41\ExtentType $imageHeight)
     {
         $this->imageHeight = $imageHeight;
         return $this;
@@ -279,7 +279,7 @@ class TechnicalImageDetailsType
      *
      * A Composite containing the horizontal Extent of an Image of the Image and a UnitOfMeasure (the default is Pixels).
      *
-     * @return \DedexBundle\Entity\Ern\ExtentType
+     * @return \DedexBundle\Entity\Ern41\ExtentType
      */
     public function getImageWidth()
     {
@@ -291,10 +291,10 @@ class TechnicalImageDetailsType
      *
      * A Composite containing the horizontal Extent of an Image of the Image and a UnitOfMeasure (the default is Pixels).
      *
-     * @param \DedexBundle\Entity\Ern\ExtentType $imageWidth
+     * @param \DedexBundle\Entity\Ern41\ExtentType $imageWidth
      * @return self
      */
-    public function setImageWidth(\DedexBundle\Entity\Ern\ExtentType $imageWidth)
+    public function setImageWidth(\DedexBundle\Entity\Ern41\ExtentType $imageWidth)
     {
         $this->imageWidth = $imageWidth;
         return $this;
@@ -305,7 +305,7 @@ class TechnicalImageDetailsType
      *
      * A Composite containing the ratio formed by dividing the ImageHeight by the ImageWidth.
      *
-     * @return \DedexBundle\Entity\Ern\AspectRatioType
+     * @return \DedexBundle\Entity\Ern41\AspectRatioType
      */
     public function getAspectRatio()
     {
@@ -317,10 +317,10 @@ class TechnicalImageDetailsType
      *
      * A Composite containing the ratio formed by dividing the ImageHeight by the ImageWidth.
      *
-     * @param \DedexBundle\Entity\Ern\AspectRatioType $aspectRatio
+     * @param \DedexBundle\Entity\Ern41\AspectRatioType $aspectRatio
      * @return self
      */
-    public function setAspectRatio(\DedexBundle\Entity\Ern\AspectRatioType $aspectRatio)
+    public function setAspectRatio(\DedexBundle\Entity\Ern41\AspectRatioType $aspectRatio)
     {
         $this->aspectRatio = $aspectRatio;
         return $this;
@@ -435,7 +435,7 @@ class TechnicalImageDetailsType
      *
      * A Composite containing details of a preview.
      *
-     * @return \DedexBundle\Entity\Ern\PreviewDetailsType
+     * @return \DedexBundle\Entity\Ern41\PreviewDetailsType
      */
     public function getPreviewDetails()
     {
@@ -447,10 +447,10 @@ class TechnicalImageDetailsType
      *
      * A Composite containing details of a preview.
      *
-     * @param \DedexBundle\Entity\Ern\PreviewDetailsType $previewDetails
+     * @param \DedexBundle\Entity\Ern41\PreviewDetailsType $previewDetails
      * @return self
      */
-    public function setPreviewDetails(\DedexBundle\Entity\Ern\PreviewDetailsType $previewDetails)
+    public function setPreviewDetails(\DedexBundle\Entity\Ern41\PreviewDetailsType $previewDetails)
     {
         $this->previewDetails = $previewDetails;
         return $this;
@@ -461,7 +461,7 @@ class TechnicalImageDetailsType
      *
      * A Composite containing details of a File containing the Image that a DSP can obtain.
      *
-     * @return \DedexBundle\Entity\Ern\FileType
+     * @return \DedexBundle\Entity\Ern41\FileType
      */
     public function getFile()
     {
@@ -473,10 +473,10 @@ class TechnicalImageDetailsType
      *
      * A Composite containing details of a File containing the Image that a DSP can obtain.
      *
-     * @param \DedexBundle\Entity\Ern\FileType $file
+     * @param \DedexBundle\Entity\Ern41\FileType $file
      * @return self
      */
-    public function setFile(\DedexBundle\Entity\Ern\FileType $file)
+    public function setFile(\DedexBundle\Entity\Ern41\FileType $file)
     {
         $this->file = $file;
         return $this;
@@ -488,9 +488,9 @@ class TechnicalImageDetailsType
      * A Composite containing details of a Fingerprint and its governing algorithm.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\FingerprintType $fingerprint
+     * @param \DedexBundle\Entity\Ern41\FingerprintType $fingerprint
      */
-    public function addToFingerprint(\DedexBundle\Entity\Ern\FingerprintType $fingerprint)
+    public function addToFingerprint(\DedexBundle\Entity\Ern41\FingerprintType $fingerprint)
     {
         $this->fingerprint[] = $fingerprint;
         return $this;
@@ -527,7 +527,7 @@ class TechnicalImageDetailsType
      *
      * A Composite containing details of a Fingerprint and its governing algorithm.
      *
-     * @return \DedexBundle\Entity\Ern\FingerprintType[]
+     * @return \DedexBundle\Entity\Ern41\FingerprintType[]
      */
     public function getFingerprint()
     {
@@ -539,7 +539,7 @@ class TechnicalImageDetailsType
      *
      * A Composite containing details of a Fingerprint and its governing algorithm.
      *
-     * @param \DedexBundle\Entity\Ern\FingerprintType[] $fingerprint
+     * @param \DedexBundle\Entity\Ern41\FingerprintType[] $fingerprint
      * @return self
      */
     public function setFingerprint(array $fingerprint)

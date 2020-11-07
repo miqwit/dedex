@@ -42,7 +42,7 @@ class DisplayTitleType
     /**
      * A Composite containing details of a SubTitle of the Title, including Titles of Versions used to differentiate different versions of the same Title, as required by the GRid and ISRC ReferenceDescriptiveMetadataSets.
      *
-     * @var \DedexBundle\Entity\Ern\DisplaySubTitleType[] $subTitle
+     * @var \DedexBundle\Entity\Ern41\DisplaySubTitleType[] $subTitle
      */
     private $subTitle = [
         
@@ -158,9 +158,9 @@ class DisplayTitleType
      * A Composite containing details of a SubTitle of the Title, including Titles of Versions used to differentiate different versions of the same Title, as required by the GRid and ISRC ReferenceDescriptiveMetadataSets.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DisplaySubTitleType $subTitle
+     * @param \DedexBundle\Entity\Ern41\DisplaySubTitleType $subTitle
      */
-    public function addToSubTitle(\DedexBundle\Entity\Ern\DisplaySubTitleType $subTitle)
+    public function addToSubTitle(\DedexBundle\Entity\Ern41\DisplaySubTitleType $subTitle)
     {
         $this->subTitle[] = $subTitle;
         return $this;
@@ -197,7 +197,7 @@ class DisplayTitleType
      *
      * A Composite containing details of a SubTitle of the Title, including Titles of Versions used to differentiate different versions of the same Title, as required by the GRid and ISRC ReferenceDescriptiveMetadataSets.
      *
-     * @return \DedexBundle\Entity\Ern\DisplaySubTitleType[]
+     * @return \DedexBundle\Entity\Ern41\DisplaySubTitleType[]
      */
     public function getSubTitle()
     {
@@ -209,7 +209,7 @@ class DisplayTitleType
      *
      * A Composite containing details of a SubTitle of the Title, including Titles of Versions used to differentiate different versions of the same Title, as required by the GRid and ISRC ReferenceDescriptiveMetadataSets.
      *
-     * @param \DedexBundle\Entity\Ern\DisplaySubTitleType[] $subTitle
+     * @param \DedexBundle\Entity\Ern41\DisplaySubTitleType[] $subTitle
      * @return self
      */
     public function setSubTitle(array $subTitle)

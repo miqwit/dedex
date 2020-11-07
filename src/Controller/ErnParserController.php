@@ -34,7 +34,6 @@ class ErnParserController {
    * NewReleaseMessage object from the right entity based on version, like:
    *     \DedexBundle\Entity\Ern382\NewReleaseMessage
    * or  \DedexBundle\Entity\Ern41\NewReleaseMessage
-   * @var $ern \DedexBundle\Entity\Ern\NewReleaseMessage
    */
   private $ern = null;
 
@@ -431,7 +430,7 @@ class ErnParserController {
     if (count($matches) > 1) {
       $type = str_replace("[]", "", $matches[1]);
     } else {
-      $type = "\\DedexBundle\\Entity\\Ern\\" . $tag . "Type";
+			$type = "\\DedexBundle\\Entity\\Ern{$this->version}\\{$tag}Type";
     }
     return $type;
   }

@@ -14,28 +14,28 @@ class PeriodWithoutFlagsType
     /**
      * A Composite containing details of the Date and Place of an Event that marks the beginning of the Period (in ISO 8601:2004 format: YYYY-MM-DD). The StartDate must be no later than the EndDate if both are provided.
      *
-     * @var \DedexBundle\Entity\Ern\EventDateWithoutFlagsType $startDate
+     * @var \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $startDate
      */
     private $startDate = null;
 
     /**
      * A Composite containing details of the Date and Place of an Event that marks the end of the Period (in ISO 8601:2004 format: YYYY-MM-DD). The EndDate must not be earlier than the StartDate if both are provided.
      *
-     * @var \DedexBundle\Entity\Ern\EventDateWithoutFlagsType $endDate
+     * @var \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $endDate
      */
     private $endDate = null;
 
     /**
      * A Composite containing details of the DateTime and Place of an Event that marks the beginning of the Period (in ISO 8601:2004 format: YYYY-DD-MMThh:mm:ss). The StartDateTime must be no later than the EndDateTime if both are provided.
      *
-     * @var \DedexBundle\Entity\Ern\EventDateTimeWithoutFlagsType $startDateTime
+     * @var \DedexBundle\Entity\Ern41\EventDateTimeWithoutFlagsType $startDateTime
      */
     private $startDateTime = null;
 
     /**
      * A Composite containing details of the DateTime and Place of an Event that marks the end of the Period (in ISO 8601:2004 format: YYYY-DD-MMThh:mm:ss). The EndDateTime must not be earlier than the StartDateTime if both are provided.
      *
-     * @var \DedexBundle\Entity\Ern\EventDateTimeWithoutFlagsType $endDateTime
+     * @var \DedexBundle\Entity\Ern41\EventDateTimeWithoutFlagsType $endDateTime
      */
     private $endDateTime = null;
 
@@ -44,7 +44,7 @@ class PeriodWithoutFlagsType
      *
      * A Composite containing details of the Date and Place of an Event that marks the beginning of the Period (in ISO 8601:2004 format: YYYY-MM-DD). The StartDate must be no later than the EndDate if both are provided.
      *
-     * @return \DedexBundle\Entity\Ern\EventDateWithoutFlagsType
+     * @return \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType
      */
     public function getStartDate()
     {
@@ -56,10 +56,10 @@ class PeriodWithoutFlagsType
      *
      * A Composite containing details of the Date and Place of an Event that marks the beginning of the Period (in ISO 8601:2004 format: YYYY-MM-DD). The StartDate must be no later than the EndDate if both are provided.
      *
-     * @param \DedexBundle\Entity\Ern\EventDateWithoutFlagsType $startDate
+     * @param \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $startDate
      * @return self
      */
-    public function setStartDate(\DedexBundle\Entity\Ern\EventDateWithoutFlagsType $startDate)
+    public function setStartDate(\DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $startDate)
     {
         $this->startDate = $startDate;
         return $this;
@@ -70,7 +70,7 @@ class PeriodWithoutFlagsType
      *
      * A Composite containing details of the Date and Place of an Event that marks the end of the Period (in ISO 8601:2004 format: YYYY-MM-DD). The EndDate must not be earlier than the StartDate if both are provided.
      *
-     * @return \DedexBundle\Entity\Ern\EventDateWithoutFlagsType
+     * @return \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType
      */
     public function getEndDate()
     {
@@ -82,10 +82,10 @@ class PeriodWithoutFlagsType
      *
      * A Composite containing details of the Date and Place of an Event that marks the end of the Period (in ISO 8601:2004 format: YYYY-MM-DD). The EndDate must not be earlier than the StartDate if both are provided.
      *
-     * @param \DedexBundle\Entity\Ern\EventDateWithoutFlagsType $endDate
+     * @param \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $endDate
      * @return self
      */
-    public function setEndDate(\DedexBundle\Entity\Ern\EventDateWithoutFlagsType $endDate)
+    public function setEndDate(\DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $endDate)
     {
         $this->endDate = $endDate;
         return $this;
@@ -96,7 +96,7 @@ class PeriodWithoutFlagsType
      *
      * A Composite containing details of the DateTime and Place of an Event that marks the beginning of the Period (in ISO 8601:2004 format: YYYY-DD-MMThh:mm:ss). The StartDateTime must be no later than the EndDateTime if both are provided.
      *
-     * @return \DedexBundle\Entity\Ern\EventDateTimeWithoutFlagsType
+     * @return \DedexBundle\Entity\Ern41\EventDateTimeWithoutFlagsType
      */
     public function getStartDateTime()
     {
@@ -108,10 +108,10 @@ class PeriodWithoutFlagsType
      *
      * A Composite containing details of the DateTime and Place of an Event that marks the beginning of the Period (in ISO 8601:2004 format: YYYY-DD-MMThh:mm:ss). The StartDateTime must be no later than the EndDateTime if both are provided.
      *
-     * @param \DedexBundle\Entity\Ern\EventDateTimeWithoutFlagsType $startDateTime
+     * @param \DedexBundle\Entity\Ern41\EventDateTimeWithoutFlagsType $startDateTime
      * @return self
      */
-    public function setStartDateTime(\DedexBundle\Entity\Ern\EventDateTimeWithoutFlagsType $startDateTime)
+    public function setStartDateTime(\DedexBundle\Entity\Ern41\EventDateTimeWithoutFlagsType $startDateTime)
     {
         $this->startDateTime = $startDateTime;
         return $this;
@@ -122,7 +122,7 @@ class PeriodWithoutFlagsType
      *
      * A Composite containing details of the DateTime and Place of an Event that marks the end of the Period (in ISO 8601:2004 format: YYYY-DD-MMThh:mm:ss). The EndDateTime must not be earlier than the StartDateTime if both are provided.
      *
-     * @return \DedexBundle\Entity\Ern\EventDateTimeWithoutFlagsType
+     * @return \DedexBundle\Entity\Ern41\EventDateTimeWithoutFlagsType
      */
     public function getEndDateTime()
     {
@@ -134,10 +134,10 @@ class PeriodWithoutFlagsType
      *
      * A Composite containing details of the DateTime and Place of an Event that marks the end of the Period (in ISO 8601:2004 format: YYYY-DD-MMThh:mm:ss). The EndDateTime must not be earlier than the StartDateTime if both are provided.
      *
-     * @param \DedexBundle\Entity\Ern\EventDateTimeWithoutFlagsType $endDateTime
+     * @param \DedexBundle\Entity\Ern41\EventDateTimeWithoutFlagsType $endDateTime
      * @return self
      */
-    public function setEndDateTime(\DedexBundle\Entity\Ern\EventDateTimeWithoutFlagsType $endDateTime)
+    public function setEndDateTime(\DedexBundle\Entity\Ern41\EventDateTimeWithoutFlagsType $endDateTime)
     {
         $this->endDateTime = $endDateTime;
         return $this;

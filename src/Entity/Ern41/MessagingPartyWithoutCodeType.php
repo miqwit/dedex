@@ -21,7 +21,7 @@ class MessagingPartyWithoutCodeType
     /**
      * A Composite containing details of the PartyNames for the Party handling the Message.
      *
-     * @var \DedexBundle\Entity\Ern\PartyNameWithoutCodeType $partyName
+     * @var \DedexBundle\Entity\Ern41\PartyNameWithoutCodeType $partyName
      */
     private $partyName = null;
 
@@ -63,7 +63,7 @@ class MessagingPartyWithoutCodeType
      *
      * A Composite containing details of the PartyNames for the Party handling the Message.
      *
-     * @return \DedexBundle\Entity\Ern\PartyNameWithoutCodeType
+     * @return \DedexBundle\Entity\Ern41\PartyNameWithoutCodeType
      */
     public function getPartyName()
     {
@@ -75,10 +75,10 @@ class MessagingPartyWithoutCodeType
      *
      * A Composite containing details of the PartyNames for the Party handling the Message.
      *
-     * @param \DedexBundle\Entity\Ern\PartyNameWithoutCodeType $partyName
+     * @param \DedexBundle\Entity\Ern41\PartyNameWithoutCodeType $partyName
      * @return self
      */
-    public function setPartyName(\DedexBundle\Entity\Ern\PartyNameWithoutCodeType $partyName)
+    public function setPartyName(\DedexBundle\Entity\Ern41\PartyNameWithoutCodeType $partyName)
     {
         $this->partyName = $partyName;
         return $this;

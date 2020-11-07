@@ -23,7 +23,7 @@ class ExternalResourceLinkType
     /**
      * A Composite containing details about the Period of Time during which the ExternalResourceLink is active.
      *
-     * @var \DedexBundle\Entity\Ern\PeriodWithoutFlagsType $validityPeriod
+     * @var \DedexBundle\Entity\Ern41\PeriodWithoutFlagsType $validityPeriod
      */
     private $validityPeriod = null;
 
@@ -37,7 +37,7 @@ class ExternalResourceLinkType
     /**
      * A Composite containing details of the Type of a Resource pointed to by the ExternalResourceLink.
      *
-     * @var \DedexBundle\Entity\Ern\ExternallyLinkedResourceTypeType[] $externallyLinkedResourceType
+     * @var \DedexBundle\Entity\Ern41\ExternallyLinkedResourceTypeType[] $externallyLinkedResourceType
      */
     private $externallyLinkedResourceType = [
         
@@ -121,7 +121,7 @@ class ExternalResourceLinkType
      *
      * A Composite containing details about the Period of Time during which the ExternalResourceLink is active.
      *
-     * @return \DedexBundle\Entity\Ern\PeriodWithoutFlagsType
+     * @return \DedexBundle\Entity\Ern41\PeriodWithoutFlagsType
      */
     public function getValidityPeriod()
     {
@@ -133,10 +133,10 @@ class ExternalResourceLinkType
      *
      * A Composite containing details about the Period of Time during which the ExternalResourceLink is active.
      *
-     * @param \DedexBundle\Entity\Ern\PeriodWithoutFlagsType $validityPeriod
+     * @param \DedexBundle\Entity\Ern41\PeriodWithoutFlagsType $validityPeriod
      * @return self
      */
-    public function setValidityPeriod(\DedexBundle\Entity\Ern\PeriodWithoutFlagsType $validityPeriod)
+    public function setValidityPeriod(\DedexBundle\Entity\Ern41\PeriodWithoutFlagsType $validityPeriod)
     {
         $this->validityPeriod = $validityPeriod;
         return $this;
@@ -174,9 +174,9 @@ class ExternalResourceLinkType
      * A Composite containing details of the Type of a Resource pointed to by the ExternalResourceLink.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\ExternallyLinkedResourceTypeType $externallyLinkedResourceType
+     * @param \DedexBundle\Entity\Ern41\ExternallyLinkedResourceTypeType $externallyLinkedResourceType
      */
-    public function addToExternallyLinkedResourceType(\DedexBundle\Entity\Ern\ExternallyLinkedResourceTypeType $externallyLinkedResourceType)
+    public function addToExternallyLinkedResourceType(\DedexBundle\Entity\Ern41\ExternallyLinkedResourceTypeType $externallyLinkedResourceType)
     {
         $this->externallyLinkedResourceType[] = $externallyLinkedResourceType;
         return $this;
@@ -213,7 +213,7 @@ class ExternalResourceLinkType
      *
      * A Composite containing details of the Type of a Resource pointed to by the ExternalResourceLink.
      *
-     * @return \DedexBundle\Entity\Ern\ExternallyLinkedResourceTypeType[]
+     * @return \DedexBundle\Entity\Ern41\ExternallyLinkedResourceTypeType[]
      */
     public function getExternallyLinkedResourceType()
     {
@@ -225,7 +225,7 @@ class ExternalResourceLinkType
      *
      * A Composite containing details of the Type of a Resource pointed to by the ExternalResourceLink.
      *
-     * @param \DedexBundle\Entity\Ern\ExternallyLinkedResourceTypeType[] $externallyLinkedResourceType
+     * @param \DedexBundle\Entity\Ern41\ExternallyLinkedResourceTypeType[] $externallyLinkedResourceType
      * @return self
      */
     public function setExternallyLinkedResourceType(array $externallyLinkedResourceType)

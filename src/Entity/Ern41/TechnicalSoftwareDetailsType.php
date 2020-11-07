@@ -42,7 +42,7 @@ class TechnicalSoftwareDetailsType
     /**
      * A Composite containing details of a Type of OperatingSystem.
      *
-     * @var \DedexBundle\Entity\Ern\OperatingSystemTypeType $operatingSystemType
+     * @var \DedexBundle\Entity\Ern41\OperatingSystemTypeType $operatingSystemType
      */
     private $operatingSystemType = null;
 
@@ -63,21 +63,21 @@ class TechnicalSoftwareDetailsType
     /**
      * A Composite containing details of a preview.
      *
-     * @var \DedexBundle\Entity\Ern\PreviewDetailsType $previewDetails
+     * @var \DedexBundle\Entity\Ern41\PreviewDetailsType $previewDetails
      */
     private $previewDetails = null;
 
     /**
      * A Composite containing details of a File containing the Software that a DSP can obtain.
      *
-     * @var \DedexBundle\Entity\Ern\FileType $file
+     * @var \DedexBundle\Entity\Ern41\FileType $file
      */
     private $file = null;
 
     /**
      * A Composite containing details of a Fingerprint and its governing algorithm.
      *
-     * @var \DedexBundle\Entity\Ern\FingerprintType[] $fingerprint
+     * @var \DedexBundle\Entity\Ern41\FingerprintType[] $fingerprint
      */
     private $fingerprint = [
         
@@ -192,7 +192,7 @@ class TechnicalSoftwareDetailsType
      *
      * A Composite containing details of a Type of OperatingSystem.
      *
-     * @return \DedexBundle\Entity\Ern\OperatingSystemTypeType
+     * @return \DedexBundle\Entity\Ern41\OperatingSystemTypeType
      */
     public function getOperatingSystemType()
     {
@@ -204,10 +204,10 @@ class TechnicalSoftwareDetailsType
      *
      * A Composite containing details of a Type of OperatingSystem.
      *
-     * @param \DedexBundle\Entity\Ern\OperatingSystemTypeType $operatingSystemType
+     * @param \DedexBundle\Entity\Ern41\OperatingSystemTypeType $operatingSystemType
      * @return self
      */
-    public function setOperatingSystemType(\DedexBundle\Entity\Ern\OperatingSystemTypeType $operatingSystemType)
+    public function setOperatingSystemType(\DedexBundle\Entity\Ern41\OperatingSystemTypeType $operatingSystemType)
     {
         $this->operatingSystemType = $operatingSystemType;
         return $this;
@@ -270,7 +270,7 @@ class TechnicalSoftwareDetailsType
      *
      * A Composite containing details of a preview.
      *
-     * @return \DedexBundle\Entity\Ern\PreviewDetailsType
+     * @return \DedexBundle\Entity\Ern41\PreviewDetailsType
      */
     public function getPreviewDetails()
     {
@@ -282,10 +282,10 @@ class TechnicalSoftwareDetailsType
      *
      * A Composite containing details of a preview.
      *
-     * @param \DedexBundle\Entity\Ern\PreviewDetailsType $previewDetails
+     * @param \DedexBundle\Entity\Ern41\PreviewDetailsType $previewDetails
      * @return self
      */
-    public function setPreviewDetails(\DedexBundle\Entity\Ern\PreviewDetailsType $previewDetails)
+    public function setPreviewDetails(\DedexBundle\Entity\Ern41\PreviewDetailsType $previewDetails)
     {
         $this->previewDetails = $previewDetails;
         return $this;
@@ -296,7 +296,7 @@ class TechnicalSoftwareDetailsType
      *
      * A Composite containing details of a File containing the Software that a DSP can obtain.
      *
-     * @return \DedexBundle\Entity\Ern\FileType
+     * @return \DedexBundle\Entity\Ern41\FileType
      */
     public function getFile()
     {
@@ -308,10 +308,10 @@ class TechnicalSoftwareDetailsType
      *
      * A Composite containing details of a File containing the Software that a DSP can obtain.
      *
-     * @param \DedexBundle\Entity\Ern\FileType $file
+     * @param \DedexBundle\Entity\Ern41\FileType $file
      * @return self
      */
-    public function setFile(\DedexBundle\Entity\Ern\FileType $file)
+    public function setFile(\DedexBundle\Entity\Ern41\FileType $file)
     {
         $this->file = $file;
         return $this;
@@ -323,9 +323,9 @@ class TechnicalSoftwareDetailsType
      * A Composite containing details of a Fingerprint and its governing algorithm.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\FingerprintType $fingerprint
+     * @param \DedexBundle\Entity\Ern41\FingerprintType $fingerprint
      */
-    public function addToFingerprint(\DedexBundle\Entity\Ern\FingerprintType $fingerprint)
+    public function addToFingerprint(\DedexBundle\Entity\Ern41\FingerprintType $fingerprint)
     {
         $this->fingerprint[] = $fingerprint;
         return $this;
@@ -362,7 +362,7 @@ class TechnicalSoftwareDetailsType
      *
      * A Composite containing details of a Fingerprint and its governing algorithm.
      *
-     * @return \DedexBundle\Entity\Ern\FingerprintType[]
+     * @return \DedexBundle\Entity\Ern41\FingerprintType[]
      */
     public function getFingerprint()
     {
@@ -374,7 +374,7 @@ class TechnicalSoftwareDetailsType
      *
      * A Composite containing details of a Fingerprint and its governing algorithm.
      *
-     * @param \DedexBundle\Entity\Ern\FingerprintType[] $fingerprint
+     * @param \DedexBundle\Entity\Ern41\FingerprintType[] $fingerprint
      * @return self
      */
     public function setFingerprint(array $fingerprint)

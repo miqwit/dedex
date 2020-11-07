@@ -28,14 +28,14 @@ class DisplayArtistType
     /**
      * A Composite containing details of a Role played by the DisplayArtist.
      *
-     * @var \DedexBundle\Entity\Ern\DisplayArtistRoleType $displayArtistRole
+     * @var \DedexBundle\Entity\Ern41\DisplayArtistRoleType $displayArtistRole
      */
     private $displayArtistRole = null;
 
     /**
      * A Composite containing details of a ContributorRole played by the DisplayArtist.
      *
-     * @var \DedexBundle\Entity\Ern\ContributorRoleType[] $artisticRole
+     * @var \DedexBundle\Entity\Ern41\ContributorRoleType[] $artisticRole
      */
     private $artisticRole = [
         
@@ -44,7 +44,7 @@ class DisplayArtistType
     /**
      * A Composite containing information on how a RecordCompany wishes Artist information to be presented to Consumers as part of the Title (and in addition to displaying the DisplayArtist information).
      *
-     * @var \DedexBundle\Entity\Ern\TitleDisplayInformationType[] $titleDisplayInformation
+     * @var \DedexBundle\Entity\Ern41\TitleDisplayInformationType[] $titleDisplayInformation
      */
     private $titleDisplayInformation = [
         
@@ -107,7 +107,7 @@ class DisplayArtistType
      *
      * A Composite containing details of a Role played by the DisplayArtist.
      *
-     * @return \DedexBundle\Entity\Ern\DisplayArtistRoleType
+     * @return \DedexBundle\Entity\Ern41\DisplayArtistRoleType
      */
     public function getDisplayArtistRole()
     {
@@ -119,10 +119,10 @@ class DisplayArtistType
      *
      * A Composite containing details of a Role played by the DisplayArtist.
      *
-     * @param \DedexBundle\Entity\Ern\DisplayArtistRoleType $displayArtistRole
+     * @param \DedexBundle\Entity\Ern41\DisplayArtistRoleType $displayArtistRole
      * @return self
      */
-    public function setDisplayArtistRole(\DedexBundle\Entity\Ern\DisplayArtistRoleType $displayArtistRole)
+    public function setDisplayArtistRole(\DedexBundle\Entity\Ern41\DisplayArtistRoleType $displayArtistRole)
     {
         $this->displayArtistRole = $displayArtistRole;
         return $this;
@@ -134,9 +134,9 @@ class DisplayArtistType
      * A Composite containing details of a ContributorRole played by the DisplayArtist.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\ContributorRoleType $artisticRole
+     * @param \DedexBundle\Entity\Ern41\ContributorRoleType $artisticRole
      */
-    public function addToArtisticRole(\DedexBundle\Entity\Ern\ContributorRoleType $artisticRole)
+    public function addToArtisticRole(\DedexBundle\Entity\Ern41\ContributorRoleType $artisticRole)
     {
         $this->artisticRole[] = $artisticRole;
         return $this;
@@ -173,7 +173,7 @@ class DisplayArtistType
      *
      * A Composite containing details of a ContributorRole played by the DisplayArtist.
      *
-     * @return \DedexBundle\Entity\Ern\ContributorRoleType[]
+     * @return \DedexBundle\Entity\Ern41\ContributorRoleType[]
      */
     public function getArtisticRole()
     {
@@ -185,7 +185,7 @@ class DisplayArtistType
      *
      * A Composite containing details of a ContributorRole played by the DisplayArtist.
      *
-     * @param \DedexBundle\Entity\Ern\ContributorRoleType[] $artisticRole
+     * @param \DedexBundle\Entity\Ern41\ContributorRoleType[] $artisticRole
      * @return self
      */
     public function setArtisticRole(array $artisticRole)
@@ -200,9 +200,9 @@ class DisplayArtistType
      * A Composite containing information on how a RecordCompany wishes Artist information to be presented to Consumers as part of the Title (and in addition to displaying the DisplayArtist information).
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\TitleDisplayInformationType $titleDisplayInformation
+     * @param \DedexBundle\Entity\Ern41\TitleDisplayInformationType $titleDisplayInformation
      */
-    public function addToTitleDisplayInformation(\DedexBundle\Entity\Ern\TitleDisplayInformationType $titleDisplayInformation)
+    public function addToTitleDisplayInformation(\DedexBundle\Entity\Ern41\TitleDisplayInformationType $titleDisplayInformation)
     {
         $this->titleDisplayInformation[] = $titleDisplayInformation;
         return $this;
@@ -239,7 +239,7 @@ class DisplayArtistType
      *
      * A Composite containing information on how a RecordCompany wishes Artist information to be presented to Consumers as part of the Title (and in addition to displaying the DisplayArtist information).
      *
-     * @return \DedexBundle\Entity\Ern\TitleDisplayInformationType[]
+     * @return \DedexBundle\Entity\Ern41\TitleDisplayInformationType[]
      */
     public function getTitleDisplayInformation()
     {
@@ -251,7 +251,7 @@ class DisplayArtistType
      *
      * A Composite containing information on how a RecordCompany wishes Artist information to be presented to Consumers as part of the Title (and in addition to displaying the DisplayArtist information).
      *
-     * @param \DedexBundle\Entity\Ern\TitleDisplayInformationType[] $titleDisplayInformation
+     * @param \DedexBundle\Entity\Ern41\TitleDisplayInformationType[] $titleDisplayInformation
      * @return self
      */
     public function setTitleDisplayInformation(array $titleDisplayInformation)

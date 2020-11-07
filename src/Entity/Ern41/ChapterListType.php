@@ -21,7 +21,7 @@ class ChapterListType
     /**
      * A Composite containing details of a Chapter contained in a Resource.
      *
-     * @var \DedexBundle\Entity\Ern\ChapterType[] $chapter
+     * @var \DedexBundle\Entity\Ern41\ChapterType[] $chapter
      */
     private $chapter = [
         
@@ -59,9 +59,9 @@ class ChapterListType
      * A Composite containing details of a Chapter contained in a Resource.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\ChapterType $chapter
+     * @param \DedexBundle\Entity\Ern41\ChapterType $chapter
      */
-    public function addToChapter(\DedexBundle\Entity\Ern\ChapterType $chapter)
+    public function addToChapter(\DedexBundle\Entity\Ern41\ChapterType $chapter)
     {
         $this->chapter[] = $chapter;
         return $this;
@@ -98,7 +98,7 @@ class ChapterListType
      *
      * A Composite containing details of a Chapter contained in a Resource.
      *
-     * @return \DedexBundle\Entity\Ern\ChapterType[]
+     * @return \DedexBundle\Entity\Ern41\ChapterType[]
      */
     public function getChapter()
     {
@@ -110,7 +110,7 @@ class ChapterListType
      *
      * A Composite containing details of a Chapter contained in a Resource.
      *
-     * @param \DedexBundle\Entity\Ern\ChapterType[] $chapter
+     * @param \DedexBundle\Entity\Ern41\ChapterType[] $chapter
      * @return self
      */
     public function setChapter(array $chapter)

@@ -21,7 +21,7 @@ class FileType
     /**
      * A Composite containing a HashSum of the File and information about the algorithm with which it has been generated.
      *
-     * @var \DedexBundle\Entity\Ern\DetailedHashSumType $hashSum
+     * @var \DedexBundle\Entity\Ern41\DetailedHashSumType $hashSum
      */
     private $hashSum = null;
 
@@ -63,7 +63,7 @@ class FileType
      *
      * A Composite containing a HashSum of the File and information about the algorithm with which it has been generated.
      *
-     * @return \DedexBundle\Entity\Ern\DetailedHashSumType
+     * @return \DedexBundle\Entity\Ern41\DetailedHashSumType
      */
     public function getHashSum()
     {
@@ -75,10 +75,10 @@ class FileType
      *
      * A Composite containing a HashSum of the File and information about the algorithm with which it has been generated.
      *
-     * @param \DedexBundle\Entity\Ern\DetailedHashSumType $hashSum
+     * @param \DedexBundle\Entity\Ern41\DetailedHashSumType $hashSum
      * @return self
      */
-    public function setHashSum(\DedexBundle\Entity\Ern\DetailedHashSumType $hashSum)
+    public function setHashSum(\DedexBundle\Entity\Ern41\DetailedHashSumType $hashSum)
     {
         $this->hashSum = $hashSum;
         return $this;

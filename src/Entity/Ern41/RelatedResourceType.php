@@ -28,14 +28,14 @@ class RelatedResourceType
     /**
      * A Composite containing details of ReleaseIds, which allows referencing a related Release that is not in this message. If available, a GRid shall always to be used. If the Release contains only one SoundRecording, the ISRC of the SoundRecording may be used instead. If the Release is an abstraction of a complete PhysicalProduct (such as a CD Album), the ICPN of the PhysicalProduct may be used instead. More than one of these identifiers may be provided.
      *
-     * @var \DedexBundle\Entity\Ern\ReleaseIdType $releaseId
+     * @var \DedexBundle\Entity\Ern41\ReleaseIdType $releaseId
      */
     private $releaseId = null;
 
     /**
      * A Composite containing details of a StartTime and/or a Duration of the related Resource.
      *
-     * @var \DedexBundle\Entity\Ern\TimingType[] $timing
+     * @var \DedexBundle\Entity\Ern41\TimingType[] $timing
      */
     private $timing = [
         
@@ -98,7 +98,7 @@ class RelatedResourceType
      *
      * A Composite containing details of ReleaseIds, which allows referencing a related Release that is not in this message. If available, a GRid shall always to be used. If the Release contains only one SoundRecording, the ISRC of the SoundRecording may be used instead. If the Release is an abstraction of a complete PhysicalProduct (such as a CD Album), the ICPN of the PhysicalProduct may be used instead. More than one of these identifiers may be provided.
      *
-     * @return \DedexBundle\Entity\Ern\ReleaseIdType
+     * @return \DedexBundle\Entity\Ern41\ReleaseIdType
      */
     public function getReleaseId()
     {
@@ -110,10 +110,10 @@ class RelatedResourceType
      *
      * A Composite containing details of ReleaseIds, which allows referencing a related Release that is not in this message. If available, a GRid shall always to be used. If the Release contains only one SoundRecording, the ISRC of the SoundRecording may be used instead. If the Release is an abstraction of a complete PhysicalProduct (such as a CD Album), the ICPN of the PhysicalProduct may be used instead. More than one of these identifiers may be provided.
      *
-     * @param \DedexBundle\Entity\Ern\ReleaseIdType $releaseId
+     * @param \DedexBundle\Entity\Ern41\ReleaseIdType $releaseId
      * @return self
      */
-    public function setReleaseId(\DedexBundle\Entity\Ern\ReleaseIdType $releaseId)
+    public function setReleaseId(\DedexBundle\Entity\Ern41\ReleaseIdType $releaseId)
     {
         $this->releaseId = $releaseId;
         return $this;
@@ -125,9 +125,9 @@ class RelatedResourceType
      * A Composite containing details of a StartTime and/or a Duration of the related Resource.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\TimingType $timing
+     * @param \DedexBundle\Entity\Ern41\TimingType $timing
      */
-    public function addToTiming(\DedexBundle\Entity\Ern\TimingType $timing)
+    public function addToTiming(\DedexBundle\Entity\Ern41\TimingType $timing)
     {
         $this->timing[] = $timing;
         return $this;
@@ -164,7 +164,7 @@ class RelatedResourceType
      *
      * A Composite containing details of a StartTime and/or a Duration of the related Resource.
      *
-     * @return \DedexBundle\Entity\Ern\TimingType[]
+     * @return \DedexBundle\Entity\Ern41\TimingType[]
      */
     public function getTiming()
     {
@@ -176,7 +176,7 @@ class RelatedResourceType
      *
      * A Composite containing details of a StartTime and/or a Duration of the related Resource.
      *
-     * @param \DedexBundle\Entity\Ern\TimingType[] $timing
+     * @param \DedexBundle\Entity\Ern41\TimingType[] $timing
      * @return self
      */
     public function setTiming(array $timing)

@@ -35,7 +35,7 @@ class TitleDisplayInformationType
     /**
      * A Descriptor that precedes the display artist name when multiple display artist names are given.
      *
-     * @var \DedexBundle\Entity\Ern\PrefixType[] $prefix
+     * @var \DedexBundle\Entity\Ern41\PrefixType[] $prefix
      */
     private $prefix = [
         
@@ -125,9 +125,9 @@ class TitleDisplayInformationType
      * A Descriptor that precedes the display artist name when multiple display artist names are given.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\PrefixType $prefix
+     * @param \DedexBundle\Entity\Ern41\PrefixType $prefix
      */
-    public function addToPrefix(\DedexBundle\Entity\Ern\PrefixType $prefix)
+    public function addToPrefix(\DedexBundle\Entity\Ern41\PrefixType $prefix)
     {
         $this->prefix[] = $prefix;
         return $this;
@@ -164,7 +164,7 @@ class TitleDisplayInformationType
      *
      * A Descriptor that precedes the display artist name when multiple display artist names are given.
      *
-     * @return \DedexBundle\Entity\Ern\PrefixType[]
+     * @return \DedexBundle\Entity\Ern41\PrefixType[]
      */
     public function getPrefix()
     {
@@ -176,7 +176,7 @@ class TitleDisplayInformationType
      *
      * A Descriptor that precedes the display artist name when multiple display artist names are given.
      *
-     * @param \DedexBundle\Entity\Ern\PrefixType[] $prefix
+     * @param \DedexBundle\Entity\Ern41\PrefixType[] $prefix
      * @return self
      */
     public function setPrefix(array $prefix)

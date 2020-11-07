@@ -28,14 +28,14 @@ class SoundRecordingIdType
     /**
      * A Composite containing details of the CatalogNumber of the SoundRecording.
      *
-     * @var \DedexBundle\Entity\Ern\CatalogNumberType $catalogNumber
+     * @var \DedexBundle\Entity\Ern41\CatalogNumberType $catalogNumber
      */
     private $catalogNumber = null;
 
     /**
      * A Composite containing details of a ProprietaryIdentifier of the SoundRecording (usually one per society involved in the messaging).
      *
-     * @var \DedexBundle\Entity\Ern\ProprietaryIdType[] $proprietaryId
+     * @var \DedexBundle\Entity\Ern41\ProprietaryIdType[] $proprietaryId
      */
     private $proprietaryId = [
         
@@ -98,7 +98,7 @@ class SoundRecordingIdType
      *
      * A Composite containing details of the CatalogNumber of the SoundRecording.
      *
-     * @return \DedexBundle\Entity\Ern\CatalogNumberType
+     * @return \DedexBundle\Entity\Ern41\CatalogNumberType
      */
     public function getCatalogNumber()
     {
@@ -110,10 +110,10 @@ class SoundRecordingIdType
      *
      * A Composite containing details of the CatalogNumber of the SoundRecording.
      *
-     * @param \DedexBundle\Entity\Ern\CatalogNumberType $catalogNumber
+     * @param \DedexBundle\Entity\Ern41\CatalogNumberType $catalogNumber
      * @return self
      */
-    public function setCatalogNumber(\DedexBundle\Entity\Ern\CatalogNumberType $catalogNumber)
+    public function setCatalogNumber(\DedexBundle\Entity\Ern41\CatalogNumberType $catalogNumber)
     {
         $this->catalogNumber = $catalogNumber;
         return $this;
@@ -125,9 +125,9 @@ class SoundRecordingIdType
      * A Composite containing details of a ProprietaryIdentifier of the SoundRecording (usually one per society involved in the messaging).
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\ProprietaryIdType $proprietaryId
+     * @param \DedexBundle\Entity\Ern41\ProprietaryIdType $proprietaryId
      */
-    public function addToProprietaryId(\DedexBundle\Entity\Ern\ProprietaryIdType $proprietaryId)
+    public function addToProprietaryId(\DedexBundle\Entity\Ern41\ProprietaryIdType $proprietaryId)
     {
         $this->proprietaryId[] = $proprietaryId;
         return $this;
@@ -164,7 +164,7 @@ class SoundRecordingIdType
      *
      * A Composite containing details of a ProprietaryIdentifier of the SoundRecording (usually one per society involved in the messaging).
      *
-     * @return \DedexBundle\Entity\Ern\ProprietaryIdType[]
+     * @return \DedexBundle\Entity\Ern41\ProprietaryIdType[]
      */
     public function getProprietaryId()
     {
@@ -176,7 +176,7 @@ class SoundRecordingIdType
      *
      * A Composite containing details of a ProprietaryIdentifier of the SoundRecording (usually one per society involved in the messaging).
      *
-     * @param \DedexBundle\Entity\Ern\ProprietaryIdType[] $proprietaryId
+     * @param \DedexBundle\Entity\Ern41\ProprietaryIdType[] $proprietaryId
      * @return self
      */
     public function setProprietaryId(array $proprietaryId)

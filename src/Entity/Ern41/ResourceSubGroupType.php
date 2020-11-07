@@ -21,7 +21,7 @@ class ResourceSubGroupType
     /**
      * A Composite containing details of a Title of the ResourceGroup as the MessageSender suggests it should be shown to the Consumer. Typically this will apply to 'sub' ResourceGroups within a hierarchy, e.g., different Albums in a Set. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @var \DedexBundle\Entity\Ern\DisplayTitleTextType[] $displayTitleText
+     * @var \DedexBundle\Entity\Ern41\DisplayTitleTextType[] $displayTitleText
      */
     private $displayTitleText = [
         
@@ -30,7 +30,7 @@ class ResourceSubGroupType
     /**
      * A Composite containing details of a Title of the ResourceGroup as the MessageSender suggests it should be shown to the Consumer. Typically this will apply to 'sub' ResourceGroups within a hierarchy, e.g., different Albums in a Set. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @var \DedexBundle\Entity\Ern\DisplayTitleType[] $displayTitle
+     * @var \DedexBundle\Entity\Ern41\DisplayTitleType[] $displayTitle
      */
     private $displayTitle = [
         
@@ -39,7 +39,7 @@ class ResourceSubGroupType
     /**
      * A Composite containing details of an AdditionalTitle of the ResourceGroup. Typically this will apply to 'sub' ResourceGroups within a hierarchy, e.g., different Albums in a Set. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @var \DedexBundle\Entity\Ern\AdditionalTitleType[] $additionalTitle
+     * @var \DedexBundle\Entity\Ern41\AdditionalTitleType[] $additionalTitle
      */
     private $additionalTitle = [
         
@@ -69,7 +69,7 @@ class ResourceSubGroupType
     /**
      * A Composite containing details of the DisplayArtist for the ResourceGroup. The DisplayArtist may be described through Name, Identifier and Roles.
      *
-     * @var \DedexBundle\Entity\Ern\DisplayArtistType[] $displayArtist
+     * @var \DedexBundle\Entity\Ern41\DisplayArtistType[] $displayArtist
      */
     private $displayArtist = [
         
@@ -78,7 +78,7 @@ class ResourceSubGroupType
     /**
      * A Composite containing details of a Carrier.
      *
-     * @var \DedexBundle\Entity\Ern\CarrierTypeType[] $carrierType
+     * @var \DedexBundle\Entity\Ern41\CarrierTypeType[] $carrierType
      */
     private $carrierType = [
         
@@ -101,14 +101,14 @@ class ResourceSubGroupType
     /**
      * A Composite containing details of ReleaseIds of a Release which has the same content as the ResourceGroup. If available, a GRid has to be used. If the Release contains only one SoundRecording, the ISRC of the SoundRecording may be used instead. If the Release is an abstraction of a complete PhysicalProduct (such as a CD Album), the ICPN of the PhysicalProduct may be used instead.
      *
-     * @var \DedexBundle\Entity\Ern\ReleaseIdType $releaseId
+     * @var \DedexBundle\Entity\Ern41\ReleaseIdType $releaseId
      */
     private $releaseId = null;
 
     /**
      * A ResourceGroup contained within this ResourceGroup. ResourceGroups are used to signal groupings or sequences of Resources within a Release. Examples include individual Carriers in a multi-carrier Release or classical Work groupings as well as the default order of Resources within a Release.
      *
-     * @var \DedexBundle\Entity\Ern\ResourceSubGroupType[] $resourceGroup
+     * @var \DedexBundle\Entity\Ern41\ResourceSubGroupType[] $resourceGroup
      */
     private $resourceGroup = [
         
@@ -117,7 +117,7 @@ class ResourceSubGroupType
     /**
      * A Composite containing details of a Resource contained in the ResourceGroup.
      *
-     * @var \DedexBundle\Entity\Ern\ResourceGroupContentItemType[] $resourceGroupContentItem
+     * @var \DedexBundle\Entity\Ern41\ResourceGroupContentItemType[] $resourceGroupContentItem
      */
     private $resourceGroupContentItem = [
         
@@ -126,7 +126,7 @@ class ResourceSubGroupType
     /**
      * A Composite containing details of a ReleaseResourceReference (specific to this Message) for a Resource which is linked to this Release. Example:cover art images associated with the ResourceGroup. This LocalAnchorReference is a xs:string starting with the letter A.
      *
-     * @var \DedexBundle\Entity\Ern\LinkedReleaseResourceReferenceType[] $linkedReleaseResourceReference
+     * @var \DedexBundle\Entity\Ern41\LinkedReleaseResourceReferenceType[] $linkedReleaseResourceReference
      */
     private $linkedReleaseResourceReference = [
         
@@ -164,9 +164,9 @@ class ResourceSubGroupType
      * A Composite containing details of a Title of the ResourceGroup as the MessageSender suggests it should be shown to the Consumer. Typically this will apply to 'sub' ResourceGroups within a hierarchy, e.g., different Albums in a Set. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DisplayTitleTextType $displayTitleText
+     * @param \DedexBundle\Entity\Ern41\DisplayTitleTextType $displayTitleText
      */
-    public function addToDisplayTitleText(\DedexBundle\Entity\Ern\DisplayTitleTextType $displayTitleText)
+    public function addToDisplayTitleText(\DedexBundle\Entity\Ern41\DisplayTitleTextType $displayTitleText)
     {
         $this->displayTitleText[] = $displayTitleText;
         return $this;
@@ -203,7 +203,7 @@ class ResourceSubGroupType
      *
      * A Composite containing details of a Title of the ResourceGroup as the MessageSender suggests it should be shown to the Consumer. Typically this will apply to 'sub' ResourceGroups within a hierarchy, e.g., different Albums in a Set. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @return \DedexBundle\Entity\Ern\DisplayTitleTextType[]
+     * @return \DedexBundle\Entity\Ern41\DisplayTitleTextType[]
      */
     public function getDisplayTitleText()
     {
@@ -215,7 +215,7 @@ class ResourceSubGroupType
      *
      * A Composite containing details of a Title of the ResourceGroup as the MessageSender suggests it should be shown to the Consumer. Typically this will apply to 'sub' ResourceGroups within a hierarchy, e.g., different Albums in a Set. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @param \DedexBundle\Entity\Ern\DisplayTitleTextType[] $displayTitleText
+     * @param \DedexBundle\Entity\Ern41\DisplayTitleTextType[] $displayTitleText
      * @return self
      */
     public function setDisplayTitleText(array $displayTitleText)
@@ -230,9 +230,9 @@ class ResourceSubGroupType
      * A Composite containing details of a Title of the ResourceGroup as the MessageSender suggests it should be shown to the Consumer. Typically this will apply to 'sub' ResourceGroups within a hierarchy, e.g., different Albums in a Set. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DisplayTitleType $displayTitle
+     * @param \DedexBundle\Entity\Ern41\DisplayTitleType $displayTitle
      */
-    public function addToDisplayTitle(\DedexBundle\Entity\Ern\DisplayTitleType $displayTitle)
+    public function addToDisplayTitle(\DedexBundle\Entity\Ern41\DisplayTitleType $displayTitle)
     {
         $this->displayTitle[] = $displayTitle;
         return $this;
@@ -269,7 +269,7 @@ class ResourceSubGroupType
      *
      * A Composite containing details of a Title of the ResourceGroup as the MessageSender suggests it should be shown to the Consumer. Typically this will apply to 'sub' ResourceGroups within a hierarchy, e.g., different Albums in a Set. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @return \DedexBundle\Entity\Ern\DisplayTitleType[]
+     * @return \DedexBundle\Entity\Ern41\DisplayTitleType[]
      */
     public function getDisplayTitle()
     {
@@ -281,7 +281,7 @@ class ResourceSubGroupType
      *
      * A Composite containing details of a Title of the ResourceGroup as the MessageSender suggests it should be shown to the Consumer. Typically this will apply to 'sub' ResourceGroups within a hierarchy, e.g., different Albums in a Set. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @param \DedexBundle\Entity\Ern\DisplayTitleType[] $displayTitle
+     * @param \DedexBundle\Entity\Ern41\DisplayTitleType[] $displayTitle
      * @return self
      */
     public function setDisplayTitle(array $displayTitle)
@@ -296,9 +296,9 @@ class ResourceSubGroupType
      * A Composite containing details of an AdditionalTitle of the ResourceGroup. Typically this will apply to 'sub' ResourceGroups within a hierarchy, e.g., different Albums in a Set. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\AdditionalTitleType $additionalTitle
+     * @param \DedexBundle\Entity\Ern41\AdditionalTitleType $additionalTitle
      */
-    public function addToAdditionalTitle(\DedexBundle\Entity\Ern\AdditionalTitleType $additionalTitle)
+    public function addToAdditionalTitle(\DedexBundle\Entity\Ern41\AdditionalTitleType $additionalTitle)
     {
         $this->additionalTitle[] = $additionalTitle;
         return $this;
@@ -335,7 +335,7 @@ class ResourceSubGroupType
      *
      * A Composite containing details of an AdditionalTitle of the ResourceGroup. Typically this will apply to 'sub' ResourceGroups within a hierarchy, e.g., different Albums in a Set. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @return \DedexBundle\Entity\Ern\AdditionalTitleType[]
+     * @return \DedexBundle\Entity\Ern41\AdditionalTitleType[]
      */
     public function getAdditionalTitle()
     {
@@ -347,7 +347,7 @@ class ResourceSubGroupType
      *
      * A Composite containing details of an AdditionalTitle of the ResourceGroup. Typically this will apply to 'sub' ResourceGroups within a hierarchy, e.g., different Albums in a Set. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @param \DedexBundle\Entity\Ern\AdditionalTitleType[] $additionalTitle
+     * @param \DedexBundle\Entity\Ern41\AdditionalTitleType[] $additionalTitle
      * @return self
      */
     public function setAdditionalTitle(array $additionalTitle)
@@ -440,9 +440,9 @@ class ResourceSubGroupType
      * A Composite containing details of the DisplayArtist for the ResourceGroup. The DisplayArtist may be described through Name, Identifier and Roles.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DisplayArtistType $displayArtist
+     * @param \DedexBundle\Entity\Ern41\DisplayArtistType $displayArtist
      */
-    public function addToDisplayArtist(\DedexBundle\Entity\Ern\DisplayArtistType $displayArtist)
+    public function addToDisplayArtist(\DedexBundle\Entity\Ern41\DisplayArtistType $displayArtist)
     {
         $this->displayArtist[] = $displayArtist;
         return $this;
@@ -479,7 +479,7 @@ class ResourceSubGroupType
      *
      * A Composite containing details of the DisplayArtist for the ResourceGroup. The DisplayArtist may be described through Name, Identifier and Roles.
      *
-     * @return \DedexBundle\Entity\Ern\DisplayArtistType[]
+     * @return \DedexBundle\Entity\Ern41\DisplayArtistType[]
      */
     public function getDisplayArtist()
     {
@@ -491,7 +491,7 @@ class ResourceSubGroupType
      *
      * A Composite containing details of the DisplayArtist for the ResourceGroup. The DisplayArtist may be described through Name, Identifier and Roles.
      *
-     * @param \DedexBundle\Entity\Ern\DisplayArtistType[] $displayArtist
+     * @param \DedexBundle\Entity\Ern41\DisplayArtistType[] $displayArtist
      * @return self
      */
     public function setDisplayArtist(array $displayArtist)
@@ -506,9 +506,9 @@ class ResourceSubGroupType
      * A Composite containing details of a Carrier.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\CarrierTypeType $carrierType
+     * @param \DedexBundle\Entity\Ern41\CarrierTypeType $carrierType
      */
-    public function addToCarrierType(\DedexBundle\Entity\Ern\CarrierTypeType $carrierType)
+    public function addToCarrierType(\DedexBundle\Entity\Ern41\CarrierTypeType $carrierType)
     {
         $this->carrierType[] = $carrierType;
         return $this;
@@ -545,7 +545,7 @@ class ResourceSubGroupType
      *
      * A Composite containing details of a Carrier.
      *
-     * @return \DedexBundle\Entity\Ern\CarrierTypeType[]
+     * @return \DedexBundle\Entity\Ern41\CarrierTypeType[]
      */
     public function getCarrierType()
     {
@@ -557,7 +557,7 @@ class ResourceSubGroupType
      *
      * A Composite containing details of a Carrier.
      *
-     * @param \DedexBundle\Entity\Ern\CarrierTypeType[] $carrierType
+     * @param \DedexBundle\Entity\Ern41\CarrierTypeType[] $carrierType
      * @return self
      */
     public function setCarrierType(array $carrierType)
@@ -623,7 +623,7 @@ class ResourceSubGroupType
      *
      * A Composite containing details of ReleaseIds of a Release which has the same content as the ResourceGroup. If available, a GRid has to be used. If the Release contains only one SoundRecording, the ISRC of the SoundRecording may be used instead. If the Release is an abstraction of a complete PhysicalProduct (such as a CD Album), the ICPN of the PhysicalProduct may be used instead.
      *
-     * @return \DedexBundle\Entity\Ern\ReleaseIdType
+     * @return \DedexBundle\Entity\Ern41\ReleaseIdType
      */
     public function getReleaseId()
     {
@@ -635,10 +635,10 @@ class ResourceSubGroupType
      *
      * A Composite containing details of ReleaseIds of a Release which has the same content as the ResourceGroup. If available, a GRid has to be used. If the Release contains only one SoundRecording, the ISRC of the SoundRecording may be used instead. If the Release is an abstraction of a complete PhysicalProduct (such as a CD Album), the ICPN of the PhysicalProduct may be used instead.
      *
-     * @param \DedexBundle\Entity\Ern\ReleaseIdType $releaseId
+     * @param \DedexBundle\Entity\Ern41\ReleaseIdType $releaseId
      * @return self
      */
-    public function setReleaseId(\DedexBundle\Entity\Ern\ReleaseIdType $releaseId)
+    public function setReleaseId(\DedexBundle\Entity\Ern41\ReleaseIdType $releaseId)
     {
         $this->releaseId = $releaseId;
         return $this;
@@ -650,9 +650,9 @@ class ResourceSubGroupType
      * A ResourceGroup contained within this ResourceGroup. ResourceGroups are used to signal groupings or sequences of Resources within a Release. Examples include individual Carriers in a multi-carrier Release or classical Work groupings as well as the default order of Resources within a Release.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\ResourceSubGroupType $resourceGroup
+     * @param \DedexBundle\Entity\Ern41\ResourceSubGroupType $resourceGroup
      */
-    public function addToResourceGroup(\DedexBundle\Entity\Ern\ResourceSubGroupType $resourceGroup)
+    public function addToResourceGroup(\DedexBundle\Entity\Ern41\ResourceSubGroupType $resourceGroup)
     {
         $this->resourceGroup[] = $resourceGroup;
         return $this;
@@ -689,7 +689,7 @@ class ResourceSubGroupType
      *
      * A ResourceGroup contained within this ResourceGroup. ResourceGroups are used to signal groupings or sequences of Resources within a Release. Examples include individual Carriers in a multi-carrier Release or classical Work groupings as well as the default order of Resources within a Release.
      *
-     * @return \DedexBundle\Entity\Ern\ResourceSubGroupType[]
+     * @return \DedexBundle\Entity\Ern41\ResourceSubGroupType[]
      */
     public function getResourceGroup()
     {
@@ -701,7 +701,7 @@ class ResourceSubGroupType
      *
      * A ResourceGroup contained within this ResourceGroup. ResourceGroups are used to signal groupings or sequences of Resources within a Release. Examples include individual Carriers in a multi-carrier Release or classical Work groupings as well as the default order of Resources within a Release.
      *
-     * @param \DedexBundle\Entity\Ern\ResourceSubGroupType[] $resourceGroup
+     * @param \DedexBundle\Entity\Ern41\ResourceSubGroupType[] $resourceGroup
      * @return self
      */
     public function setResourceGroup(array $resourceGroup)
@@ -716,9 +716,9 @@ class ResourceSubGroupType
      * A Composite containing details of a Resource contained in the ResourceGroup.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\ResourceGroupContentItemType $resourceGroupContentItem
+     * @param \DedexBundle\Entity\Ern41\ResourceGroupContentItemType $resourceGroupContentItem
      */
-    public function addToResourceGroupContentItem(\DedexBundle\Entity\Ern\ResourceGroupContentItemType $resourceGroupContentItem)
+    public function addToResourceGroupContentItem(\DedexBundle\Entity\Ern41\ResourceGroupContentItemType $resourceGroupContentItem)
     {
         $this->resourceGroupContentItem[] = $resourceGroupContentItem;
         return $this;
@@ -755,7 +755,7 @@ class ResourceSubGroupType
      *
      * A Composite containing details of a Resource contained in the ResourceGroup.
      *
-     * @return \DedexBundle\Entity\Ern\ResourceGroupContentItemType[]
+     * @return \DedexBundle\Entity\Ern41\ResourceGroupContentItemType[]
      */
     public function getResourceGroupContentItem()
     {
@@ -767,7 +767,7 @@ class ResourceSubGroupType
      *
      * A Composite containing details of a Resource contained in the ResourceGroup.
      *
-     * @param \DedexBundle\Entity\Ern\ResourceGroupContentItemType[] $resourceGroupContentItem
+     * @param \DedexBundle\Entity\Ern41\ResourceGroupContentItemType[] $resourceGroupContentItem
      * @return self
      */
     public function setResourceGroupContentItem(array $resourceGroupContentItem)
@@ -782,9 +782,9 @@ class ResourceSubGroupType
      * A Composite containing details of a ReleaseResourceReference (specific to this Message) for a Resource which is linked to this Release. Example:cover art images associated with the ResourceGroup. This LocalAnchorReference is a xs:string starting with the letter A.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\LinkedReleaseResourceReferenceType $linkedReleaseResourceReference
+     * @param \DedexBundle\Entity\Ern41\LinkedReleaseResourceReferenceType $linkedReleaseResourceReference
      */
-    public function addToLinkedReleaseResourceReference(\DedexBundle\Entity\Ern\LinkedReleaseResourceReferenceType $linkedReleaseResourceReference)
+    public function addToLinkedReleaseResourceReference(\DedexBundle\Entity\Ern41\LinkedReleaseResourceReferenceType $linkedReleaseResourceReference)
     {
         $this->linkedReleaseResourceReference[] = $linkedReleaseResourceReference;
         return $this;
@@ -821,7 +821,7 @@ class ResourceSubGroupType
      *
      * A Composite containing details of a ReleaseResourceReference (specific to this Message) for a Resource which is linked to this Release. Example:cover art images associated with the ResourceGroup. This LocalAnchorReference is a xs:string starting with the letter A.
      *
-     * @return \DedexBundle\Entity\Ern\LinkedReleaseResourceReferenceType[]
+     * @return \DedexBundle\Entity\Ern41\LinkedReleaseResourceReferenceType[]
      */
     public function getLinkedReleaseResourceReference()
     {
@@ -833,7 +833,7 @@ class ResourceSubGroupType
      *
      * A Composite containing details of a ReleaseResourceReference (specific to this Message) for a Resource which is linked to this Release. Example:cover art images associated with the ResourceGroup. This LocalAnchorReference is a xs:string starting with the letter A.
      *
-     * @param \DedexBundle\Entity\Ern\LinkedReleaseResourceReferenceType[] $linkedReleaseResourceReference
+     * @param \DedexBundle\Entity\Ern41\LinkedReleaseResourceReferenceType[] $linkedReleaseResourceReference
      * @return self
      */
     public function setLinkedReleaseResourceReference(array $linkedReleaseResourceReference)

@@ -35,21 +35,21 @@ class MessageHeaderType
     /**
      * A Composite containing details of the MessageSender.
      *
-     * @var \DedexBundle\Entity\Ern\MessagingPartyWithoutCodeType $messageSender
+     * @var \DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType $messageSender
      */
     private $messageSender = null;
 
     /**
      * A Composite containing details of the Party on whose behalf the Message is sent.
      *
-     * @var \DedexBundle\Entity\Ern\MessagingPartyWithoutCodeType $sentOnBehalfOf
+     * @var \DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType $sentOnBehalfOf
      */
     private $sentOnBehalfOf = null;
 
     /**
      * A Composite containing details of the MessageRecipient. Note that if multiple MessageRecipients are provided, all of them will be able to read this information.
      *
-     * @var \DedexBundle\Entity\Ern\MessagingPartyWithoutCodeType[] $messageRecipient
+     * @var \DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType[] $messageRecipient
      */
     private $messageRecipient = [
         
@@ -65,7 +65,7 @@ class MessageHeaderType
     /**
      * A Composite containing information about Parties in between the original MessageSender and ultimate MessageRecipient.
      *
-     * @var \DedexBundle\Entity\Ern\MessageAuditTrailEventType[] $messageAuditTrail
+     * @var \DedexBundle\Entity\Ern41\MessageAuditTrailEventType[] $messageAuditTrail
      */
     private $messageAuditTrail = null;
 
@@ -159,7 +159,7 @@ class MessageHeaderType
      *
      * A Composite containing details of the MessageSender.
      *
-     * @return \DedexBundle\Entity\Ern\MessagingPartyWithoutCodeType
+     * @return \DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType
      */
     public function getMessageSender()
     {
@@ -171,10 +171,10 @@ class MessageHeaderType
      *
      * A Composite containing details of the MessageSender.
      *
-     * @param \DedexBundle\Entity\Ern\MessagingPartyWithoutCodeType $messageSender
+     * @param \DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType $messageSender
      * @return self
      */
-    public function setMessageSender(\DedexBundle\Entity\Ern\MessagingPartyWithoutCodeType $messageSender)
+    public function setMessageSender(\DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType $messageSender)
     {
         $this->messageSender = $messageSender;
         return $this;
@@ -185,7 +185,7 @@ class MessageHeaderType
      *
      * A Composite containing details of the Party on whose behalf the Message is sent.
      *
-     * @return \DedexBundle\Entity\Ern\MessagingPartyWithoutCodeType
+     * @return \DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType
      */
     public function getSentOnBehalfOf()
     {
@@ -197,10 +197,10 @@ class MessageHeaderType
      *
      * A Composite containing details of the Party on whose behalf the Message is sent.
      *
-     * @param \DedexBundle\Entity\Ern\MessagingPartyWithoutCodeType $sentOnBehalfOf
+     * @param \DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType $sentOnBehalfOf
      * @return self
      */
-    public function setSentOnBehalfOf(\DedexBundle\Entity\Ern\MessagingPartyWithoutCodeType $sentOnBehalfOf)
+    public function setSentOnBehalfOf(\DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType $sentOnBehalfOf)
     {
         $this->sentOnBehalfOf = $sentOnBehalfOf;
         return $this;
@@ -212,9 +212,9 @@ class MessageHeaderType
      * A Composite containing details of the MessageRecipient. Note that if multiple MessageRecipients are provided, all of them will be able to read this information.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\MessagingPartyWithoutCodeType $messageRecipient
+     * @param \DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType $messageRecipient
      */
-    public function addToMessageRecipient(\DedexBundle\Entity\Ern\MessagingPartyWithoutCodeType $messageRecipient)
+    public function addToMessageRecipient(\DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType $messageRecipient)
     {
         $this->messageRecipient[] = $messageRecipient;
         return $this;
@@ -251,7 +251,7 @@ class MessageHeaderType
      *
      * A Composite containing details of the MessageRecipient. Note that if multiple MessageRecipients are provided, all of them will be able to read this information.
      *
-     * @return \DedexBundle\Entity\Ern\MessagingPartyWithoutCodeType[]
+     * @return \DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType[]
      */
     public function getMessageRecipient()
     {
@@ -263,7 +263,7 @@ class MessageHeaderType
      *
      * A Composite containing details of the MessageRecipient. Note that if multiple MessageRecipients are provided, all of them will be able to read this information.
      *
-     * @param \DedexBundle\Entity\Ern\MessagingPartyWithoutCodeType[] $messageRecipient
+     * @param \DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType[] $messageRecipient
      * @return self
      */
     public function setMessageRecipient(array $messageRecipient)
@@ -304,9 +304,9 @@ class MessageHeaderType
      * A Composite containing information about Parties in between the original MessageSender and ultimate MessageRecipient.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\MessageAuditTrailEventType $messageAuditTrailEvent
+     * @param \DedexBundle\Entity\Ern41\MessageAuditTrailEventType $messageAuditTrailEvent
      */
-    public function addToMessageAuditTrail(\DedexBundle\Entity\Ern\MessageAuditTrailEventType $messageAuditTrailEvent)
+    public function addToMessageAuditTrail(\DedexBundle\Entity\Ern41\MessageAuditTrailEventType $messageAuditTrailEvent)
     {
         $this->messageAuditTrail[] = $messageAuditTrailEvent;
         return $this;
@@ -343,7 +343,7 @@ class MessageHeaderType
      *
      * A Composite containing information about Parties in between the original MessageSender and ultimate MessageRecipient.
      *
-     * @return \DedexBundle\Entity\Ern\MessageAuditTrailEventType[]
+     * @return \DedexBundle\Entity\Ern41\MessageAuditTrailEventType[]
      */
     public function getMessageAuditTrail()
     {
@@ -355,7 +355,7 @@ class MessageHeaderType
      *
      * A Composite containing information about Parties in between the original MessageSender and ultimate MessageRecipient.
      *
-     * @param \DedexBundle\Entity\Ern\MessageAuditTrailEventType[] $messageAuditTrail
+     * @param \DedexBundle\Entity\Ern41\MessageAuditTrailEventType[] $messageAuditTrail
      * @return self
      */
     public function setMessageAuditTrail(array $messageAuditTrail)

@@ -14,7 +14,7 @@ class DistributionChannelPageType
     /**
      * A Composite containing details of the PartyId for a Party owning the WebPage. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, producers or other Creators.
      *
-     * @var \DedexBundle\Entity\Ern\DetailedPartyIdType[] $partyId
+     * @var \DedexBundle\Entity\Ern41\DetailedPartyIdType[] $partyId
      */
     private $partyId = [
         
@@ -23,7 +23,7 @@ class DistributionChannelPageType
     /**
      * A Composite containing the Name of the WebPage.
      *
-     * @var \DedexBundle\Entity\Ern\NameType $pageName
+     * @var \DedexBundle\Entity\Ern41\NameType $pageName
      */
     private $pageName = null;
 
@@ -47,9 +47,9 @@ class DistributionChannelPageType
      * A Composite containing details of the PartyId for a Party owning the WebPage. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, producers or other Creators.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DetailedPartyIdType $partyId
+     * @param \DedexBundle\Entity\Ern41\DetailedPartyIdType $partyId
      */
-    public function addToPartyId(\DedexBundle\Entity\Ern\DetailedPartyIdType $partyId)
+    public function addToPartyId(\DedexBundle\Entity\Ern41\DetailedPartyIdType $partyId)
     {
         $this->partyId[] = $partyId;
         return $this;
@@ -86,7 +86,7 @@ class DistributionChannelPageType
      *
      * A Composite containing details of the PartyId for a Party owning the WebPage. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, producers or other Creators.
      *
-     * @return \DedexBundle\Entity\Ern\DetailedPartyIdType[]
+     * @return \DedexBundle\Entity\Ern41\DetailedPartyIdType[]
      */
     public function getPartyId()
     {
@@ -98,7 +98,7 @@ class DistributionChannelPageType
      *
      * A Composite containing details of the PartyId for a Party owning the WebPage. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, producers or other Creators.
      *
-     * @param \DedexBundle\Entity\Ern\DetailedPartyIdType[] $partyId
+     * @param \DedexBundle\Entity\Ern41\DetailedPartyIdType[] $partyId
      * @return self
      */
     public function setPartyId(array $partyId)
@@ -112,7 +112,7 @@ class DistributionChannelPageType
      *
      * A Composite containing the Name of the WebPage.
      *
-     * @return \DedexBundle\Entity\Ern\NameType
+     * @return \DedexBundle\Entity\Ern41\NameType
      */
     public function getPageName()
     {
@@ -124,10 +124,10 @@ class DistributionChannelPageType
      *
      * A Composite containing the Name of the WebPage.
      *
-     * @param \DedexBundle\Entity\Ern\NameType $pageName
+     * @param \DedexBundle\Entity\Ern41\NameType $pageName
      * @return self
      */
-    public function setPageName(\DedexBundle\Entity\Ern\NameType $pageName)
+    public function setPageName(\DedexBundle\Entity\Ern41\NameType $pageName)
     {
         $this->pageName = $pageName;
         return $this;

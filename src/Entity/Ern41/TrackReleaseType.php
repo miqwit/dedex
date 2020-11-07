@@ -28,14 +28,14 @@ class TrackReleaseType
     /**
      * A Composite containing details of ReleaseIds. If available, a GRid has to be used. If the Release contains only one SoundRecording, the ISRC of the SoundRecording may be used instead. If the Release is an abstraction of a complete PhysicalProduct (such as a CD Album), the ICPN of the PhysicalProduct may be used instead.
      *
-     * @var \DedexBundle\Entity\Ern\ReleaseIdType $releaseId
+     * @var \DedexBundle\Entity\Ern41\ReleaseIdType $releaseId
      */
     private $releaseId = null;
 
     /**
      * A Composite containing details of a Title of the Release as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @var \DedexBundle\Entity\Ern\DisplayTitleTextType[] $displayTitleText
+     * @var \DedexBundle\Entity\Ern41\DisplayTitleTextType[] $displayTitleText
      */
     private $displayTitleText = [
         
@@ -44,7 +44,7 @@ class TrackReleaseType
     /**
      * A Composite containing details of a Title of the Release as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @var \DedexBundle\Entity\Ern\DisplayTitleType[] $displayTitle
+     * @var \DedexBundle\Entity\Ern41\DisplayTitleType[] $displayTitle
      */
     private $displayTitle = [
         
@@ -53,7 +53,7 @@ class TrackReleaseType
     /**
      * A Composite containing details of an AdditionalTitle of the Release. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @var \DedexBundle\Entity\Ern\AdditionalTitleType[] $additionalTitle
+     * @var \DedexBundle\Entity\Ern41\AdditionalTitleType[] $additionalTitle
      */
     private $additionalTitle = [
         
@@ -69,7 +69,7 @@ class TrackReleaseType
     /**
      * A Composite containing details of a ReleaseResourceReference (specific to this Message) for a Resource which is linked to this Release. Example: an Image, Text or NonMusicalWorkVideo associated with a SoundRecording. This LocalAnchorReference is a xs:string starting with the letter A.
      *
-     * @var \DedexBundle\Entity\Ern\LinkedReleaseResourceReferenceType[] $linkedReleaseResourceReference
+     * @var \DedexBundle\Entity\Ern41\LinkedReleaseResourceReferenceType[] $linkedReleaseResourceReference
      */
     private $linkedReleaseResourceReference = [
         
@@ -78,7 +78,7 @@ class TrackReleaseType
     /**
      * A Reference for a label of the Release (specific to this Message). This is a LocalPartyAnchorReference starting with the letter P.
      *
-     * @var \DedexBundle\Entity\Ern\ReleaseLabelReferenceType[] $releaseLabelReference
+     * @var \DedexBundle\Entity\Ern41\ReleaseLabelReferenceType[] $releaseLabelReference
      */
     private $releaseLabelReference = [
         
@@ -87,7 +87,7 @@ class TrackReleaseType
     /**
      * A Composite containing details of a Genre to which the Release belongs.
      *
-     * @var \DedexBundle\Entity\Ern\GenreWithTerritoryType[] $genre
+     * @var \DedexBundle\Entity\Ern41\GenreWithTerritoryType[] $genre
      */
     private $genre = [
         
@@ -96,7 +96,7 @@ class TrackReleaseType
     /**
      * A Composite containing a Comment about the promotion and marketing of the Release.
      *
-     * @var \DedexBundle\Entity\Ern\MarketingCommentType[] $marketingComment
+     * @var \DedexBundle\Entity\Ern41\MarketingCommentType[] $marketingComment
      */
     private $marketingComment = [
         
@@ -159,7 +159,7 @@ class TrackReleaseType
      *
      * A Composite containing details of ReleaseIds. If available, a GRid has to be used. If the Release contains only one SoundRecording, the ISRC of the SoundRecording may be used instead. If the Release is an abstraction of a complete PhysicalProduct (such as a CD Album), the ICPN of the PhysicalProduct may be used instead.
      *
-     * @return \DedexBundle\Entity\Ern\ReleaseIdType
+     * @return \DedexBundle\Entity\Ern41\ReleaseIdType
      */
     public function getReleaseId()
     {
@@ -171,10 +171,10 @@ class TrackReleaseType
      *
      * A Composite containing details of ReleaseIds. If available, a GRid has to be used. If the Release contains only one SoundRecording, the ISRC of the SoundRecording may be used instead. If the Release is an abstraction of a complete PhysicalProduct (such as a CD Album), the ICPN of the PhysicalProduct may be used instead.
      *
-     * @param \DedexBundle\Entity\Ern\ReleaseIdType $releaseId
+     * @param \DedexBundle\Entity\Ern41\ReleaseIdType $releaseId
      * @return self
      */
-    public function setReleaseId(\DedexBundle\Entity\Ern\ReleaseIdType $releaseId)
+    public function setReleaseId(\DedexBundle\Entity\Ern41\ReleaseIdType $releaseId)
     {
         $this->releaseId = $releaseId;
         return $this;
@@ -186,9 +186,9 @@ class TrackReleaseType
      * A Composite containing details of a Title of the Release as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DisplayTitleTextType $displayTitleText
+     * @param \DedexBundle\Entity\Ern41\DisplayTitleTextType $displayTitleText
      */
-    public function addToDisplayTitleText(\DedexBundle\Entity\Ern\DisplayTitleTextType $displayTitleText)
+    public function addToDisplayTitleText(\DedexBundle\Entity\Ern41\DisplayTitleTextType $displayTitleText)
     {
         $this->displayTitleText[] = $displayTitleText;
         return $this;
@@ -225,7 +225,7 @@ class TrackReleaseType
      *
      * A Composite containing details of a Title of the Release as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @return \DedexBundle\Entity\Ern\DisplayTitleTextType[]
+     * @return \DedexBundle\Entity\Ern41\DisplayTitleTextType[]
      */
     public function getDisplayTitleText()
     {
@@ -237,7 +237,7 @@ class TrackReleaseType
      *
      * A Composite containing details of a Title of the Release as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @param \DedexBundle\Entity\Ern\DisplayTitleTextType[] $displayTitleText
+     * @param \DedexBundle\Entity\Ern41\DisplayTitleTextType[] $displayTitleText
      * @return self
      */
     public function setDisplayTitleText(array $displayTitleText)
@@ -252,9 +252,9 @@ class TrackReleaseType
      * A Composite containing details of a Title of the Release as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DisplayTitleType $displayTitle
+     * @param \DedexBundle\Entity\Ern41\DisplayTitleType $displayTitle
      */
-    public function addToDisplayTitle(\DedexBundle\Entity\Ern\DisplayTitleType $displayTitle)
+    public function addToDisplayTitle(\DedexBundle\Entity\Ern41\DisplayTitleType $displayTitle)
     {
         $this->displayTitle[] = $displayTitle;
         return $this;
@@ -291,7 +291,7 @@ class TrackReleaseType
      *
      * A Composite containing details of a Title of the Release as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @return \DedexBundle\Entity\Ern\DisplayTitleType[]
+     * @return \DedexBundle\Entity\Ern41\DisplayTitleType[]
      */
     public function getDisplayTitle()
     {
@@ -303,7 +303,7 @@ class TrackReleaseType
      *
      * A Composite containing details of a Title of the Release as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @param \DedexBundle\Entity\Ern\DisplayTitleType[] $displayTitle
+     * @param \DedexBundle\Entity\Ern41\DisplayTitleType[] $displayTitle
      * @return self
      */
     public function setDisplayTitle(array $displayTitle)
@@ -318,9 +318,9 @@ class TrackReleaseType
      * A Composite containing details of an AdditionalTitle of the Release. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\AdditionalTitleType $additionalTitle
+     * @param \DedexBundle\Entity\Ern41\AdditionalTitleType $additionalTitle
      */
-    public function addToAdditionalTitle(\DedexBundle\Entity\Ern\AdditionalTitleType $additionalTitle)
+    public function addToAdditionalTitle(\DedexBundle\Entity\Ern41\AdditionalTitleType $additionalTitle)
     {
         $this->additionalTitle[] = $additionalTitle;
         return $this;
@@ -357,7 +357,7 @@ class TrackReleaseType
      *
      * A Composite containing details of an AdditionalTitle of the Release. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @return \DedexBundle\Entity\Ern\AdditionalTitleType[]
+     * @return \DedexBundle\Entity\Ern41\AdditionalTitleType[]
      */
     public function getAdditionalTitle()
     {
@@ -369,7 +369,7 @@ class TrackReleaseType
      *
      * A Composite containing details of an AdditionalTitle of the Release. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @param \DedexBundle\Entity\Ern\AdditionalTitleType[] $additionalTitle
+     * @param \DedexBundle\Entity\Ern41\AdditionalTitleType[] $additionalTitle
      * @return self
      */
     public function setAdditionalTitle(array $additionalTitle)
@@ -410,9 +410,9 @@ class TrackReleaseType
      * A Composite containing details of a ReleaseResourceReference (specific to this Message) for a Resource which is linked to this Release. Example: an Image, Text or NonMusicalWorkVideo associated with a SoundRecording. This LocalAnchorReference is a xs:string starting with the letter A.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\LinkedReleaseResourceReferenceType $linkedReleaseResourceReference
+     * @param \DedexBundle\Entity\Ern41\LinkedReleaseResourceReferenceType $linkedReleaseResourceReference
      */
-    public function addToLinkedReleaseResourceReference(\DedexBundle\Entity\Ern\LinkedReleaseResourceReferenceType $linkedReleaseResourceReference)
+    public function addToLinkedReleaseResourceReference(\DedexBundle\Entity\Ern41\LinkedReleaseResourceReferenceType $linkedReleaseResourceReference)
     {
         $this->linkedReleaseResourceReference[] = $linkedReleaseResourceReference;
         return $this;
@@ -449,7 +449,7 @@ class TrackReleaseType
      *
      * A Composite containing details of a ReleaseResourceReference (specific to this Message) for a Resource which is linked to this Release. Example: an Image, Text or NonMusicalWorkVideo associated with a SoundRecording. This LocalAnchorReference is a xs:string starting with the letter A.
      *
-     * @return \DedexBundle\Entity\Ern\LinkedReleaseResourceReferenceType[]
+     * @return \DedexBundle\Entity\Ern41\LinkedReleaseResourceReferenceType[]
      */
     public function getLinkedReleaseResourceReference()
     {
@@ -461,7 +461,7 @@ class TrackReleaseType
      *
      * A Composite containing details of a ReleaseResourceReference (specific to this Message) for a Resource which is linked to this Release. Example: an Image, Text or NonMusicalWorkVideo associated with a SoundRecording. This LocalAnchorReference is a xs:string starting with the letter A.
      *
-     * @param \DedexBundle\Entity\Ern\LinkedReleaseResourceReferenceType[] $linkedReleaseResourceReference
+     * @param \DedexBundle\Entity\Ern41\LinkedReleaseResourceReferenceType[] $linkedReleaseResourceReference
      * @return self
      */
     public function setLinkedReleaseResourceReference(array $linkedReleaseResourceReference)
@@ -476,9 +476,9 @@ class TrackReleaseType
      * A Reference for a label of the Release (specific to this Message). This is a LocalPartyAnchorReference starting with the letter P.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\ReleaseLabelReferenceType $releaseLabelReference
+     * @param \DedexBundle\Entity\Ern41\ReleaseLabelReferenceType $releaseLabelReference
      */
-    public function addToReleaseLabelReference(\DedexBundle\Entity\Ern\ReleaseLabelReferenceType $releaseLabelReference)
+    public function addToReleaseLabelReference(\DedexBundle\Entity\Ern41\ReleaseLabelReferenceType $releaseLabelReference)
     {
         $this->releaseLabelReference[] = $releaseLabelReference;
         return $this;
@@ -515,7 +515,7 @@ class TrackReleaseType
      *
      * A Reference for a label of the Release (specific to this Message). This is a LocalPartyAnchorReference starting with the letter P.
      *
-     * @return \DedexBundle\Entity\Ern\ReleaseLabelReferenceType[]
+     * @return \DedexBundle\Entity\Ern41\ReleaseLabelReferenceType[]
      */
     public function getReleaseLabelReference()
     {
@@ -527,7 +527,7 @@ class TrackReleaseType
      *
      * A Reference for a label of the Release (specific to this Message). This is a LocalPartyAnchorReference starting with the letter P.
      *
-     * @param \DedexBundle\Entity\Ern\ReleaseLabelReferenceType[] $releaseLabelReference
+     * @param \DedexBundle\Entity\Ern41\ReleaseLabelReferenceType[] $releaseLabelReference
      * @return self
      */
     public function setReleaseLabelReference(array $releaseLabelReference)
@@ -542,9 +542,9 @@ class TrackReleaseType
      * A Composite containing details of a Genre to which the Release belongs.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\GenreWithTerritoryType $genre
+     * @param \DedexBundle\Entity\Ern41\GenreWithTerritoryType $genre
      */
-    public function addToGenre(\DedexBundle\Entity\Ern\GenreWithTerritoryType $genre)
+    public function addToGenre(\DedexBundle\Entity\Ern41\GenreWithTerritoryType $genre)
     {
         $this->genre[] = $genre;
         return $this;
@@ -581,7 +581,7 @@ class TrackReleaseType
      *
      * A Composite containing details of a Genre to which the Release belongs.
      *
-     * @return \DedexBundle\Entity\Ern\GenreWithTerritoryType[]
+     * @return \DedexBundle\Entity\Ern41\GenreWithTerritoryType[]
      */
     public function getGenre()
     {
@@ -593,7 +593,7 @@ class TrackReleaseType
      *
      * A Composite containing details of a Genre to which the Release belongs.
      *
-     * @param \DedexBundle\Entity\Ern\GenreWithTerritoryType[] $genre
+     * @param \DedexBundle\Entity\Ern41\GenreWithTerritoryType[] $genre
      * @return self
      */
     public function setGenre(array $genre)
@@ -608,9 +608,9 @@ class TrackReleaseType
      * A Composite containing a Comment about the promotion and marketing of the Release.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\MarketingCommentType $marketingComment
+     * @param \DedexBundle\Entity\Ern41\MarketingCommentType $marketingComment
      */
-    public function addToMarketingComment(\DedexBundle\Entity\Ern\MarketingCommentType $marketingComment)
+    public function addToMarketingComment(\DedexBundle\Entity\Ern41\MarketingCommentType $marketingComment)
     {
         $this->marketingComment[] = $marketingComment;
         return $this;
@@ -647,7 +647,7 @@ class TrackReleaseType
      *
      * A Composite containing a Comment about the promotion and marketing of the Release.
      *
-     * @return \DedexBundle\Entity\Ern\MarketingCommentType[]
+     * @return \DedexBundle\Entity\Ern41\MarketingCommentType[]
      */
     public function getMarketingComment()
     {
@@ -659,7 +659,7 @@ class TrackReleaseType
      *
      * A Composite containing a Comment about the promotion and marketing of the Release.
      *
-     * @param \DedexBundle\Entity\Ern\MarketingCommentType[] $marketingComment
+     * @param \DedexBundle\Entity\Ern41\MarketingCommentType[] $marketingComment
      * @return self
      */
     public function setMarketingComment(array $marketingComment)

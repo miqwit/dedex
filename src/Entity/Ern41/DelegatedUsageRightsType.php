@@ -14,7 +14,7 @@ class DelegatedUsageRightsType
     /**
      * A Composite containing details of the use for which Rights are delegated.
      *
-     * @var \DedexBundle\Entity\Ern\UseTypeType[] $useType
+     * @var \DedexBundle\Entity\Ern41\UseTypeType[] $useType
      */
     private $useType = [
         
@@ -23,14 +23,14 @@ class DelegatedUsageRightsType
     /**
      * A Composite containing details about a Period of Time for which the delegation of usage Rights applies. Periods are typically described by at least a StartDate or EndDate.
      *
-     * @var \DedexBundle\Entity\Ern\PeriodType $periodOfRightsDelegation
+     * @var \DedexBundle\Entity\Ern41\PeriodType $periodOfRightsDelegation
      */
     private $periodOfRightsDelegation = null;
 
     /**
      * A Territory for which the delegation of usage rights applies.
      *
-     * @var \DedexBundle\Entity\Ern\CurrentTerritoryCodeType[] $territoryOfRightsDelegation
+     * @var \DedexBundle\Entity\Ern41\CurrentTerritoryCodeType[] $territoryOfRightsDelegation
      */
     private $territoryOfRightsDelegation = [
         
@@ -42,9 +42,9 @@ class DelegatedUsageRightsType
      * A Composite containing details of the use for which Rights are delegated.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\UseTypeType $useType
+     * @param \DedexBundle\Entity\Ern41\UseTypeType $useType
      */
-    public function addToUseType(\DedexBundle\Entity\Ern\UseTypeType $useType)
+    public function addToUseType(\DedexBundle\Entity\Ern41\UseTypeType $useType)
     {
         $this->useType[] = $useType;
         return $this;
@@ -81,7 +81,7 @@ class DelegatedUsageRightsType
      *
      * A Composite containing details of the use for which Rights are delegated.
      *
-     * @return \DedexBundle\Entity\Ern\UseTypeType[]
+     * @return \DedexBundle\Entity\Ern41\UseTypeType[]
      */
     public function getUseType()
     {
@@ -93,7 +93,7 @@ class DelegatedUsageRightsType
      *
      * A Composite containing details of the use for which Rights are delegated.
      *
-     * @param \DedexBundle\Entity\Ern\UseTypeType[] $useType
+     * @param \DedexBundle\Entity\Ern41\UseTypeType[] $useType
      * @return self
      */
     public function setUseType(array $useType)
@@ -107,7 +107,7 @@ class DelegatedUsageRightsType
      *
      * A Composite containing details about a Period of Time for which the delegation of usage Rights applies. Periods are typically described by at least a StartDate or EndDate.
      *
-     * @return \DedexBundle\Entity\Ern\PeriodType
+     * @return \DedexBundle\Entity\Ern41\PeriodType
      */
     public function getPeriodOfRightsDelegation()
     {
@@ -119,10 +119,10 @@ class DelegatedUsageRightsType
      *
      * A Composite containing details about a Period of Time for which the delegation of usage Rights applies. Periods are typically described by at least a StartDate or EndDate.
      *
-     * @param \DedexBundle\Entity\Ern\PeriodType $periodOfRightsDelegation
+     * @param \DedexBundle\Entity\Ern41\PeriodType $periodOfRightsDelegation
      * @return self
      */
-    public function setPeriodOfRightsDelegation(\DedexBundle\Entity\Ern\PeriodType $periodOfRightsDelegation)
+    public function setPeriodOfRightsDelegation(\DedexBundle\Entity\Ern41\PeriodType $periodOfRightsDelegation)
     {
         $this->periodOfRightsDelegation = $periodOfRightsDelegation;
         return $this;
@@ -134,9 +134,9 @@ class DelegatedUsageRightsType
      * A Territory for which the delegation of usage rights applies.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\CurrentTerritoryCodeType $territoryOfRightsDelegation
+     * @param \DedexBundle\Entity\Ern41\CurrentTerritoryCodeType $territoryOfRightsDelegation
      */
-    public function addToTerritoryOfRightsDelegation(\DedexBundle\Entity\Ern\CurrentTerritoryCodeType $territoryOfRightsDelegation)
+    public function addToTerritoryOfRightsDelegation(\DedexBundle\Entity\Ern41\CurrentTerritoryCodeType $territoryOfRightsDelegation)
     {
         $this->territoryOfRightsDelegation[] = $territoryOfRightsDelegation;
         return $this;
@@ -173,7 +173,7 @@ class DelegatedUsageRightsType
      *
      * A Territory for which the delegation of usage rights applies.
      *
-     * @return \DedexBundle\Entity\Ern\CurrentTerritoryCodeType[]
+     * @return \DedexBundle\Entity\Ern41\CurrentTerritoryCodeType[]
      */
     public function getTerritoryOfRightsDelegation()
     {
@@ -185,7 +185,7 @@ class DelegatedUsageRightsType
      *
      * A Territory for which the delegation of usage rights applies.
      *
-     * @param \DedexBundle\Entity\Ern\CurrentTerritoryCodeType[] $territoryOfRightsDelegation
+     * @param \DedexBundle\Entity\Ern41\CurrentTerritoryCodeType[] $territoryOfRightsDelegation
      * @return self
      */
     public function setTerritoryOfRightsDelegation(array $territoryOfRightsDelegation)

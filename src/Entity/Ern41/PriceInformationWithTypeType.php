@@ -21,28 +21,28 @@ class PriceInformationWithTypeType
     /**
      * A Composite containing further details of the Price, including a Price code that informs the DSP of the Price the Release should be offered at, often in combination with a rate card. This element should not be combined with WholesalePricePerUnit or BulkOrderWholesalePricePerUnit.
      *
-     * @var \DedexBundle\Entity\Ern\PriceTypeType $priceCode
+     * @var \DedexBundle\Entity\Ern41\PriceTypeType $priceCode
      */
     private $priceCode = null;
 
     /**
      * A Composite containing details of a wholesale Price for a single unit of Usage, which informs the informs the DSP of the Price the Release should be offered at. Note that this Price applies to all UseTypes referenced in a DealTerm Composite. This element should not be combined with PriceType.
      *
-     * @var \DedexBundle\Entity\Ern\PriceType $wholesalePricePerUnit
+     * @var \DedexBundle\Entity\Ern41\PriceType $wholesalePricePerUnit
      */
     private $wholesalePricePerUnit = null;
 
     /**
      * A Composite containing details of a wholesale Price for a single unit, which informs the informs the DSP of the Price the Release should be offered at. Note that the size of a bulk order is defined in the contract between MessageSender and the MessageRecipient. This element should not be combined with PriceType.
      *
-     * @var \DedexBundle\Entity\Ern\PriceType $bulkOrderWholesalePricePerUnit
+     * @var \DedexBundle\Entity\Ern41\PriceType $bulkOrderWholesalePricePerUnit
      */
     private $bulkOrderWholesalePricePerUnit = null;
 
     /**
      * A Composite containing details of a suggested retail Price.
      *
-     * @var \DedexBundle\Entity\Ern\PriceType $suggestedRetailPrice
+     * @var \DedexBundle\Entity\Ern41\PriceType $suggestedRetailPrice
      */
     private $suggestedRetailPrice = null;
 
@@ -77,7 +77,7 @@ class PriceInformationWithTypeType
      *
      * A Composite containing further details of the Price, including a Price code that informs the DSP of the Price the Release should be offered at, often in combination with a rate card. This element should not be combined with WholesalePricePerUnit or BulkOrderWholesalePricePerUnit.
      *
-     * @return \DedexBundle\Entity\Ern\PriceTypeType
+     * @return \DedexBundle\Entity\Ern41\PriceTypeType
      */
     public function getPriceCode()
     {
@@ -89,10 +89,10 @@ class PriceInformationWithTypeType
      *
      * A Composite containing further details of the Price, including a Price code that informs the DSP of the Price the Release should be offered at, often in combination with a rate card. This element should not be combined with WholesalePricePerUnit or BulkOrderWholesalePricePerUnit.
      *
-     * @param \DedexBundle\Entity\Ern\PriceTypeType $priceCode
+     * @param \DedexBundle\Entity\Ern41\PriceTypeType $priceCode
      * @return self
      */
-    public function setPriceCode(\DedexBundle\Entity\Ern\PriceTypeType $priceCode)
+    public function setPriceCode(\DedexBundle\Entity\Ern41\PriceTypeType $priceCode)
     {
         $this->priceCode = $priceCode;
         return $this;
@@ -103,7 +103,7 @@ class PriceInformationWithTypeType
      *
      * A Composite containing details of a wholesale Price for a single unit of Usage, which informs the informs the DSP of the Price the Release should be offered at. Note that this Price applies to all UseTypes referenced in a DealTerm Composite. This element should not be combined with PriceType.
      *
-     * @return \DedexBundle\Entity\Ern\PriceType
+     * @return \DedexBundle\Entity\Ern41\PriceType
      */
     public function getWholesalePricePerUnit()
     {
@@ -115,10 +115,10 @@ class PriceInformationWithTypeType
      *
      * A Composite containing details of a wholesale Price for a single unit of Usage, which informs the informs the DSP of the Price the Release should be offered at. Note that this Price applies to all UseTypes referenced in a DealTerm Composite. This element should not be combined with PriceType.
      *
-     * @param \DedexBundle\Entity\Ern\PriceType $wholesalePricePerUnit
+     * @param \DedexBundle\Entity\Ern41\PriceType $wholesalePricePerUnit
      * @return self
      */
-    public function setWholesalePricePerUnit(\DedexBundle\Entity\Ern\PriceType $wholesalePricePerUnit)
+    public function setWholesalePricePerUnit(\DedexBundle\Entity\Ern41\PriceType $wholesalePricePerUnit)
     {
         $this->wholesalePricePerUnit = $wholesalePricePerUnit;
         return $this;
@@ -129,7 +129,7 @@ class PriceInformationWithTypeType
      *
      * A Composite containing details of a wholesale Price for a single unit, which informs the informs the DSP of the Price the Release should be offered at. Note that the size of a bulk order is defined in the contract between MessageSender and the MessageRecipient. This element should not be combined with PriceType.
      *
-     * @return \DedexBundle\Entity\Ern\PriceType
+     * @return \DedexBundle\Entity\Ern41\PriceType
      */
     public function getBulkOrderWholesalePricePerUnit()
     {
@@ -141,10 +141,10 @@ class PriceInformationWithTypeType
      *
      * A Composite containing details of a wholesale Price for a single unit, which informs the informs the DSP of the Price the Release should be offered at. Note that the size of a bulk order is defined in the contract between MessageSender and the MessageRecipient. This element should not be combined with PriceType.
      *
-     * @param \DedexBundle\Entity\Ern\PriceType $bulkOrderWholesalePricePerUnit
+     * @param \DedexBundle\Entity\Ern41\PriceType $bulkOrderWholesalePricePerUnit
      * @return self
      */
-    public function setBulkOrderWholesalePricePerUnit(\DedexBundle\Entity\Ern\PriceType $bulkOrderWholesalePricePerUnit)
+    public function setBulkOrderWholesalePricePerUnit(\DedexBundle\Entity\Ern41\PriceType $bulkOrderWholesalePricePerUnit)
     {
         $this->bulkOrderWholesalePricePerUnit = $bulkOrderWholesalePricePerUnit;
         return $this;
@@ -155,7 +155,7 @@ class PriceInformationWithTypeType
      *
      * A Composite containing details of a suggested retail Price.
      *
-     * @return \DedexBundle\Entity\Ern\PriceType
+     * @return \DedexBundle\Entity\Ern41\PriceType
      */
     public function getSuggestedRetailPrice()
     {
@@ -167,10 +167,10 @@ class PriceInformationWithTypeType
      *
      * A Composite containing details of a suggested retail Price.
      *
-     * @param \DedexBundle\Entity\Ern\PriceType $suggestedRetailPrice
+     * @param \DedexBundle\Entity\Ern41\PriceType $suggestedRetailPrice
      * @return self
      */
-    public function setSuggestedRetailPrice(\DedexBundle\Entity\Ern\PriceType $suggestedRetailPrice)
+    public function setSuggestedRetailPrice(\DedexBundle\Entity\Ern41\PriceType $suggestedRetailPrice)
     {
         $this->suggestedRetailPrice = $suggestedRetailPrice;
         return $this;

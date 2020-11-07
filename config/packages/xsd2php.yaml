@@ -1,15 +1,17 @@
 xsd2php:
   namespaces:
-    'http://ddex.net/xml/ern/382': 'DedexBundle/Entity/Ern'
-    'http://ddex.net/xml/ern/41': 'DedexBundle/Entity/Ern'
+    'http://ddex.net/xml/ern/382': 'DedexBundle/Entity/Ern382'
+    'http://ddex.net/xml/ern/41': 'DedexBundle/Entity/Ern41'
     'http://ddex.net/xml/avs/avs': 'DedexBundle/Entity/Avs'
   
   destinations_php: 
-    'DedexBundle\Entity\Ern': src/Entity/Ern
+    'DedexBundle\Entity\Ern382': src/Entity/Ern382
+    'DedexBundle\Entity\Ern41': src/Entity/Ern41
     'DedexBundle\Entity\Avs': src/Entity/Avs
 
   destinations_jms:
-    'DedexBundle\Entity\Ern': src/Entity/Ern/metadata
+    'DedexBundle\Entity\Ern382': src/Entity/Ern382/metadata
+    'DedexBundle\Entity\Ern41': src/Entity/Ern41/metadata
     'DedexBundle\Entity\Avs': src/Entity/Avs/metadata
  
 #  Uncomment this section if you want to have also symfony/validator metadata to be generated from XSD    

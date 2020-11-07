@@ -21,7 +21,7 @@ class ResourceRightsControllerType
     /**
      * A Composite containing details of the PartyId for the Party. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, producers or other Creators.
      *
-     * @var \DedexBundle\Entity\Ern\DetailedPartyIdType[] $partyId
+     * @var \DedexBundle\Entity\Ern41\DetailedPartyIdType[] $partyId
      */
     private $partyId = [
         
@@ -30,7 +30,7 @@ class ResourceRightsControllerType
     /**
      * A Composite containing details of the PartyName(s).
      *
-     * @var \DedexBundle\Entity\Ern\PartyNameType[] $partyName
+     * @var \DedexBundle\Entity\Ern41\PartyNameType[] $partyName
      */
     private $partyName = [
         
@@ -55,14 +55,14 @@ class ResourceRightsControllerType
     /**
      * The share of the licensed Rights owned by the RightsController. RightShare information is given as a xs:decimal value with up to 6 digits (e.g. '12.5' represents 12.5%). If no information is given, 100% is assumed.
      *
-     * @var \DedexBundle\Entity\Ern\PercentageType $rightSharePercentage
+     * @var \DedexBundle\Entity\Ern41\PercentageType $rightSharePercentage
      */
     private $rightSharePercentage = null;
 
     /**
      * A Composite containing details of the kinds of usage for which rights have been delegated.
      *
-     * @var \DedexBundle\Entity\Ern\DelegatedUsageRightsType[] $delegatedUsageRights
+     * @var \DedexBundle\Entity\Ern41\DelegatedUsageRightsType[] $delegatedUsageRights
      */
     private $delegatedUsageRights = [
         
@@ -100,9 +100,9 @@ class ResourceRightsControllerType
      * A Composite containing details of the PartyId for the Party. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, producers or other Creators.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DetailedPartyIdType $partyId
+     * @param \DedexBundle\Entity\Ern41\DetailedPartyIdType $partyId
      */
-    public function addToPartyId(\DedexBundle\Entity\Ern\DetailedPartyIdType $partyId)
+    public function addToPartyId(\DedexBundle\Entity\Ern41\DetailedPartyIdType $partyId)
     {
         $this->partyId[] = $partyId;
         return $this;
@@ -139,7 +139,7 @@ class ResourceRightsControllerType
      *
      * A Composite containing details of the PartyId for the Party. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, producers or other Creators.
      *
-     * @return \DedexBundle\Entity\Ern\DetailedPartyIdType[]
+     * @return \DedexBundle\Entity\Ern41\DetailedPartyIdType[]
      */
     public function getPartyId()
     {
@@ -151,7 +151,7 @@ class ResourceRightsControllerType
      *
      * A Composite containing details of the PartyId for the Party. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, producers or other Creators.
      *
-     * @param \DedexBundle\Entity\Ern\DetailedPartyIdType[] $partyId
+     * @param \DedexBundle\Entity\Ern41\DetailedPartyIdType[] $partyId
      * @return self
      */
     public function setPartyId(array $partyId)
@@ -166,9 +166,9 @@ class ResourceRightsControllerType
      * A Composite containing details of the PartyName(s).
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\PartyNameType $partyName
+     * @param \DedexBundle\Entity\Ern41\PartyNameType $partyName
      */
-    public function addToPartyName(\DedexBundle\Entity\Ern\PartyNameType $partyName)
+    public function addToPartyName(\DedexBundle\Entity\Ern41\PartyNameType $partyName)
     {
         $this->partyName[] = $partyName;
         return $this;
@@ -205,7 +205,7 @@ class ResourceRightsControllerType
      *
      * A Composite containing details of the PartyName(s).
      *
-     * @return \DedexBundle\Entity\Ern\PartyNameType[]
+     * @return \DedexBundle\Entity\Ern41\PartyNameType[]
      */
     public function getPartyName()
     {
@@ -217,7 +217,7 @@ class ResourceRightsControllerType
      *
      * A Composite containing details of the PartyName(s).
      *
-     * @param \DedexBundle\Entity\Ern\PartyNameType[] $partyName
+     * @param \DedexBundle\Entity\Ern41\PartyNameType[] $partyName
      * @return self
      */
     public function setPartyName(array $partyName)
@@ -323,7 +323,7 @@ class ResourceRightsControllerType
      *
      * The share of the licensed Rights owned by the RightsController. RightShare information is given as a xs:decimal value with up to 6 digits (e.g. '12.5' represents 12.5%). If no information is given, 100% is assumed.
      *
-     * @return \DedexBundle\Entity\Ern\PercentageType
+     * @return \DedexBundle\Entity\Ern41\PercentageType
      */
     public function getRightSharePercentage()
     {
@@ -335,10 +335,10 @@ class ResourceRightsControllerType
      *
      * The share of the licensed Rights owned by the RightsController. RightShare information is given as a xs:decimal value with up to 6 digits (e.g. '12.5' represents 12.5%). If no information is given, 100% is assumed.
      *
-     * @param \DedexBundle\Entity\Ern\PercentageType $rightSharePercentage
+     * @param \DedexBundle\Entity\Ern41\PercentageType $rightSharePercentage
      * @return self
      */
-    public function setRightSharePercentage(\DedexBundle\Entity\Ern\PercentageType $rightSharePercentage)
+    public function setRightSharePercentage(\DedexBundle\Entity\Ern41\PercentageType $rightSharePercentage)
     {
         $this->rightSharePercentage = $rightSharePercentage;
         return $this;
@@ -350,9 +350,9 @@ class ResourceRightsControllerType
      * A Composite containing details of the kinds of usage for which rights have been delegated.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DelegatedUsageRightsType $delegatedUsageRights
+     * @param \DedexBundle\Entity\Ern41\DelegatedUsageRightsType $delegatedUsageRights
      */
-    public function addToDelegatedUsageRights(\DedexBundle\Entity\Ern\DelegatedUsageRightsType $delegatedUsageRights)
+    public function addToDelegatedUsageRights(\DedexBundle\Entity\Ern41\DelegatedUsageRightsType $delegatedUsageRights)
     {
         $this->delegatedUsageRights[] = $delegatedUsageRights;
         return $this;
@@ -389,7 +389,7 @@ class ResourceRightsControllerType
      *
      * A Composite containing details of the kinds of usage for which rights have been delegated.
      *
-     * @return \DedexBundle\Entity\Ern\DelegatedUsageRightsType[]
+     * @return \DedexBundle\Entity\Ern41\DelegatedUsageRightsType[]
      */
     public function getDelegatedUsageRights()
     {
@@ -401,7 +401,7 @@ class ResourceRightsControllerType
      *
      * A Composite containing details of the kinds of usage for which rights have been delegated.
      *
-     * @param \DedexBundle\Entity\Ern\DelegatedUsageRightsType[] $delegatedUsageRights
+     * @param \DedexBundle\Entity\Ern41\DelegatedUsageRightsType[] $delegatedUsageRights
      * @return self
      */
     public function setDelegatedUsageRights(array $delegatedUsageRights)

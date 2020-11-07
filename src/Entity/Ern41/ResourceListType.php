@@ -14,7 +14,7 @@ class ResourceListType
     /**
      * A Composite containing details of a SoundRecording.
      *
-     * @var \DedexBundle\Entity\Ern\SoundRecordingType[] $soundRecording
+     * @var \DedexBundle\Entity\Ern41\SoundRecordingType[] $soundRecording
      */
     private $soundRecording = [
         
@@ -23,7 +23,7 @@ class ResourceListType
     /**
      * A Composite containing details of a Video.
      *
-     * @var \DedexBundle\Entity\Ern\VideoType[] $video
+     * @var \DedexBundle\Entity\Ern41\VideoType[] $video
      */
     private $video = [
         
@@ -32,7 +32,7 @@ class ResourceListType
     /**
      * A Composite containing details of an Image.
      *
-     * @var \DedexBundle\Entity\Ern\ImageType[] $image
+     * @var \DedexBundle\Entity\Ern41\ImageType[] $image
      */
     private $image = [
         
@@ -41,7 +41,7 @@ class ResourceListType
     /**
      * A Composite containing details of a Text.
      *
-     * @var \DedexBundle\Entity\Ern\TextType[] $text
+     * @var \DedexBundle\Entity\Ern41\TextType[] $text
      */
     private $text = [
         
@@ -50,7 +50,7 @@ class ResourceListType
     /**
      * A Composite containing details of a SheetMusic.
      *
-     * @var \DedexBundle\Entity\Ern\SheetMusicType[] $sheetMusic
+     * @var \DedexBundle\Entity\Ern41\SheetMusicType[] $sheetMusic
      */
     private $sheetMusic = [
         
@@ -59,7 +59,7 @@ class ResourceListType
     /**
      * A Composite containing details of an item of Software.
      *
-     * @var \DedexBundle\Entity\Ern\SoftwareType[] $software
+     * @var \DedexBundle\Entity\Ern41\SoftwareType[] $software
      */
     private $software = [
         
@@ -71,9 +71,9 @@ class ResourceListType
      * A Composite containing details of a SoundRecording.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\SoundRecordingType $soundRecording
+     * @param \DedexBundle\Entity\Ern41\SoundRecordingType $soundRecording
      */
-    public function addToSoundRecording(\DedexBundle\Entity\Ern\SoundRecordingType $soundRecording)
+    public function addToSoundRecording(\DedexBundle\Entity\Ern41\SoundRecordingType $soundRecording)
     {
         $this->soundRecording[] = $soundRecording;
         return $this;
@@ -110,7 +110,7 @@ class ResourceListType
      *
      * A Composite containing details of a SoundRecording.
      *
-     * @return \DedexBundle\Entity\Ern\SoundRecordingType[]
+     * @return \DedexBundle\Entity\Ern41\SoundRecordingType[]
      */
     public function getSoundRecording()
     {
@@ -122,7 +122,7 @@ class ResourceListType
      *
      * A Composite containing details of a SoundRecording.
      *
-     * @param \DedexBundle\Entity\Ern\SoundRecordingType[] $soundRecording
+     * @param \DedexBundle\Entity\Ern41\SoundRecordingType[] $soundRecording
      * @return self
      */
     public function setSoundRecording(array $soundRecording)
@@ -137,9 +137,9 @@ class ResourceListType
      * A Composite containing details of a Video.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\VideoType $video
+     * @param \DedexBundle\Entity\Ern41\VideoType $video
      */
-    public function addToVideo(\DedexBundle\Entity\Ern\VideoType $video)
+    public function addToVideo(\DedexBundle\Entity\Ern41\VideoType $video)
     {
         $this->video[] = $video;
         return $this;
@@ -176,7 +176,7 @@ class ResourceListType
      *
      * A Composite containing details of a Video.
      *
-     * @return \DedexBundle\Entity\Ern\VideoType[]
+     * @return \DedexBundle\Entity\Ern41\VideoType[]
      */
     public function getVideo()
     {
@@ -188,7 +188,7 @@ class ResourceListType
      *
      * A Composite containing details of a Video.
      *
-     * @param \DedexBundle\Entity\Ern\VideoType[] $video
+     * @param \DedexBundle\Entity\Ern41\VideoType[] $video
      * @return self
      */
     public function setVideo(array $video)
@@ -203,9 +203,9 @@ class ResourceListType
      * A Composite containing details of an Image.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\ImageType $image
+     * @param \DedexBundle\Entity\Ern41\ImageType $image
      */
-    public function addToImage(\DedexBundle\Entity\Ern\ImageType $image)
+    public function addToImage(\DedexBundle\Entity\Ern41\ImageType $image)
     {
         $this->image[] = $image;
         return $this;
@@ -242,7 +242,7 @@ class ResourceListType
      *
      * A Composite containing details of an Image.
      *
-     * @return \DedexBundle\Entity\Ern\ImageType[]
+     * @return \DedexBundle\Entity\Ern41\ImageType[]
      */
     public function getImage()
     {
@@ -254,7 +254,7 @@ class ResourceListType
      *
      * A Composite containing details of an Image.
      *
-     * @param \DedexBundle\Entity\Ern\ImageType[] $image
+     * @param \DedexBundle\Entity\Ern41\ImageType[] $image
      * @return self
      */
     public function setImage(array $image)
@@ -269,9 +269,9 @@ class ResourceListType
      * A Composite containing details of a Text.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\TextType $text
+     * @param \DedexBundle\Entity\Ern41\TextType $text
      */
-    public function addToText(\DedexBundle\Entity\Ern\TextType $text)
+    public function addToText(\DedexBundle\Entity\Ern41\TextType $text)
     {
         $this->text[] = $text;
         return $this;
@@ -308,7 +308,7 @@ class ResourceListType
      *
      * A Composite containing details of a Text.
      *
-     * @return \DedexBundle\Entity\Ern\TextType[]
+     * @return \DedexBundle\Entity\Ern41\TextType[]
      */
     public function getText()
     {
@@ -320,7 +320,7 @@ class ResourceListType
      *
      * A Composite containing details of a Text.
      *
-     * @param \DedexBundle\Entity\Ern\TextType[] $text
+     * @param \DedexBundle\Entity\Ern41\TextType[] $text
      * @return self
      */
     public function setText(array $text)
@@ -335,9 +335,9 @@ class ResourceListType
      * A Composite containing details of a SheetMusic.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\SheetMusicType $sheetMusic
+     * @param \DedexBundle\Entity\Ern41\SheetMusicType $sheetMusic
      */
-    public function addToSheetMusic(\DedexBundle\Entity\Ern\SheetMusicType $sheetMusic)
+    public function addToSheetMusic(\DedexBundle\Entity\Ern41\SheetMusicType $sheetMusic)
     {
         $this->sheetMusic[] = $sheetMusic;
         return $this;
@@ -374,7 +374,7 @@ class ResourceListType
      *
      * A Composite containing details of a SheetMusic.
      *
-     * @return \DedexBundle\Entity\Ern\SheetMusicType[]
+     * @return \DedexBundle\Entity\Ern41\SheetMusicType[]
      */
     public function getSheetMusic()
     {
@@ -386,7 +386,7 @@ class ResourceListType
      *
      * A Composite containing details of a SheetMusic.
      *
-     * @param \DedexBundle\Entity\Ern\SheetMusicType[] $sheetMusic
+     * @param \DedexBundle\Entity\Ern41\SheetMusicType[] $sheetMusic
      * @return self
      */
     public function setSheetMusic(array $sheetMusic)
@@ -401,9 +401,9 @@ class ResourceListType
      * A Composite containing details of an item of Software.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\SoftwareType $software
+     * @param \DedexBundle\Entity\Ern41\SoftwareType $software
      */
-    public function addToSoftware(\DedexBundle\Entity\Ern\SoftwareType $software)
+    public function addToSoftware(\DedexBundle\Entity\Ern41\SoftwareType $software)
     {
         $this->software[] = $software;
         return $this;
@@ -440,7 +440,7 @@ class ResourceListType
      *
      * A Composite containing details of an item of Software.
      *
-     * @return \DedexBundle\Entity\Ern\SoftwareType[]
+     * @return \DedexBundle\Entity\Ern41\SoftwareType[]
      */
     public function getSoftware()
     {
@@ -452,7 +452,7 @@ class ResourceListType
      *
      * A Composite containing details of an item of Software.
      *
-     * @param \DedexBundle\Entity\Ern\SoftwareType[] $software
+     * @param \DedexBundle\Entity\Ern41\SoftwareType[] $software
      * @return self
      */
     public function setSoftware(array $software)

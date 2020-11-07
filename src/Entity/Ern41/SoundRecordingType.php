@@ -35,14 +35,14 @@ class SoundRecordingType
     /**
      * A Composite containing details of the Type of the SoundRecording.
      *
-     * @var \DedexBundle\Entity\Ern\SoundRecordingTypeType $type
+     * @var \DedexBundle\Entity\Ern41\SoundRecordingTypeType $type
      */
     private $type = null;
 
     /**
      * A Composite containing details of a SoundRecordingId.
      *
-     * @var \DedexBundle\Entity\Ern\SoundRecordingIdType[] $resourceId
+     * @var \DedexBundle\Entity\Ern41\SoundRecordingIdType[] $resourceId
      */
     private $resourceId = [
         
@@ -51,7 +51,7 @@ class SoundRecordingType
     /**
      * A Composite containing details of a MusicalWorkId of a MusicalWork used in the SoundRecording.
      *
-     * @var \DedexBundle\Entity\Ern\MusicalWorkIdType[] $workId
+     * @var \DedexBundle\Entity\Ern41\MusicalWorkIdType[] $workId
      */
     private $workId = [
         
@@ -60,7 +60,7 @@ class SoundRecordingType
     /**
      * A Composite containing details of a Title of the SoundRecording as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @var \DedexBundle\Entity\Ern\DisplayTitleTextType[] $displayTitleText
+     * @var \DedexBundle\Entity\Ern41\DisplayTitleTextType[] $displayTitleText
      */
     private $displayTitleText = [
         
@@ -69,7 +69,7 @@ class SoundRecordingType
     /**
      * A Composite containing details of a Title of the SoundRecording as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @var \DedexBundle\Entity\Ern\DisplayTitleType[] $displayTitle
+     * @var \DedexBundle\Entity\Ern41\DisplayTitleType[] $displayTitle
      */
     private $displayTitle = [
         
@@ -78,7 +78,7 @@ class SoundRecordingType
     /**
      * A Composite containing details of an AdditionalTitle of the SoundRecording. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @var \DedexBundle\Entity\Ern\AdditionalTitleType[] $additionalTitle
+     * @var \DedexBundle\Entity\Ern41\AdditionalTitleType[] $additionalTitle
      */
     private $additionalTitle = [
         
@@ -87,7 +87,7 @@ class SoundRecordingType
     /**
      * A Composite containing details of a Type of Version of the SoundRecording.
      *
-     * @var \DedexBundle\Entity\Ern\VersionTypeType[] $versionType
+     * @var \DedexBundle\Entity\Ern41\VersionTypeType[] $versionType
      */
     private $versionType = [
         
@@ -96,7 +96,7 @@ class SoundRecordingType
     /**
      * A Composite containing the Name to be used by a DSP when presenting Artist details of the Resource to a Consumer.
      *
-     * @var \DedexBundle\Entity\Ern\DisplayArtistNameWithDefaultType[] $displayArtistName
+     * @var \DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType[] $displayArtistName
      */
     private $displayArtistName = [
         
@@ -105,7 +105,7 @@ class SoundRecordingType
     /**
      * A Composite containing details of the DisplayArtist for the SoundRecording. The DisplayArtist may be described through Name, Identifier and Roles.
      *
-     * @var \DedexBundle\Entity\Ern\DisplayArtistType[] $displayArtist
+     * @var \DedexBundle\Entity\Ern41\DisplayArtistType[] $displayArtist
      */
     private $displayArtist = [
         
@@ -114,7 +114,7 @@ class SoundRecordingType
     /**
      * A Composite containing details of a Contributor to the SoundRecording.
      *
-     * @var \DedexBundle\Entity\Ern\ContributorType[] $contributor
+     * @var \DedexBundle\Entity\Ern41\ContributorType[] $contributor
      */
     private $contributor = [
         
@@ -123,7 +123,7 @@ class SoundRecordingType
     /**
      * A Composite containing details of a Character in the SoundRecording. A Character may be described through Name, Identifier and Roles.
      *
-     * @var \DedexBundle\Entity\Ern\CharacterType[] $character
+     * @var \DedexBundle\Entity\Ern41\CharacterType[] $character
      */
     private $character = [
         
@@ -132,7 +132,7 @@ class SoundRecordingType
     /**
      * A Composite containing details of RightsController of Rights in the SoundRecording.
      *
-     * @var \DedexBundle\Entity\Ern\ResourceRightsControllerType[] $resourceRightsController
+     * @var \DedexBundle\Entity\Ern41\ResourceRightsControllerType[] $resourceRightsController
      */
     private $resourceRightsController = [
         
@@ -141,7 +141,7 @@ class SoundRecordingType
     /**
      * A Composite containing details of RightsController of Rights in the Work.
      *
-     * @var \DedexBundle\Entity\Ern\WorkRightsControllerType[] $workRightsController
+     * @var \DedexBundle\Entity\Ern41\WorkRightsControllerType[] $workRightsController
      */
     private $workRightsController = [
         
@@ -150,7 +150,7 @@ class SoundRecordingType
     /**
      * A Composite containing details of the PLine for the SoundRecording.
      *
-     * @var \DedexBundle\Entity\Ern\PLineWithDefaultType[] $pLine
+     * @var \DedexBundle\Entity\Ern41\PLineWithDefaultType[] $pLine
      */
     private $pLine = [
         
@@ -159,7 +159,7 @@ class SoundRecordingType
     /**
      * A Composite containing an Annotation which acknowledges record companies and/or other Parties giving permission for guests Artists or others featured on the SoundRecording.
      *
-     * @var \DedexBundle\Entity\Ern\CourtesyLineWithDefaultType[] $courtesyLine
+     * @var \DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType[] $courtesyLine
      */
     private $courtesyLine = [
         
@@ -175,28 +175,28 @@ class SoundRecordingType
     /**
      * A Composite containing details of the Date and Place of the Event in which the SoundRecording was created. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @var \DedexBundle\Entity\Ern\EventDateWithoutFlagsType $creationDate
+     * @var \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $creationDate
      */
     private $creationDate = null;
 
     /**
      * A Composite containing details of the Date and Place of the Event in which the SoundRecording was originally mastered (in either analogue or digital form). This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @var \DedexBundle\Entity\Ern\EventDateWithoutFlagsType $masteredDate
+     * @var \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $masteredDate
      */
     private $masteredDate = null;
 
     /**
      * A Composite containing details of the Date and Place of the Event in which the SoundRecording was re-mastered (usually digitally). This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @var \DedexBundle\Entity\Ern\EventDateWithoutFlagsType $remasteredDate
+     * @var \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $remasteredDate
      */
     private $remasteredDate = null;
 
     /**
      * A Composite containing details of the Date and Place of the Event in which the SoundRecording was first published, whether for physical or electronic/online distribution. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @var \DedexBundle\Entity\Ern\FirstPublicationDateType[] $firstPublicationDate
+     * @var \DedexBundle\Entity\Ern41\FirstPublicationDateType[] $firstPublicationDate
      */
     private $firstPublicationDate = [
         
@@ -205,7 +205,7 @@ class SoundRecordingType
     /**
      * A Composite containing details of the classification of the SoundRecording according to advice which it carries about the level of explicitness or offensiveness of its content.
      *
-     * @var \DedexBundle\Entity\Ern\ParentalWarningTypeWithTerritoryType[] $parentalWarningType
+     * @var \DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType[] $parentalWarningType
      */
     private $parentalWarningType = [
         
@@ -214,7 +214,7 @@ class SoundRecordingType
     /**
      * A Composite containing details of a Release (or a PhysicalProduct or a DigitalProduct derived from such a Release) which is related to current SoundRecording.
      *
-     * @var \DedexBundle\Entity\Ern\RelatedReleaseType[] $relatedRelease
+     * @var \DedexBundle\Entity\Ern41\RelatedReleaseType[] $relatedRelease
      */
     private $relatedRelease = [
         
@@ -223,7 +223,7 @@ class SoundRecordingType
     /**
      * A Composite containing details of a ResourceRelatedResourceReference referring to a Resource that is related to the current SoundRecording.
      *
-     * @var \DedexBundle\Entity\Ern\RelatedResourceType[] $relatedResource
+     * @var \DedexBundle\Entity\Ern41\RelatedResourceType[] $relatedResource
      */
     private $relatedResource = [
         
@@ -267,7 +267,7 @@ class SoundRecordingType
     /**
      * A Role and instrumentation for which a Party is credited.
      *
-     * @var \DedexBundle\Entity\Ern\DisplayCreditsType[] $displayCredits
+     * @var \DedexBundle\Entity\Ern41\DisplayCreditsType[] $displayCredits
      */
     private $displayCredits = [
         
@@ -292,7 +292,7 @@ class SoundRecordingType
     /**
      * A Composite containing technical details of the SoundRecording.
      *
-     * @var \DedexBundle\Entity\Ern\TechnicalSoundRecordingDetailsType[] $technicalDetails
+     * @var \DedexBundle\Entity\Ern41\TechnicalSoundRecordingDetailsType[] $technicalDetails
      */
     private $technicalDetails = [
         
@@ -301,7 +301,7 @@ class SoundRecordingType
     /**
      * A Description of the melodic mode of a MusicalWork in the SoundRecording.
      *
-     * @var \DedexBundle\Entity\Ern\RagaType[] $raga
+     * @var \DedexBundle\Entity\Ern41\RagaType[] $raga
      */
     private $raga = [
         
@@ -310,7 +310,7 @@ class SoundRecordingType
     /**
      * A Description of the rhythmic pattern of a MusicalWork in the SoundRecording.
      *
-     * @var \DedexBundle\Entity\Ern\TalaType[] $tala
+     * @var \DedexBundle\Entity\Ern41\TalaType[] $tala
      */
     private $tala = [
         
@@ -319,7 +319,7 @@ class SoundRecordingType
     /**
      * A deity name relating to the SoundRecording.
      *
-     * @var \DedexBundle\Entity\Ern\DeityType[] $deity
+     * @var \DedexBundle\Entity\Ern41\DeityType[] $deity
      */
     private $deity = [
         
@@ -417,7 +417,7 @@ class SoundRecordingType
      *
      * A Composite containing details of the Type of the SoundRecording.
      *
-     * @return \DedexBundle\Entity\Ern\SoundRecordingTypeType
+     * @return \DedexBundle\Entity\Ern41\SoundRecordingTypeType
      */
     public function getType()
     {
@@ -429,10 +429,10 @@ class SoundRecordingType
      *
      * A Composite containing details of the Type of the SoundRecording.
      *
-     * @param \DedexBundle\Entity\Ern\SoundRecordingTypeType $type
+     * @param \DedexBundle\Entity\Ern41\SoundRecordingTypeType $type
      * @return self
      */
-    public function setType(\DedexBundle\Entity\Ern\SoundRecordingTypeType $type)
+    public function setType(\DedexBundle\Entity\Ern41\SoundRecordingTypeType $type)
     {
         $this->type = $type;
         return $this;
@@ -444,9 +444,9 @@ class SoundRecordingType
      * A Composite containing details of a SoundRecordingId.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\SoundRecordingIdType $resourceId
+     * @param \DedexBundle\Entity\Ern41\SoundRecordingIdType $resourceId
      */
-    public function addToResourceId(\DedexBundle\Entity\Ern\SoundRecordingIdType $resourceId)
+    public function addToResourceId(\DedexBundle\Entity\Ern41\SoundRecordingIdType $resourceId)
     {
         $this->resourceId[] = $resourceId;
         return $this;
@@ -483,7 +483,7 @@ class SoundRecordingType
      *
      * A Composite containing details of a SoundRecordingId.
      *
-     * @return \DedexBundle\Entity\Ern\SoundRecordingIdType[]
+     * @return \DedexBundle\Entity\Ern41\SoundRecordingIdType[]
      */
     public function getResourceId()
     {
@@ -495,7 +495,7 @@ class SoundRecordingType
      *
      * A Composite containing details of a SoundRecordingId.
      *
-     * @param \DedexBundle\Entity\Ern\SoundRecordingIdType[] $resourceId
+     * @param \DedexBundle\Entity\Ern41\SoundRecordingIdType[] $resourceId
      * @return self
      */
     public function setResourceId(array $resourceId)
@@ -510,9 +510,9 @@ class SoundRecordingType
      * A Composite containing details of a MusicalWorkId of a MusicalWork used in the SoundRecording.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\MusicalWorkIdType $workId
+     * @param \DedexBundle\Entity\Ern41\MusicalWorkIdType $workId
      */
-    public function addToWorkId(\DedexBundle\Entity\Ern\MusicalWorkIdType $workId)
+    public function addToWorkId(\DedexBundle\Entity\Ern41\MusicalWorkIdType $workId)
     {
         $this->workId[] = $workId;
         return $this;
@@ -549,7 +549,7 @@ class SoundRecordingType
      *
      * A Composite containing details of a MusicalWorkId of a MusicalWork used in the SoundRecording.
      *
-     * @return \DedexBundle\Entity\Ern\MusicalWorkIdType[]
+     * @return \DedexBundle\Entity\Ern41\MusicalWorkIdType[]
      */
     public function getWorkId()
     {
@@ -561,7 +561,7 @@ class SoundRecordingType
      *
      * A Composite containing details of a MusicalWorkId of a MusicalWork used in the SoundRecording.
      *
-     * @param \DedexBundle\Entity\Ern\MusicalWorkIdType[] $workId
+     * @param \DedexBundle\Entity\Ern41\MusicalWorkIdType[] $workId
      * @return self
      */
     public function setWorkId(array $workId)
@@ -576,9 +576,9 @@ class SoundRecordingType
      * A Composite containing details of a Title of the SoundRecording as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DisplayTitleTextType $displayTitleText
+     * @param \DedexBundle\Entity\Ern41\DisplayTitleTextType $displayTitleText
      */
-    public function addToDisplayTitleText(\DedexBundle\Entity\Ern\DisplayTitleTextType $displayTitleText)
+    public function addToDisplayTitleText(\DedexBundle\Entity\Ern41\DisplayTitleTextType $displayTitleText)
     {
         $this->displayTitleText[] = $displayTitleText;
         return $this;
@@ -615,7 +615,7 @@ class SoundRecordingType
      *
      * A Composite containing details of a Title of the SoundRecording as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @return \DedexBundle\Entity\Ern\DisplayTitleTextType[]
+     * @return \DedexBundle\Entity\Ern41\DisplayTitleTextType[]
      */
     public function getDisplayTitleText()
     {
@@ -627,7 +627,7 @@ class SoundRecordingType
      *
      * A Composite containing details of a Title of the SoundRecording as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @param \DedexBundle\Entity\Ern\DisplayTitleTextType[] $displayTitleText
+     * @param \DedexBundle\Entity\Ern41\DisplayTitleTextType[] $displayTitleText
      * @return self
      */
     public function setDisplayTitleText(array $displayTitleText)
@@ -642,9 +642,9 @@ class SoundRecordingType
      * A Composite containing details of a Title of the SoundRecording as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DisplayTitleType $displayTitle
+     * @param \DedexBundle\Entity\Ern41\DisplayTitleType $displayTitle
      */
-    public function addToDisplayTitle(\DedexBundle\Entity\Ern\DisplayTitleType $displayTitle)
+    public function addToDisplayTitle(\DedexBundle\Entity\Ern41\DisplayTitleType $displayTitle)
     {
         $this->displayTitle[] = $displayTitle;
         return $this;
@@ -681,7 +681,7 @@ class SoundRecordingType
      *
      * A Composite containing details of a Title of the SoundRecording as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @return \DedexBundle\Entity\Ern\DisplayTitleType[]
+     * @return \DedexBundle\Entity\Ern41\DisplayTitleType[]
      */
     public function getDisplayTitle()
     {
@@ -693,7 +693,7 @@ class SoundRecordingType
      *
      * A Composite containing details of a Title of the SoundRecording as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @param \DedexBundle\Entity\Ern\DisplayTitleType[] $displayTitle
+     * @param \DedexBundle\Entity\Ern41\DisplayTitleType[] $displayTitle
      * @return self
      */
     public function setDisplayTitle(array $displayTitle)
@@ -708,9 +708,9 @@ class SoundRecordingType
      * A Composite containing details of an AdditionalTitle of the SoundRecording. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\AdditionalTitleType $additionalTitle
+     * @param \DedexBundle\Entity\Ern41\AdditionalTitleType $additionalTitle
      */
-    public function addToAdditionalTitle(\DedexBundle\Entity\Ern\AdditionalTitleType $additionalTitle)
+    public function addToAdditionalTitle(\DedexBundle\Entity\Ern41\AdditionalTitleType $additionalTitle)
     {
         $this->additionalTitle[] = $additionalTitle;
         return $this;
@@ -747,7 +747,7 @@ class SoundRecordingType
      *
      * A Composite containing details of an AdditionalTitle of the SoundRecording. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @return \DedexBundle\Entity\Ern\AdditionalTitleType[]
+     * @return \DedexBundle\Entity\Ern41\AdditionalTitleType[]
      */
     public function getAdditionalTitle()
     {
@@ -759,7 +759,7 @@ class SoundRecordingType
      *
      * A Composite containing details of an AdditionalTitle of the SoundRecording. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @param \DedexBundle\Entity\Ern\AdditionalTitleType[] $additionalTitle
+     * @param \DedexBundle\Entity\Ern41\AdditionalTitleType[] $additionalTitle
      * @return self
      */
     public function setAdditionalTitle(array $additionalTitle)
@@ -774,9 +774,9 @@ class SoundRecordingType
      * A Composite containing details of a Type of Version of the SoundRecording.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\VersionTypeType $versionType
+     * @param \DedexBundle\Entity\Ern41\VersionTypeType $versionType
      */
-    public function addToVersionType(\DedexBundle\Entity\Ern\VersionTypeType $versionType)
+    public function addToVersionType(\DedexBundle\Entity\Ern41\VersionTypeType $versionType)
     {
         $this->versionType[] = $versionType;
         return $this;
@@ -813,7 +813,7 @@ class SoundRecordingType
      *
      * A Composite containing details of a Type of Version of the SoundRecording.
      *
-     * @return \DedexBundle\Entity\Ern\VersionTypeType[]
+     * @return \DedexBundle\Entity\Ern41\VersionTypeType[]
      */
     public function getVersionType()
     {
@@ -825,7 +825,7 @@ class SoundRecordingType
      *
      * A Composite containing details of a Type of Version of the SoundRecording.
      *
-     * @param \DedexBundle\Entity\Ern\VersionTypeType[] $versionType
+     * @param \DedexBundle\Entity\Ern41\VersionTypeType[] $versionType
      * @return self
      */
     public function setVersionType(array $versionType)
@@ -840,9 +840,9 @@ class SoundRecordingType
      * A Composite containing the Name to be used by a DSP when presenting Artist details of the Resource to a Consumer.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DisplayArtistNameWithDefaultType $displayArtistName
+     * @param \DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType $displayArtistName
      */
-    public function addToDisplayArtistName(\DedexBundle\Entity\Ern\DisplayArtistNameWithDefaultType $displayArtistName)
+    public function addToDisplayArtistName(\DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType $displayArtistName)
     {
         $this->displayArtistName[] = $displayArtistName;
         return $this;
@@ -879,7 +879,7 @@ class SoundRecordingType
      *
      * A Composite containing the Name to be used by a DSP when presenting Artist details of the Resource to a Consumer.
      *
-     * @return \DedexBundle\Entity\Ern\DisplayArtistNameWithDefaultType[]
+     * @return \DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType[]
      */
     public function getDisplayArtistName()
     {
@@ -891,7 +891,7 @@ class SoundRecordingType
      *
      * A Composite containing the Name to be used by a DSP when presenting Artist details of the Resource to a Consumer.
      *
-     * @param \DedexBundle\Entity\Ern\DisplayArtistNameWithDefaultType[] $displayArtistName
+     * @param \DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType[] $displayArtistName
      * @return self
      */
     public function setDisplayArtistName(array $displayArtistName)
@@ -906,9 +906,9 @@ class SoundRecordingType
      * A Composite containing details of the DisplayArtist for the SoundRecording. The DisplayArtist may be described through Name, Identifier and Roles.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DisplayArtistType $displayArtist
+     * @param \DedexBundle\Entity\Ern41\DisplayArtistType $displayArtist
      */
-    public function addToDisplayArtist(\DedexBundle\Entity\Ern\DisplayArtistType $displayArtist)
+    public function addToDisplayArtist(\DedexBundle\Entity\Ern41\DisplayArtistType $displayArtist)
     {
         $this->displayArtist[] = $displayArtist;
         return $this;
@@ -945,7 +945,7 @@ class SoundRecordingType
      *
      * A Composite containing details of the DisplayArtist for the SoundRecording. The DisplayArtist may be described through Name, Identifier and Roles.
      *
-     * @return \DedexBundle\Entity\Ern\DisplayArtistType[]
+     * @return \DedexBundle\Entity\Ern41\DisplayArtistType[]
      */
     public function getDisplayArtist()
     {
@@ -957,7 +957,7 @@ class SoundRecordingType
      *
      * A Composite containing details of the DisplayArtist for the SoundRecording. The DisplayArtist may be described through Name, Identifier and Roles.
      *
-     * @param \DedexBundle\Entity\Ern\DisplayArtistType[] $displayArtist
+     * @param \DedexBundle\Entity\Ern41\DisplayArtistType[] $displayArtist
      * @return self
      */
     public function setDisplayArtist(array $displayArtist)
@@ -972,9 +972,9 @@ class SoundRecordingType
      * A Composite containing details of a Contributor to the SoundRecording.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\ContributorType $contributor
+     * @param \DedexBundle\Entity\Ern41\ContributorType $contributor
      */
-    public function addToContributor(\DedexBundle\Entity\Ern\ContributorType $contributor)
+    public function addToContributor(\DedexBundle\Entity\Ern41\ContributorType $contributor)
     {
         $this->contributor[] = $contributor;
         return $this;
@@ -1011,7 +1011,7 @@ class SoundRecordingType
      *
      * A Composite containing details of a Contributor to the SoundRecording.
      *
-     * @return \DedexBundle\Entity\Ern\ContributorType[]
+     * @return \DedexBundle\Entity\Ern41\ContributorType[]
      */
     public function getContributor()
     {
@@ -1023,7 +1023,7 @@ class SoundRecordingType
      *
      * A Composite containing details of a Contributor to the SoundRecording.
      *
-     * @param \DedexBundle\Entity\Ern\ContributorType[] $contributor
+     * @param \DedexBundle\Entity\Ern41\ContributorType[] $contributor
      * @return self
      */
     public function setContributor(array $contributor)
@@ -1038,9 +1038,9 @@ class SoundRecordingType
      * A Composite containing details of a Character in the SoundRecording. A Character may be described through Name, Identifier and Roles.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\CharacterType $character
+     * @param \DedexBundle\Entity\Ern41\CharacterType $character
      */
-    public function addToCharacter(\DedexBundle\Entity\Ern\CharacterType $character)
+    public function addToCharacter(\DedexBundle\Entity\Ern41\CharacterType $character)
     {
         $this->character[] = $character;
         return $this;
@@ -1077,7 +1077,7 @@ class SoundRecordingType
      *
      * A Composite containing details of a Character in the SoundRecording. A Character may be described through Name, Identifier and Roles.
      *
-     * @return \DedexBundle\Entity\Ern\CharacterType[]
+     * @return \DedexBundle\Entity\Ern41\CharacterType[]
      */
     public function getCharacter()
     {
@@ -1089,7 +1089,7 @@ class SoundRecordingType
      *
      * A Composite containing details of a Character in the SoundRecording. A Character may be described through Name, Identifier and Roles.
      *
-     * @param \DedexBundle\Entity\Ern\CharacterType[] $character
+     * @param \DedexBundle\Entity\Ern41\CharacterType[] $character
      * @return self
      */
     public function setCharacter(array $character)
@@ -1104,9 +1104,9 @@ class SoundRecordingType
      * A Composite containing details of RightsController of Rights in the SoundRecording.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\ResourceRightsControllerType $resourceRightsController
+     * @param \DedexBundle\Entity\Ern41\ResourceRightsControllerType $resourceRightsController
      */
-    public function addToResourceRightsController(\DedexBundle\Entity\Ern\ResourceRightsControllerType $resourceRightsController)
+    public function addToResourceRightsController(\DedexBundle\Entity\Ern41\ResourceRightsControllerType $resourceRightsController)
     {
         $this->resourceRightsController[] = $resourceRightsController;
         return $this;
@@ -1143,7 +1143,7 @@ class SoundRecordingType
      *
      * A Composite containing details of RightsController of Rights in the SoundRecording.
      *
-     * @return \DedexBundle\Entity\Ern\ResourceRightsControllerType[]
+     * @return \DedexBundle\Entity\Ern41\ResourceRightsControllerType[]
      */
     public function getResourceRightsController()
     {
@@ -1155,7 +1155,7 @@ class SoundRecordingType
      *
      * A Composite containing details of RightsController of Rights in the SoundRecording.
      *
-     * @param \DedexBundle\Entity\Ern\ResourceRightsControllerType[] $resourceRightsController
+     * @param \DedexBundle\Entity\Ern41\ResourceRightsControllerType[] $resourceRightsController
      * @return self
      */
     public function setResourceRightsController(array $resourceRightsController)
@@ -1170,9 +1170,9 @@ class SoundRecordingType
      * A Composite containing details of RightsController of Rights in the Work.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\WorkRightsControllerType $workRightsController
+     * @param \DedexBundle\Entity\Ern41\WorkRightsControllerType $workRightsController
      */
-    public function addToWorkRightsController(\DedexBundle\Entity\Ern\WorkRightsControllerType $workRightsController)
+    public function addToWorkRightsController(\DedexBundle\Entity\Ern41\WorkRightsControllerType $workRightsController)
     {
         $this->workRightsController[] = $workRightsController;
         return $this;
@@ -1209,7 +1209,7 @@ class SoundRecordingType
      *
      * A Composite containing details of RightsController of Rights in the Work.
      *
-     * @return \DedexBundle\Entity\Ern\WorkRightsControllerType[]
+     * @return \DedexBundle\Entity\Ern41\WorkRightsControllerType[]
      */
     public function getWorkRightsController()
     {
@@ -1221,7 +1221,7 @@ class SoundRecordingType
      *
      * A Composite containing details of RightsController of Rights in the Work.
      *
-     * @param \DedexBundle\Entity\Ern\WorkRightsControllerType[] $workRightsController
+     * @param \DedexBundle\Entity\Ern41\WorkRightsControllerType[] $workRightsController
      * @return self
      */
     public function setWorkRightsController(array $workRightsController)
@@ -1236,9 +1236,9 @@ class SoundRecordingType
      * A Composite containing details of the PLine for the SoundRecording.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\PLineWithDefaultType $pLine
+     * @param \DedexBundle\Entity\Ern41\PLineWithDefaultType $pLine
      */
-    public function addToPLine(\DedexBundle\Entity\Ern\PLineWithDefaultType $pLine)
+    public function addToPLine(\DedexBundle\Entity\Ern41\PLineWithDefaultType $pLine)
     {
         $this->pLine[] = $pLine;
         return $this;
@@ -1275,7 +1275,7 @@ class SoundRecordingType
      *
      * A Composite containing details of the PLine for the SoundRecording.
      *
-     * @return \DedexBundle\Entity\Ern\PLineWithDefaultType[]
+     * @return \DedexBundle\Entity\Ern41\PLineWithDefaultType[]
      */
     public function getPLine()
     {
@@ -1287,7 +1287,7 @@ class SoundRecordingType
      *
      * A Composite containing details of the PLine for the SoundRecording.
      *
-     * @param \DedexBundle\Entity\Ern\PLineWithDefaultType[] $pLine
+     * @param \DedexBundle\Entity\Ern41\PLineWithDefaultType[] $pLine
      * @return self
      */
     public function setPLine(array $pLine)
@@ -1302,9 +1302,9 @@ class SoundRecordingType
      * A Composite containing an Annotation which acknowledges record companies and/or other Parties giving permission for guests Artists or others featured on the SoundRecording.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\CourtesyLineWithDefaultType $courtesyLine
+     * @param \DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType $courtesyLine
      */
-    public function addToCourtesyLine(\DedexBundle\Entity\Ern\CourtesyLineWithDefaultType $courtesyLine)
+    public function addToCourtesyLine(\DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType $courtesyLine)
     {
         $this->courtesyLine[] = $courtesyLine;
         return $this;
@@ -1341,7 +1341,7 @@ class SoundRecordingType
      *
      * A Composite containing an Annotation which acknowledges record companies and/or other Parties giving permission for guests Artists or others featured on the SoundRecording.
      *
-     * @return \DedexBundle\Entity\Ern\CourtesyLineWithDefaultType[]
+     * @return \DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType[]
      */
     public function getCourtesyLine()
     {
@@ -1353,7 +1353,7 @@ class SoundRecordingType
      *
      * A Composite containing an Annotation which acknowledges record companies and/or other Parties giving permission for guests Artists or others featured on the SoundRecording.
      *
-     * @param \DedexBundle\Entity\Ern\CourtesyLineWithDefaultType[] $courtesyLine
+     * @param \DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType[] $courtesyLine
      * @return self
      */
     public function setCourtesyLine(array $courtesyLine)
@@ -1393,7 +1393,7 @@ class SoundRecordingType
      *
      * A Composite containing details of the Date and Place of the Event in which the SoundRecording was created. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @return \DedexBundle\Entity\Ern\EventDateWithoutFlagsType
+     * @return \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType
      */
     public function getCreationDate()
     {
@@ -1405,10 +1405,10 @@ class SoundRecordingType
      *
      * A Composite containing details of the Date and Place of the Event in which the SoundRecording was created. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @param \DedexBundle\Entity\Ern\EventDateWithoutFlagsType $creationDate
+     * @param \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $creationDate
      * @return self
      */
-    public function setCreationDate(\DedexBundle\Entity\Ern\EventDateWithoutFlagsType $creationDate)
+    public function setCreationDate(\DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $creationDate)
     {
         $this->creationDate = $creationDate;
         return $this;
@@ -1419,7 +1419,7 @@ class SoundRecordingType
      *
      * A Composite containing details of the Date and Place of the Event in which the SoundRecording was originally mastered (in either analogue or digital form). This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @return \DedexBundle\Entity\Ern\EventDateWithoutFlagsType
+     * @return \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType
      */
     public function getMasteredDate()
     {
@@ -1431,10 +1431,10 @@ class SoundRecordingType
      *
      * A Composite containing details of the Date and Place of the Event in which the SoundRecording was originally mastered (in either analogue or digital form). This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @param \DedexBundle\Entity\Ern\EventDateWithoutFlagsType $masteredDate
+     * @param \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $masteredDate
      * @return self
      */
-    public function setMasteredDate(\DedexBundle\Entity\Ern\EventDateWithoutFlagsType $masteredDate)
+    public function setMasteredDate(\DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $masteredDate)
     {
         $this->masteredDate = $masteredDate;
         return $this;
@@ -1445,7 +1445,7 @@ class SoundRecordingType
      *
      * A Composite containing details of the Date and Place of the Event in which the SoundRecording was re-mastered (usually digitally). This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @return \DedexBundle\Entity\Ern\EventDateWithoutFlagsType
+     * @return \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType
      */
     public function getRemasteredDate()
     {
@@ -1457,10 +1457,10 @@ class SoundRecordingType
      *
      * A Composite containing details of the Date and Place of the Event in which the SoundRecording was re-mastered (usually digitally). This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @param \DedexBundle\Entity\Ern\EventDateWithoutFlagsType $remasteredDate
+     * @param \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $remasteredDate
      * @return self
      */
-    public function setRemasteredDate(\DedexBundle\Entity\Ern\EventDateWithoutFlagsType $remasteredDate)
+    public function setRemasteredDate(\DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $remasteredDate)
     {
         $this->remasteredDate = $remasteredDate;
         return $this;
@@ -1472,9 +1472,9 @@ class SoundRecordingType
      * A Composite containing details of the Date and Place of the Event in which the SoundRecording was first published, whether for physical or electronic/online distribution. This is a string with the syntax YYYY[-MM[-DD]].
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\FirstPublicationDateType $firstPublicationDate
+     * @param \DedexBundle\Entity\Ern41\FirstPublicationDateType $firstPublicationDate
      */
-    public function addToFirstPublicationDate(\DedexBundle\Entity\Ern\FirstPublicationDateType $firstPublicationDate)
+    public function addToFirstPublicationDate(\DedexBundle\Entity\Ern41\FirstPublicationDateType $firstPublicationDate)
     {
         $this->firstPublicationDate[] = $firstPublicationDate;
         return $this;
@@ -1511,7 +1511,7 @@ class SoundRecordingType
      *
      * A Composite containing details of the Date and Place of the Event in which the SoundRecording was first published, whether for physical or electronic/online distribution. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @return \DedexBundle\Entity\Ern\FirstPublicationDateType[]
+     * @return \DedexBundle\Entity\Ern41\FirstPublicationDateType[]
      */
     public function getFirstPublicationDate()
     {
@@ -1523,7 +1523,7 @@ class SoundRecordingType
      *
      * A Composite containing details of the Date and Place of the Event in which the SoundRecording was first published, whether for physical or electronic/online distribution. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @param \DedexBundle\Entity\Ern\FirstPublicationDateType[] $firstPublicationDate
+     * @param \DedexBundle\Entity\Ern41\FirstPublicationDateType[] $firstPublicationDate
      * @return self
      */
     public function setFirstPublicationDate(array $firstPublicationDate)
@@ -1538,9 +1538,9 @@ class SoundRecordingType
      * A Composite containing details of the classification of the SoundRecording according to advice which it carries about the level of explicitness or offensiveness of its content.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\ParentalWarningTypeWithTerritoryType $parentalWarningType
+     * @param \DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType $parentalWarningType
      */
-    public function addToParentalWarningType(\DedexBundle\Entity\Ern\ParentalWarningTypeWithTerritoryType $parentalWarningType)
+    public function addToParentalWarningType(\DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType $parentalWarningType)
     {
         $this->parentalWarningType[] = $parentalWarningType;
         return $this;
@@ -1577,7 +1577,7 @@ class SoundRecordingType
      *
      * A Composite containing details of the classification of the SoundRecording according to advice which it carries about the level of explicitness or offensiveness of its content.
      *
-     * @return \DedexBundle\Entity\Ern\ParentalWarningTypeWithTerritoryType[]
+     * @return \DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType[]
      */
     public function getParentalWarningType()
     {
@@ -1589,7 +1589,7 @@ class SoundRecordingType
      *
      * A Composite containing details of the classification of the SoundRecording according to advice which it carries about the level of explicitness or offensiveness of its content.
      *
-     * @param \DedexBundle\Entity\Ern\ParentalWarningTypeWithTerritoryType[] $parentalWarningType
+     * @param \DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType[] $parentalWarningType
      * @return self
      */
     public function setParentalWarningType(array $parentalWarningType)
@@ -1604,9 +1604,9 @@ class SoundRecordingType
      * A Composite containing details of a Release (or a PhysicalProduct or a DigitalProduct derived from such a Release) which is related to current SoundRecording.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\RelatedReleaseType $relatedRelease
+     * @param \DedexBundle\Entity\Ern41\RelatedReleaseType $relatedRelease
      */
-    public function addToRelatedRelease(\DedexBundle\Entity\Ern\RelatedReleaseType $relatedRelease)
+    public function addToRelatedRelease(\DedexBundle\Entity\Ern41\RelatedReleaseType $relatedRelease)
     {
         $this->relatedRelease[] = $relatedRelease;
         return $this;
@@ -1643,7 +1643,7 @@ class SoundRecordingType
      *
      * A Composite containing details of a Release (or a PhysicalProduct or a DigitalProduct derived from such a Release) which is related to current SoundRecording.
      *
-     * @return \DedexBundle\Entity\Ern\RelatedReleaseType[]
+     * @return \DedexBundle\Entity\Ern41\RelatedReleaseType[]
      */
     public function getRelatedRelease()
     {
@@ -1655,7 +1655,7 @@ class SoundRecordingType
      *
      * A Composite containing details of a Release (or a PhysicalProduct or a DigitalProduct derived from such a Release) which is related to current SoundRecording.
      *
-     * @param \DedexBundle\Entity\Ern\RelatedReleaseType[] $relatedRelease
+     * @param \DedexBundle\Entity\Ern41\RelatedReleaseType[] $relatedRelease
      * @return self
      */
     public function setRelatedRelease(array $relatedRelease)
@@ -1670,9 +1670,9 @@ class SoundRecordingType
      * A Composite containing details of a ResourceRelatedResourceReference referring to a Resource that is related to the current SoundRecording.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\RelatedResourceType $relatedResource
+     * @param \DedexBundle\Entity\Ern41\RelatedResourceType $relatedResource
      */
-    public function addToRelatedResource(\DedexBundle\Entity\Ern\RelatedResourceType $relatedResource)
+    public function addToRelatedResource(\DedexBundle\Entity\Ern41\RelatedResourceType $relatedResource)
     {
         $this->relatedResource[] = $relatedResource;
         return $this;
@@ -1709,7 +1709,7 @@ class SoundRecordingType
      *
      * A Composite containing details of a ResourceRelatedResourceReference referring to a Resource that is related to the current SoundRecording.
      *
-     * @return \DedexBundle\Entity\Ern\RelatedResourceType[]
+     * @return \DedexBundle\Entity\Ern41\RelatedResourceType[]
      */
     public function getRelatedResource()
     {
@@ -1721,7 +1721,7 @@ class SoundRecordingType
      *
      * A Composite containing details of a ResourceRelatedResourceReference referring to a Resource that is related to the current SoundRecording.
      *
-     * @param \DedexBundle\Entity\Ern\RelatedResourceType[] $relatedResource
+     * @param \DedexBundle\Entity\Ern41\RelatedResourceType[] $relatedResource
      * @return self
      */
     public function setRelatedResource(array $relatedResource)
@@ -1866,9 +1866,9 @@ class SoundRecordingType
      * A Role and instrumentation for which a Party is credited.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DisplayCreditsType $displayCredits
+     * @param \DedexBundle\Entity\Ern41\DisplayCreditsType $displayCredits
      */
-    public function addToDisplayCredits(\DedexBundle\Entity\Ern\DisplayCreditsType $displayCredits)
+    public function addToDisplayCredits(\DedexBundle\Entity\Ern41\DisplayCreditsType $displayCredits)
     {
         $this->displayCredits[] = $displayCredits;
         return $this;
@@ -1905,7 +1905,7 @@ class SoundRecordingType
      *
      * A Role and instrumentation for which a Party is credited.
      *
-     * @return \DedexBundle\Entity\Ern\DisplayCreditsType[]
+     * @return \DedexBundle\Entity\Ern41\DisplayCreditsType[]
      */
     public function getDisplayCredits()
     {
@@ -1917,7 +1917,7 @@ class SoundRecordingType
      *
      * A Role and instrumentation for which a Party is credited.
      *
-     * @param \DedexBundle\Entity\Ern\DisplayCreditsType[] $displayCredits
+     * @param \DedexBundle\Entity\Ern41\DisplayCreditsType[] $displayCredits
      * @return self
      */
     public function setDisplayCredits(array $displayCredits)
@@ -2024,9 +2024,9 @@ class SoundRecordingType
      * A Composite containing technical details of the SoundRecording.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\TechnicalSoundRecordingDetailsType $technicalDetails
+     * @param \DedexBundle\Entity\Ern41\TechnicalSoundRecordingDetailsType $technicalDetails
      */
-    public function addToTechnicalDetails(\DedexBundle\Entity\Ern\TechnicalSoundRecordingDetailsType $technicalDetails)
+    public function addToTechnicalDetails(\DedexBundle\Entity\Ern41\TechnicalSoundRecordingDetailsType $technicalDetails)
     {
         $this->technicalDetails[] = $technicalDetails;
         return $this;
@@ -2063,7 +2063,7 @@ class SoundRecordingType
      *
      * A Composite containing technical details of the SoundRecording.
      *
-     * @return \DedexBundle\Entity\Ern\TechnicalSoundRecordingDetailsType[]
+     * @return \DedexBundle\Entity\Ern41\TechnicalSoundRecordingDetailsType[]
      */
     public function getTechnicalDetails()
     {
@@ -2075,7 +2075,7 @@ class SoundRecordingType
      *
      * A Composite containing technical details of the SoundRecording.
      *
-     * @param \DedexBundle\Entity\Ern\TechnicalSoundRecordingDetailsType[] $technicalDetails
+     * @param \DedexBundle\Entity\Ern41\TechnicalSoundRecordingDetailsType[] $technicalDetails
      * @return self
      */
     public function setTechnicalDetails(array $technicalDetails)
@@ -2090,9 +2090,9 @@ class SoundRecordingType
      * A Description of the melodic mode of a MusicalWork in the SoundRecording.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\RagaType $raga
+     * @param \DedexBundle\Entity\Ern41\RagaType $raga
      */
-    public function addToRaga(\DedexBundle\Entity\Ern\RagaType $raga)
+    public function addToRaga(\DedexBundle\Entity\Ern41\RagaType $raga)
     {
         $this->raga[] = $raga;
         return $this;
@@ -2129,7 +2129,7 @@ class SoundRecordingType
      *
      * A Description of the melodic mode of a MusicalWork in the SoundRecording.
      *
-     * @return \DedexBundle\Entity\Ern\RagaType[]
+     * @return \DedexBundle\Entity\Ern41\RagaType[]
      */
     public function getRaga()
     {
@@ -2141,7 +2141,7 @@ class SoundRecordingType
      *
      * A Description of the melodic mode of a MusicalWork in the SoundRecording.
      *
-     * @param \DedexBundle\Entity\Ern\RagaType[] $raga
+     * @param \DedexBundle\Entity\Ern41\RagaType[] $raga
      * @return self
      */
     public function setRaga(array $raga)
@@ -2156,9 +2156,9 @@ class SoundRecordingType
      * A Description of the rhythmic pattern of a MusicalWork in the SoundRecording.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\TalaType $tala
+     * @param \DedexBundle\Entity\Ern41\TalaType $tala
      */
-    public function addToTala(\DedexBundle\Entity\Ern\TalaType $tala)
+    public function addToTala(\DedexBundle\Entity\Ern41\TalaType $tala)
     {
         $this->tala[] = $tala;
         return $this;
@@ -2195,7 +2195,7 @@ class SoundRecordingType
      *
      * A Description of the rhythmic pattern of a MusicalWork in the SoundRecording.
      *
-     * @return \DedexBundle\Entity\Ern\TalaType[]
+     * @return \DedexBundle\Entity\Ern41\TalaType[]
      */
     public function getTala()
     {
@@ -2207,7 +2207,7 @@ class SoundRecordingType
      *
      * A Description of the rhythmic pattern of a MusicalWork in the SoundRecording.
      *
-     * @param \DedexBundle\Entity\Ern\TalaType[] $tala
+     * @param \DedexBundle\Entity\Ern41\TalaType[] $tala
      * @return self
      */
     public function setTala(array $tala)
@@ -2222,9 +2222,9 @@ class SoundRecordingType
      * A deity name relating to the SoundRecording.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DeityType $deity
+     * @param \DedexBundle\Entity\Ern41\DeityType $deity
      */
-    public function addToDeity(\DedexBundle\Entity\Ern\DeityType $deity)
+    public function addToDeity(\DedexBundle\Entity\Ern41\DeityType $deity)
     {
         $this->deity[] = $deity;
         return $this;
@@ -2261,7 +2261,7 @@ class SoundRecordingType
      *
      * A deity name relating to the SoundRecording.
      *
-     * @return \DedexBundle\Entity\Ern\DeityType[]
+     * @return \DedexBundle\Entity\Ern41\DeityType[]
      */
     public function getDeity()
     {
@@ -2273,7 +2273,7 @@ class SoundRecordingType
      *
      * A deity name relating to the SoundRecording.
      *
-     * @param \DedexBundle\Entity\Ern\DeityType[] $deity
+     * @param \DedexBundle\Entity\Ern41\DeityType[] $deity
      * @return self
      */
     public function setDeity(array $deity)

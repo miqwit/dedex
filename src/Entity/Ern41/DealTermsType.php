@@ -14,7 +14,7 @@ class DealTermsType
     /**
      * A Territory in which the Deal applies. Either this Element or ExcludedTerritory must be present, but not both. The use of ISO TerritoryCodes (or the term 'Worldwide') is strongly encouraged; TIS TerritoryCodes should only be used if both MessageSender and MessageRecipient are familiar with this standard.
      *
-     * @var \DedexBundle\Entity\Ern\CurrentTerritoryCodeType[] $territoryCode
+     * @var \DedexBundle\Entity\Ern41\CurrentTerritoryCodeType[] $territoryCode
      */
     private $territoryCode = [
         
@@ -23,7 +23,7 @@ class DealTermsType
     /**
      * A Territory in which the Deal does not apply. Either this Element or Territory must be present, but not both. The use of ISO TerritoryCodes (or the term 'Worldwide') is strongly encouraged; TIS TerritoryCodes should only be used if both MessageSender and MessageRecipient are familiar with this standard.
      *
-     * @var \DedexBundle\Entity\Ern\CurrentTerritoryCodeType[] $excludedTerritoryCode
+     * @var \DedexBundle\Entity\Ern41\CurrentTerritoryCodeType[] $excludedTerritoryCode
      */
     private $excludedTerritoryCode = [
         
@@ -32,7 +32,7 @@ class DealTermsType
     /**
      * A Composite containing details about a Period of Time during which the Deal is valid. No StartDate in this Composite means that the Deal is valid as per contractual relationship between MessageSender and MessageRecipient. No EndDate in this Composite means that the Deal is valid until further notice.
      *
-     * @var \DedexBundle\Entity\Ern\PeriodWithoutFlagsType[] $validityPeriod
+     * @var \DedexBundle\Entity\Ern41\PeriodWithoutFlagsType[] $validityPeriod
      */
     private $validityPeriod = [
         
@@ -41,7 +41,7 @@ class DealTermsType
     /**
      * A Composite containing details of the fundamental business model which applies to the Deal (e.g. SubscriptionModel and PayAsYouGoModel). The CommercialModelType indicates how the Consumer pays for the Service or Release.
      *
-     * @var \DedexBundle\Entity\Ern\CommercialModelTypeType[] $commercialModelType
+     * @var \DedexBundle\Entity\Ern41\CommercialModelTypeType[] $commercialModelType
      */
     private $commercialModelType = [
         
@@ -50,7 +50,7 @@ class DealTermsType
     /**
      * A Composite containing details of a nature of a Service, or a Release, as used by a Consumer. The UseType is mandatory unless the terms of the Deal were communicated beforehand (possibly out of band) and then referenced using a DealReference.
      *
-     * @var \DedexBundle\Entity\Ern\DiscoverableUseTypeType[] $useType
+     * @var \DedexBundle\Entity\Ern41\DiscoverableUseTypeType[] $useType
      */
     private $useType = [
         
@@ -59,7 +59,7 @@ class DealTermsType
     /**
      * A Composite containing details of a Carrier.
      *
-     * @var \DedexBundle\Entity\Ern\CarrierTypeType[] $carrierType
+     * @var \DedexBundle\Entity\Ern41\CarrierTypeType[] $carrierType
      */
     private $carrierType = [
         
@@ -68,7 +68,7 @@ class DealTermsType
     /**
      * A Composite containing technical details of the Release.
      *
-     * @var \DedexBundle\Entity\Ern\DealTermsTechnicalInstantiationType $technicalInstantiation
+     * @var \DedexBundle\Entity\Ern41\DealTermsTechnicalInstantiationType $technicalInstantiation
      */
     private $technicalInstantiation = null;
 
@@ -82,7 +82,7 @@ class DealTermsType
     /**
      * A Composite containing details of the DSP through whose DistributionChannel the sales are permitted. If none are provided no limitations on the DistributionChannels are given.
      *
-     * @var \DedexBundle\Entity\Ern\DSPType[] $distributionChannel
+     * @var \DedexBundle\Entity\Ern41\DSPType[] $distributionChannel
      */
     private $distributionChannel = [
         
@@ -91,7 +91,7 @@ class DealTermsType
     /**
      * A Composite containing details of excluded DSP. This is used in an aggregator model where all agreed partners of the aggregators may use a ReleaseDeal, except those that are listed herein.
      *
-     * @var \DedexBundle\Entity\Ern\DSPType[] $excludedDistributionChannel
+     * @var \DedexBundle\Entity\Ern41\DSPType[] $excludedDistributionChannel
      */
     private $excludedDistributionChannel = [
         
@@ -100,7 +100,7 @@ class DealTermsType
     /**
      * A Composite containing details of a rights claim policy.
      *
-     * @var \DedexBundle\Entity\Ern\RightsClaimPolicyType[] $rightsClaimPolicy
+     * @var \DedexBundle\Entity\Ern41\RightsClaimPolicyType[] $rightsClaimPolicy
      */
     private $rightsClaimPolicy = [
         
@@ -109,7 +109,7 @@ class DealTermsType
     /**
      * A Composite containing details of a Price. Note that this Price applies to all UseTypes referenced in this Composite.
      *
-     * @var \DedexBundle\Entity\Ern\PriceInformationWithTypeType[] $priceInformation
+     * @var \DedexBundle\Entity\Ern41\PriceInformationWithTypeType[] $priceInformation
      */
     private $priceInformation = [
         
@@ -125,7 +125,7 @@ class DealTermsType
     /**
      * A Composite containing details of a PromotionalCode.
      *
-     * @var \DedexBundle\Entity\Ern\PromotionalCodeType $promotionalCode
+     * @var \DedexBundle\Entity\Ern41\PromotionalCodeType $promotionalCode
      */
     private $promotionalCode = null;
 
@@ -202,7 +202,7 @@ class DealTermsType
     /**
      * A Composite containing details of physical returns.
      *
-     * @var \DedexBundle\Entity\Ern\PhysicalReturnsType $physicalReturns
+     * @var \DedexBundle\Entity\Ern41\PhysicalReturnsType $physicalReturns
      */
     private $physicalReturns = null;
 
@@ -219,9 +219,9 @@ class DealTermsType
      * A Territory in which the Deal applies. Either this Element or ExcludedTerritory must be present, but not both. The use of ISO TerritoryCodes (or the term 'Worldwide') is strongly encouraged; TIS TerritoryCodes should only be used if both MessageSender and MessageRecipient are familiar with this standard.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\CurrentTerritoryCodeType $territoryCode
+     * @param \DedexBundle\Entity\Ern41\CurrentTerritoryCodeType $territoryCode
      */
-    public function addToTerritoryCode(\DedexBundle\Entity\Ern\CurrentTerritoryCodeType $territoryCode)
+    public function addToTerritoryCode(\DedexBundle\Entity\Ern41\CurrentTerritoryCodeType $territoryCode)
     {
         $this->territoryCode[] = $territoryCode;
         return $this;
@@ -258,7 +258,7 @@ class DealTermsType
      *
      * A Territory in which the Deal applies. Either this Element or ExcludedTerritory must be present, but not both. The use of ISO TerritoryCodes (or the term 'Worldwide') is strongly encouraged; TIS TerritoryCodes should only be used if both MessageSender and MessageRecipient are familiar with this standard.
      *
-     * @return \DedexBundle\Entity\Ern\CurrentTerritoryCodeType[]
+     * @return \DedexBundle\Entity\Ern41\CurrentTerritoryCodeType[]
      */
     public function getTerritoryCode()
     {
@@ -270,7 +270,7 @@ class DealTermsType
      *
      * A Territory in which the Deal applies. Either this Element or ExcludedTerritory must be present, but not both. The use of ISO TerritoryCodes (or the term 'Worldwide') is strongly encouraged; TIS TerritoryCodes should only be used if both MessageSender and MessageRecipient are familiar with this standard.
      *
-     * @param \DedexBundle\Entity\Ern\CurrentTerritoryCodeType[] $territoryCode
+     * @param \DedexBundle\Entity\Ern41\CurrentTerritoryCodeType[] $territoryCode
      * @return self
      */
     public function setTerritoryCode(array $territoryCode)
@@ -285,9 +285,9 @@ class DealTermsType
      * A Territory in which the Deal does not apply. Either this Element or Territory must be present, but not both. The use of ISO TerritoryCodes (or the term 'Worldwide') is strongly encouraged; TIS TerritoryCodes should only be used if both MessageSender and MessageRecipient are familiar with this standard.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\CurrentTerritoryCodeType $excludedTerritoryCode
+     * @param \DedexBundle\Entity\Ern41\CurrentTerritoryCodeType $excludedTerritoryCode
      */
-    public function addToExcludedTerritoryCode(\DedexBundle\Entity\Ern\CurrentTerritoryCodeType $excludedTerritoryCode)
+    public function addToExcludedTerritoryCode(\DedexBundle\Entity\Ern41\CurrentTerritoryCodeType $excludedTerritoryCode)
     {
         $this->excludedTerritoryCode[] = $excludedTerritoryCode;
         return $this;
@@ -324,7 +324,7 @@ class DealTermsType
      *
      * A Territory in which the Deal does not apply. Either this Element or Territory must be present, but not both. The use of ISO TerritoryCodes (or the term 'Worldwide') is strongly encouraged; TIS TerritoryCodes should only be used if both MessageSender and MessageRecipient are familiar with this standard.
      *
-     * @return \DedexBundle\Entity\Ern\CurrentTerritoryCodeType[]
+     * @return \DedexBundle\Entity\Ern41\CurrentTerritoryCodeType[]
      */
     public function getExcludedTerritoryCode()
     {
@@ -336,7 +336,7 @@ class DealTermsType
      *
      * A Territory in which the Deal does not apply. Either this Element or Territory must be present, but not both. The use of ISO TerritoryCodes (or the term 'Worldwide') is strongly encouraged; TIS TerritoryCodes should only be used if both MessageSender and MessageRecipient are familiar with this standard.
      *
-     * @param \DedexBundle\Entity\Ern\CurrentTerritoryCodeType[] $excludedTerritoryCode
+     * @param \DedexBundle\Entity\Ern41\CurrentTerritoryCodeType[] $excludedTerritoryCode
      * @return self
      */
     public function setExcludedTerritoryCode(array $excludedTerritoryCode)
@@ -351,9 +351,9 @@ class DealTermsType
      * A Composite containing details about a Period of Time during which the Deal is valid. No StartDate in this Composite means that the Deal is valid as per contractual relationship between MessageSender and MessageRecipient. No EndDate in this Composite means that the Deal is valid until further notice.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\PeriodWithoutFlagsType $validityPeriod
+     * @param \DedexBundle\Entity\Ern41\PeriodWithoutFlagsType $validityPeriod
      */
-    public function addToValidityPeriod(\DedexBundle\Entity\Ern\PeriodWithoutFlagsType $validityPeriod)
+    public function addToValidityPeriod(\DedexBundle\Entity\Ern41\PeriodWithoutFlagsType $validityPeriod)
     {
         $this->validityPeriod[] = $validityPeriod;
         return $this;
@@ -390,7 +390,7 @@ class DealTermsType
      *
      * A Composite containing details about a Period of Time during which the Deal is valid. No StartDate in this Composite means that the Deal is valid as per contractual relationship between MessageSender and MessageRecipient. No EndDate in this Composite means that the Deal is valid until further notice.
      *
-     * @return \DedexBundle\Entity\Ern\PeriodWithoutFlagsType[]
+     * @return \DedexBundle\Entity\Ern41\PeriodWithoutFlagsType[]
      */
     public function getValidityPeriod()
     {
@@ -402,7 +402,7 @@ class DealTermsType
      *
      * A Composite containing details about a Period of Time during which the Deal is valid. No StartDate in this Composite means that the Deal is valid as per contractual relationship between MessageSender and MessageRecipient. No EndDate in this Composite means that the Deal is valid until further notice.
      *
-     * @param \DedexBundle\Entity\Ern\PeriodWithoutFlagsType[] $validityPeriod
+     * @param \DedexBundle\Entity\Ern41\PeriodWithoutFlagsType[] $validityPeriod
      * @return self
      */
     public function setValidityPeriod(array $validityPeriod)
@@ -417,9 +417,9 @@ class DealTermsType
      * A Composite containing details of the fundamental business model which applies to the Deal (e.g. SubscriptionModel and PayAsYouGoModel). The CommercialModelType indicates how the Consumer pays for the Service or Release.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\CommercialModelTypeType $commercialModelType
+     * @param \DedexBundle\Entity\Ern41\CommercialModelTypeType $commercialModelType
      */
-    public function addToCommercialModelType(\DedexBundle\Entity\Ern\CommercialModelTypeType $commercialModelType)
+    public function addToCommercialModelType(\DedexBundle\Entity\Ern41\CommercialModelTypeType $commercialModelType)
     {
         $this->commercialModelType[] = $commercialModelType;
         return $this;
@@ -456,7 +456,7 @@ class DealTermsType
      *
      * A Composite containing details of the fundamental business model which applies to the Deal (e.g. SubscriptionModel and PayAsYouGoModel). The CommercialModelType indicates how the Consumer pays for the Service or Release.
      *
-     * @return \DedexBundle\Entity\Ern\CommercialModelTypeType[]
+     * @return \DedexBundle\Entity\Ern41\CommercialModelTypeType[]
      */
     public function getCommercialModelType()
     {
@@ -468,7 +468,7 @@ class DealTermsType
      *
      * A Composite containing details of the fundamental business model which applies to the Deal (e.g. SubscriptionModel and PayAsYouGoModel). The CommercialModelType indicates how the Consumer pays for the Service or Release.
      *
-     * @param \DedexBundle\Entity\Ern\CommercialModelTypeType[] $commercialModelType
+     * @param \DedexBundle\Entity\Ern41\CommercialModelTypeType[] $commercialModelType
      * @return self
      */
     public function setCommercialModelType(array $commercialModelType)
@@ -483,9 +483,9 @@ class DealTermsType
      * A Composite containing details of a nature of a Service, or a Release, as used by a Consumer. The UseType is mandatory unless the terms of the Deal were communicated beforehand (possibly out of band) and then referenced using a DealReference.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DiscoverableUseTypeType $useType
+     * @param \DedexBundle\Entity\Ern41\DiscoverableUseTypeType $useType
      */
-    public function addToUseType(\DedexBundle\Entity\Ern\DiscoverableUseTypeType $useType)
+    public function addToUseType(\DedexBundle\Entity\Ern41\DiscoverableUseTypeType $useType)
     {
         $this->useType[] = $useType;
         return $this;
@@ -522,7 +522,7 @@ class DealTermsType
      *
      * A Composite containing details of a nature of a Service, or a Release, as used by a Consumer. The UseType is mandatory unless the terms of the Deal were communicated beforehand (possibly out of band) and then referenced using a DealReference.
      *
-     * @return \DedexBundle\Entity\Ern\DiscoverableUseTypeType[]
+     * @return \DedexBundle\Entity\Ern41\DiscoverableUseTypeType[]
      */
     public function getUseType()
     {
@@ -534,7 +534,7 @@ class DealTermsType
      *
      * A Composite containing details of a nature of a Service, or a Release, as used by a Consumer. The UseType is mandatory unless the terms of the Deal were communicated beforehand (possibly out of band) and then referenced using a DealReference.
      *
-     * @param \DedexBundle\Entity\Ern\DiscoverableUseTypeType[] $useType
+     * @param \DedexBundle\Entity\Ern41\DiscoverableUseTypeType[] $useType
      * @return self
      */
     public function setUseType(array $useType)
@@ -549,9 +549,9 @@ class DealTermsType
      * A Composite containing details of a Carrier.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\CarrierTypeType $carrierType
+     * @param \DedexBundle\Entity\Ern41\CarrierTypeType $carrierType
      */
-    public function addToCarrierType(\DedexBundle\Entity\Ern\CarrierTypeType $carrierType)
+    public function addToCarrierType(\DedexBundle\Entity\Ern41\CarrierTypeType $carrierType)
     {
         $this->carrierType[] = $carrierType;
         return $this;
@@ -588,7 +588,7 @@ class DealTermsType
      *
      * A Composite containing details of a Carrier.
      *
-     * @return \DedexBundle\Entity\Ern\CarrierTypeType[]
+     * @return \DedexBundle\Entity\Ern41\CarrierTypeType[]
      */
     public function getCarrierType()
     {
@@ -600,7 +600,7 @@ class DealTermsType
      *
      * A Composite containing details of a Carrier.
      *
-     * @param \DedexBundle\Entity\Ern\CarrierTypeType[] $carrierType
+     * @param \DedexBundle\Entity\Ern41\CarrierTypeType[] $carrierType
      * @return self
      */
     public function setCarrierType(array $carrierType)
@@ -614,7 +614,7 @@ class DealTermsType
      *
      * A Composite containing technical details of the Release.
      *
-     * @return \DedexBundle\Entity\Ern\DealTermsTechnicalInstantiationType
+     * @return \DedexBundle\Entity\Ern41\DealTermsTechnicalInstantiationType
      */
     public function getTechnicalInstantiation()
     {
@@ -626,10 +626,10 @@ class DealTermsType
      *
      * A Composite containing technical details of the Release.
      *
-     * @param \DedexBundle\Entity\Ern\DealTermsTechnicalInstantiationType $technicalInstantiation
+     * @param \DedexBundle\Entity\Ern41\DealTermsTechnicalInstantiationType $technicalInstantiation
      * @return self
      */
-    public function setTechnicalInstantiation(\DedexBundle\Entity\Ern\DealTermsTechnicalInstantiationType $technicalInstantiation)
+    public function setTechnicalInstantiation(\DedexBundle\Entity\Ern41\DealTermsTechnicalInstantiationType $technicalInstantiation)
     {
         $this->technicalInstantiation = $technicalInstantiation;
         return $this;
@@ -667,9 +667,9 @@ class DealTermsType
      * A Composite containing details of the DSP through whose DistributionChannel the sales are permitted. If none are provided no limitations on the DistributionChannels are given.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DSPType $distributionChannel
+     * @param \DedexBundle\Entity\Ern41\DSPType $distributionChannel
      */
-    public function addToDistributionChannel(\DedexBundle\Entity\Ern\DSPType $distributionChannel)
+    public function addToDistributionChannel(\DedexBundle\Entity\Ern41\DSPType $distributionChannel)
     {
         $this->distributionChannel[] = $distributionChannel;
         return $this;
@@ -706,7 +706,7 @@ class DealTermsType
      *
      * A Composite containing details of the DSP through whose DistributionChannel the sales are permitted. If none are provided no limitations on the DistributionChannels are given.
      *
-     * @return \DedexBundle\Entity\Ern\DSPType[]
+     * @return \DedexBundle\Entity\Ern41\DSPType[]
      */
     public function getDistributionChannel()
     {
@@ -718,7 +718,7 @@ class DealTermsType
      *
      * A Composite containing details of the DSP through whose DistributionChannel the sales are permitted. If none are provided no limitations on the DistributionChannels are given.
      *
-     * @param \DedexBundle\Entity\Ern\DSPType[] $distributionChannel
+     * @param \DedexBundle\Entity\Ern41\DSPType[] $distributionChannel
      * @return self
      */
     public function setDistributionChannel(array $distributionChannel)
@@ -733,9 +733,9 @@ class DealTermsType
      * A Composite containing details of excluded DSP. This is used in an aggregator model where all agreed partners of the aggregators may use a ReleaseDeal, except those that are listed herein.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DSPType $excludedDistributionChannel
+     * @param \DedexBundle\Entity\Ern41\DSPType $excludedDistributionChannel
      */
-    public function addToExcludedDistributionChannel(\DedexBundle\Entity\Ern\DSPType $excludedDistributionChannel)
+    public function addToExcludedDistributionChannel(\DedexBundle\Entity\Ern41\DSPType $excludedDistributionChannel)
     {
         $this->excludedDistributionChannel[] = $excludedDistributionChannel;
         return $this;
@@ -772,7 +772,7 @@ class DealTermsType
      *
      * A Composite containing details of excluded DSP. This is used in an aggregator model where all agreed partners of the aggregators may use a ReleaseDeal, except those that are listed herein.
      *
-     * @return \DedexBundle\Entity\Ern\DSPType[]
+     * @return \DedexBundle\Entity\Ern41\DSPType[]
      */
     public function getExcludedDistributionChannel()
     {
@@ -784,7 +784,7 @@ class DealTermsType
      *
      * A Composite containing details of excluded DSP. This is used in an aggregator model where all agreed partners of the aggregators may use a ReleaseDeal, except those that are listed herein.
      *
-     * @param \DedexBundle\Entity\Ern\DSPType[] $excludedDistributionChannel
+     * @param \DedexBundle\Entity\Ern41\DSPType[] $excludedDistributionChannel
      * @return self
      */
     public function setExcludedDistributionChannel(array $excludedDistributionChannel)
@@ -799,9 +799,9 @@ class DealTermsType
      * A Composite containing details of a rights claim policy.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\RightsClaimPolicyType $rightsClaimPolicy
+     * @param \DedexBundle\Entity\Ern41\RightsClaimPolicyType $rightsClaimPolicy
      */
-    public function addToRightsClaimPolicy(\DedexBundle\Entity\Ern\RightsClaimPolicyType $rightsClaimPolicy)
+    public function addToRightsClaimPolicy(\DedexBundle\Entity\Ern41\RightsClaimPolicyType $rightsClaimPolicy)
     {
         $this->rightsClaimPolicy[] = $rightsClaimPolicy;
         return $this;
@@ -838,7 +838,7 @@ class DealTermsType
      *
      * A Composite containing details of a rights claim policy.
      *
-     * @return \DedexBundle\Entity\Ern\RightsClaimPolicyType[]
+     * @return \DedexBundle\Entity\Ern41\RightsClaimPolicyType[]
      */
     public function getRightsClaimPolicy()
     {
@@ -850,7 +850,7 @@ class DealTermsType
      *
      * A Composite containing details of a rights claim policy.
      *
-     * @param \DedexBundle\Entity\Ern\RightsClaimPolicyType[] $rightsClaimPolicy
+     * @param \DedexBundle\Entity\Ern41\RightsClaimPolicyType[] $rightsClaimPolicy
      * @return self
      */
     public function setRightsClaimPolicy(array $rightsClaimPolicy)
@@ -865,9 +865,9 @@ class DealTermsType
      * A Composite containing details of a Price. Note that this Price applies to all UseTypes referenced in this Composite.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\PriceInformationWithTypeType $priceInformation
+     * @param \DedexBundle\Entity\Ern41\PriceInformationWithTypeType $priceInformation
      */
-    public function addToPriceInformation(\DedexBundle\Entity\Ern\PriceInformationWithTypeType $priceInformation)
+    public function addToPriceInformation(\DedexBundle\Entity\Ern41\PriceInformationWithTypeType $priceInformation)
     {
         $this->priceInformation[] = $priceInformation;
         return $this;
@@ -904,7 +904,7 @@ class DealTermsType
      *
      * A Composite containing details of a Price. Note that this Price applies to all UseTypes referenced in this Composite.
      *
-     * @return \DedexBundle\Entity\Ern\PriceInformationWithTypeType[]
+     * @return \DedexBundle\Entity\Ern41\PriceInformationWithTypeType[]
      */
     public function getPriceInformation()
     {
@@ -916,7 +916,7 @@ class DealTermsType
      *
      * A Composite containing details of a Price. Note that this Price applies to all UseTypes referenced in this Composite.
      *
-     * @param \DedexBundle\Entity\Ern\PriceInformationWithTypeType[] $priceInformation
+     * @param \DedexBundle\Entity\Ern41\PriceInformationWithTypeType[] $priceInformation
      * @return self
      */
     public function setPriceInformation(array $priceInformation)
@@ -956,7 +956,7 @@ class DealTermsType
      *
      * A Composite containing details of a PromotionalCode.
      *
-     * @return \DedexBundle\Entity\Ern\PromotionalCodeType
+     * @return \DedexBundle\Entity\Ern41\PromotionalCodeType
      */
     public function getPromotionalCode()
     {
@@ -968,10 +968,10 @@ class DealTermsType
      *
      * A Composite containing details of a PromotionalCode.
      *
-     * @param \DedexBundle\Entity\Ern\PromotionalCodeType $promotionalCode
+     * @param \DedexBundle\Entity\Ern41\PromotionalCodeType $promotionalCode
      * @return self
      */
-    public function setPromotionalCode(\DedexBundle\Entity\Ern\PromotionalCodeType $promotionalCode)
+    public function setPromotionalCode(\DedexBundle\Entity\Ern41\PromotionalCodeType $promotionalCode)
     {
         $this->promotionalCode = $promotionalCode;
         return $this;
@@ -1282,7 +1282,7 @@ class DealTermsType
      *
      * A Composite containing details of physical returns.
      *
-     * @return \DedexBundle\Entity\Ern\PhysicalReturnsType
+     * @return \DedexBundle\Entity\Ern41\PhysicalReturnsType
      */
     public function getPhysicalReturns()
     {
@@ -1294,10 +1294,10 @@ class DealTermsType
      *
      * A Composite containing details of physical returns.
      *
-     * @param \DedexBundle\Entity\Ern\PhysicalReturnsType $physicalReturns
+     * @param \DedexBundle\Entity\Ern41\PhysicalReturnsType $physicalReturns
      * @return self
      */
-    public function setPhysicalReturns(\DedexBundle\Entity\Ern\PhysicalReturnsType $physicalReturns)
+    public function setPhysicalReturns(\DedexBundle\Entity\Ern41\PhysicalReturnsType $physicalReturns)
     {
         $this->physicalReturns = $physicalReturns;
         return $this;

@@ -14,7 +14,7 @@ class DSPType
     /**
      * A Composite containing details of the PartyId for the Party. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, producers or other Creators.
      *
-     * @var \DedexBundle\Entity\Ern\DetailedPartyIdType[] $partyId
+     * @var \DedexBundle\Entity\Ern41\DetailedPartyIdType[] $partyId
      */
     private $partyId = [
         
@@ -23,7 +23,7 @@ class DSPType
     /**
      * A Composite containing details of the PartyName(s).
      *
-     * @var \DedexBundle\Entity\Ern\PartyNameType[] $partyName
+     * @var \DedexBundle\Entity\Ern41\PartyNameType[] $partyName
      */
     private $partyName = [
         
@@ -32,7 +32,7 @@ class DSPType
     /**
      * A Composite containing a TradingName of the DSP.
      *
-     * @var \DedexBundle\Entity\Ern\NameType $tradingName
+     * @var \DedexBundle\Entity\Ern41\NameType $tradingName
      */
     private $tradingName = null;
 
@@ -51,9 +51,9 @@ class DSPType
      * A Composite containing details of the PartyId for the Party. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, producers or other Creators.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DetailedPartyIdType $partyId
+     * @param \DedexBundle\Entity\Ern41\DetailedPartyIdType $partyId
      */
-    public function addToPartyId(\DedexBundle\Entity\Ern\DetailedPartyIdType $partyId)
+    public function addToPartyId(\DedexBundle\Entity\Ern41\DetailedPartyIdType $partyId)
     {
         $this->partyId[] = $partyId;
         return $this;
@@ -90,7 +90,7 @@ class DSPType
      *
      * A Composite containing details of the PartyId for the Party. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, producers or other Creators.
      *
-     * @return \DedexBundle\Entity\Ern\DetailedPartyIdType[]
+     * @return \DedexBundle\Entity\Ern41\DetailedPartyIdType[]
      */
     public function getPartyId()
     {
@@ -102,7 +102,7 @@ class DSPType
      *
      * A Composite containing details of the PartyId for the Party. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, producers or other Creators.
      *
-     * @param \DedexBundle\Entity\Ern\DetailedPartyIdType[] $partyId
+     * @param \DedexBundle\Entity\Ern41\DetailedPartyIdType[] $partyId
      * @return self
      */
     public function setPartyId(array $partyId)
@@ -117,9 +117,9 @@ class DSPType
      * A Composite containing details of the PartyName(s).
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\PartyNameType $partyName
+     * @param \DedexBundle\Entity\Ern41\PartyNameType $partyName
      */
-    public function addToPartyName(\DedexBundle\Entity\Ern\PartyNameType $partyName)
+    public function addToPartyName(\DedexBundle\Entity\Ern41\PartyNameType $partyName)
     {
         $this->partyName[] = $partyName;
         return $this;
@@ -156,7 +156,7 @@ class DSPType
      *
      * A Composite containing details of the PartyName(s).
      *
-     * @return \DedexBundle\Entity\Ern\PartyNameType[]
+     * @return \DedexBundle\Entity\Ern41\PartyNameType[]
      */
     public function getPartyName()
     {
@@ -168,7 +168,7 @@ class DSPType
      *
      * A Composite containing details of the PartyName(s).
      *
-     * @param \DedexBundle\Entity\Ern\PartyNameType[] $partyName
+     * @param \DedexBundle\Entity\Ern41\PartyNameType[] $partyName
      * @return self
      */
     public function setPartyName(array $partyName)
@@ -182,7 +182,7 @@ class DSPType
      *
      * A Composite containing a TradingName of the DSP.
      *
-     * @return \DedexBundle\Entity\Ern\NameType
+     * @return \DedexBundle\Entity\Ern41\NameType
      */
     public function getTradingName()
     {
@@ -194,10 +194,10 @@ class DSPType
      *
      * A Composite containing a TradingName of the DSP.
      *
-     * @param \DedexBundle\Entity\Ern\NameType $tradingName
+     * @param \DedexBundle\Entity\Ern41\NameType $tradingName
      * @return self
      */
-    public function setTradingName(\DedexBundle\Entity\Ern\NameType $tradingName)
+    public function setTradingName(\DedexBundle\Entity\Ern41\NameType $tradingName)
     {
         $this->tradingName = $tradingName;
         return $this;

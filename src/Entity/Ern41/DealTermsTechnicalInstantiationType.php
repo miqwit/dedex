@@ -28,7 +28,7 @@ class DealTermsTechnicalInstantiationType
     /**
      * A Composite containing the BitRate for the audio data and a UnitOfMeasure (the default is kbps).
      *
-     * @var \DedexBundle\Entity\Ern\BitRateType $bitRate
+     * @var \DedexBundle\Entity\Ern41\BitRateType $bitRate
      */
     private $bitRate = null;
 
@@ -89,7 +89,7 @@ class DealTermsTechnicalInstantiationType
      *
      * A Composite containing the BitRate for the audio data and a UnitOfMeasure (the default is kbps).
      *
-     * @return \DedexBundle\Entity\Ern\BitRateType
+     * @return \DedexBundle\Entity\Ern41\BitRateType
      */
     public function getBitRate()
     {
@@ -101,10 +101,10 @@ class DealTermsTechnicalInstantiationType
      *
      * A Composite containing the BitRate for the audio data and a UnitOfMeasure (the default is kbps).
      *
-     * @param \DedexBundle\Entity\Ern\BitRateType $bitRate
+     * @param \DedexBundle\Entity\Ern41\BitRateType $bitRate
      * @return self
      */
-    public function setBitRate(\DedexBundle\Entity\Ern\BitRateType $bitRate)
+    public function setBitRate(\DedexBundle\Entity\Ern41\BitRateType $bitRate)
     {
         $this->bitRate = $bitRate;
         return $this;

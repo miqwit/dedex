@@ -23,7 +23,7 @@ class ReleaseDealType
     /**
      * A Composite containing details of a Deal governing the Usage of all Releases identified in the ReleaseDeal Composite.
      *
-     * @var \DedexBundle\Entity\Ern\DealType[] $deal
+     * @var \DedexBundle\Entity\Ern41\DealType[] $deal
      */
     private $deal = [
         
@@ -101,9 +101,9 @@ class ReleaseDealType
      * A Composite containing details of a Deal governing the Usage of all Releases identified in the ReleaseDeal Composite.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DealType $deal
+     * @param \DedexBundle\Entity\Ern41\DealType $deal
      */
-    public function addToDeal(\DedexBundle\Entity\Ern\DealType $deal)
+    public function addToDeal(\DedexBundle\Entity\Ern41\DealType $deal)
     {
         $this->deal[] = $deal;
         return $this;
@@ -140,7 +140,7 @@ class ReleaseDealType
      *
      * A Composite containing details of a Deal governing the Usage of all Releases identified in the ReleaseDeal Composite.
      *
-     * @return \DedexBundle\Entity\Ern\DealType[]
+     * @return \DedexBundle\Entity\Ern41\DealType[]
      */
     public function getDeal()
     {
@@ -152,7 +152,7 @@ class ReleaseDealType
      *
      * A Composite containing details of a Deal governing the Usage of all Releases identified in the ReleaseDeal Composite.
      *
-     * @param \DedexBundle\Entity\Ern\DealType[] $deal
+     * @param \DedexBundle\Entity\Ern41\DealType[] $deal
      * @return self
      */
     public function setDeal(array $deal)

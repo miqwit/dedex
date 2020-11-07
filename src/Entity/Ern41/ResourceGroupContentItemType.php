@@ -42,7 +42,7 @@ class ResourceGroupContentItemType
     /**
      * A Composite containing details of a ReleaseResourceReference (specific to this Message) for a Resource which is linked to this ContentItem. Example: an Image, Text or NonMusicalWorkVideo associated with a SoundRecording. This LocalAnchorReference is a xs:string starting with the letter A.
      *
-     * @var \DedexBundle\Entity\Ern\LinkedReleaseResourceReferenceType[] $linkedReleaseResourceReference
+     * @var \DedexBundle\Entity\Ern41\LinkedReleaseResourceReferenceType[] $linkedReleaseResourceReference
      */
     private $linkedReleaseResourceReference = [
         
@@ -179,9 +179,9 @@ class ResourceGroupContentItemType
      * A Composite containing details of a ReleaseResourceReference (specific to this Message) for a Resource which is linked to this ContentItem. Example: an Image, Text or NonMusicalWorkVideo associated with a SoundRecording. This LocalAnchorReference is a xs:string starting with the letter A.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\LinkedReleaseResourceReferenceType $linkedReleaseResourceReference
+     * @param \DedexBundle\Entity\Ern41\LinkedReleaseResourceReferenceType $linkedReleaseResourceReference
      */
-    public function addToLinkedReleaseResourceReference(\DedexBundle\Entity\Ern\LinkedReleaseResourceReferenceType $linkedReleaseResourceReference)
+    public function addToLinkedReleaseResourceReference(\DedexBundle\Entity\Ern41\LinkedReleaseResourceReferenceType $linkedReleaseResourceReference)
     {
         $this->linkedReleaseResourceReference[] = $linkedReleaseResourceReference;
         return $this;
@@ -218,7 +218,7 @@ class ResourceGroupContentItemType
      *
      * A Composite containing details of a ReleaseResourceReference (specific to this Message) for a Resource which is linked to this ContentItem. Example: an Image, Text or NonMusicalWorkVideo associated with a SoundRecording. This LocalAnchorReference is a xs:string starting with the letter A.
      *
-     * @return \DedexBundle\Entity\Ern\LinkedReleaseResourceReferenceType[]
+     * @return \DedexBundle\Entity\Ern41\LinkedReleaseResourceReferenceType[]
      */
     public function getLinkedReleaseResourceReference()
     {
@@ -230,7 +230,7 @@ class ResourceGroupContentItemType
      *
      * A Composite containing details of a ReleaseResourceReference (specific to this Message) for a Resource which is linked to this ContentItem. Example: an Image, Text or NonMusicalWorkVideo associated with a SoundRecording. This LocalAnchorReference is a xs:string starting with the letter A.
      *
-     * @param \DedexBundle\Entity\Ern\LinkedReleaseResourceReferenceType[] $linkedReleaseResourceReference
+     * @param \DedexBundle\Entity\Ern41\LinkedReleaseResourceReferenceType[] $linkedReleaseResourceReference
      * @return self
      */
     public function setLinkedReleaseResourceReference(array $linkedReleaseResourceReference)

@@ -35,14 +35,14 @@ class SheetMusicType
     /**
      * A Composite containing details of the Type of the SheetMusic.
      *
-     * @var \DedexBundle\Entity\Ern\SheetMusicTypeType $type
+     * @var \DedexBundle\Entity\Ern41\SheetMusicTypeType $type
      */
     private $type = null;
 
     /**
      * A Composite containing details of Identifiers of the SheetMusic.
      *
-     * @var \DedexBundle\Entity\Ern\SheetMusicIdType[] $resourceId
+     * @var \DedexBundle\Entity\Ern41\SheetMusicIdType[] $resourceId
      */
     private $resourceId = [
         
@@ -51,7 +51,7 @@ class SheetMusicType
     /**
      * A Composite containing details of a MusicalWorkId of a MusicalWork used in the SheetMusic.
      *
-     * @var \DedexBundle\Entity\Ern\MusicalWorkIdType[] $workId
+     * @var \DedexBundle\Entity\Ern41\MusicalWorkIdType[] $workId
      */
     private $workId = [
         
@@ -60,7 +60,7 @@ class SheetMusicType
     /**
      * A Composite containing details of a Title of the SheetMusic as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @var \DedexBundle\Entity\Ern\DisplayTitleTextType[] $displayTitleText
+     * @var \DedexBundle\Entity\Ern41\DisplayTitleTextType[] $displayTitleText
      */
     private $displayTitleText = [
         
@@ -69,7 +69,7 @@ class SheetMusicType
     /**
      * A Composite containing details of a Title of the SheetMusic as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @var \DedexBundle\Entity\Ern\DisplayTitleType[] $displayTitle
+     * @var \DedexBundle\Entity\Ern41\DisplayTitleType[] $displayTitle
      */
     private $displayTitle = [
         
@@ -78,7 +78,7 @@ class SheetMusicType
     /**
      * A Composite containing details of an AdditionalTitle of the SheetMusic. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @var \DedexBundle\Entity\Ern\AdditionalTitleType[] $additionalTitle
+     * @var \DedexBundle\Entity\Ern41\AdditionalTitleType[] $additionalTitle
      */
     private $additionalTitle = [
         
@@ -87,7 +87,7 @@ class SheetMusicType
     /**
      * A Composite containing details of a Type of Version of the SheetMusic.
      *
-     * @var \DedexBundle\Entity\Ern\VersionTypeType[] $versionType
+     * @var \DedexBundle\Entity\Ern41\VersionTypeType[] $versionType
      */
     private $versionType = [
         
@@ -96,7 +96,7 @@ class SheetMusicType
     /**
      * A Composite containing the Name to be used by a DSP when presenting Artist details of the Resource to a Consumer.
      *
-     * @var \DedexBundle\Entity\Ern\DisplayArtistNameWithDefaultType[] $displayArtistName
+     * @var \DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType[] $displayArtistName
      */
     private $displayArtistName = [
         
@@ -105,7 +105,7 @@ class SheetMusicType
     /**
      * A Composite containing details of the DisplayArtist for the SheetMusic. The DisplayArtist may be described through Name, Identifier and Roles.
      *
-     * @var \DedexBundle\Entity\Ern\DisplayArtistType[] $displayArtist
+     * @var \DedexBundle\Entity\Ern41\DisplayArtistType[] $displayArtist
      */
     private $displayArtist = [
         
@@ -114,7 +114,7 @@ class SheetMusicType
     /**
      * A Composite containing details of a Contributor to the SheetMusic.
      *
-     * @var \DedexBundle\Entity\Ern\ContributorType[] $contributor
+     * @var \DedexBundle\Entity\Ern41\ContributorType[] $contributor
      */
     private $contributor = [
         
@@ -123,7 +123,7 @@ class SheetMusicType
     /**
      * A Composite containing details of RightsController of Rights in the SheetMusic.
      *
-     * @var \DedexBundle\Entity\Ern\ResourceRightsControllerType[] $resourceRightsController
+     * @var \DedexBundle\Entity\Ern41\ResourceRightsControllerType[] $resourceRightsController
      */
     private $resourceRightsController = [
         
@@ -132,7 +132,7 @@ class SheetMusicType
     /**
      * A Composite containing details of RightsController of Rights in the Work.
      *
-     * @var \DedexBundle\Entity\Ern\WorkRightsControllerType[] $workRightsController
+     * @var \DedexBundle\Entity\Ern41\WorkRightsControllerType[] $workRightsController
      */
     private $workRightsController = [
         
@@ -141,7 +141,7 @@ class SheetMusicType
     /**
      * A Composite containing details of the CLine for the SheetMusic.
      *
-     * @var \DedexBundle\Entity\Ern\CLineWithDefaultType[] $cLine
+     * @var \DedexBundle\Entity\Ern41\CLineWithDefaultType[] $cLine
      */
     private $cLine = [
         
@@ -150,7 +150,7 @@ class SheetMusicType
     /**
      * A Composite containing an Annotation which acknowledges record companies and/or other Parties giving permission for Artists or others featured in the SheetMusic.
      *
-     * @var \DedexBundle\Entity\Ern\CourtesyLineWithDefaultType[] $courtesyLine
+     * @var \DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType[] $courtesyLine
      */
     private $courtesyLine = [
         
@@ -159,14 +159,14 @@ class SheetMusicType
     /**
      * A Composite containing details of the Date and Place of the Event in which the SheetMusic was created. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @var \DedexBundle\Entity\Ern\EventDateWithoutFlagsType $creationDate
+     * @var \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $creationDate
      */
     private $creationDate = null;
 
     /**
      * A Composite containing details of the Date and Place of the Event in which the SheetMusic was first published, whether for physical or electronic/online distribution. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @var \DedexBundle\Entity\Ern\FulfillmentDateWithTerritoryType[] $firstPublicationDate
+     * @var \DedexBundle\Entity\Ern41\FulfillmentDateWithTerritoryType[] $firstPublicationDate
      */
     private $firstPublicationDate = [
         
@@ -175,7 +175,7 @@ class SheetMusicType
     /**
      * A Composite containing details of the classification of the SheetMusic according to advice which it carries about the level of explicitness or offensiveness of its content.
      *
-     * @var \DedexBundle\Entity\Ern\ParentalWarningTypeWithTerritoryType[] $parentalWarningType
+     * @var \DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType[] $parentalWarningType
      */
     private $parentalWarningType = [
         
@@ -184,7 +184,7 @@ class SheetMusicType
     /**
      * A Composite containing details of a Release (or a PhysicalProduct or a DigitalProduct derived from such a Release) which is related to current SheetMusic.
      *
-     * @var \DedexBundle\Entity\Ern\RelatedReleaseType[] $relatedRelease
+     * @var \DedexBundle\Entity\Ern41\RelatedReleaseType[] $relatedRelease
      */
     private $relatedRelease = [
         
@@ -193,7 +193,7 @@ class SheetMusicType
     /**
      * A Composite containing details of a ResourceRelatedResourceReference referring to a Resource that is related to the current SheetMusic.
      *
-     * @var \DedexBundle\Entity\Ern\RelatedResourceType[] $relatedResource
+     * @var \DedexBundle\Entity\Ern41\RelatedResourceType[] $relatedResource
      */
     private $relatedResource = [
         
@@ -216,14 +216,14 @@ class SheetMusicType
     /**
      * A Composite containing details of ResourceContainedResourceReferences referring to a Resource that is contained in the current SheetMusic.
      *
-     * @var \DedexBundle\Entity\Ern\ResourceContainedResourceReferenceType[] $resourceContainedResourceReferenceList
+     * @var \DedexBundle\Entity\Ern41\ResourceContainedResourceReferenceType[] $resourceContainedResourceReferenceList
      */
     private $resourceContainedResourceReferenceList = null;
 
     /**
      * A Composite containing technical details of the SheetMusic.
      *
-     * @var \DedexBundle\Entity\Ern\TechnicalSheetMusicDetailsType[] $technicalDetails
+     * @var \DedexBundle\Entity\Ern41\TechnicalSheetMusicDetailsType[] $technicalDetails
      */
     private $technicalDetails = [
         
@@ -312,7 +312,7 @@ class SheetMusicType
      *
      * A Composite containing details of the Type of the SheetMusic.
      *
-     * @return \DedexBundle\Entity\Ern\SheetMusicTypeType
+     * @return \DedexBundle\Entity\Ern41\SheetMusicTypeType
      */
     public function getType()
     {
@@ -324,10 +324,10 @@ class SheetMusicType
      *
      * A Composite containing details of the Type of the SheetMusic.
      *
-     * @param \DedexBundle\Entity\Ern\SheetMusicTypeType $type
+     * @param \DedexBundle\Entity\Ern41\SheetMusicTypeType $type
      * @return self
      */
-    public function setType(\DedexBundle\Entity\Ern\SheetMusicTypeType $type)
+    public function setType(\DedexBundle\Entity\Ern41\SheetMusicTypeType $type)
     {
         $this->type = $type;
         return $this;
@@ -339,9 +339,9 @@ class SheetMusicType
      * A Composite containing details of Identifiers of the SheetMusic.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\SheetMusicIdType $resourceId
+     * @param \DedexBundle\Entity\Ern41\SheetMusicIdType $resourceId
      */
-    public function addToResourceId(\DedexBundle\Entity\Ern\SheetMusicIdType $resourceId)
+    public function addToResourceId(\DedexBundle\Entity\Ern41\SheetMusicIdType $resourceId)
     {
         $this->resourceId[] = $resourceId;
         return $this;
@@ -378,7 +378,7 @@ class SheetMusicType
      *
      * A Composite containing details of Identifiers of the SheetMusic.
      *
-     * @return \DedexBundle\Entity\Ern\SheetMusicIdType[]
+     * @return \DedexBundle\Entity\Ern41\SheetMusicIdType[]
      */
     public function getResourceId()
     {
@@ -390,7 +390,7 @@ class SheetMusicType
      *
      * A Composite containing details of Identifiers of the SheetMusic.
      *
-     * @param \DedexBundle\Entity\Ern\SheetMusicIdType[] $resourceId
+     * @param \DedexBundle\Entity\Ern41\SheetMusicIdType[] $resourceId
      * @return self
      */
     public function setResourceId(array $resourceId)
@@ -405,9 +405,9 @@ class SheetMusicType
      * A Composite containing details of a MusicalWorkId of a MusicalWork used in the SheetMusic.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\MusicalWorkIdType $workId
+     * @param \DedexBundle\Entity\Ern41\MusicalWorkIdType $workId
      */
-    public function addToWorkId(\DedexBundle\Entity\Ern\MusicalWorkIdType $workId)
+    public function addToWorkId(\DedexBundle\Entity\Ern41\MusicalWorkIdType $workId)
     {
         $this->workId[] = $workId;
         return $this;
@@ -444,7 +444,7 @@ class SheetMusicType
      *
      * A Composite containing details of a MusicalWorkId of a MusicalWork used in the SheetMusic.
      *
-     * @return \DedexBundle\Entity\Ern\MusicalWorkIdType[]
+     * @return \DedexBundle\Entity\Ern41\MusicalWorkIdType[]
      */
     public function getWorkId()
     {
@@ -456,7 +456,7 @@ class SheetMusicType
      *
      * A Composite containing details of a MusicalWorkId of a MusicalWork used in the SheetMusic.
      *
-     * @param \DedexBundle\Entity\Ern\MusicalWorkIdType[] $workId
+     * @param \DedexBundle\Entity\Ern41\MusicalWorkIdType[] $workId
      * @return self
      */
     public function setWorkId(array $workId)
@@ -471,9 +471,9 @@ class SheetMusicType
      * A Composite containing details of a Title of the SheetMusic as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DisplayTitleTextType $displayTitleText
+     * @param \DedexBundle\Entity\Ern41\DisplayTitleTextType $displayTitleText
      */
-    public function addToDisplayTitleText(\DedexBundle\Entity\Ern\DisplayTitleTextType $displayTitleText)
+    public function addToDisplayTitleText(\DedexBundle\Entity\Ern41\DisplayTitleTextType $displayTitleText)
     {
         $this->displayTitleText[] = $displayTitleText;
         return $this;
@@ -510,7 +510,7 @@ class SheetMusicType
      *
      * A Composite containing details of a Title of the SheetMusic as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @return \DedexBundle\Entity\Ern\DisplayTitleTextType[]
+     * @return \DedexBundle\Entity\Ern41\DisplayTitleTextType[]
      */
     public function getDisplayTitleText()
     {
@@ -522,7 +522,7 @@ class SheetMusicType
      *
      * A Composite containing details of a Title of the SheetMusic as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @param \DedexBundle\Entity\Ern\DisplayTitleTextType[] $displayTitleText
+     * @param \DedexBundle\Entity\Ern41\DisplayTitleTextType[] $displayTitleText
      * @return self
      */
     public function setDisplayTitleText(array $displayTitleText)
@@ -537,9 +537,9 @@ class SheetMusicType
      * A Composite containing details of a Title of the SheetMusic as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DisplayTitleType $displayTitle
+     * @param \DedexBundle\Entity\Ern41\DisplayTitleType $displayTitle
      */
-    public function addToDisplayTitle(\DedexBundle\Entity\Ern\DisplayTitleType $displayTitle)
+    public function addToDisplayTitle(\DedexBundle\Entity\Ern41\DisplayTitleType $displayTitle)
     {
         $this->displayTitle[] = $displayTitle;
         return $this;
@@ -576,7 +576,7 @@ class SheetMusicType
      *
      * A Composite containing details of a Title of the SheetMusic as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @return \DedexBundle\Entity\Ern\DisplayTitleType[]
+     * @return \DedexBundle\Entity\Ern41\DisplayTitleType[]
      */
     public function getDisplayTitle()
     {
@@ -588,7 +588,7 @@ class SheetMusicType
      *
      * A Composite containing details of a Title of the SheetMusic as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @param \DedexBundle\Entity\Ern\DisplayTitleType[] $displayTitle
+     * @param \DedexBundle\Entity\Ern41\DisplayTitleType[] $displayTitle
      * @return self
      */
     public function setDisplayTitle(array $displayTitle)
@@ -603,9 +603,9 @@ class SheetMusicType
      * A Composite containing details of an AdditionalTitle of the SheetMusic. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\AdditionalTitleType $additionalTitle
+     * @param \DedexBundle\Entity\Ern41\AdditionalTitleType $additionalTitle
      */
-    public function addToAdditionalTitle(\DedexBundle\Entity\Ern\AdditionalTitleType $additionalTitle)
+    public function addToAdditionalTitle(\DedexBundle\Entity\Ern41\AdditionalTitleType $additionalTitle)
     {
         $this->additionalTitle[] = $additionalTitle;
         return $this;
@@ -642,7 +642,7 @@ class SheetMusicType
      *
      * A Composite containing details of an AdditionalTitle of the SheetMusic. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @return \DedexBundle\Entity\Ern\AdditionalTitleType[]
+     * @return \DedexBundle\Entity\Ern41\AdditionalTitleType[]
      */
     public function getAdditionalTitle()
     {
@@ -654,7 +654,7 @@ class SheetMusicType
      *
      * A Composite containing details of an AdditionalTitle of the SheetMusic. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @param \DedexBundle\Entity\Ern\AdditionalTitleType[] $additionalTitle
+     * @param \DedexBundle\Entity\Ern41\AdditionalTitleType[] $additionalTitle
      * @return self
      */
     public function setAdditionalTitle(array $additionalTitle)
@@ -669,9 +669,9 @@ class SheetMusicType
      * A Composite containing details of a Type of Version of the SheetMusic.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\VersionTypeType $versionType
+     * @param \DedexBundle\Entity\Ern41\VersionTypeType $versionType
      */
-    public function addToVersionType(\DedexBundle\Entity\Ern\VersionTypeType $versionType)
+    public function addToVersionType(\DedexBundle\Entity\Ern41\VersionTypeType $versionType)
     {
         $this->versionType[] = $versionType;
         return $this;
@@ -708,7 +708,7 @@ class SheetMusicType
      *
      * A Composite containing details of a Type of Version of the SheetMusic.
      *
-     * @return \DedexBundle\Entity\Ern\VersionTypeType[]
+     * @return \DedexBundle\Entity\Ern41\VersionTypeType[]
      */
     public function getVersionType()
     {
@@ -720,7 +720,7 @@ class SheetMusicType
      *
      * A Composite containing details of a Type of Version of the SheetMusic.
      *
-     * @param \DedexBundle\Entity\Ern\VersionTypeType[] $versionType
+     * @param \DedexBundle\Entity\Ern41\VersionTypeType[] $versionType
      * @return self
      */
     public function setVersionType(array $versionType)
@@ -735,9 +735,9 @@ class SheetMusicType
      * A Composite containing the Name to be used by a DSP when presenting Artist details of the Resource to a Consumer.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DisplayArtistNameWithDefaultType $displayArtistName
+     * @param \DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType $displayArtistName
      */
-    public function addToDisplayArtistName(\DedexBundle\Entity\Ern\DisplayArtistNameWithDefaultType $displayArtistName)
+    public function addToDisplayArtistName(\DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType $displayArtistName)
     {
         $this->displayArtistName[] = $displayArtistName;
         return $this;
@@ -774,7 +774,7 @@ class SheetMusicType
      *
      * A Composite containing the Name to be used by a DSP when presenting Artist details of the Resource to a Consumer.
      *
-     * @return \DedexBundle\Entity\Ern\DisplayArtistNameWithDefaultType[]
+     * @return \DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType[]
      */
     public function getDisplayArtistName()
     {
@@ -786,7 +786,7 @@ class SheetMusicType
      *
      * A Composite containing the Name to be used by a DSP when presenting Artist details of the Resource to a Consumer.
      *
-     * @param \DedexBundle\Entity\Ern\DisplayArtistNameWithDefaultType[] $displayArtistName
+     * @param \DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType[] $displayArtistName
      * @return self
      */
     public function setDisplayArtistName(array $displayArtistName)
@@ -801,9 +801,9 @@ class SheetMusicType
      * A Composite containing details of the DisplayArtist for the SheetMusic. The DisplayArtist may be described through Name, Identifier and Roles.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\DisplayArtistType $displayArtist
+     * @param \DedexBundle\Entity\Ern41\DisplayArtistType $displayArtist
      */
-    public function addToDisplayArtist(\DedexBundle\Entity\Ern\DisplayArtistType $displayArtist)
+    public function addToDisplayArtist(\DedexBundle\Entity\Ern41\DisplayArtistType $displayArtist)
     {
         $this->displayArtist[] = $displayArtist;
         return $this;
@@ -840,7 +840,7 @@ class SheetMusicType
      *
      * A Composite containing details of the DisplayArtist for the SheetMusic. The DisplayArtist may be described through Name, Identifier and Roles.
      *
-     * @return \DedexBundle\Entity\Ern\DisplayArtistType[]
+     * @return \DedexBundle\Entity\Ern41\DisplayArtistType[]
      */
     public function getDisplayArtist()
     {
@@ -852,7 +852,7 @@ class SheetMusicType
      *
      * A Composite containing details of the DisplayArtist for the SheetMusic. The DisplayArtist may be described through Name, Identifier and Roles.
      *
-     * @param \DedexBundle\Entity\Ern\DisplayArtistType[] $displayArtist
+     * @param \DedexBundle\Entity\Ern41\DisplayArtistType[] $displayArtist
      * @return self
      */
     public function setDisplayArtist(array $displayArtist)
@@ -867,9 +867,9 @@ class SheetMusicType
      * A Composite containing details of a Contributor to the SheetMusic.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\ContributorType $contributor
+     * @param \DedexBundle\Entity\Ern41\ContributorType $contributor
      */
-    public function addToContributor(\DedexBundle\Entity\Ern\ContributorType $contributor)
+    public function addToContributor(\DedexBundle\Entity\Ern41\ContributorType $contributor)
     {
         $this->contributor[] = $contributor;
         return $this;
@@ -906,7 +906,7 @@ class SheetMusicType
      *
      * A Composite containing details of a Contributor to the SheetMusic.
      *
-     * @return \DedexBundle\Entity\Ern\ContributorType[]
+     * @return \DedexBundle\Entity\Ern41\ContributorType[]
      */
     public function getContributor()
     {
@@ -918,7 +918,7 @@ class SheetMusicType
      *
      * A Composite containing details of a Contributor to the SheetMusic.
      *
-     * @param \DedexBundle\Entity\Ern\ContributorType[] $contributor
+     * @param \DedexBundle\Entity\Ern41\ContributorType[] $contributor
      * @return self
      */
     public function setContributor(array $contributor)
@@ -933,9 +933,9 @@ class SheetMusicType
      * A Composite containing details of RightsController of Rights in the SheetMusic.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\ResourceRightsControllerType $resourceRightsController
+     * @param \DedexBundle\Entity\Ern41\ResourceRightsControllerType $resourceRightsController
      */
-    public function addToResourceRightsController(\DedexBundle\Entity\Ern\ResourceRightsControllerType $resourceRightsController)
+    public function addToResourceRightsController(\DedexBundle\Entity\Ern41\ResourceRightsControllerType $resourceRightsController)
     {
         $this->resourceRightsController[] = $resourceRightsController;
         return $this;
@@ -972,7 +972,7 @@ class SheetMusicType
      *
      * A Composite containing details of RightsController of Rights in the SheetMusic.
      *
-     * @return \DedexBundle\Entity\Ern\ResourceRightsControllerType[]
+     * @return \DedexBundle\Entity\Ern41\ResourceRightsControllerType[]
      */
     public function getResourceRightsController()
     {
@@ -984,7 +984,7 @@ class SheetMusicType
      *
      * A Composite containing details of RightsController of Rights in the SheetMusic.
      *
-     * @param \DedexBundle\Entity\Ern\ResourceRightsControllerType[] $resourceRightsController
+     * @param \DedexBundle\Entity\Ern41\ResourceRightsControllerType[] $resourceRightsController
      * @return self
      */
     public function setResourceRightsController(array $resourceRightsController)
@@ -999,9 +999,9 @@ class SheetMusicType
      * A Composite containing details of RightsController of Rights in the Work.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\WorkRightsControllerType $workRightsController
+     * @param \DedexBundle\Entity\Ern41\WorkRightsControllerType $workRightsController
      */
-    public function addToWorkRightsController(\DedexBundle\Entity\Ern\WorkRightsControllerType $workRightsController)
+    public function addToWorkRightsController(\DedexBundle\Entity\Ern41\WorkRightsControllerType $workRightsController)
     {
         $this->workRightsController[] = $workRightsController;
         return $this;
@@ -1038,7 +1038,7 @@ class SheetMusicType
      *
      * A Composite containing details of RightsController of Rights in the Work.
      *
-     * @return \DedexBundle\Entity\Ern\WorkRightsControllerType[]
+     * @return \DedexBundle\Entity\Ern41\WorkRightsControllerType[]
      */
     public function getWorkRightsController()
     {
@@ -1050,7 +1050,7 @@ class SheetMusicType
      *
      * A Composite containing details of RightsController of Rights in the Work.
      *
-     * @param \DedexBundle\Entity\Ern\WorkRightsControllerType[] $workRightsController
+     * @param \DedexBundle\Entity\Ern41\WorkRightsControllerType[] $workRightsController
      * @return self
      */
     public function setWorkRightsController(array $workRightsController)
@@ -1065,9 +1065,9 @@ class SheetMusicType
      * A Composite containing details of the CLine for the SheetMusic.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\CLineWithDefaultType $cLine
+     * @param \DedexBundle\Entity\Ern41\CLineWithDefaultType $cLine
      */
-    public function addToCLine(\DedexBundle\Entity\Ern\CLineWithDefaultType $cLine)
+    public function addToCLine(\DedexBundle\Entity\Ern41\CLineWithDefaultType $cLine)
     {
         $this->cLine[] = $cLine;
         return $this;
@@ -1104,7 +1104,7 @@ class SheetMusicType
      *
      * A Composite containing details of the CLine for the SheetMusic.
      *
-     * @return \DedexBundle\Entity\Ern\CLineWithDefaultType[]
+     * @return \DedexBundle\Entity\Ern41\CLineWithDefaultType[]
      */
     public function getCLine()
     {
@@ -1116,7 +1116,7 @@ class SheetMusicType
      *
      * A Composite containing details of the CLine for the SheetMusic.
      *
-     * @param \DedexBundle\Entity\Ern\CLineWithDefaultType[] $cLine
+     * @param \DedexBundle\Entity\Ern41\CLineWithDefaultType[] $cLine
      * @return self
      */
     public function setCLine(array $cLine)
@@ -1131,9 +1131,9 @@ class SheetMusicType
      * A Composite containing an Annotation which acknowledges record companies and/or other Parties giving permission for Artists or others featured in the SheetMusic.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\CourtesyLineWithDefaultType $courtesyLine
+     * @param \DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType $courtesyLine
      */
-    public function addToCourtesyLine(\DedexBundle\Entity\Ern\CourtesyLineWithDefaultType $courtesyLine)
+    public function addToCourtesyLine(\DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType $courtesyLine)
     {
         $this->courtesyLine[] = $courtesyLine;
         return $this;
@@ -1170,7 +1170,7 @@ class SheetMusicType
      *
      * A Composite containing an Annotation which acknowledges record companies and/or other Parties giving permission for Artists or others featured in the SheetMusic.
      *
-     * @return \DedexBundle\Entity\Ern\CourtesyLineWithDefaultType[]
+     * @return \DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType[]
      */
     public function getCourtesyLine()
     {
@@ -1182,7 +1182,7 @@ class SheetMusicType
      *
      * A Composite containing an Annotation which acknowledges record companies and/or other Parties giving permission for Artists or others featured in the SheetMusic.
      *
-     * @param \DedexBundle\Entity\Ern\CourtesyLineWithDefaultType[] $courtesyLine
+     * @param \DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType[] $courtesyLine
      * @return self
      */
     public function setCourtesyLine(array $courtesyLine)
@@ -1196,7 +1196,7 @@ class SheetMusicType
      *
      * A Composite containing details of the Date and Place of the Event in which the SheetMusic was created. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @return \DedexBundle\Entity\Ern\EventDateWithoutFlagsType
+     * @return \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType
      */
     public function getCreationDate()
     {
@@ -1208,10 +1208,10 @@ class SheetMusicType
      *
      * A Composite containing details of the Date and Place of the Event in which the SheetMusic was created. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @param \DedexBundle\Entity\Ern\EventDateWithoutFlagsType $creationDate
+     * @param \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $creationDate
      * @return self
      */
-    public function setCreationDate(\DedexBundle\Entity\Ern\EventDateWithoutFlagsType $creationDate)
+    public function setCreationDate(\DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $creationDate)
     {
         $this->creationDate = $creationDate;
         return $this;
@@ -1223,9 +1223,9 @@ class SheetMusicType
      * A Composite containing details of the Date and Place of the Event in which the SheetMusic was first published, whether for physical or electronic/online distribution. This is a string with the syntax YYYY[-MM[-DD]].
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\FulfillmentDateWithTerritoryType $firstPublicationDate
+     * @param \DedexBundle\Entity\Ern41\FulfillmentDateWithTerritoryType $firstPublicationDate
      */
-    public function addToFirstPublicationDate(\DedexBundle\Entity\Ern\FulfillmentDateWithTerritoryType $firstPublicationDate)
+    public function addToFirstPublicationDate(\DedexBundle\Entity\Ern41\FulfillmentDateWithTerritoryType $firstPublicationDate)
     {
         $this->firstPublicationDate[] = $firstPublicationDate;
         return $this;
@@ -1262,7 +1262,7 @@ class SheetMusicType
      *
      * A Composite containing details of the Date and Place of the Event in which the SheetMusic was first published, whether for physical or electronic/online distribution. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @return \DedexBundle\Entity\Ern\FulfillmentDateWithTerritoryType[]
+     * @return \DedexBundle\Entity\Ern41\FulfillmentDateWithTerritoryType[]
      */
     public function getFirstPublicationDate()
     {
@@ -1274,7 +1274,7 @@ class SheetMusicType
      *
      * A Composite containing details of the Date and Place of the Event in which the SheetMusic was first published, whether for physical or electronic/online distribution. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @param \DedexBundle\Entity\Ern\FulfillmentDateWithTerritoryType[] $firstPublicationDate
+     * @param \DedexBundle\Entity\Ern41\FulfillmentDateWithTerritoryType[] $firstPublicationDate
      * @return self
      */
     public function setFirstPublicationDate(array $firstPublicationDate)
@@ -1289,9 +1289,9 @@ class SheetMusicType
      * A Composite containing details of the classification of the SheetMusic according to advice which it carries about the level of explicitness or offensiveness of its content.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\ParentalWarningTypeWithTerritoryType $parentalWarningType
+     * @param \DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType $parentalWarningType
      */
-    public function addToParentalWarningType(\DedexBundle\Entity\Ern\ParentalWarningTypeWithTerritoryType $parentalWarningType)
+    public function addToParentalWarningType(\DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType $parentalWarningType)
     {
         $this->parentalWarningType[] = $parentalWarningType;
         return $this;
@@ -1328,7 +1328,7 @@ class SheetMusicType
      *
      * A Composite containing details of the classification of the SheetMusic according to advice which it carries about the level of explicitness or offensiveness of its content.
      *
-     * @return \DedexBundle\Entity\Ern\ParentalWarningTypeWithTerritoryType[]
+     * @return \DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType[]
      */
     public function getParentalWarningType()
     {
@@ -1340,7 +1340,7 @@ class SheetMusicType
      *
      * A Composite containing details of the classification of the SheetMusic according to advice which it carries about the level of explicitness or offensiveness of its content.
      *
-     * @param \DedexBundle\Entity\Ern\ParentalWarningTypeWithTerritoryType[] $parentalWarningType
+     * @param \DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType[] $parentalWarningType
      * @return self
      */
     public function setParentalWarningType(array $parentalWarningType)
@@ -1355,9 +1355,9 @@ class SheetMusicType
      * A Composite containing details of a Release (or a PhysicalProduct or a DigitalProduct derived from such a Release) which is related to current SheetMusic.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\RelatedReleaseType $relatedRelease
+     * @param \DedexBundle\Entity\Ern41\RelatedReleaseType $relatedRelease
      */
-    public function addToRelatedRelease(\DedexBundle\Entity\Ern\RelatedReleaseType $relatedRelease)
+    public function addToRelatedRelease(\DedexBundle\Entity\Ern41\RelatedReleaseType $relatedRelease)
     {
         $this->relatedRelease[] = $relatedRelease;
         return $this;
@@ -1394,7 +1394,7 @@ class SheetMusicType
      *
      * A Composite containing details of a Release (or a PhysicalProduct or a DigitalProduct derived from such a Release) which is related to current SheetMusic.
      *
-     * @return \DedexBundle\Entity\Ern\RelatedReleaseType[]
+     * @return \DedexBundle\Entity\Ern41\RelatedReleaseType[]
      */
     public function getRelatedRelease()
     {
@@ -1406,7 +1406,7 @@ class SheetMusicType
      *
      * A Composite containing details of a Release (or a PhysicalProduct or a DigitalProduct derived from such a Release) which is related to current SheetMusic.
      *
-     * @param \DedexBundle\Entity\Ern\RelatedReleaseType[] $relatedRelease
+     * @param \DedexBundle\Entity\Ern41\RelatedReleaseType[] $relatedRelease
      * @return self
      */
     public function setRelatedRelease(array $relatedRelease)
@@ -1421,9 +1421,9 @@ class SheetMusicType
      * A Composite containing details of a ResourceRelatedResourceReference referring to a Resource that is related to the current SheetMusic.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\RelatedResourceType $relatedResource
+     * @param \DedexBundle\Entity\Ern41\RelatedResourceType $relatedResource
      */
-    public function addToRelatedResource(\DedexBundle\Entity\Ern\RelatedResourceType $relatedResource)
+    public function addToRelatedResource(\DedexBundle\Entity\Ern41\RelatedResourceType $relatedResource)
     {
         $this->relatedResource[] = $relatedResource;
         return $this;
@@ -1460,7 +1460,7 @@ class SheetMusicType
      *
      * A Composite containing details of a ResourceRelatedResourceReference referring to a Resource that is related to the current SheetMusic.
      *
-     * @return \DedexBundle\Entity\Ern\RelatedResourceType[]
+     * @return \DedexBundle\Entity\Ern41\RelatedResourceType[]
      */
     public function getRelatedResource()
     {
@@ -1472,7 +1472,7 @@ class SheetMusicType
      *
      * A Composite containing details of a ResourceRelatedResourceReference referring to a Resource that is related to the current SheetMusic.
      *
-     * @param \DedexBundle\Entity\Ern\RelatedResourceType[] $relatedResource
+     * @param \DedexBundle\Entity\Ern41\RelatedResourceType[] $relatedResource
      * @return self
      */
     public function setRelatedResource(array $relatedResource)
@@ -1539,9 +1539,9 @@ class SheetMusicType
      * A Composite containing details of ResourceContainedResourceReferences referring to a Resource that is contained in the current SheetMusic.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\ResourceContainedResourceReferenceType $resourceContainedResourceReference
+     * @param \DedexBundle\Entity\Ern41\ResourceContainedResourceReferenceType $resourceContainedResourceReference
      */
-    public function addToResourceContainedResourceReferenceList(\DedexBundle\Entity\Ern\ResourceContainedResourceReferenceType $resourceContainedResourceReference)
+    public function addToResourceContainedResourceReferenceList(\DedexBundle\Entity\Ern41\ResourceContainedResourceReferenceType $resourceContainedResourceReference)
     {
         $this->resourceContainedResourceReferenceList[] = $resourceContainedResourceReference;
         return $this;
@@ -1578,7 +1578,7 @@ class SheetMusicType
      *
      * A Composite containing details of ResourceContainedResourceReferences referring to a Resource that is contained in the current SheetMusic.
      *
-     * @return \DedexBundle\Entity\Ern\ResourceContainedResourceReferenceType[]
+     * @return \DedexBundle\Entity\Ern41\ResourceContainedResourceReferenceType[]
      */
     public function getResourceContainedResourceReferenceList()
     {
@@ -1590,7 +1590,7 @@ class SheetMusicType
      *
      * A Composite containing details of ResourceContainedResourceReferences referring to a Resource that is contained in the current SheetMusic.
      *
-     * @param \DedexBundle\Entity\Ern\ResourceContainedResourceReferenceType[] $resourceContainedResourceReferenceList
+     * @param \DedexBundle\Entity\Ern41\ResourceContainedResourceReferenceType[] $resourceContainedResourceReferenceList
      * @return self
      */
     public function setResourceContainedResourceReferenceList(array $resourceContainedResourceReferenceList)
@@ -1605,9 +1605,9 @@ class SheetMusicType
      * A Composite containing technical details of the SheetMusic.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern\TechnicalSheetMusicDetailsType $technicalDetails
+     * @param \DedexBundle\Entity\Ern41\TechnicalSheetMusicDetailsType $technicalDetails
      */
-    public function addToTechnicalDetails(\DedexBundle\Entity\Ern\TechnicalSheetMusicDetailsType $technicalDetails)
+    public function addToTechnicalDetails(\DedexBundle\Entity\Ern41\TechnicalSheetMusicDetailsType $technicalDetails)
     {
         $this->technicalDetails[] = $technicalDetails;
         return $this;
@@ -1644,7 +1644,7 @@ class SheetMusicType
      *
      * A Composite containing technical details of the SheetMusic.
      *
-     * @return \DedexBundle\Entity\Ern\TechnicalSheetMusicDetailsType[]
+     * @return \DedexBundle\Entity\Ern41\TechnicalSheetMusicDetailsType[]
      */
     public function getTechnicalDetails()
     {
@@ -1656,7 +1656,7 @@ class SheetMusicType
      *
      * A Composite containing technical details of the SheetMusic.
      *
-     * @param \DedexBundle\Entity\Ern\TechnicalSheetMusicDetailsType[] $technicalDetails
+     * @param \DedexBundle\Entity\Ern41\TechnicalSheetMusicDetailsType[] $technicalDetails
      * @return self
      */
     public function setTechnicalDetails(array $technicalDetails)
