@@ -1,11 +1,5 @@
 <?php
 
-namespace DedexBundle\Simplifiers;
-
-use DedexBundle\Entity\Ern382\ImageDetailsByTerritoryType;
-use DedexBundle\Entity\Ern382\ImageType;
-use Throwable;
-
 /*
  * The MIT License
  *
@@ -30,6 +24,12 @@ use Throwable;
  * THE SOFTWARE.
  */
 
+namespace DedexBundle\Simplifiers;
+
+use DedexBundle\Entity\Ern382\ImageDetailsByTerritoryType;
+use DedexBundle\Entity\Ern382\ImageType;
+use Throwable;
+
 /**
  * SimpleImage.
  * Only use Worldwide details
@@ -39,7 +39,7 @@ use Throwable;
 class SimpleImage extends SimpleEntity {
 
 	/**
-	 * @var \DedexBundle\Entity\Ern382\Image
+	 * @var ImageType
 	 */
 	private $ddexImage;
 	

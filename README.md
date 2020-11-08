@@ -12,7 +12,26 @@ For instance, it is possible to enforce that for a given XML the ISRC is provide
 
 If you find this useful, please star this repository, and contribute.
 
+This repository provides **Simple Entities** that can be handy to parse your first XML files. They give a simplified model of an Album, with Tracks, Artists and Deals attached. You can ignored the Simple Entities and build your own set or superset of entities to serve your needs. Note that the Simple Entities give a limited usage of DDEX. Read the documentation carefully before using it.
+
 ## Usage
+
+### Convert a DDEX file to a SimpleAlbum
+
+```php
+use DedexBundle\Controller\ErnParserController;
+use DedexBundle\Simplifiers\SimpleAlbum;
+
+$xml_path = "tests/samples/with_assets/004_complete/1199119911991.xml";
+$parser = new ErnParserController();
+$ern = $parser->parse($xml_path);
+$album = new SimpleAlbum($ern);
+
+// Then you can access high level property of this album
+$release_date = $album->getOriginalReleaseDate();
+$artists_at_album_level = $album->getArtists();
+$tracks_for_cd_1 = $album->getTracks()[1];
+```
 
 ### Parse a file without XSD validation
 

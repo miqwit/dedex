@@ -50,12 +50,19 @@ class SimpleTrack extends SimpleEntity {
 	 * @var SoundRecordingType
 	 */
 	private $ddexSoundrecording;
+	
+	/**
+	 *
+	 * @var SimpleDeal
+	 */
+	private $deal;
 
 	/**
 	 * @param SoundRecordingType $soundrecording
 	 */
-	public function __construct($soundrecording) {
+	public function __construct($soundrecording, ?SimpleDeal $deal) {
 		$this->ddexSoundrecording = $soundrecording;
+		$this->deal = $deal;
 
 		$this->ddexDetails = $this->getDetailsByTerritory($soundrecording, "soundrecording", "worldwide");
 	}
@@ -100,6 +107,11 @@ class SimpleTrack extends SimpleEntity {
 		}
 	}
 
+	/**
+	 * Fetch the title as given in the ReferenceTitle tag
+	 * 
+	 * @return string|null
+	 */
 	private function getReferenceTitle(): ?string {
 		try {
 			return $this->ddexSoundrecording->getReferenceTitle()->getTitleText()->value();
@@ -127,10 +139,22 @@ class SimpleTrack extends SimpleEntity {
 		return null;
 	}
 
+	/**
+	 * Get the title as in the Title tag with attribute DisplayTitle.
+	 * @see $this->getTitleByType
+	 * 
+	 * @return string|null
+	 */
 	private function getDisplayTitle(): ?string {
 		return $this->getTitleByType("displaytitle");
 	}
 
+	/**
+	 * Get the title as in the Title tag with attribute FormalTitle.
+	 * @see $this->getTitleByType
+	 * 
+	 * @return string|null
+	 */
 	private function getFormalTitle(): ?string {
 		return $this->getTitleByType("formaltitle");
 	}
@@ -171,6 +195,8 @@ class SimpleTrack extends SimpleEntity {
 	}
 
 	/**
+	 * Converts a dateinterval to seconds
+	 * 
 	 * @param DateInterval $dateInterval
 	 * @return int seconds
 	 */
@@ -265,7 +291,9 @@ class SimpleTrack extends SimpleEntity {
 	/**
 	 * Concatenate DisplayArtists, ResourceContributors and IndirectResourceContributors
 	 * in the same array.
-	 * Ignores sequence numbering
+	 * 
+	 * Ignores sequence numbering. Keep the order as written in the XML.
+	 * 
 	 * @return SimpleArtist
 	 */
 	public function getArtists() {
@@ -397,6 +425,13 @@ class SimpleTrack extends SimpleEntity {
 		} catch (Exception $ex) {
 			return null;
 		}
+	}
+	
+	/**
+	 * @return SimpleDeal|null
+	 */
+	public function getDeal(): ?SimpleDeal {
+		return $this->deal;
 	}
 
 }

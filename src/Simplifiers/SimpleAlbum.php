@@ -6,6 +6,7 @@ use DateTime;
 use DateTimeImmutable;
 use DedexBundle\Entity\Ern382\ImageType;
 use DedexBundle\Entity\Ern382\NewReleaseMessage;
+use DedexBundle\Entity\Ern382\ReleaseDealType;
 use DedexBundle\Entity\Ern382\ReleaseDetailsByTerritoryType;
 use DedexBundle\Entity\Ern382\ReleaseType;
 use Exception;
@@ -38,6 +39,7 @@ use Throwable;
 /**
  * A simplified release album.
  * Consider only country Worldwide.
+ * Expects one deal for the release, and one deal per track.
  *
  * @author Mickaël Arcos <miqwit>
  */
@@ -74,9 +76,32 @@ class SimpleAlbum extends SimpleEntity {
 
 	/**
 	 * Sound recordings indexed by cd_num and track_num
+	 * For example $tracksPerCd[1][5] is the fifth track of CD 1.
+	 * Index starts at 1. It is a string in the XML, converted to int here.
+	 * 
 	 * @var type 
 	 */
 	private $tracksPerCd = [];
+	
+	/**
+	 * @var array
+	 */
+	private $dealsByReleaseReference;
+	/**
+	 * "A2" => deal
+	 * @var array
+	 */
+	private $dealsByResourceReference;
+	
+	/**
+	 * @var array
+	 */
+	private $trackReleasesByReference;
+	
+	/**
+	 * @var SimpleDeal
+	 */
+	private $deal;
 
 	/**
 	 * @param NewReleaseMessage $ern type DedexBundle\Entity\Ern382\NewReleaseMessage or
@@ -90,7 +115,8 @@ class SimpleAlbum extends SimpleEntity {
 			foreach ($release->getReleaseType() as $type) {
 				if ($type->value() === "Album") {
 					$this->ddexReleaseAlbum = $release;
-					break 2;
+				} else {
+					$this->trackReleasesByReference[$release->getReleaseReference()[0]] = $release;
 				}
 			}
 		}
@@ -98,9 +124,59 @@ class SimpleAlbum extends SimpleEntity {
 		if ($this->ddexReleaseAlbum === null) {
 			throw new Exception("No Album release found in this release message");
 		}
-
+		
+		// index deals
+		$this->indexDealsByReleaseReference();
+		$this->deal = $this->dealsByReleaseReference[$this->ddexReleaseAlbum->getReleaseReference()[0]];
+		
+		// index resources
 		$this->ddexDetails = $this->getDetailsByTerritory($this->ddexReleaseAlbum, "release", "worldwide");
 		$this->indexResources();
+	}
+	
+	/**
+	 * Browe all release deals from ern and store them both in this->dealsByReleaseReference 
+	 * (such as R1, R2, etc) and this->dealsByResourceReference (such as A1, A2, ...)
+	 */
+	private function indexDealsByReleaseReference() {
+		foreach ($this->ern->getDealList()->getReleaseDeal() as $releaseDeal) {
+			/* @var $releaseDeal ReleaseDealType */
+			$this->dealsByReleaseReference[$releaseDeal->getDealReleaseReference()[0]] = new SimpleDeal($releaseDeal);
+			
+			// find release for this deal
+			$deal_release_reference = $releaseDeal->getDealReleaseReference()[0];
+			if (!array_key_exists($deal_release_reference, $this->trackReleasesByReference)) {
+				// This is the album release
+				continue;
+			}
+			
+			$corresponding_track_release = $this->trackReleasesByReference[$deal_release_reference];
+			$resource_ref = $this->getResourcesReferencesFromTrackRelease($corresponding_track_release);
+			$this->dealsByResourceReference[$resource_ref] = $releaseDeal;
+		}
+	}
+	
+	/**
+	 * Get the resource references for a given release.
+	 * Assumption: each release references only one resource, except the Album release 
+	 *   (not covered here)
+	 */
+	private function getResourcesReferencesFromTrackRelease($release) {
+		/* @var $release ReleaseType */
+		foreach ($release->getReleaseResourceReferenceList() as $rrrl) {
+			if (strtolower($rrrl->getReleaseResourceType()) === "primaryresource") {
+				// Suppose there is only one primary resource
+				return $rrrl->value();
+			}
+		}
+	}
+	
+	/**
+	 * Return the deals corresponding to the album release
+	 * @return SimpleDeal|null
+	 */
+	public function getDeal(): ?SimpleDeal {
+		return $this->deal;
 	}
 
 	/**
@@ -137,6 +213,8 @@ class SimpleAlbum extends SimpleEntity {
 	 * Populate 
 	 * 	$this->tracksPerCd
 	 *  $this->frontCoverImage
+	 * 
+	 * Each track will have its deal attached.
 	 */
 	private function indexResources() {
 		$this->indexResourcesByReference();
@@ -152,8 +230,16 @@ class SimpleAlbum extends SimpleEntity {
 
 				foreach ($group_cd->getResourceGroupContentItem() as $item) {
 					$track_num = (int) $item->getSequenceNumber();
-					$track = $this->resourcesByReference[$item->getReleaseResourceReference()->value()];
-					$this->tracksPerCd[$cd_num][$track_num] = new SimpleTrack($track);
+					$track_reference = $item->getReleaseResourceReference()->value();
+					$track = $this->resourcesByReference[$track_reference];
+					
+					// Find deal for this track (sound recording)
+					// Find release first. Assumption: one release per track
+					$track_deal = array_key_exists($track_reference, $this->dealsByResourceReference) 
+									? new SimpleDeal($this->dealsByResourceReference[$track_reference]) 
+									: null;
+					
+					$this->tracksPerCd[$cd_num][$track_num] = new SimpleTrack($track, $track_deal);
 				}
 			}
 
@@ -173,6 +259,10 @@ class SimpleAlbum extends SimpleEntity {
 		}
 	}
 
+	/**
+	 * Return the SimpleImage corresponding to the FrontCover
+	 * @return SimpleImage
+	 */
 	public function getImageFrontCover(): SimpleImage {
 		return $this->frontCoverImage;
 	}
@@ -191,13 +281,17 @@ class SimpleAlbum extends SimpleEntity {
 	}
 
 	/**
-	 * 
+	 * Return the DDEX release corresponding to the album
 	 * @return ReleaseType
 	 */
 	public function getRelease() {
 		return $this->ddexReleaseAlbum;
 	}
 
+	/**
+	 * Title as set in the Referencetitle>TitleText tag
+	 * @return string|null
+	 */
 	private function getReferenceTitle(): ?string {
 		try {
 			return $this->ddexReleaseAlbum->getReferenceTitle()->getTitleText()->value();
@@ -225,10 +319,18 @@ class SimpleAlbum extends SimpleEntity {
 		return null;
 	}
 
+	/**
+	 * Release title as displayed in the Title of type DisplayTitle
+	 * @return string|null
+	 */
 	private function getDisplayTitle(): ?string {
 		return $this->getTitleByType("displaytitle");
 	}
 
+	/**
+	 * Release title as displayed in the Title of type FormalTitle
+	 * @return string|null
+	 */
 	private function getFormalTitle(): ?string {
 		return $this->getTitleByType("formaltitle");
 	}
@@ -252,7 +354,7 @@ class SimpleAlbum extends SimpleEntity {
 	}
 
 	/**
-	 * Supposes there is only one label. Take first one only (if any).
+	 * Assumption: there is only one label
 	 * 
 	 * @return string|null
 	 */
@@ -288,7 +390,7 @@ class SimpleAlbum extends SimpleEntity {
 	}
 	
 	/**
-	 * Supposes only one parental warning type
+	 * Assumption: only one parental warning type
 	 * 
 	 * @return string|null
 	 */
@@ -301,7 +403,7 @@ class SimpleAlbum extends SimpleEntity {
 	}
 	
 	/**
-	 * Supposes only one genre (and one sub genre)
+	 * Assumption: only one genre
 	 * 
 	 * @return string|null
 	 */
@@ -310,11 +412,13 @@ class SimpleAlbum extends SimpleEntity {
 			return $this->ddexDetails->getGenre()[0]->getGenreText()->value();
 		} catch (Throwable $ex) {
 			return null;
+		} catch (Exception $ex) {
+			return null;
 		}
 	}
 	
 	/**
-	 * Supposes only one genre (and one sub genre)
+	 * Assumption: only one subgenre
 	 * 
 	 * @return string|null
 	 */
@@ -323,16 +427,6 @@ class SimpleAlbum extends SimpleEntity {
 			return $this->ddexDetails->getGenre()[0]->getSubGenre()->value();
 		} catch (Throwable $ex) {
 			return null;
-		}
-	}
-	
-	/**
-	 * 
-	 * @return string|null Formatted YYYY-MM-DD
-	 */
-	public function getOriginalReleaseDateText(): ?string {
-		try {
-			return $this->ddexDetails->getOriginalReleaseDate()->value();
 		} catch (Exception $ex) {
 			return null;
 		}
@@ -340,30 +434,34 @@ class SimpleAlbum extends SimpleEntity {
 	
 	/**
 	 * 
-	 * @return DateTime
+	 * @return DateTimeImmutable
 	 */
 	public function getOriginalReleaseDate(): ?DateTimeImmutable {
-		if ($this->getOriginalReleaseDateText() === null) {
-			return null;
-		}
-		
-		return DateTimeImmutable::createFromFormat("Y-m-D", $this->getOriginalReleaseDateText());
-	}
-	
-	/**
-	 * 
-	 * @return string|null Formatted YYYY-MM-DD
-	 */
-	public function getOriginalDigitalReleaseDateText(): ?string {
 		try {
-			return $this->ddexDetails->getOriginalDigitalReleaseDate()->value();
+			return DateTimeImmutable::createFromFormat("Y-m-d", $this->ddexDetails->getOriginalReleaseDate()->value());
+		} catch (Exception $ex) {
+			return null;
 		} catch (Exception $ex) {
 			return null;
 		}
 	}
 	
 	/**
-	 * Spposes there is only one PLine info. Use first one only (if any).
+	 * 
+	 * @return DateTimeImmutable
+	 */
+	public function getOriginalDigitalReleaseDate(): ?DateTimeImmutable {
+		try {
+			return DateTimeImmutable::createFromFormat("Y-m-d", $this->ddexDetails->getOriginalDigitalReleaseDateReleaseDate()->value());
+		} catch (Exception $ex) {
+			return null;
+		} catch (Exception $ex) {
+			return null;
+		}
+	}
+	
+	/**
+	 * Assumption: there is only one PLine info. Use first one only (if any).
 	 * 
 	 * @return int|null
 	 */
@@ -378,7 +476,7 @@ class SimpleAlbum extends SimpleEntity {
 	}
 	
 	/**
-	 * Spposes there is only one PLine info. Use first one only (if any).
+	 * Assumption: there is only one PLine info. Use first one only (if any).
 	 * 
 	 * @return string|null
 	 */
@@ -393,7 +491,7 @@ class SimpleAlbum extends SimpleEntity {
 	}
 	
 	/**
-	 * Spposes there is only one CLine info. Use first one only (if any).
+	 * Assumption: there is only one CLine info. Use first one only (if any).
 	 * 
 	 * @return int|null
 	 */
@@ -408,7 +506,7 @@ class SimpleAlbum extends SimpleEntity {
 	}
 	
 	/**
-	 * Spposes there is only one CLine info. Use first one only (if any).
+	 * Assumption: there is only one CLine info. Use first one only (if any).
 	 * 
 	 * @return string|null
 	 */

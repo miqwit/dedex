@@ -27,33 +27,65 @@
 namespace DedexBundle\Simplifiers;
 
 /**
- * Description of SimpleArtist
+ * Simplification of a DDEX artist, typically just a name and role.
  *
  * @author Mickaël Arcos <miqwit>
  */
 class SimpleArtist {
+	/**
+	 * Artist full name
+	 * @var string 
+	 */
 	private $name;
+	
+	/**
+	 * Artist role (MainArtist, ...)
+	 * @var string 
+	 */
 	private $role;
 	
+	/**
+	 * 
+	 * @param string|null $name
+	 * @param string|null $role
+	 */
 	public function __construct(?string $name, ?string $role) {
 		$this->name = $name;
 		$this->role = $role;
 	}
 	
+	/**
+	 * 
+	 * @param string|null $name
+	 * @return \DedexBundle\Simplifiers\SimpleArtist
+	 */
 	public function setName(?string $name): SimpleArtist {
 		$this->name = $name;
 		return $this;
 	}
 	
+	/**
+	 * 
+	 * @return string|null
+	 */
 	public function getName(): ?string {
 		return $this->name;
 	}
 	
+	/**
+	 * 
+	 * @param string|null $role
+	 * @return \DedexBundle\Simplifiers\SimpleArtist
+	 */
 	public function setRole(?string $role): SimpleArtist {
 		$this->role = $role;
 		return $this;
 	}
 	
+	/**
+	 * 
+	 * @return string|null
+	 */
 	public function getRole(): ?string {
 		return $this->role;
 	}

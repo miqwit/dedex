@@ -25,6 +25,18 @@ class SimplifiersTest extends TestCase {
 		$this->assertEquals("2013 Label 1", $album->getPLineText());
 		$this->assertEquals(2013, $album->getCLineYear());
 		$this->assertEquals("2013 Label 1", $album->getCLineText());
+		
+		// Album deal
+		$this->assertContains("PayAsYouGoModel", $album->getDeal()->getCommercialModelTypes());
+		$this->assertContains("AdvertisementSupportedModel", $album->getDeal()->getCommercialModelTypes());
+		$this->assertContains("SubscriptionModel", $album->getDeal()->getCommercialModelTypes());
+		$this->assertContains("PermanentDownload", $album->getDeal()->getUseTypes());
+		$this->assertContains("OnDemandStream", $album->getDeal()->getUseTypes());
+		$this->assertContains("NonInteractiveStream", $album->getDeal()->getUseTypes());
+		$this->assertContains("InternetAndMobile", $album->getDeal()->getDistributionChannelTypes());
+		$this->assertContains("Worldwide", $album->getDeal()->getTerritories());
+		$this->assertEquals("2017-01-01", $album->getDeal()->getStartDate()->format("Y-m-d"));
+		$this->assertEquals(null, $album->getDeal()->getEndDate());
 
 		// Image
 		$this->assertEquals("1199119911991_FrontCoverImage.jpg", $album->getImageFrontCover()->getFileName());
@@ -48,7 +60,7 @@ class SimplifiersTest extends TestCase {
 		$this->assertEquals("1199119911991_009.flac", $tracks[1][9]->getFileName());
 		
 		/* @var $track SimpleTrack */
-		$track = $tracks[1][1];
+$track = $tracks[1][1];
 		$this->assertEquals("BE0000000001", $track->getIsrc());
 		$this->assertEquals("Track Title 1", $track->getTitle());
 		$this->assertEquals("PT0H8M7S", $track->getDurationIso());
@@ -71,6 +83,9 @@ class SimplifiersTest extends TestCase {
 		$this->assertEquals("Classical", $track->getGenre());
 		$this->assertEquals(null, $track->getSubGenre());
 		$this->assertEquals("NotExplicit", $track->getParentalWarningType());
+		
+		// Track deal
+		$this->assertContains("PayAsYouGoModel", $track->getDeal()->getCommercialModelTypes());
 		
   }
 }

@@ -26,12 +26,24 @@
 
 namespace DedexBundle\Simplifiers;
 
+use Exception;
+
 /**
- * Description of SimpleEntity
+ * This is a parent class for all the Simple Entities. Contains useful handlers
  *
  * @author Mickaël Arcos <miqwit>
  */
 class SimpleEntity {
+	
+	/**
+	 * Returns the detailed object for a given territory.
+	 * 
+	 * @param type $element the Ern element
+	 * @param string $type
+	 * @param string $territory
+	 * @return type
+	 * @throws Exception
+	 */
 	protected function getDetailsByTerritory($element, string $type, string $territory = "worldwide") {
 		$function = "get{$type}DetailsByTerritory";
 		foreach ($element->$function() as $rdbt) {
@@ -44,7 +56,7 @@ class SimpleEntity {
 		}
 		
 		if ($release_details === null) {
-			throw new \Exception("No details found for territory Worldwide");
+			throw new Exception("No details found for territory Worldwide");
 		}
 		
 		return $release_details;
