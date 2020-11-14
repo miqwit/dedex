@@ -79,7 +79,7 @@ class SimpleAlbum extends SimpleEntity {
 	 * For example $tracksPerCd[1][5] is the fifth track of CD 1.
 	 * Index starts at 1. It is a string in the XML, converted to int here.
 	 * 
-	 * @var type 
+	 * @var array 
 	 */
 	private $tracksPerCd = [];
 	
@@ -278,7 +278,7 @@ class SimpleAlbum extends SimpleEntity {
 	 * Indices start at 1, not 0. For exemple $tracks[1][5] is the fifth track
 	 * of CD 1. It is of type SimpleTrack.
 	 * 
-	 * @return array
+	 * @return array[]
 	 */
 	public function getTracksPerCd(): array {
 		return $this->tracksPerCd;
@@ -288,7 +288,7 @@ class SimpleAlbum extends SimpleEntity {
 	 * Return the DDEX release corresponding to the album
 	 * @return ReleaseType
 	 */
-	public function getRelease() {
+	public function getDdexRelease() {
 		return $this->ddexReleaseAlbum;
 	}
 
@@ -443,7 +443,7 @@ class SimpleAlbum extends SimpleEntity {
 	public function getOriginalReleaseDate(): ?DateTimeImmutable {
 		try {
 			return DateTimeImmutable::createFromFormat("Y-m-d", $this->ddexDetails->getOriginalReleaseDate()->value());
-		} catch (Exception $ex) {
+		} catch (Throwable $ex) {
 			return null;
 		} catch (Exception $ex) {
 			return null;
@@ -456,8 +456,8 @@ class SimpleAlbum extends SimpleEntity {
 	 */
 	public function getOriginalDigitalReleaseDate(): ?DateTimeImmutable {
 		try {
-			return DateTimeImmutable::createFromFormat("Y-m-d", $this->ddexDetails->getOriginalDigitalReleaseDateReleaseDate()->value());
-		} catch (Exception $ex) {
+			return DateTimeImmutable::createFromFormat("Y-m-d", $this->ddexDetails->getOriginalDigitalReleaseDate()->value());
+		} catch (Throwable $ex) {
 			return null;
 		} catch (Exception $ex) {
 			return null;

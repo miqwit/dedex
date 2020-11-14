@@ -66,6 +66,14 @@ class SimpleTrack extends SimpleEntity {
 
 		$this->ddexDetails = $this->getDetailsByTerritory($soundrecording, "soundrecording", "worldwide");
 	}
+  
+  /**
+   * Return SoundRecording ddex object
+   * @return type
+   */
+  public function getDdexSoundRecording() {
+    return $this->ddexSoundrecording;
+  }
 
 	/**
 	 * @return string FilePath as given in dedex or empty string if not specified
@@ -200,7 +208,7 @@ class SimpleTrack extends SimpleEntity {
 	 * @param DateInterval $dateInterval
 	 * @return int seconds
 	 */
-	function dateIntervalToSeconds($dateInterval) {
+	private function dateIntervalToSeconds($dateInterval) {
 		$reference = new DateTimeImmutable();
 		$endTime = $reference->add($dateInterval);
 
