@@ -1,17 +1,5 @@
 <?php
 
-namespace DedexBundle\Simplifiers;
-
-use DateTime;
-use DateTimeImmutable;
-use DedexBundle\Entity\Ern382\ImageType;
-use DedexBundle\Entity\Ern382\NewReleaseMessage;
-use DedexBundle\Entity\Ern382\ReleaseDealType;
-use DedexBundle\Entity\Ern382\ReleaseDetailsByTerritoryType;
-use DedexBundle\Entity\Ern382\ReleaseType;
-use Exception;
-use Throwable;
-
 /*
  * The MIT License
  *
@@ -35,6 +23,18 @@ use Throwable;
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
+namespace DedexBundle\Simplifiers;
+
+use DateTime;
+use DateTimeImmutable;
+use DedexBundle\Entity\Ern382\ImageType;
+use DedexBundle\Entity\Ern382\NewReleaseMessage;
+use DedexBundle\Entity\Ern382\ReleaseDealType;
+use DedexBundle\Entity\Ern382\ReleaseDetailsByTerritoryType;
+use DedexBundle\Entity\Ern382\ReleaseType;
+use Exception;
+use Throwable;
 
 /**
  * A simplified release album.

@@ -1,11 +1,9 @@
 <?php
 
-namespace DedexBundle\Rule;
-
 /*
  * The MIT License
  *
- * Copyright 2020 Mickaël Arcos <@miqwit>.
+ * Copyright 2020 Mickaël Arcos <miqwit>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,6 +23,8 @@ namespace DedexBundle\Rule;
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
+namespace DedexBundle\Rule;
 
 /**
  * The ResourceList must contain at least one image of type FrontCoverImage

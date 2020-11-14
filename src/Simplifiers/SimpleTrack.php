@@ -34,7 +34,7 @@ use Exception;
 use Throwable;
 
 /**
- * Description of SimpleTrack
+ * A track object with handy getters to access directly DDEX content
  *
  * @author Mickaël Arcos <miqwit>
  */

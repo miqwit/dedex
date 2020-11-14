@@ -1,5 +1,29 @@
 <?php
 
+/*
+ * The MIT License
+ *
+ * Copyright 2020 Mickaël Arcos <miqwit>.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
 namespace DedexBundle\Controller;
 
 use DateInterval;
@@ -17,6 +41,25 @@ use ReflectionMethod;
 use ReflectionParameter;
 use XMLReader;
 
+/**
+ * The main generic parser for XML files. Will load elements one by one
+ * while browsing. 
+ * 
+ * It uses the xml_parser_create function and xml_parser_* set.
+ * 
+ * Three callbacks are used while browsing the XML file, 
+ * depending on the encountered event:
+ * 
+ * - callbackCharacterData
+ * - callbackEndElement
+ * - callbackStartElement
+ * 
+ * On top of the regular parsing, rules are tested against the parsed data
+ * to validate them. They are run in the validateRules() function, once
+ * the parsing is over.
+ * 
+ * @author Mickaël Arcos <miqwit>
+ */
 class ErnParserController {
 
   /**
