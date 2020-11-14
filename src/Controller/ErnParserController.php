@@ -146,7 +146,10 @@ class ErnParserController {
       "xmlns:ern",
       "xmlns:ernm",
       "xmlns:xs",
+      "xmlns:xsi",
       "xs:schemaLocation",
+      "xsi:schemaLocation",
+      "xmlns:avs",
       "ReleaseResourceReferenceList"  // TODO generic
   ];
 

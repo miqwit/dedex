@@ -113,7 +113,7 @@ class SimpleAlbum extends SimpleEntity {
 		// Find release of type MainRelease from this ERN
 		foreach ($this->ern->getReleaseList()->getRelease() as $release) {
 			foreach ($release->getReleaseType() as $type) {
-				if ($type->value() === "Album") {
+				if (in_array(strtolower($type->value()), ["album", "classicalalbum"])) {
 					$this->ddexReleaseAlbum = $release;
 				} else {
 					$this->trackReleasesByReference[$release->getReleaseReference()[0]] = $release;
@@ -186,7 +186,7 @@ class SimpleAlbum extends SimpleEntity {
 		$all_resources = array_merge(
 						$this->ern->getResourceList()->getSoundRecording(),
 						$this->ern->getResourceList()->getImage(),
-						$this->ern->getResourceList()->getText(),
+//						$this->ern->getResourceList()->getText(),
 		);
 		foreach ($all_resources as $res) {
 			$this->resourcesByReference[$res->getResourceReference()] = $res;
@@ -231,6 +231,10 @@ class SimpleAlbum extends SimpleEntity {
 				foreach ($group_cd->getResourceGroupContentItem() as $item) {
 					$track_num = (int) $item->getSequenceNumber();
 					$track_reference = $item->getReleaseResourceReference()->value();
+					
+					if (!in_array($track_reference, $this->resourcesByReference)) {
+						continue;
+					}
 					$track = $this->resourcesByReference[$track_reference];
 					
 					// Find deal for this track (sound recording)
