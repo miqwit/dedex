@@ -232,7 +232,7 @@ class SimpleAlbum extends SimpleEntity {
 					$track_num = (int) $item->getSequenceNumber();
 					$track_reference = $item->getReleaseResourceReference()->value();
 					
-					if (!in_array($track_reference, $this->resourcesByReference)) {
+					if (!array_key_exists($track_reference, $this->resourcesByReference)) {
 						continue;
 					}
 					$track = $this->resourcesByReference[$track_reference];
