@@ -32,11 +32,11 @@ $release_date = $album->getOriginalReleaseDate();
 $artists_at_album_level = $album->getArtists();
 $tracks_for_cd_1 = $album->getTracks()[1];
 
-// You can also access exact XML mapping by getting ddex objects at 
-// album or track level
+// You can also access exact XML mapping by getting 
+// ddex objects at album or track level
 $ddex_release = $album->getDdexRelease();
 $ddex_release->getReleaseId()[0]->getCatalogNumber()->value; // direct access
-$ddex_track = $tracks_for_cd_1[0]->getDdexSoundRecording()->getDuration; // direct access
+$ddex_track = $tracks_for_cd_1[0]->getDdexSoundRecording()->getDuration(); // direct access
 ```
 
 ### Parse a file without XSD validation
