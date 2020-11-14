@@ -86,6 +86,5 @@ $track = $tracks[1][1];
 		
 		// Track deal
 		$this->assertContains("PayAsYouGoModel", $track->getDeal()->getCommercialModelTypes());
-		
   }
 }

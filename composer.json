@@ -1,7 +1,15 @@
 {
     "type": "symfony-bundle",
     "name": "miqwit/dedex",
-    "description": "Parse DDEX ERN files and provide a convenient API to read it",
+    "description": "Parse DDEX ERN files and provide a convenient API to use it",
+	  "keywords": ["ddex", "parsing", "music", "xml"],
+	  "homepage": "https://github.com/miqwit/dedex",
+	  "authors": [
+        {
+            "name": "Mickaël Arcos",
+            "role": "Developer"
+        }
+		],
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
