@@ -19,7 +19,7 @@ Here are good ways to contribute to this package
 
 ### Setup a dev environment with Docker
 
-Generate an image with the provided `Dockerfile`: 
+Generate an image with the provided [Dockerfile](Dockerfile.dist) (rename it to Dockerfile and change the git name and email in it): 
 
 ```
 docker build -t dedex-img .
