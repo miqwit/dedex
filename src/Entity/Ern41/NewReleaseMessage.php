@@ -41,7 +41,7 @@ class NewReleaseMessage
     /**
      * A Composite containing details of one or more Parties relating to the reported MusicalWorks.
      *
-     * @var \DedexBundle\Entity\Ern41\PartyType[] $partyList
+     * @var \DedexBundle\Entity\Ern41\PartyListType[] $partyList
      */
     private $partyList = null;
 
@@ -76,7 +76,7 @@ class NewReleaseMessage
     /**
      * A Composite containing details of one or more Deals governing the Usage of the Releases in the Message.
      *
-     * @var \DedexBundle\Entity\Ern41\ReleaseDealType[] $dealList
+     * @var \DedexBundle\Entity\Ern41\DealListType[] $dealList
      */
     private $dealList = null;
 
@@ -197,9 +197,9 @@ class NewReleaseMessage
      * A Composite containing details of one or more Parties relating to the reported MusicalWorks.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\PartyType $party
+     * @param \DedexBundle\Entity\Ern41\PartyListType $party
      */
-    public function addToPartyList(\DedexBundle\Entity\Ern41\PartyType $party)
+    public function addToPartyList(\DedexBundle\Entity\Ern41\PartyListType $party)
     {
         $this->partyList[] = $party;
         return $this;
@@ -236,7 +236,7 @@ class NewReleaseMessage
      *
      * A Composite containing details of one or more Parties relating to the reported MusicalWorks.
      *
-     * @return \DedexBundle\Entity\Ern41\PartyType[]
+     * @return \DedexBundle\Entity\Ern41\PartyListType[]
      */
     public function getPartyList()
     {
@@ -248,7 +248,7 @@ class NewReleaseMessage
      *
      * A Composite containing details of one or more Parties relating to the reported MusicalWorks.
      *
-     * @param \DedexBundle\Entity\Ern41\PartyType[] $partyList
+     * @param \DedexBundle\Entity\Ern41\PartyListType[] $partyList
      * @return self
      */
     public function setPartyList(array $partyList)
@@ -402,16 +402,16 @@ class NewReleaseMessage
     }
 
     /**
-     * Adds as releaseDeal
+     * Adds as dealList
      *
      * A Composite containing details of one or more Deals governing the Usage of the Releases in the Message.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ReleaseDealType $releaseDeal
+     * @param \DedexBundle\Entity\Ern41\DealListType $dealList
      */
-    public function addToDealList(\DedexBundle\Entity\Ern41\ReleaseDealType $releaseDeal)
+    public function addToDealList(\DedexBundle\Entity\Ern41\DealListType $dealList)
     {
-        $this->dealList[] = $releaseDeal;
+        $this->dealList[] = $dealList;
         return $this;
     }
 
@@ -446,7 +446,7 @@ class NewReleaseMessage
      *
      * A Composite containing details of one or more Deals governing the Usage of the Releases in the Message.
      *
-     * @return \DedexBundle\Entity\Ern41\ReleaseDealType[]
+     * @return \DedexBundle\Entity\Ern41\DealListType[]
      */
     public function getDealList()
     {
@@ -458,7 +458,7 @@ class NewReleaseMessage
      *
      * A Composite containing details of one or more Deals governing the Usage of the Releases in the Message.
      *
-     * @param \DedexBundle\Entity\Ern41\ReleaseDealType[] $dealList
+     * @param \DedexBundle\Entity\Ern41\DealListType[] $dealList
      * @return self
      */
     public function setDealList(array $dealList)

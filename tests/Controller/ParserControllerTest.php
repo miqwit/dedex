@@ -186,4 +186,61 @@ class ParserControllerTest extends TestCase {
     $this->assertEquals("1", $release_dbt->getDisplayArtist()[0]->getSequenceNumber());
   }
 
+  public function testSample015() {
+    $xml_path = "tests/samples/015_ern41.xml";
+    $parser_controller = new ErnParserController();
+    // Set this to true to see logs from the parser
+    $parser_controller->setDisplayLog(false);
+    /* @var $ddex NewReleaseMessage */
+    $ddex = $parser_controller->parse($xml_path);
+
+    // Message header
+    $this->assertEquals("Test1", $ddex->getMessageHeader()->getMessageThreadId());
+    $this->assertEquals("Test1.1", $ddex->getMessageHeader()->getMessageId());
+    $this->assertEquals("DPID_OF_THE_SENDER", $ddex->getMessageHeader()->getMessageSender()->getPartyId());
+    $this->assertEquals("DPID_OF_THE_RECIPIENT", $ddex->getMessageHeader()->getMessageRecipient()[0]->getPartyId());
+    $this->assertEquals("2012-12-11T15:50:00+00:00", $ddex->getMessageHeader()->getMessageCreatedDateTime()->format("Y-m-d\TH:i:sP"));
+
+    // Resources
+    
+    // SoundRecording
+    $this->assertCount(3, $ddex->getResourceList()->getSoundRecording());
+    /* @var $resource_zero \DedexBundle\Entity\Ern41\SoundRecordingType */
+    $resource_zero = $ddex->getResourceList()->getSoundRecording()[0];
+    $this->assertEquals("MusicalWorkSoundRecording", $resource_zero->getType()->value());
+    $this->assertEquals("JPTO09404900", $resource_zero->getResourceId()[0]->getIsrc());
+    $this->assertEquals("A1", $resource_zero->getResourceReference());
+    $this->assertEquals("Yume no Lullaby", $resource_zero->getDisplayTitleText()[0]->value());
+    $this->assertEquals("PT2M28S", $resource_zero->getDuration()->format("PT%iM%sS"));
+    $this->assertCount(2, $resource_zero->getDisplayTitle());
+    $this->assertEquals("Yume no Lullaby", $resource_zero->getDisplayTitle()[0]->getTitleText());
+
+    $this->assertCount(1, $resource_zero->getDisplayArtist());
+    $this->assertEquals("1", $resource_zero->getDisplayArtist()[0]->getSequenceNumber());
+    $this->assertEquals("PSaekoShu", $resource_zero->getDisplayArtist()[0]->getArtistPartyReference());
+    $this->assertEquals("MainArtist", $resource_zero->getDisplayArtist()[0]->getDisplayArtistRole());
+    
+    // PLine
+    $pline = $resource_zero->getPLine()[0];
+    $this->assertEquals("1994", $pline->getYear());
+    $this->assertEquals("(P) 1994 EMI Music Japan Inc.", $pline->getPLineText());
+        
+    // TechnicalSoundRecordingDetails
+    $this->assertCount(1, $resource_zero->getTechnicalDetails());
+    /* @var $technicalSRD TechnicalSoundRecordingDetailsType */
+    $technicalSRD = $resource_zero->getTechnicalDetails()[0];
+    $this->assertEquals("T1", $technicalSRD->getTechnicalResourceDetailsReference());
+    $this->assertEquals("0094631432057_01_001.wav", $technicalSRD->getFile()->getURI());
+    
+    // Image
+    $this->assertCount(1, $ddex->getResourceList()->getImage());
+    /* @var $image ImageType */
+    $image = $ddex->getResourceList()->getImage()[0];
+    $this->assertEquals("FrontCoverImage", $image->getType());
+    $this->assertCount(1, $image->getResourceId());
+    $this->assertCount(1, $image->getResourceId()[0]->getProprietaryId());
+    $this->assertEquals("PADPIDA2013042401U", $image->getResourceId()[0]->getProprietaryId()[0]->getNamespace());
+    $this->assertEquals("A22", $image->getResourceReference());
+  }
+
 }
