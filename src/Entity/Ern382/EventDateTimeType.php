@@ -83,7 +83,7 @@ class EventDateTimeType
      *
      * @param \DateTime $value
      */
-    public function __construct(\DateTime $value)
+    public function __construct(?\DateTime $value)
     {
         $this->value($value);
     }
