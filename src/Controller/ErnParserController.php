@@ -411,7 +411,7 @@ class ErnParserController {
 
     // If the previous element was the same and had the same tag, concatenate value
     // xml_parser is known to split values when encountering multibyte chars and call the character_data_handler multiple times
-    if (isset($this->lastElement) && $this->lastElement[0] === $elem && $this->lastElement[1] === $tag) {
+    if (!empty($this->lastElement) && $this->lastElement[0] === $elem && $this->lastElement[1] === $tag) {
       $value = $this->lastElement[2] . $value;
     }
     $func_name = $this->getValidFunctionName("set", $tag, $elem);
