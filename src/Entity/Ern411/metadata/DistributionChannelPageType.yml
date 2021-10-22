@@ -1,0 +1,37 @@
+DedexBundle\Entity\Ern41\DistributionChannelPageType:
+    properties:
+        partyId:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyId
+            accessor:
+                getter: getPartyId
+                setter: setPartyId
+            xml_list:
+                inline: true
+                entry_name: PartyId
+            type: array<DedexBundle\Entity\Ern41\DetailedPartyIdType>
+        pageName:
+            expose: true
+            access_type: public_method
+            serialized_name: PageName
+            accessor:
+                getter: getPageName
+                setter: setPageName
+            type: DedexBundle\Entity\Ern41\NameType
+        uRL:
+            expose: true
+            access_type: public_method
+            serialized_name: URL
+            accessor:
+                getter: getURL
+                setter: setURL
+            type: string
+        userName:
+            expose: true
+            access_type: public_method
+            serialized_name: UserName
+            accessor:
+                getter: getUserName
+                setter: setUserName
+            type: string

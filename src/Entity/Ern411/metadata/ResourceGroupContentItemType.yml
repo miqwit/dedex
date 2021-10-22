@@ -1,0 +1,69 @@
+DedexBundle\Entity\Ern41\ResourceGroupContentItemType:
+    properties:
+        sequenceNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumber
+            accessor:
+                getter: getSequenceNumber
+                setter: setSequenceNumber
+            type: int
+        noDisplaySequence:
+            expose: true
+            access_type: public_method
+            serialized_name: NoDisplaySequence
+            accessor:
+                getter: getNoDisplaySequence
+                setter: setNoDisplaySequence
+            type: bool
+        displaySequence:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplaySequence
+            accessor:
+                getter: getDisplaySequence
+                setter: setDisplaySequence
+            type: string
+        releaseResourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseResourceReference
+            accessor:
+                getter: getReleaseResourceReference
+                setter: setReleaseResourceReference
+            type: string
+        linkedReleaseResourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: LinkedReleaseResourceReference
+            accessor:
+                getter: getLinkedReleaseResourceReference
+                setter: setLinkedReleaseResourceReference
+            xml_list:
+                inline: true
+                entry_name: LinkedReleaseResourceReference
+            type: array<DedexBundle\Entity\Ern41\LinkedReleaseResourceReferenceType>
+        isBonusResource:
+            expose: true
+            access_type: public_method
+            serialized_name: IsBonusResource
+            accessor:
+                getter: getIsBonusResource
+                setter: setIsBonusResource
+            type: bool
+        isInstantGratificationResource:
+            expose: true
+            access_type: public_method
+            serialized_name: IsInstantGratificationResource
+            accessor:
+                getter: getIsInstantGratificationResource
+                setter: setIsInstantGratificationResource
+            type: bool
+        isPreOrderIncentiveResource:
+            expose: true
+            access_type: public_method
+            serialized_name: IsPreOrderIncentiveResource
+            accessor:
+                getter: getIsPreOrderIncentiveResource
+                setter: setIsPreOrderIncentiveResource
+            type: bool

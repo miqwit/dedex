@@ -1,0 +1,21 @@
+DedexBundle\Entity\Ern41\ReleaseListType:
+    properties:
+        release:
+            expose: true
+            access_type: public_method
+            serialized_name: Release
+            accessor:
+                getter: getRelease
+                setter: setRelease
+            type: DedexBundle\Entity\Ern41\ReleaseType
+        trackRelease:
+            expose: true
+            access_type: public_method
+            serialized_name: TrackRelease
+            accessor:
+                getter: getTrackRelease
+                setter: setTrackRelease
+            xml_list:
+                inline: true
+                entry_name: TrackRelease
+            type: array<DedexBundle\Entity\Ern41\TrackReleaseType>

@@ -1,0 +1,59 @@
+DedexBundle\Entity\Ern41\DisplayCreditsType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        applicableTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ApplicableTerritoryCode
+            accessor:
+                getter: getApplicableTerritoryCode
+                setter: setApplicableTerritoryCode
+            xml_attribute: true
+            type: string
+        isDefault:
+            expose: true
+            access_type: public_method
+            serialized_name: IsDefault
+            accessor:
+                getter: getIsDefault
+                setter: setIsDefault
+            xml_attribute: true
+            type: bool
+        displayCreditText:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayCreditText
+            accessor:
+                getter: getDisplayCreditText
+                setter: setDisplayCreditText
+            type: string
+        displayCreditParty:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayCreditParty
+            accessor:
+                getter: getDisplayCreditParty
+                setter: setDisplayCreditParty
+            xml_list:
+                inline: true
+                entry_name: DisplayCreditParty
+            type: array<string>
+        nameUsedInDisplayCredit:
+            expose: true
+            access_type: public_method
+            serialized_name: NameUsedInDisplayCredit
+            accessor:
+                getter: getNameUsedInDisplayCredit
+                setter: setNameUsedInDisplayCredit
+            xml_list:
+                inline: true
+                entry_name: NameUsedInDisplayCredit
+            type: array<string>

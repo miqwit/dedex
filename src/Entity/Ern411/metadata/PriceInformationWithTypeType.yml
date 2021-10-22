@@ -1,0 +1,43 @@
+DedexBundle\Entity\Ern41\PriceInformationWithTypeType:
+    properties:
+        priceType:
+            expose: true
+            access_type: public_method
+            serialized_name: PriceType
+            accessor:
+                getter: getPriceType
+                setter: setPriceType
+            xml_attribute: true
+            type: string
+        priceCode:
+            expose: true
+            access_type: public_method
+            serialized_name: PriceCode
+            accessor:
+                getter: getPriceCode
+                setter: setPriceCode
+            type: DedexBundle\Entity\Ern41\PriceTypeType
+        wholesalePricePerUnit:
+            expose: true
+            access_type: public_method
+            serialized_name: WholesalePricePerUnit
+            accessor:
+                getter: getWholesalePricePerUnit
+                setter: setWholesalePricePerUnit
+            type: DedexBundle\Entity\Ern41\PriceType
+        bulkOrderWholesalePricePerUnit:
+            expose: true
+            access_type: public_method
+            serialized_name: BulkOrderWholesalePricePerUnit
+            accessor:
+                getter: getBulkOrderWholesalePricePerUnit
+                setter: setBulkOrderWholesalePricePerUnit
+            type: DedexBundle\Entity\Ern41\PriceType
+        suggestedRetailPrice:
+            expose: true
+            access_type: public_method
+            serialized_name: SuggestedRetailPrice
+            accessor:
+                getter: getSuggestedRetailPrice
+                setter: setSuggestedRetailPrice
+            type: DedexBundle\Entity\Ern41\PriceType

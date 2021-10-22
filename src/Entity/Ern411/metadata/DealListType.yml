@@ -1,0 +1,13 @@
+DedexBundle\Entity\Ern41\DealListType:
+    properties:
+        releaseDeal:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseDeal
+            accessor:
+                getter: getReleaseDeal
+                setter: setReleaseDeal
+            xml_list:
+                inline: true
+                entry_name: ReleaseDeal
+            type: array<DedexBundle\Entity\Ern41\ReleaseDealType>

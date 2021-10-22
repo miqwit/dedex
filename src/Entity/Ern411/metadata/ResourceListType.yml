@@ -1,0 +1,68 @@
+DedexBundle\Entity\Ern41\ResourceListType:
+    properties:
+        soundRecording:
+            expose: true
+            access_type: public_method
+            serialized_name: SoundRecording
+            accessor:
+                getter: getSoundRecording
+                setter: setSoundRecording
+            xml_list:
+                inline: true
+                entry_name: SoundRecording
+            type: array<DedexBundle\Entity\Ern41\SoundRecordingType>
+        video:
+            expose: true
+            access_type: public_method
+            serialized_name: Video
+            accessor:
+                getter: getVideo
+                setter: setVideo
+            xml_list:
+                inline: true
+                entry_name: Video
+            type: array<DedexBundle\Entity\Ern41\VideoType>
+        image:
+            expose: true
+            access_type: public_method
+            serialized_name: Image
+            accessor:
+                getter: getImage
+                setter: setImage
+            xml_list:
+                inline: true
+                entry_name: Image
+            type: array<DedexBundle\Entity\Ern41\ImageType>
+        text:
+            expose: true
+            access_type: public_method
+            serialized_name: Text
+            accessor:
+                getter: getText
+                setter: setText
+            xml_list:
+                inline: true
+                entry_name: Text
+            type: array<DedexBundle\Entity\Ern41\TextType>
+        sheetMusic:
+            expose: true
+            access_type: public_method
+            serialized_name: SheetMusic
+            accessor:
+                getter: getSheetMusic
+                setter: setSheetMusic
+            xml_list:
+                inline: true
+                entry_name: SheetMusic
+            type: array<DedexBundle\Entity\Ern41\SheetMusicType>
+        software:
+            expose: true
+            access_type: public_method
+            serialized_name: Software
+            accessor:
+                getter: getSoftware
+                setter: setSoftware
+            xml_list:
+                inline: true
+                entry_name: Software
+            type: array<DedexBundle\Entity\Ern41\SoftwareType>
