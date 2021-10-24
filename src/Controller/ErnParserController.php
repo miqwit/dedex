@@ -306,6 +306,9 @@ class ErnParserController {
     // Reset parent setting
     $this->set_to_parent = false;
     $this->set_to_parent_tag = "";
+    
+    // Reset last element
+    $this->lastElement = [];
   }
 
   /**
