@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ReleaseIdType:
+DedexBundle\Entity\Ern411\ReleaseIdType:
     properties:
         gRid:
             expose: true
@@ -31,7 +31,7 @@ DedexBundle\Entity\Ern41\ReleaseIdType:
             accessor:
                 getter: getCatalogNumber
                 setter: setCatalogNumber
-            type: DedexBundle\Entity\Ern41\CatalogNumberType
+            type: DedexBundle\Entity\Ern411\CatalogNumberType
         proprietaryId:
             expose: true
             access_type: public_method
@@ -42,4 +42,4 @@ DedexBundle\Entity\Ern41\ReleaseIdType:
             xml_list:
                 inline: true
                 entry_name: ProprietaryId
-            type: array<DedexBundle\Entity\Ern41\ProprietaryIdType>
+            type: array<DedexBundle\Entity\Ern411\ProprietaryIdType>

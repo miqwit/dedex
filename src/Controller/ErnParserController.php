@@ -563,7 +563,7 @@ class ErnParserController {
    */
   private function detectVersion($fp) {
     $version = null;
-    $supported_versions = ["41", "382"];
+    $supported_versions = ["411", "41", "382"];
 
     while (($buffer = fgets($fp, 4096)) !== false) {
       $trimed = trim($buffer);

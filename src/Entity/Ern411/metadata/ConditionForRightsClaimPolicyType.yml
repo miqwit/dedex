@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ConditionForRightsClaimPolicyType:
+DedexBundle\Entity\Ern411\ConditionForRightsClaimPolicyType:
     properties:
         value:
             expose: true

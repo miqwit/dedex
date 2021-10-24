@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing WorkRightsControllerType
@@ -51,7 +51,7 @@ class WorkRightsControllerType
     /**
      * The country of registration.
      *
-     * @var \DedexBundle\Entity\Ern41\AllTerritoryCodeType[] $territory
+     * @var \DedexBundle\Entity\Ern411\AllTerritoryCodeType[] $territory
      */
     private $territory = [
         
@@ -247,9 +247,9 @@ class WorkRightsControllerType
      * The country of registration.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\AllTerritoryCodeType $territory
+     * @param \DedexBundle\Entity\Ern411\AllTerritoryCodeType $territory
      */
-    public function addToTerritory(\DedexBundle\Entity\Ern41\AllTerritoryCodeType $territory)
+    public function addToTerritory(\DedexBundle\Entity\Ern411\AllTerritoryCodeType $territory)
     {
         $this->territory[] = $territory;
         return $this;
@@ -286,7 +286,7 @@ class WorkRightsControllerType
      *
      * The country of registration.
      *
-     * @return \DedexBundle\Entity\Ern41\AllTerritoryCodeType[]
+     * @return \DedexBundle\Entity\Ern411\AllTerritoryCodeType[]
      */
     public function getTerritory()
     {
@@ -298,7 +298,7 @@ class WorkRightsControllerType
      *
      * The country of registration.
      *
-     * @param \DedexBundle\Entity\Ern41\AllTerritoryCodeType[] $territory
+     * @param \DedexBundle\Entity\Ern411\AllTerritoryCodeType[] $territory
      * @return self
      */
     public function setTerritory(array $territory)

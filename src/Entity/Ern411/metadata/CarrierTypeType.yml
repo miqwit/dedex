@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\CarrierTypeType:
+DedexBundle\Entity\Ern411\CarrierTypeType:
     properties:
         __value:
             expose: true

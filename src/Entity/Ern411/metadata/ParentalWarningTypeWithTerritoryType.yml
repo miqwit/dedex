@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType:
+DedexBundle\Entity\Ern411\ParentalWarningTypeWithTerritoryType:
     properties:
         __value:
             expose: true

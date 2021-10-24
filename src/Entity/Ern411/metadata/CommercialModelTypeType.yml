@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\CommercialModelTypeType:
+DedexBundle\Entity\Ern411\CommercialModelTypeType:
     properties:
         __value:
             expose: true

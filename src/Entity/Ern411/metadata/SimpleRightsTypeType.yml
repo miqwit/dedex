@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\SimpleRightsTypeType:
+DedexBundle\Entity\Ern411\SimpleRightsTypeType:
     properties:
         __value:
             expose: true

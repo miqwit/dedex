@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing RightsClaimPolicyType
@@ -14,7 +14,7 @@ class RightsClaimPolicyType
     /**
      * A Composite containing details of Conditions. If more than one Condition is specified, then all of them have to be fulfilled (i.e. they are combined using the logical operator AND).
      *
-     * @var \DedexBundle\Entity\Ern41\ConditionForRightsClaimPolicyType[] $condition
+     * @var \DedexBundle\Entity\Ern411\ConditionForRightsClaimPolicyType[] $condition
      */
     private $condition = [
         
@@ -33,9 +33,9 @@ class RightsClaimPolicyType
      * A Composite containing details of Conditions. If more than one Condition is specified, then all of them have to be fulfilled (i.e. they are combined using the logical operator AND).
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ConditionForRightsClaimPolicyType $condition
+     * @param \DedexBundle\Entity\Ern411\ConditionForRightsClaimPolicyType $condition
      */
-    public function addToCondition(\DedexBundle\Entity\Ern41\ConditionForRightsClaimPolicyType $condition)
+    public function addToCondition(\DedexBundle\Entity\Ern411\ConditionForRightsClaimPolicyType $condition)
     {
         $this->condition[] = $condition;
         return $this;
@@ -72,7 +72,7 @@ class RightsClaimPolicyType
      *
      * A Composite containing details of Conditions. If more than one Condition is specified, then all of them have to be fulfilled (i.e. they are combined using the logical operator AND).
      *
-     * @return \DedexBundle\Entity\Ern41\ConditionForRightsClaimPolicyType[]
+     * @return \DedexBundle\Entity\Ern411\ConditionForRightsClaimPolicyType[]
      */
     public function getCondition()
     {
@@ -84,7 +84,7 @@ class RightsClaimPolicyType
      *
      * A Composite containing details of Conditions. If more than one Condition is specified, then all of them have to be fulfilled (i.e. they are combined using the logical operator AND).
      *
-     * @param \DedexBundle\Entity\Ern41\ConditionForRightsClaimPolicyType[] $condition
+     * @param \DedexBundle\Entity\Ern411\ConditionForRightsClaimPolicyType[] $condition
      * @return self
      */
     public function setCondition(array $condition)

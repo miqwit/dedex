@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\PrefixType:
+DedexBundle\Entity\Ern411\PrefixType:
     properties:
         __value:
             expose: true

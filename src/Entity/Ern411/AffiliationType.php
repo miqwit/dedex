@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing AffiliationType
@@ -35,7 +35,7 @@ class AffiliationType
     /**
      * A Territory to which the affiliation details apply. Either this Element or ExcludedTerritory shall be present, but not both. The use of ISO TerritoryCodes (or the term 'Worldwide') is strongly encouraged; TIS TerritoryCodes should only be used if both MessageSender and MessageRecipient are familiar with this standard.
      *
-     * @var \DedexBundle\Entity\Ern41\CurrentTerritoryCodeType[] $territoryCode
+     * @var \DedexBundle\Entity\Ern411\CurrentTerritoryCodeType[] $territoryCode
      */
     private $territoryCode = [
         
@@ -44,7 +44,7 @@ class AffiliationType
     /**
      * A Territory to which the affiliation details do not apply. Either this Element or Territory shall be present, but not both. The use of ISO TerritoryCodes (or the term 'Worldwide') is strongly encouraged; TIS TerritoryCodes should only be used if both MessageSender and MessageRecipient are familiar with this standard.
      *
-     * @var \DedexBundle\Entity\Ern41\CurrentTerritoryCodeType[] $excludedTerritoryCode
+     * @var \DedexBundle\Entity\Ern411\CurrentTerritoryCodeType[] $excludedTerritoryCode
      */
     private $excludedTerritoryCode = [
         
@@ -53,14 +53,14 @@ class AffiliationType
     /**
      * A Composite containing details about the Period of Time for which the society affiliation is valid.
      *
-     * @var \DedexBundle\Entity\Ern41\ValidityPeriodType $validityPeriod
+     * @var \DedexBundle\Entity\Ern411\ValidityPeriodType $validityPeriod
      */
     private $validityPeriod = null;
 
     /**
      * A Composite containing details of a rights type.
      *
-     * @var \DedexBundle\Entity\Ern41\SimpleRightsTypeType[] $rightsType
+     * @var \DedexBundle\Entity\Ern411\SimpleRightsTypeType[] $rightsType
      */
     private $rightsType = [
         
@@ -157,9 +157,9 @@ class AffiliationType
      * A Territory to which the affiliation details apply. Either this Element or ExcludedTerritory shall be present, but not both. The use of ISO TerritoryCodes (or the term 'Worldwide') is strongly encouraged; TIS TerritoryCodes should only be used if both MessageSender and MessageRecipient are familiar with this standard.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\CurrentTerritoryCodeType $territoryCode
+     * @param \DedexBundle\Entity\Ern411\CurrentTerritoryCodeType $territoryCode
      */
-    public function addToTerritoryCode(\DedexBundle\Entity\Ern41\CurrentTerritoryCodeType $territoryCode)
+    public function addToTerritoryCode(\DedexBundle\Entity\Ern411\CurrentTerritoryCodeType $territoryCode)
     {
         $this->territoryCode[] = $territoryCode;
         return $this;
@@ -196,7 +196,7 @@ class AffiliationType
      *
      * A Territory to which the affiliation details apply. Either this Element or ExcludedTerritory shall be present, but not both. The use of ISO TerritoryCodes (or the term 'Worldwide') is strongly encouraged; TIS TerritoryCodes should only be used if both MessageSender and MessageRecipient are familiar with this standard.
      *
-     * @return \DedexBundle\Entity\Ern41\CurrentTerritoryCodeType[]
+     * @return \DedexBundle\Entity\Ern411\CurrentTerritoryCodeType[]
      */
     public function getTerritoryCode()
     {
@@ -208,7 +208,7 @@ class AffiliationType
      *
      * A Territory to which the affiliation details apply. Either this Element or ExcludedTerritory shall be present, but not both. The use of ISO TerritoryCodes (or the term 'Worldwide') is strongly encouraged; TIS TerritoryCodes should only be used if both MessageSender and MessageRecipient are familiar with this standard.
      *
-     * @param \DedexBundle\Entity\Ern41\CurrentTerritoryCodeType[] $territoryCode
+     * @param \DedexBundle\Entity\Ern411\CurrentTerritoryCodeType[] $territoryCode
      * @return self
      */
     public function setTerritoryCode(array $territoryCode)
@@ -223,9 +223,9 @@ class AffiliationType
      * A Territory to which the affiliation details do not apply. Either this Element or Territory shall be present, but not both. The use of ISO TerritoryCodes (or the term 'Worldwide') is strongly encouraged; TIS TerritoryCodes should only be used if both MessageSender and MessageRecipient are familiar with this standard.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\CurrentTerritoryCodeType $excludedTerritoryCode
+     * @param \DedexBundle\Entity\Ern411\CurrentTerritoryCodeType $excludedTerritoryCode
      */
-    public function addToExcludedTerritoryCode(\DedexBundle\Entity\Ern41\CurrentTerritoryCodeType $excludedTerritoryCode)
+    public function addToExcludedTerritoryCode(\DedexBundle\Entity\Ern411\CurrentTerritoryCodeType $excludedTerritoryCode)
     {
         $this->excludedTerritoryCode[] = $excludedTerritoryCode;
         return $this;
@@ -262,7 +262,7 @@ class AffiliationType
      *
      * A Territory to which the affiliation details do not apply. Either this Element or Territory shall be present, but not both. The use of ISO TerritoryCodes (or the term 'Worldwide') is strongly encouraged; TIS TerritoryCodes should only be used if both MessageSender and MessageRecipient are familiar with this standard.
      *
-     * @return \DedexBundle\Entity\Ern41\CurrentTerritoryCodeType[]
+     * @return \DedexBundle\Entity\Ern411\CurrentTerritoryCodeType[]
      */
     public function getExcludedTerritoryCode()
     {
@@ -274,7 +274,7 @@ class AffiliationType
      *
      * A Territory to which the affiliation details do not apply. Either this Element or Territory shall be present, but not both. The use of ISO TerritoryCodes (or the term 'Worldwide') is strongly encouraged; TIS TerritoryCodes should only be used if both MessageSender and MessageRecipient are familiar with this standard.
      *
-     * @param \DedexBundle\Entity\Ern41\CurrentTerritoryCodeType[] $excludedTerritoryCode
+     * @param \DedexBundle\Entity\Ern411\CurrentTerritoryCodeType[] $excludedTerritoryCode
      * @return self
      */
     public function setExcludedTerritoryCode(array $excludedTerritoryCode)
@@ -288,7 +288,7 @@ class AffiliationType
      *
      * A Composite containing details about the Period of Time for which the society affiliation is valid.
      *
-     * @return \DedexBundle\Entity\Ern41\ValidityPeriodType
+     * @return \DedexBundle\Entity\Ern411\ValidityPeriodType
      */
     public function getValidityPeriod()
     {
@@ -300,10 +300,10 @@ class AffiliationType
      *
      * A Composite containing details about the Period of Time for which the society affiliation is valid.
      *
-     * @param \DedexBundle\Entity\Ern41\ValidityPeriodType $validityPeriod
+     * @param \DedexBundle\Entity\Ern411\ValidityPeriodType $validityPeriod
      * @return self
      */
-    public function setValidityPeriod(\DedexBundle\Entity\Ern41\ValidityPeriodType $validityPeriod)
+    public function setValidityPeriod(\DedexBundle\Entity\Ern411\ValidityPeriodType $validityPeriod)
     {
         $this->validityPeriod = $validityPeriod;
         return $this;
@@ -315,9 +315,9 @@ class AffiliationType
      * A Composite containing details of a rights type.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\SimpleRightsTypeType $rightsType
+     * @param \DedexBundle\Entity\Ern411\SimpleRightsTypeType $rightsType
      */
-    public function addToRightsType(\DedexBundle\Entity\Ern41\SimpleRightsTypeType $rightsType)
+    public function addToRightsType(\DedexBundle\Entity\Ern411\SimpleRightsTypeType $rightsType)
     {
         $this->rightsType[] = $rightsType;
         return $this;
@@ -354,7 +354,7 @@ class AffiliationType
      *
      * A Composite containing details of a rights type.
      *
-     * @return \DedexBundle\Entity\Ern41\SimpleRightsTypeType[]
+     * @return \DedexBundle\Entity\Ern411\SimpleRightsTypeType[]
      */
     public function getRightsType()
     {
@@ -366,7 +366,7 @@ class AffiliationType
      *
      * A Composite containing details of a rights type.
      *
-     * @param \DedexBundle\Entity\Ern41\SimpleRightsTypeType[] $rightsType
+     * @param \DedexBundle\Entity\Ern411\SimpleRightsTypeType[] $rightsType
      * @return self
      */
     public function setRightsType(array $rightsType)

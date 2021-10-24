@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\PartyNameWithoutCodeType:
+DedexBundle\Entity\Ern411\PartyNameWithoutCodeType:
     properties:
         fullName:
             expose: true

@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\DelegatedUsageRightsType:
+DedexBundle\Entity\Ern411\DelegatedUsageRightsType:
     properties:
         useType:
             expose: true
@@ -10,7 +10,7 @@ DedexBundle\Entity\Ern41\DelegatedUsageRightsType:
             xml_list:
                 inline: true
                 entry_name: UseType
-            type: array<DedexBundle\Entity\Ern41\UseTypeType>
+            type: array<DedexBundle\Entity\Ern411\UseTypeType>
         periodOfRightsDelegation:
             expose: true
             access_type: public_method
@@ -18,7 +18,7 @@ DedexBundle\Entity\Ern41\DelegatedUsageRightsType:
             accessor:
                 getter: getPeriodOfRightsDelegation
                 setter: setPeriodOfRightsDelegation
-            type: DedexBundle\Entity\Ern41\PeriodType
+            type: DedexBundle\Entity\Ern411\PeriodType
         territoryOfRightsDelegation:
             expose: true
             access_type: public_method
@@ -29,4 +29,4 @@ DedexBundle\Entity\Ern41\DelegatedUsageRightsType:
             xml_list:
                 inline: true
                 entry_name: TerritoryOfRightsDelegation
-            type: array<DedexBundle\Entity\Ern41\CurrentTerritoryCodeType>
+            type: array<DedexBundle\Entity\Ern411\CurrentTerritoryCodeType>

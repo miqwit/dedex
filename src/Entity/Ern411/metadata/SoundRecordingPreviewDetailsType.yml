@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\SoundRecordingPreviewDetailsType:
+DedexBundle\Entity\Ern411\SoundRecordingPreviewDetailsType:
     properties:
         startPoint:
             expose: true

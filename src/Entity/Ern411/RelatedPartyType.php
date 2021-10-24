@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing RelatedPartyType
@@ -21,7 +21,7 @@ class RelatedPartyType
     /**
      * A Type of relationship between two Parties.
      *
-     * @var \DedexBundle\Entity\Ern41\PartyRelationshipTypeType $partyRelationshipType
+     * @var \DedexBundle\Entity\Ern411\PartyRelationshipTypeType $partyRelationshipType
      */
     private $partyRelationshipType = null;
 
@@ -56,7 +56,7 @@ class RelatedPartyType
      *
      * A Type of relationship between two Parties.
      *
-     * @return \DedexBundle\Entity\Ern41\PartyRelationshipTypeType
+     * @return \DedexBundle\Entity\Ern411\PartyRelationshipTypeType
      */
     public function getPartyRelationshipType()
     {
@@ -68,10 +68,10 @@ class RelatedPartyType
      *
      * A Type of relationship between two Parties.
      *
-     * @param \DedexBundle\Entity\Ern41\PartyRelationshipTypeType $partyRelationshipType
+     * @param \DedexBundle\Entity\Ern411\PartyRelationshipTypeType $partyRelationshipType
      * @return self
      */
-    public function setPartyRelationshipType(\DedexBundle\Entity\Ern41\PartyRelationshipTypeType $partyRelationshipType)
+    public function setPartyRelationshipType(\DedexBundle\Entity\Ern411\PartyRelationshipTypeType $partyRelationshipType)
     {
         $this->partyRelationshipType = $partyRelationshipType;
         return $this;

@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\VersionTypeType:
+DedexBundle\Entity\Ern411\VersionTypeType:
     properties:
         __value:
             expose: true

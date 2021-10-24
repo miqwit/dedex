@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing AdministratingRecordCompanyWithReferenceType
@@ -21,7 +21,7 @@ class AdministratingRecordCompanyWithReferenceType
     /**
      * The role played by the Party responsible for administering Rights in a Resource or a Release.
      *
-     * @var \DedexBundle\Entity\Ern41\AdministratingRecordCompanyRoleType $role
+     * @var \DedexBundle\Entity\Ern411\AdministratingRecordCompanyRoleType $role
      */
     private $role = null;
 
@@ -56,7 +56,7 @@ class AdministratingRecordCompanyWithReferenceType
      *
      * The role played by the Party responsible for administering Rights in a Resource or a Release.
      *
-     * @return \DedexBundle\Entity\Ern41\AdministratingRecordCompanyRoleType
+     * @return \DedexBundle\Entity\Ern411\AdministratingRecordCompanyRoleType
      */
     public function getRole()
     {
@@ -68,10 +68,10 @@ class AdministratingRecordCompanyWithReferenceType
      *
      * The role played by the Party responsible for administering Rights in a Resource or a Release.
      *
-     * @param \DedexBundle\Entity\Ern41\AdministratingRecordCompanyRoleType $role
+     * @param \DedexBundle\Entity\Ern411\AdministratingRecordCompanyRoleType $role
      * @return self
      */
-    public function setRole(\DedexBundle\Entity\Ern41\AdministratingRecordCompanyRoleType $role)
+    public function setRole(\DedexBundle\Entity\Ern411\AdministratingRecordCompanyRoleType $role)
     {
         $this->role = $role;
         return $this;

@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\TechnicalTextDetailsType:
+DedexBundle\Entity\Ern411\TechnicalTextDetailsType:
     properties:
         languageAndScriptCode:
             expose: true
@@ -42,7 +42,7 @@ DedexBundle\Entity\Ern41\TechnicalTextDetailsType:
             accessor:
                 getter: getTextCodecType
                 setter: setTextCodecType
-            type: DedexBundle\Entity\Ern41\TextCodecTypeType
+            type: DedexBundle\Entity\Ern411\TextCodecTypeType
         bitDepth:
             expose: true
             access_type: public_method
@@ -66,7 +66,7 @@ DedexBundle\Entity\Ern41\TechnicalTextDetailsType:
             accessor:
                 getter: getPreviewDetails
                 setter: setPreviewDetails
-            type: DedexBundle\Entity\Ern41\PreviewDetailsType
+            type: DedexBundle\Entity\Ern411\PreviewDetailsType
         file:
             expose: true
             access_type: public_method
@@ -74,7 +74,7 @@ DedexBundle\Entity\Ern41\TechnicalTextDetailsType:
             accessor:
                 getter: getFile
                 setter: setFile
-            type: DedexBundle\Entity\Ern41\FileType
+            type: DedexBundle\Entity\Ern411\FileType
         fingerprint:
             expose: true
             access_type: public_method
@@ -85,4 +85,4 @@ DedexBundle\Entity\Ern41\TechnicalTextDetailsType:
             xml_list:
                 inline: true
                 entry_name: Fingerprint
-            type: array<DedexBundle\Entity\Ern41\FingerprintType>
+            type: array<DedexBundle\Entity\Ern411\FingerprintType>

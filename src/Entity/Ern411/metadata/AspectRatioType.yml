@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\AspectRatioType:
+DedexBundle\Entity\Ern411\AspectRatioType:
     properties:
         __value:
             expose: true

@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing ResourceRightsControllerType
@@ -44,14 +44,14 @@ class ResourceRightsControllerType
     /**
      * The share of the licensed Rights owned by the RightsController. RightShare information is given as a xs:decimal value with up to 6 digits (e.g. '12.5' represents 12.5%). If no information is given, 100% is assumed.
      *
-     * @var \DedexBundle\Entity\Ern41\PercentageType $rightSharePercentage
+     * @var \DedexBundle\Entity\Ern411\PercentageType $rightSharePercentage
      */
     private $rightSharePercentage = null;
 
     /**
      * A Composite containing details of the kinds of usage for which rights have been delegated.
      *
-     * @var \DedexBundle\Entity\Ern41\DelegatedUsageRightsType[] $delegatedUsageRights
+     * @var \DedexBundle\Entity\Ern411\DelegatedUsageRightsType[] $delegatedUsageRights
      */
     private $delegatedUsageRights = [
         
@@ -206,7 +206,7 @@ class ResourceRightsControllerType
      *
      * The share of the licensed Rights owned by the RightsController. RightShare information is given as a xs:decimal value with up to 6 digits (e.g. '12.5' represents 12.5%). If no information is given, 100% is assumed.
      *
-     * @return \DedexBundle\Entity\Ern41\PercentageType
+     * @return \DedexBundle\Entity\Ern411\PercentageType
      */
     public function getRightSharePercentage()
     {
@@ -218,10 +218,10 @@ class ResourceRightsControllerType
      *
      * The share of the licensed Rights owned by the RightsController. RightShare information is given as a xs:decimal value with up to 6 digits (e.g. '12.5' represents 12.5%). If no information is given, 100% is assumed.
      *
-     * @param \DedexBundle\Entity\Ern41\PercentageType $rightSharePercentage
+     * @param \DedexBundle\Entity\Ern411\PercentageType $rightSharePercentage
      * @return self
      */
-    public function setRightSharePercentage(\DedexBundle\Entity\Ern41\PercentageType $rightSharePercentage)
+    public function setRightSharePercentage(\DedexBundle\Entity\Ern411\PercentageType $rightSharePercentage)
     {
         $this->rightSharePercentage = $rightSharePercentage;
         return $this;
@@ -233,9 +233,9 @@ class ResourceRightsControllerType
      * A Composite containing details of the kinds of usage for which rights have been delegated.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DelegatedUsageRightsType $delegatedUsageRights
+     * @param \DedexBundle\Entity\Ern411\DelegatedUsageRightsType $delegatedUsageRights
      */
-    public function addToDelegatedUsageRights(\DedexBundle\Entity\Ern41\DelegatedUsageRightsType $delegatedUsageRights)
+    public function addToDelegatedUsageRights(\DedexBundle\Entity\Ern411\DelegatedUsageRightsType $delegatedUsageRights)
     {
         $this->delegatedUsageRights[] = $delegatedUsageRights;
         return $this;
@@ -272,7 +272,7 @@ class ResourceRightsControllerType
      *
      * A Composite containing details of the kinds of usage for which rights have been delegated.
      *
-     * @return \DedexBundle\Entity\Ern41\DelegatedUsageRightsType[]
+     * @return \DedexBundle\Entity\Ern411\DelegatedUsageRightsType[]
      */
     public function getDelegatedUsageRights()
     {
@@ -284,7 +284,7 @@ class ResourceRightsControllerType
      *
      * A Composite containing details of the kinds of usage for which rights have been delegated.
      *
-     * @param \DedexBundle\Entity\Ern41\DelegatedUsageRightsType[] $delegatedUsageRights
+     * @param \DedexBundle\Entity\Ern411\DelegatedUsageRightsType[] $delegatedUsageRights
      * @return self
      */
     public function setDelegatedUsageRights(array $delegatedUsageRights)

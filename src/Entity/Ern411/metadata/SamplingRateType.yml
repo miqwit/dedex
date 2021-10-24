@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\SamplingRateType:
+DedexBundle\Entity\Ern411\SamplingRateType:
     properties:
         __value:
             expose: true

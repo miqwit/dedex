@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\DealType:
+DedexBundle\Entity\Ern411\DealType:
     properties:
         dealReference:
             expose: true
@@ -26,7 +26,7 @@ DedexBundle\Entity\Ern41\DealType:
             accessor:
                 getter: getDealTerms
                 setter: setDealTerms
-            type: DedexBundle\Entity\Ern41\DealTermsType
+            type: DedexBundle\Entity\Ern411\DealTermsType
         dealTechnicalResourceDetailsReferenceList:
             expose: true
             access_type: public_method
@@ -49,4 +49,4 @@ DedexBundle\Entity\Ern41\DealType:
             xml_list:
                 inline: true
                 entry_name: DistributionChannelPage
-            type: array<DedexBundle\Entity\Ern41\DistributionChannelPageType>
+            type: array<DedexBundle\Entity\Ern411\DistributionChannelPageType>

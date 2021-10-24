@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\SoundRecordingTypeType:
+DedexBundle\Entity\Ern411\SoundRecordingTypeType:
     properties:
         __value:
             expose: true

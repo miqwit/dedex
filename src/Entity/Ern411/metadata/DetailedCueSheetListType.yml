@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\DetailedCueSheetListType:
+DedexBundle\Entity\Ern411\DetailedCueSheetListType:
     properties:
         cueSheet:
             expose: true
@@ -10,4 +10,4 @@ DedexBundle\Entity\Ern41\DetailedCueSheetListType:
             xml_list:
                 inline: true
                 entry_name: CueSheet
-            type: array<DedexBundle\Entity\Ern41\DetailedCueSheetType>
+            type: array<DedexBundle\Entity\Ern411\DetailedCueSheetType>

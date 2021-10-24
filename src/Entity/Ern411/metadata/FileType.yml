@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\FileType:
+DedexBundle\Entity\Ern411\FileType:
     properties:
         uRI:
             expose: true
@@ -15,7 +15,7 @@ DedexBundle\Entity\Ern41\FileType:
             accessor:
                 getter: getHashSum
                 setter: setHashSum
-            type: DedexBundle\Entity\Ern41\DetailedHashSumType
+            type: DedexBundle\Entity\Ern411\DetailedHashSumType
         fileSize:
             expose: true
             access_type: public_method

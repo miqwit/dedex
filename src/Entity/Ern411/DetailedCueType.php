@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing DetailedCueType
@@ -14,56 +14,56 @@ class DetailedCueType
     /**
      * A Composite containing details of a UseType of the Cue. It can be expected that this element will be contractually mandatory in many communications of cue sheets to music rights societies.
      *
-     * @var \DedexBundle\Entity\Ern41\CueUseTypeType $cueUseType
+     * @var \DedexBundle\Entity\Ern411\CueUseTypeType $cueUseType
      */
     private $cueUseType = null;
 
     /**
      * A Composite containing details of a ThemeType for the Creation referenced in the Cue.
      *
-     * @var \DedexBundle\Entity\Ern41\CueThemeTypeType $cueThemeType
+     * @var \DedexBundle\Entity\Ern411\CueThemeTypeType $cueThemeType
      */
     private $cueThemeType = null;
 
     /**
      * A Composite containing details of a VocalType for the Creation referenced in the Cue.
      *
-     * @var \DedexBundle\Entity\Ern41\CueVocalTypeType $cueVocalType
+     * @var \DedexBundle\Entity\Ern411\CueVocalTypeType $cueVocalType
      */
     private $cueVocalType = null;
 
     /**
      * A Composite containing details of a VisualPerceptionType for the Creation referenced in the Cue.
      *
-     * @var \DedexBundle\Entity\Ern41\CueVisualPerceptionTypeType $cueVisualPerceptionType
+     * @var \DedexBundle\Entity\Ern411\CueVisualPerceptionTypeType $cueVisualPerceptionType
      */
     private $cueVisualPerceptionType = null;
 
     /**
      * A Composite containing details of a CueOrigin for the Cue. It can be expected that this element will be contractually mandatory in many communications of cue sheets to music rights societies.
      *
-     * @var \DedexBundle\Entity\Ern41\CueOriginType $cueOrigin
+     * @var \DedexBundle\Entity\Ern411\CueOriginType $cueOrigin
      */
     private $cueOrigin = null;
 
     /**
      * A Composite containing details of a ResourceId.
      *
-     * @var \DedexBundle\Entity\Ern41\ResourceIdType $resourceId
+     * @var \DedexBundle\Entity\Ern411\ResourceIdType $resourceId
      */
     private $resourceId = null;
 
     /**
      * A Composite containing details of a WorkId.
      *
-     * @var \DedexBundle\Entity\Ern41\MusicalWorkIdType $workId
+     * @var \DedexBundle\Entity\Ern411\MusicalWorkIdType $workId
      */
     private $workId = null;
 
     /**
      * A Composite containing details of a Title of the Work referenced in the Cue, as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @var \DedexBundle\Entity\Ern41\DisplayTitleTextType[] $displayTitleText
+     * @var \DedexBundle\Entity\Ern411\DisplayTitleTextType[] $displayTitleText
      */
     private $displayTitleText = [
         
@@ -72,7 +72,7 @@ class DetailedCueType
     /**
      * A Composite containing details of a Title of the Work referenced in the Cue, as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @var \DedexBundle\Entity\Ern41\DisplayTitleType[] $displayTitle
+     * @var \DedexBundle\Entity\Ern411\DisplayTitleType[] $displayTitle
      */
     private $displayTitle = [
         
@@ -81,7 +81,7 @@ class DetailedCueType
     /**
      * A Composite containing details of an AdditionalTitle of the Work referenced in the Cue. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @var \DedexBundle\Entity\Ern41\AdditionalTitleType[] $additionalTitle
+     * @var \DedexBundle\Entity\Ern411\AdditionalTitleType[] $additionalTitle
      */
     private $additionalTitle = [
         
@@ -90,7 +90,7 @@ class DetailedCueType
     /**
      * A Composite containing details of a Contributor of the Work referenced in the Cue.
      *
-     * @var \DedexBundle\Entity\Ern41\ContributorType[] $contributor
+     * @var \DedexBundle\Entity\Ern411\ContributorType[] $contributor
      */
     private $contributor = [
         
@@ -113,7 +113,7 @@ class DetailedCueType
     /**
      * A Composite containing details of the PLine for the Cue.
      *
-     * @var \DedexBundle\Entity\Ern41\PLineType[] $pLine
+     * @var \DedexBundle\Entity\Ern411\PLineType[] $pLine
      */
     private $pLine = [
         
@@ -122,7 +122,7 @@ class DetailedCueType
     /**
      * A Composite containing details of the CLine for the Cue.
      *
-     * @var \DedexBundle\Entity\Ern41\CLineType[] $cLine
+     * @var \DedexBundle\Entity\Ern411\CLineType[] $cLine
      */
     private $cLine = [
         
@@ -154,7 +154,7 @@ class DetailedCueType
      *
      * A Composite containing details of a UseType of the Cue. It can be expected that this element will be contractually mandatory in many communications of cue sheets to music rights societies.
      *
-     * @return \DedexBundle\Entity\Ern41\CueUseTypeType
+     * @return \DedexBundle\Entity\Ern411\CueUseTypeType
      */
     public function getCueUseType()
     {
@@ -166,10 +166,10 @@ class DetailedCueType
      *
      * A Composite containing details of a UseType of the Cue. It can be expected that this element will be contractually mandatory in many communications of cue sheets to music rights societies.
      *
-     * @param \DedexBundle\Entity\Ern41\CueUseTypeType $cueUseType
+     * @param \DedexBundle\Entity\Ern411\CueUseTypeType $cueUseType
      * @return self
      */
-    public function setCueUseType(\DedexBundle\Entity\Ern41\CueUseTypeType $cueUseType)
+    public function setCueUseType(\DedexBundle\Entity\Ern411\CueUseTypeType $cueUseType)
     {
         $this->cueUseType = $cueUseType;
         return $this;
@@ -180,7 +180,7 @@ class DetailedCueType
      *
      * A Composite containing details of a ThemeType for the Creation referenced in the Cue.
      *
-     * @return \DedexBundle\Entity\Ern41\CueThemeTypeType
+     * @return \DedexBundle\Entity\Ern411\CueThemeTypeType
      */
     public function getCueThemeType()
     {
@@ -192,10 +192,10 @@ class DetailedCueType
      *
      * A Composite containing details of a ThemeType for the Creation referenced in the Cue.
      *
-     * @param \DedexBundle\Entity\Ern41\CueThemeTypeType $cueThemeType
+     * @param \DedexBundle\Entity\Ern411\CueThemeTypeType $cueThemeType
      * @return self
      */
-    public function setCueThemeType(\DedexBundle\Entity\Ern41\CueThemeTypeType $cueThemeType)
+    public function setCueThemeType(\DedexBundle\Entity\Ern411\CueThemeTypeType $cueThemeType)
     {
         $this->cueThemeType = $cueThemeType;
         return $this;
@@ -206,7 +206,7 @@ class DetailedCueType
      *
      * A Composite containing details of a VocalType for the Creation referenced in the Cue.
      *
-     * @return \DedexBundle\Entity\Ern41\CueVocalTypeType
+     * @return \DedexBundle\Entity\Ern411\CueVocalTypeType
      */
     public function getCueVocalType()
     {
@@ -218,10 +218,10 @@ class DetailedCueType
      *
      * A Composite containing details of a VocalType for the Creation referenced in the Cue.
      *
-     * @param \DedexBundle\Entity\Ern41\CueVocalTypeType $cueVocalType
+     * @param \DedexBundle\Entity\Ern411\CueVocalTypeType $cueVocalType
      * @return self
      */
-    public function setCueVocalType(\DedexBundle\Entity\Ern41\CueVocalTypeType $cueVocalType)
+    public function setCueVocalType(\DedexBundle\Entity\Ern411\CueVocalTypeType $cueVocalType)
     {
         $this->cueVocalType = $cueVocalType;
         return $this;
@@ -232,7 +232,7 @@ class DetailedCueType
      *
      * A Composite containing details of a VisualPerceptionType for the Creation referenced in the Cue.
      *
-     * @return \DedexBundle\Entity\Ern41\CueVisualPerceptionTypeType
+     * @return \DedexBundle\Entity\Ern411\CueVisualPerceptionTypeType
      */
     public function getCueVisualPerceptionType()
     {
@@ -244,10 +244,10 @@ class DetailedCueType
      *
      * A Composite containing details of a VisualPerceptionType for the Creation referenced in the Cue.
      *
-     * @param \DedexBundle\Entity\Ern41\CueVisualPerceptionTypeType $cueVisualPerceptionType
+     * @param \DedexBundle\Entity\Ern411\CueVisualPerceptionTypeType $cueVisualPerceptionType
      * @return self
      */
-    public function setCueVisualPerceptionType(\DedexBundle\Entity\Ern41\CueVisualPerceptionTypeType $cueVisualPerceptionType)
+    public function setCueVisualPerceptionType(\DedexBundle\Entity\Ern411\CueVisualPerceptionTypeType $cueVisualPerceptionType)
     {
         $this->cueVisualPerceptionType = $cueVisualPerceptionType;
         return $this;
@@ -258,7 +258,7 @@ class DetailedCueType
      *
      * A Composite containing details of a CueOrigin for the Cue. It can be expected that this element will be contractually mandatory in many communications of cue sheets to music rights societies.
      *
-     * @return \DedexBundle\Entity\Ern41\CueOriginType
+     * @return \DedexBundle\Entity\Ern411\CueOriginType
      */
     public function getCueOrigin()
     {
@@ -270,10 +270,10 @@ class DetailedCueType
      *
      * A Composite containing details of a CueOrigin for the Cue. It can be expected that this element will be contractually mandatory in many communications of cue sheets to music rights societies.
      *
-     * @param \DedexBundle\Entity\Ern41\CueOriginType $cueOrigin
+     * @param \DedexBundle\Entity\Ern411\CueOriginType $cueOrigin
      * @return self
      */
-    public function setCueOrigin(\DedexBundle\Entity\Ern41\CueOriginType $cueOrigin)
+    public function setCueOrigin(\DedexBundle\Entity\Ern411\CueOriginType $cueOrigin)
     {
         $this->cueOrigin = $cueOrigin;
         return $this;
@@ -284,7 +284,7 @@ class DetailedCueType
      *
      * A Composite containing details of a ResourceId.
      *
-     * @return \DedexBundle\Entity\Ern41\ResourceIdType
+     * @return \DedexBundle\Entity\Ern411\ResourceIdType
      */
     public function getResourceId()
     {
@@ -296,10 +296,10 @@ class DetailedCueType
      *
      * A Composite containing details of a ResourceId.
      *
-     * @param \DedexBundle\Entity\Ern41\ResourceIdType $resourceId
+     * @param \DedexBundle\Entity\Ern411\ResourceIdType $resourceId
      * @return self
      */
-    public function setResourceId(\DedexBundle\Entity\Ern41\ResourceIdType $resourceId)
+    public function setResourceId(\DedexBundle\Entity\Ern411\ResourceIdType $resourceId)
     {
         $this->resourceId = $resourceId;
         return $this;
@@ -310,7 +310,7 @@ class DetailedCueType
      *
      * A Composite containing details of a WorkId.
      *
-     * @return \DedexBundle\Entity\Ern41\MusicalWorkIdType
+     * @return \DedexBundle\Entity\Ern411\MusicalWorkIdType
      */
     public function getWorkId()
     {
@@ -322,10 +322,10 @@ class DetailedCueType
      *
      * A Composite containing details of a WorkId.
      *
-     * @param \DedexBundle\Entity\Ern41\MusicalWorkIdType $workId
+     * @param \DedexBundle\Entity\Ern411\MusicalWorkIdType $workId
      * @return self
      */
-    public function setWorkId(\DedexBundle\Entity\Ern41\MusicalWorkIdType $workId)
+    public function setWorkId(\DedexBundle\Entity\Ern411\MusicalWorkIdType $workId)
     {
         $this->workId = $workId;
         return $this;
@@ -337,9 +337,9 @@ class DetailedCueType
      * A Composite containing details of a Title of the Work referenced in the Cue, as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DisplayTitleTextType $displayTitleText
+     * @param \DedexBundle\Entity\Ern411\DisplayTitleTextType $displayTitleText
      */
-    public function addToDisplayTitleText(\DedexBundle\Entity\Ern41\DisplayTitleTextType $displayTitleText)
+    public function addToDisplayTitleText(\DedexBundle\Entity\Ern411\DisplayTitleTextType $displayTitleText)
     {
         $this->displayTitleText[] = $displayTitleText;
         return $this;
@@ -376,7 +376,7 @@ class DetailedCueType
      *
      * A Composite containing details of a Title of the Work referenced in the Cue, as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @return \DedexBundle\Entity\Ern41\DisplayTitleTextType[]
+     * @return \DedexBundle\Entity\Ern411\DisplayTitleTextType[]
      */
     public function getDisplayTitleText()
     {
@@ -388,7 +388,7 @@ class DetailedCueType
      *
      * A Composite containing details of a Title of the Work referenced in the Cue, as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @param \DedexBundle\Entity\Ern41\DisplayTitleTextType[] $displayTitleText
+     * @param \DedexBundle\Entity\Ern411\DisplayTitleTextType[] $displayTitleText
      * @return self
      */
     public function setDisplayTitleText(array $displayTitleText)
@@ -403,9 +403,9 @@ class DetailedCueType
      * A Composite containing details of a Title of the Work referenced in the Cue, as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DisplayTitleType $displayTitle
+     * @param \DedexBundle\Entity\Ern411\DisplayTitleType $displayTitle
      */
-    public function addToDisplayTitle(\DedexBundle\Entity\Ern41\DisplayTitleType $displayTitle)
+    public function addToDisplayTitle(\DedexBundle\Entity\Ern411\DisplayTitleType $displayTitle)
     {
         $this->displayTitle[] = $displayTitle;
         return $this;
@@ -442,7 +442,7 @@ class DetailedCueType
      *
      * A Composite containing details of a Title of the Work referenced in the Cue, as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @return \DedexBundle\Entity\Ern41\DisplayTitleType[]
+     * @return \DedexBundle\Entity\Ern411\DisplayTitleType[]
      */
     public function getDisplayTitle()
     {
@@ -454,7 +454,7 @@ class DetailedCueType
      *
      * A Composite containing details of a Title of the Work referenced in the Cue, as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @param \DedexBundle\Entity\Ern41\DisplayTitleType[] $displayTitle
+     * @param \DedexBundle\Entity\Ern411\DisplayTitleType[] $displayTitle
      * @return self
      */
     public function setDisplayTitle(array $displayTitle)
@@ -469,9 +469,9 @@ class DetailedCueType
      * A Composite containing details of an AdditionalTitle of the Work referenced in the Cue. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\AdditionalTitleType $additionalTitle
+     * @param \DedexBundle\Entity\Ern411\AdditionalTitleType $additionalTitle
      */
-    public function addToAdditionalTitle(\DedexBundle\Entity\Ern41\AdditionalTitleType $additionalTitle)
+    public function addToAdditionalTitle(\DedexBundle\Entity\Ern411\AdditionalTitleType $additionalTitle)
     {
         $this->additionalTitle[] = $additionalTitle;
         return $this;
@@ -508,7 +508,7 @@ class DetailedCueType
      *
      * A Composite containing details of an AdditionalTitle of the Work referenced in the Cue. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @return \DedexBundle\Entity\Ern41\AdditionalTitleType[]
+     * @return \DedexBundle\Entity\Ern411\AdditionalTitleType[]
      */
     public function getAdditionalTitle()
     {
@@ -520,7 +520,7 @@ class DetailedCueType
      *
      * A Composite containing details of an AdditionalTitle of the Work referenced in the Cue. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @param \DedexBundle\Entity\Ern41\AdditionalTitleType[] $additionalTitle
+     * @param \DedexBundle\Entity\Ern411\AdditionalTitleType[] $additionalTitle
      * @return self
      */
     public function setAdditionalTitle(array $additionalTitle)
@@ -535,9 +535,9 @@ class DetailedCueType
      * A Composite containing details of a Contributor of the Work referenced in the Cue.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ContributorType $contributor
+     * @param \DedexBundle\Entity\Ern411\ContributorType $contributor
      */
-    public function addToContributor(\DedexBundle\Entity\Ern41\ContributorType $contributor)
+    public function addToContributor(\DedexBundle\Entity\Ern411\ContributorType $contributor)
     {
         $this->contributor[] = $contributor;
         return $this;
@@ -574,7 +574,7 @@ class DetailedCueType
      *
      * A Composite containing details of a Contributor of the Work referenced in the Cue.
      *
-     * @return \DedexBundle\Entity\Ern41\ContributorType[]
+     * @return \DedexBundle\Entity\Ern411\ContributorType[]
      */
     public function getContributor()
     {
@@ -586,7 +586,7 @@ class DetailedCueType
      *
      * A Composite containing details of a Contributor of the Work referenced in the Cue.
      *
-     * @param \DedexBundle\Entity\Ern41\ContributorType[] $contributor
+     * @param \DedexBundle\Entity\Ern411\ContributorType[] $contributor
      * @return self
      */
     public function setContributor(array $contributor)
@@ -653,9 +653,9 @@ class DetailedCueType
      * A Composite containing details of the PLine for the Cue.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\PLineType $pLine
+     * @param \DedexBundle\Entity\Ern411\PLineType $pLine
      */
-    public function addToPLine(\DedexBundle\Entity\Ern41\PLineType $pLine)
+    public function addToPLine(\DedexBundle\Entity\Ern411\PLineType $pLine)
     {
         $this->pLine[] = $pLine;
         return $this;
@@ -692,7 +692,7 @@ class DetailedCueType
      *
      * A Composite containing details of the PLine for the Cue.
      *
-     * @return \DedexBundle\Entity\Ern41\PLineType[]
+     * @return \DedexBundle\Entity\Ern411\PLineType[]
      */
     public function getPLine()
     {
@@ -704,7 +704,7 @@ class DetailedCueType
      *
      * A Composite containing details of the PLine for the Cue.
      *
-     * @param \DedexBundle\Entity\Ern41\PLineType[] $pLine
+     * @param \DedexBundle\Entity\Ern411\PLineType[] $pLine
      * @return self
      */
     public function setPLine(array $pLine)
@@ -719,9 +719,9 @@ class DetailedCueType
      * A Composite containing details of the CLine for the Cue.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\CLineType $cLine
+     * @param \DedexBundle\Entity\Ern411\CLineType $cLine
      */
-    public function addToCLine(\DedexBundle\Entity\Ern41\CLineType $cLine)
+    public function addToCLine(\DedexBundle\Entity\Ern411\CLineType $cLine)
     {
         $this->cLine[] = $cLine;
         return $this;
@@ -758,7 +758,7 @@ class DetailedCueType
      *
      * A Composite containing details of the CLine for the Cue.
      *
-     * @return \DedexBundle\Entity\Ern41\CLineType[]
+     * @return \DedexBundle\Entity\Ern411\CLineType[]
      */
     public function getCLine()
     {
@@ -770,7 +770,7 @@ class DetailedCueType
      *
      * A Composite containing details of the CLine for the Cue.
      *
-     * @param \DedexBundle\Entity\Ern41\CLineType[] $cLine
+     * @param \DedexBundle\Entity\Ern411\CLineType[] $cLine
      * @return self
      */
     public function setCLine(array $cLine)

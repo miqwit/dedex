@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\TimingType:
+DedexBundle\Entity\Ern411\TimingType:
     properties:
         startPoint:
             expose: true

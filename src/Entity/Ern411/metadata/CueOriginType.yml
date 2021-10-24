@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\CueOriginType:
+DedexBundle\Entity\Ern411\CueOriginType:
     properties:
         __value:
             expose: true

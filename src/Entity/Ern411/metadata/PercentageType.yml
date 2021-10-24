@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\PercentageType:
+DedexBundle\Entity\Ern411\PercentageType:
     properties:
         __value:
             expose: true

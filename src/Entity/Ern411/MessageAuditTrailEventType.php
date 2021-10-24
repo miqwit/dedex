@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing MessageAuditTrailEventType
@@ -14,7 +14,7 @@ class MessageAuditTrailEventType
     /**
      * A Composite containing details of a MessagingParty.
      *
-     * @var \DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType $messagingPartyDescriptor
+     * @var \DedexBundle\Entity\Ern411\MessagingPartyWithoutCodeType $messagingPartyDescriptor
      */
     private $messagingPartyDescriptor = null;
 
@@ -30,7 +30,7 @@ class MessageAuditTrailEventType
      *
      * A Composite containing details of a MessagingParty.
      *
-     * @return \DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType
+     * @return \DedexBundle\Entity\Ern411\MessagingPartyWithoutCodeType
      */
     public function getMessagingPartyDescriptor()
     {
@@ -42,10 +42,10 @@ class MessageAuditTrailEventType
      *
      * A Composite containing details of a MessagingParty.
      *
-     * @param \DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType $messagingPartyDescriptor
+     * @param \DedexBundle\Entity\Ern411\MessagingPartyWithoutCodeType $messagingPartyDescriptor
      * @return self
      */
-    public function setMessagingPartyDescriptor(\DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType $messagingPartyDescriptor)
+    public function setMessagingPartyDescriptor(\DedexBundle\Entity\Ern411\MessagingPartyWithoutCodeType $messagingPartyDescriptor)
     {
         $this->messagingPartyDescriptor = $messagingPartyDescriptor;
         return $this;

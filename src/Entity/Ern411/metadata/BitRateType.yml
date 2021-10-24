@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\BitRateType:
+DedexBundle\Entity\Ern411\BitRateType:
     properties:
         __value:
             expose: true

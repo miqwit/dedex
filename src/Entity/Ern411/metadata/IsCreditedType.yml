@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\IsCreditedType:
+DedexBundle\Entity\Ern411\IsCreditedType:
     properties:
         __value:
             expose: true

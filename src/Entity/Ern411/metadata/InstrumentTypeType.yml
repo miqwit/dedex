@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\InstrumentTypeType:
+DedexBundle\Entity\Ern411\InstrumentTypeType:
     properties:
         __value:
             expose: true

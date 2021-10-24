@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\SupplementalDocumentListType:
+DedexBundle\Entity\Ern411\SupplementalDocumentListType:
     properties:
         supplementalDocument:
             expose: true
@@ -10,4 +10,4 @@ DedexBundle\Entity\Ern41\SupplementalDocumentListType:
             xml_list:
                 inline: true
                 entry_name: SupplementalDocument
-            type: array<DedexBundle\Entity\Ern41\FileType>
+            type: array<DedexBundle\Entity\Ern411\FileType>

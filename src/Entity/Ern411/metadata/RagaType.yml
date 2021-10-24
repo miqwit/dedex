@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\RagaType:
+DedexBundle\Entity\Ern411\RagaType:
     properties:
         __value:
             expose: true

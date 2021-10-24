@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\FingerprintAlgorithmTypeType:
+DedexBundle\Entity\Ern411\FingerprintAlgorithmTypeType:
     properties:
         __value:
             expose: true

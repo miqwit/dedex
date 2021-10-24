@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing VideoType
@@ -35,14 +35,14 @@ class VideoType
     /**
      * A Composite containing details of the Type of the Video.
      *
-     * @var \DedexBundle\Entity\Ern41\VideoTypeType $type
+     * @var \DedexBundle\Entity\Ern411\VideoTypeType $type
      */
     private $type = null;
 
     /**
      * A Composite containing details of an Identifier of the Video.
      *
-     * @var \DedexBundle\Entity\Ern41\VideoIdType[] $resourceId
+     * @var \DedexBundle\Entity\Ern411\VideoIdType[] $resourceId
      */
     private $resourceId = [
         
@@ -51,7 +51,7 @@ class VideoType
     /**
      * A Composite containing details of a MusicalWorkId of a MusicalWork used in the Video.
      *
-     * @var \DedexBundle\Entity\Ern41\MusicalWorkIdType[] $workId
+     * @var \DedexBundle\Entity\Ern411\MusicalWorkIdType[] $workId
      */
     private $workId = [
         
@@ -60,7 +60,7 @@ class VideoType
     /**
      * A Composite containing details of a Title of the Video as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @var \DedexBundle\Entity\Ern41\DisplayTitleTextType[] $displayTitleText
+     * @var \DedexBundle\Entity\Ern411\DisplayTitleTextType[] $displayTitleText
      */
     private $displayTitleText = [
         
@@ -69,7 +69,7 @@ class VideoType
     /**
      * A Composite containing details of a Title of the Video as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @var \DedexBundle\Entity\Ern41\DisplayTitleType[] $displayTitle
+     * @var \DedexBundle\Entity\Ern411\DisplayTitleType[] $displayTitle
      */
     private $displayTitle = [
         
@@ -78,7 +78,7 @@ class VideoType
     /**
      * A Composite containing details of an AdditionalTitle of the Video. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @var \DedexBundle\Entity\Ern41\AdditionalTitleType[] $additionalTitle
+     * @var \DedexBundle\Entity\Ern411\AdditionalTitleType[] $additionalTitle
      */
     private $additionalTitle = [
         
@@ -87,7 +87,7 @@ class VideoType
     /**
      * A Composite containing details of a Type of Version of the Video.
      *
-     * @var \DedexBundle\Entity\Ern41\VersionTypeType[] $versionType
+     * @var \DedexBundle\Entity\Ern411\VersionTypeType[] $versionType
      */
     private $versionType = [
         
@@ -96,7 +96,7 @@ class VideoType
     /**
      * A Composite containing the Name to be used by a DSP when presenting Artist details of the Resource to a Consumer.
      *
-     * @var \DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType[] $displayArtistName
+     * @var \DedexBundle\Entity\Ern411\DisplayArtistNameWithDefaultType[] $displayArtistName
      */
     private $displayArtistName = [
         
@@ -105,7 +105,7 @@ class VideoType
     /**
      * A Composite containing details of the DisplayArtist for the Video. The DisplayArtist may be described through Name, Identifier and Roles.
      *
-     * @var \DedexBundle\Entity\Ern41\DisplayArtistType[] $displayArtist
+     * @var \DedexBundle\Entity\Ern411\DisplayArtistType[] $displayArtist
      */
     private $displayArtist = [
         
@@ -114,7 +114,7 @@ class VideoType
     /**
      * A Composite containing details of a Contributor to the Video.
      *
-     * @var \DedexBundle\Entity\Ern41\ContributorType[] $contributor
+     * @var \DedexBundle\Entity\Ern411\ContributorType[] $contributor
      */
     private $contributor = [
         
@@ -123,7 +123,7 @@ class VideoType
     /**
      * A Composite containing details of a Character in the Video. A Character may be described through Name, Identifier and Roles.
      *
-     * @var \DedexBundle\Entity\Ern41\CharacterType[] $character
+     * @var \DedexBundle\Entity\Ern411\CharacterType[] $character
      */
     private $character = [
         
@@ -132,7 +132,7 @@ class VideoType
     /**
      * A Composite containing details of RightsController of Rights in the Video.
      *
-     * @var \DedexBundle\Entity\Ern41\ResourceRightsControllerType[] $resourceRightsController
+     * @var \DedexBundle\Entity\Ern411\ResourceRightsControllerType[] $resourceRightsController
      */
     private $resourceRightsController = [
         
@@ -141,7 +141,7 @@ class VideoType
     /**
      * A Composite containing details of RightsController of Rights in the Work.
      *
-     * @var \DedexBundle\Entity\Ern41\WorkRightsControllerType[] $workRightsController
+     * @var \DedexBundle\Entity\Ern411\WorkRightsControllerType[] $workRightsController
      */
     private $workRightsController = [
         
@@ -150,7 +150,7 @@ class VideoType
     /**
      * A Composite containing details of the PLine for the Video.
      *
-     * @var \DedexBundle\Entity\Ern41\PLineWithDefaultType[] $pLine
+     * @var \DedexBundle\Entity\Ern411\PLineWithDefaultType[] $pLine
      */
     private $pLine = [
         
@@ -159,7 +159,7 @@ class VideoType
     /**
      * A Composite containing details of the CLine for the Video.
      *
-     * @var \DedexBundle\Entity\Ern41\CLineWithDefaultType[] $cLine
+     * @var \DedexBundle\Entity\Ern411\CLineWithDefaultType[] $cLine
      */
     private $cLine = [
         
@@ -168,7 +168,7 @@ class VideoType
     /**
      * A Composite containing an Annotation Annotation which acknowledges record companies and/or other Parties giving permission for guests Artists or others featured on the Video.
      *
-     * @var \DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType[] $courtesyLine
+     * @var \DedexBundle\Entity\Ern411\CourtesyLineWithDefaultType[] $courtesyLine
      */
     private $courtesyLine = [
         
@@ -184,21 +184,21 @@ class VideoType
     /**
      * A Composite containing details of the Date and Place of the Event in which the Video was created. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @var \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $creationDate
+     * @var \DedexBundle\Entity\Ern411\EventDateWithoutFlagsType $creationDate
      */
     private $creationDate = null;
 
     /**
      * A Composite containing details of the Date and Place of the Event in which the Video was originally mastered (in either analogue or digital form). This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @var \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $masteredDate
+     * @var \DedexBundle\Entity\Ern411\EventDateWithoutFlagsType $masteredDate
      */
     private $masteredDate = null;
 
     /**
      * A Composite containing details of the Date and Place of the Event in which the Video was re-mastered (usually digitally). This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @var \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType[] $remasteredDate
+     * @var \DedexBundle\Entity\Ern411\EventDateWithoutFlagsType[] $remasteredDate
      */
     private $remasteredDate = [
         
@@ -207,7 +207,7 @@ class VideoType
     /**
      * A Composite containing details of the Date and Place of the Event in which the Video was first published, whether for physical or electronic/online distribution. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @var \DedexBundle\Entity\Ern41\FulfillmentDateWithTerritoryType[] $firstPublicationDate
+     * @var \DedexBundle\Entity\Ern411\FulfillmentDateWithTerritoryType[] $firstPublicationDate
      */
     private $firstPublicationDate = [
         
@@ -216,7 +216,7 @@ class VideoType
     /**
      * A Composite containing details of the classification of the Video according to advice which it carries about the level of explicitness or offensiveness of its content.
      *
-     * @var \DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType[] $parentalWarningType
+     * @var \DedexBundle\Entity\Ern411\ParentalWarningTypeWithTerritoryType[] $parentalWarningType
      */
     private $parentalWarningType = [
         
@@ -225,7 +225,7 @@ class VideoType
     /**
      * A Composite containing details of a rating for the Video.
      *
-     * @var \DedexBundle\Entity\Ern41\AvRatingType[] $avRating
+     * @var \DedexBundle\Entity\Ern411\AvRatingType[] $avRating
      */
     private $avRating = [
         
@@ -234,7 +234,7 @@ class VideoType
     /**
      * A Composite containing details of a Release (or a PhysicalProduct or a DigitalProduct derived from such a Release) which is related to current Video.
      *
-     * @var \DedexBundle\Entity\Ern41\RelatedReleaseType[] $relatedRelease
+     * @var \DedexBundle\Entity\Ern411\RelatedReleaseType[] $relatedRelease
      */
     private $relatedRelease = [
         
@@ -243,7 +243,7 @@ class VideoType
     /**
      * A Composite containing details of a ResourceRelatedResourceReference referring to a Resource that is related to the current Video.
      *
-     * @var \DedexBundle\Entity\Ern41\RelatedResourceType[] $relatedResource
+     * @var \DedexBundle\Entity\Ern411\RelatedResourceType[] $relatedResource
      */
     private $relatedResource = [
         
@@ -268,7 +268,7 @@ class VideoType
     /**
      * A Composite containing the textual Description of the reason for the Identifier being used as a proxy.
      *
-     * @var \DedexBundle\Entity\Ern41\ReasonType $reasonForCueSheetAbsence
+     * @var \DedexBundle\Entity\Ern411\ReasonType $reasonForCueSheetAbsence
      */
     private $reasonForCueSheetAbsence = null;
 
@@ -303,7 +303,7 @@ class VideoType
     /**
      * A Role and instrumentation for which a Party is credited.
      *
-     * @var \DedexBundle\Entity\Ern41\DisplayCreditsType[] $displayCredits
+     * @var \DedexBundle\Entity\Ern411\DisplayCreditsType[] $displayCredits
      */
     private $displayCredits = [
         
@@ -339,14 +339,14 @@ class VideoType
     /**
      * A Composite containing details of ResourceContainedResourceReferences referring to a Resource that is contained in the current Video.
      *
-     * @var \DedexBundle\Entity\Ern41\ResourceContainedResourceReferenceType[] $resourceContainedResourceReferenceList
+     * @var \DedexBundle\Entity\Ern411\ResourceContainedResourceReferenceType[] $resourceContainedResourceReferenceList
      */
     private $resourceContainedResourceReferenceList = null;
 
     /**
      * A Composite containing technical details of the Video.
      *
-     * @var \DedexBundle\Entity\Ern41\TechnicalVideoDetailsType[] $technicalDetails
+     * @var \DedexBundle\Entity\Ern411\TechnicalVideoDetailsType[] $technicalDetails
      */
     private $technicalDetails = [
         
@@ -471,7 +471,7 @@ class VideoType
      *
      * A Composite containing details of the Type of the Video.
      *
-     * @return \DedexBundle\Entity\Ern41\VideoTypeType
+     * @return \DedexBundle\Entity\Ern411\VideoTypeType
      */
     public function getType()
     {
@@ -483,10 +483,10 @@ class VideoType
      *
      * A Composite containing details of the Type of the Video.
      *
-     * @param \DedexBundle\Entity\Ern41\VideoTypeType $type
+     * @param \DedexBundle\Entity\Ern411\VideoTypeType $type
      * @return self
      */
-    public function setType(\DedexBundle\Entity\Ern41\VideoTypeType $type)
+    public function setType(\DedexBundle\Entity\Ern411\VideoTypeType $type)
     {
         $this->type = $type;
         return $this;
@@ -498,9 +498,9 @@ class VideoType
      * A Composite containing details of an Identifier of the Video.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\VideoIdType $resourceId
+     * @param \DedexBundle\Entity\Ern411\VideoIdType $resourceId
      */
-    public function addToResourceId(\DedexBundle\Entity\Ern41\VideoIdType $resourceId)
+    public function addToResourceId(\DedexBundle\Entity\Ern411\VideoIdType $resourceId)
     {
         $this->resourceId[] = $resourceId;
         return $this;
@@ -537,7 +537,7 @@ class VideoType
      *
      * A Composite containing details of an Identifier of the Video.
      *
-     * @return \DedexBundle\Entity\Ern41\VideoIdType[]
+     * @return \DedexBundle\Entity\Ern411\VideoIdType[]
      */
     public function getResourceId()
     {
@@ -549,7 +549,7 @@ class VideoType
      *
      * A Composite containing details of an Identifier of the Video.
      *
-     * @param \DedexBundle\Entity\Ern41\VideoIdType[] $resourceId
+     * @param \DedexBundle\Entity\Ern411\VideoIdType[] $resourceId
      * @return self
      */
     public function setResourceId(array $resourceId)
@@ -564,9 +564,9 @@ class VideoType
      * A Composite containing details of a MusicalWorkId of a MusicalWork used in the Video.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\MusicalWorkIdType $workId
+     * @param \DedexBundle\Entity\Ern411\MusicalWorkIdType $workId
      */
-    public function addToWorkId(\DedexBundle\Entity\Ern41\MusicalWorkIdType $workId)
+    public function addToWorkId(\DedexBundle\Entity\Ern411\MusicalWorkIdType $workId)
     {
         $this->workId[] = $workId;
         return $this;
@@ -603,7 +603,7 @@ class VideoType
      *
      * A Composite containing details of a MusicalWorkId of a MusicalWork used in the Video.
      *
-     * @return \DedexBundle\Entity\Ern41\MusicalWorkIdType[]
+     * @return \DedexBundle\Entity\Ern411\MusicalWorkIdType[]
      */
     public function getWorkId()
     {
@@ -615,7 +615,7 @@ class VideoType
      *
      * A Composite containing details of a MusicalWorkId of a MusicalWork used in the Video.
      *
-     * @param \DedexBundle\Entity\Ern41\MusicalWorkIdType[] $workId
+     * @param \DedexBundle\Entity\Ern411\MusicalWorkIdType[] $workId
      * @return self
      */
     public function setWorkId(array $workId)
@@ -630,9 +630,9 @@ class VideoType
      * A Composite containing details of a Title of the Video as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DisplayTitleTextType $displayTitleText
+     * @param \DedexBundle\Entity\Ern411\DisplayTitleTextType $displayTitleText
      */
-    public function addToDisplayTitleText(\DedexBundle\Entity\Ern41\DisplayTitleTextType $displayTitleText)
+    public function addToDisplayTitleText(\DedexBundle\Entity\Ern411\DisplayTitleTextType $displayTitleText)
     {
         $this->displayTitleText[] = $displayTitleText;
         return $this;
@@ -669,7 +669,7 @@ class VideoType
      *
      * A Composite containing details of a Title of the Video as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @return \DedexBundle\Entity\Ern41\DisplayTitleTextType[]
+     * @return \DedexBundle\Entity\Ern411\DisplayTitleTextType[]
      */
     public function getDisplayTitleText()
     {
@@ -681,7 +681,7 @@ class VideoType
      *
      * A Composite containing details of a Title of the Video as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @param \DedexBundle\Entity\Ern41\DisplayTitleTextType[] $displayTitleText
+     * @param \DedexBundle\Entity\Ern411\DisplayTitleTextType[] $displayTitleText
      * @return self
      */
     public function setDisplayTitleText(array $displayTitleText)
@@ -696,9 +696,9 @@ class VideoType
      * A Composite containing details of a Title of the Video as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DisplayTitleType $displayTitle
+     * @param \DedexBundle\Entity\Ern411\DisplayTitleType $displayTitle
      */
-    public function addToDisplayTitle(\DedexBundle\Entity\Ern41\DisplayTitleType $displayTitle)
+    public function addToDisplayTitle(\DedexBundle\Entity\Ern411\DisplayTitleType $displayTitle)
     {
         $this->displayTitle[] = $displayTitle;
         return $this;
@@ -735,7 +735,7 @@ class VideoType
      *
      * A Composite containing details of a Title of the Video as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @return \DedexBundle\Entity\Ern41\DisplayTitleType[]
+     * @return \DedexBundle\Entity\Ern411\DisplayTitleType[]
      */
     public function getDisplayTitle()
     {
@@ -747,7 +747,7 @@ class VideoType
      *
      * A Composite containing details of a Title of the Video as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @param \DedexBundle\Entity\Ern41\DisplayTitleType[] $displayTitle
+     * @param \DedexBundle\Entity\Ern411\DisplayTitleType[] $displayTitle
      * @return self
      */
     public function setDisplayTitle(array $displayTitle)
@@ -762,9 +762,9 @@ class VideoType
      * A Composite containing details of an AdditionalTitle of the Video. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\AdditionalTitleType $additionalTitle
+     * @param \DedexBundle\Entity\Ern411\AdditionalTitleType $additionalTitle
      */
-    public function addToAdditionalTitle(\DedexBundle\Entity\Ern41\AdditionalTitleType $additionalTitle)
+    public function addToAdditionalTitle(\DedexBundle\Entity\Ern411\AdditionalTitleType $additionalTitle)
     {
         $this->additionalTitle[] = $additionalTitle;
         return $this;
@@ -801,7 +801,7 @@ class VideoType
      *
      * A Composite containing details of an AdditionalTitle of the Video. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @return \DedexBundle\Entity\Ern41\AdditionalTitleType[]
+     * @return \DedexBundle\Entity\Ern411\AdditionalTitleType[]
      */
     public function getAdditionalTitle()
     {
@@ -813,7 +813,7 @@ class VideoType
      *
      * A Composite containing details of an AdditionalTitle of the Video. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @param \DedexBundle\Entity\Ern41\AdditionalTitleType[] $additionalTitle
+     * @param \DedexBundle\Entity\Ern411\AdditionalTitleType[] $additionalTitle
      * @return self
      */
     public function setAdditionalTitle(array $additionalTitle)
@@ -828,9 +828,9 @@ class VideoType
      * A Composite containing details of a Type of Version of the Video.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\VersionTypeType $versionType
+     * @param \DedexBundle\Entity\Ern411\VersionTypeType $versionType
      */
-    public function addToVersionType(\DedexBundle\Entity\Ern41\VersionTypeType $versionType)
+    public function addToVersionType(\DedexBundle\Entity\Ern411\VersionTypeType $versionType)
     {
         $this->versionType[] = $versionType;
         return $this;
@@ -867,7 +867,7 @@ class VideoType
      *
      * A Composite containing details of a Type of Version of the Video.
      *
-     * @return \DedexBundle\Entity\Ern41\VersionTypeType[]
+     * @return \DedexBundle\Entity\Ern411\VersionTypeType[]
      */
     public function getVersionType()
     {
@@ -879,7 +879,7 @@ class VideoType
      *
      * A Composite containing details of a Type of Version of the Video.
      *
-     * @param \DedexBundle\Entity\Ern41\VersionTypeType[] $versionType
+     * @param \DedexBundle\Entity\Ern411\VersionTypeType[] $versionType
      * @return self
      */
     public function setVersionType(array $versionType)
@@ -894,9 +894,9 @@ class VideoType
      * A Composite containing the Name to be used by a DSP when presenting Artist details of the Resource to a Consumer.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType $displayArtistName
+     * @param \DedexBundle\Entity\Ern411\DisplayArtistNameWithDefaultType $displayArtistName
      */
-    public function addToDisplayArtistName(\DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType $displayArtistName)
+    public function addToDisplayArtistName(\DedexBundle\Entity\Ern411\DisplayArtistNameWithDefaultType $displayArtistName)
     {
         $this->displayArtistName[] = $displayArtistName;
         return $this;
@@ -933,7 +933,7 @@ class VideoType
      *
      * A Composite containing the Name to be used by a DSP when presenting Artist details of the Resource to a Consumer.
      *
-     * @return \DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType[]
+     * @return \DedexBundle\Entity\Ern411\DisplayArtistNameWithDefaultType[]
      */
     public function getDisplayArtistName()
     {
@@ -945,7 +945,7 @@ class VideoType
      *
      * A Composite containing the Name to be used by a DSP when presenting Artist details of the Resource to a Consumer.
      *
-     * @param \DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType[] $displayArtistName
+     * @param \DedexBundle\Entity\Ern411\DisplayArtistNameWithDefaultType[] $displayArtistName
      * @return self
      */
     public function setDisplayArtistName(array $displayArtistName)
@@ -960,9 +960,9 @@ class VideoType
      * A Composite containing details of the DisplayArtist for the Video. The DisplayArtist may be described through Name, Identifier and Roles.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DisplayArtistType $displayArtist
+     * @param \DedexBundle\Entity\Ern411\DisplayArtistType $displayArtist
      */
-    public function addToDisplayArtist(\DedexBundle\Entity\Ern41\DisplayArtistType $displayArtist)
+    public function addToDisplayArtist(\DedexBundle\Entity\Ern411\DisplayArtistType $displayArtist)
     {
         $this->displayArtist[] = $displayArtist;
         return $this;
@@ -999,7 +999,7 @@ class VideoType
      *
      * A Composite containing details of the DisplayArtist for the Video. The DisplayArtist may be described through Name, Identifier and Roles.
      *
-     * @return \DedexBundle\Entity\Ern41\DisplayArtistType[]
+     * @return \DedexBundle\Entity\Ern411\DisplayArtistType[]
      */
     public function getDisplayArtist()
     {
@@ -1011,7 +1011,7 @@ class VideoType
      *
      * A Composite containing details of the DisplayArtist for the Video. The DisplayArtist may be described through Name, Identifier and Roles.
      *
-     * @param \DedexBundle\Entity\Ern41\DisplayArtistType[] $displayArtist
+     * @param \DedexBundle\Entity\Ern411\DisplayArtistType[] $displayArtist
      * @return self
      */
     public function setDisplayArtist(array $displayArtist)
@@ -1026,9 +1026,9 @@ class VideoType
      * A Composite containing details of a Contributor to the Video.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ContributorType $contributor
+     * @param \DedexBundle\Entity\Ern411\ContributorType $contributor
      */
-    public function addToContributor(\DedexBundle\Entity\Ern41\ContributorType $contributor)
+    public function addToContributor(\DedexBundle\Entity\Ern411\ContributorType $contributor)
     {
         $this->contributor[] = $contributor;
         return $this;
@@ -1065,7 +1065,7 @@ class VideoType
      *
      * A Composite containing details of a Contributor to the Video.
      *
-     * @return \DedexBundle\Entity\Ern41\ContributorType[]
+     * @return \DedexBundle\Entity\Ern411\ContributorType[]
      */
     public function getContributor()
     {
@@ -1077,7 +1077,7 @@ class VideoType
      *
      * A Composite containing details of a Contributor to the Video.
      *
-     * @param \DedexBundle\Entity\Ern41\ContributorType[] $contributor
+     * @param \DedexBundle\Entity\Ern411\ContributorType[] $contributor
      * @return self
      */
     public function setContributor(array $contributor)
@@ -1092,9 +1092,9 @@ class VideoType
      * A Composite containing details of a Character in the Video. A Character may be described through Name, Identifier and Roles.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\CharacterType $character
+     * @param \DedexBundle\Entity\Ern411\CharacterType $character
      */
-    public function addToCharacter(\DedexBundle\Entity\Ern41\CharacterType $character)
+    public function addToCharacter(\DedexBundle\Entity\Ern411\CharacterType $character)
     {
         $this->character[] = $character;
         return $this;
@@ -1131,7 +1131,7 @@ class VideoType
      *
      * A Composite containing details of a Character in the Video. A Character may be described through Name, Identifier and Roles.
      *
-     * @return \DedexBundle\Entity\Ern41\CharacterType[]
+     * @return \DedexBundle\Entity\Ern411\CharacterType[]
      */
     public function getCharacter()
     {
@@ -1143,7 +1143,7 @@ class VideoType
      *
      * A Composite containing details of a Character in the Video. A Character may be described through Name, Identifier and Roles.
      *
-     * @param \DedexBundle\Entity\Ern41\CharacterType[] $character
+     * @param \DedexBundle\Entity\Ern411\CharacterType[] $character
      * @return self
      */
     public function setCharacter(array $character)
@@ -1158,9 +1158,9 @@ class VideoType
      * A Composite containing details of RightsController of Rights in the Video.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ResourceRightsControllerType $resourceRightsController
+     * @param \DedexBundle\Entity\Ern411\ResourceRightsControllerType $resourceRightsController
      */
-    public function addToResourceRightsController(\DedexBundle\Entity\Ern41\ResourceRightsControllerType $resourceRightsController)
+    public function addToResourceRightsController(\DedexBundle\Entity\Ern411\ResourceRightsControllerType $resourceRightsController)
     {
         $this->resourceRightsController[] = $resourceRightsController;
         return $this;
@@ -1197,7 +1197,7 @@ class VideoType
      *
      * A Composite containing details of RightsController of Rights in the Video.
      *
-     * @return \DedexBundle\Entity\Ern41\ResourceRightsControllerType[]
+     * @return \DedexBundle\Entity\Ern411\ResourceRightsControllerType[]
      */
     public function getResourceRightsController()
     {
@@ -1209,7 +1209,7 @@ class VideoType
      *
      * A Composite containing details of RightsController of Rights in the Video.
      *
-     * @param \DedexBundle\Entity\Ern41\ResourceRightsControllerType[] $resourceRightsController
+     * @param \DedexBundle\Entity\Ern411\ResourceRightsControllerType[] $resourceRightsController
      * @return self
      */
     public function setResourceRightsController(array $resourceRightsController)
@@ -1224,9 +1224,9 @@ class VideoType
      * A Composite containing details of RightsController of Rights in the Work.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\WorkRightsControllerType $workRightsController
+     * @param \DedexBundle\Entity\Ern411\WorkRightsControllerType $workRightsController
      */
-    public function addToWorkRightsController(\DedexBundle\Entity\Ern41\WorkRightsControllerType $workRightsController)
+    public function addToWorkRightsController(\DedexBundle\Entity\Ern411\WorkRightsControllerType $workRightsController)
     {
         $this->workRightsController[] = $workRightsController;
         return $this;
@@ -1263,7 +1263,7 @@ class VideoType
      *
      * A Composite containing details of RightsController of Rights in the Work.
      *
-     * @return \DedexBundle\Entity\Ern41\WorkRightsControllerType[]
+     * @return \DedexBundle\Entity\Ern411\WorkRightsControllerType[]
      */
     public function getWorkRightsController()
     {
@@ -1275,7 +1275,7 @@ class VideoType
      *
      * A Composite containing details of RightsController of Rights in the Work.
      *
-     * @param \DedexBundle\Entity\Ern41\WorkRightsControllerType[] $workRightsController
+     * @param \DedexBundle\Entity\Ern411\WorkRightsControllerType[] $workRightsController
      * @return self
      */
     public function setWorkRightsController(array $workRightsController)
@@ -1290,9 +1290,9 @@ class VideoType
      * A Composite containing details of the PLine for the Video.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\PLineWithDefaultType $pLine
+     * @param \DedexBundle\Entity\Ern411\PLineWithDefaultType $pLine
      */
-    public function addToPLine(\DedexBundle\Entity\Ern41\PLineWithDefaultType $pLine)
+    public function addToPLine(\DedexBundle\Entity\Ern411\PLineWithDefaultType $pLine)
     {
         $this->pLine[] = $pLine;
         return $this;
@@ -1329,7 +1329,7 @@ class VideoType
      *
      * A Composite containing details of the PLine for the Video.
      *
-     * @return \DedexBundle\Entity\Ern41\PLineWithDefaultType[]
+     * @return \DedexBundle\Entity\Ern411\PLineWithDefaultType[]
      */
     public function getPLine()
     {
@@ -1341,7 +1341,7 @@ class VideoType
      *
      * A Composite containing details of the PLine for the Video.
      *
-     * @param \DedexBundle\Entity\Ern41\PLineWithDefaultType[] $pLine
+     * @param \DedexBundle\Entity\Ern411\PLineWithDefaultType[] $pLine
      * @return self
      */
     public function setPLine(array $pLine)
@@ -1356,9 +1356,9 @@ class VideoType
      * A Composite containing details of the CLine for the Video.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\CLineWithDefaultType $cLine
+     * @param \DedexBundle\Entity\Ern411\CLineWithDefaultType $cLine
      */
-    public function addToCLine(\DedexBundle\Entity\Ern41\CLineWithDefaultType $cLine)
+    public function addToCLine(\DedexBundle\Entity\Ern411\CLineWithDefaultType $cLine)
     {
         $this->cLine[] = $cLine;
         return $this;
@@ -1395,7 +1395,7 @@ class VideoType
      *
      * A Composite containing details of the CLine for the Video.
      *
-     * @return \DedexBundle\Entity\Ern41\CLineWithDefaultType[]
+     * @return \DedexBundle\Entity\Ern411\CLineWithDefaultType[]
      */
     public function getCLine()
     {
@@ -1407,7 +1407,7 @@ class VideoType
      *
      * A Composite containing details of the CLine for the Video.
      *
-     * @param \DedexBundle\Entity\Ern41\CLineWithDefaultType[] $cLine
+     * @param \DedexBundle\Entity\Ern411\CLineWithDefaultType[] $cLine
      * @return self
      */
     public function setCLine(array $cLine)
@@ -1422,9 +1422,9 @@ class VideoType
      * A Composite containing an Annotation Annotation which acknowledges record companies and/or other Parties giving permission for guests Artists or others featured on the Video.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType $courtesyLine
+     * @param \DedexBundle\Entity\Ern411\CourtesyLineWithDefaultType $courtesyLine
      */
-    public function addToCourtesyLine(\DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType $courtesyLine)
+    public function addToCourtesyLine(\DedexBundle\Entity\Ern411\CourtesyLineWithDefaultType $courtesyLine)
     {
         $this->courtesyLine[] = $courtesyLine;
         return $this;
@@ -1461,7 +1461,7 @@ class VideoType
      *
      * A Composite containing an Annotation Annotation which acknowledges record companies and/or other Parties giving permission for guests Artists or others featured on the Video.
      *
-     * @return \DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType[]
+     * @return \DedexBundle\Entity\Ern411\CourtesyLineWithDefaultType[]
      */
     public function getCourtesyLine()
     {
@@ -1473,7 +1473,7 @@ class VideoType
      *
      * A Composite containing an Annotation Annotation which acknowledges record companies and/or other Parties giving permission for guests Artists or others featured on the Video.
      *
-     * @param \DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType[] $courtesyLine
+     * @param \DedexBundle\Entity\Ern411\CourtesyLineWithDefaultType[] $courtesyLine
      * @return self
      */
     public function setCourtesyLine(array $courtesyLine)
@@ -1513,7 +1513,7 @@ class VideoType
      *
      * A Composite containing details of the Date and Place of the Event in which the Video was created. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @return \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType
+     * @return \DedexBundle\Entity\Ern411\EventDateWithoutFlagsType
      */
     public function getCreationDate()
     {
@@ -1525,10 +1525,10 @@ class VideoType
      *
      * A Composite containing details of the Date and Place of the Event in which the Video was created. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @param \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $creationDate
+     * @param \DedexBundle\Entity\Ern411\EventDateWithoutFlagsType $creationDate
      * @return self
      */
-    public function setCreationDate(\DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $creationDate)
+    public function setCreationDate(\DedexBundle\Entity\Ern411\EventDateWithoutFlagsType $creationDate)
     {
         $this->creationDate = $creationDate;
         return $this;
@@ -1539,7 +1539,7 @@ class VideoType
      *
      * A Composite containing details of the Date and Place of the Event in which the Video was originally mastered (in either analogue or digital form). This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @return \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType
+     * @return \DedexBundle\Entity\Ern411\EventDateWithoutFlagsType
      */
     public function getMasteredDate()
     {
@@ -1551,10 +1551,10 @@ class VideoType
      *
      * A Composite containing details of the Date and Place of the Event in which the Video was originally mastered (in either analogue or digital form). This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @param \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $masteredDate
+     * @param \DedexBundle\Entity\Ern411\EventDateWithoutFlagsType $masteredDate
      * @return self
      */
-    public function setMasteredDate(\DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $masteredDate)
+    public function setMasteredDate(\DedexBundle\Entity\Ern411\EventDateWithoutFlagsType $masteredDate)
     {
         $this->masteredDate = $masteredDate;
         return $this;
@@ -1566,9 +1566,9 @@ class VideoType
      * A Composite containing details of the Date and Place of the Event in which the Video was re-mastered (usually digitally). This is a string with the syntax YYYY[-MM[-DD]].
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $remasteredDate
+     * @param \DedexBundle\Entity\Ern411\EventDateWithoutFlagsType $remasteredDate
      */
-    public function addToRemasteredDate(\DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $remasteredDate)
+    public function addToRemasteredDate(\DedexBundle\Entity\Ern411\EventDateWithoutFlagsType $remasteredDate)
     {
         $this->remasteredDate[] = $remasteredDate;
         return $this;
@@ -1605,7 +1605,7 @@ class VideoType
      *
      * A Composite containing details of the Date and Place of the Event in which the Video was re-mastered (usually digitally). This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @return \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType[]
+     * @return \DedexBundle\Entity\Ern411\EventDateWithoutFlagsType[]
      */
     public function getRemasteredDate()
     {
@@ -1617,7 +1617,7 @@ class VideoType
      *
      * A Composite containing details of the Date and Place of the Event in which the Video was re-mastered (usually digitally). This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @param \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType[] $remasteredDate
+     * @param \DedexBundle\Entity\Ern411\EventDateWithoutFlagsType[] $remasteredDate
      * @return self
      */
     public function setRemasteredDate(array $remasteredDate)
@@ -1632,9 +1632,9 @@ class VideoType
      * A Composite containing details of the Date and Place of the Event in which the Video was first published, whether for physical or electronic/online distribution. This is a string with the syntax YYYY[-MM[-DD]].
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\FulfillmentDateWithTerritoryType $firstPublicationDate
+     * @param \DedexBundle\Entity\Ern411\FulfillmentDateWithTerritoryType $firstPublicationDate
      */
-    public function addToFirstPublicationDate(\DedexBundle\Entity\Ern41\FulfillmentDateWithTerritoryType $firstPublicationDate)
+    public function addToFirstPublicationDate(\DedexBundle\Entity\Ern411\FulfillmentDateWithTerritoryType $firstPublicationDate)
     {
         $this->firstPublicationDate[] = $firstPublicationDate;
         return $this;
@@ -1671,7 +1671,7 @@ class VideoType
      *
      * A Composite containing details of the Date and Place of the Event in which the Video was first published, whether for physical or electronic/online distribution. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @return \DedexBundle\Entity\Ern41\FulfillmentDateWithTerritoryType[]
+     * @return \DedexBundle\Entity\Ern411\FulfillmentDateWithTerritoryType[]
      */
     public function getFirstPublicationDate()
     {
@@ -1683,7 +1683,7 @@ class VideoType
      *
      * A Composite containing details of the Date and Place of the Event in which the Video was first published, whether for physical or electronic/online distribution. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @param \DedexBundle\Entity\Ern41\FulfillmentDateWithTerritoryType[] $firstPublicationDate
+     * @param \DedexBundle\Entity\Ern411\FulfillmentDateWithTerritoryType[] $firstPublicationDate
      * @return self
      */
     public function setFirstPublicationDate(array $firstPublicationDate)
@@ -1698,9 +1698,9 @@ class VideoType
      * A Composite containing details of the classification of the Video according to advice which it carries about the level of explicitness or offensiveness of its content.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType $parentalWarningType
+     * @param \DedexBundle\Entity\Ern411\ParentalWarningTypeWithTerritoryType $parentalWarningType
      */
-    public function addToParentalWarningType(\DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType $parentalWarningType)
+    public function addToParentalWarningType(\DedexBundle\Entity\Ern411\ParentalWarningTypeWithTerritoryType $parentalWarningType)
     {
         $this->parentalWarningType[] = $parentalWarningType;
         return $this;
@@ -1737,7 +1737,7 @@ class VideoType
      *
      * A Composite containing details of the classification of the Video according to advice which it carries about the level of explicitness or offensiveness of its content.
      *
-     * @return \DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType[]
+     * @return \DedexBundle\Entity\Ern411\ParentalWarningTypeWithTerritoryType[]
      */
     public function getParentalWarningType()
     {
@@ -1749,7 +1749,7 @@ class VideoType
      *
      * A Composite containing details of the classification of the Video according to advice which it carries about the level of explicitness or offensiveness of its content.
      *
-     * @param \DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType[] $parentalWarningType
+     * @param \DedexBundle\Entity\Ern411\ParentalWarningTypeWithTerritoryType[] $parentalWarningType
      * @return self
      */
     public function setParentalWarningType(array $parentalWarningType)
@@ -1764,9 +1764,9 @@ class VideoType
      * A Composite containing details of a rating for the Video.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\AvRatingType $avRating
+     * @param \DedexBundle\Entity\Ern411\AvRatingType $avRating
      */
-    public function addToAvRating(\DedexBundle\Entity\Ern41\AvRatingType $avRating)
+    public function addToAvRating(\DedexBundle\Entity\Ern411\AvRatingType $avRating)
     {
         $this->avRating[] = $avRating;
         return $this;
@@ -1803,7 +1803,7 @@ class VideoType
      *
      * A Composite containing details of a rating for the Video.
      *
-     * @return \DedexBundle\Entity\Ern41\AvRatingType[]
+     * @return \DedexBundle\Entity\Ern411\AvRatingType[]
      */
     public function getAvRating()
     {
@@ -1815,7 +1815,7 @@ class VideoType
      *
      * A Composite containing details of a rating for the Video.
      *
-     * @param \DedexBundle\Entity\Ern41\AvRatingType[] $avRating
+     * @param \DedexBundle\Entity\Ern411\AvRatingType[] $avRating
      * @return self
      */
     public function setAvRating(array $avRating)
@@ -1830,9 +1830,9 @@ class VideoType
      * A Composite containing details of a Release (or a PhysicalProduct or a DigitalProduct derived from such a Release) which is related to current Video.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\RelatedReleaseType $relatedRelease
+     * @param \DedexBundle\Entity\Ern411\RelatedReleaseType $relatedRelease
      */
-    public function addToRelatedRelease(\DedexBundle\Entity\Ern41\RelatedReleaseType $relatedRelease)
+    public function addToRelatedRelease(\DedexBundle\Entity\Ern411\RelatedReleaseType $relatedRelease)
     {
         $this->relatedRelease[] = $relatedRelease;
         return $this;
@@ -1869,7 +1869,7 @@ class VideoType
      *
      * A Composite containing details of a Release (or a PhysicalProduct or a DigitalProduct derived from such a Release) which is related to current Video.
      *
-     * @return \DedexBundle\Entity\Ern41\RelatedReleaseType[]
+     * @return \DedexBundle\Entity\Ern411\RelatedReleaseType[]
      */
     public function getRelatedRelease()
     {
@@ -1881,7 +1881,7 @@ class VideoType
      *
      * A Composite containing details of a Release (or a PhysicalProduct or a DigitalProduct derived from such a Release) which is related to current Video.
      *
-     * @param \DedexBundle\Entity\Ern41\RelatedReleaseType[] $relatedRelease
+     * @param \DedexBundle\Entity\Ern411\RelatedReleaseType[] $relatedRelease
      * @return self
      */
     public function setRelatedRelease(array $relatedRelease)
@@ -1896,9 +1896,9 @@ class VideoType
      * A Composite containing details of a ResourceRelatedResourceReference referring to a Resource that is related to the current Video.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\RelatedResourceType $relatedResource
+     * @param \DedexBundle\Entity\Ern411\RelatedResourceType $relatedResource
      */
-    public function addToRelatedResource(\DedexBundle\Entity\Ern41\RelatedResourceType $relatedResource)
+    public function addToRelatedResource(\DedexBundle\Entity\Ern411\RelatedResourceType $relatedResource)
     {
         $this->relatedResource[] = $relatedResource;
         return $this;
@@ -1935,7 +1935,7 @@ class VideoType
      *
      * A Composite containing details of a ResourceRelatedResourceReference referring to a Resource that is related to the current Video.
      *
-     * @return \DedexBundle\Entity\Ern41\RelatedResourceType[]
+     * @return \DedexBundle\Entity\Ern411\RelatedResourceType[]
      */
     public function getRelatedResource()
     {
@@ -1947,7 +1947,7 @@ class VideoType
      *
      * A Composite containing details of a ResourceRelatedResourceReference referring to a Resource that is related to the current Video.
      *
-     * @param \DedexBundle\Entity\Ern41\RelatedResourceType[] $relatedResource
+     * @param \DedexBundle\Entity\Ern411\RelatedResourceType[] $relatedResource
      * @return self
      */
     public function setRelatedResource(array $relatedResource)
@@ -2053,7 +2053,7 @@ class VideoType
      *
      * A Composite containing the textual Description of the reason for the Identifier being used as a proxy.
      *
-     * @return \DedexBundle\Entity\Ern41\ReasonType
+     * @return \DedexBundle\Entity\Ern411\ReasonType
      */
     public function getReasonForCueSheetAbsence()
     {
@@ -2065,10 +2065,10 @@ class VideoType
      *
      * A Composite containing the textual Description of the reason for the Identifier being used as a proxy.
      *
-     * @param \DedexBundle\Entity\Ern41\ReasonType $reasonForCueSheetAbsence
+     * @param \DedexBundle\Entity\Ern411\ReasonType $reasonForCueSheetAbsence
      * @return self
      */
-    public function setReasonForCueSheetAbsence(\DedexBundle\Entity\Ern41\ReasonType $reasonForCueSheetAbsence)
+    public function setReasonForCueSheetAbsence(\DedexBundle\Entity\Ern411\ReasonType $reasonForCueSheetAbsence)
     {
         $this->reasonForCueSheetAbsence = $reasonForCueSheetAbsence;
         return $this;
@@ -2184,9 +2184,9 @@ class VideoType
      * A Role and instrumentation for which a Party is credited.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DisplayCreditsType $displayCredits
+     * @param \DedexBundle\Entity\Ern411\DisplayCreditsType $displayCredits
      */
-    public function addToDisplayCredits(\DedexBundle\Entity\Ern41\DisplayCreditsType $displayCredits)
+    public function addToDisplayCredits(\DedexBundle\Entity\Ern411\DisplayCreditsType $displayCredits)
     {
         $this->displayCredits[] = $displayCredits;
         return $this;
@@ -2223,7 +2223,7 @@ class VideoType
      *
      * A Role and instrumentation for which a Party is credited.
      *
-     * @return \DedexBundle\Entity\Ern41\DisplayCreditsType[]
+     * @return \DedexBundle\Entity\Ern411\DisplayCreditsType[]
      */
     public function getDisplayCredits()
     {
@@ -2235,7 +2235,7 @@ class VideoType
      *
      * A Role and instrumentation for which a Party is credited.
      *
-     * @param \DedexBundle\Entity\Ern41\DisplayCreditsType[] $displayCredits
+     * @param \DedexBundle\Entity\Ern411\DisplayCreditsType[] $displayCredits
      * @return self
      */
     public function setDisplayCredits(array $displayCredits)
@@ -2448,9 +2448,9 @@ class VideoType
      * A Composite containing details of ResourceContainedResourceReferences referring to a Resource that is contained in the current Video.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ResourceContainedResourceReferenceType $resourceContainedResourceReference
+     * @param \DedexBundle\Entity\Ern411\ResourceContainedResourceReferenceType $resourceContainedResourceReference
      */
-    public function addToResourceContainedResourceReferenceList(\DedexBundle\Entity\Ern41\ResourceContainedResourceReferenceType $resourceContainedResourceReference)
+    public function addToResourceContainedResourceReferenceList(\DedexBundle\Entity\Ern411\ResourceContainedResourceReferenceType $resourceContainedResourceReference)
     {
         $this->resourceContainedResourceReferenceList[] = $resourceContainedResourceReference;
         return $this;
@@ -2487,7 +2487,7 @@ class VideoType
      *
      * A Composite containing details of ResourceContainedResourceReferences referring to a Resource that is contained in the current Video.
      *
-     * @return \DedexBundle\Entity\Ern41\ResourceContainedResourceReferenceType[]
+     * @return \DedexBundle\Entity\Ern411\ResourceContainedResourceReferenceType[]
      */
     public function getResourceContainedResourceReferenceList()
     {
@@ -2499,7 +2499,7 @@ class VideoType
      *
      * A Composite containing details of ResourceContainedResourceReferences referring to a Resource that is contained in the current Video.
      *
-     * @param \DedexBundle\Entity\Ern41\ResourceContainedResourceReferenceType[] $resourceContainedResourceReferenceList
+     * @param \DedexBundle\Entity\Ern411\ResourceContainedResourceReferenceType[] $resourceContainedResourceReferenceList
      * @return self
      */
     public function setResourceContainedResourceReferenceList(array $resourceContainedResourceReferenceList)
@@ -2514,9 +2514,9 @@ class VideoType
      * A Composite containing technical details of the Video.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\TechnicalVideoDetailsType $technicalDetails
+     * @param \DedexBundle\Entity\Ern411\TechnicalVideoDetailsType $technicalDetails
      */
-    public function addToTechnicalDetails(\DedexBundle\Entity\Ern41\TechnicalVideoDetailsType $technicalDetails)
+    public function addToTechnicalDetails(\DedexBundle\Entity\Ern411\TechnicalVideoDetailsType $technicalDetails)
     {
         $this->technicalDetails[] = $technicalDetails;
         return $this;
@@ -2553,7 +2553,7 @@ class VideoType
      *
      * A Composite containing technical details of the Video.
      *
-     * @return \DedexBundle\Entity\Ern41\TechnicalVideoDetailsType[]
+     * @return \DedexBundle\Entity\Ern411\TechnicalVideoDetailsType[]
      */
     public function getTechnicalDetails()
     {
@@ -2565,7 +2565,7 @@ class VideoType
      *
      * A Composite containing technical details of the Video.
      *
-     * @param \DedexBundle\Entity\Ern41\TechnicalVideoDetailsType[] $technicalDetails
+     * @param \DedexBundle\Entity\Ern411\TechnicalVideoDetailsType[] $technicalDetails
      * @return self
      */
     public function setTechnicalDetails(array $technicalDetails)

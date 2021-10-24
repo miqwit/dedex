@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\MarketingCommentType:
+DedexBundle\Entity\Ern411\MarketingCommentType:
     properties:
         __value:
             expose: true

@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\PromotionalCodeType:
+DedexBundle\Entity\Ern411\PromotionalCodeType:
     properties:
         __value:
             expose: true

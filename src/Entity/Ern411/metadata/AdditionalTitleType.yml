@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\AdditionalTitleType:
+DedexBundle\Entity\Ern411\AdditionalTitleType:
     properties:
         languageAndScriptCode:
             expose: true
@@ -72,4 +72,4 @@ DedexBundle\Entity\Ern41\AdditionalTitleType:
             xml_list:
                 inline: true
                 entry_name: SubTitle
-            type: array<DedexBundle\Entity\Ern41\DisplaySubTitleType>
+            type: array<DedexBundle\Entity\Ern411\DisplaySubTitleType>

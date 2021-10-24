@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ValidityPeriodType:
+DedexBundle\Entity\Ern411\ValidityPeriodType:
     properties:
         startDate:
             expose: true
@@ -7,7 +7,7 @@ DedexBundle\Entity\Ern41\ValidityPeriodType:
             accessor:
                 getter: getStartDate
                 setter: setStartDate
-            type: DedexBundle\Entity\Ern41\EventDateType
+            type: DedexBundle\Entity\Ern411\EventDateType
         endDate:
             expose: true
             access_type: public_method
@@ -15,4 +15,4 @@ DedexBundle\Entity\Ern41\ValidityPeriodType:
             accessor:
                 getter: getEndDate
                 setter: setEndDate
-            type: DedexBundle\Entity\Ern41\EventDateType
+            type: DedexBundle\Entity\Ern411\EventDateType

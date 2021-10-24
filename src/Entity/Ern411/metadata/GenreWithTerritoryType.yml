@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\GenreWithTerritoryType:
+DedexBundle\Entity\Ern411\GenreWithTerritoryType:
     properties:
         languageAndScriptCode:
             expose: true

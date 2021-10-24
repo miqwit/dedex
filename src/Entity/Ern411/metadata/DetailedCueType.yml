@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\DetailedCueType:
+DedexBundle\Entity\Ern411\DetailedCueType:
     properties:
         cueUseType:
             expose: true
@@ -7,7 +7,7 @@ DedexBundle\Entity\Ern41\DetailedCueType:
             accessor:
                 getter: getCueUseType
                 setter: setCueUseType
-            type: DedexBundle\Entity\Ern41\CueUseTypeType
+            type: DedexBundle\Entity\Ern411\CueUseTypeType
         cueThemeType:
             expose: true
             access_type: public_method
@@ -15,7 +15,7 @@ DedexBundle\Entity\Ern41\DetailedCueType:
             accessor:
                 getter: getCueThemeType
                 setter: setCueThemeType
-            type: DedexBundle\Entity\Ern41\CueThemeTypeType
+            type: DedexBundle\Entity\Ern411\CueThemeTypeType
         cueVocalType:
             expose: true
             access_type: public_method
@@ -23,7 +23,7 @@ DedexBundle\Entity\Ern41\DetailedCueType:
             accessor:
                 getter: getCueVocalType
                 setter: setCueVocalType
-            type: DedexBundle\Entity\Ern41\CueVocalTypeType
+            type: DedexBundle\Entity\Ern411\CueVocalTypeType
         cueVisualPerceptionType:
             expose: true
             access_type: public_method
@@ -31,7 +31,7 @@ DedexBundle\Entity\Ern41\DetailedCueType:
             accessor:
                 getter: getCueVisualPerceptionType
                 setter: setCueVisualPerceptionType
-            type: DedexBundle\Entity\Ern41\CueVisualPerceptionTypeType
+            type: DedexBundle\Entity\Ern411\CueVisualPerceptionTypeType
         cueOrigin:
             expose: true
             access_type: public_method
@@ -39,7 +39,7 @@ DedexBundle\Entity\Ern41\DetailedCueType:
             accessor:
                 getter: getCueOrigin
                 setter: setCueOrigin
-            type: DedexBundle\Entity\Ern41\CueOriginType
+            type: DedexBundle\Entity\Ern411\CueOriginType
         resourceId:
             expose: true
             access_type: public_method
@@ -47,7 +47,7 @@ DedexBundle\Entity\Ern41\DetailedCueType:
             accessor:
                 getter: getResourceId
                 setter: setResourceId
-            type: DedexBundle\Entity\Ern41\ResourceIdType
+            type: DedexBundle\Entity\Ern411\ResourceIdType
         workId:
             expose: true
             access_type: public_method
@@ -55,7 +55,7 @@ DedexBundle\Entity\Ern41\DetailedCueType:
             accessor:
                 getter: getWorkId
                 setter: setWorkId
-            type: DedexBundle\Entity\Ern41\MusicalWorkIdType
+            type: DedexBundle\Entity\Ern411\MusicalWorkIdType
         displayTitleText:
             expose: true
             access_type: public_method
@@ -66,7 +66,7 @@ DedexBundle\Entity\Ern41\DetailedCueType:
             xml_list:
                 inline: true
                 entry_name: DisplayTitleText
-            type: array<DedexBundle\Entity\Ern41\DisplayTitleTextType>
+            type: array<DedexBundle\Entity\Ern411\DisplayTitleTextType>
         displayTitle:
             expose: true
             access_type: public_method
@@ -77,7 +77,7 @@ DedexBundle\Entity\Ern41\DetailedCueType:
             xml_list:
                 inline: true
                 entry_name: DisplayTitle
-            type: array<DedexBundle\Entity\Ern41\DisplayTitleType>
+            type: array<DedexBundle\Entity\Ern411\DisplayTitleType>
         additionalTitle:
             expose: true
             access_type: public_method
@@ -88,7 +88,7 @@ DedexBundle\Entity\Ern41\DetailedCueType:
             xml_list:
                 inline: true
                 entry_name: AdditionalTitle
-            type: array<DedexBundle\Entity\Ern41\AdditionalTitleType>
+            type: array<DedexBundle\Entity\Ern411\AdditionalTitleType>
         contributor:
             expose: true
             access_type: public_method
@@ -99,7 +99,7 @@ DedexBundle\Entity\Ern41\DetailedCueType:
             xml_list:
                 inline: true
                 entry_name: Contributor
-            type: array<DedexBundle\Entity\Ern41\ContributorType>
+            type: array<DedexBundle\Entity\Ern411\ContributorType>
         isDance:
             expose: true
             access_type: public_method
@@ -126,7 +126,7 @@ DedexBundle\Entity\Ern41\DetailedCueType:
             xml_list:
                 inline: true
                 entry_name: PLine
-            type: array<DedexBundle\Entity\Ern41\PLineType>
+            type: array<DedexBundle\Entity\Ern411\PLineType>
         cLine:
             expose: true
             access_type: public_method
@@ -137,7 +137,7 @@ DedexBundle\Entity\Ern41\DetailedCueType:
             xml_list:
                 inline: true
                 entry_name: CLine
-            type: array<DedexBundle\Entity\Ern41\CLineType>
+            type: array<DedexBundle\Entity\Ern411\CLineType>
         startTime:
             expose: true
             access_type: public_method

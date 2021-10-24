@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\PriceInformationWithTypeType:
+DedexBundle\Entity\Ern411\PriceInformationWithTypeType:
     properties:
         priceType:
             expose: true
@@ -16,7 +16,7 @@ DedexBundle\Entity\Ern41\PriceInformationWithTypeType:
             accessor:
                 getter: getPriceCode
                 setter: setPriceCode
-            type: DedexBundle\Entity\Ern41\PriceTypeType
+            type: DedexBundle\Entity\Ern411\PriceTypeType
         wholesalePricePerUnit:
             expose: true
             access_type: public_method
@@ -24,7 +24,7 @@ DedexBundle\Entity\Ern41\PriceInformationWithTypeType:
             accessor:
                 getter: getWholesalePricePerUnit
                 setter: setWholesalePricePerUnit
-            type: DedexBundle\Entity\Ern41\PriceType
+            type: DedexBundle\Entity\Ern411\PriceType
         bulkOrderWholesalePricePerUnit:
             expose: true
             access_type: public_method
@@ -32,7 +32,7 @@ DedexBundle\Entity\Ern41\PriceInformationWithTypeType:
             accessor:
                 getter: getBulkOrderWholesalePricePerUnit
                 setter: setBulkOrderWholesalePricePerUnit
-            type: DedexBundle\Entity\Ern41\PriceType
+            type: DedexBundle\Entity\Ern411\PriceType
         suggestedRetailPrice:
             expose: true
             access_type: public_method
@@ -40,4 +40,4 @@ DedexBundle\Entity\Ern41\PriceInformationWithTypeType:
             accessor:
                 getter: getSuggestedRetailPrice
                 setter: setSuggestedRetailPrice
-            type: DedexBundle\Entity\Ern41\PriceType
+            type: DedexBundle\Entity\Ern411\PriceType

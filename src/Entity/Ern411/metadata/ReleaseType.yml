@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ReleaseType:
+DedexBundle\Entity\Ern411\ReleaseType:
     properties:
         languageAndScriptCode:
             expose: true
@@ -27,7 +27,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: ReleaseType
-            type: array<DedexBundle\Entity\Ern41\ReleaseTypeForReleaseNotificationType>
+            type: array<DedexBundle\Entity\Ern411\ReleaseTypeForReleaseNotificationType>
         releaseId:
             expose: true
             access_type: public_method
@@ -35,7 +35,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             accessor:
                 getter: getReleaseId
                 setter: setReleaseId
-            type: DedexBundle\Entity\Ern41\ReleaseIdType
+            type: DedexBundle\Entity\Ern411\ReleaseIdType
         displayTitleText:
             expose: true
             access_type: public_method
@@ -46,7 +46,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: DisplayTitleText
-            type: array<DedexBundle\Entity\Ern41\DisplayTitleTextType>
+            type: array<DedexBundle\Entity\Ern411\DisplayTitleTextType>
         displayTitle:
             expose: true
             access_type: public_method
@@ -57,7 +57,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: DisplayTitle
-            type: array<DedexBundle\Entity\Ern41\DisplayTitleType>
+            type: array<DedexBundle\Entity\Ern411\DisplayTitleType>
         additionalTitle:
             expose: true
             access_type: public_method
@@ -68,7 +68,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: AdditionalTitle
-            type: array<DedexBundle\Entity\Ern41\AdditionalTitleType>
+            type: array<DedexBundle\Entity\Ern411\AdditionalTitleType>
         displayArtistName:
             expose: true
             access_type: public_method
@@ -79,7 +79,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: DisplayArtistName
-            type: array<DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType>
+            type: array<DedexBundle\Entity\Ern411\DisplayArtistNameWithDefaultType>
         displayArtist:
             expose: true
             access_type: public_method
@@ -90,7 +90,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: DisplayArtist
-            type: array<DedexBundle\Entity\Ern41\DisplayArtistType>
+            type: array<DedexBundle\Entity\Ern411\DisplayArtistType>
         releaseLabelReference:
             expose: true
             access_type: public_method
@@ -101,7 +101,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: ReleaseLabelReference
-            type: array<DedexBundle\Entity\Ern41\ReleaseLabelReferenceType>
+            type: array<DedexBundle\Entity\Ern411\ReleaseLabelReferenceType>
         administratingRecordCompany:
             expose: true
             access_type: public_method
@@ -112,7 +112,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: AdministratingRecordCompany
-            type: array<DedexBundle\Entity\Ern41\AdministratingRecordCompanyWithReferenceType>
+            type: array<DedexBundle\Entity\Ern411\AdministratingRecordCompanyWithReferenceType>
         pLine:
             expose: true
             access_type: public_method
@@ -123,7 +123,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: PLine
-            type: array<DedexBundle\Entity\Ern41\PLineWithDefaultType>
+            type: array<DedexBundle\Entity\Ern411\PLineWithDefaultType>
         cLine:
             expose: true
             access_type: public_method
@@ -134,7 +134,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: CLine
-            type: array<DedexBundle\Entity\Ern41\CLineWithDefaultType>
+            type: array<DedexBundle\Entity\Ern411\CLineWithDefaultType>
         courtesyLine:
             expose: true
             access_type: public_method
@@ -145,7 +145,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: CourtesyLine
-            type: array<DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType>
+            type: array<DedexBundle\Entity\Ern411\CourtesyLineWithDefaultType>
         duration:
             expose: true
             access_type: public_method
@@ -164,7 +164,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: Genre
-            type: array<DedexBundle\Entity\Ern41\GenreWithTerritoryType>
+            type: array<DedexBundle\Entity\Ern411\GenreWithTerritoryType>
         releaseDate:
             expose: true
             access_type: public_method
@@ -175,7 +175,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: ReleaseDate
-            type: array<DedexBundle\Entity\Ern41\EventDateWithDefaultType>
+            type: array<DedexBundle\Entity\Ern411\EventDateWithDefaultType>
         originalReleaseDate:
             expose: true
             access_type: public_method
@@ -186,7 +186,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: OriginalReleaseDate
-            type: array<DedexBundle\Entity\Ern41\EventDateWithDefaultType>
+            type: array<DedexBundle\Entity\Ern411\EventDateWithDefaultType>
         parentalWarningType:
             expose: true
             access_type: public_method
@@ -197,7 +197,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: ParentalWarningType
-            type: array<DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType>
+            type: array<DedexBundle\Entity\Ern411\ParentalWarningTypeWithTerritoryType>
         avRating:
             expose: true
             access_type: public_method
@@ -208,7 +208,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: AvRating
-            type: array<DedexBundle\Entity\Ern41\AvRatingType>
+            type: array<DedexBundle\Entity\Ern411\AvRatingType>
         relatedRelease:
             expose: true
             access_type: public_method
@@ -219,7 +219,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: RelatedRelease
-            type: array<DedexBundle\Entity\Ern41\RelatedReleaseType>
+            type: array<DedexBundle\Entity\Ern411\RelatedReleaseType>
         isCompilation:
             expose: true
             access_type: public_method
@@ -243,7 +243,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             accessor:
                 getter: getResourceGroup
                 setter: setResourceGroup
-            type: DedexBundle\Entity\Ern41\ResourceGroupType
+            type: DedexBundle\Entity\Ern411\ResourceGroupType
         externalResourceLink:
             expose: true
             access_type: public_method
@@ -254,7 +254,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: ExternalResourceLink
-            type: array<DedexBundle\Entity\Ern41\ExternalResourceLinkType>
+            type: array<DedexBundle\Entity\Ern411\ExternalResourceLinkType>
         keywords:
             expose: true
             access_type: public_method
@@ -265,7 +265,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: Keywords
-            type: array<DedexBundle\Entity\Ern41\KeywordsWithTerritoryType>
+            type: array<DedexBundle\Entity\Ern411\KeywordsWithTerritoryType>
         synopsis:
             expose: true
             access_type: public_method
@@ -276,7 +276,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: Synopsis
-            type: array<DedexBundle\Entity\Ern41\SynopsisWithTerritoryType>
+            type: array<DedexBundle\Entity\Ern411\SynopsisWithTerritoryType>
         raga:
             expose: true
             access_type: public_method
@@ -287,7 +287,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: Raga
-            type: array<DedexBundle\Entity\Ern41\RagaType>
+            type: array<DedexBundle\Entity\Ern411\RagaType>
         tala:
             expose: true
             access_type: public_method
@@ -298,7 +298,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: Tala
-            type: array<DedexBundle\Entity\Ern41\TalaType>
+            type: array<DedexBundle\Entity\Ern411\TalaType>
         deity:
             expose: true
             access_type: public_method
@@ -309,7 +309,7 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: Deity
-            type: array<DedexBundle\Entity\Ern41\DeityType>
+            type: array<DedexBundle\Entity\Ern411\DeityType>
         hiResMusicDescription:
             expose: true
             access_type: public_method
@@ -344,4 +344,4 @@ DedexBundle\Entity\Ern41\ReleaseType:
             xml_list:
                 inline: true
                 entry_name: MarketingComment
-            type: array<DedexBundle\Entity\Ern41\MarketingCommentType>
+            type: array<DedexBundle\Entity\Ern411\MarketingCommentType>

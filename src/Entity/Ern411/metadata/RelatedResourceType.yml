@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\RelatedResourceType:
+DedexBundle\Entity\Ern411\RelatedResourceType:
     properties:
         resourceRelationshipType:
             expose: true
@@ -23,7 +23,7 @@ DedexBundle\Entity\Ern41\RelatedResourceType:
             accessor:
                 getter: getReleaseId
                 setter: setReleaseId
-            type: DedexBundle\Entity\Ern41\ReleaseIdType
+            type: DedexBundle\Entity\Ern411\ReleaseIdType
         timing:
             expose: true
             access_type: public_method
@@ -34,4 +34,4 @@ DedexBundle\Entity\Ern41\RelatedResourceType:
             xml_list:
                 inline: true
                 entry_name: Timing
-            type: array<DedexBundle\Entity\Ern41\TimingType>
+            type: array<DedexBundle\Entity\Ern411\TimingType>

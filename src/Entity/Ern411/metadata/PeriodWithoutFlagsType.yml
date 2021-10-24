@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\PeriodWithoutFlagsType:
+DedexBundle\Entity\Ern411\PeriodWithoutFlagsType:
     properties:
         startDate:
             expose: true
@@ -7,7 +7,7 @@ DedexBundle\Entity\Ern41\PeriodWithoutFlagsType:
             accessor:
                 getter: getStartDate
                 setter: setStartDate
-            type: DedexBundle\Entity\Ern41\EventDateWithoutFlagsType
+            type: DedexBundle\Entity\Ern411\EventDateWithoutFlagsType
         endDate:
             expose: true
             access_type: public_method
@@ -15,7 +15,7 @@ DedexBundle\Entity\Ern41\PeriodWithoutFlagsType:
             accessor:
                 getter: getEndDate
                 setter: setEndDate
-            type: DedexBundle\Entity\Ern41\EventDateWithoutFlagsType
+            type: DedexBundle\Entity\Ern411\EventDateWithoutFlagsType
         startDateTime:
             expose: true
             access_type: public_method
@@ -23,7 +23,7 @@ DedexBundle\Entity\Ern41\PeriodWithoutFlagsType:
             accessor:
                 getter: getStartDateTime
                 setter: setStartDateTime
-            type: DedexBundle\Entity\Ern41\EventDateTimeWithoutFlagsType
+            type: DedexBundle\Entity\Ern411\EventDateTimeWithoutFlagsType
         endDateTime:
             expose: true
             access_type: public_method
@@ -31,4 +31,4 @@ DedexBundle\Entity\Ern41\PeriodWithoutFlagsType:
             accessor:
                 getter: getEndDateTime
                 setter: setEndDateTime
-            type: DedexBundle\Entity\Ern41\EventDateTimeWithoutFlagsType
+            type: DedexBundle\Entity\Ern411\EventDateTimeWithoutFlagsType

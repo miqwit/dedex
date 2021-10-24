@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\AdministratingRecordCompanyRoleType:
+DedexBundle\Entity\Ern411\AdministratingRecordCompanyRoleType:
     properties:
         __value:
             expose: true

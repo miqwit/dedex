@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ReasonType:
+DedexBundle\Entity\Ern411\ReasonType:
     properties:
         __value:
             expose: true

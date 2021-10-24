@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\VideoCodecTypeType:
+DedexBundle\Entity\Ern411\VideoCodecTypeType:
     properties:
         __value:
             expose: true

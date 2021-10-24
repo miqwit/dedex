@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\CLineType:
+DedexBundle\Entity\Ern411\CLineType:
     properties:
         languageAndScriptCode:
             expose: true

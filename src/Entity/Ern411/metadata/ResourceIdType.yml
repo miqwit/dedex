@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ResourceIdType:
+DedexBundle\Entity\Ern411\ResourceIdType:
     properties:
         isReplaced:
             expose: true
@@ -72,7 +72,7 @@ DedexBundle\Entity\Ern41\ResourceIdType:
             accessor:
                 getter: getCatalogNumber
                 setter: setCatalogNumber
-            type: DedexBundle\Entity\Ern41\CatalogNumberType
+            type: DedexBundle\Entity\Ern411\CatalogNumberType
         proprietaryId:
             expose: true
             access_type: public_method
@@ -83,4 +83,4 @@ DedexBundle\Entity\Ern41\ResourceIdType:
             xml_list:
                 inline: true
                 entry_name: ProprietaryId
-            type: array<DedexBundle\Entity\Ern41\ProprietaryIdType>
+            type: array<DedexBundle\Entity\Ern411\ProprietaryIdType>

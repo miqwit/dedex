@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\PartyListType:
+DedexBundle\Entity\Ern411\PartyListType:
     properties:
         party:
             expose: true
@@ -10,4 +10,4 @@ DedexBundle\Entity\Ern41\PartyListType:
             xml_list:
                 inline: true
                 entry_name: Party
-            type: array<DedexBundle\Entity\Ern41\PartyType>
+            type: array<DedexBundle\Entity\Ern411\PartyType>

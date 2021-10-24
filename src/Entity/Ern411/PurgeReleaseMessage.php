@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing PurgeReleaseMessage
@@ -20,14 +20,14 @@ class PurgeReleaseMessage
     /**
      * The MessageHeader for the PurgeReleaseMessage.
      *
-     * @var \DedexBundle\Entity\Ern41\MessageHeaderType $messageHeader
+     * @var \DedexBundle\Entity\Ern411\MessageHeaderType $messageHeader
      */
     private $messageHeader = null;
 
     /**
      * A Composite containing details of a DDEX Release to be purged.
      *
-     * @var \DedexBundle\Entity\Ern41\PurgedReleaseType $purgedRelease
+     * @var \DedexBundle\Entity\Ern411\PurgedReleaseType $purgedRelease
      */
     private $purgedRelease = null;
 
@@ -62,7 +62,7 @@ class PurgeReleaseMessage
      *
      * The MessageHeader for the PurgeReleaseMessage.
      *
-     * @return \DedexBundle\Entity\Ern41\MessageHeaderType
+     * @return \DedexBundle\Entity\Ern411\MessageHeaderType
      */
     public function getMessageHeader()
     {
@@ -74,10 +74,10 @@ class PurgeReleaseMessage
      *
      * The MessageHeader for the PurgeReleaseMessage.
      *
-     * @param \DedexBundle\Entity\Ern41\MessageHeaderType $messageHeader
+     * @param \DedexBundle\Entity\Ern411\MessageHeaderType $messageHeader
      * @return self
      */
-    public function setMessageHeader(\DedexBundle\Entity\Ern41\MessageHeaderType $messageHeader)
+    public function setMessageHeader(\DedexBundle\Entity\Ern411\MessageHeaderType $messageHeader)
     {
         $this->messageHeader = $messageHeader;
         return $this;
@@ -88,7 +88,7 @@ class PurgeReleaseMessage
      *
      * A Composite containing details of a DDEX Release to be purged.
      *
-     * @return \DedexBundle\Entity\Ern41\PurgedReleaseType
+     * @return \DedexBundle\Entity\Ern411\PurgedReleaseType
      */
     public function getPurgedRelease()
     {
@@ -100,10 +100,10 @@ class PurgeReleaseMessage
      *
      * A Composite containing details of a DDEX Release to be purged.
      *
-     * @param \DedexBundle\Entity\Ern41\PurgedReleaseType $purgedRelease
+     * @param \DedexBundle\Entity\Ern411\PurgedReleaseType $purgedRelease
      * @return self
      */
-    public function setPurgedRelease(\DedexBundle\Entity\Ern41\PurgedReleaseType $purgedRelease)
+    public function setPurgedRelease(\DedexBundle\Entity\Ern411\PurgedReleaseType $purgedRelease)
     {
         $this->purgedRelease = $purgedRelease;
         return $this;

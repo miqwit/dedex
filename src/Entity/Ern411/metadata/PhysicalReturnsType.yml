@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\PhysicalReturnsType:
+DedexBundle\Entity\Ern411\PhysicalReturnsType:
     properties:
         physicalReturnsAllowed:
             expose: true

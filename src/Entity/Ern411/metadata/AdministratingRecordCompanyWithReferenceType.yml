@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\AdministratingRecordCompanyWithReferenceType:
+DedexBundle\Entity\Ern411\AdministratingRecordCompanyWithReferenceType:
     properties:
         recordCompanyPartyReference:
             expose: true
@@ -15,4 +15,4 @@ DedexBundle\Entity\Ern41\AdministratingRecordCompanyWithReferenceType:
             accessor:
                 getter: getRole
                 setter: setRole
-            type: DedexBundle\Entity\Ern41\AdministratingRecordCompanyRoleType
+            type: DedexBundle\Entity\Ern411\AdministratingRecordCompanyRoleType

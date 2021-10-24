@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\DealTermsTechnicalInstantiationType:
+DedexBundle\Entity\Ern411\DealTermsTechnicalInstantiationType:
     properties:
         videoDefinitionType:
             expose: true
@@ -23,4 +23,4 @@ DedexBundle\Entity\Ern41\DealTermsTechnicalInstantiationType:
             accessor:
                 getter: getBitRate
                 setter: setBitRate
-            type: DedexBundle\Entity\Ern41\BitRateType
+            type: DedexBundle\Entity\Ern411\BitRateType

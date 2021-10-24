@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\TechnicalSoundRecordingDetailsType:
+DedexBundle\Entity\Ern411\TechnicalSoundRecordingDetailsType:
     properties:
         languageAndScriptCode:
             expose: true
@@ -42,7 +42,7 @@ DedexBundle\Entity\Ern41\TechnicalSoundRecordingDetailsType:
             accessor:
                 getter: getAudioCodecType
                 setter: setAudioCodecType
-            type: DedexBundle\Entity\Ern41\AudioCodecTypeType
+            type: DedexBundle\Entity\Ern411\AudioCodecTypeType
         bitRate:
             expose: true
             access_type: public_method
@@ -50,7 +50,7 @@ DedexBundle\Entity\Ern41\TechnicalSoundRecordingDetailsType:
             accessor:
                 getter: getBitRate
                 setter: setBitRate
-            type: DedexBundle\Entity\Ern41\BitRateType
+            type: DedexBundle\Entity\Ern411\BitRateType
         originalBitRate:
             expose: true
             access_type: public_method
@@ -58,7 +58,7 @@ DedexBundle\Entity\Ern41\TechnicalSoundRecordingDetailsType:
             accessor:
                 getter: getOriginalBitRate
                 setter: setOriginalBitRate
-            type: DedexBundle\Entity\Ern41\BitRateType
+            type: DedexBundle\Entity\Ern411\BitRateType
         numberOfChannels:
             expose: true
             access_type: public_method
@@ -74,7 +74,7 @@ DedexBundle\Entity\Ern41\TechnicalSoundRecordingDetailsType:
             accessor:
                 getter: getSamplingRate
                 setter: setSamplingRate
-            type: DedexBundle\Entity\Ern41\SamplingRateType
+            type: DedexBundle\Entity\Ern411\SamplingRateType
         originalSamplingRate:
             expose: true
             access_type: public_method
@@ -82,7 +82,7 @@ DedexBundle\Entity\Ern41\TechnicalSoundRecordingDetailsType:
             accessor:
                 getter: getOriginalSamplingRate
                 setter: setOriginalSamplingRate
-            type: DedexBundle\Entity\Ern41\SamplingRateType
+            type: DedexBundle\Entity\Ern411\SamplingRateType
         bitsPerSample:
             expose: true
             access_type: public_method
@@ -122,7 +122,7 @@ DedexBundle\Entity\Ern41\TechnicalSoundRecordingDetailsType:
             accessor:
                 getter: getPreviewDetails
                 setter: setPreviewDetails
-            type: DedexBundle\Entity\Ern41\SoundRecordingPreviewDetailsType
+            type: DedexBundle\Entity\Ern411\SoundRecordingPreviewDetailsType
         file:
             expose: true
             access_type: public_method
@@ -130,7 +130,7 @@ DedexBundle\Entity\Ern41\TechnicalSoundRecordingDetailsType:
             accessor:
                 getter: getFile
                 setter: setFile
-            type: DedexBundle\Entity\Ern41\FileType
+            type: DedexBundle\Entity\Ern411\FileType
         fingerprint:
             expose: true
             access_type: public_method
@@ -141,4 +141,4 @@ DedexBundle\Entity\Ern41\TechnicalSoundRecordingDetailsType:
             xml_list:
                 inline: true
                 entry_name: Fingerprint
-            type: array<DedexBundle\Entity\Ern41\FingerprintType>
+            type: array<DedexBundle\Entity\Ern411\FingerprintType>

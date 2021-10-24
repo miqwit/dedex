@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\CoreAreaType:
+DedexBundle\Entity\Ern411\CoreAreaType:
     properties:
         topLeftCorner:
             expose: true

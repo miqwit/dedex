@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing TechnicalVideoDetailsType
@@ -42,63 +42,63 @@ class TechnicalVideoDetailsType
     /**
      * A Composite containing the overall BitRate and a UnitOfMeasure (the default is kbps).
      *
-     * @var \DedexBundle\Entity\Ern41\BitRateType $overallBitRate
+     * @var \DedexBundle\Entity\Ern411\BitRateType $overallBitRate
      */
     private $overallBitRate = null;
 
     /**
      * A Composite containing details of a ContainerFormat.
      *
-     * @var \DedexBundle\Entity\Ern41\ContainerFormatType $containerFormat
+     * @var \DedexBundle\Entity\Ern411\ContainerFormatType $containerFormat
      */
     private $containerFormat = null;
 
     /**
      * A Composite containing details of a Type of VideoCodec.
      *
-     * @var \DedexBundle\Entity\Ern41\VideoCodecTypeType $videoCodecType
+     * @var \DedexBundle\Entity\Ern411\VideoCodecTypeType $videoCodecType
      */
     private $videoCodecType = null;
 
     /**
      * A Composite containing the BitRate for the video data and a UnitOfMeasure (the default is kbps).
      *
-     * @var \DedexBundle\Entity\Ern41\BitRateType $videoBitRate
+     * @var \DedexBundle\Entity\Ern411\BitRateType $videoBitRate
      */
     private $videoBitRate = null;
 
     /**
      * A Composite containing the Rate for a number of frames shown in the Video in a specific Period of Time and a UnitOfMeasure (the default is Hz, interlaced).
      *
-     * @var \DedexBundle\Entity\Ern41\FrameRateType $frameRate
+     * @var \DedexBundle\Entity\Ern411\FrameRateType $frameRate
      */
     private $frameRate = null;
 
     /**
      * A Composite containing the vertical Extent of an Image of the Video and a UnitOfMeasure (the default is Pixels).
      *
-     * @var \DedexBundle\Entity\Ern41\ExtentType $imageHeight
+     * @var \DedexBundle\Entity\Ern411\ExtentType $imageHeight
      */
     private $imageHeight = null;
 
     /**
      * A Composite containing the horizontal Extent of an Image of the Video and a UnitOfMeasure (the default is Pixels).
      *
-     * @var \DedexBundle\Entity\Ern41\ExtentType $imageWidth
+     * @var \DedexBundle\Entity\Ern411\ExtentType $imageWidth
      */
     private $imageWidth = null;
 
     /**
      * A Composite containing the ratio formed by dividing the ImageHeight by the ImageWidth.
      *
-     * @var \DedexBundle\Entity\Ern41\AspectRatioType $aspectRatio
+     * @var \DedexBundle\Entity\Ern411\AspectRatioType $aspectRatio
      */
     private $aspectRatio = null;
 
     /**
      * A Composite containing details of the core part of the Video.
      *
-     * @var \DedexBundle\Entity\Ern41\CoreAreaType $coreArea
+     * @var \DedexBundle\Entity\Ern411\CoreAreaType $coreArea
      */
     private $coreArea = null;
 
@@ -119,14 +119,14 @@ class TechnicalVideoDetailsType
     /**
      * A Composite containing details of a Type of AudioCodec.
      *
-     * @var \DedexBundle\Entity\Ern41\AudioCodecTypeType $audioCodecType
+     * @var \DedexBundle\Entity\Ern411\AudioCodecTypeType $audioCodecType
      */
     private $audioCodecType = null;
 
     /**
      * A Composite containing the BitRate for the audio data and a UnitOfMeasure (the default is kbps).
      *
-     * @var \DedexBundle\Entity\Ern41\BitRateType $audioBitRate
+     * @var \DedexBundle\Entity\Ern411\BitRateType $audioBitRate
      */
     private $audioBitRate = null;
 
@@ -140,7 +140,7 @@ class TechnicalVideoDetailsType
     /**
      * A Composite containing the SamplingRate for the audio data and a UnitOfMeasure (the default is Hz).
      *
-     * @var \DedexBundle\Entity\Ern41\SamplingRateType $audioSamplingRate
+     * @var \DedexBundle\Entity\Ern411\SamplingRateType $audioSamplingRate
      */
     private $audioSamplingRate = null;
 
@@ -175,21 +175,21 @@ class TechnicalVideoDetailsType
     /**
      * A Composite containing details of a preview.
      *
-     * @var \DedexBundle\Entity\Ern41\SoundRecordingPreviewDetailsType $previewDetails
+     * @var \DedexBundle\Entity\Ern411\SoundRecordingPreviewDetailsType $previewDetails
      */
     private $previewDetails = null;
 
     /**
      * A Composite containing details of a File containing the Video that a DSP can obtain.
      *
-     * @var \DedexBundle\Entity\Ern41\FileType $file
+     * @var \DedexBundle\Entity\Ern411\FileType $file
      */
     private $file = null;
 
     /**
      * A Composite containing details of a Fingerprint and its governing algorithm.
      *
-     * @var \DedexBundle\Entity\Ern41\FingerprintType[] $fingerprint
+     * @var \DedexBundle\Entity\Ern411\FingerprintType[] $fingerprint
      */
     private $fingerprint = [
         
@@ -304,7 +304,7 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing the overall BitRate and a UnitOfMeasure (the default is kbps).
      *
-     * @return \DedexBundle\Entity\Ern41\BitRateType
+     * @return \DedexBundle\Entity\Ern411\BitRateType
      */
     public function getOverallBitRate()
     {
@@ -316,10 +316,10 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing the overall BitRate and a UnitOfMeasure (the default is kbps).
      *
-     * @param \DedexBundle\Entity\Ern41\BitRateType $overallBitRate
+     * @param \DedexBundle\Entity\Ern411\BitRateType $overallBitRate
      * @return self
      */
-    public function setOverallBitRate(\DedexBundle\Entity\Ern41\BitRateType $overallBitRate)
+    public function setOverallBitRate(\DedexBundle\Entity\Ern411\BitRateType $overallBitRate)
     {
         $this->overallBitRate = $overallBitRate;
         return $this;
@@ -330,7 +330,7 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing details of a ContainerFormat.
      *
-     * @return \DedexBundle\Entity\Ern41\ContainerFormatType
+     * @return \DedexBundle\Entity\Ern411\ContainerFormatType
      */
     public function getContainerFormat()
     {
@@ -342,10 +342,10 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing details of a ContainerFormat.
      *
-     * @param \DedexBundle\Entity\Ern41\ContainerFormatType $containerFormat
+     * @param \DedexBundle\Entity\Ern411\ContainerFormatType $containerFormat
      * @return self
      */
-    public function setContainerFormat(\DedexBundle\Entity\Ern41\ContainerFormatType $containerFormat)
+    public function setContainerFormat(\DedexBundle\Entity\Ern411\ContainerFormatType $containerFormat)
     {
         $this->containerFormat = $containerFormat;
         return $this;
@@ -356,7 +356,7 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing details of a Type of VideoCodec.
      *
-     * @return \DedexBundle\Entity\Ern41\VideoCodecTypeType
+     * @return \DedexBundle\Entity\Ern411\VideoCodecTypeType
      */
     public function getVideoCodecType()
     {
@@ -368,10 +368,10 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing details of a Type of VideoCodec.
      *
-     * @param \DedexBundle\Entity\Ern41\VideoCodecTypeType $videoCodecType
+     * @param \DedexBundle\Entity\Ern411\VideoCodecTypeType $videoCodecType
      * @return self
      */
-    public function setVideoCodecType(\DedexBundle\Entity\Ern41\VideoCodecTypeType $videoCodecType)
+    public function setVideoCodecType(\DedexBundle\Entity\Ern411\VideoCodecTypeType $videoCodecType)
     {
         $this->videoCodecType = $videoCodecType;
         return $this;
@@ -382,7 +382,7 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing the BitRate for the video data and a UnitOfMeasure (the default is kbps).
      *
-     * @return \DedexBundle\Entity\Ern41\BitRateType
+     * @return \DedexBundle\Entity\Ern411\BitRateType
      */
     public function getVideoBitRate()
     {
@@ -394,10 +394,10 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing the BitRate for the video data and a UnitOfMeasure (the default is kbps).
      *
-     * @param \DedexBundle\Entity\Ern41\BitRateType $videoBitRate
+     * @param \DedexBundle\Entity\Ern411\BitRateType $videoBitRate
      * @return self
      */
-    public function setVideoBitRate(\DedexBundle\Entity\Ern41\BitRateType $videoBitRate)
+    public function setVideoBitRate(\DedexBundle\Entity\Ern411\BitRateType $videoBitRate)
     {
         $this->videoBitRate = $videoBitRate;
         return $this;
@@ -408,7 +408,7 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing the Rate for a number of frames shown in the Video in a specific Period of Time and a UnitOfMeasure (the default is Hz, interlaced).
      *
-     * @return \DedexBundle\Entity\Ern41\FrameRateType
+     * @return \DedexBundle\Entity\Ern411\FrameRateType
      */
     public function getFrameRate()
     {
@@ -420,10 +420,10 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing the Rate for a number of frames shown in the Video in a specific Period of Time and a UnitOfMeasure (the default is Hz, interlaced).
      *
-     * @param \DedexBundle\Entity\Ern41\FrameRateType $frameRate
+     * @param \DedexBundle\Entity\Ern411\FrameRateType $frameRate
      * @return self
      */
-    public function setFrameRate(\DedexBundle\Entity\Ern41\FrameRateType $frameRate)
+    public function setFrameRate(\DedexBundle\Entity\Ern411\FrameRateType $frameRate)
     {
         $this->frameRate = $frameRate;
         return $this;
@@ -434,7 +434,7 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing the vertical Extent of an Image of the Video and a UnitOfMeasure (the default is Pixels).
      *
-     * @return \DedexBundle\Entity\Ern41\ExtentType
+     * @return \DedexBundle\Entity\Ern411\ExtentType
      */
     public function getImageHeight()
     {
@@ -446,10 +446,10 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing the vertical Extent of an Image of the Video and a UnitOfMeasure (the default is Pixels).
      *
-     * @param \DedexBundle\Entity\Ern41\ExtentType $imageHeight
+     * @param \DedexBundle\Entity\Ern411\ExtentType $imageHeight
      * @return self
      */
-    public function setImageHeight(\DedexBundle\Entity\Ern41\ExtentType $imageHeight)
+    public function setImageHeight(\DedexBundle\Entity\Ern411\ExtentType $imageHeight)
     {
         $this->imageHeight = $imageHeight;
         return $this;
@@ -460,7 +460,7 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing the horizontal Extent of an Image of the Video and a UnitOfMeasure (the default is Pixels).
      *
-     * @return \DedexBundle\Entity\Ern41\ExtentType
+     * @return \DedexBundle\Entity\Ern411\ExtentType
      */
     public function getImageWidth()
     {
@@ -472,10 +472,10 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing the horizontal Extent of an Image of the Video and a UnitOfMeasure (the default is Pixels).
      *
-     * @param \DedexBundle\Entity\Ern41\ExtentType $imageWidth
+     * @param \DedexBundle\Entity\Ern411\ExtentType $imageWidth
      * @return self
      */
-    public function setImageWidth(\DedexBundle\Entity\Ern41\ExtentType $imageWidth)
+    public function setImageWidth(\DedexBundle\Entity\Ern411\ExtentType $imageWidth)
     {
         $this->imageWidth = $imageWidth;
         return $this;
@@ -486,7 +486,7 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing the ratio formed by dividing the ImageHeight by the ImageWidth.
      *
-     * @return \DedexBundle\Entity\Ern41\AspectRatioType
+     * @return \DedexBundle\Entity\Ern411\AspectRatioType
      */
     public function getAspectRatio()
     {
@@ -498,10 +498,10 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing the ratio formed by dividing the ImageHeight by the ImageWidth.
      *
-     * @param \DedexBundle\Entity\Ern41\AspectRatioType $aspectRatio
+     * @param \DedexBundle\Entity\Ern411\AspectRatioType $aspectRatio
      * @return self
      */
-    public function setAspectRatio(\DedexBundle\Entity\Ern41\AspectRatioType $aspectRatio)
+    public function setAspectRatio(\DedexBundle\Entity\Ern411\AspectRatioType $aspectRatio)
     {
         $this->aspectRatio = $aspectRatio;
         return $this;
@@ -512,7 +512,7 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing details of the core part of the Video.
      *
-     * @return \DedexBundle\Entity\Ern41\CoreAreaType
+     * @return \DedexBundle\Entity\Ern411\CoreAreaType
      */
     public function getCoreArea()
     {
@@ -524,10 +524,10 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing details of the core part of the Video.
      *
-     * @param \DedexBundle\Entity\Ern41\CoreAreaType $coreArea
+     * @param \DedexBundle\Entity\Ern411\CoreAreaType $coreArea
      * @return self
      */
-    public function setCoreArea(\DedexBundle\Entity\Ern41\CoreAreaType $coreArea)
+    public function setCoreArea(\DedexBundle\Entity\Ern411\CoreAreaType $coreArea)
     {
         $this->coreArea = $coreArea;
         return $this;
@@ -590,7 +590,7 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing details of a Type of AudioCodec.
      *
-     * @return \DedexBundle\Entity\Ern41\AudioCodecTypeType
+     * @return \DedexBundle\Entity\Ern411\AudioCodecTypeType
      */
     public function getAudioCodecType()
     {
@@ -602,10 +602,10 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing details of a Type of AudioCodec.
      *
-     * @param \DedexBundle\Entity\Ern41\AudioCodecTypeType $audioCodecType
+     * @param \DedexBundle\Entity\Ern411\AudioCodecTypeType $audioCodecType
      * @return self
      */
-    public function setAudioCodecType(\DedexBundle\Entity\Ern41\AudioCodecTypeType $audioCodecType)
+    public function setAudioCodecType(\DedexBundle\Entity\Ern411\AudioCodecTypeType $audioCodecType)
     {
         $this->audioCodecType = $audioCodecType;
         return $this;
@@ -616,7 +616,7 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing the BitRate for the audio data and a UnitOfMeasure (the default is kbps).
      *
-     * @return \DedexBundle\Entity\Ern41\BitRateType
+     * @return \DedexBundle\Entity\Ern411\BitRateType
      */
     public function getAudioBitRate()
     {
@@ -628,10 +628,10 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing the BitRate for the audio data and a UnitOfMeasure (the default is kbps).
      *
-     * @param \DedexBundle\Entity\Ern41\BitRateType $audioBitRate
+     * @param \DedexBundle\Entity\Ern411\BitRateType $audioBitRate
      * @return self
      */
-    public function setAudioBitRate(\DedexBundle\Entity\Ern41\BitRateType $audioBitRate)
+    public function setAudioBitRate(\DedexBundle\Entity\Ern411\BitRateType $audioBitRate)
     {
         $this->audioBitRate = $audioBitRate;
         return $this;
@@ -668,7 +668,7 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing the SamplingRate for the audio data and a UnitOfMeasure (the default is Hz).
      *
-     * @return \DedexBundle\Entity\Ern41\SamplingRateType
+     * @return \DedexBundle\Entity\Ern411\SamplingRateType
      */
     public function getAudioSamplingRate()
     {
@@ -680,10 +680,10 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing the SamplingRate for the audio data and a UnitOfMeasure (the default is Hz).
      *
-     * @param \DedexBundle\Entity\Ern41\SamplingRateType $audioSamplingRate
+     * @param \DedexBundle\Entity\Ern411\SamplingRateType $audioSamplingRate
      * @return self
      */
-    public function setAudioSamplingRate(\DedexBundle\Entity\Ern41\SamplingRateType $audioSamplingRate)
+    public function setAudioSamplingRate(\DedexBundle\Entity\Ern411\SamplingRateType $audioSamplingRate)
     {
         $this->audioSamplingRate = $audioSamplingRate;
         return $this;
@@ -798,7 +798,7 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing details of a preview.
      *
-     * @return \DedexBundle\Entity\Ern41\SoundRecordingPreviewDetailsType
+     * @return \DedexBundle\Entity\Ern411\SoundRecordingPreviewDetailsType
      */
     public function getPreviewDetails()
     {
@@ -810,10 +810,10 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing details of a preview.
      *
-     * @param \DedexBundle\Entity\Ern41\SoundRecordingPreviewDetailsType $previewDetails
+     * @param \DedexBundle\Entity\Ern411\SoundRecordingPreviewDetailsType $previewDetails
      * @return self
      */
-    public function setPreviewDetails(\DedexBundle\Entity\Ern41\SoundRecordingPreviewDetailsType $previewDetails)
+    public function setPreviewDetails(\DedexBundle\Entity\Ern411\SoundRecordingPreviewDetailsType $previewDetails)
     {
         $this->previewDetails = $previewDetails;
         return $this;
@@ -824,7 +824,7 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing details of a File containing the Video that a DSP can obtain.
      *
-     * @return \DedexBundle\Entity\Ern41\FileType
+     * @return \DedexBundle\Entity\Ern411\FileType
      */
     public function getFile()
     {
@@ -836,10 +836,10 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing details of a File containing the Video that a DSP can obtain.
      *
-     * @param \DedexBundle\Entity\Ern41\FileType $file
+     * @param \DedexBundle\Entity\Ern411\FileType $file
      * @return self
      */
-    public function setFile(\DedexBundle\Entity\Ern41\FileType $file)
+    public function setFile(\DedexBundle\Entity\Ern411\FileType $file)
     {
         $this->file = $file;
         return $this;
@@ -851,9 +851,9 @@ class TechnicalVideoDetailsType
      * A Composite containing details of a Fingerprint and its governing algorithm.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\FingerprintType $fingerprint
+     * @param \DedexBundle\Entity\Ern411\FingerprintType $fingerprint
      */
-    public function addToFingerprint(\DedexBundle\Entity\Ern41\FingerprintType $fingerprint)
+    public function addToFingerprint(\DedexBundle\Entity\Ern411\FingerprintType $fingerprint)
     {
         $this->fingerprint[] = $fingerprint;
         return $this;
@@ -890,7 +890,7 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing details of a Fingerprint and its governing algorithm.
      *
-     * @return \DedexBundle\Entity\Ern41\FingerprintType[]
+     * @return \DedexBundle\Entity\Ern411\FingerprintType[]
      */
     public function getFingerprint()
     {
@@ -902,7 +902,7 @@ class TechnicalVideoDetailsType
      *
      * A Composite containing details of a Fingerprint and its governing algorithm.
      *
-     * @param \DedexBundle\Entity\Ern41\FingerprintType[] $fingerprint
+     * @param \DedexBundle\Entity\Ern411\FingerprintType[] $fingerprint
      * @return self
      */
     public function setFingerprint(array $fingerprint)

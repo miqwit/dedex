@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing AvRatingType
@@ -35,7 +35,7 @@ class AvRatingType
     /**
      * A Composite containing details of an Organization that issues the AvRating.
      *
-     * @var \DedexBundle\Entity\Ern41\RatingAgencyType $agency
+     * @var \DedexBundle\Entity\Ern411\RatingAgencyType $agency
      */
     private $agency = null;
 
@@ -129,7 +129,7 @@ class AvRatingType
      *
      * A Composite containing details of an Organization that issues the AvRating.
      *
-     * @return \DedexBundle\Entity\Ern41\RatingAgencyType
+     * @return \DedexBundle\Entity\Ern411\RatingAgencyType
      */
     public function getAgency()
     {
@@ -141,10 +141,10 @@ class AvRatingType
      *
      * A Composite containing details of an Organization that issues the AvRating.
      *
-     * @param \DedexBundle\Entity\Ern41\RatingAgencyType $agency
+     * @param \DedexBundle\Entity\Ern411\RatingAgencyType $agency
      * @return self
      */
-    public function setAgency(\DedexBundle\Entity\Ern41\RatingAgencyType $agency)
+    public function setAgency(\DedexBundle\Entity\Ern411\RatingAgencyType $agency)
     {
         $this->agency = $agency;
         return $this;

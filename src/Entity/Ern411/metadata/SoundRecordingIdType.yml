@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\SoundRecordingIdType:
+DedexBundle\Entity\Ern411\SoundRecordingIdType:
     properties:
         isReplaced:
             expose: true
@@ -24,7 +24,7 @@ DedexBundle\Entity\Ern41\SoundRecordingIdType:
             accessor:
                 getter: getCatalogNumber
                 setter: setCatalogNumber
-            type: DedexBundle\Entity\Ern41\CatalogNumberType
+            type: DedexBundle\Entity\Ern411\CatalogNumberType
         proprietaryId:
             expose: true
             access_type: public_method
@@ -35,4 +35,4 @@ DedexBundle\Entity\Ern41\SoundRecordingIdType:
             xml_list:
                 inline: true
                 entry_name: ProprietaryId
-            type: array<DedexBundle\Entity\Ern41\ProprietaryIdType>
+            type: array<DedexBundle\Entity\Ern411\ProprietaryIdType>

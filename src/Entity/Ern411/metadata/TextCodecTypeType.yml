@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\TextCodecTypeType:
+DedexBundle\Entity\Ern411\TextCodecTypeType:
     properties:
         __value:
             expose: true

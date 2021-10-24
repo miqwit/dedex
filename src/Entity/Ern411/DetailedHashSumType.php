@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing DetailedHashSumType
@@ -14,7 +14,7 @@ class DetailedHashSumType
     /**
      * A Composite containing details of the Type of HashSumAlgorithm governing the HashSum.
      *
-     * @var \DedexBundle\Entity\Ern41\HashSumAlgorithmTypeType $algorithm
+     * @var \DedexBundle\Entity\Ern411\HashSumAlgorithmTypeType $algorithm
      */
     private $algorithm = null;
 
@@ -51,7 +51,7 @@ class DetailedHashSumType
      *
      * A Composite containing details of the Type of HashSumAlgorithm governing the HashSum.
      *
-     * @return \DedexBundle\Entity\Ern41\HashSumAlgorithmTypeType
+     * @return \DedexBundle\Entity\Ern411\HashSumAlgorithmTypeType
      */
     public function getAlgorithm()
     {
@@ -63,10 +63,10 @@ class DetailedHashSumType
      *
      * A Composite containing details of the Type of HashSumAlgorithm governing the HashSum.
      *
-     * @param \DedexBundle\Entity\Ern41\HashSumAlgorithmTypeType $algorithm
+     * @param \DedexBundle\Entity\Ern411\HashSumAlgorithmTypeType $algorithm
      * @return self
      */
-    public function setAlgorithm(\DedexBundle\Entity\Ern41\HashSumAlgorithmTypeType $algorithm)
+    public function setAlgorithm(\DedexBundle\Entity\Ern411\HashSumAlgorithmTypeType $algorithm)
     {
         $this->algorithm = $algorithm;
         return $this;

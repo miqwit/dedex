@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\DealTermsType:
+DedexBundle\Entity\Ern411\DealTermsType:
     properties:
         territoryCode:
             expose: true
@@ -10,7 +10,7 @@ DedexBundle\Entity\Ern41\DealTermsType:
             xml_list:
                 inline: true
                 entry_name: TerritoryCode
-            type: array<DedexBundle\Entity\Ern41\CurrentTerritoryCodeType>
+            type: array<DedexBundle\Entity\Ern411\CurrentTerritoryCodeType>
         excludedTerritoryCode:
             expose: true
             access_type: public_method
@@ -21,7 +21,7 @@ DedexBundle\Entity\Ern41\DealTermsType:
             xml_list:
                 inline: true
                 entry_name: ExcludedTerritoryCode
-            type: array<DedexBundle\Entity\Ern41\CurrentTerritoryCodeType>
+            type: array<DedexBundle\Entity\Ern411\CurrentTerritoryCodeType>
         validityPeriod:
             expose: true
             access_type: public_method
@@ -32,7 +32,7 @@ DedexBundle\Entity\Ern41\DealTermsType:
             xml_list:
                 inline: true
                 entry_name: ValidityPeriod
-            type: array<DedexBundle\Entity\Ern41\PeriodWithoutFlagsType>
+            type: array<DedexBundle\Entity\Ern411\PeriodWithoutFlagsType>
         commercialModelType:
             expose: true
             access_type: public_method
@@ -43,7 +43,7 @@ DedexBundle\Entity\Ern41\DealTermsType:
             xml_list:
                 inline: true
                 entry_name: CommercialModelType
-            type: array<DedexBundle\Entity\Ern41\CommercialModelTypeType>
+            type: array<DedexBundle\Entity\Ern411\CommercialModelTypeType>
         useType:
             expose: true
             access_type: public_method
@@ -54,7 +54,7 @@ DedexBundle\Entity\Ern41\DealTermsType:
             xml_list:
                 inline: true
                 entry_name: UseType
-            type: array<DedexBundle\Entity\Ern41\DiscoverableUseTypeType>
+            type: array<DedexBundle\Entity\Ern411\DiscoverableUseTypeType>
         carrierType:
             expose: true
             access_type: public_method
@@ -65,7 +65,7 @@ DedexBundle\Entity\Ern41\DealTermsType:
             xml_list:
                 inline: true
                 entry_name: CarrierType
-            type: array<DedexBundle\Entity\Ern41\CarrierTypeType>
+            type: array<DedexBundle\Entity\Ern411\CarrierTypeType>
         technicalInstantiation:
             expose: true
             access_type: public_method
@@ -73,7 +73,7 @@ DedexBundle\Entity\Ern41\DealTermsType:
             accessor:
                 getter: getTechnicalInstantiation
                 setter: setTechnicalInstantiation
-            type: DedexBundle\Entity\Ern41\DealTermsTechnicalInstantiationType
+            type: DedexBundle\Entity\Ern411\DealTermsTechnicalInstantiationType
         numberOfUsages:
             expose: true
             access_type: public_method
@@ -92,7 +92,7 @@ DedexBundle\Entity\Ern41\DealTermsType:
             xml_list:
                 inline: true
                 entry_name: DistributionChannel
-            type: array<DedexBundle\Entity\Ern41\DSPType>
+            type: array<DedexBundle\Entity\Ern411\DSPType>
         excludedDistributionChannel:
             expose: true
             access_type: public_method
@@ -103,7 +103,7 @@ DedexBundle\Entity\Ern41\DealTermsType:
             xml_list:
                 inline: true
                 entry_name: ExcludedDistributionChannel
-            type: array<DedexBundle\Entity\Ern41\DSPType>
+            type: array<DedexBundle\Entity\Ern411\DSPType>
         rightsClaimPolicy:
             expose: true
             access_type: public_method
@@ -114,7 +114,7 @@ DedexBundle\Entity\Ern41\DealTermsType:
             xml_list:
                 inline: true
                 entry_name: RightsClaimPolicy
-            type: array<DedexBundle\Entity\Ern41\RightsClaimPolicyType>
+            type: array<DedexBundle\Entity\Ern411\RightsClaimPolicyType>
         priceInformation:
             expose: true
             access_type: public_method
@@ -125,7 +125,7 @@ DedexBundle\Entity\Ern41\DealTermsType:
             xml_list:
                 inline: true
                 entry_name: PriceInformation
-            type: array<DedexBundle\Entity\Ern41\PriceInformationWithTypeType>
+            type: array<DedexBundle\Entity\Ern411\PriceInformationWithTypeType>
         isPromotional:
             expose: true
             access_type: public_method
@@ -141,7 +141,7 @@ DedexBundle\Entity\Ern41\DealTermsType:
             accessor:
                 getter: getPromotionalCode
                 setter: setPromotionalCode
-            type: DedexBundle\Entity\Ern41\PromotionalCodeType
+            type: DedexBundle\Entity\Ern411\PromotionalCodeType
         isPreOrderDeal:
             expose: true
             access_type: public_method
@@ -233,7 +233,7 @@ DedexBundle\Entity\Ern41\DealTermsType:
             accessor:
                 getter: getPhysicalReturns
                 setter: setPhysicalReturns
-            type: DedexBundle\Entity\Ern41\PhysicalReturnsType
+            type: DedexBundle\Entity\Ern411\PhysicalReturnsType
         numberOfProductsPerCarton:
             expose: true
             access_type: public_method

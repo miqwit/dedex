@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing CharacterType
@@ -28,7 +28,7 @@ class CharacterType
     /**
      * A Composite containing details of the Name, Identifier and Role(s) of a Performer.
      *
-     * @var \DedexBundle\Entity\Ern41\ContributorType $performer
+     * @var \DedexBundle\Entity\Ern411\ContributorType $performer
      */
     private $performer = null;
 
@@ -89,7 +89,7 @@ class CharacterType
      *
      * A Composite containing details of the Name, Identifier and Role(s) of a Performer.
      *
-     * @return \DedexBundle\Entity\Ern41\ContributorType
+     * @return \DedexBundle\Entity\Ern411\ContributorType
      */
     public function getPerformer()
     {
@@ -101,10 +101,10 @@ class CharacterType
      *
      * A Composite containing details of the Name, Identifier and Role(s) of a Performer.
      *
-     * @param \DedexBundle\Entity\Ern41\ContributorType $performer
+     * @param \DedexBundle\Entity\Ern411\ContributorType $performer
      * @return self
      */
-    public function setPerformer(\DedexBundle\Entity\Ern41\ContributorType $performer)
+    public function setPerformer(\DedexBundle\Entity\Ern411\ContributorType $performer)
     {
         $this->performer = $performer;
         return $this;

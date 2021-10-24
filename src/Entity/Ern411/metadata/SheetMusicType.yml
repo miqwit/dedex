@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\SheetMusicType:
+DedexBundle\Entity\Ern411\SheetMusicType:
     properties:
         languageAndScriptCode:
             expose: true
@@ -33,7 +33,7 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             accessor:
                 getter: getType
                 setter: setType
-            type: DedexBundle\Entity\Ern41\SheetMusicTypeType
+            type: DedexBundle\Entity\Ern411\SheetMusicTypeType
         resourceId:
             expose: true
             access_type: public_method
@@ -44,7 +44,7 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             xml_list:
                 inline: true
                 entry_name: ResourceId
-            type: array<DedexBundle\Entity\Ern41\SheetMusicIdType>
+            type: array<DedexBundle\Entity\Ern411\SheetMusicIdType>
         workId:
             expose: true
             access_type: public_method
@@ -55,7 +55,7 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             xml_list:
                 inline: true
                 entry_name: WorkId
-            type: array<DedexBundle\Entity\Ern41\MusicalWorkIdType>
+            type: array<DedexBundle\Entity\Ern411\MusicalWorkIdType>
         displayTitleText:
             expose: true
             access_type: public_method
@@ -66,7 +66,7 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             xml_list:
                 inline: true
                 entry_name: DisplayTitleText
-            type: array<DedexBundle\Entity\Ern41\DisplayTitleTextType>
+            type: array<DedexBundle\Entity\Ern411\DisplayTitleTextType>
         displayTitle:
             expose: true
             access_type: public_method
@@ -77,7 +77,7 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             xml_list:
                 inline: true
                 entry_name: DisplayTitle
-            type: array<DedexBundle\Entity\Ern41\DisplayTitleType>
+            type: array<DedexBundle\Entity\Ern411\DisplayTitleType>
         additionalTitle:
             expose: true
             access_type: public_method
@@ -88,7 +88,7 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             xml_list:
                 inline: true
                 entry_name: AdditionalTitle
-            type: array<DedexBundle\Entity\Ern41\AdditionalTitleType>
+            type: array<DedexBundle\Entity\Ern411\AdditionalTitleType>
         versionType:
             expose: true
             access_type: public_method
@@ -99,7 +99,7 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             xml_list:
                 inline: true
                 entry_name: VersionType
-            type: array<DedexBundle\Entity\Ern41\VersionTypeType>
+            type: array<DedexBundle\Entity\Ern411\VersionTypeType>
         displayArtistName:
             expose: true
             access_type: public_method
@@ -110,7 +110,7 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             xml_list:
                 inline: true
                 entry_name: DisplayArtistName
-            type: array<DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType>
+            type: array<DedexBundle\Entity\Ern411\DisplayArtistNameWithDefaultType>
         displayArtist:
             expose: true
             access_type: public_method
@@ -121,7 +121,7 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             xml_list:
                 inline: true
                 entry_name: DisplayArtist
-            type: array<DedexBundle\Entity\Ern41\DisplayArtistType>
+            type: array<DedexBundle\Entity\Ern411\DisplayArtistType>
         contributor:
             expose: true
             access_type: public_method
@@ -132,7 +132,7 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             xml_list:
                 inline: true
                 entry_name: Contributor
-            type: array<DedexBundle\Entity\Ern41\ContributorType>
+            type: array<DedexBundle\Entity\Ern411\ContributorType>
         resourceRightsController:
             expose: true
             access_type: public_method
@@ -143,7 +143,7 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             xml_list:
                 inline: true
                 entry_name: ResourceRightsController
-            type: array<DedexBundle\Entity\Ern41\ResourceRightsControllerType>
+            type: array<DedexBundle\Entity\Ern411\ResourceRightsControllerType>
         workRightsController:
             expose: true
             access_type: public_method
@@ -154,7 +154,7 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             xml_list:
                 inline: true
                 entry_name: WorkRightsController
-            type: array<DedexBundle\Entity\Ern41\WorkRightsControllerType>
+            type: array<DedexBundle\Entity\Ern411\WorkRightsControllerType>
         cLine:
             expose: true
             access_type: public_method
@@ -165,7 +165,7 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             xml_list:
                 inline: true
                 entry_name: CLine
-            type: array<DedexBundle\Entity\Ern41\CLineWithDefaultType>
+            type: array<DedexBundle\Entity\Ern411\CLineWithDefaultType>
         courtesyLine:
             expose: true
             access_type: public_method
@@ -176,7 +176,7 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             xml_list:
                 inline: true
                 entry_name: CourtesyLine
-            type: array<DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType>
+            type: array<DedexBundle\Entity\Ern411\CourtesyLineWithDefaultType>
         creationDate:
             expose: true
             access_type: public_method
@@ -184,7 +184,7 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             accessor:
                 getter: getCreationDate
                 setter: setCreationDate
-            type: DedexBundle\Entity\Ern41\EventDateWithoutFlagsType
+            type: DedexBundle\Entity\Ern411\EventDateWithoutFlagsType
         firstPublicationDate:
             expose: true
             access_type: public_method
@@ -195,7 +195,7 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             xml_list:
                 inline: true
                 entry_name: FirstPublicationDate
-            type: array<DedexBundle\Entity\Ern41\FulfillmentDateWithTerritoryType>
+            type: array<DedexBundle\Entity\Ern411\FulfillmentDateWithTerritoryType>
         parentalWarningType:
             expose: true
             access_type: public_method
@@ -206,7 +206,7 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             xml_list:
                 inline: true
                 entry_name: ParentalWarningType
-            type: array<DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType>
+            type: array<DedexBundle\Entity\Ern411\ParentalWarningTypeWithTerritoryType>
         relatedRelease:
             expose: true
             access_type: public_method
@@ -217,7 +217,7 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             xml_list:
                 inline: true
                 entry_name: RelatedRelease
-            type: array<DedexBundle\Entity\Ern41\RelatedReleaseType>
+            type: array<DedexBundle\Entity\Ern411\RelatedReleaseType>
         relatedResource:
             expose: true
             access_type: public_method
@@ -228,7 +228,7 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             xml_list:
                 inline: true
                 entry_name: RelatedResource
-            type: array<DedexBundle\Entity\Ern41\RelatedResourceType>
+            type: array<DedexBundle\Entity\Ern411\RelatedResourceType>
         containsHiddenContent:
             expose: true
             access_type: public_method
@@ -252,7 +252,7 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             accessor:
                 getter: getResourceContainedResourceReferenceList
                 setter: setResourceContainedResourceReferenceList
-            type: array<DedexBundle\Entity\Ern41\ResourceContainedResourceReferenceType>
+            type: array<DedexBundle\Entity\Ern411\ResourceContainedResourceReferenceType>
             xml_list:
                 inline: false
                 entry_name: ResourceContainedResourceReference
@@ -267,4 +267,4 @@ DedexBundle\Entity\Ern41\SheetMusicType:
             xml_list:
                 inline: true
                 entry_name: TechnicalDetails
-            type: array<DedexBundle\Entity\Ern41\TechnicalSheetMusicDetailsType>
+            type: array<DedexBundle\Entity\Ern411\TechnicalSheetMusicDetailsType>

@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ImageCodecTypeType:
+DedexBundle\Entity\Ern411\ImageCodecTypeType:
     properties:
         __value:
             expose: true

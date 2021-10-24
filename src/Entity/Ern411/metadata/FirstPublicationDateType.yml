@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\FirstPublicationDateType:
+DedexBundle\Entity\Ern411\FirstPublicationDateType:
     properties:
         __value:
             expose: true

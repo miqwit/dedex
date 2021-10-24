@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\CueVisualPerceptionTypeType:
+DedexBundle\Entity\Ern411\CueVisualPerceptionTypeType:
     properties:
         __value:
             expose: true

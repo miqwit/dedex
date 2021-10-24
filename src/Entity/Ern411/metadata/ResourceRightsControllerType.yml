@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ResourceRightsControllerType:
+DedexBundle\Entity\Ern411\ResourceRightsControllerType:
     properties:
         sequenceNumber:
             expose: true
@@ -43,7 +43,7 @@ DedexBundle\Entity\Ern41\ResourceRightsControllerType:
             accessor:
                 getter: getRightSharePercentage
                 setter: setRightSharePercentage
-            type: DedexBundle\Entity\Ern41\PercentageType
+            type: DedexBundle\Entity\Ern411\PercentageType
         delegatedUsageRights:
             expose: true
             access_type: public_method
@@ -54,4 +54,4 @@ DedexBundle\Entity\Ern41\ResourceRightsControllerType:
             xml_list:
                 inline: true
                 entry_name: DelegatedUsageRights
-            type: array<DedexBundle\Entity\Ern41\DelegatedUsageRightsType>
+            type: array<DedexBundle\Entity\Ern411\DelegatedUsageRightsType>

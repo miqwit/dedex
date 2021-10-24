@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing ReleaseListType
@@ -14,14 +14,14 @@ class ReleaseListType
     /**
      * A Composite containing details of a DDEX Release.
      *
-     * @var \DedexBundle\Entity\Ern41\ReleaseType $release
+     * @var \DedexBundle\Entity\Ern411\ReleaseType $release
      */
     private $release = null;
 
     /**
      * A Composite containing details of a DDEX TrackRelease.
      *
-     * @var \DedexBundle\Entity\Ern41\TrackReleaseType[] $trackRelease
+     * @var \DedexBundle\Entity\Ern411\TrackReleaseType[] $trackRelease
      */
     private $trackRelease = [
         
@@ -32,7 +32,7 @@ class ReleaseListType
      *
      * A Composite containing details of a DDEX Release.
      *
-     * @return \DedexBundle\Entity\Ern41\ReleaseType
+     * @return \DedexBundle\Entity\Ern411\ReleaseType
      */
     public function getRelease()
     {
@@ -44,10 +44,10 @@ class ReleaseListType
      *
      * A Composite containing details of a DDEX Release.
      *
-     * @param \DedexBundle\Entity\Ern41\ReleaseType $release
+     * @param \DedexBundle\Entity\Ern411\ReleaseType $release
      * @return self
      */
-    public function setRelease(\DedexBundle\Entity\Ern41\ReleaseType $release)
+    public function setRelease(\DedexBundle\Entity\Ern411\ReleaseType $release)
     {
         $this->release = $release;
         return $this;
@@ -59,9 +59,9 @@ class ReleaseListType
      * A Composite containing details of a DDEX TrackRelease.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\TrackReleaseType $trackRelease
+     * @param \DedexBundle\Entity\Ern411\TrackReleaseType $trackRelease
      */
-    public function addToTrackRelease(\DedexBundle\Entity\Ern41\TrackReleaseType $trackRelease)
+    public function addToTrackRelease(\DedexBundle\Entity\Ern411\TrackReleaseType $trackRelease)
     {
         $this->trackRelease[] = $trackRelease;
         return $this;
@@ -98,7 +98,7 @@ class ReleaseListType
      *
      * A Composite containing details of a DDEX TrackRelease.
      *
-     * @return \DedexBundle\Entity\Ern41\TrackReleaseType[]
+     * @return \DedexBundle\Entity\Ern411\TrackReleaseType[]
      */
     public function getTrackRelease()
     {
@@ -110,7 +110,7 @@ class ReleaseListType
      *
      * A Composite containing details of a DDEX TrackRelease.
      *
-     * @param \DedexBundle\Entity\Ern41\TrackReleaseType[] $trackRelease
+     * @param \DedexBundle\Entity\Ern411\TrackReleaseType[] $trackRelease
      * @return self
      */
     public function setTrackRelease(array $trackRelease)

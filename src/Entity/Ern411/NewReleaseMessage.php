@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing NewReleaseMessage
@@ -34,56 +34,56 @@ class NewReleaseMessage
     /**
      * The MessageHeader for the NewReleaseMessage.
      *
-     * @var \DedexBundle\Entity\Ern41\MessageHeaderType $messageHeader
+     * @var \DedexBundle\Entity\Ern411\MessageHeaderType $messageHeader
      */
     private $messageHeader = null;
 
     /**
      * A Composite containing details of one or more Parties relating to the reported MusicalWorks.
      *
-     * @var \DedexBundle\Entity\Ern41\PartyType[] $partyList
+     * @var \DedexBundle\Entity\Ern411\PartyType[] $partyList
      */
     private $partyList = null;
 
     /**
      * A Composite containing details of one or more CueSheets contained in Releases for which data is provided in the NewReleaseMessage.
      *
-     * @var \DedexBundle\Entity\Ern41\DetailedCueSheetType[] $cueSheetList
+     * @var \DedexBundle\Entity\Ern411\DetailedCueSheetType[] $cueSheetList
      */
     private $cueSheetList = null;
 
     /**
      * A Composite containing details of one or more Resources.
      *
-     * @var \DedexBundle\Entity\Ern41\ResourceListType $resourceList
+     * @var \DedexBundle\Entity\Ern411\ResourceListType $resourceList
      */
     private $resourceList = null;
 
     /**
      * A Composite containing details of one or more Chapters contained in Releases for which data is provided in the NewReleaseMessage.
      *
-     * @var \DedexBundle\Entity\Ern41\ChapterListType $chapterList
+     * @var \DedexBundle\Entity\Ern411\ChapterListType $chapterList
      */
     private $chapterList = null;
 
     /**
      * A Composite containing details of one or more DDEX Releases contained in the NewReleaseMessage.
      *
-     * @var \DedexBundle\Entity\Ern41\ReleaseListType $releaseList
+     * @var \DedexBundle\Entity\Ern411\ReleaseListType $releaseList
      */
     private $releaseList = null;
 
     /**
      * A Composite containing details of one or more Deals governing the Usage of the Releases in the Message.
      *
-     * @var \DedexBundle\Entity\Ern41\ReleaseDealType[] $dealList
+     * @var \DedexBundle\Entity\Ern411\ReleaseDealType[] $dealList
      */
     private $dealList = null;
 
     /**
      * A Composite containing details of one or more XML documents communicated with the Message.
      *
-     * @var \DedexBundle\Entity\Ern41\FileType[] $supplementalDocumentList
+     * @var \DedexBundle\Entity\Ern411\FileType[] $supplementalDocumentList
      */
     private $supplementalDocumentList = null;
 
@@ -170,7 +170,7 @@ class NewReleaseMessage
      *
      * The MessageHeader for the NewReleaseMessage.
      *
-     * @return \DedexBundle\Entity\Ern41\MessageHeaderType
+     * @return \DedexBundle\Entity\Ern411\MessageHeaderType
      */
     public function getMessageHeader()
     {
@@ -182,10 +182,10 @@ class NewReleaseMessage
      *
      * The MessageHeader for the NewReleaseMessage.
      *
-     * @param \DedexBundle\Entity\Ern41\MessageHeaderType $messageHeader
+     * @param \DedexBundle\Entity\Ern411\MessageHeaderType $messageHeader
      * @return self
      */
-    public function setMessageHeader(\DedexBundle\Entity\Ern41\MessageHeaderType $messageHeader)
+    public function setMessageHeader(\DedexBundle\Entity\Ern411\MessageHeaderType $messageHeader)
     {
         $this->messageHeader = $messageHeader;
         return $this;
@@ -197,9 +197,9 @@ class NewReleaseMessage
      * A Composite containing details of one or more Parties relating to the reported MusicalWorks.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\PartyType $party
+     * @param \DedexBundle\Entity\Ern411\PartyType $party
      */
-    public function addToPartyList(\DedexBundle\Entity\Ern41\PartyType $party)
+    public function addToPartyList(\DedexBundle\Entity\Ern411\PartyType $party)
     {
         $this->partyList[] = $party;
         return $this;
@@ -236,7 +236,7 @@ class NewReleaseMessage
      *
      * A Composite containing details of one or more Parties relating to the reported MusicalWorks.
      *
-     * @return \DedexBundle\Entity\Ern41\PartyType[]
+     * @return \DedexBundle\Entity\Ern411\PartyType[]
      */
     public function getPartyList()
     {
@@ -248,7 +248,7 @@ class NewReleaseMessage
      *
      * A Composite containing details of one or more Parties relating to the reported MusicalWorks.
      *
-     * @param \DedexBundle\Entity\Ern41\PartyType[] $partyList
+     * @param \DedexBundle\Entity\Ern411\PartyType[] $partyList
      * @return self
      */
     public function setPartyList(array $partyList)
@@ -263,9 +263,9 @@ class NewReleaseMessage
      * A Composite containing details of one or more CueSheets contained in Releases for which data is provided in the NewReleaseMessage.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DetailedCueSheetType $cueSheet
+     * @param \DedexBundle\Entity\Ern411\DetailedCueSheetType $cueSheet
      */
-    public function addToCueSheetList(\DedexBundle\Entity\Ern41\DetailedCueSheetType $cueSheet)
+    public function addToCueSheetList(\DedexBundle\Entity\Ern411\DetailedCueSheetType $cueSheet)
     {
         $this->cueSheetList[] = $cueSheet;
         return $this;
@@ -302,7 +302,7 @@ class NewReleaseMessage
      *
      * A Composite containing details of one or more CueSheets contained in Releases for which data is provided in the NewReleaseMessage.
      *
-     * @return \DedexBundle\Entity\Ern41\DetailedCueSheetType[]
+     * @return \DedexBundle\Entity\Ern411\DetailedCueSheetType[]
      */
     public function getCueSheetList()
     {
@@ -314,7 +314,7 @@ class NewReleaseMessage
      *
      * A Composite containing details of one or more CueSheets contained in Releases for which data is provided in the NewReleaseMessage.
      *
-     * @param \DedexBundle\Entity\Ern41\DetailedCueSheetType[] $cueSheetList
+     * @param \DedexBundle\Entity\Ern411\DetailedCueSheetType[] $cueSheetList
      * @return self
      */
     public function setCueSheetList(array $cueSheetList)
@@ -328,7 +328,7 @@ class NewReleaseMessage
      *
      * A Composite containing details of one or more Resources.
      *
-     * @return \DedexBundle\Entity\Ern41\ResourceListType
+     * @return \DedexBundle\Entity\Ern411\ResourceListType
      */
     public function getResourceList()
     {
@@ -340,10 +340,10 @@ class NewReleaseMessage
      *
      * A Composite containing details of one or more Resources.
      *
-     * @param \DedexBundle\Entity\Ern41\ResourceListType $resourceList
+     * @param \DedexBundle\Entity\Ern411\ResourceListType $resourceList
      * @return self
      */
-    public function setResourceList(\DedexBundle\Entity\Ern41\ResourceListType $resourceList)
+    public function setResourceList(\DedexBundle\Entity\Ern411\ResourceListType $resourceList)
     {
         $this->resourceList = $resourceList;
         return $this;
@@ -354,7 +354,7 @@ class NewReleaseMessage
      *
      * A Composite containing details of one or more Chapters contained in Releases for which data is provided in the NewReleaseMessage.
      *
-     * @return \DedexBundle\Entity\Ern41\ChapterListType
+     * @return \DedexBundle\Entity\Ern411\ChapterListType
      */
     public function getChapterList()
     {
@@ -366,10 +366,10 @@ class NewReleaseMessage
      *
      * A Composite containing details of one or more Chapters contained in Releases for which data is provided in the NewReleaseMessage.
      *
-     * @param \DedexBundle\Entity\Ern41\ChapterListType $chapterList
+     * @param \DedexBundle\Entity\Ern411\ChapterListType $chapterList
      * @return self
      */
-    public function setChapterList(\DedexBundle\Entity\Ern41\ChapterListType $chapterList)
+    public function setChapterList(\DedexBundle\Entity\Ern411\ChapterListType $chapterList)
     {
         $this->chapterList = $chapterList;
         return $this;
@@ -380,7 +380,7 @@ class NewReleaseMessage
      *
      * A Composite containing details of one or more DDEX Releases contained in the NewReleaseMessage.
      *
-     * @return \DedexBundle\Entity\Ern41\ReleaseListType
+     * @return \DedexBundle\Entity\Ern411\ReleaseListType
      */
     public function getReleaseList()
     {
@@ -392,10 +392,10 @@ class NewReleaseMessage
      *
      * A Composite containing details of one or more DDEX Releases contained in the NewReleaseMessage.
      *
-     * @param \DedexBundle\Entity\Ern41\ReleaseListType $releaseList
+     * @param \DedexBundle\Entity\Ern411\ReleaseListType $releaseList
      * @return self
      */
-    public function setReleaseList(\DedexBundle\Entity\Ern41\ReleaseListType $releaseList)
+    public function setReleaseList(\DedexBundle\Entity\Ern411\ReleaseListType $releaseList)
     {
         $this->releaseList = $releaseList;
         return $this;
@@ -407,9 +407,9 @@ class NewReleaseMessage
      * A Composite containing details of one or more Deals governing the Usage of the Releases in the Message.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ReleaseDealType $releaseDeal
+     * @param \DedexBundle\Entity\Ern411\ReleaseDealType $releaseDeal
      */
-    public function addToDealList(\DedexBundle\Entity\Ern41\ReleaseDealType $releaseDeal)
+    public function addToDealList(\DedexBundle\Entity\Ern411\ReleaseDealType $releaseDeal)
     {
         $this->dealList[] = $releaseDeal;
         return $this;
@@ -446,7 +446,7 @@ class NewReleaseMessage
      *
      * A Composite containing details of one or more Deals governing the Usage of the Releases in the Message.
      *
-     * @return \DedexBundle\Entity\Ern41\ReleaseDealType[]
+     * @return \DedexBundle\Entity\Ern411\ReleaseDealType[]
      */
     public function getDealList()
     {
@@ -458,7 +458,7 @@ class NewReleaseMessage
      *
      * A Composite containing details of one or more Deals governing the Usage of the Releases in the Message.
      *
-     * @param \DedexBundle\Entity\Ern41\ReleaseDealType[] $dealList
+     * @param \DedexBundle\Entity\Ern411\ReleaseDealType[] $dealList
      * @return self
      */
     public function setDealList(array $dealList)
@@ -473,9 +473,9 @@ class NewReleaseMessage
      * A Composite containing details of one or more XML documents communicated with the Message.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\FileType $supplementalDocument
+     * @param \DedexBundle\Entity\Ern411\FileType $supplementalDocument
      */
-    public function addToSupplementalDocumentList(\DedexBundle\Entity\Ern41\FileType $supplementalDocument)
+    public function addToSupplementalDocumentList(\DedexBundle\Entity\Ern411\FileType $supplementalDocument)
     {
         $this->supplementalDocumentList[] = $supplementalDocument;
         return $this;
@@ -512,7 +512,7 @@ class NewReleaseMessage
      *
      * A Composite containing details of one or more XML documents communicated with the Message.
      *
-     * @return \DedexBundle\Entity\Ern41\FileType[]
+     * @return \DedexBundle\Entity\Ern411\FileType[]
      */
     public function getSupplementalDocumentList()
     {
@@ -524,7 +524,7 @@ class NewReleaseMessage
      *
      * A Composite containing details of one or more XML documents communicated with the Message.
      *
-     * @param \DedexBundle\Entity\Ern41\FileType[] $supplementalDocumentList
+     * @param \DedexBundle\Entity\Ern411\FileType[] $supplementalDocumentList
      * @return self
      */
     public function setSupplementalDocumentList(array $supplementalDocumentList)

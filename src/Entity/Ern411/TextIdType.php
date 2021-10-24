@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing TextIdType
@@ -42,7 +42,7 @@ class TextIdType
     /**
      * A Composite containing details of a ProprietaryIdentifier of the Text (usually one per society involved in the messaging).
      *
-     * @var \DedexBundle\Entity\Ern41\ProprietaryIdType[] $proprietaryId
+     * @var \DedexBundle\Entity\Ern411\ProprietaryIdType[] $proprietaryId
      */
     private $proprietaryId = [
         
@@ -158,9 +158,9 @@ class TextIdType
      * A Composite containing details of a ProprietaryIdentifier of the Text (usually one per society involved in the messaging).
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ProprietaryIdType $proprietaryId
+     * @param \DedexBundle\Entity\Ern411\ProprietaryIdType $proprietaryId
      */
-    public function addToProprietaryId(\DedexBundle\Entity\Ern41\ProprietaryIdType $proprietaryId)
+    public function addToProprietaryId(\DedexBundle\Entity\Ern411\ProprietaryIdType $proprietaryId)
     {
         $this->proprietaryId[] = $proprietaryId;
         return $this;
@@ -197,7 +197,7 @@ class TextIdType
      *
      * A Composite containing details of a ProprietaryIdentifier of the Text (usually one per society involved in the messaging).
      *
-     * @return \DedexBundle\Entity\Ern41\ProprietaryIdType[]
+     * @return \DedexBundle\Entity\Ern411\ProprietaryIdType[]
      */
     public function getProprietaryId()
     {
@@ -209,7 +209,7 @@ class TextIdType
      *
      * A Composite containing details of a ProprietaryIdentifier of the Text (usually one per society involved in the messaging).
      *
-     * @param \DedexBundle\Entity\Ern41\ProprietaryIdType[] $proprietaryId
+     * @param \DedexBundle\Entity\Ern411\ProprietaryIdType[] $proprietaryId
      * @return self
      */
     public function setProprietaryId(array $proprietaryId)

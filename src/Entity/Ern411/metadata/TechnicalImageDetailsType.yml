@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\TechnicalImageDetailsType:
+DedexBundle\Entity\Ern411\TechnicalImageDetailsType:
     properties:
         languageAndScriptCode:
             expose: true
@@ -42,7 +42,7 @@ DedexBundle\Entity\Ern41\TechnicalImageDetailsType:
             accessor:
                 getter: getImageCodecType
                 setter: setImageCodecType
-            type: DedexBundle\Entity\Ern41\ImageCodecTypeType
+            type: DedexBundle\Entity\Ern411\ImageCodecTypeType
         imageHeight:
             expose: true
             access_type: public_method
@@ -50,7 +50,7 @@ DedexBundle\Entity\Ern41\TechnicalImageDetailsType:
             accessor:
                 getter: getImageHeight
                 setter: setImageHeight
-            type: DedexBundle\Entity\Ern41\ExtentType
+            type: DedexBundle\Entity\Ern411\ExtentType
         imageWidth:
             expose: true
             access_type: public_method
@@ -58,7 +58,7 @@ DedexBundle\Entity\Ern41\TechnicalImageDetailsType:
             accessor:
                 getter: getImageWidth
                 setter: setImageWidth
-            type: DedexBundle\Entity\Ern41\ExtentType
+            type: DedexBundle\Entity\Ern411\ExtentType
         aspectRatio:
             expose: true
             access_type: public_method
@@ -66,7 +66,7 @@ DedexBundle\Entity\Ern41\TechnicalImageDetailsType:
             accessor:
                 getter: getAspectRatio
                 setter: setAspectRatio
-            type: DedexBundle\Entity\Ern41\AspectRatioType
+            type: DedexBundle\Entity\Ern411\AspectRatioType
         colorDepth:
             expose: true
             access_type: public_method
@@ -106,7 +106,7 @@ DedexBundle\Entity\Ern41\TechnicalImageDetailsType:
             accessor:
                 getter: getPreviewDetails
                 setter: setPreviewDetails
-            type: DedexBundle\Entity\Ern41\PreviewDetailsType
+            type: DedexBundle\Entity\Ern411\PreviewDetailsType
         file:
             expose: true
             access_type: public_method
@@ -114,7 +114,7 @@ DedexBundle\Entity\Ern41\TechnicalImageDetailsType:
             accessor:
                 getter: getFile
                 setter: setFile
-            type: DedexBundle\Entity\Ern41\FileType
+            type: DedexBundle\Entity\Ern411\FileType
         fingerprint:
             expose: true
             access_type: public_method
@@ -125,4 +125,4 @@ DedexBundle\Entity\Ern41\TechnicalImageDetailsType:
             xml_list:
                 inline: true
                 entry_name: Fingerprint
-            type: array<DedexBundle\Entity\Ern41\FingerprintType>
+            type: array<DedexBundle\Entity\Ern411\FingerprintType>

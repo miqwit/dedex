@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing PurgedReleaseType
@@ -14,14 +14,14 @@ class PurgedReleaseType
     /**
      * A Composite containing details of ReleaseIds. If available, a GRid has to be used. If the Release contains only one SoundRecording, the ISRC of the SoundRecording may be used instead. If the Release is an abstraction of a complete PhysicalProduct (such as a CD Album), the ICPN of the PhysicalProduct may be used instead.
      *
-     * @var \DedexBundle\Entity\Ern41\ReleaseIdType $releaseId
+     * @var \DedexBundle\Entity\Ern411\ReleaseIdType $releaseId
      */
     private $releaseId = null;
 
     /**
      * A Composite containing details of a Title of the Release.
      *
-     * @var \DedexBundle\Entity\Ern41\TitleType[] $title
+     * @var \DedexBundle\Entity\Ern411\TitleType[] $title
      */
     private $title = [
         
@@ -30,7 +30,7 @@ class PurgedReleaseType
     /**
      * A Composite containing details of a Contributor to the Release.
      *
-     * @var \DedexBundle\Entity\Ern41\DetailedResourceContributorType[] $contributor
+     * @var \DedexBundle\Entity\Ern411\DetailedResourceContributorType[] $contributor
      */
     private $contributor = [
         
@@ -41,7 +41,7 @@ class PurgedReleaseType
      *
      * A Composite containing details of ReleaseIds. If available, a GRid has to be used. If the Release contains only one SoundRecording, the ISRC of the SoundRecording may be used instead. If the Release is an abstraction of a complete PhysicalProduct (such as a CD Album), the ICPN of the PhysicalProduct may be used instead.
      *
-     * @return \DedexBundle\Entity\Ern41\ReleaseIdType
+     * @return \DedexBundle\Entity\Ern411\ReleaseIdType
      */
     public function getReleaseId()
     {
@@ -53,10 +53,10 @@ class PurgedReleaseType
      *
      * A Composite containing details of ReleaseIds. If available, a GRid has to be used. If the Release contains only one SoundRecording, the ISRC of the SoundRecording may be used instead. If the Release is an abstraction of a complete PhysicalProduct (such as a CD Album), the ICPN of the PhysicalProduct may be used instead.
      *
-     * @param \DedexBundle\Entity\Ern41\ReleaseIdType $releaseId
+     * @param \DedexBundle\Entity\Ern411\ReleaseIdType $releaseId
      * @return self
      */
-    public function setReleaseId(\DedexBundle\Entity\Ern41\ReleaseIdType $releaseId)
+    public function setReleaseId(\DedexBundle\Entity\Ern411\ReleaseIdType $releaseId)
     {
         $this->releaseId = $releaseId;
         return $this;
@@ -68,9 +68,9 @@ class PurgedReleaseType
      * A Composite containing details of a Title of the Release.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\TitleType $title
+     * @param \DedexBundle\Entity\Ern411\TitleType $title
      */
-    public function addToTitle(\DedexBundle\Entity\Ern41\TitleType $title)
+    public function addToTitle(\DedexBundle\Entity\Ern411\TitleType $title)
     {
         $this->title[] = $title;
         return $this;
@@ -107,7 +107,7 @@ class PurgedReleaseType
      *
      * A Composite containing details of a Title of the Release.
      *
-     * @return \DedexBundle\Entity\Ern41\TitleType[]
+     * @return \DedexBundle\Entity\Ern411\TitleType[]
      */
     public function getTitle()
     {
@@ -119,7 +119,7 @@ class PurgedReleaseType
      *
      * A Composite containing details of a Title of the Release.
      *
-     * @param \DedexBundle\Entity\Ern41\TitleType[] $title
+     * @param \DedexBundle\Entity\Ern411\TitleType[] $title
      * @return self
      */
     public function setTitle(array $title)
@@ -134,9 +134,9 @@ class PurgedReleaseType
      * A Composite containing details of a Contributor to the Release.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DetailedResourceContributorType $contributor
+     * @param \DedexBundle\Entity\Ern411\DetailedResourceContributorType $contributor
      */
-    public function addToContributor(\DedexBundle\Entity\Ern41\DetailedResourceContributorType $contributor)
+    public function addToContributor(\DedexBundle\Entity\Ern411\DetailedResourceContributorType $contributor)
     {
         $this->contributor[] = $contributor;
         return $this;
@@ -173,7 +173,7 @@ class PurgedReleaseType
      *
      * A Composite containing details of a Contributor to the Release.
      *
-     * @return \DedexBundle\Entity\Ern41\DetailedResourceContributorType[]
+     * @return \DedexBundle\Entity\Ern411\DetailedResourceContributorType[]
      */
     public function getContributor()
     {
@@ -185,7 +185,7 @@ class PurgedReleaseType
      *
      * A Composite containing details of a Contributor to the Release.
      *
-     * @param \DedexBundle\Entity\Ern41\DetailedResourceContributorType[] $contributor
+     * @param \DedexBundle\Entity\Ern411\DetailedResourceContributorType[] $contributor
      * @return self
      */
     public function setContributor(array $contributor)

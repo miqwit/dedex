@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\DistributionChannelPageType:
+DedexBundle\Entity\Ern411\DistributionChannelPageType:
     properties:
         partyId:
             expose: true
@@ -10,7 +10,7 @@ DedexBundle\Entity\Ern41\DistributionChannelPageType:
             xml_list:
                 inline: true
                 entry_name: PartyId
-            type: array<DedexBundle\Entity\Ern41\DetailedPartyIdType>
+            type: array<DedexBundle\Entity\Ern411\DetailedPartyIdType>
         pageName:
             expose: true
             access_type: public_method
@@ -18,7 +18,7 @@ DedexBundle\Entity\Ern41\DistributionChannelPageType:
             accessor:
                 getter: getPageName
                 setter: setPageName
-            type: DedexBundle\Entity\Ern41\NameType
+            type: DedexBundle\Entity\Ern411\NameType
         uRL:
             expose: true
             access_type: public_method

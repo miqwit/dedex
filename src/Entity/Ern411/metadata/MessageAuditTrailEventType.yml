@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\MessageAuditTrailEventType:
+DedexBundle\Entity\Ern411\MessageAuditTrailEventType:
     properties:
         messagingPartyDescriptor:
             expose: true
@@ -7,7 +7,7 @@ DedexBundle\Entity\Ern41\MessageAuditTrailEventType:
             accessor:
                 getter: getMessagingPartyDescriptor
                 setter: setMessagingPartyDescriptor
-            type: DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType
+            type: DedexBundle\Entity\Ern411\MessagingPartyWithoutCodeType
         dateTime:
             expose: true
             access_type: public_method

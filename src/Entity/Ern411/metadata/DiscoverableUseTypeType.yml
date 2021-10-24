@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\DiscoverableUseTypeType:
+DedexBundle\Entity\Ern411\DiscoverableUseTypeType:
     properties:
         __value:
             expose: true

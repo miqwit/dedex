@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing ImageType
@@ -35,14 +35,14 @@ class ImageType
     /**
      * A Composite containing details of the Type of the Image.
      *
-     * @var \DedexBundle\Entity\Ern41\ImageTypeType $type
+     * @var \DedexBundle\Entity\Ern411\ImageTypeType $type
      */
     private $type = null;
 
     /**
      * A Composite containing details of Identifiers of the Image.
      *
-     * @var \DedexBundle\Entity\Ern41\ResourceProprietaryIdType[] $resourceId
+     * @var \DedexBundle\Entity\Ern411\ResourceProprietaryIdType[] $resourceId
      */
     private $resourceId = [
         
@@ -51,7 +51,7 @@ class ImageType
     /**
      * A Composite containing details of a Title of the Image as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @var \DedexBundle\Entity\Ern41\DisplayTitleTextType[] $displayTitleText
+     * @var \DedexBundle\Entity\Ern411\DisplayTitleTextType[] $displayTitleText
      */
     private $displayTitleText = [
         
@@ -60,7 +60,7 @@ class ImageType
     /**
      * A Composite containing details of a Title of the Image as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @var \DedexBundle\Entity\Ern41\DisplayTitleType[] $displayTitle
+     * @var \DedexBundle\Entity\Ern411\DisplayTitleType[] $displayTitle
      */
     private $displayTitle = [
         
@@ -69,7 +69,7 @@ class ImageType
     /**
      * A Composite containing details of an AdditionalTitle of the Image. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @var \DedexBundle\Entity\Ern41\AdditionalTitleType[] $additionalTitle
+     * @var \DedexBundle\Entity\Ern411\AdditionalTitleType[] $additionalTitle
      */
     private $additionalTitle = [
         
@@ -78,7 +78,7 @@ class ImageType
     /**
      * A Composite containing details of a Type of Version of the Image.
      *
-     * @var \DedexBundle\Entity\Ern41\VersionTypeType[] $versionType
+     * @var \DedexBundle\Entity\Ern411\VersionTypeType[] $versionType
      */
     private $versionType = [
         
@@ -87,7 +87,7 @@ class ImageType
     /**
      * A Composite containing the Name to be used by a DSP when presenting Artist details of the Resource to a Consumer.
      *
-     * @var \DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType[] $displayArtistName
+     * @var \DedexBundle\Entity\Ern411\DisplayArtistNameWithDefaultType[] $displayArtistName
      */
     private $displayArtistName = [
         
@@ -96,7 +96,7 @@ class ImageType
     /**
      * A Composite containing details of the DisplayArtist for the Image. The DisplayArtist may be described through Name, Identifier and Roles.
      *
-     * @var \DedexBundle\Entity\Ern41\DisplayArtistType[] $displayArtist
+     * @var \DedexBundle\Entity\Ern411\DisplayArtistType[] $displayArtist
      */
     private $displayArtist = [
         
@@ -105,7 +105,7 @@ class ImageType
     /**
      * A Composite containing details of a Contributor to the Image.
      *
-     * @var \DedexBundle\Entity\Ern41\ContributorType[] $contributor
+     * @var \DedexBundle\Entity\Ern411\ContributorType[] $contributor
      */
     private $contributor = [
         
@@ -114,7 +114,7 @@ class ImageType
     /**
      * A Composite containing details of RightsController of Rights in the Image.
      *
-     * @var \DedexBundle\Entity\Ern41\ResourceRightsControllerType[] $resourceRightsController
+     * @var \DedexBundle\Entity\Ern411\ResourceRightsControllerType[] $resourceRightsController
      */
     private $resourceRightsController = [
         
@@ -123,7 +123,7 @@ class ImageType
     /**
      * A Composite containing details of RightsController of Rights in the Work.
      *
-     * @var \DedexBundle\Entity\Ern41\WorkRightsControllerType[] $workRightsController
+     * @var \DedexBundle\Entity\Ern411\WorkRightsControllerType[] $workRightsController
      */
     private $workRightsController = [
         
@@ -132,7 +132,7 @@ class ImageType
     /**
      * A Composite containing details of the CLine for the Image.
      *
-     * @var \DedexBundle\Entity\Ern41\CLineWithDefaultType[] $cLine
+     * @var \DedexBundle\Entity\Ern411\CLineWithDefaultType[] $cLine
      */
     private $cLine = [
         
@@ -141,7 +141,7 @@ class ImageType
     /**
      * A Composite containing an Annotation which acknowledges record companies and/or other Parties giving permission for Artists or others featured on the Image.
      *
-     * @var \DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType[] $courtesyLine
+     * @var \DedexBundle\Entity\Ern411\CourtesyLineWithDefaultType[] $courtesyLine
      */
     private $courtesyLine = [
         
@@ -150,14 +150,14 @@ class ImageType
     /**
      * A Composite containing details of the Date and Place of the Event in which the Image was created. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @var \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $creationDate
+     * @var \DedexBundle\Entity\Ern411\EventDateWithoutFlagsType $creationDate
      */
     private $creationDate = null;
 
     /**
      * A Composite containing details of the Date and Place of the Event in which the Image was first published, whether for physical or electronic/online distribution. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @var \DedexBundle\Entity\Ern41\FulfillmentDateWithTerritoryType[] $firstPublicationDate
+     * @var \DedexBundle\Entity\Ern411\FulfillmentDateWithTerritoryType[] $firstPublicationDate
      */
     private $firstPublicationDate = [
         
@@ -166,7 +166,7 @@ class ImageType
     /**
      * A Composite containing details of the classification of the Image according to advice which it carries about the level of explicitness or offensiveness of its content.
      *
-     * @var \DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType[] $parentalWarningType
+     * @var \DedexBundle\Entity\Ern411\ParentalWarningTypeWithTerritoryType[] $parentalWarningType
      */
     private $parentalWarningType = [
         
@@ -175,7 +175,7 @@ class ImageType
     /**
      * A Composite containing details of a Release (or a PhysicalProduct or a DigitalProduct derived from such a Release) which is related to current Image.
      *
-     * @var \DedexBundle\Entity\Ern41\RelatedReleaseType[] $relatedRelease
+     * @var \DedexBundle\Entity\Ern411\RelatedReleaseType[] $relatedRelease
      */
     private $relatedRelease = [
         
@@ -184,7 +184,7 @@ class ImageType
     /**
      * A Composite containing details of a ResourceRelatedResourceReference referring to a Resource that is related to the current Image.
      *
-     * @var \DedexBundle\Entity\Ern41\RelatedResourceType[] $relatedResource
+     * @var \DedexBundle\Entity\Ern411\RelatedResourceType[] $relatedResource
      */
     private $relatedResource = [
         
@@ -200,7 +200,7 @@ class ImageType
     /**
      * A Composite containing a Description of the subject of the Image.
      *
-     * @var \DedexBundle\Entity\Ern41\DescriptionWithTerritoryType[] $description
+     * @var \DedexBundle\Entity\Ern411\DescriptionWithTerritoryType[] $description
      */
     private $description = [
         
@@ -209,7 +209,7 @@ class ImageType
     /**
      * A Composite containing technical details of the Image.
      *
-     * @var \DedexBundle\Entity\Ern41\TechnicalImageDetailsType[] $technicalDetails
+     * @var \DedexBundle\Entity\Ern411\TechnicalImageDetailsType[] $technicalDetails
      */
     private $technicalDetails = [
         
@@ -298,7 +298,7 @@ class ImageType
      *
      * A Composite containing details of the Type of the Image.
      *
-     * @return \DedexBundle\Entity\Ern41\ImageTypeType
+     * @return \DedexBundle\Entity\Ern411\ImageTypeType
      */
     public function getType()
     {
@@ -310,10 +310,10 @@ class ImageType
      *
      * A Composite containing details of the Type of the Image.
      *
-     * @param \DedexBundle\Entity\Ern41\ImageTypeType $type
+     * @param \DedexBundle\Entity\Ern411\ImageTypeType $type
      * @return self
      */
-    public function setType(\DedexBundle\Entity\Ern41\ImageTypeType $type)
+    public function setType(\DedexBundle\Entity\Ern411\ImageTypeType $type)
     {
         $this->type = $type;
         return $this;
@@ -325,9 +325,9 @@ class ImageType
      * A Composite containing details of Identifiers of the Image.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ResourceProprietaryIdType $resourceId
+     * @param \DedexBundle\Entity\Ern411\ResourceProprietaryIdType $resourceId
      */
-    public function addToResourceId(\DedexBundle\Entity\Ern41\ResourceProprietaryIdType $resourceId)
+    public function addToResourceId(\DedexBundle\Entity\Ern411\ResourceProprietaryIdType $resourceId)
     {
         $this->resourceId[] = $resourceId;
         return $this;
@@ -364,7 +364,7 @@ class ImageType
      *
      * A Composite containing details of Identifiers of the Image.
      *
-     * @return \DedexBundle\Entity\Ern41\ResourceProprietaryIdType[]
+     * @return \DedexBundle\Entity\Ern411\ResourceProprietaryIdType[]
      */
     public function getResourceId()
     {
@@ -376,7 +376,7 @@ class ImageType
      *
      * A Composite containing details of Identifiers of the Image.
      *
-     * @param \DedexBundle\Entity\Ern41\ResourceProprietaryIdType[] $resourceId
+     * @param \DedexBundle\Entity\Ern411\ResourceProprietaryIdType[] $resourceId
      * @return self
      */
     public function setResourceId(array $resourceId)
@@ -391,9 +391,9 @@ class ImageType
      * A Composite containing details of a Title of the Image as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DisplayTitleTextType $displayTitleText
+     * @param \DedexBundle\Entity\Ern411\DisplayTitleTextType $displayTitleText
      */
-    public function addToDisplayTitleText(\DedexBundle\Entity\Ern41\DisplayTitleTextType $displayTitleText)
+    public function addToDisplayTitleText(\DedexBundle\Entity\Ern411\DisplayTitleTextType $displayTitleText)
     {
         $this->displayTitleText[] = $displayTitleText;
         return $this;
@@ -430,7 +430,7 @@ class ImageType
      *
      * A Composite containing details of a Title of the Image as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @return \DedexBundle\Entity\Ern41\DisplayTitleTextType[]
+     * @return \DedexBundle\Entity\Ern411\DisplayTitleTextType[]
      */
     public function getDisplayTitleText()
     {
@@ -442,7 +442,7 @@ class ImageType
      *
      * A Composite containing details of a Title of the Image as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @param \DedexBundle\Entity\Ern41\DisplayTitleTextType[] $displayTitleText
+     * @param \DedexBundle\Entity\Ern411\DisplayTitleTextType[] $displayTitleText
      * @return self
      */
     public function setDisplayTitleText(array $displayTitleText)
@@ -457,9 +457,9 @@ class ImageType
      * A Composite containing details of a Title of the Image as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DisplayTitleType $displayTitle
+     * @param \DedexBundle\Entity\Ern411\DisplayTitleType $displayTitle
      */
-    public function addToDisplayTitle(\DedexBundle\Entity\Ern41\DisplayTitleType $displayTitle)
+    public function addToDisplayTitle(\DedexBundle\Entity\Ern411\DisplayTitleType $displayTitle)
     {
         $this->displayTitle[] = $displayTitle;
         return $this;
@@ -496,7 +496,7 @@ class ImageType
      *
      * A Composite containing details of a Title of the Image as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @return \DedexBundle\Entity\Ern41\DisplayTitleType[]
+     * @return \DedexBundle\Entity\Ern411\DisplayTitleType[]
      */
     public function getDisplayTitle()
     {
@@ -508,7 +508,7 @@ class ImageType
      *
      * A Composite containing details of a Title of the Image as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @param \DedexBundle\Entity\Ern41\DisplayTitleType[] $displayTitle
+     * @param \DedexBundle\Entity\Ern411\DisplayTitleType[] $displayTitle
      * @return self
      */
     public function setDisplayTitle(array $displayTitle)
@@ -523,9 +523,9 @@ class ImageType
      * A Composite containing details of an AdditionalTitle of the Image. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\AdditionalTitleType $additionalTitle
+     * @param \DedexBundle\Entity\Ern411\AdditionalTitleType $additionalTitle
      */
-    public function addToAdditionalTitle(\DedexBundle\Entity\Ern41\AdditionalTitleType $additionalTitle)
+    public function addToAdditionalTitle(\DedexBundle\Entity\Ern411\AdditionalTitleType $additionalTitle)
     {
         $this->additionalTitle[] = $additionalTitle;
         return $this;
@@ -562,7 +562,7 @@ class ImageType
      *
      * A Composite containing details of an AdditionalTitle of the Image. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @return \DedexBundle\Entity\Ern41\AdditionalTitleType[]
+     * @return \DedexBundle\Entity\Ern411\AdditionalTitleType[]
      */
     public function getAdditionalTitle()
     {
@@ -574,7 +574,7 @@ class ImageType
      *
      * A Composite containing details of an AdditionalTitle of the Image. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @param \DedexBundle\Entity\Ern41\AdditionalTitleType[] $additionalTitle
+     * @param \DedexBundle\Entity\Ern411\AdditionalTitleType[] $additionalTitle
      * @return self
      */
     public function setAdditionalTitle(array $additionalTitle)
@@ -589,9 +589,9 @@ class ImageType
      * A Composite containing details of a Type of Version of the Image.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\VersionTypeType $versionType
+     * @param \DedexBundle\Entity\Ern411\VersionTypeType $versionType
      */
-    public function addToVersionType(\DedexBundle\Entity\Ern41\VersionTypeType $versionType)
+    public function addToVersionType(\DedexBundle\Entity\Ern411\VersionTypeType $versionType)
     {
         $this->versionType[] = $versionType;
         return $this;
@@ -628,7 +628,7 @@ class ImageType
      *
      * A Composite containing details of a Type of Version of the Image.
      *
-     * @return \DedexBundle\Entity\Ern41\VersionTypeType[]
+     * @return \DedexBundle\Entity\Ern411\VersionTypeType[]
      */
     public function getVersionType()
     {
@@ -640,7 +640,7 @@ class ImageType
      *
      * A Composite containing details of a Type of Version of the Image.
      *
-     * @param \DedexBundle\Entity\Ern41\VersionTypeType[] $versionType
+     * @param \DedexBundle\Entity\Ern411\VersionTypeType[] $versionType
      * @return self
      */
     public function setVersionType(array $versionType)
@@ -655,9 +655,9 @@ class ImageType
      * A Composite containing the Name to be used by a DSP when presenting Artist details of the Resource to a Consumer.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType $displayArtistName
+     * @param \DedexBundle\Entity\Ern411\DisplayArtistNameWithDefaultType $displayArtistName
      */
-    public function addToDisplayArtistName(\DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType $displayArtistName)
+    public function addToDisplayArtistName(\DedexBundle\Entity\Ern411\DisplayArtistNameWithDefaultType $displayArtistName)
     {
         $this->displayArtistName[] = $displayArtistName;
         return $this;
@@ -694,7 +694,7 @@ class ImageType
      *
      * A Composite containing the Name to be used by a DSP when presenting Artist details of the Resource to a Consumer.
      *
-     * @return \DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType[]
+     * @return \DedexBundle\Entity\Ern411\DisplayArtistNameWithDefaultType[]
      */
     public function getDisplayArtistName()
     {
@@ -706,7 +706,7 @@ class ImageType
      *
      * A Composite containing the Name to be used by a DSP when presenting Artist details of the Resource to a Consumer.
      *
-     * @param \DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType[] $displayArtistName
+     * @param \DedexBundle\Entity\Ern411\DisplayArtistNameWithDefaultType[] $displayArtistName
      * @return self
      */
     public function setDisplayArtistName(array $displayArtistName)
@@ -721,9 +721,9 @@ class ImageType
      * A Composite containing details of the DisplayArtist for the Image. The DisplayArtist may be described through Name, Identifier and Roles.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DisplayArtistType $displayArtist
+     * @param \DedexBundle\Entity\Ern411\DisplayArtistType $displayArtist
      */
-    public function addToDisplayArtist(\DedexBundle\Entity\Ern41\DisplayArtistType $displayArtist)
+    public function addToDisplayArtist(\DedexBundle\Entity\Ern411\DisplayArtistType $displayArtist)
     {
         $this->displayArtist[] = $displayArtist;
         return $this;
@@ -760,7 +760,7 @@ class ImageType
      *
      * A Composite containing details of the DisplayArtist for the Image. The DisplayArtist may be described through Name, Identifier and Roles.
      *
-     * @return \DedexBundle\Entity\Ern41\DisplayArtistType[]
+     * @return \DedexBundle\Entity\Ern411\DisplayArtistType[]
      */
     public function getDisplayArtist()
     {
@@ -772,7 +772,7 @@ class ImageType
      *
      * A Composite containing details of the DisplayArtist for the Image. The DisplayArtist may be described through Name, Identifier and Roles.
      *
-     * @param \DedexBundle\Entity\Ern41\DisplayArtistType[] $displayArtist
+     * @param \DedexBundle\Entity\Ern411\DisplayArtistType[] $displayArtist
      * @return self
      */
     public function setDisplayArtist(array $displayArtist)
@@ -787,9 +787,9 @@ class ImageType
      * A Composite containing details of a Contributor to the Image.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ContributorType $contributor
+     * @param \DedexBundle\Entity\Ern411\ContributorType $contributor
      */
-    public function addToContributor(\DedexBundle\Entity\Ern41\ContributorType $contributor)
+    public function addToContributor(\DedexBundle\Entity\Ern411\ContributorType $contributor)
     {
         $this->contributor[] = $contributor;
         return $this;
@@ -826,7 +826,7 @@ class ImageType
      *
      * A Composite containing details of a Contributor to the Image.
      *
-     * @return \DedexBundle\Entity\Ern41\ContributorType[]
+     * @return \DedexBundle\Entity\Ern411\ContributorType[]
      */
     public function getContributor()
     {
@@ -838,7 +838,7 @@ class ImageType
      *
      * A Composite containing details of a Contributor to the Image.
      *
-     * @param \DedexBundle\Entity\Ern41\ContributorType[] $contributor
+     * @param \DedexBundle\Entity\Ern411\ContributorType[] $contributor
      * @return self
      */
     public function setContributor(array $contributor)
@@ -853,9 +853,9 @@ class ImageType
      * A Composite containing details of RightsController of Rights in the Image.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ResourceRightsControllerType $resourceRightsController
+     * @param \DedexBundle\Entity\Ern411\ResourceRightsControllerType $resourceRightsController
      */
-    public function addToResourceRightsController(\DedexBundle\Entity\Ern41\ResourceRightsControllerType $resourceRightsController)
+    public function addToResourceRightsController(\DedexBundle\Entity\Ern411\ResourceRightsControllerType $resourceRightsController)
     {
         $this->resourceRightsController[] = $resourceRightsController;
         return $this;
@@ -892,7 +892,7 @@ class ImageType
      *
      * A Composite containing details of RightsController of Rights in the Image.
      *
-     * @return \DedexBundle\Entity\Ern41\ResourceRightsControllerType[]
+     * @return \DedexBundle\Entity\Ern411\ResourceRightsControllerType[]
      */
     public function getResourceRightsController()
     {
@@ -904,7 +904,7 @@ class ImageType
      *
      * A Composite containing details of RightsController of Rights in the Image.
      *
-     * @param \DedexBundle\Entity\Ern41\ResourceRightsControllerType[] $resourceRightsController
+     * @param \DedexBundle\Entity\Ern411\ResourceRightsControllerType[] $resourceRightsController
      * @return self
      */
     public function setResourceRightsController(array $resourceRightsController)
@@ -919,9 +919,9 @@ class ImageType
      * A Composite containing details of RightsController of Rights in the Work.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\WorkRightsControllerType $workRightsController
+     * @param \DedexBundle\Entity\Ern411\WorkRightsControllerType $workRightsController
      */
-    public function addToWorkRightsController(\DedexBundle\Entity\Ern41\WorkRightsControllerType $workRightsController)
+    public function addToWorkRightsController(\DedexBundle\Entity\Ern411\WorkRightsControllerType $workRightsController)
     {
         $this->workRightsController[] = $workRightsController;
         return $this;
@@ -958,7 +958,7 @@ class ImageType
      *
      * A Composite containing details of RightsController of Rights in the Work.
      *
-     * @return \DedexBundle\Entity\Ern41\WorkRightsControllerType[]
+     * @return \DedexBundle\Entity\Ern411\WorkRightsControllerType[]
      */
     public function getWorkRightsController()
     {
@@ -970,7 +970,7 @@ class ImageType
      *
      * A Composite containing details of RightsController of Rights in the Work.
      *
-     * @param \DedexBundle\Entity\Ern41\WorkRightsControllerType[] $workRightsController
+     * @param \DedexBundle\Entity\Ern411\WorkRightsControllerType[] $workRightsController
      * @return self
      */
     public function setWorkRightsController(array $workRightsController)
@@ -985,9 +985,9 @@ class ImageType
      * A Composite containing details of the CLine for the Image.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\CLineWithDefaultType $cLine
+     * @param \DedexBundle\Entity\Ern411\CLineWithDefaultType $cLine
      */
-    public function addToCLine(\DedexBundle\Entity\Ern41\CLineWithDefaultType $cLine)
+    public function addToCLine(\DedexBundle\Entity\Ern411\CLineWithDefaultType $cLine)
     {
         $this->cLine[] = $cLine;
         return $this;
@@ -1024,7 +1024,7 @@ class ImageType
      *
      * A Composite containing details of the CLine for the Image.
      *
-     * @return \DedexBundle\Entity\Ern41\CLineWithDefaultType[]
+     * @return \DedexBundle\Entity\Ern411\CLineWithDefaultType[]
      */
     public function getCLine()
     {
@@ -1036,7 +1036,7 @@ class ImageType
      *
      * A Composite containing details of the CLine for the Image.
      *
-     * @param \DedexBundle\Entity\Ern41\CLineWithDefaultType[] $cLine
+     * @param \DedexBundle\Entity\Ern411\CLineWithDefaultType[] $cLine
      * @return self
      */
     public function setCLine(array $cLine)
@@ -1051,9 +1051,9 @@ class ImageType
      * A Composite containing an Annotation which acknowledges record companies and/or other Parties giving permission for Artists or others featured on the Image.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType $courtesyLine
+     * @param \DedexBundle\Entity\Ern411\CourtesyLineWithDefaultType $courtesyLine
      */
-    public function addToCourtesyLine(\DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType $courtesyLine)
+    public function addToCourtesyLine(\DedexBundle\Entity\Ern411\CourtesyLineWithDefaultType $courtesyLine)
     {
         $this->courtesyLine[] = $courtesyLine;
         return $this;
@@ -1090,7 +1090,7 @@ class ImageType
      *
      * A Composite containing an Annotation which acknowledges record companies and/or other Parties giving permission for Artists or others featured on the Image.
      *
-     * @return \DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType[]
+     * @return \DedexBundle\Entity\Ern411\CourtesyLineWithDefaultType[]
      */
     public function getCourtesyLine()
     {
@@ -1102,7 +1102,7 @@ class ImageType
      *
      * A Composite containing an Annotation which acknowledges record companies and/or other Parties giving permission for Artists or others featured on the Image.
      *
-     * @param \DedexBundle\Entity\Ern41\CourtesyLineWithDefaultType[] $courtesyLine
+     * @param \DedexBundle\Entity\Ern411\CourtesyLineWithDefaultType[] $courtesyLine
      * @return self
      */
     public function setCourtesyLine(array $courtesyLine)
@@ -1116,7 +1116,7 @@ class ImageType
      *
      * A Composite containing details of the Date and Place of the Event in which the Image was created. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @return \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType
+     * @return \DedexBundle\Entity\Ern411\EventDateWithoutFlagsType
      */
     public function getCreationDate()
     {
@@ -1128,10 +1128,10 @@ class ImageType
      *
      * A Composite containing details of the Date and Place of the Event in which the Image was created. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @param \DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $creationDate
+     * @param \DedexBundle\Entity\Ern411\EventDateWithoutFlagsType $creationDate
      * @return self
      */
-    public function setCreationDate(\DedexBundle\Entity\Ern41\EventDateWithoutFlagsType $creationDate)
+    public function setCreationDate(\DedexBundle\Entity\Ern411\EventDateWithoutFlagsType $creationDate)
     {
         $this->creationDate = $creationDate;
         return $this;
@@ -1143,9 +1143,9 @@ class ImageType
      * A Composite containing details of the Date and Place of the Event in which the Image was first published, whether for physical or electronic/online distribution. This is a string with the syntax YYYY[-MM[-DD]].
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\FulfillmentDateWithTerritoryType $firstPublicationDate
+     * @param \DedexBundle\Entity\Ern411\FulfillmentDateWithTerritoryType $firstPublicationDate
      */
-    public function addToFirstPublicationDate(\DedexBundle\Entity\Ern41\FulfillmentDateWithTerritoryType $firstPublicationDate)
+    public function addToFirstPublicationDate(\DedexBundle\Entity\Ern411\FulfillmentDateWithTerritoryType $firstPublicationDate)
     {
         $this->firstPublicationDate[] = $firstPublicationDate;
         return $this;
@@ -1182,7 +1182,7 @@ class ImageType
      *
      * A Composite containing details of the Date and Place of the Event in which the Image was first published, whether for physical or electronic/online distribution. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @return \DedexBundle\Entity\Ern41\FulfillmentDateWithTerritoryType[]
+     * @return \DedexBundle\Entity\Ern411\FulfillmentDateWithTerritoryType[]
      */
     public function getFirstPublicationDate()
     {
@@ -1194,7 +1194,7 @@ class ImageType
      *
      * A Composite containing details of the Date and Place of the Event in which the Image was first published, whether for physical or electronic/online distribution. This is a string with the syntax YYYY[-MM[-DD]].
      *
-     * @param \DedexBundle\Entity\Ern41\FulfillmentDateWithTerritoryType[] $firstPublicationDate
+     * @param \DedexBundle\Entity\Ern411\FulfillmentDateWithTerritoryType[] $firstPublicationDate
      * @return self
      */
     public function setFirstPublicationDate(array $firstPublicationDate)
@@ -1209,9 +1209,9 @@ class ImageType
      * A Composite containing details of the classification of the Image according to advice which it carries about the level of explicitness or offensiveness of its content.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType $parentalWarningType
+     * @param \DedexBundle\Entity\Ern411\ParentalWarningTypeWithTerritoryType $parentalWarningType
      */
-    public function addToParentalWarningType(\DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType $parentalWarningType)
+    public function addToParentalWarningType(\DedexBundle\Entity\Ern411\ParentalWarningTypeWithTerritoryType $parentalWarningType)
     {
         $this->parentalWarningType[] = $parentalWarningType;
         return $this;
@@ -1248,7 +1248,7 @@ class ImageType
      *
      * A Composite containing details of the classification of the Image according to advice which it carries about the level of explicitness or offensiveness of its content.
      *
-     * @return \DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType[]
+     * @return \DedexBundle\Entity\Ern411\ParentalWarningTypeWithTerritoryType[]
      */
     public function getParentalWarningType()
     {
@@ -1260,7 +1260,7 @@ class ImageType
      *
      * A Composite containing details of the classification of the Image according to advice which it carries about the level of explicitness or offensiveness of its content.
      *
-     * @param \DedexBundle\Entity\Ern41\ParentalWarningTypeWithTerritoryType[] $parentalWarningType
+     * @param \DedexBundle\Entity\Ern411\ParentalWarningTypeWithTerritoryType[] $parentalWarningType
      * @return self
      */
     public function setParentalWarningType(array $parentalWarningType)
@@ -1275,9 +1275,9 @@ class ImageType
      * A Composite containing details of a Release (or a PhysicalProduct or a DigitalProduct derived from such a Release) which is related to current Image.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\RelatedReleaseType $relatedRelease
+     * @param \DedexBundle\Entity\Ern411\RelatedReleaseType $relatedRelease
      */
-    public function addToRelatedRelease(\DedexBundle\Entity\Ern41\RelatedReleaseType $relatedRelease)
+    public function addToRelatedRelease(\DedexBundle\Entity\Ern411\RelatedReleaseType $relatedRelease)
     {
         $this->relatedRelease[] = $relatedRelease;
         return $this;
@@ -1314,7 +1314,7 @@ class ImageType
      *
      * A Composite containing details of a Release (or a PhysicalProduct or a DigitalProduct derived from such a Release) which is related to current Image.
      *
-     * @return \DedexBundle\Entity\Ern41\RelatedReleaseType[]
+     * @return \DedexBundle\Entity\Ern411\RelatedReleaseType[]
      */
     public function getRelatedRelease()
     {
@@ -1326,7 +1326,7 @@ class ImageType
      *
      * A Composite containing details of a Release (or a PhysicalProduct or a DigitalProduct derived from such a Release) which is related to current Image.
      *
-     * @param \DedexBundle\Entity\Ern41\RelatedReleaseType[] $relatedRelease
+     * @param \DedexBundle\Entity\Ern411\RelatedReleaseType[] $relatedRelease
      * @return self
      */
     public function setRelatedRelease(array $relatedRelease)
@@ -1341,9 +1341,9 @@ class ImageType
      * A Composite containing details of a ResourceRelatedResourceReference referring to a Resource that is related to the current Image.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\RelatedResourceType $relatedResource
+     * @param \DedexBundle\Entity\Ern411\RelatedResourceType $relatedResource
      */
-    public function addToRelatedResource(\DedexBundle\Entity\Ern41\RelatedResourceType $relatedResource)
+    public function addToRelatedResource(\DedexBundle\Entity\Ern411\RelatedResourceType $relatedResource)
     {
         $this->relatedResource[] = $relatedResource;
         return $this;
@@ -1380,7 +1380,7 @@ class ImageType
      *
      * A Composite containing details of a ResourceRelatedResourceReference referring to a Resource that is related to the current Image.
      *
-     * @return \DedexBundle\Entity\Ern41\RelatedResourceType[]
+     * @return \DedexBundle\Entity\Ern411\RelatedResourceType[]
      */
     public function getRelatedResource()
     {
@@ -1392,7 +1392,7 @@ class ImageType
      *
      * A Composite containing details of a ResourceRelatedResourceReference referring to a Resource that is related to the current Image.
      *
-     * @param \DedexBundle\Entity\Ern41\RelatedResourceType[] $relatedResource
+     * @param \DedexBundle\Entity\Ern411\RelatedResourceType[] $relatedResource
      * @return self
      */
     public function setRelatedResource(array $relatedResource)
@@ -1433,9 +1433,9 @@ class ImageType
      * A Composite containing a Description of the subject of the Image.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DescriptionWithTerritoryType $description
+     * @param \DedexBundle\Entity\Ern411\DescriptionWithTerritoryType $description
      */
-    public function addToDescription(\DedexBundle\Entity\Ern41\DescriptionWithTerritoryType $description)
+    public function addToDescription(\DedexBundle\Entity\Ern411\DescriptionWithTerritoryType $description)
     {
         $this->description[] = $description;
         return $this;
@@ -1472,7 +1472,7 @@ class ImageType
      *
      * A Composite containing a Description of the subject of the Image.
      *
-     * @return \DedexBundle\Entity\Ern41\DescriptionWithTerritoryType[]
+     * @return \DedexBundle\Entity\Ern411\DescriptionWithTerritoryType[]
      */
     public function getDescription()
     {
@@ -1484,7 +1484,7 @@ class ImageType
      *
      * A Composite containing a Description of the subject of the Image.
      *
-     * @param \DedexBundle\Entity\Ern41\DescriptionWithTerritoryType[] $description
+     * @param \DedexBundle\Entity\Ern411\DescriptionWithTerritoryType[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -1499,9 +1499,9 @@ class ImageType
      * A Composite containing technical details of the Image.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\TechnicalImageDetailsType $technicalDetails
+     * @param \DedexBundle\Entity\Ern411\TechnicalImageDetailsType $technicalDetails
      */
-    public function addToTechnicalDetails(\DedexBundle\Entity\Ern41\TechnicalImageDetailsType $technicalDetails)
+    public function addToTechnicalDetails(\DedexBundle\Entity\Ern411\TechnicalImageDetailsType $technicalDetails)
     {
         $this->technicalDetails[] = $technicalDetails;
         return $this;
@@ -1538,7 +1538,7 @@ class ImageType
      *
      * A Composite containing technical details of the Image.
      *
-     * @return \DedexBundle\Entity\Ern41\TechnicalImageDetailsType[]
+     * @return \DedexBundle\Entity\Ern411\TechnicalImageDetailsType[]
      */
     public function getTechnicalDetails()
     {
@@ -1550,7 +1550,7 @@ class ImageType
      *
      * A Composite containing technical details of the Image.
      *
-     * @param \DedexBundle\Entity\Ern41\TechnicalImageDetailsType[] $technicalDetails
+     * @param \DedexBundle\Entity\Ern411\TechnicalImageDetailsType[] $technicalDetails
      * @return self
      */
     public function setTechnicalDetails(array $technicalDetails)

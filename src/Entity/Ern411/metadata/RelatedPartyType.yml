@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\RelatedPartyType:
+DedexBundle\Entity\Ern411\RelatedPartyType:
     properties:
         partyRelatedPartyReference:
             expose: true
@@ -15,4 +15,4 @@ DedexBundle\Entity\Ern41\RelatedPartyType:
             accessor:
                 getter: getPartyRelationshipType
                 setter: setPartyRelationshipType
-            type: DedexBundle\Entity\Ern41\PartyRelationshipTypeType
+            type: DedexBundle\Entity\Ern411\PartyRelationshipTypeType

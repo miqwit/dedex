@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\KeywordsWithTerritoryType:
+DedexBundle\Entity\Ern411\KeywordsWithTerritoryType:
     properties:
         __value:
             expose: true

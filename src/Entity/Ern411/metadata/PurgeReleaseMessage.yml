@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\PurgeReleaseMessage:
+DedexBundle\Entity\Ern411\PurgeReleaseMessage:
     xml_root_name: 'ns-bbaa9531:PurgeReleaseMessage'
     xml_root_namespace: 'http://ddex.net/xml/ern/411'
     properties:
@@ -18,7 +18,7 @@ DedexBundle\Entity\Ern41\PurgeReleaseMessage:
             accessor:
                 getter: getMessageHeader
                 setter: setMessageHeader
-            type: DedexBundle\Entity\Ern41\MessageHeaderType
+            type: DedexBundle\Entity\Ern411\MessageHeaderType
         purgedRelease:
             expose: true
             access_type: public_method
@@ -26,4 +26,4 @@ DedexBundle\Entity\Ern41\PurgeReleaseMessage:
             accessor:
                 getter: getPurgedRelease
                 setter: setPurgedRelease
-            type: DedexBundle\Entity\Ern41\PurgedReleaseType
+            type: DedexBundle\Entity\Ern411\PurgedReleaseType

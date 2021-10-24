@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ResourceGroupContentItemType:
+DedexBundle\Entity\Ern411\ResourceGroupContentItemType:
     properties:
         sequenceNumber:
             expose: true
@@ -42,7 +42,7 @@ DedexBundle\Entity\Ern41\ResourceGroupContentItemType:
             xml_list:
                 inline: true
                 entry_name: LinkedReleaseResourceReference
-            type: array<DedexBundle\Entity\Ern41\LinkedReleaseResourceReferenceType>
+            type: array<DedexBundle\Entity\Ern411\LinkedReleaseResourceReferenceType>
         isBonusResource:
             expose: true
             access_type: public_method

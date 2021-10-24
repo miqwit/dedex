@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ContainerFormatType:
+DedexBundle\Entity\Ern411\ContainerFormatType:
     properties:
         __value:
             expose: true

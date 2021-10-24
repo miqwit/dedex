@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\DetailedHashSumType:
+DedexBundle\Entity\Ern411\DetailedHashSumType:
     properties:
         algorithm:
             expose: true
@@ -7,7 +7,7 @@ DedexBundle\Entity\Ern41\DetailedHashSumType:
             accessor:
                 getter: getAlgorithm
                 setter: setAlgorithm
-            type: DedexBundle\Entity\Ern41\HashSumAlgorithmTypeType
+            type: DedexBundle\Entity\Ern411\HashSumAlgorithmTypeType
         version:
             expose: true
             access_type: public_method

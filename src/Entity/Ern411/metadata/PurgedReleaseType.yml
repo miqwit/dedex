@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\PurgedReleaseType:
+DedexBundle\Entity\Ern411\PurgedReleaseType:
     properties:
         releaseId:
             expose: true
@@ -7,7 +7,7 @@ DedexBundle\Entity\Ern41\PurgedReleaseType:
             accessor:
                 getter: getReleaseId
                 setter: setReleaseId
-            type: DedexBundle\Entity\Ern41\ReleaseIdType
+            type: DedexBundle\Entity\Ern411\ReleaseIdType
         title:
             expose: true
             access_type: public_method
@@ -18,7 +18,7 @@ DedexBundle\Entity\Ern41\PurgedReleaseType:
             xml_list:
                 inline: true
                 entry_name: Title
-            type: array<DedexBundle\Entity\Ern41\TitleType>
+            type: array<DedexBundle\Entity\Ern411\TitleType>
         contributor:
             expose: true
             access_type: public_method
@@ -29,4 +29,4 @@ DedexBundle\Entity\Ern41\PurgedReleaseType:
             xml_list:
                 inline: true
                 entry_name: Contributor
-            type: array<DedexBundle\Entity\Ern41\DetailedResourceContributorType>
+            type: array<DedexBundle\Entity\Ern411\DetailedResourceContributorType>

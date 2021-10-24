@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing PartyType
@@ -21,7 +21,7 @@ class PartyType
     /**
      * A Composite containing details of the PartyId for the Party. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, producers or other Creators.
      *
-     * @var \DedexBundle\Entity\Ern41\DetailedPartyIdType[] $partyId
+     * @var \DedexBundle\Entity\Ern411\DetailedPartyIdType[] $partyId
      */
     private $partyId = [
         
@@ -30,7 +30,7 @@ class PartyType
     /**
      * A Composite containing details of the PartyName(s).
      *
-     * @var \DedexBundle\Entity\Ern41\PartyNameWithTerritoryType[] $partyName
+     * @var \DedexBundle\Entity\Ern411\PartyNameWithTerritoryType[] $partyName
      */
     private $partyName = [
         
@@ -39,7 +39,7 @@ class PartyType
     /**
      * A Composite containing details of an affiliation for the Party.
      *
-     * @var \DedexBundle\Entity\Ern41\AffiliationType[] $affiliation
+     * @var \DedexBundle\Entity\Ern411\AffiliationType[] $affiliation
      */
     private $affiliation = [
         
@@ -48,7 +48,7 @@ class PartyType
     /**
      * A Composite containing details of a PartyRelatedPartyReference referring to a Party that is related to the current Party. This can be used to express, for instance, relationships between a band and its members or between a label and its parent company.
      *
-     * @var \DedexBundle\Entity\Ern41\RelatedPartyType[] $relatedParty
+     * @var \DedexBundle\Entity\Ern411\RelatedPartyType[] $relatedParty
      */
     private $relatedParty = [
         
@@ -95,9 +95,9 @@ class PartyType
      * A Composite containing details of the PartyId for the Party. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, producers or other Creators.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DetailedPartyIdType $partyId
+     * @param \DedexBundle\Entity\Ern411\DetailedPartyIdType $partyId
      */
-    public function addToPartyId(\DedexBundle\Entity\Ern41\DetailedPartyIdType $partyId)
+    public function addToPartyId(\DedexBundle\Entity\Ern411\DetailedPartyIdType $partyId)
     {
         $this->partyId[] = $partyId;
         return $this;
@@ -134,7 +134,7 @@ class PartyType
      *
      * A Composite containing details of the PartyId for the Party. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, producers or other Creators.
      *
-     * @return \DedexBundle\Entity\Ern41\DetailedPartyIdType[]
+     * @return \DedexBundle\Entity\Ern411\DetailedPartyIdType[]
      */
     public function getPartyId()
     {
@@ -146,7 +146,7 @@ class PartyType
      *
      * A Composite containing details of the PartyId for the Party. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, producers or other Creators.
      *
-     * @param \DedexBundle\Entity\Ern41\DetailedPartyIdType[] $partyId
+     * @param \DedexBundle\Entity\Ern411\DetailedPartyIdType[] $partyId
      * @return self
      */
     public function setPartyId(array $partyId)
@@ -161,9 +161,9 @@ class PartyType
      * A Composite containing details of the PartyName(s).
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\PartyNameWithTerritoryType $partyName
+     * @param \DedexBundle\Entity\Ern411\PartyNameWithTerritoryType $partyName
      */
-    public function addToPartyName(\DedexBundle\Entity\Ern41\PartyNameWithTerritoryType $partyName)
+    public function addToPartyName(\DedexBundle\Entity\Ern411\PartyNameWithTerritoryType $partyName)
     {
         $this->partyName[] = $partyName;
         return $this;
@@ -200,7 +200,7 @@ class PartyType
      *
      * A Composite containing details of the PartyName(s).
      *
-     * @return \DedexBundle\Entity\Ern41\PartyNameWithTerritoryType[]
+     * @return \DedexBundle\Entity\Ern411\PartyNameWithTerritoryType[]
      */
     public function getPartyName()
     {
@@ -212,7 +212,7 @@ class PartyType
      *
      * A Composite containing details of the PartyName(s).
      *
-     * @param \DedexBundle\Entity\Ern41\PartyNameWithTerritoryType[] $partyName
+     * @param \DedexBundle\Entity\Ern411\PartyNameWithTerritoryType[] $partyName
      * @return self
      */
     public function setPartyName(array $partyName)
@@ -227,9 +227,9 @@ class PartyType
      * A Composite containing details of an affiliation for the Party.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\AffiliationType $affiliation
+     * @param \DedexBundle\Entity\Ern411\AffiliationType $affiliation
      */
-    public function addToAffiliation(\DedexBundle\Entity\Ern41\AffiliationType $affiliation)
+    public function addToAffiliation(\DedexBundle\Entity\Ern411\AffiliationType $affiliation)
     {
         $this->affiliation[] = $affiliation;
         return $this;
@@ -266,7 +266,7 @@ class PartyType
      *
      * A Composite containing details of an affiliation for the Party.
      *
-     * @return \DedexBundle\Entity\Ern41\AffiliationType[]
+     * @return \DedexBundle\Entity\Ern411\AffiliationType[]
      */
     public function getAffiliation()
     {
@@ -278,7 +278,7 @@ class PartyType
      *
      * A Composite containing details of an affiliation for the Party.
      *
-     * @param \DedexBundle\Entity\Ern41\AffiliationType[] $affiliation
+     * @param \DedexBundle\Entity\Ern411\AffiliationType[] $affiliation
      * @return self
      */
     public function setAffiliation(array $affiliation)
@@ -293,9 +293,9 @@ class PartyType
      * A Composite containing details of a PartyRelatedPartyReference referring to a Party that is related to the current Party. This can be used to express, for instance, relationships between a band and its members or between a label and its parent company.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\RelatedPartyType $relatedParty
+     * @param \DedexBundle\Entity\Ern411\RelatedPartyType $relatedParty
      */
-    public function addToRelatedParty(\DedexBundle\Entity\Ern41\RelatedPartyType $relatedParty)
+    public function addToRelatedParty(\DedexBundle\Entity\Ern411\RelatedPartyType $relatedParty)
     {
         $this->relatedParty[] = $relatedParty;
         return $this;
@@ -332,7 +332,7 @@ class PartyType
      *
      * A Composite containing details of a PartyRelatedPartyReference referring to a Party that is related to the current Party. This can be used to express, for instance, relationships between a band and its members or between a label and its parent company.
      *
-     * @return \DedexBundle\Entity\Ern41\RelatedPartyType[]
+     * @return \DedexBundle\Entity\Ern411\RelatedPartyType[]
      */
     public function getRelatedParty()
     {
@@ -344,7 +344,7 @@ class PartyType
      *
      * A Composite containing details of a PartyRelatedPartyReference referring to a Party that is related to the current Party. This can be used to express, for instance, relationships between a band and its members or between a label and its parent company.
      *
-     * @param \DedexBundle\Entity\Ern41\RelatedPartyType[] $relatedParty
+     * @param \DedexBundle\Entity\Ern411\RelatedPartyType[] $relatedParty
      * @return self
      */
     public function setRelatedParty(array $relatedParty)

@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\AffiliationType:
+DedexBundle\Entity\Ern411\AffiliationType:
     properties:
         companyName:
             expose: true
@@ -34,7 +34,7 @@ DedexBundle\Entity\Ern41\AffiliationType:
             xml_list:
                 inline: true
                 entry_name: TerritoryCode
-            type: array<DedexBundle\Entity\Ern41\CurrentTerritoryCodeType>
+            type: array<DedexBundle\Entity\Ern411\CurrentTerritoryCodeType>
         excludedTerritoryCode:
             expose: true
             access_type: public_method
@@ -45,7 +45,7 @@ DedexBundle\Entity\Ern41\AffiliationType:
             xml_list:
                 inline: true
                 entry_name: ExcludedTerritoryCode
-            type: array<DedexBundle\Entity\Ern41\CurrentTerritoryCodeType>
+            type: array<DedexBundle\Entity\Ern411\CurrentTerritoryCodeType>
         validityPeriod:
             expose: true
             access_type: public_method
@@ -53,7 +53,7 @@ DedexBundle\Entity\Ern41\AffiliationType:
             accessor:
                 getter: getValidityPeriod
                 setter: setValidityPeriod
-            type: DedexBundle\Entity\Ern41\ValidityPeriodType
+            type: DedexBundle\Entity\Ern411\ValidityPeriodType
         rightsType:
             expose: true
             access_type: public_method
@@ -64,7 +64,7 @@ DedexBundle\Entity\Ern41\AffiliationType:
             xml_list:
                 inline: true
                 entry_name: RightsType
-            type: array<DedexBundle\Entity\Ern41\SimpleRightsTypeType>
+            type: array<DedexBundle\Entity\Ern411\SimpleRightsTypeType>
         percentageOfRightsAssignment:
             expose: true
             access_type: public_method

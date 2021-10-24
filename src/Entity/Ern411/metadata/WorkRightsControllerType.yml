@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\WorkRightsControllerType:
+DedexBundle\Entity\Ern411\WorkRightsControllerType:
     properties:
         rightsControllerPartyReference:
             expose: true
@@ -53,7 +53,7 @@ DedexBundle\Entity\Ern41\WorkRightsControllerType:
             xml_list:
                 inline: true
                 entry_name: Territory
-            type: array<DedexBundle\Entity\Ern41\AllTerritoryCodeType>
+            type: array<DedexBundle\Entity\Ern411\AllTerritoryCodeType>
         startDate:
             expose: true
             access_type: public_method

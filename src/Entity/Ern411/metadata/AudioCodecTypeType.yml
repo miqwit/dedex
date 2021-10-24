@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\AudioCodecTypeType:
+DedexBundle\Entity\Ern411\AudioCodecTypeType:
     properties:
         __value:
             expose: true

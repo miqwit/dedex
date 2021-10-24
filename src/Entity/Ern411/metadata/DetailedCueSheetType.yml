@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\DetailedCueSheetType:
+DedexBundle\Entity\Ern411\DetailedCueSheetType:
     properties:
         cueSheetId:
             expose: true
@@ -10,7 +10,7 @@ DedexBundle\Entity\Ern41\DetailedCueSheetType:
             xml_list:
                 inline: true
                 entry_name: CueSheetId
-            type: array<DedexBundle\Entity\Ern41\ProprietaryIdType>
+            type: array<DedexBundle\Entity\Ern411\ProprietaryIdType>
         cueSheetReference:
             expose: true
             access_type: public_method
@@ -26,7 +26,7 @@ DedexBundle\Entity\Ern41\DetailedCueSheetType:
             accessor:
                 getter: getCueSheetType
                 setter: setCueSheetType
-            type: DedexBundle\Entity\Ern41\CueSheetTypeType
+            type: DedexBundle\Entity\Ern411\CueSheetTypeType
         cue:
             expose: true
             access_type: public_method
@@ -37,4 +37,4 @@ DedexBundle\Entity\Ern41\DetailedCueSheetType:
             xml_list:
                 inline: true
                 entry_name: Cue
-            type: array<DedexBundle\Entity\Ern41\DetailedCueType>
+            type: array<DedexBundle\Entity\Ern411\DetailedCueType>

@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\FulfillmentDateWithTerritoryType:
+DedexBundle\Entity\Ern411\FulfillmentDateWithTerritoryType:
     properties:
         applicableTerritoryCode:
             expose: true

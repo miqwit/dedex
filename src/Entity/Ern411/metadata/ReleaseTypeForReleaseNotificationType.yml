@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ReleaseTypeForReleaseNotificationType:
+DedexBundle\Entity\Ern411\ReleaseTypeForReleaseNotificationType:
     properties:
         __value:
             expose: true

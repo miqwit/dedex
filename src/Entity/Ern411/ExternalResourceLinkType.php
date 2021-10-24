@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing ExternalResourceLinkType
@@ -23,7 +23,7 @@ class ExternalResourceLinkType
     /**
      * A Composite containing details about the Period of Time during which the ExternalResourceLink is active. StartDate and EndDate are deprecated and StartDateTime/EndDateTime should be used instead. DDEX advises that StartDate and EndDate may be removed at a future date and therefore recommends against using them.
      *
-     * @var \DedexBundle\Entity\Ern41\PeriodWithoutFlagsType $validityPeriod
+     * @var \DedexBundle\Entity\Ern411\PeriodWithoutFlagsType $validityPeriod
      */
     private $validityPeriod = null;
 
@@ -37,7 +37,7 @@ class ExternalResourceLinkType
     /**
      * A Composite containing details of the Type of a Resource pointed to by the ExternalResourceLink.
      *
-     * @var \DedexBundle\Entity\Ern41\ExternallyLinkedResourceTypeType[] $externallyLinkedResourceType
+     * @var \DedexBundle\Entity\Ern411\ExternallyLinkedResourceTypeType[] $externallyLinkedResourceType
      */
     private $externallyLinkedResourceType = [
         
@@ -121,7 +121,7 @@ class ExternalResourceLinkType
      *
      * A Composite containing details about the Period of Time during which the ExternalResourceLink is active. StartDate and EndDate are deprecated and StartDateTime/EndDateTime should be used instead. DDEX advises that StartDate and EndDate may be removed at a future date and therefore recommends against using them.
      *
-     * @return \DedexBundle\Entity\Ern41\PeriodWithoutFlagsType
+     * @return \DedexBundle\Entity\Ern411\PeriodWithoutFlagsType
      */
     public function getValidityPeriod()
     {
@@ -133,10 +133,10 @@ class ExternalResourceLinkType
      *
      * A Composite containing details about the Period of Time during which the ExternalResourceLink is active. StartDate and EndDate are deprecated and StartDateTime/EndDateTime should be used instead. DDEX advises that StartDate and EndDate may be removed at a future date and therefore recommends against using them.
      *
-     * @param \DedexBundle\Entity\Ern41\PeriodWithoutFlagsType $validityPeriod
+     * @param \DedexBundle\Entity\Ern411\PeriodWithoutFlagsType $validityPeriod
      * @return self
      */
-    public function setValidityPeriod(\DedexBundle\Entity\Ern41\PeriodWithoutFlagsType $validityPeriod)
+    public function setValidityPeriod(\DedexBundle\Entity\Ern411\PeriodWithoutFlagsType $validityPeriod)
     {
         $this->validityPeriod = $validityPeriod;
         return $this;
@@ -174,9 +174,9 @@ class ExternalResourceLinkType
      * A Composite containing details of the Type of a Resource pointed to by the ExternalResourceLink.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ExternallyLinkedResourceTypeType $externallyLinkedResourceType
+     * @param \DedexBundle\Entity\Ern411\ExternallyLinkedResourceTypeType $externallyLinkedResourceType
      */
-    public function addToExternallyLinkedResourceType(\DedexBundle\Entity\Ern41\ExternallyLinkedResourceTypeType $externallyLinkedResourceType)
+    public function addToExternallyLinkedResourceType(\DedexBundle\Entity\Ern411\ExternallyLinkedResourceTypeType $externallyLinkedResourceType)
     {
         $this->externallyLinkedResourceType[] = $externallyLinkedResourceType;
         return $this;
@@ -213,7 +213,7 @@ class ExternalResourceLinkType
      *
      * A Composite containing details of the Type of a Resource pointed to by the ExternalResourceLink.
      *
-     * @return \DedexBundle\Entity\Ern41\ExternallyLinkedResourceTypeType[]
+     * @return \DedexBundle\Entity\Ern411\ExternallyLinkedResourceTypeType[]
      */
     public function getExternallyLinkedResourceType()
     {
@@ -225,7 +225,7 @@ class ExternalResourceLinkType
      *
      * A Composite containing details of the Type of a Resource pointed to by the ExternalResourceLink.
      *
-     * @param \DedexBundle\Entity\Ern41\ExternallyLinkedResourceTypeType[] $externallyLinkedResourceType
+     * @param \DedexBundle\Entity\Ern411\ExternallyLinkedResourceTypeType[] $externallyLinkedResourceType
      * @return self
      */
     public function setExternallyLinkedResourceType(array $externallyLinkedResourceType)

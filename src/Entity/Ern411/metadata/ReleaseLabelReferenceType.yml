@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ReleaseLabelReferenceType:
+DedexBundle\Entity\Ern411\ReleaseLabelReferenceType:
     properties:
         __value:
             expose: true

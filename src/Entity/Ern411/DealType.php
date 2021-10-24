@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing DealType
@@ -30,7 +30,7 @@ class DealType
     /**
      * A Composite containing details of the terms of the Deal.
      *
-     * @var \DedexBundle\Entity\Ern41\DealTermsType $dealTerms
+     * @var \DedexBundle\Entity\Ern411\DealTermsType $dealTerms
      */
     private $dealTerms = null;
 
@@ -44,7 +44,7 @@ class DealType
     /**
      * A Composite containing details of a WebPage for the DistributionChannel.
      *
-     * @var \DedexBundle\Entity\Ern41\DistributionChannelPageType[] $distributionChannelPage
+     * @var \DedexBundle\Entity\Ern411\DistributionChannelPageType[] $distributionChannelPage
      */
     private $distributionChannelPage = [
         
@@ -147,7 +147,7 @@ class DealType
      *
      * A Composite containing details of the terms of the Deal.
      *
-     * @return \DedexBundle\Entity\Ern41\DealTermsType
+     * @return \DedexBundle\Entity\Ern411\DealTermsType
      */
     public function getDealTerms()
     {
@@ -159,10 +159,10 @@ class DealType
      *
      * A Composite containing details of the terms of the Deal.
      *
-     * @param \DedexBundle\Entity\Ern41\DealTermsType $dealTerms
+     * @param \DedexBundle\Entity\Ern411\DealTermsType $dealTerms
      * @return self
      */
-    public function setDealTerms(\DedexBundle\Entity\Ern41\DealTermsType $dealTerms)
+    public function setDealTerms(\DedexBundle\Entity\Ern411\DealTermsType $dealTerms)
     {
         $this->dealTerms = $dealTerms;
         return $this;
@@ -240,9 +240,9 @@ class DealType
      * A Composite containing details of a WebPage for the DistributionChannel.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DistributionChannelPageType $distributionChannelPage
+     * @param \DedexBundle\Entity\Ern411\DistributionChannelPageType $distributionChannelPage
      */
-    public function addToDistributionChannelPage(\DedexBundle\Entity\Ern41\DistributionChannelPageType $distributionChannelPage)
+    public function addToDistributionChannelPage(\DedexBundle\Entity\Ern411\DistributionChannelPageType $distributionChannelPage)
     {
         $this->distributionChannelPage[] = $distributionChannelPage;
         return $this;
@@ -279,7 +279,7 @@ class DealType
      *
      * A Composite containing details of a WebPage for the DistributionChannel.
      *
-     * @return \DedexBundle\Entity\Ern41\DistributionChannelPageType[]
+     * @return \DedexBundle\Entity\Ern411\DistributionChannelPageType[]
      */
     public function getDistributionChannelPage()
     {
@@ -291,7 +291,7 @@ class DealType
      *
      * A Composite containing details of a WebPage for the DistributionChannel.
      *
-     * @param \DedexBundle\Entity\Ern41\DistributionChannelPageType[] $distributionChannelPage
+     * @param \DedexBundle\Entity\Ern411\DistributionChannelPageType[] $distributionChannelPage
      * @return self
      */
     public function setDistributionChannelPage(array $distributionChannelPage)

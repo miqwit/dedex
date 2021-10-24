@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\DetailedPartyIdType:
+DedexBundle\Entity\Ern411\DetailedPartyIdType:
     properties:
         iSNI:
             expose: true
@@ -50,4 +50,4 @@ DedexBundle\Entity\Ern41\DetailedPartyIdType:
             xml_list:
                 inline: true
                 entry_name: ProprietaryId
-            type: array<DedexBundle\Entity\Ern41\ProprietaryIdType>
+            type: array<DedexBundle\Entity\Ern411\ProprietaryIdType>

@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ReleaseRelationshipTypeType:
+DedexBundle\Entity\Ern411\ReleaseRelationshipTypeType:
     properties:
         __value:
             expose: true

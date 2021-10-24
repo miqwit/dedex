@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing ResourceIdType
@@ -70,14 +70,14 @@ class ResourceIdType
     /**
      * A Composite containing details of the CatalogNumber of the Resource.
      *
-     * @var \DedexBundle\Entity\Ern41\CatalogNumberType $catalogNumber
+     * @var \DedexBundle\Entity\Ern411\CatalogNumberType $catalogNumber
      */
     private $catalogNumber = null;
 
     /**
      * A Composite containing details of a ProprietaryIdentifier of the Resource.
      *
-     * @var \DedexBundle\Entity\Ern41\ProprietaryIdType[] $proprietaryId
+     * @var \DedexBundle\Entity\Ern411\ProprietaryIdType[] $proprietaryId
      */
     private $proprietaryId = [
         
@@ -296,7 +296,7 @@ class ResourceIdType
      *
      * A Composite containing details of the CatalogNumber of the Resource.
      *
-     * @return \DedexBundle\Entity\Ern41\CatalogNumberType
+     * @return \DedexBundle\Entity\Ern411\CatalogNumberType
      */
     public function getCatalogNumber()
     {
@@ -308,10 +308,10 @@ class ResourceIdType
      *
      * A Composite containing details of the CatalogNumber of the Resource.
      *
-     * @param \DedexBundle\Entity\Ern41\CatalogNumberType $catalogNumber
+     * @param \DedexBundle\Entity\Ern411\CatalogNumberType $catalogNumber
      * @return self
      */
-    public function setCatalogNumber(\DedexBundle\Entity\Ern41\CatalogNumberType $catalogNumber)
+    public function setCatalogNumber(\DedexBundle\Entity\Ern411\CatalogNumberType $catalogNumber)
     {
         $this->catalogNumber = $catalogNumber;
         return $this;
@@ -323,9 +323,9 @@ class ResourceIdType
      * A Composite containing details of a ProprietaryIdentifier of the Resource.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ProprietaryIdType $proprietaryId
+     * @param \DedexBundle\Entity\Ern411\ProprietaryIdType $proprietaryId
      */
-    public function addToProprietaryId(\DedexBundle\Entity\Ern41\ProprietaryIdType $proprietaryId)
+    public function addToProprietaryId(\DedexBundle\Entity\Ern411\ProprietaryIdType $proprietaryId)
     {
         $this->proprietaryId[] = $proprietaryId;
         return $this;
@@ -362,7 +362,7 @@ class ResourceIdType
      *
      * A Composite containing details of a ProprietaryIdentifier of the Resource.
      *
-     * @return \DedexBundle\Entity\Ern41\ProprietaryIdType[]
+     * @return \DedexBundle\Entity\Ern411\ProprietaryIdType[]
      */
     public function getProprietaryId()
     {
@@ -374,7 +374,7 @@ class ResourceIdType
      *
      * A Composite containing details of a ProprietaryIdentifier of the Resource.
      *
-     * @param \DedexBundle\Entity\Ern41\ProprietaryIdType[] $proprietaryId
+     * @param \DedexBundle\Entity\Ern411\ProprietaryIdType[] $proprietaryId
      * @return self
      */
     public function setProprietaryId(array $proprietaryId)

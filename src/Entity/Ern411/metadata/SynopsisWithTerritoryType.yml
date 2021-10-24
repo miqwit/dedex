@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\SynopsisWithTerritoryType:
+DedexBundle\Entity\Ern411\SynopsisWithTerritoryType:
     properties:
         __value:
             expose: true

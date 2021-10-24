@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\PartyNameWithTerritoryType:
+DedexBundle\Entity\Ern411\PartyNameWithTerritoryType:
     properties:
         languageAndScriptCode:
             expose: true
@@ -52,7 +52,7 @@ DedexBundle\Entity\Ern41\PartyNameWithTerritoryType:
             accessor:
                 getter: getFullName
                 setter: setFullName
-            type: DedexBundle\Entity\Ern41\NameType
+            type: DedexBundle\Entity\Ern411\NameType
         fullNameAsciiTranscribed:
             expose: true
             access_type: public_method
@@ -68,7 +68,7 @@ DedexBundle\Entity\Ern41\PartyNameWithTerritoryType:
             accessor:
                 getter: getFullNameIndexed
                 setter: setFullNameIndexed
-            type: DedexBundle\Entity\Ern41\NameType
+            type: DedexBundle\Entity\Ern411\NameType
         namesBeforeKeyName:
             expose: true
             access_type: public_method
@@ -76,7 +76,7 @@ DedexBundle\Entity\Ern41\PartyNameWithTerritoryType:
             accessor:
                 getter: getNamesBeforeKeyName
                 setter: setNamesBeforeKeyName
-            type: DedexBundle\Entity\Ern41\NameType
+            type: DedexBundle\Entity\Ern411\NameType
         keyName:
             expose: true
             access_type: public_method
@@ -84,7 +84,7 @@ DedexBundle\Entity\Ern41\PartyNameWithTerritoryType:
             accessor:
                 getter: getKeyName
                 setter: setKeyName
-            type: DedexBundle\Entity\Ern41\NameType
+            type: DedexBundle\Entity\Ern411\NameType
         namesAfterKeyName:
             expose: true
             access_type: public_method
@@ -92,7 +92,7 @@ DedexBundle\Entity\Ern41\PartyNameWithTerritoryType:
             accessor:
                 getter: getNamesAfterKeyName
                 setter: setNamesAfterKeyName
-            type: DedexBundle\Entity\Ern41\NameType
+            type: DedexBundle\Entity\Ern411\NameType
         abbreviatedName:
             expose: true
             access_type: public_method
@@ -100,4 +100,4 @@ DedexBundle\Entity\Ern41\PartyNameWithTerritoryType:
             accessor:
                 getter: getAbbreviatedName
                 setter: setAbbreviatedName
-            type: DedexBundle\Entity\Ern41\NameType
+            type: DedexBundle\Entity\Ern411\NameType

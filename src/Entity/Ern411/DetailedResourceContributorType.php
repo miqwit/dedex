@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing DetailedResourceContributorType
@@ -21,7 +21,7 @@ class DetailedResourceContributorType
     /**
      * A Composite containing details of the PartyId for the Party. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, producers or other Creators.
      *
-     * @var \DedexBundle\Entity\Ern41\DetailedPartyIdType[] $partyId
+     * @var \DedexBundle\Entity\Ern411\DetailedPartyIdType[] $partyId
      */
     private $partyId = [
         
@@ -30,7 +30,7 @@ class DetailedResourceContributorType
     /**
      * A Composite containing details of the PartyName(s).
      *
-     * @var \DedexBundle\Entity\Ern41\PartyNameType[] $partyName
+     * @var \DedexBundle\Entity\Ern411\PartyNameType[] $partyName
      */
     private $partyName = [
         
@@ -39,7 +39,7 @@ class DetailedResourceContributorType
     /**
      * A Composite containing details of a Role played by the Contributor.
      *
-     * @var \DedexBundle\Entity\Ern41\ContributorRoleType[] $role
+     * @var \DedexBundle\Entity\Ern411\ContributorRoleType[] $role
      */
     private $role = [
         
@@ -48,7 +48,7 @@ class DetailedResourceContributorType
     /**
      * A Type of musical Instrument played by the Artist.
      *
-     * @var \DedexBundle\Entity\Ern41\InstrumentTypeType[] $instrumentType
+     * @var \DedexBundle\Entity\Ern411\InstrumentTypeType[] $instrumentType
      */
     private $instrumentType = [
         
@@ -71,7 +71,7 @@ class DetailedResourceContributorType
     /**
      * A Role for which the Party is credited.
      *
-     * @var \DedexBundle\Entity\Ern41\DisplayCreditsType[] $displayCredits
+     * @var \DedexBundle\Entity\Ern411\DisplayCreditsType[] $displayCredits
      */
     private $displayCredits = [
         
@@ -109,9 +109,9 @@ class DetailedResourceContributorType
      * A Composite containing details of the PartyId for the Party. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, producers or other Creators.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DetailedPartyIdType $partyId
+     * @param \DedexBundle\Entity\Ern411\DetailedPartyIdType $partyId
      */
-    public function addToPartyId(\DedexBundle\Entity\Ern41\DetailedPartyIdType $partyId)
+    public function addToPartyId(\DedexBundle\Entity\Ern411\DetailedPartyIdType $partyId)
     {
         $this->partyId[] = $partyId;
         return $this;
@@ -148,7 +148,7 @@ class DetailedResourceContributorType
      *
      * A Composite containing details of the PartyId for the Party. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, producers or other Creators.
      *
-     * @return \DedexBundle\Entity\Ern41\DetailedPartyIdType[]
+     * @return \DedexBundle\Entity\Ern411\DetailedPartyIdType[]
      */
     public function getPartyId()
     {
@@ -160,7 +160,7 @@ class DetailedResourceContributorType
      *
      * A Composite containing details of the PartyId for the Party. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, producers or other Creators.
      *
-     * @param \DedexBundle\Entity\Ern41\DetailedPartyIdType[] $partyId
+     * @param \DedexBundle\Entity\Ern411\DetailedPartyIdType[] $partyId
      * @return self
      */
     public function setPartyId(array $partyId)
@@ -175,9 +175,9 @@ class DetailedResourceContributorType
      * A Composite containing details of the PartyName(s).
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\PartyNameType $partyName
+     * @param \DedexBundle\Entity\Ern411\PartyNameType $partyName
      */
-    public function addToPartyName(\DedexBundle\Entity\Ern41\PartyNameType $partyName)
+    public function addToPartyName(\DedexBundle\Entity\Ern411\PartyNameType $partyName)
     {
         $this->partyName[] = $partyName;
         return $this;
@@ -214,7 +214,7 @@ class DetailedResourceContributorType
      *
      * A Composite containing details of the PartyName(s).
      *
-     * @return \DedexBundle\Entity\Ern41\PartyNameType[]
+     * @return \DedexBundle\Entity\Ern411\PartyNameType[]
      */
     public function getPartyName()
     {
@@ -226,7 +226,7 @@ class DetailedResourceContributorType
      *
      * A Composite containing details of the PartyName(s).
      *
-     * @param \DedexBundle\Entity\Ern41\PartyNameType[] $partyName
+     * @param \DedexBundle\Entity\Ern411\PartyNameType[] $partyName
      * @return self
      */
     public function setPartyName(array $partyName)
@@ -241,9 +241,9 @@ class DetailedResourceContributorType
      * A Composite containing details of a Role played by the Contributor.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ContributorRoleType $role
+     * @param \DedexBundle\Entity\Ern411\ContributorRoleType $role
      */
-    public function addToRole(\DedexBundle\Entity\Ern41\ContributorRoleType $role)
+    public function addToRole(\DedexBundle\Entity\Ern411\ContributorRoleType $role)
     {
         $this->role[] = $role;
         return $this;
@@ -280,7 +280,7 @@ class DetailedResourceContributorType
      *
      * A Composite containing details of a Role played by the Contributor.
      *
-     * @return \DedexBundle\Entity\Ern41\ContributorRoleType[]
+     * @return \DedexBundle\Entity\Ern411\ContributorRoleType[]
      */
     public function getRole()
     {
@@ -292,7 +292,7 @@ class DetailedResourceContributorType
      *
      * A Composite containing details of a Role played by the Contributor.
      *
-     * @param \DedexBundle\Entity\Ern41\ContributorRoleType[] $role
+     * @param \DedexBundle\Entity\Ern411\ContributorRoleType[] $role
      * @return self
      */
     public function setRole(array $role)
@@ -307,9 +307,9 @@ class DetailedResourceContributorType
      * A Type of musical Instrument played by the Artist.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\InstrumentTypeType $instrumentType
+     * @param \DedexBundle\Entity\Ern411\InstrumentTypeType $instrumentType
      */
-    public function addToInstrumentType(\DedexBundle\Entity\Ern41\InstrumentTypeType $instrumentType)
+    public function addToInstrumentType(\DedexBundle\Entity\Ern411\InstrumentTypeType $instrumentType)
     {
         $this->instrumentType[] = $instrumentType;
         return $this;
@@ -346,7 +346,7 @@ class DetailedResourceContributorType
      *
      * A Type of musical Instrument played by the Artist.
      *
-     * @return \DedexBundle\Entity\Ern41\InstrumentTypeType[]
+     * @return \DedexBundle\Entity\Ern411\InstrumentTypeType[]
      */
     public function getInstrumentType()
     {
@@ -358,7 +358,7 @@ class DetailedResourceContributorType
      *
      * A Type of musical Instrument played by the Artist.
      *
-     * @param \DedexBundle\Entity\Ern41\InstrumentTypeType[] $instrumentType
+     * @param \DedexBundle\Entity\Ern411\InstrumentTypeType[] $instrumentType
      * @return self
      */
     public function setInstrumentType(array $instrumentType)
@@ -425,9 +425,9 @@ class DetailedResourceContributorType
      * A Role for which the Party is credited.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DisplayCreditsType $displayCredits
+     * @param \DedexBundle\Entity\Ern411\DisplayCreditsType $displayCredits
      */
-    public function addToDisplayCredits(\DedexBundle\Entity\Ern41\DisplayCreditsType $displayCredits)
+    public function addToDisplayCredits(\DedexBundle\Entity\Ern411\DisplayCreditsType $displayCredits)
     {
         $this->displayCredits[] = $displayCredits;
         return $this;
@@ -464,7 +464,7 @@ class DetailedResourceContributorType
      *
      * A Role for which the Party is credited.
      *
-     * @return \DedexBundle\Entity\Ern41\DisplayCreditsType[]
+     * @return \DedexBundle\Entity\Ern411\DisplayCreditsType[]
      */
     public function getDisplayCredits()
     {
@@ -476,7 +476,7 @@ class DetailedResourceContributorType
      *
      * A Role for which the Party is credited.
      *
-     * @param \DedexBundle\Entity\Ern41\DisplayCreditsType[] $displayCredits
+     * @param \DedexBundle\Entity\Ern411\DisplayCreditsType[] $displayCredits
      * @return self
      */
     public function setDisplayCredits(array $displayCredits)

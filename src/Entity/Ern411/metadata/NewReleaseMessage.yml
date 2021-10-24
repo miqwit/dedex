@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\NewReleaseMessage:
+DedexBundle\Entity\Ern411\NewReleaseMessage:
     xml_root_name: 'ns-bbaa9531:NewReleaseMessage'
     xml_root_namespace: 'http://ddex.net/xml/ern/411'
     properties:
@@ -36,7 +36,7 @@ DedexBundle\Entity\Ern41\NewReleaseMessage:
             accessor:
                 getter: getMessageHeader
                 setter: setMessageHeader
-            type: DedexBundle\Entity\Ern41\MessageHeaderType
+            type: DedexBundle\Entity\Ern411\MessageHeaderType
         partyList:
             expose: true
             access_type: public_method
@@ -44,7 +44,7 @@ DedexBundle\Entity\Ern41\NewReleaseMessage:
             accessor:
                 getter: getPartyList
                 setter: setPartyList
-            type: array<DedexBundle\Entity\Ern41\PartyType>
+            type: array<DedexBundle\Entity\Ern411\PartyType>
             xml_list:
                 inline: false
                 entry_name: Party
@@ -56,7 +56,7 @@ DedexBundle\Entity\Ern41\NewReleaseMessage:
             accessor:
                 getter: getCueSheetList
                 setter: setCueSheetList
-            type: array<DedexBundle\Entity\Ern41\DetailedCueSheetType>
+            type: array<DedexBundle\Entity\Ern411\DetailedCueSheetType>
             xml_list:
                 inline: false
                 entry_name: CueSheet
@@ -68,7 +68,7 @@ DedexBundle\Entity\Ern41\NewReleaseMessage:
             accessor:
                 getter: getResourceList
                 setter: setResourceList
-            type: DedexBundle\Entity\Ern41\ResourceListType
+            type: DedexBundle\Entity\Ern411\ResourceListType
         chapterList:
             expose: true
             access_type: public_method
@@ -76,7 +76,7 @@ DedexBundle\Entity\Ern41\NewReleaseMessage:
             accessor:
                 getter: getChapterList
                 setter: setChapterList
-            type: DedexBundle\Entity\Ern41\ChapterListType
+            type: DedexBundle\Entity\Ern411\ChapterListType
         releaseList:
             expose: true
             access_type: public_method
@@ -84,7 +84,7 @@ DedexBundle\Entity\Ern41\NewReleaseMessage:
             accessor:
                 getter: getReleaseList
                 setter: setReleaseList
-            type: DedexBundle\Entity\Ern41\ReleaseListType
+            type: DedexBundle\Entity\Ern411\ReleaseListType
         dealList:
             expose: true
             access_type: public_method
@@ -92,7 +92,7 @@ DedexBundle\Entity\Ern41\NewReleaseMessage:
             accessor:
                 getter: getDealList
                 setter: setDealList
-            type: array<DedexBundle\Entity\Ern41\ReleaseDealType>
+            type: array<DedexBundle\Entity\Ern411\ReleaseDealType>
             xml_list:
                 inline: false
                 entry_name: ReleaseDeal
@@ -104,7 +104,7 @@ DedexBundle\Entity\Ern41\NewReleaseMessage:
             accessor:
                 getter: getSupplementalDocumentList
                 setter: setSupplementalDocumentList
-            type: array<DedexBundle\Entity\Ern41\FileType>
+            type: array<DedexBundle\Entity\Ern411\FileType>
             xml_list:
                 inline: false
                 entry_name: SupplementalDocument

@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing SheetMusicIdType
@@ -28,7 +28,7 @@ class SheetMusicIdType
     /**
      * A Composite containing details of a ProprietaryIdentifier of the SheetMusic.
      *
-     * @var \DedexBundle\Entity\Ern41\ProprietaryIdType[] $proprietaryId
+     * @var \DedexBundle\Entity\Ern411\ProprietaryIdType[] $proprietaryId
      */
     private $proprietaryId = [
         
@@ -92,9 +92,9 @@ class SheetMusicIdType
      * A Composite containing details of a ProprietaryIdentifier of the SheetMusic.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ProprietaryIdType $proprietaryId
+     * @param \DedexBundle\Entity\Ern411\ProprietaryIdType $proprietaryId
      */
-    public function addToProprietaryId(\DedexBundle\Entity\Ern41\ProprietaryIdType $proprietaryId)
+    public function addToProprietaryId(\DedexBundle\Entity\Ern411\ProprietaryIdType $proprietaryId)
     {
         $this->proprietaryId[] = $proprietaryId;
         return $this;
@@ -131,7 +131,7 @@ class SheetMusicIdType
      *
      * A Composite containing details of a ProprietaryIdentifier of the SheetMusic.
      *
-     * @return \DedexBundle\Entity\Ern41\ProprietaryIdType[]
+     * @return \DedexBundle\Entity\Ern411\ProprietaryIdType[]
      */
     public function getProprietaryId()
     {
@@ -143,7 +143,7 @@ class SheetMusicIdType
      *
      * A Composite containing details of a ProprietaryIdentifier of the SheetMusic.
      *
-     * @param \DedexBundle\Entity\Ern41\ProprietaryIdType[] $proprietaryId
+     * @param \DedexBundle\Entity\Ern411\ProprietaryIdType[] $proprietaryId
      * @return self
      */
     public function setProprietaryId(array $proprietaryId)

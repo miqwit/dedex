@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\MessageAuditTrailType:
+DedexBundle\Entity\Ern411\MessageAuditTrailType:
     properties:
         messageAuditTrailEvent:
             expose: true
@@ -10,4 +10,4 @@ DedexBundle\Entity\Ern41\MessageAuditTrailType:
             xml_list:
                 inline: true
                 entry_name: MessageAuditTrailEvent
-            type: array<DedexBundle\Entity\Ern41\MessageAuditTrailEventType>
+            type: array<DedexBundle\Entity\Ern411\MessageAuditTrailEventType>

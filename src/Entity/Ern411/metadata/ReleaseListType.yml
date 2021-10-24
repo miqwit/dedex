@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ReleaseListType:
+DedexBundle\Entity\Ern411\ReleaseListType:
     properties:
         release:
             expose: true
@@ -7,7 +7,7 @@ DedexBundle\Entity\Ern41\ReleaseListType:
             accessor:
                 getter: getRelease
                 setter: setRelease
-            type: DedexBundle\Entity\Ern41\ReleaseType
+            type: DedexBundle\Entity\Ern411\ReleaseType
         trackRelease:
             expose: true
             access_type: public_method
@@ -18,4 +18,4 @@ DedexBundle\Entity\Ern41\ReleaseListType:
             xml_list:
                 inline: true
                 entry_name: TrackRelease
-            type: array<DedexBundle\Entity\Ern41\TrackReleaseType>
+            type: array<DedexBundle\Entity\Ern411\TrackReleaseType>

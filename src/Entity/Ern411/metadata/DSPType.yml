@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\DSPType:
+DedexBundle\Entity\Ern411\DSPType:
     properties:
         partyId:
             expose: true
@@ -10,7 +10,7 @@ DedexBundle\Entity\Ern41\DSPType:
             xml_list:
                 inline: true
                 entry_name: PartyId
-            type: array<DedexBundle\Entity\Ern41\DetailedPartyIdType>
+            type: array<DedexBundle\Entity\Ern411\DetailedPartyIdType>
         partyName:
             expose: true
             access_type: public_method
@@ -21,7 +21,7 @@ DedexBundle\Entity\Ern41\DSPType:
             xml_list:
                 inline: true
                 entry_name: PartyName
-            type: array<DedexBundle\Entity\Ern41\PartyNameType>
+            type: array<DedexBundle\Entity\Ern411\PartyNameType>
         tradingName:
             expose: true
             access_type: public_method
@@ -29,7 +29,7 @@ DedexBundle\Entity\Ern41\DSPType:
             accessor:
                 getter: getTradingName
                 setter: setTradingName
-            type: DedexBundle\Entity\Ern41\NameType
+            type: DedexBundle\Entity\Ern411\NameType
         uRL:
             expose: true
             access_type: public_method

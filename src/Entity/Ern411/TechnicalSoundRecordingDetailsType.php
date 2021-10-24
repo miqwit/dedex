@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing TechnicalSoundRecordingDetailsType
@@ -42,21 +42,21 @@ class TechnicalSoundRecordingDetailsType
     /**
      * A Composite containing details of a Type of AudioCodec.
      *
-     * @var \DedexBundle\Entity\Ern41\AudioCodecTypeType $audioCodecType
+     * @var \DedexBundle\Entity\Ern411\AudioCodecTypeType $audioCodecType
      */
     private $audioCodecType = null;
 
     /**
      * A Composite containing the BitRate for the audio data and a UnitOfMeasure (the default is kbps).
      *
-     * @var \DedexBundle\Entity\Ern41\BitRateType $bitRate
+     * @var \DedexBundle\Entity\Ern411\BitRateType $bitRate
      */
     private $bitRate = null;
 
     /**
      * A Composite containing the BitRate for the audio data recording and a UnitOfMeasure (the default is kbps).
      *
-     * @var \DedexBundle\Entity\Ern41\BitRateType $originalBitRate
+     * @var \DedexBundle\Entity\Ern411\BitRateType $originalBitRate
      */
     private $originalBitRate = null;
 
@@ -70,14 +70,14 @@ class TechnicalSoundRecordingDetailsType
     /**
      * A Composite containing the sampling rate of the SoundRecording and a UnitOfMeasure (the default is Hz).
      *
-     * @var \DedexBundle\Entity\Ern41\SamplingRateType $samplingRate
+     * @var \DedexBundle\Entity\Ern411\SamplingRateType $samplingRate
      */
     private $samplingRate = null;
 
     /**
      * A Composite containing the sampling rate of the SoundRecording during the recording, and a UnitOfMeasure (the default is Hz).
      *
-     * @var \DedexBundle\Entity\Ern41\SamplingRateType $originalSamplingRate
+     * @var \DedexBundle\Entity\Ern411\SamplingRateType $originalSamplingRate
      */
     private $originalSamplingRate = null;
 
@@ -112,21 +112,21 @@ class TechnicalSoundRecordingDetailsType
     /**
      * A Composite containing details of a preview.
      *
-     * @var \DedexBundle\Entity\Ern41\SoundRecordingPreviewDetailsType $previewDetails
+     * @var \DedexBundle\Entity\Ern411\SoundRecordingPreviewDetailsType $previewDetails
      */
     private $previewDetails = null;
 
     /**
      * A Composite containing details of a File containing the SoundRecording that a DSP can obtain.
      *
-     * @var \DedexBundle\Entity\Ern41\FileType $file
+     * @var \DedexBundle\Entity\Ern411\FileType $file
      */
     private $file = null;
 
     /**
      * A Composite containing details of a Fingerprint and its governing algorithm.
      *
-     * @var \DedexBundle\Entity\Ern41\FingerprintType[] $fingerprint
+     * @var \DedexBundle\Entity\Ern411\FingerprintType[] $fingerprint
      */
     private $fingerprint = [
         
@@ -241,7 +241,7 @@ class TechnicalSoundRecordingDetailsType
      *
      * A Composite containing details of a Type of AudioCodec.
      *
-     * @return \DedexBundle\Entity\Ern41\AudioCodecTypeType
+     * @return \DedexBundle\Entity\Ern411\AudioCodecTypeType
      */
     public function getAudioCodecType()
     {
@@ -253,10 +253,10 @@ class TechnicalSoundRecordingDetailsType
      *
      * A Composite containing details of a Type of AudioCodec.
      *
-     * @param \DedexBundle\Entity\Ern41\AudioCodecTypeType $audioCodecType
+     * @param \DedexBundle\Entity\Ern411\AudioCodecTypeType $audioCodecType
      * @return self
      */
-    public function setAudioCodecType(\DedexBundle\Entity\Ern41\AudioCodecTypeType $audioCodecType)
+    public function setAudioCodecType(\DedexBundle\Entity\Ern411\AudioCodecTypeType $audioCodecType)
     {
         $this->audioCodecType = $audioCodecType;
         return $this;
@@ -267,7 +267,7 @@ class TechnicalSoundRecordingDetailsType
      *
      * A Composite containing the BitRate for the audio data and a UnitOfMeasure (the default is kbps).
      *
-     * @return \DedexBundle\Entity\Ern41\BitRateType
+     * @return \DedexBundle\Entity\Ern411\BitRateType
      */
     public function getBitRate()
     {
@@ -279,10 +279,10 @@ class TechnicalSoundRecordingDetailsType
      *
      * A Composite containing the BitRate for the audio data and a UnitOfMeasure (the default is kbps).
      *
-     * @param \DedexBundle\Entity\Ern41\BitRateType $bitRate
+     * @param \DedexBundle\Entity\Ern411\BitRateType $bitRate
      * @return self
      */
-    public function setBitRate(\DedexBundle\Entity\Ern41\BitRateType $bitRate)
+    public function setBitRate(\DedexBundle\Entity\Ern411\BitRateType $bitRate)
     {
         $this->bitRate = $bitRate;
         return $this;
@@ -293,7 +293,7 @@ class TechnicalSoundRecordingDetailsType
      *
      * A Composite containing the BitRate for the audio data recording and a UnitOfMeasure (the default is kbps).
      *
-     * @return \DedexBundle\Entity\Ern41\BitRateType
+     * @return \DedexBundle\Entity\Ern411\BitRateType
      */
     public function getOriginalBitRate()
     {
@@ -305,10 +305,10 @@ class TechnicalSoundRecordingDetailsType
      *
      * A Composite containing the BitRate for the audio data recording and a UnitOfMeasure (the default is kbps).
      *
-     * @param \DedexBundle\Entity\Ern41\BitRateType $originalBitRate
+     * @param \DedexBundle\Entity\Ern411\BitRateType $originalBitRate
      * @return self
      */
-    public function setOriginalBitRate(\DedexBundle\Entity\Ern41\BitRateType $originalBitRate)
+    public function setOriginalBitRate(\DedexBundle\Entity\Ern411\BitRateType $originalBitRate)
     {
         $this->originalBitRate = $originalBitRate;
         return $this;
@@ -345,7 +345,7 @@ class TechnicalSoundRecordingDetailsType
      *
      * A Composite containing the sampling rate of the SoundRecording and a UnitOfMeasure (the default is Hz).
      *
-     * @return \DedexBundle\Entity\Ern41\SamplingRateType
+     * @return \DedexBundle\Entity\Ern411\SamplingRateType
      */
     public function getSamplingRate()
     {
@@ -357,10 +357,10 @@ class TechnicalSoundRecordingDetailsType
      *
      * A Composite containing the sampling rate of the SoundRecording and a UnitOfMeasure (the default is Hz).
      *
-     * @param \DedexBundle\Entity\Ern41\SamplingRateType $samplingRate
+     * @param \DedexBundle\Entity\Ern411\SamplingRateType $samplingRate
      * @return self
      */
-    public function setSamplingRate(\DedexBundle\Entity\Ern41\SamplingRateType $samplingRate)
+    public function setSamplingRate(\DedexBundle\Entity\Ern411\SamplingRateType $samplingRate)
     {
         $this->samplingRate = $samplingRate;
         return $this;
@@ -371,7 +371,7 @@ class TechnicalSoundRecordingDetailsType
      *
      * A Composite containing the sampling rate of the SoundRecording during the recording, and a UnitOfMeasure (the default is Hz).
      *
-     * @return \DedexBundle\Entity\Ern41\SamplingRateType
+     * @return \DedexBundle\Entity\Ern411\SamplingRateType
      */
     public function getOriginalSamplingRate()
     {
@@ -383,10 +383,10 @@ class TechnicalSoundRecordingDetailsType
      *
      * A Composite containing the sampling rate of the SoundRecording during the recording, and a UnitOfMeasure (the default is Hz).
      *
-     * @param \DedexBundle\Entity\Ern41\SamplingRateType $originalSamplingRate
+     * @param \DedexBundle\Entity\Ern411\SamplingRateType $originalSamplingRate
      * @return self
      */
-    public function setOriginalSamplingRate(\DedexBundle\Entity\Ern41\SamplingRateType $originalSamplingRate)
+    public function setOriginalSamplingRate(\DedexBundle\Entity\Ern411\SamplingRateType $originalSamplingRate)
     {
         $this->originalSamplingRate = $originalSamplingRate;
         return $this;
@@ -501,7 +501,7 @@ class TechnicalSoundRecordingDetailsType
      *
      * A Composite containing details of a preview.
      *
-     * @return \DedexBundle\Entity\Ern41\SoundRecordingPreviewDetailsType
+     * @return \DedexBundle\Entity\Ern411\SoundRecordingPreviewDetailsType
      */
     public function getPreviewDetails()
     {
@@ -513,10 +513,10 @@ class TechnicalSoundRecordingDetailsType
      *
      * A Composite containing details of a preview.
      *
-     * @param \DedexBundle\Entity\Ern41\SoundRecordingPreviewDetailsType $previewDetails
+     * @param \DedexBundle\Entity\Ern411\SoundRecordingPreviewDetailsType $previewDetails
      * @return self
      */
-    public function setPreviewDetails(\DedexBundle\Entity\Ern41\SoundRecordingPreviewDetailsType $previewDetails)
+    public function setPreviewDetails(\DedexBundle\Entity\Ern411\SoundRecordingPreviewDetailsType $previewDetails)
     {
         $this->previewDetails = $previewDetails;
         return $this;
@@ -527,7 +527,7 @@ class TechnicalSoundRecordingDetailsType
      *
      * A Composite containing details of a File containing the SoundRecording that a DSP can obtain.
      *
-     * @return \DedexBundle\Entity\Ern41\FileType
+     * @return \DedexBundle\Entity\Ern411\FileType
      */
     public function getFile()
     {
@@ -539,10 +539,10 @@ class TechnicalSoundRecordingDetailsType
      *
      * A Composite containing details of a File containing the SoundRecording that a DSP can obtain.
      *
-     * @param \DedexBundle\Entity\Ern41\FileType $file
+     * @param \DedexBundle\Entity\Ern411\FileType $file
      * @return self
      */
-    public function setFile(\DedexBundle\Entity\Ern41\FileType $file)
+    public function setFile(\DedexBundle\Entity\Ern411\FileType $file)
     {
         $this->file = $file;
         return $this;
@@ -554,9 +554,9 @@ class TechnicalSoundRecordingDetailsType
      * A Composite containing details of a Fingerprint and its governing algorithm.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\FingerprintType $fingerprint
+     * @param \DedexBundle\Entity\Ern411\FingerprintType $fingerprint
      */
-    public function addToFingerprint(\DedexBundle\Entity\Ern41\FingerprintType $fingerprint)
+    public function addToFingerprint(\DedexBundle\Entity\Ern411\FingerprintType $fingerprint)
     {
         $this->fingerprint[] = $fingerprint;
         return $this;
@@ -593,7 +593,7 @@ class TechnicalSoundRecordingDetailsType
      *
      * A Composite containing details of a Fingerprint and its governing algorithm.
      *
-     * @return \DedexBundle\Entity\Ern41\FingerprintType[]
+     * @return \DedexBundle\Entity\Ern411\FingerprintType[]
      */
     public function getFingerprint()
     {
@@ -605,7 +605,7 @@ class TechnicalSoundRecordingDetailsType
      *
      * A Composite containing details of a Fingerprint and its governing algorithm.
      *
-     * @param \DedexBundle\Entity\Ern41\FingerprintType[] $fingerprint
+     * @param \DedexBundle\Entity\Ern411\FingerprintType[] $fingerprint
      * @return self
      */
     public function setFingerprint(array $fingerprint)

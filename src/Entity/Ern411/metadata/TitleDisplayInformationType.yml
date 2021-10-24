@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\TitleDisplayInformationType:
+DedexBundle\Entity\Ern411\TitleDisplayInformationType:
     properties:
         languageAndScriptCode:
             expose: true
@@ -36,4 +36,4 @@ DedexBundle\Entity\Ern41\TitleDisplayInformationType:
             xml_list:
                 inline: true
                 entry_name: Prefix
-            type: array<DedexBundle\Entity\Ern41\PrefixType>
+            type: array<DedexBundle\Entity\Ern411\PrefixType>

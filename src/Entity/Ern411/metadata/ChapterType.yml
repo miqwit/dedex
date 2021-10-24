@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ChapterType:
+DedexBundle\Entity\Ern411\ChapterType:
     properties:
         languageAndScriptCode:
             expose: true
@@ -27,7 +27,7 @@ DedexBundle\Entity\Ern41\ChapterType:
             xml_list:
                 inline: true
                 entry_name: ChapterId
-            type: array<DedexBundle\Entity\Ern41\ProprietaryIdType>
+            type: array<DedexBundle\Entity\Ern411\ProprietaryIdType>
         displayTitleText:
             expose: true
             access_type: public_method
@@ -38,7 +38,7 @@ DedexBundle\Entity\Ern41\ChapterType:
             xml_list:
                 inline: true
                 entry_name: DisplayTitleText
-            type: array<DedexBundle\Entity\Ern41\DisplayTitleTextType>
+            type: array<DedexBundle\Entity\Ern411\DisplayTitleTextType>
         displayTitle:
             expose: true
             access_type: public_method
@@ -49,7 +49,7 @@ DedexBundle\Entity\Ern41\ChapterType:
             xml_list:
                 inline: true
                 entry_name: DisplayTitle
-            type: array<DedexBundle\Entity\Ern41\DisplayTitleType>
+            type: array<DedexBundle\Entity\Ern411\DisplayTitleType>
         additionalTitle:
             expose: true
             access_type: public_method
@@ -60,7 +60,7 @@ DedexBundle\Entity\Ern41\ChapterType:
             xml_list:
                 inline: true
                 entry_name: AdditionalTitle
-            type: array<DedexBundle\Entity\Ern41\AdditionalTitleType>
+            type: array<DedexBundle\Entity\Ern411\AdditionalTitleType>
         sequenceNumber:
             expose: true
             access_type: public_method
@@ -79,7 +79,7 @@ DedexBundle\Entity\Ern41\ChapterType:
             xml_list:
                 inline: true
                 entry_name: Contributor
-            type: array<DedexBundle\Entity\Ern41\ContributorType>
+            type: array<DedexBundle\Entity\Ern411\ContributorType>
         character:
             expose: true
             access_type: public_method
@@ -90,7 +90,7 @@ DedexBundle\Entity\Ern41\ChapterType:
             xml_list:
                 inline: true
                 entry_name: Character
-            type: array<DedexBundle\Entity\Ern41\CharacterType>
+            type: array<DedexBundle\Entity\Ern411\CharacterType>
         representativeImageReference:
             expose: true
             access_type: public_method

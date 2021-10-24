@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\HashSumAlgorithmTypeType:
+DedexBundle\Entity\Ern411\HashSumAlgorithmTypeType:
     properties:
         __value:
             expose: true

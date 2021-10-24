@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\PriceType:
+DedexBundle\Entity\Ern411\PriceType:
     properties:
         __value:
             expose: true

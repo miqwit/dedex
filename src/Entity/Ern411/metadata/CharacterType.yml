@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\CharacterType:
+DedexBundle\Entity\Ern411\CharacterType:
     properties:
         sequenceNumber:
             expose: true
@@ -24,4 +24,4 @@ DedexBundle\Entity\Ern41\CharacterType:
             accessor:
                 getter: getPerformer
                 setter: setPerformer
-            type: DedexBundle\Entity\Ern41\ContributorType
+            type: DedexBundle\Entity\Ern411\ContributorType

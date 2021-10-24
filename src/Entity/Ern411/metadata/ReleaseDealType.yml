@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ReleaseDealType:
+DedexBundle\Entity\Ern411\ReleaseDealType:
     properties:
         dealReleaseReference:
             expose: true
@@ -21,4 +21,4 @@ DedexBundle\Entity\Ern41\ReleaseDealType:
             xml_list:
                 inline: true
                 entry_name: Deal
-            type: array<DedexBundle\Entity\Ern41\DealType>
+            type: array<DedexBundle\Entity\Ern411\DealType>

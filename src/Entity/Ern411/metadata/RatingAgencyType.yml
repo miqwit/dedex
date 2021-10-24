@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\RatingAgencyType:
+DedexBundle\Entity\Ern411\RatingAgencyType:
     properties:
         __value:
             expose: true

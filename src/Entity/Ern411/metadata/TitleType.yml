@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\TitleType:
+DedexBundle\Entity\Ern411\TitleType:
     properties:
         languageAndScriptCode:
             expose: true

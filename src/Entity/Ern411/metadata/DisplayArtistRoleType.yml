@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\DisplayArtistRoleType:
+DedexBundle\Entity\Ern411\DisplayArtistRoleType:
     properties:
         __value:
             expose: true

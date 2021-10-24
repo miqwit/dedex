@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ResourceSubGroupType:
+DedexBundle\Entity\Ern411\ResourceSubGroupType:
     properties:
         resourceGroupType:
             expose: true
@@ -19,7 +19,7 @@ DedexBundle\Entity\Ern41\ResourceSubGroupType:
             xml_list:
                 inline: true
                 entry_name: DisplayTitleText
-            type: array<DedexBundle\Entity\Ern41\DisplayTitleTextType>
+            type: array<DedexBundle\Entity\Ern411\DisplayTitleTextType>
         displayTitle:
             expose: true
             access_type: public_method
@@ -30,7 +30,7 @@ DedexBundle\Entity\Ern41\ResourceSubGroupType:
             xml_list:
                 inline: true
                 entry_name: DisplayTitle
-            type: array<DedexBundle\Entity\Ern41\DisplayTitleType>
+            type: array<DedexBundle\Entity\Ern411\DisplayTitleType>
         additionalTitle:
             expose: true
             access_type: public_method
@@ -41,7 +41,7 @@ DedexBundle\Entity\Ern41\ResourceSubGroupType:
             xml_list:
                 inline: true
                 entry_name: AdditionalTitle
-            type: array<DedexBundle\Entity\Ern41\AdditionalTitleType>
+            type: array<DedexBundle\Entity\Ern411\AdditionalTitleType>
         sequenceNumber:
             expose: true
             access_type: public_method
@@ -76,7 +76,7 @@ DedexBundle\Entity\Ern41\ResourceSubGroupType:
             xml_list:
                 inline: true
                 entry_name: DisplayArtist
-            type: array<DedexBundle\Entity\Ern41\DisplayArtistType>
+            type: array<DedexBundle\Entity\Ern411\DisplayArtistType>
         carrierType:
             expose: true
             access_type: public_method
@@ -87,7 +87,7 @@ DedexBundle\Entity\Ern41\ResourceSubGroupType:
             xml_list:
                 inline: true
                 entry_name: CarrierType
-            type: array<DedexBundle\Entity\Ern41\CarrierTypeType>
+            type: array<DedexBundle\Entity\Ern411\CarrierTypeType>
         duration:
             expose: true
             access_type: public_method
@@ -111,7 +111,7 @@ DedexBundle\Entity\Ern41\ResourceSubGroupType:
             accessor:
                 getter: getReleaseId
                 setter: setReleaseId
-            type: DedexBundle\Entity\Ern41\ReleaseIdType
+            type: DedexBundle\Entity\Ern411\ReleaseIdType
         resourceGroup:
             expose: true
             access_type: public_method
@@ -122,7 +122,7 @@ DedexBundle\Entity\Ern41\ResourceSubGroupType:
             xml_list:
                 inline: true
                 entry_name: ResourceGroup
-            type: array<DedexBundle\Entity\Ern41\ResourceSubGroupType>
+            type: array<DedexBundle\Entity\Ern411\ResourceSubGroupType>
         resourceGroupContentItem:
             expose: true
             access_type: public_method
@@ -133,7 +133,7 @@ DedexBundle\Entity\Ern41\ResourceSubGroupType:
             xml_list:
                 inline: true
                 entry_name: ResourceGroupContentItem
-            type: array<DedexBundle\Entity\Ern41\ResourceGroupContentItemType>
+            type: array<DedexBundle\Entity\Ern411\ResourceGroupContentItemType>
         linkedReleaseResourceReference:
             expose: true
             access_type: public_method
@@ -144,4 +144,4 @@ DedexBundle\Entity\Ern41\ResourceSubGroupType:
             xml_list:
                 inline: true
                 entry_name: LinkedReleaseResourceReference
-            type: array<DedexBundle\Entity\Ern41\LinkedReleaseResourceReferenceType>
+            type: array<DedexBundle\Entity\Ern411\LinkedReleaseResourceReferenceType>

@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ExternallyLinkedResourceTypeType:
+DedexBundle\Entity\Ern411\ExternallyLinkedResourceTypeType:
     properties:
         __value:
             expose: true

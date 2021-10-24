@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ContributorRoleType:
+DedexBundle\Entity\Ern411\ContributorRoleType:
     properties:
         __value:
             expose: true

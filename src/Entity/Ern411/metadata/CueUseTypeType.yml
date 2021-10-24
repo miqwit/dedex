@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\CueUseTypeType:
+DedexBundle\Entity\Ern411\CueUseTypeType:
     properties:
         __value:
             expose: true

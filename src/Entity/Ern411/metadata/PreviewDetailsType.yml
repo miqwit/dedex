@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\PreviewDetailsType:
+DedexBundle\Entity\Ern411\PreviewDetailsType:
     properties:
         topLeftCorner:
             expose: true

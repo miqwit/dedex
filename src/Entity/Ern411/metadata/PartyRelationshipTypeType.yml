@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\PartyRelationshipTypeType:
+DedexBundle\Entity\Ern411\PartyRelationshipTypeType:
     properties:
         __value:
             expose: true

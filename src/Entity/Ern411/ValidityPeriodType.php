@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing ValidityPeriodType
@@ -14,14 +14,14 @@ class ValidityPeriodType
     /**
      * A Composite containing details of the Date and Place of an Event that marks the beginning of the Period (in ISO 8601:2004 format: YYYY-MM-DD). The StartDate must be no later than the EndDate if both are provided.
      *
-     * @var \DedexBundle\Entity\Ern41\EventDateType $startDate
+     * @var \DedexBundle\Entity\Ern411\EventDateType $startDate
      */
     private $startDate = null;
 
     /**
      * A Composite containing details of the Date and Place of an Event that marks the end of the Period (in ISO 8601:2004 format: YYYY-MM-DD). The EndDate must not be earlier than the StartDate if both are provided.
      *
-     * @var \DedexBundle\Entity\Ern41\EventDateType $endDate
+     * @var \DedexBundle\Entity\Ern411\EventDateType $endDate
      */
     private $endDate = null;
 
@@ -30,7 +30,7 @@ class ValidityPeriodType
      *
      * A Composite containing details of the Date and Place of an Event that marks the beginning of the Period (in ISO 8601:2004 format: YYYY-MM-DD). The StartDate must be no later than the EndDate if both are provided.
      *
-     * @return \DedexBundle\Entity\Ern41\EventDateType
+     * @return \DedexBundle\Entity\Ern411\EventDateType
      */
     public function getStartDate()
     {
@@ -42,10 +42,10 @@ class ValidityPeriodType
      *
      * A Composite containing details of the Date and Place of an Event that marks the beginning of the Period (in ISO 8601:2004 format: YYYY-MM-DD). The StartDate must be no later than the EndDate if both are provided.
      *
-     * @param \DedexBundle\Entity\Ern41\EventDateType $startDate
+     * @param \DedexBundle\Entity\Ern411\EventDateType $startDate
      * @return self
      */
-    public function setStartDate(\DedexBundle\Entity\Ern41\EventDateType $startDate)
+    public function setStartDate(\DedexBundle\Entity\Ern411\EventDateType $startDate)
     {
         $this->startDate = $startDate;
         return $this;
@@ -56,7 +56,7 @@ class ValidityPeriodType
      *
      * A Composite containing details of the Date and Place of an Event that marks the end of the Period (in ISO 8601:2004 format: YYYY-MM-DD). The EndDate must not be earlier than the StartDate if both are provided.
      *
-     * @return \DedexBundle\Entity\Ern41\EventDateType
+     * @return \DedexBundle\Entity\Ern411\EventDateType
      */
     public function getEndDate()
     {
@@ -68,10 +68,10 @@ class ValidityPeriodType
      *
      * A Composite containing details of the Date and Place of an Event that marks the end of the Period (in ISO 8601:2004 format: YYYY-MM-DD). The EndDate must not be earlier than the StartDate if both are provided.
      *
-     * @param \DedexBundle\Entity\Ern41\EventDateType $endDate
+     * @param \DedexBundle\Entity\Ern411\EventDateType $endDate
      * @return self
      */
-    public function setEndDate(\DedexBundle\Entity\Ern41\EventDateType $endDate)
+    public function setEndDate(\DedexBundle\Entity\Ern411\EventDateType $endDate)
     {
         $this->endDate = $endDate;
         return $this;

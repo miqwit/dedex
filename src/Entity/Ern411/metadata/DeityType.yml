@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\DeityType:
+DedexBundle\Entity\Ern411\DeityType:
     properties:
         __value:
             expose: true

@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\TrackReleaseType:
+DedexBundle\Entity\Ern411\TrackReleaseType:
     properties:
         isMainRelease:
             expose: true
@@ -24,7 +24,7 @@ DedexBundle\Entity\Ern41\TrackReleaseType:
             accessor:
                 getter: getReleaseId
                 setter: setReleaseId
-            type: DedexBundle\Entity\Ern41\ReleaseIdType
+            type: DedexBundle\Entity\Ern411\ReleaseIdType
         displayTitleText:
             expose: true
             access_type: public_method
@@ -35,7 +35,7 @@ DedexBundle\Entity\Ern41\TrackReleaseType:
             xml_list:
                 inline: true
                 entry_name: DisplayTitleText
-            type: array<DedexBundle\Entity\Ern41\DisplayTitleTextType>
+            type: array<DedexBundle\Entity\Ern411\DisplayTitleTextType>
         displayTitle:
             expose: true
             access_type: public_method
@@ -46,7 +46,7 @@ DedexBundle\Entity\Ern41\TrackReleaseType:
             xml_list:
                 inline: true
                 entry_name: DisplayTitle
-            type: array<DedexBundle\Entity\Ern41\DisplayTitleType>
+            type: array<DedexBundle\Entity\Ern411\DisplayTitleType>
         additionalTitle:
             expose: true
             access_type: public_method
@@ -57,7 +57,7 @@ DedexBundle\Entity\Ern41\TrackReleaseType:
             xml_list:
                 inline: true
                 entry_name: AdditionalTitle
-            type: array<DedexBundle\Entity\Ern41\AdditionalTitleType>
+            type: array<DedexBundle\Entity\Ern411\AdditionalTitleType>
         releaseResourceReference:
             expose: true
             access_type: public_method
@@ -76,7 +76,7 @@ DedexBundle\Entity\Ern41\TrackReleaseType:
             xml_list:
                 inline: true
                 entry_name: LinkedReleaseResourceReference
-            type: array<DedexBundle\Entity\Ern41\LinkedReleaseResourceReferenceType>
+            type: array<DedexBundle\Entity\Ern411\LinkedReleaseResourceReferenceType>
         releaseLabelReference:
             expose: true
             access_type: public_method
@@ -87,7 +87,7 @@ DedexBundle\Entity\Ern41\TrackReleaseType:
             xml_list:
                 inline: true
                 entry_name: ReleaseLabelReference
-            type: array<DedexBundle\Entity\Ern41\ReleaseLabelReferenceType>
+            type: array<DedexBundle\Entity\Ern411\ReleaseLabelReferenceType>
         genre:
             expose: true
             access_type: public_method
@@ -98,7 +98,7 @@ DedexBundle\Entity\Ern41\TrackReleaseType:
             xml_list:
                 inline: true
                 entry_name: Genre
-            type: array<DedexBundle\Entity\Ern41\GenreWithTerritoryType>
+            type: array<DedexBundle\Entity\Ern411\GenreWithTerritoryType>
         keywords:
             expose: true
             access_type: public_method
@@ -109,7 +109,7 @@ DedexBundle\Entity\Ern41\TrackReleaseType:
             xml_list:
                 inline: true
                 entry_name: Keywords
-            type: array<DedexBundle\Entity\Ern41\KeywordsWithTerritoryType>
+            type: array<DedexBundle\Entity\Ern411\KeywordsWithTerritoryType>
         synopsis:
             expose: true
             access_type: public_method
@@ -120,7 +120,7 @@ DedexBundle\Entity\Ern41\TrackReleaseType:
             xml_list:
                 inline: true
                 entry_name: Synopsis
-            type: array<DedexBundle\Entity\Ern41\SynopsisWithTerritoryType>
+            type: array<DedexBundle\Entity\Ern411\SynopsisWithTerritoryType>
         marketingComment:
             expose: true
             access_type: public_method
@@ -131,4 +131,4 @@ DedexBundle\Entity\Ern41\TrackReleaseType:
             xml_list:
                 inline: true
                 entry_name: MarketingComment
-            type: array<DedexBundle\Entity\Ern41\MarketingCommentType>
+            type: array<DedexBundle\Entity\Ern411\MarketingCommentType>

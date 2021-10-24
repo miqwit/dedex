@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType:
+DedexBundle\Entity\Ern411\MessagingPartyWithoutCodeType:
     properties:
         partyId:
             expose: true
@@ -15,7 +15,7 @@ DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType:
             accessor:
                 getter: getPartyName
                 setter: setPartyName
-            type: DedexBundle\Entity\Ern41\PartyNameWithoutCodeType
+            type: DedexBundle\Entity\Ern411\PartyNameWithoutCodeType
         tradingName:
             expose: true
             access_type: public_method

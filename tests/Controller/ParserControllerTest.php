@@ -186,4 +186,19 @@ class ParserControllerTest extends TestCase {
     $this->assertEquals("1", $release_dbt->getDisplayArtist()[0]->getSequenceNumber());
   }
 
+  /**
+   * Test ERN 411 is parsed correctly
+   */
+  public function testSample015Ern411() {
+    $xml_path = "tests/samples/015_ern411.xml";
+    $parser_controller = new ErnParserController();
+    // Set this to true to see logs from the parser
+    $parser_controller->setDisplayLog(false);
+    /* @var $ddex NewReleaseMessage */
+    $ddex = $parser_controller->parse($xml_path);
+
+    // ERN version is now 411
+    $this->assertEquals("ern/411", $ddex->getMessageSchemaVersionId());
+  }
+
 }

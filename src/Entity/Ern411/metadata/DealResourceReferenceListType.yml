@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\DealResourceReferenceListType:
+DedexBundle\Entity\Ern411\DealResourceReferenceListType:
     properties:
         dealResourceReference:
             expose: true

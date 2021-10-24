@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing FingerprintType
@@ -14,7 +14,7 @@ class FingerprintType
     /**
      * A Composite containing details of the Type of Algorithm governing the Fingerprint.
      *
-     * @var \DedexBundle\Entity\Ern41\FingerprintAlgorithmTypeType $algorithm
+     * @var \DedexBundle\Entity\Ern411\FingerprintAlgorithmTypeType $algorithm
      */
     private $algorithm = null;
 
@@ -35,7 +35,7 @@ class FingerprintType
     /**
      * A Composite containing details of a File containing the Fingerprint.
      *
-     * @var \DedexBundle\Entity\Ern41\FileType $file
+     * @var \DedexBundle\Entity\Ern411\FileType $file
      */
     private $file = null;
 
@@ -58,7 +58,7 @@ class FingerprintType
      *
      * A Composite containing details of the Type of Algorithm governing the Fingerprint.
      *
-     * @return \DedexBundle\Entity\Ern41\FingerprintAlgorithmTypeType
+     * @return \DedexBundle\Entity\Ern411\FingerprintAlgorithmTypeType
      */
     public function getAlgorithm()
     {
@@ -70,10 +70,10 @@ class FingerprintType
      *
      * A Composite containing details of the Type of Algorithm governing the Fingerprint.
      *
-     * @param \DedexBundle\Entity\Ern41\FingerprintAlgorithmTypeType $algorithm
+     * @param \DedexBundle\Entity\Ern411\FingerprintAlgorithmTypeType $algorithm
      * @return self
      */
-    public function setAlgorithm(\DedexBundle\Entity\Ern41\FingerprintAlgorithmTypeType $algorithm)
+    public function setAlgorithm(\DedexBundle\Entity\Ern411\FingerprintAlgorithmTypeType $algorithm)
     {
         $this->algorithm = $algorithm;
         return $this;
@@ -136,7 +136,7 @@ class FingerprintType
      *
      * A Composite containing details of a File containing the Fingerprint.
      *
-     * @return \DedexBundle\Entity\Ern41\FileType
+     * @return \DedexBundle\Entity\Ern411\FileType
      */
     public function getFile()
     {
@@ -148,10 +148,10 @@ class FingerprintType
      *
      * A Composite containing details of a File containing the Fingerprint.
      *
-     * @param \DedexBundle\Entity\Ern41\FileType $file
+     * @param \DedexBundle\Entity\Ern411\FileType $file
      * @return self
      */
-    public function setFile(\DedexBundle\Entity\Ern41\FileType $file)
+    public function setFile(\DedexBundle\Entity\Ern411\FileType $file)
     {
         $this->file = $file;
         return $this;

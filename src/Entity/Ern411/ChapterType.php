@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing ChapterType
@@ -28,7 +28,7 @@ class ChapterType
     /**
      * A Composite containing details of an Identifier of the Chapter.
      *
-     * @var \DedexBundle\Entity\Ern41\ProprietaryIdType[] $chapterId
+     * @var \DedexBundle\Entity\Ern411\ProprietaryIdType[] $chapterId
      */
     private $chapterId = [
         
@@ -37,7 +37,7 @@ class ChapterType
     /**
      * A Composite containing details of a Title of the Chapter as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @var \DedexBundle\Entity\Ern41\DisplayTitleTextType[] $displayTitleText
+     * @var \DedexBundle\Entity\Ern411\DisplayTitleTextType[] $displayTitleText
      */
     private $displayTitleText = [
         
@@ -46,7 +46,7 @@ class ChapterType
     /**
      * A Composite containing details of a Title of the Chapter as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @var \DedexBundle\Entity\Ern41\DisplayTitleType[] $displayTitle
+     * @var \DedexBundle\Entity\Ern411\DisplayTitleType[] $displayTitle
      */
     private $displayTitle = [
         
@@ -55,7 +55,7 @@ class ChapterType
     /**
      * A Composite containing details of an AdditionalTitle of the Chapter. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @var \DedexBundle\Entity\Ern41\AdditionalTitleType[] $additionalTitle
+     * @var \DedexBundle\Entity\Ern411\AdditionalTitleType[] $additionalTitle
      */
     private $additionalTitle = [
         
@@ -71,7 +71,7 @@ class ChapterType
     /**
      * A Composite containing details of a Contributor to the Chapter. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @var \DedexBundle\Entity\Ern41\ContributorType[] $contributor
+     * @var \DedexBundle\Entity\Ern411\ContributorType[] $contributor
      */
     private $contributor = [
         
@@ -80,7 +80,7 @@ class ChapterType
     /**
      * A Composite containing details of a Character in the Chapter. A Character may be described through Name, Identifier and Roles. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @var \DedexBundle\Entity\Ern41\CharacterType[] $character
+     * @var \DedexBundle\Entity\Ern411\CharacterType[] $character
      */
     private $character = [
         
@@ -172,9 +172,9 @@ class ChapterType
      * A Composite containing details of an Identifier of the Chapter.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ProprietaryIdType $chapterId
+     * @param \DedexBundle\Entity\Ern411\ProprietaryIdType $chapterId
      */
-    public function addToChapterId(\DedexBundle\Entity\Ern41\ProprietaryIdType $chapterId)
+    public function addToChapterId(\DedexBundle\Entity\Ern411\ProprietaryIdType $chapterId)
     {
         $this->chapterId[] = $chapterId;
         return $this;
@@ -211,7 +211,7 @@ class ChapterType
      *
      * A Composite containing details of an Identifier of the Chapter.
      *
-     * @return \DedexBundle\Entity\Ern41\ProprietaryIdType[]
+     * @return \DedexBundle\Entity\Ern411\ProprietaryIdType[]
      */
     public function getChapterId()
     {
@@ -223,7 +223,7 @@ class ChapterType
      *
      * A Composite containing details of an Identifier of the Chapter.
      *
-     * @param \DedexBundle\Entity\Ern41\ProprietaryIdType[] $chapterId
+     * @param \DedexBundle\Entity\Ern411\ProprietaryIdType[] $chapterId
      * @return self
      */
     public function setChapterId(array $chapterId)
@@ -238,9 +238,9 @@ class ChapterType
      * A Composite containing details of a Title of the Chapter as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DisplayTitleTextType $displayTitleText
+     * @param \DedexBundle\Entity\Ern411\DisplayTitleTextType $displayTitleText
      */
-    public function addToDisplayTitleText(\DedexBundle\Entity\Ern41\DisplayTitleTextType $displayTitleText)
+    public function addToDisplayTitleText(\DedexBundle\Entity\Ern411\DisplayTitleTextType $displayTitleText)
     {
         $this->displayTitleText[] = $displayTitleText;
         return $this;
@@ -277,7 +277,7 @@ class ChapterType
      *
      * A Composite containing details of a Title of the Chapter as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @return \DedexBundle\Entity\Ern41\DisplayTitleTextType[]
+     * @return \DedexBundle\Entity\Ern411\DisplayTitleTextType[]
      */
     public function getDisplayTitleText()
     {
@@ -289,7 +289,7 @@ class ChapterType
      *
      * A Composite containing details of a Title of the Chapter as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode. One such element is required for each DisplayTitle element and its content typically provides the same information as the concatenation of the DisplayTitle's sub-elements.
      *
-     * @param \DedexBundle\Entity\Ern41\DisplayTitleTextType[] $displayTitleText
+     * @param \DedexBundle\Entity\Ern411\DisplayTitleTextType[] $displayTitleText
      * @return self
      */
     public function setDisplayTitleText(array $displayTitleText)
@@ -304,9 +304,9 @@ class ChapterType
      * A Composite containing details of a Title of the Chapter as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DisplayTitleType $displayTitle
+     * @param \DedexBundle\Entity\Ern411\DisplayTitleType $displayTitle
      */
-    public function addToDisplayTitle(\DedexBundle\Entity\Ern41\DisplayTitleType $displayTitle)
+    public function addToDisplayTitle(\DedexBundle\Entity\Ern411\DisplayTitleType $displayTitle)
     {
         $this->displayTitle[] = $displayTitle;
         return $this;
@@ -343,7 +343,7 @@ class ChapterType
      *
      * A Composite containing details of a Title of the Chapter as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @return \DedexBundle\Entity\Ern41\DisplayTitleType[]
+     * @return \DedexBundle\Entity\Ern411\DisplayTitleType[]
      */
     public function getDisplayTitle()
     {
@@ -355,7 +355,7 @@ class ChapterType
      *
      * A Composite containing details of a Title of the Chapter as the MessageSender suggests it should be shown to the Consumer. In many instances this is the only Title to be communicated for any given Creation. Multiple instances can be supplied with an ApplicableTerritoryCode and/or LanguageAndScriptCode.
      *
-     * @param \DedexBundle\Entity\Ern41\DisplayTitleType[] $displayTitle
+     * @param \DedexBundle\Entity\Ern411\DisplayTitleType[] $displayTitle
      * @return self
      */
     public function setDisplayTitle(array $displayTitle)
@@ -370,9 +370,9 @@ class ChapterType
      * A Composite containing details of an AdditionalTitle of the Chapter. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\AdditionalTitleType $additionalTitle
+     * @param \DedexBundle\Entity\Ern411\AdditionalTitleType $additionalTitle
      */
-    public function addToAdditionalTitle(\DedexBundle\Entity\Ern41\AdditionalTitleType $additionalTitle)
+    public function addToAdditionalTitle(\DedexBundle\Entity\Ern411\AdditionalTitleType $additionalTitle)
     {
         $this->additionalTitle[] = $additionalTitle;
         return $this;
@@ -409,7 +409,7 @@ class ChapterType
      *
      * A Composite containing details of an AdditionalTitle of the Chapter. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @return \DedexBundle\Entity\Ern41\AdditionalTitleType[]
+     * @return \DedexBundle\Entity\Ern411\AdditionalTitleType[]
      */
     public function getAdditionalTitle()
     {
@@ -421,7 +421,7 @@ class ChapterType
      *
      * A Composite containing details of an AdditionalTitle of the Chapter. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @param \DedexBundle\Entity\Ern41\AdditionalTitleType[] $additionalTitle
+     * @param \DedexBundle\Entity\Ern411\AdditionalTitleType[] $additionalTitle
      * @return self
      */
     public function setAdditionalTitle(array $additionalTitle)
@@ -462,9 +462,9 @@ class ChapterType
      * A Composite containing details of a Contributor to the Chapter. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ContributorType $contributor
+     * @param \DedexBundle\Entity\Ern411\ContributorType $contributor
      */
-    public function addToContributor(\DedexBundle\Entity\Ern41\ContributorType $contributor)
+    public function addToContributor(\DedexBundle\Entity\Ern411\ContributorType $contributor)
     {
         $this->contributor[] = $contributor;
         return $this;
@@ -501,7 +501,7 @@ class ChapterType
      *
      * A Composite containing details of a Contributor to the Chapter. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @return \DedexBundle\Entity\Ern41\ContributorType[]
+     * @return \DedexBundle\Entity\Ern411\ContributorType[]
      */
     public function getContributor()
     {
@@ -513,7 +513,7 @@ class ChapterType
      *
      * A Composite containing details of a Contributor to the Chapter. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @param \DedexBundle\Entity\Ern41\ContributorType[] $contributor
+     * @param \DedexBundle\Entity\Ern411\ContributorType[] $contributor
      * @return self
      */
     public function setContributor(array $contributor)
@@ -528,9 +528,9 @@ class ChapterType
      * A Composite containing details of a Character in the Chapter. A Character may be described through Name, Identifier and Roles. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\CharacterType $character
+     * @param \DedexBundle\Entity\Ern411\CharacterType $character
      */
-    public function addToCharacter(\DedexBundle\Entity\Ern41\CharacterType $character)
+    public function addToCharacter(\DedexBundle\Entity\Ern411\CharacterType $character)
     {
         $this->character[] = $character;
         return $this;
@@ -567,7 +567,7 @@ class ChapterType
      *
      * A Composite containing details of a Character in the Chapter. A Character may be described through Name, Identifier and Roles. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @return \DedexBundle\Entity\Ern41\CharacterType[]
+     * @return \DedexBundle\Entity\Ern411\CharacterType[]
      */
     public function getCharacter()
     {
@@ -579,7 +579,7 @@ class ChapterType
      *
      * A Composite containing details of a Character in the Chapter. A Character may be described through Name, Identifier and Roles. If multiple instances with an ApplicableTerritoryCode are provided, then the first one provides the default that is then superseded by subsequent instances.
      *
-     * @param \DedexBundle\Entity\Ern41\CharacterType[] $character
+     * @param \DedexBundle\Entity\Ern411\CharacterType[] $character
      * @return self
      */
     public function setCharacter(array $character)

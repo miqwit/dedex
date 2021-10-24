@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ResourceListType:
+DedexBundle\Entity\Ern411\ResourceListType:
     properties:
         soundRecording:
             expose: true
@@ -10,7 +10,7 @@ DedexBundle\Entity\Ern41\ResourceListType:
             xml_list:
                 inline: true
                 entry_name: SoundRecording
-            type: array<DedexBundle\Entity\Ern41\SoundRecordingType>
+            type: array<DedexBundle\Entity\Ern411\SoundRecordingType>
         video:
             expose: true
             access_type: public_method
@@ -21,7 +21,7 @@ DedexBundle\Entity\Ern41\ResourceListType:
             xml_list:
                 inline: true
                 entry_name: Video
-            type: array<DedexBundle\Entity\Ern41\VideoType>
+            type: array<DedexBundle\Entity\Ern411\VideoType>
         image:
             expose: true
             access_type: public_method
@@ -32,7 +32,7 @@ DedexBundle\Entity\Ern41\ResourceListType:
             xml_list:
                 inline: true
                 entry_name: Image
-            type: array<DedexBundle\Entity\Ern41\ImageType>
+            type: array<DedexBundle\Entity\Ern411\ImageType>
         text:
             expose: true
             access_type: public_method
@@ -43,7 +43,7 @@ DedexBundle\Entity\Ern41\ResourceListType:
             xml_list:
                 inline: true
                 entry_name: Text
-            type: array<DedexBundle\Entity\Ern41\TextType>
+            type: array<DedexBundle\Entity\Ern411\TextType>
         sheetMusic:
             expose: true
             access_type: public_method
@@ -54,7 +54,7 @@ DedexBundle\Entity\Ern41\ResourceListType:
             xml_list:
                 inline: true
                 entry_name: SheetMusic
-            type: array<DedexBundle\Entity\Ern41\SheetMusicType>
+            type: array<DedexBundle\Entity\Ern411\SheetMusicType>
         software:
             expose: true
             access_type: public_method
@@ -65,4 +65,4 @@ DedexBundle\Entity\Ern41\ResourceListType:
             xml_list:
                 inline: true
                 entry_name: Software
-            type: array<DedexBundle\Entity\Ern41\SoftwareType>
+            type: array<DedexBundle\Entity\Ern411\SoftwareType>

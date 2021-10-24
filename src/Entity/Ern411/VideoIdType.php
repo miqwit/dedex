@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing VideoIdType
@@ -42,14 +42,14 @@ class VideoIdType
     /**
      * A Composite containing details of the CatalogNumber of the Video.
      *
-     * @var \DedexBundle\Entity\Ern41\CatalogNumberType $catalogNumber
+     * @var \DedexBundle\Entity\Ern411\CatalogNumberType $catalogNumber
      */
     private $catalogNumber = null;
 
     /**
      * A Composite containing details of a ProprietaryIdentifier of the Video (usually one per society involved in the messaging).
      *
-     * @var \DedexBundle\Entity\Ern41\ProprietaryIdType[] $proprietaryId
+     * @var \DedexBundle\Entity\Ern411\ProprietaryIdType[] $proprietaryId
      */
     private $proprietaryId = [
         
@@ -173,7 +173,7 @@ class VideoIdType
      *
      * A Composite containing details of the CatalogNumber of the Video.
      *
-     * @return \DedexBundle\Entity\Ern41\CatalogNumberType
+     * @return \DedexBundle\Entity\Ern411\CatalogNumberType
      */
     public function getCatalogNumber()
     {
@@ -185,10 +185,10 @@ class VideoIdType
      *
      * A Composite containing details of the CatalogNumber of the Video.
      *
-     * @param \DedexBundle\Entity\Ern41\CatalogNumberType $catalogNumber
+     * @param \DedexBundle\Entity\Ern411\CatalogNumberType $catalogNumber
      * @return self
      */
-    public function setCatalogNumber(\DedexBundle\Entity\Ern41\CatalogNumberType $catalogNumber)
+    public function setCatalogNumber(\DedexBundle\Entity\Ern411\CatalogNumberType $catalogNumber)
     {
         $this->catalogNumber = $catalogNumber;
         return $this;
@@ -200,9 +200,9 @@ class VideoIdType
      * A Composite containing details of a ProprietaryIdentifier of the Video (usually one per society involved in the messaging).
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ProprietaryIdType $proprietaryId
+     * @param \DedexBundle\Entity\Ern411\ProprietaryIdType $proprietaryId
      */
-    public function addToProprietaryId(\DedexBundle\Entity\Ern41\ProprietaryIdType $proprietaryId)
+    public function addToProprietaryId(\DedexBundle\Entity\Ern411\ProprietaryIdType $proprietaryId)
     {
         $this->proprietaryId[] = $proprietaryId;
         return $this;
@@ -239,7 +239,7 @@ class VideoIdType
      *
      * A Composite containing details of a ProprietaryIdentifier of the Video (usually one per society involved in the messaging).
      *
-     * @return \DedexBundle\Entity\Ern41\ProprietaryIdType[]
+     * @return \DedexBundle\Entity\Ern411\ProprietaryIdType[]
      */
     public function getProprietaryId()
     {
@@ -251,7 +251,7 @@ class VideoIdType
      *
      * A Composite containing details of a ProprietaryIdentifier of the Video (usually one per society involved in the messaging).
      *
-     * @param \DedexBundle\Entity\Ern41\ProprietaryIdType[] $proprietaryId
+     * @param \DedexBundle\Entity\Ern411\ProprietaryIdType[] $proprietaryId
      * @return self
      */
     public function setProprietaryId(array $proprietaryId)

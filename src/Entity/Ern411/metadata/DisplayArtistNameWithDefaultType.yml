@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\DisplayArtistNameWithDefaultType:
+DedexBundle\Entity\Ern411\DisplayArtistNameWithDefaultType:
     properties:
         __value:
             expose: true

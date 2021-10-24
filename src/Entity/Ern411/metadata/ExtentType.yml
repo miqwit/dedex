@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ExtentType:
+DedexBundle\Entity\Ern411\ExtentType:
     properties:
         __value:
             expose: true

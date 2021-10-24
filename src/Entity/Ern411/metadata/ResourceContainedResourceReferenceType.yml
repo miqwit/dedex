@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ResourceContainedResourceReferenceType:
+DedexBundle\Entity\Ern411\ResourceContainedResourceReferenceType:
     properties:
         resourceContainedResourceReference:
             expose: true
@@ -31,4 +31,4 @@ DedexBundle\Entity\Ern41\ResourceContainedResourceReferenceType:
             accessor:
                 getter: getPurpose
                 setter: setPurpose
-            type: DedexBundle\Entity\Ern41\PurposeType
+            type: DedexBundle\Entity\Ern411\PurposeType

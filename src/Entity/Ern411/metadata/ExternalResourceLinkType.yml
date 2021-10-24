@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ExternalResourceLinkType:
+DedexBundle\Entity\Ern411\ExternalResourceLinkType:
     properties:
         uRL:
             expose: true
@@ -18,7 +18,7 @@ DedexBundle\Entity\Ern41\ExternalResourceLinkType:
             accessor:
                 getter: getValidityPeriod
                 setter: setValidityPeriod
-            type: DedexBundle\Entity\Ern41\PeriodWithoutFlagsType
+            type: DedexBundle\Entity\Ern411\PeriodWithoutFlagsType
         externalLink:
             expose: true
             access_type: public_method
@@ -37,7 +37,7 @@ DedexBundle\Entity\Ern41\ExternalResourceLinkType:
             xml_list:
                 inline: true
                 entry_name: ExternallyLinkedResourceType
-            type: array<DedexBundle\Entity\Ern41\ExternallyLinkedResourceTypeType>
+            type: array<DedexBundle\Entity\Ern411\ExternallyLinkedResourceTypeType>
         fileFormat:
             expose: true
             access_type: public_method

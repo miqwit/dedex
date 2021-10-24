@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Entity\Ern41;
+namespace DedexBundle\Entity\Ern411;
 
 /**
  * Class representing ContributorType
@@ -28,7 +28,7 @@ class ContributorType
     /**
      * A Composite containing details of a Role played by the Contributor.
      *
-     * @var \DedexBundle\Entity\Ern41\ContributorRoleType[] $role
+     * @var \DedexBundle\Entity\Ern411\ContributorRoleType[] $role
      */
     private $role = [
         
@@ -37,7 +37,7 @@ class ContributorType
     /**
      * A Type of musical Instrument played by the Contributor.
      *
-     * @var \DedexBundle\Entity\Ern41\InstrumentTypeType[] $instrumentType
+     * @var \DedexBundle\Entity\Ern411\InstrumentTypeType[] $instrumentType
      */
     private $instrumentType = [
         
@@ -60,14 +60,14 @@ class ContributorType
     /**
      * A Flag indicating whether the Contributor is credited as having played a role in creating the Recording (=true) or not (=false).
      *
-     * @var \DedexBundle\Entity\Ern41\IsCreditedType $isCredited
+     * @var \DedexBundle\Entity\Ern411\IsCreditedType $isCredited
      */
     private $isCredited = null;
 
     /**
      * A Role for which the Party is credited.
      *
-     * @var \DedexBundle\Entity\Ern41\DisplayCreditsType[] $displayCredits
+     * @var \DedexBundle\Entity\Ern411\DisplayCreditsType[] $displayCredits
      */
     private $displayCredits = [
         
@@ -131,9 +131,9 @@ class ContributorType
      * A Composite containing details of a Role played by the Contributor.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\ContributorRoleType $role
+     * @param \DedexBundle\Entity\Ern411\ContributorRoleType $role
      */
-    public function addToRole(\DedexBundle\Entity\Ern41\ContributorRoleType $role)
+    public function addToRole(\DedexBundle\Entity\Ern411\ContributorRoleType $role)
     {
         $this->role[] = $role;
         return $this;
@@ -170,7 +170,7 @@ class ContributorType
      *
      * A Composite containing details of a Role played by the Contributor.
      *
-     * @return \DedexBundle\Entity\Ern41\ContributorRoleType[]
+     * @return \DedexBundle\Entity\Ern411\ContributorRoleType[]
      */
     public function getRole()
     {
@@ -182,7 +182,7 @@ class ContributorType
      *
      * A Composite containing details of a Role played by the Contributor.
      *
-     * @param \DedexBundle\Entity\Ern41\ContributorRoleType[] $role
+     * @param \DedexBundle\Entity\Ern411\ContributorRoleType[] $role
      * @return self
      */
     public function setRole(array $role)
@@ -197,9 +197,9 @@ class ContributorType
      * A Type of musical Instrument played by the Contributor.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\InstrumentTypeType $instrumentType
+     * @param \DedexBundle\Entity\Ern411\InstrumentTypeType $instrumentType
      */
-    public function addToInstrumentType(\DedexBundle\Entity\Ern41\InstrumentTypeType $instrumentType)
+    public function addToInstrumentType(\DedexBundle\Entity\Ern411\InstrumentTypeType $instrumentType)
     {
         $this->instrumentType[] = $instrumentType;
         return $this;
@@ -236,7 +236,7 @@ class ContributorType
      *
      * A Type of musical Instrument played by the Contributor.
      *
-     * @return \DedexBundle\Entity\Ern41\InstrumentTypeType[]
+     * @return \DedexBundle\Entity\Ern411\InstrumentTypeType[]
      */
     public function getInstrumentType()
     {
@@ -248,7 +248,7 @@ class ContributorType
      *
      * A Type of musical Instrument played by the Contributor.
      *
-     * @param \DedexBundle\Entity\Ern41\InstrumentTypeType[] $instrumentType
+     * @param \DedexBundle\Entity\Ern411\InstrumentTypeType[] $instrumentType
      * @return self
      */
     public function setInstrumentType(array $instrumentType)
@@ -314,7 +314,7 @@ class ContributorType
      *
      * A Flag indicating whether the Contributor is credited as having played a role in creating the Recording (=true) or not (=false).
      *
-     * @return \DedexBundle\Entity\Ern41\IsCreditedType
+     * @return \DedexBundle\Entity\Ern411\IsCreditedType
      */
     public function getIsCredited()
     {
@@ -326,10 +326,10 @@ class ContributorType
      *
      * A Flag indicating whether the Contributor is credited as having played a role in creating the Recording (=true) or not (=false).
      *
-     * @param \DedexBundle\Entity\Ern41\IsCreditedType $isCredited
+     * @param \DedexBundle\Entity\Ern411\IsCreditedType $isCredited
      * @return self
      */
-    public function setIsCredited(\DedexBundle\Entity\Ern41\IsCreditedType $isCredited)
+    public function setIsCredited(\DedexBundle\Entity\Ern411\IsCreditedType $isCredited)
     {
         $this->isCredited = $isCredited;
         return $this;
@@ -341,9 +341,9 @@ class ContributorType
      * A Role for which the Party is credited.
      *
      * @return self
-     * @param \DedexBundle\Entity\Ern41\DisplayCreditsType $displayCredits
+     * @param \DedexBundle\Entity\Ern411\DisplayCreditsType $displayCredits
      */
-    public function addToDisplayCredits(\DedexBundle\Entity\Ern41\DisplayCreditsType $displayCredits)
+    public function addToDisplayCredits(\DedexBundle\Entity\Ern411\DisplayCreditsType $displayCredits)
     {
         $this->displayCredits[] = $displayCredits;
         return $this;
@@ -380,7 +380,7 @@ class ContributorType
      *
      * A Role for which the Party is credited.
      *
-     * @return \DedexBundle\Entity\Ern41\DisplayCreditsType[]
+     * @return \DedexBundle\Entity\Ern411\DisplayCreditsType[]
      */
     public function getDisplayCredits()
     {
@@ -392,7 +392,7 @@ class ContributorType
      *
      * A Role for which the Party is credited.
      *
-     * @param \DedexBundle\Entity\Ern41\DisplayCreditsType[] $displayCredits
+     * @param \DedexBundle\Entity\Ern411\DisplayCreditsType[] $displayCredits
      * @return self
      */
     public function setDisplayCredits(array $displayCredits)

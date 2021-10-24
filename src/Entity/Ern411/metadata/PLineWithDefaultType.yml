@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\PLineWithDefaultType:
+DedexBundle\Entity\Ern411\PLineWithDefaultType:
     properties:
         applicableTerritoryCode:
             expose: true

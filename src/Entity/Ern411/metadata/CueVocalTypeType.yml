@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\CueVocalTypeType:
+DedexBundle\Entity\Ern411\CueVocalTypeType:
     properties:
         __value:
             expose: true

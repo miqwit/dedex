@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\DisplayArtistType:
+DedexBundle\Entity\Ern411\DisplayArtistType:
     properties:
         sequenceNumber:
             expose: true
@@ -24,7 +24,7 @@ DedexBundle\Entity\Ern41\DisplayArtistType:
             accessor:
                 getter: getDisplayArtistRole
                 setter: setDisplayArtistRole
-            type: DedexBundle\Entity\Ern41\DisplayArtistRoleType
+            type: DedexBundle\Entity\Ern411\DisplayArtistRoleType
         artisticRole:
             expose: true
             access_type: public_method
@@ -35,7 +35,7 @@ DedexBundle\Entity\Ern41\DisplayArtistType:
             xml_list:
                 inline: true
                 entry_name: ArtisticRole
-            type: array<DedexBundle\Entity\Ern41\ContributorRoleType>
+            type: array<DedexBundle\Entity\Ern411\ContributorRoleType>
         titleDisplayInformation:
             expose: true
             access_type: public_method
@@ -46,4 +46,4 @@ DedexBundle\Entity\Ern41\DisplayArtistType:
             xml_list:
                 inline: true
                 entry_name: TitleDisplayInformation
-            type: array<DedexBundle\Entity\Ern41\TitleDisplayInformationType>
+            type: array<DedexBundle\Entity\Ern411\TitleDisplayInformationType>

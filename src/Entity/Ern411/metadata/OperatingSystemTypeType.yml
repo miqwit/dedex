@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\OperatingSystemTypeType:
+DedexBundle\Entity\Ern411\OperatingSystemTypeType:
     properties:
         __value:
             expose: true

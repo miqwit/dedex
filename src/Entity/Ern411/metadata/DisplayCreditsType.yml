@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\DisplayCreditsType:
+DedexBundle\Entity\Ern411\DisplayCreditsType:
     properties:
         languageAndScriptCode:
             expose: true

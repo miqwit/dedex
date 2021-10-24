@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\TextTypeType:
+DedexBundle\Entity\Ern411\TextTypeType:
     properties:
         __value:
             expose: true

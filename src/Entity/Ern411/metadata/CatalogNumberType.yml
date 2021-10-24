@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\CatalogNumberType:
+DedexBundle\Entity\Ern411\CatalogNumberType:
     properties:
         __value:
             expose: true

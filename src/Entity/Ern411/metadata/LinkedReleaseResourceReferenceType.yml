@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\LinkedReleaseResourceReferenceType:
+DedexBundle\Entity\Ern411\LinkedReleaseResourceReferenceType:
     properties:
         __value:
             expose: true

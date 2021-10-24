@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\DisplaySubTitleType:
+DedexBundle\Entity\Ern411\DisplaySubTitleType:
     properties:
         __value:
             expose: true

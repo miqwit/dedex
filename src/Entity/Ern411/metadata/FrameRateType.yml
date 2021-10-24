@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\FrameRateType:
+DedexBundle\Entity\Ern411\FrameRateType:
     properties:
         __value:
             expose: true

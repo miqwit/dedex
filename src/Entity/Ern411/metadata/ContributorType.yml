@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\ContributorType:
+DedexBundle\Entity\Ern411\ContributorType:
     properties:
         sequenceNumber:
             expose: true
@@ -27,7 +27,7 @@ DedexBundle\Entity\Ern41\ContributorType:
             xml_list:
                 inline: true
                 entry_name: Role
-            type: array<DedexBundle\Entity\Ern41\ContributorRoleType>
+            type: array<DedexBundle\Entity\Ern411\ContributorRoleType>
         instrumentType:
             expose: true
             access_type: public_method
@@ -38,7 +38,7 @@ DedexBundle\Entity\Ern41\ContributorType:
             xml_list:
                 inline: true
                 entry_name: InstrumentType
-            type: array<DedexBundle\Entity\Ern41\InstrumentTypeType>
+            type: array<DedexBundle\Entity\Ern411\InstrumentTypeType>
         hasMadeFeaturedContribution:
             expose: true
             access_type: public_method
@@ -62,7 +62,7 @@ DedexBundle\Entity\Ern41\ContributorType:
             accessor:
                 getter: getIsCredited
                 setter: setIsCredited
-            type: DedexBundle\Entity\Ern41\IsCreditedType
+            type: DedexBundle\Entity\Ern411\IsCreditedType
         displayCredits:
             expose: true
             access_type: public_method
@@ -73,4 +73,4 @@ DedexBundle\Entity\Ern41\ContributorType:
             xml_list:
                 inline: true
                 entry_name: DisplayCredits
-            type: array<DedexBundle\Entity\Ern41\DisplayCreditsType>
+            type: array<DedexBundle\Entity\Ern411\DisplayCreditsType>

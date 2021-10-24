@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\AvRatingType:
+DedexBundle\Entity\Ern411\AvRatingType:
     properties:
         applicableTerritoryCode:
             expose: true
@@ -33,7 +33,7 @@ DedexBundle\Entity\Ern41\AvRatingType:
             accessor:
                 getter: getAgency
                 setter: setAgency
-            type: DedexBundle\Entity\Ern41\RatingAgencyType
+            type: DedexBundle\Entity\Ern411\RatingAgencyType
         reason:
             expose: true
             access_type: public_method

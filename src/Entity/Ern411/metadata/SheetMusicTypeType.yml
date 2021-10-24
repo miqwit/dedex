@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\SheetMusicTypeType:
+DedexBundle\Entity\Ern411\SheetMusicTypeType:
     properties:
         __value:
             expose: true

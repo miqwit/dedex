@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\EventDateTimeType:
+DedexBundle\Entity\Ern411\EventDateTimeType:
     properties:
         __value:
             expose: true

@@ -1,4 +1,4 @@
-DedexBundle\Entity\Ern41\MessageHeaderType:
+DedexBundle\Entity\Ern411\MessageHeaderType:
     properties:
         messageThreadId:
             expose: true
@@ -31,7 +31,7 @@ DedexBundle\Entity\Ern41\MessageHeaderType:
             accessor:
                 getter: getMessageSender
                 setter: setMessageSender
-            type: DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType
+            type: DedexBundle\Entity\Ern411\MessagingPartyWithoutCodeType
         sentOnBehalfOf:
             expose: true
             access_type: public_method
@@ -39,7 +39,7 @@ DedexBundle\Entity\Ern41\MessageHeaderType:
             accessor:
                 getter: getSentOnBehalfOf
                 setter: setSentOnBehalfOf
-            type: DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType
+            type: DedexBundle\Entity\Ern411\MessagingPartyWithoutCodeType
         messageRecipient:
             expose: true
             access_type: public_method
@@ -50,7 +50,7 @@ DedexBundle\Entity\Ern41\MessageHeaderType:
             xml_list:
                 inline: true
                 entry_name: MessageRecipient
-            type: array<DedexBundle\Entity\Ern41\MessagingPartyWithoutCodeType>
+            type: array<DedexBundle\Entity\Ern411\MessagingPartyWithoutCodeType>
         messageCreatedDateTime:
             expose: true
             access_type: public_method
@@ -66,7 +66,7 @@ DedexBundle\Entity\Ern41\MessageHeaderType:
             accessor:
                 getter: getMessageAuditTrail
                 setter: setMessageAuditTrail
-            type: array<DedexBundle\Entity\Ern41\MessageAuditTrailEventType>
+            type: array<DedexBundle\Entity\Ern411\MessageAuditTrailEventType>
             xml_list:
                 inline: false
                 entry_name: MessageAuditTrailEvent
