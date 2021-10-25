@@ -124,6 +124,13 @@ class ErnParserController {
    * @var type 
    */
   private $attrs_to_process = [];
+  
+  /**
+   * Particular case of tags that can contain several times the same element. In 
+   * that case the formal type is a PHP array, which contains a DDEX type.
+   * @var boolean
+   */
+  private $elem_is_list = false;
 
   /**
    * Log something (will echo if display_log is true)
@@ -193,7 +200,6 @@ class ErnParserController {
       "xs:schemaLocation",
       "xsi:schemaLocation",
       "xmlns:avs",
-      "ReleaseResourceReferenceList"  // TODO generic
   ];
 
   /**
@@ -215,7 +221,23 @@ class ErnParserController {
       $name = "NewReleaseMessage";
     } else {
       $parent = end($this->pile);
+      
+      // If we are in a List element, consider parent as the parent's parent.
+      // This is were the addTo and get functions will be found.
+      if ($this->elem_is_list && count($this->pile) >= 2) {
+        $parent = prev($this->pile);
+      }
+      
       $class_name = $this->getTypeOfElementFromDoc(get_class($parent), $name);
+      
+      // If the element name ends with List and there is no type for it, DDEX uses it as a raw list
+      // of elements. Hence the elements must be attached to the parent's parent
+      // and not the direct parent.
+      if (substr($name, -4) == "List" && substr($class_name, -8) != "ListType") {
+        // Add a fake attribute that will be processed once the List is done
+        $attrs["dedex_is_list"] = true;
+        $this->elem_is_list = true;
+      }
 
       if (!class_exists($class_name)) {
         // Set element to parent class
@@ -282,6 +304,12 @@ class ErnParserController {
           if (in_array($key, $this->ignore_these_tags_or_attributes)) {
             continue;
           }
+          
+          // Special case for is_list. Reset flag is list
+          if ($key == "dedex_is_list") {
+            $this->elem_is_list = false;
+            continue;
+          }
 
           $this->callbackStartElement($parser, $key, []);
           $this->callbackCharacterData($parser, $val);
@@ -316,7 +344,11 @@ class ErnParserController {
     }
 
     $keys = array_keys($this->pile);
-    $parent_tag = $keys[count($keys) - 2];
+    if ($this->elem_is_list) {
+      $parent_tag = $keys[count($keys) - 3]; // up one element
+    } else {
+      $parent_tag = $keys[count($keys) - 2];
+    }
     $child_tag = end($keys);
 
     $parent = $this->pile[$parent_tag];
@@ -396,6 +428,11 @@ class ErnParserController {
     if ($this->set_to_parent) {
       $elem = end($this->pile);
       $tag = $this->set_to_parent_tag;
+    } else if ($this->elem_is_list) {
+      end($this->pile);
+      prev($this->pile);
+      $elem = prev($this->pile);
+      $tag = end($keys);
     } else {
       $elem = $this->pile[$keys[count($keys) - 2]];
       $tag = end($keys);
@@ -476,8 +513,9 @@ class ErnParserController {
     if (count($matches) > 1) {
       $type = str_replace("[]", "", $matches[1]);
     } else {
-			$type = "\\DedexBundle\\Entity\\Ern{$this->version}\\{$tag}Type";
+      $type = "\\DedexBundle\\Entity\\Ern{$this->version}\\{$tag}Type";
     }
+    
     return $type;
   }
 
