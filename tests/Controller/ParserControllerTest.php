@@ -197,8 +197,9 @@ class ParserControllerTest extends TestCase {
     /* @var $ddex NewReleaseMessage */
     $ddex = $parser_controller->parse($xml_path);
 
-    // ERN version is now 411
-    $this->assertEquals("ern/411", $ddex->getMessageSchemaVersionId());
+    // ERN version is now 411. It is using classes with namespace 411.
+    // ERN 411 does not have a getMessageSchemaVersionId() function
+    $this->assertEquals('DedexBundle\Entity\Ern411\NewReleaseMessage', get_class($ddex));
   }
 
 }

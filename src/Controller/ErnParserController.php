@@ -124,13 +124,6 @@ class ErnParserController {
    * @var type 
    */
   private $attrs_to_process = [];
-  
-  /**
-   * Particular case of tags that can contain several times the same element. In 
-   * that case the formal type is a PHP array, which contains a DDEX type.
-   * @var boolean
-   */
-  private $elem_is_list = false;
 
   /**
    * Log something (will echo if display_log is true)
@@ -222,22 +215,7 @@ class ErnParserController {
     } else {
       $parent = end($this->pile);
       
-      // If we are in a List element, consider parent as the parent's parent.
-      // This is were the addTo and get functions will be found.
-      if ($this->elem_is_list && count($this->pile) >= 2) {
-        $parent = prev($this->pile);
-      }
-      
       $class_name = $this->getTypeOfElementFromDoc(get_class($parent), $name);
-      
-      // If the element name ends with List and there is no type for it, DDEX uses it as a raw list
-      // of elements. Hence the elements must be attached to the parent's parent
-      // and not the direct parent.
-      if (substr($name, -4) == "List" && substr($class_name, -8) != "ListType") {
-        // Add a fake attribute that will be processed once the List is done
-        $attrs["dedex_is_list"] = true;
-        $this->elem_is_list = true;
-      }
 
       if (!class_exists($class_name)) {
         // Set element to parent class
@@ -254,7 +232,7 @@ class ErnParserController {
     } else {
       $this->pile[$name . "##" . random_int(2, 99999)] = $elem;
     }
-
+    
     // Will process attributes later
     $this->attrs_to_process[count($this->pile)] = $attrs;
   }
@@ -304,12 +282,6 @@ class ErnParserController {
           if (in_array($key, $this->ignore_these_tags_or_attributes)) {
             continue;
           }
-          
-          // Special case for is_list. Reset flag is list
-          if ($key == "dedex_is_list") {
-            $this->elem_is_list = false;
-            continue;
-          }
 
           $this->callbackStartElement($parser, $key, []);
           $this->callbackCharacterData($parser, $val);
@@ -344,23 +316,10 @@ class ErnParserController {
     }
 
     $keys = array_keys($this->pile);
-    if ($this->elem_is_list) {
-      $parent_tag = $keys[count($keys) - 3]; // up one element
-    } else {
-      $parent_tag = $keys[count($keys) - 2];
-    }
     $child_tag = end($keys);
-
-    $parent = $this->pile[$parent_tag];
     $child = $this->pile[$child_tag];
-
-    $func_names = $this->listPossibleFunctionNames("set", $child_tag);
-    foreach ($func_names as $func_name) {
-      if (!method_exists($parent, $func_name)) {
-        continue;
-      }
-      break;
-    }
+    
+    [$func_name, $parent] = $this->getValidFunctionName("set", $child_tag, $child);
 
     $parent->$func_name($child);
   }
@@ -389,23 +348,45 @@ class ErnParserController {
     if (strpos($tag, "##") !== false) {
       $tag = preg_replace("/##\d+/", "", $tag);
     }
+    
+    $func_names = [];
+    
+    switch ($prefix) {
+      case "get":
+        $func_names[] = $prefix . $tag;
+        $func_names[] = $prefix . $tag . "s";
+        $func_names[] = $prefix . $tag . "List";
+      //        $prefix . $tag . "Type",
+        
+        // Hack for release deals. DDEX 4.1.1 is not consistent. It has a DealList
+        // and ReleaseDeals in it. This parser would expect a ReleaseDealList instead
+        // of the actual DealList
+        if ($tag == "ReleaseDeal") {
+          $func_names[] = $prefix . "DealList";
+        }
 
-    $func_names = [
-        $prefix . $tag,
-        $prefix . $tag . "s",
-        $prefix . $tag . "Type",
-        $prefix . $tag . "List"
-    ];
-
-    // Add to func names also the addTo, because can be array. Will be tested first
-    if ($prefix == "set") {
-      $func_names = array_merge([
-          "addTo" . $tag,
-          "addTo" . $tag . "List",
-          "create" . $tag,
-          "create" . $tag . "List"
-              ],
-              $func_names);
+        break;
+      case "set":
+        // order is important
+        $func_names[] = "addTo" . $tag;
+        $func_names[] = "addTo" . $tag . "List";
+        $func_names[] = "create" . $tag;
+        $func_names[] = "create" . $tag . "List";
+        $func_names[] = $prefix . $tag;
+        $func_names[] = $prefix . $tag;
+        $func_names[] = $prefix . $tag . "s";
+        $func_names[] = $prefix . $tag . "List";
+        
+        // Hack for release deals. DDEX 4.1.1 is not consistent. It has a DealList
+        // and ReleaseDeals in it. This parser would expect a ReleaseDealList instead
+        // of the actual DealList
+        if ($tag == "ReleaseDeal") {
+          $func_names[] = "addToDealList";
+        }
+        
+        break;
+      default:
+        throw new \Exception("Prefix must be get or set");
     }
 
     return $func_names;
@@ -428,17 +409,12 @@ class ErnParserController {
     if ($this->set_to_parent) {
       $elem = end($this->pile);
       $tag = $this->set_to_parent_tag;
-    } else if ($this->elem_is_list) {
-      end($this->pile);
-      prev($this->pile);
-      $elem = prev($this->pile);
-      $tag = end($keys);
     } else {
       $elem = $this->pile[$keys[count($keys) - 2]];
       $tag = end($keys);
     }
 
-    $func_name = $this->getValidFunctionName("set", $tag, $elem);
+    [$func_name, $elem] = $this->getValidFunctionName("set", $tag);
 
     // It's possible we're trying to set a text but it's expecting an
     // object (where text should be placed in value).
@@ -458,27 +434,38 @@ class ErnParserController {
    * 
    * @param string $prefix "set" or "get"
    * @param type $tag
-   * @param type $elem
    * @return type
    * @throws Exception
    */
-  private function getValidFunctionName($prefix, $tag, $elem) {
+  private function getValidFunctionName($prefix, $tag, $value = null) {
     $func_names = $this->listPossibleFunctionNames($prefix, $tag);
-
-    $function_used = false;
-    foreach ($func_names as $func_name) {
-      if (!method_exists($elem, $func_name)) {
-        continue;
+    
+    $elem = end($this->pile);
+    
+    // If type is complex, always start at previous than end, 
+    // as end will be itself
+    if ($value != null && !in_array(get_class($value), ["string", "int", "bool", "float", "mixed"])) {
+      $elem = prev($this->pile);
+    }
+    
+    while (true) {
+      $function_used = false;
+      foreach ($func_names as $func_name) {
+        if (!method_exists($elem, $func_name)) {
+          continue;
+        }
+        $function_used = true;
+        break 2;
       }
-      $function_used = true;
-      break;
+
+      // Continue with previous element if exists
+      $elem = prev($this->pile);
+      if ($elem === false) {
+        throw new Exception("No functions found for this tag: $tag. Path is " . implode(",", array_keys($this->pile)));
+      }
     }
 
-    if (!$function_used) {
-      throw new Exception("No functions found for this tag: $tag. Path is " . implode(",", array_keys($this->pile)));
-    }
-
-    return $func_name;
+    return array($func_name, $elem);
   }
 
   private function expectedParamIsArray($class, $func_name) {
@@ -505,9 +492,9 @@ class ErnParserController {
    * @return string
    */
   private function getTypeOfElementFromDoc($class, $tag) {
-    $function = $this->getValidFunctionName("get", $tag, $class);
-
-    $rc = new ReflectionMethod($class, $function);
+    [$function_name, $class] = $this->getValidFunctionName("get", $tag);
+    
+    $rc = new ReflectionMethod($class, $function_name);
     $doc = $rc->getDocComment();
     preg_match("/@return (\S+).*/", $doc, $matches);
     if (count($matches) > 1) {
