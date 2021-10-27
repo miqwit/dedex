@@ -185,6 +185,40 @@ class ParserControllerTest extends TestCase {
     $this->assertCount(1, $release_dbt->getDisplayArtist());
     $this->assertEquals("1", $release_dbt->getDisplayArtist()[0]->getSequenceNumber());
   }
+  
+  /**
+   * Test that artists with UTF-8 names in it are parsed properly, such 
+   * as Zvečansko kolo or Šumadijsko lagano kolo.
+   * @see https://github.com/miqwit/dedex/issues/6
+   */
+  public function testSample016Utf8Artist() {
+    $xml_path = "tests/samples/016_utf8_artists.xml";
+    $parser_controller = new ErnParserController();
+    // Set this to true to see logs from the parser
+    $parser_controller->setDisplayLog(false);
+    /* @var $ddex NewReleaseMessage */
+    $ddex = $parser_controller->parse($xml_path);
+    
+    
+    // In first sound recording, check that display artist is Mirko Kordić
+    /* @var $resource_zero \DedexBundle\Entity\Ern382\Ern\SoundRecordingType */
+    $resource_zero = $ddex->getResourceList()->getSoundRecording()[0];
+    /* @var $srdbt_zero SoundRecordingDetailsByTerritoryType */
+    $srdbt_zero = $resource_zero->getSoundRecordingDetailsByTerritory()[0];
+    $this->assertEquals("Mirko Kordić", $srdbt_zero->getDisplayArtist()[0]->getPartyName()[0]->getFullName());
+    
+    // Check that Reference Title of Sound Recording 3 (idx 2) is Zvečansko kolo
+    /* @var $resource_two \DedexBundle\Entity\Ern382\SoundRecordingType */
+    $resource_two = $ddex->getResourceList()->getSoundRecording()[2];
+    $this->assertEquals("Zvečansko kolo", $resource_two->getReferenceTitle()->getTitleText());
+    
+    // Check that Reference Title of Sound Recording 4 (idx 3) is Šumadijsko lagano kolo
+    /* @var $resource_three \DedexBundle\Entity\Ern382\SoundRecordingType */
+    $resource_three = $ddex->getResourceList()->getSoundRecording()[3];
+    $this->assertEquals("Šumadijsko lagano kolo", $resource_three->getReferenceTitle()->getTitleText());
+    
+    
+  }
 
   /**
    * Test ERN 411 is parsed correctly
