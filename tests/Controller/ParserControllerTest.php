@@ -216,8 +216,6 @@ class ParserControllerTest extends TestCase {
     /* @var $resource_three \DedexBundle\Entity\Ern382\SoundRecordingType */
     $resource_three = $ddex->getResourceList()->getSoundRecording()[3];
     $this->assertEquals("Šumadijsko lagano kolo", $resource_three->getReferenceTitle()->getTitleText());
-    
-    
   }
 
   /**

@@ -262,9 +262,11 @@ class ErnParserController {
     if ($class_name === "\DateInterval") {
       // For DateInterval can't instanciate with null
       return new DateInterval("PT0M0S");  // will be erased
+    } else if ($class_name === "\DedexBundle\Entity\Ern382\EventDateTimeType") {
+      return new \DedexBundle\Entity\Ern382\EventDateTimeType(new \DateTime()); // TODO
     }
 
-    return $this->instanciateTypeFromDoc($class_name, '__construct', null);
+    return new $class_name(null);
   }
 
   /**
@@ -437,7 +439,7 @@ class ErnParserController {
     if (!empty($this->lastElement) && $this->lastElement[0] === $elem && $this->lastElement[1] === $tag) {
       $value = $this->lastElement[2] . $value;
     }
-    $func_name = $this->getValidFunctionName("set", $tag, $elem);
+    [$func_name, $elem] = $this->getValidFunctionName("set", $tag, $elem);
 
     // It's possible we're trying to set a text but it's expecting an
     // object (where text should be placed in value).
@@ -469,7 +471,7 @@ class ErnParserController {
     
     // If type is complex, always start at previous than end, 
     // as end will be itself
-    if ($value != null && !in_array(get_class($value), ["string", "int", "bool", "float", "mixed"])) {
+    if ($value != null && !$this->set_to_parent && !in_array(get_class($value), ["string", "int", "bool", "float", "mixed"])) {
       $elem = prev($this->pile);
     }
     

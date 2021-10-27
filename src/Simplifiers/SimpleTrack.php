@@ -101,7 +101,12 @@ class SimpleTrack extends SimpleEntity {
 	 * @return string Concatenation of path and name, as we would normally use this
 	 */
 	public function getFullPath() {
-		return empty($this->getFilePath()) ? $this->getFileName() : $this->getFilePath() . DIRECTORY_SEPARATOR . $this->getFileName();
+		if (empty($this->getFilePath())) {
+			return $this->getFileName();
+		}
+		
+		$ds = DIRECTORY_SEPARATOR;
+		return trim(preg_replace('#('.$ds.'{2,})#', $ds, $this->getFilePath() . DIRECTORY_SEPARATOR . $this->getFileName()), $ds);
 	}
 
 	/**
