@@ -1,0 +1,39 @@
+DedexBundle\Entity\Ern411\FulfillmentDateWithTerritoryType:
+    properties:
+        applicableTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ApplicableTerritoryCode
+            accessor:
+                getter: getApplicableTerritoryCode
+                setter: setApplicableTerritoryCode
+            xml_attribute: true
+            type: string
+        isDefault:
+            expose: true
+            access_type: public_method
+            serialized_name: IsDefault
+            accessor:
+                getter: getIsDefault
+                setter: setIsDefault
+            xml_attribute: true
+            type: bool
+        fulfillmentDate:
+            expose: true
+            access_type: public_method
+            serialized_name: FulfillmentDate
+            accessor:
+                getter: getFulfillmentDate
+                setter: setFulfillmentDate
+            type: string
+        resourceReleaseReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceReleaseReference
+            accessor:
+                getter: getResourceReleaseReference
+                setter: setResourceReleaseReference
+            xml_list:
+                inline: true
+                entry_name: ResourceReleaseReference
+            type: array<string>

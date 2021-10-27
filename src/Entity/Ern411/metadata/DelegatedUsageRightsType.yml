@@ -1,0 +1,32 @@
+DedexBundle\Entity\Ern411\DelegatedUsageRightsType:
+    properties:
+        useType:
+            expose: true
+            access_type: public_method
+            serialized_name: UseType
+            accessor:
+                getter: getUseType
+                setter: setUseType
+            xml_list:
+                inline: true
+                entry_name: UseType
+            type: array<DedexBundle\Entity\Ern411\UseTypeType>
+        periodOfRightsDelegation:
+            expose: true
+            access_type: public_method
+            serialized_name: PeriodOfRightsDelegation
+            accessor:
+                getter: getPeriodOfRightsDelegation
+                setter: setPeriodOfRightsDelegation
+            type: DedexBundle\Entity\Ern411\PeriodType
+        territoryOfRightsDelegation:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryOfRightsDelegation
+            accessor:
+                getter: getTerritoryOfRightsDelegation
+                setter: setTerritoryOfRightsDelegation
+            xml_list:
+                inline: true
+                entry_name: TerritoryOfRightsDelegation
+            type: array<DedexBundle\Entity\Ern411\CurrentTerritoryCodeType>

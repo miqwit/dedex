@@ -58,6 +58,8 @@ I used the superb `xsd2php` package to generate classes based on the XSD provide
 
 The parser is "filling" these objects while parsing the XML file line by line.
 
+Example for generating DDEX 411 entity classes:
+
 ```
-vendor/bin/xsd2php convert config.yml /home/my/ota/OTA_Air*.xsd
+./vendor/goetas-webservices/xsd2php/bin/xsd2php convert config/xsd2php.yaml xsd/release_notification/411/*.xsd
 ```

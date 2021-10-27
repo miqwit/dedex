@@ -1,0 +1,37 @@
+DedexBundle\Entity\Ern411\DisplaySubTitleType:
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: string
+        sequenceNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumber
+            accessor:
+                getter: getSequenceNumber
+                setter: setSequenceNumber
+            xml_attribute: true
+            type: int
+        isDisplayedInTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: IsDisplayedInTitle
+            accessor:
+                getter: getIsDisplayedInTitle
+                setter: setIsDisplayedInTitle
+            xml_attribute: true
+            type: bool
+        subTitleType:
+            expose: true
+            access_type: public_method
+            serialized_name: SubTitleType
+            accessor:
+                getter: getSubTitleType
+                setter: setSubTitleType
+            xml_attribute: true
+            type: string

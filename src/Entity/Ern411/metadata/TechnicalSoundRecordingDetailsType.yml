@@ -1,0 +1,144 @@
+DedexBundle\Entity\Ern411\TechnicalSoundRecordingDetailsType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        applicableTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ApplicableTerritoryCode
+            accessor:
+                getter: getApplicableTerritoryCode
+                setter: setApplicableTerritoryCode
+            xml_attribute: true
+            type: string
+        isDefault:
+            expose: true
+            access_type: public_method
+            serialized_name: IsDefault
+            accessor:
+                getter: getIsDefault
+                setter: setIsDefault
+            xml_attribute: true
+            type: bool
+        technicalResourceDetailsReference:
+            expose: true
+            access_type: public_method
+            serialized_name: TechnicalResourceDetailsReference
+            accessor:
+                getter: getTechnicalResourceDetailsReference
+                setter: setTechnicalResourceDetailsReference
+            type: string
+        audioCodecType:
+            expose: true
+            access_type: public_method
+            serialized_name: AudioCodecType
+            accessor:
+                getter: getAudioCodecType
+                setter: setAudioCodecType
+            type: DedexBundle\Entity\Ern411\AudioCodecTypeType
+        bitRate:
+            expose: true
+            access_type: public_method
+            serialized_name: BitRate
+            accessor:
+                getter: getBitRate
+                setter: setBitRate
+            type: DedexBundle\Entity\Ern411\BitRateType
+        originalBitRate:
+            expose: true
+            access_type: public_method
+            serialized_name: OriginalBitRate
+            accessor:
+                getter: getOriginalBitRate
+                setter: setOriginalBitRate
+            type: DedexBundle\Entity\Ern411\BitRateType
+        numberOfChannels:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfChannels
+            accessor:
+                getter: getNumberOfChannels
+                setter: setNumberOfChannels
+            type: int
+        samplingRate:
+            expose: true
+            access_type: public_method
+            serialized_name: SamplingRate
+            accessor:
+                getter: getSamplingRate
+                setter: setSamplingRate
+            type: DedexBundle\Entity\Ern411\SamplingRateType
+        originalSamplingRate:
+            expose: true
+            access_type: public_method
+            serialized_name: OriginalSamplingRate
+            accessor:
+                getter: getOriginalSamplingRate
+                setter: setOriginalSamplingRate
+            type: DedexBundle\Entity\Ern411\SamplingRateType
+        bitsPerSample:
+            expose: true
+            access_type: public_method
+            serialized_name: BitsPerSample
+            accessor:
+                getter: getBitsPerSample
+                setter: setBitsPerSample
+            type: int
+        duration:
+            expose: true
+            access_type: public_method
+            serialized_name: Duration
+            accessor:
+                getter: getDuration
+                setter: setDuration
+            type: DateInterval
+        bitDepth:
+            expose: true
+            access_type: public_method
+            serialized_name: BitDepth
+            accessor:
+                getter: getBitDepth
+                setter: setBitDepth
+            type: int
+        isPreview:
+            expose: true
+            access_type: public_method
+            serialized_name: IsPreview
+            accessor:
+                getter: getIsPreview
+                setter: setIsPreview
+            type: bool
+        previewDetails:
+            expose: true
+            access_type: public_method
+            serialized_name: PreviewDetails
+            accessor:
+                getter: getPreviewDetails
+                setter: setPreviewDetails
+            type: DedexBundle\Entity\Ern411\SoundRecordingPreviewDetailsType
+        file:
+            expose: true
+            access_type: public_method
+            serialized_name: File
+            accessor:
+                getter: getFile
+                setter: setFile
+            type: DedexBundle\Entity\Ern411\FileType
+        fingerprint:
+            expose: true
+            access_type: public_method
+            serialized_name: Fingerprint
+            accessor:
+                getter: getFingerprint
+                setter: setFingerprint
+            xml_list:
+                inline: true
+                entry_name: Fingerprint
+            type: array<DedexBundle\Entity\Ern411\FingerprintType>

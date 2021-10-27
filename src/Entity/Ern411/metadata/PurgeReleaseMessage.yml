@@ -1,0 +1,29 @@
+DedexBundle\Entity\Ern411\PurgeReleaseMessage:
+    xml_root_name: 'ns-bbaa9531:PurgeReleaseMessage'
+    xml_root_namespace: 'http://ddex.net/xml/ern/411'
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        messageHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageHeader
+            accessor:
+                getter: getMessageHeader
+                setter: setMessageHeader
+            type: DedexBundle\Entity\Ern411\MessageHeaderType
+        purgedRelease:
+            expose: true
+            access_type: public_method
+            serialized_name: PurgedRelease
+            accessor:
+                getter: getPurgedRelease
+                setter: setPurgedRelease
+            type: DedexBundle\Entity\Ern411\PurgedReleaseType

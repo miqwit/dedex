@@ -1,0 +1,111 @@
+DedexBundle\Entity\Ern411\NewReleaseMessage:
+    xml_root_name: 'ns-bbaa9531:NewReleaseMessage'
+    xml_root_namespace: 'http://ddex.net/xml/ern/411'
+    properties:
+        releaseProfileVersionId:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseProfileVersionId
+            accessor:
+                getter: getReleaseProfileVersionId
+                setter: setReleaseProfileVersionId
+            xml_attribute: true
+            type: string
+        releaseProfileVariantVersionId:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseProfileVariantVersionId
+            accessor:
+                getter: getReleaseProfileVariantVersionId
+                setter: setReleaseProfileVariantVersionId
+            xml_attribute: true
+            type: string
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        messageHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageHeader
+            accessor:
+                getter: getMessageHeader
+                setter: setMessageHeader
+            type: DedexBundle\Entity\Ern411\MessageHeaderType
+        partyList:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyList
+            accessor:
+                getter: getPartyList
+                setter: setPartyList
+            type: array<DedexBundle\Entity\Ern411\PartyType>
+            xml_list:
+                inline: false
+                entry_name: Party
+                skip_when_empty: false
+        cueSheetList:
+            expose: true
+            access_type: public_method
+            serialized_name: CueSheetList
+            accessor:
+                getter: getCueSheetList
+                setter: setCueSheetList
+            type: array<DedexBundle\Entity\Ern411\DetailedCueSheetType>
+            xml_list:
+                inline: false
+                entry_name: CueSheet
+                skip_when_empty: true
+        resourceList:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceList
+            accessor:
+                getter: getResourceList
+                setter: setResourceList
+            type: DedexBundle\Entity\Ern411\ResourceListType
+        chapterList:
+            expose: true
+            access_type: public_method
+            serialized_name: ChapterList
+            accessor:
+                getter: getChapterList
+                setter: setChapterList
+            type: DedexBundle\Entity\Ern411\ChapterListType
+        releaseList:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseList
+            accessor:
+                getter: getReleaseList
+                setter: setReleaseList
+            type: DedexBundle\Entity\Ern411\ReleaseListType
+        dealList:
+            expose: true
+            access_type: public_method
+            serialized_name: DealList
+            accessor:
+                getter: getDealList
+                setter: setDealList
+            type: array<DedexBundle\Entity\Ern411\ReleaseDealType>
+            xml_list:
+                inline: false
+                entry_name: ReleaseDeal
+                skip_when_empty: true
+        supplementalDocumentList:
+            expose: true
+            access_type: public_method
+            serialized_name: SupplementalDocumentList
+            accessor:
+                getter: getSupplementalDocumentList
+                setter: setSupplementalDocumentList
+            type: array<DedexBundle\Entity\Ern411\FileType>
+            xml_list:
+                inline: false
+                entry_name: SupplementalDocument
+                skip_when_empty: true

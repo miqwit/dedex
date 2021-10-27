@@ -1,0 +1,57 @@
+DedexBundle\Entity\Ern411\ResourceRightsControllerType:
+    properties:
+        sequenceNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumber
+            accessor:
+                getter: getSequenceNumber
+                setter: setSequenceNumber
+            xml_attribute: true
+            type: int
+        rightsControllerPartyReference:
+            expose: true
+            access_type: public_method
+            serialized_name: RightsControllerPartyReference
+            accessor:
+                getter: getRightsControllerPartyReference
+                setter: setRightsControllerPartyReference
+            type: string
+        rightsControllerRole:
+            expose: true
+            access_type: public_method
+            serialized_name: RightsControllerRole
+            accessor:
+                getter: getRightsControllerRole
+                setter: setRightsControllerRole
+            xml_list:
+                inline: true
+                entry_name: RightsControllerRole
+            type: array<string>
+        rightShareUnknown:
+            expose: true
+            access_type: public_method
+            serialized_name: RightShareUnknown
+            accessor:
+                getter: getRightShareUnknown
+                setter: setRightShareUnknown
+            type: bool
+        rightSharePercentage:
+            expose: true
+            access_type: public_method
+            serialized_name: RightSharePercentage
+            accessor:
+                getter: getRightSharePercentage
+                setter: setRightSharePercentage
+            type: DedexBundle\Entity\Ern411\PercentageType
+        delegatedUsageRights:
+            expose: true
+            access_type: public_method
+            serialized_name: DelegatedUsageRights
+            accessor:
+                getter: getDelegatedUsageRights
+                setter: setDelegatedUsageRights
+            xml_list:
+                inline: true
+                entry_name: DelegatedUsageRights
+            type: array<DedexBundle\Entity\Ern411\DelegatedUsageRightsType>

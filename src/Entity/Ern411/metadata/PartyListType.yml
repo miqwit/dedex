@@ -1,0 +1,13 @@
+DedexBundle\Entity\Ern411\PartyListType:
+    properties:
+        party:
+            expose: true
+            access_type: public_method
+            serialized_name: Party
+            accessor:
+                getter: getParty
+                setter: setParty
+            xml_list:
+                inline: true
+                entry_name: Party
+            type: array<DedexBundle\Entity\Ern411\PartyType>

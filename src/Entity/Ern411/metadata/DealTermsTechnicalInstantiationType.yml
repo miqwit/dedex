@@ -1,0 +1,26 @@
+DedexBundle\Entity\Ern411\DealTermsTechnicalInstantiationType:
+    properties:
+        videoDefinitionType:
+            expose: true
+            access_type: public_method
+            serialized_name: VideoDefinitionType
+            accessor:
+                getter: getVideoDefinitionType
+                setter: setVideoDefinitionType
+            type: string
+        codingType:
+            expose: true
+            access_type: public_method
+            serialized_name: CodingType
+            accessor:
+                getter: getCodingType
+                setter: setCodingType
+            type: string
+        bitRate:
+            expose: true
+            access_type: public_method
+            serialized_name: BitRate
+            accessor:
+                getter: getBitRate
+                setter: setBitRate
+            type: DedexBundle\Entity\Ern411\BitRateType

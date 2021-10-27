@@ -1,0 +1,75 @@
+DedexBundle\Entity\Ern411\AffiliationType:
+    properties:
+        companyName:
+            expose: true
+            access_type: public_method
+            serialized_name: CompanyName
+            accessor:
+                getter: getCompanyName
+                setter: setCompanyName
+            type: string
+        partyAffiliateReference:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyAffiliateReference
+            accessor:
+                getter: getPartyAffiliateReference
+                setter: setPartyAffiliateReference
+            type: string
+        type:
+            expose: true
+            access_type: public_method
+            serialized_name: Type
+            accessor:
+                getter: getType
+                setter: setType
+            type: string
+        territoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryCode
+            accessor:
+                getter: getTerritoryCode
+                setter: setTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: TerritoryCode
+            type: array<DedexBundle\Entity\Ern411\CurrentTerritoryCodeType>
+        excludedTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ExcludedTerritoryCode
+            accessor:
+                getter: getExcludedTerritoryCode
+                setter: setExcludedTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: ExcludedTerritoryCode
+            type: array<DedexBundle\Entity\Ern411\CurrentTerritoryCodeType>
+        validityPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: ValidityPeriod
+            accessor:
+                getter: getValidityPeriod
+                setter: setValidityPeriod
+            type: DedexBundle\Entity\Ern411\ValidityPeriodType
+        rightsType:
+            expose: true
+            access_type: public_method
+            serialized_name: RightsType
+            accessor:
+                getter: getRightsType
+                setter: setRightsType
+            xml_list:
+                inline: true
+                entry_name: RightsType
+            type: array<DedexBundle\Entity\Ern411\SimpleRightsTypeType>
+        percentageOfRightsAssignment:
+            expose: true
+            access_type: public_method
+            serialized_name: PercentageOfRightsAssignment
+            accessor:
+                getter: getPercentageOfRightsAssignment
+                setter: setPercentageOfRightsAssignment
+            type: float

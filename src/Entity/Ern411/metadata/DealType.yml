@@ -1,0 +1,52 @@
+DedexBundle\Entity\Ern411\DealType:
+    properties:
+        dealReference:
+            expose: true
+            access_type: public_method
+            serialized_name: DealReference
+            accessor:
+                getter: getDealReference
+                setter: setDealReference
+            xml_list:
+                inline: true
+                entry_name: DealReference
+            type: array<string>
+        isCommunicatedOutOfBand:
+            expose: true
+            access_type: public_method
+            serialized_name: IsCommunicatedOutOfBand
+            accessor:
+                getter: getIsCommunicatedOutOfBand
+                setter: setIsCommunicatedOutOfBand
+            type: bool
+        dealTerms:
+            expose: true
+            access_type: public_method
+            serialized_name: DealTerms
+            accessor:
+                getter: getDealTerms
+                setter: setDealTerms
+            type: DedexBundle\Entity\Ern411\DealTermsType
+        dealTechnicalResourceDetailsReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: DealTechnicalResourceDetailsReferenceList
+            accessor:
+                getter: getDealTechnicalResourceDetailsReferenceList
+                setter: setDealTechnicalResourceDetailsReferenceList
+            type: array<string>
+            xml_list:
+                inline: false
+                entry_name: DealTechnicalResourceDetailsReference
+                skip_when_empty: true
+        distributionChannelPage:
+            expose: true
+            access_type: public_method
+            serialized_name: DistributionChannelPage
+            accessor:
+                getter: getDistributionChannelPage
+                setter: setDistributionChannelPage
+            xml_list:
+                inline: true
+                entry_name: DistributionChannelPage
+            type: array<DedexBundle\Entity\Ern411\DistributionChannelPageType>

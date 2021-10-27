@@ -201,7 +201,6 @@ class ErnParserController {
       "xs:schemaLocation",
       "xsi:schemaLocation",
       "xmlns:avs",
-      "ReleaseResourceReferenceList"  // TODO generic
   ];
 
   /**
@@ -223,6 +222,7 @@ class ErnParserController {
       $name = "NewReleaseMessage";
     } else {
       $parent = end($this->pile);
+      
       $class_name = $this->getTypeOfElementFromDoc(get_class($parent), $name);
 
       if (!class_exists($class_name)) {
@@ -240,7 +240,7 @@ class ErnParserController {
     } else {
       $this->pile[$name . "##" . random_int(2, 99999)] = $elem;
     }
-
+    
     // Will process attributes later
     $this->attrs_to_process[count($this->pile)] = $attrs;
   }
@@ -279,8 +279,15 @@ class ErnParserController {
     if (in_array($name, $this->ignore_these_tags_or_attributes)) {
       return;
     }
-
-    if (!$this->set_to_parent) {
+    
+    $properties = array_filter(array_values((array) end($this->pile)));
+    if (count($properties) == 0 && !$this->set_to_parent) {
+      // If we are leaving an element that is completely empty (the object
+      // at the end of the pile, converted to an array, only contains emtpy
+      // values), then to not add this element to parent. It's an empty List
+      // element in DDEX, like ReleaseResourceReferenceList
+      array_pop($this->pile);
+    } else if (!$this->set_to_parent) {
       // Process attributes now.
       // Consider each attribute as a setter of current element
       // if attribute is MessageSchemaVersionId on ern:NewReleaseMessage
@@ -327,19 +334,10 @@ class ErnParserController {
     }
 
     $keys = array_keys($this->pile);
-    $parent_tag = $keys[count($keys) - 2];
     $child_tag = end($keys);
-
-    $parent = $this->pile[$parent_tag];
     $child = $this->pile[$child_tag];
-
-    $func_names = $this->listPossibleFunctionNames("set", $child_tag);
-    foreach ($func_names as $func_name) {
-      if (!method_exists($parent, $func_name)) {
-        continue;
-      }
-      break;
-    }
+    
+    [$func_name, $parent] = $this->getValidFunctionName("set", $child_tag, $child);
 
     $parent->$func_name($child);
   }
@@ -368,23 +366,45 @@ class ErnParserController {
     if (strpos($tag, "##") !== false) {
       $tag = preg_replace("/##\d+/", "", $tag);
     }
+    
+    $func_names = [];
+    
+    switch ($prefix) {
+      case "get":
+        $func_names[] = $prefix . $tag;
+        $func_names[] = $prefix . $tag . "s";
+        $func_names[] = $prefix . $tag . "List";
+      //        $prefix . $tag . "Type",
+        
+        // Hack for release deals. DDEX 4.1.1 is not consistent. It has a DealList
+        // and ReleaseDeals in it. This parser would expect a ReleaseDealList instead
+        // of the actual DealList
+        if ($tag == "ReleaseDeal") {
+          $func_names[] = $prefix . "DealList";
+        }
 
-    $func_names = [
-        $prefix . $tag,
-        $prefix . $tag . "s",
-        $prefix . $tag . "Type",
-        $prefix . $tag . "List"
-    ];
-
-    // Add to func names also the addTo, because can be array. Will be tested first
-    if ($prefix == "set") {
-      $func_names = array_merge([
-          "addTo" . $tag,
-          "addTo" . $tag . "List",
-          "create" . $tag,
-          "create" . $tag . "List"
-              ],
-              $func_names);
+        break;
+      case "set":
+        // order is important
+        $func_names[] = "addTo" . $tag;
+        $func_names[] = "addTo" . $tag . "List";
+        $func_names[] = "create" . $tag;
+        $func_names[] = "create" . $tag . "List";
+        $func_names[] = $prefix . $tag;
+        $func_names[] = $prefix . $tag;
+        $func_names[] = $prefix . $tag . "s";
+        $func_names[] = $prefix . $tag . "List";
+        
+        // Hack for release deals. DDEX 4.1.1 is not consistent. It has a DealList
+        // and ReleaseDeals in it. This parser would expect a ReleaseDealList instead
+        // of the actual DealList
+        if ($tag == "ReleaseDeal") {
+          $func_names[] = "addToDealList";
+        }
+        
+        break;
+      default:
+        throw new \Exception("Prefix must be get or set");
     }
 
     return $func_names;
@@ -439,27 +459,38 @@ class ErnParserController {
    * 
    * @param string $prefix "set" or "get"
    * @param type $tag
-   * @param type $elem
    * @return type
    * @throws Exception
    */
-  private function getValidFunctionName($prefix, $tag, $elem) {
+  private function getValidFunctionName($prefix, $tag, $value = null) {
     $func_names = $this->listPossibleFunctionNames($prefix, $tag);
-
-    $function_used = false;
-    foreach ($func_names as $func_name) {
-      if (!method_exists($elem, $func_name)) {
-        continue;
+    
+    $elem = end($this->pile);
+    
+    // If type is complex, always start at previous than end, 
+    // as end will be itself
+    if ($value != null && !in_array(get_class($value), ["string", "int", "bool", "float", "mixed"])) {
+      $elem = prev($this->pile);
+    }
+    
+    while (true) {
+      $function_used = false;
+      foreach ($func_names as $func_name) {
+        if (!method_exists($elem, $func_name)) {
+          continue;
+        }
+        $function_used = true;
+        break 2;
       }
-      $function_used = true;
-      break;
+
+      // Continue with previous element if exists
+      $elem = prev($this->pile);
+      if ($elem === false) {
+        throw new Exception("No functions found for this tag: $tag. Path is " . implode(",", array_keys($this->pile)));
+      }
     }
 
-    if (!$function_used) {
-      throw new Exception("No functions found for this tag: $tag. Path is " . implode(",", array_keys($this->pile)));
-    }
-
-    return $func_name;
+    return array($func_name, $elem);
   }
 
   private function expectedParamIsArray($class, $func_name) {
@@ -486,16 +517,17 @@ class ErnParserController {
    * @return string
    */
   private function getTypeOfElementFromDoc($class, $tag) {
-    $function = $this->getValidFunctionName("get", $tag, $class);
-
-    $rc = new ReflectionMethod($class, $function);
+    [$function_name, $class] = $this->getValidFunctionName("get", $tag);
+    
+    $rc = new ReflectionMethod($class, $function_name);
     $doc = $rc->getDocComment();
     preg_match("/@return (\S+).*/", $doc, $matches);
     if (count($matches) > 1) {
       $type = str_replace("[]", "", $matches[1]);
     } else {
-			$type = "\\DedexBundle\\Entity\\Ern{$this->version}\\{$tag}Type";
+      $type = "\\DedexBundle\\Entity\\Ern{$this->version}\\{$tag}Type";
     }
+    
     return $type;
   }
 
@@ -598,7 +630,7 @@ class ErnParserController {
    */
   private function detectVersion($fp) {
     $version = null;
-    $supported_versions = ["41", "382"];
+    $supported_versions = ["411", "41", "382"];
 
     while (($buffer = fgets($fp, 4096)) !== false) {
       $trimed = trim($buffer);

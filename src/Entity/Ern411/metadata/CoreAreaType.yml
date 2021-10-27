@@ -1,0 +1,18 @@
+DedexBundle\Entity\Ern411\CoreAreaType:
+    properties:
+        topLeftCorner:
+            expose: true
+            access_type: public_method
+            serialized_name: TopLeftCorner
+            accessor:
+                getter: getTopLeftCorner
+                setter: setTopLeftCorner
+            type: string
+        bottomRightCorner:
+            expose: true
+            access_type: public_method
+            serialized_name: BottomRightCorner
+            accessor:
+                getter: getBottomRightCorner
+                setter: setBottomRightCorner
+            type: string

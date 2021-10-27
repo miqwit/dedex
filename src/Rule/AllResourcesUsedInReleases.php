@@ -53,13 +53,7 @@ class AllResourcesUsedInReleases extends Rule {
     // Second, browse all releases to check all references are used at least once.
     foreach ($newReleaseMessage->getReleaseList()->getRelease() as $rel) {
       foreach ($rel->getReleaseResourceReferenceList() as $rrrl) {
-        $val = $rrrl->value();
-        
-        if (!in_array($val, $references)) {
-          $this->message .= " The reference $val is used in a release and has not been described.";
-          $valid = false;
-        }
-        
+        $val = $rrrl->value();        
         $references_used[] = $val;
       }
     }
