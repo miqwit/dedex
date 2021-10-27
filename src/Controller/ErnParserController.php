@@ -262,9 +262,11 @@ class ErnParserController {
     if ($class_name === "\DateInterval") {
       // For DateInterval can't instanciate with null
       return new DateInterval("PT0M0S");  // will be erased
+    } else if ($class_name === "\DedexBundle\Entity\Ern382\EventDateTimeType") {
+      return new \DedexBundle\Entity\Ern382\EventDateTimeType(new \DateTime()); // TODO
     }
 
-    return $this->instanciateTypeFromDoc($class_name, '__construct', null);
+    return new $class_name(null);
   }
 
   /**

@@ -93,6 +93,6 @@ class SimplifiersTest extends TestCase {
     $ern = $parser->parse("tests/samples/016_utf8_artists.xml");
 
     $album = new SimpleAlbum($ern);
-    $this->assertEquals("resources/", $album->getTracksPerCd()[1][1]->getFileName());
+    $this->assertEquals("resources/763331950658_01_01.mp3", $album->getTracksPerCd()[1][1]->getFullPath());
   }
 }
