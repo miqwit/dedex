@@ -271,8 +271,15 @@ class ErnParserController {
     if (in_array($name, $this->ignore_these_tags_or_attributes)) {
       return;
     }
-
-    if (!$this->set_to_parent) {
+    
+    $properties = array_filter(array_values((array) end($this->pile)));
+    if (count($properties) == 0 && !$this->set_to_parent) {
+      // If we are leaving an element that is completely empty (the object
+      // at the end of the pile, converted to an array, only contains emtpy
+      // values), then to not add this element to parent. It's an empty List
+      // element in DDEX, like ReleaseResourceReferenceList
+      array_pop($this->pile);
+    } else if (!$this->set_to_parent) {
       // Process attributes now.
       // Consider each attribute as a setter of current element
       // if attribute is MessageSchemaVersionId on ern:NewReleaseMessage
