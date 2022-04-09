@@ -44,6 +44,12 @@ In the docker, run the phpunit test command:
 ./bin/phpunit
 ```
 
+or 
+
+```
+php ./vendor/bin/simple-phpunit
+```
+
 ### Generating Documentation
 
 Run the phpDocumentator command:
