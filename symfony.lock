@@ -38,17 +38,11 @@
     "laminas/laminas-code": {
         "version": "3.4.1"
     },
-    "laminas/laminas-eventmanager": {
-        "version": "3.2.1"
-    },
-    "laminas/laminas-zendframework-bridge": {
-        "version": "1.0.1"
-    },
     "nikic/php-parser": {
         "version": "v4.3.0"
     },
-    "php": {
-        "version": "7.4"
+    "phpstan/phpdoc-parser": {
+        "version": "1.4.5"
     },
     "psr/cache": {
         "version": "1.0.1"
