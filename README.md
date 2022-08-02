@@ -14,6 +14,12 @@ If you find this useful, please star this repository.
 
 This repository provides **Simple Entities** that can be handy to parse your first XML files. They give a simplified model of an Album, with Tracks, Artists and Deals attached. You can ignored the Simple Entities and build your own set or superset of entities to serve your needs. Note that the Simple Entities give a limited usage of DDEX. Read the documentation carefully before using it.
 
+## Installation
+
+```
+composer require miqwit/dedex
+```
+
 ## Usage
 
 ### Convert a DDEX file to a SimpleAlbum
