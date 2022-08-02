@@ -1,0 +1,24 @@
+FROM php:8.1-cli
+
+RUN apt update && apt install -y wget git vim unzip
+
+WORKDIR /usr/src/
+
+RUN wget https://get.symfony.com/cli/installer -O - | bash
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+RUN php -r "unlink('composer-setup.php');"
+
+# Install symfony command globally
+RUN mv /root/.symfony/bin/symfony /usr/local/bin/symfony
+
+# Setup git
+RUN git config --global user.email "your-email-here"
+RUN git config --global user.name "your-name-here"
+
+# Aliases
+RUN export alias ll="ls -al"
+RUN export alias llh="ls -alh"
+
+RUN addgroup --gid 1000 dedexuser
+RUN adduser --uid 1000 --gid 1000 dedexuser

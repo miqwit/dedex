@@ -41,13 +41,7 @@ docker run \
 In the docker, run the phpunit test command:
 
 ```
-./bin/phpunit
-```
-
-or 
-
-```
-php ./vendor/bin/simple-phpunit
+./vendor/bin/phpunit
 ```
 
 ### Generating Documentation

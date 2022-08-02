@@ -34,7 +34,7 @@ class SimplifiersTest extends TestCase {
     $this->assertContains("OnDemandStream", $album->getDeal()->getUseTypes());
     $this->assertContains("NonInteractiveStream", $album->getDeal()->getUseTypes());
     $this->assertContains("InternetAndMobile", $album->getDeal()->getDistributionChannelTypes());
-    $this->assertContains("Worldwide", $album->getDeal()->getTerritories());
+    $this->assertStringContainsString("Worldwide", $album->getDeal()->getTerritories()[0]->value());
     $this->assertEquals("2017-01-01", $album->getDeal()->getStartDate()->format("Y-m-d"));
     $this->assertEquals(null, $album->getDeal()->getEndDate());
 

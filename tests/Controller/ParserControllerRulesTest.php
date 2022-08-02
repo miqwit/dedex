@@ -64,7 +64,7 @@ class ParserControllerRulesTest extends TestCase {
     $this->assertTrue(true);
     
     // Check the warning message
-    $this->assertContains("Must have at least one SoundRecording", $parser_controller->getRuleMessages());
+    $this->assertStringContainsString("Must have at least one SoundRecording", $parser_controller->getRuleMessages());
   }
   
   /**
@@ -210,7 +210,7 @@ class ParserControllerRulesTest extends TestCase {
       $ddex = $parser->parse($xml_path);
       $this->assertTrue(false);
     } catch (RuleValidationException $ex) {
-      $this->assertContains("A2 not used or not defined", $parser->getRuleMessages());
+      $this->assertStringContainsString("A2 not used or not defined", $parser->getRuleMessages());
       $this->assertTrue(true);
     }
   }
@@ -281,7 +281,7 @@ class ParserControllerRulesTest extends TestCase {
       $ddex = $parser->parse($xml_path);
       $this->assertTrue(false);
     } catch (RuleValidationException $ex) {
-      $this->assertContains("R9 not used in deals or not defined in ReleaseList", $parser->getRuleMessages());
+      $this->assertStringContainsString("R9 not used in deals or not defined in ReleaseList", $parser->getRuleMessages());
       $this->assertTrue(true);
     }
   }
@@ -300,7 +300,7 @@ class ParserControllerRulesTest extends TestCase {
 		$ddex = $parser->parse($xml_path);
 		$this->assertTrue(true); // Will pass because all rules are WARNING
 
-		$this->assertContains("R9 not used in deals or not defined in ReleaseList", $parser->getRuleMessages());
+		$this->assertStringContainsString("R9 not used in deals or not defined in ReleaseList", $parser->getRuleMessages());
   }
   
   /**
