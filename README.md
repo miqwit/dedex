@@ -6,11 +6,11 @@ In my past experiences as a developer, I always had to develop or enhanced a DDE
 
 The **Rule** mechanism is pretty useful and flexible. The DDEX ERN standard is extremely vast and there are many ways to use it. Most providers generate a simplified yet comprehensive XML file covering most of the needs. The Rules helps checking during the parsing that not only the XML is valid, but contain the minimal consistent information.
 
-It is possible to implement your own rules (contribute to this repository if you think other developers could make a use of it), and to implement a different set of rules for different provider.
+It is possible to implement your own rules ([contribute](CONTRIBUTE.md) to this repository if you think other developers could make a use of it), and to implement a different set of rules for different provider.
 
 For instance, it is possible to enforce that for a given XML the ISRC is provided for all recordings, but not for another one. Providers rules can be modelled in a **Rules Set**.
 
-If you find this useful, please star this repository, and contribute.
+If you find this useful, please star this repository.
 
 This repository provides **Simple Entities** that can be handy to parse your first XML files. They give a simplified model of an Album, with Tracks, Artists and Deals attached. You can ignored the Simple Entities and build your own set or superset of entities to serve your needs. Note that the Simple Entities give a limited usage of DDEX. Read the documentation carefully before using it.
 

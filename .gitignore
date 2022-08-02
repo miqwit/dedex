@@ -1,6 +1,8 @@
 notes.txt
 nbproject/
 docs/
+Dockerfile
+.phpunit.result.cache
 
 ###> symfony/framework-bundle ###
 /.env.local
