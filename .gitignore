@@ -1,6 +1,7 @@
 notes.txt
 nbproject/
 docs/
+Dockerfile
 
 ###> symfony/framework-bundle ###
 /.env.local
