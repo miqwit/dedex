@@ -36,6 +36,8 @@ docker run \
   bash
 ```
 
+> Note that I use `--network=host` in order to connect my PHP xdebug to it, but it's not necessarily something you'd need.
+
 ### Running Tests
 
 In the docker, run the phpunit test command:
@@ -54,7 +56,7 @@ php phpDocumentor.phar -d src -t docs
 
 ### Generating DDEX classes
 
-I used the superb `xsd2php` package to generate classes based on the XSD provided by DDEX.
+I used the superb [`xsd2php`](https://github.com/goetas-webservices/xsd2php) package to generate classes based on the XSD provided by DDEX.
 
 The parser is "filling" these objects while parsing the XML file line by line.
 
