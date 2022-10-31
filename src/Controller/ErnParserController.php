@@ -679,7 +679,7 @@ class ErnParserController {
     $xml_reader = new XMLReader();
     $xml_reader->open($file_path);
 
-    $xsd_file_path = "xsd/release_notification/{$this->version}/release-notification.xsd";
+    $xsd_file_path = __DIR__ . "/../../xsd/release_notification/{$this->version}/release-notification.xsd";
     $xml_reader->setSchema($xsd_file_path);
 
     try {
