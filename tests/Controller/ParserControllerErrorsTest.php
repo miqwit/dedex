@@ -59,8 +59,8 @@ class ParserControllerErrorTest extends TestCase {
       $parser->parse("tests/samples/005_not_valid_xsd.xml");
       $this->assertFalse(true);
     } catch (XsdCompliantException $ex) {
-      $expected_message = "This XML file tests/samples/005_not_valid_xsd.xml does not validates XSD xsd/release_notification/382/release-notification.xsd. Error: XMLReader::read(): Element 'FakeTag': This element is not expected. Expected is one of ( SoundRecordingType, IsArtistRelated, SoundRecordingId ).";
-      $this->assertEquals($expected_message, $ex->getMessage());
+      $this->assertStringContainsString('This XML file tests/samples/005_not_valid_xsd.xml does not validates XSD', $ex->getMessage());
+      $this->assertStringContainsString("xsd/release_notification/382/release-notification.xsd. Error: XMLReader::read(): Element 'FakeTag': This element is not expected. Expected is one of ( SoundRecordingType, IsArtistRelated, SoundRecordingId ).", $ex->getMessage());
     }
     
     // If setXsdValidation is not set, will raise another error later
@@ -72,5 +72,4 @@ class ParserControllerErrorTest extends TestCase {
       $this->assertEquals($expected_message, $ex->getMessage());
     }
   }
-
 }
