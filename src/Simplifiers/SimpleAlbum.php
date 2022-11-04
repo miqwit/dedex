@@ -113,10 +113,10 @@ class SimpleAlbum extends SimpleEntity {
 		// Find release of type MainRelease from this ERN
 		foreach ($this->ern->getReleaseList()->getRelease() as $release) {
 			foreach ($release->getReleaseType() as $type) {
-				if (in_array(strtolower($type->value()), ["album", "classicalalbum"])) {
-					$this->ddexReleaseAlbum = $release;
-				} else {
+                if (strtolower($type->value()) === 'trackrelease') {
 					$this->trackReleasesByReference[$release->getReleaseReference()[0]] = $release;
+				} else {
+					$this->ddexReleaseAlbum = $release;
 				}
 			}
 		}
