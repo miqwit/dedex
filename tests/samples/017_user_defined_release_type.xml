@@ -1,0 +1,1319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ernm:NewReleaseMessage MessageSchemaVersionId="ern/382" LanguageAndScriptCode="en" xs:schemaLocation="http://ddex.net/xml/ern/382 http://ddex.net/xml/ern/382/release-notification.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns:ernm="http://ddex.net/xml/ern/382">
+    <MessageHeader>
+        <MessageThreadId>R1115</MessageThreadId>
+        <MessageId>202101010101010101001</MessageId>
+        <MessageSender>
+            <PartyId>PADPIDA20010101001</PartyId>
+            <PartyName>
+                <FullName>SenderName</FullName>
+            </PartyName>
+        </MessageSender>
+        <MessageRecipient>
+            <PartyId>PADPIDA20010101002</PartyId>
+            <PartyName>
+                <FullName>RecipientName</FullName>
+            </PartyName>
+        </MessageRecipient>
+        <MessageCreatedDateTime>2021-09-29T06:38:37-04:00</MessageCreatedDateTime>
+        <MessageControlType>LiveMessage</MessageControlType>
+    </MessageHeader>
+    <UpdateIndicator xmlns="">OriginalMessage</UpdateIndicator>
+    <ResourceList>
+        <SoundRecording LanguageAndScriptCode="sr">
+            <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+            <SoundRecordingId>
+                <ISRC>BAA052029415</ISRC>
+                <ProprietaryId Namespace="DPID:PADPIDA20010101000">23479</ProprietaryId>
+            </SoundRecordingId>
+            <ResourceReference>AT10476</ResourceReference>
+            <ReferenceTitle>
+                <TitleText>Sanela kolo</TitleText>
+            </ReferenceTitle>
+            <LanguageOfPerformance>sr</LanguageOfPerformance>
+            <Duration>PT3M08S</Duration>
+            <CreationDate>2020-10-26</CreationDate>
+            <SoundRecordingDetailsByTerritory>
+                <TerritoryCode>Worldwide</TerritoryCode>
+                <Title TitleType="DisplayTitle">
+                    <TitleText>Sanela kolo</TitleText>
+                </Title>
+                <DisplayArtist SequenceNumber="1">
+                    <PartyName>
+                        <FullName>Mirko Kordić</FullName>
+                    </PartyName>
+                    <ArtistRole>MainArtist</ArtistRole>
+                </DisplayArtist>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>Mirko Kordić</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>MainArtist</ResourceContributorRole>
+                </ResourceContributor>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>Producer</ResourceContributorRole>
+                </ResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>M.Kordić</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Lyricist</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Jugodisk</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>MusicPublisher</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <DisplayArtistName>Mirko Kordić</DisplayArtistName>
+                <LabelName>JD Production</LabelName>
+                <OriginalResourceReleaseDate>2020-10-26</OriginalResourceReleaseDate>
+                <PLine>
+                    <Year>2020</Year>
+                    <PLineText>2020 JD Production</PLineText>
+                </PLine>
+                <Genre>
+                    <GenreText>Folk</GenreText>
+                </Genre>
+                <ParentalWarningType>NotExplicit</ParentalWarningType>
+                <TechnicalSoundRecordingDetails>
+                    <TechnicalResourceDetailsReference>TT10476</TechnicalResourceDetailsReference>
+                    <AudioCodecType>MP3</AudioCodecType>
+                    <IsPreview>false</IsPreview>
+                    <File>
+                        <FileName>763331950658_01_01.mp3</FileName>
+                        <FilePath>resources/</FilePath>
+                        <HashSum>
+                            <HashSum>d351fb62ac2f10dcb8cbf298b106ca12</HashSum>
+                            <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+                        </HashSum>
+                    </File>
+                </TechnicalSoundRecordingDetails>
+            </SoundRecordingDetailsByTerritory>
+        </SoundRecording>
+        <SoundRecording LanguageAndScriptCode="sr">
+            <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+            <SoundRecordingId>
+                <ISRC>BAA052029416</ISRC>
+                <ProprietaryId Namespace="DPID:PADPIDA20010101000">23480</ProprietaryId>
+            </SoundRecordingId>
+            <ResourceReference>AT10477</ResourceReference>
+            <ReferenceTitle>
+                <TitleText>Dunavski vrtlog</TitleText>
+            </ReferenceTitle>
+            <LanguageOfPerformance>sr</LanguageOfPerformance>
+            <Duration>PT5M39S</Duration>
+            <CreationDate>2020-10-26</CreationDate>
+            <SoundRecordingDetailsByTerritory>
+                <TerritoryCode>Worldwide</TerritoryCode>
+                <Title TitleType="DisplayTitle">
+                    <TitleText>Dunavski vrtlog</TitleText>
+                </Title>
+                <DisplayArtist SequenceNumber="1">
+                    <PartyName>
+                        <FullName>Slobodan Bozinovic</FullName>
+                    </PartyName>
+                    <ArtistRole>MainArtist</ArtistRole>
+                </DisplayArtist>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>Slobodan Bozinovic</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>MainArtist</ResourceContributorRole>
+                </ResourceContributor>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>Producer</ResourceContributorRole>
+                </ResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Slobodan Bozinovic</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Lyricist</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Jugodisk</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>MusicPublisher</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <DisplayArtistName>Slobodan Božinović</DisplayArtistName>
+                <LabelName>JD Production</LabelName>
+                <OriginalResourceReleaseDate>2020-10-26</OriginalResourceReleaseDate>
+                <PLine>
+                    <Year>2020</Year>
+                    <PLineText>2020 JD Production</PLineText>
+                </PLine>
+                <Genre>
+                    <GenreText>Folk</GenreText>
+                </Genre>
+                <ParentalWarningType>NotExplicit</ParentalWarningType>
+                <TechnicalSoundRecordingDetails>
+                    <TechnicalResourceDetailsReference>TT10477</TechnicalResourceDetailsReference>
+                    <AudioCodecType>MP3</AudioCodecType>
+                    <IsPreview>false</IsPreview>
+                    <File>
+                        <FileName>763331950658_01_02.mp3</FileName>
+                        <FilePath>resources/</FilePath>
+                        <HashSum>
+                            <HashSum>aedb4b31993ba8356200eaa7e323c5b0</HashSum>
+                            <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+                        </HashSum>
+                    </File>
+                </TechnicalSoundRecordingDetails>
+            </SoundRecordingDetailsByTerritory>
+        </SoundRecording>
+        <SoundRecording LanguageAndScriptCode="sr">
+            <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+            <SoundRecordingId>
+                <ISRC>BAA052029417</ISRC>
+                <ProprietaryId Namespace="DPID:PADPIDA20010101000">23481</ProprietaryId>
+            </SoundRecordingId>
+            <ResourceReference>AT10478</ResourceReference>
+            <ReferenceTitle>
+                <TitleText>Zvečansko kolo</TitleText>
+            </ReferenceTitle>
+            <LanguageOfPerformance>sr</LanguageOfPerformance>
+            <Duration>PT3M36S</Duration>
+            <CreationDate>2020-10-26</CreationDate>
+            <SoundRecordingDetailsByTerritory>
+                <TerritoryCode>Worldwide</TerritoryCode>
+                <Title TitleType="DisplayTitle">
+                    <TitleText>Zvečansko kolo</TitleText>
+                </Title>
+                <DisplayArtist SequenceNumber="1">
+                    <PartyName>
+                        <FullName>Aca Šišić</FullName>
+                    </PartyName>
+                    <ArtistRole>MainArtist</ArtistRole>
+                </DisplayArtist>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>Aca Šišić</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>MainArtist</ResourceContributorRole>
+                </ResourceContributor>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>M.Lekić</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>Producer</ResourceContributorRole>
+                </ResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Aca Šišić</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Lyricist</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Jugodisk</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>MusicPublisher</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <DisplayArtistName>Aca Šišić</DisplayArtistName>
+                <LabelName>JD Production</LabelName>
+                <OriginalResourceReleaseDate>2020-10-26</OriginalResourceReleaseDate>
+                <PLine>
+                    <Year>2020</Year>
+                    <PLineText>2020 JD Production</PLineText>
+                </PLine>
+                <Genre>
+                    <GenreText>Folk</GenreText>
+                </Genre>
+                <ParentalWarningType>NotExplicit</ParentalWarningType>
+                <TechnicalSoundRecordingDetails>
+                    <TechnicalResourceDetailsReference>TT10478</TechnicalResourceDetailsReference>
+                    <AudioCodecType>MP3</AudioCodecType>
+                    <IsPreview>false</IsPreview>
+                    <File>
+                        <FileName>763331950658_01_03.mp3</FileName>
+                        <FilePath>resources/</FilePath>
+                        <HashSum>
+                            <HashSum>da8f43c6b4649fa73c5d0b7043472a4b</HashSum>
+                            <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+                        </HashSum>
+                    </File>
+                </TechnicalSoundRecordingDetails>
+            </SoundRecordingDetailsByTerritory>
+        </SoundRecording>
+        <SoundRecording LanguageAndScriptCode="sr">
+            <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+            <SoundRecordingId>
+                <ISRC>BAA052029418</ISRC>
+                <ProprietaryId Namespace="DPID:PADPIDA20010101000">23482</ProprietaryId>
+            </SoundRecordingId>
+            <ResourceReference>AT10479</ResourceReference>
+            <ReferenceTitle>
+                <TitleText>Šumadijsko lagano kolo</TitleText>
+            </ReferenceTitle>
+            <LanguageOfPerformance>sr</LanguageOfPerformance>
+            <Duration>PT4M49S</Duration>
+            <CreationDate>2020-10-26</CreationDate>
+            <SoundRecordingDetailsByTerritory>
+                <TerritoryCode>Worldwide</TerritoryCode>
+                <Title TitleType="DisplayTitle">
+                    <TitleText>Šumadijsko lagano kolo</TitleText>
+                </Title>
+                <DisplayArtist SequenceNumber="1">
+                    <PartyName>
+                        <FullName>Tomica Miljić</FullName>
+                    </PartyName>
+                    <ArtistRole>MainArtist</ArtistRole>
+                </DisplayArtist>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>Tomica Miljić</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>MainArtist</ResourceContributorRole>
+                </ResourceContributor>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>Producer</ResourceContributorRole>
+                </ResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Tomica Miljić</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Lyricist</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Jugodisk</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>MusicPublisher</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <DisplayArtistName>Tomica Miljić</DisplayArtistName>
+                <LabelName>JD Production</LabelName>
+                <OriginalResourceReleaseDate>2020-10-26</OriginalResourceReleaseDate>
+                <PLine>
+                    <Year>2020</Year>
+                    <PLineText>2020 JD Production</PLineText>
+                </PLine>
+                <Genre>
+                    <GenreText>Folk</GenreText>
+                </Genre>
+                <ParentalWarningType>NotExplicit</ParentalWarningType>
+                <TechnicalSoundRecordingDetails>
+                    <TechnicalResourceDetailsReference>TT10479</TechnicalResourceDetailsReference>
+                    <AudioCodecType>MP3</AudioCodecType>
+                    <IsPreview>false</IsPreview>
+                    <File>
+                        <FileName>763331950658_01_04.mp3</FileName>
+                        <FilePath>resources/</FilePath>
+                        <HashSum>
+                            <HashSum>b6034096ab4b65eb2b546ca483521841</HashSum>
+                            <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+                        </HashSum>
+                    </File>
+                </TechnicalSoundRecordingDetails>
+            </SoundRecordingDetailsByTerritory>
+        </SoundRecording>
+        <SoundRecording LanguageAndScriptCode="sr">
+            <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+            <SoundRecordingId>
+                <ISRC>BAA052029419</ISRC>
+                <ProprietaryId Namespace="DPID:PADPIDA20010101000">23483</ProprietaryId>
+            </SoundRecordingId>
+            <ResourceReference>AT10480</ResourceReference>
+            <ReferenceTitle>
+                <TitleText>Župsko kolo</TitleText>
+            </ReferenceTitle>
+            <LanguageOfPerformance>sr</LanguageOfPerformance>
+            <Duration>PT2M32S</Duration>
+            <CreationDate>2020-10-26</CreationDate>
+            <SoundRecordingDetailsByTerritory>
+                <TerritoryCode>Worldwide</TerritoryCode>
+                <Title TitleType="DisplayTitle">
+                    <TitleText>Župsko kolo</TitleText>
+                </Title>
+                <DisplayArtist SequenceNumber="1">
+                    <PartyName>
+                        <FullName>Dragan Aleksandrić</FullName>
+                    </PartyName>
+                    <ArtistRole>MainArtist</ArtistRole>
+                </DisplayArtist>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>Dragan Aleksandrić</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>MainArtist</ResourceContributorRole>
+                </ResourceContributor>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>Producer</ResourceContributorRole>
+                </ResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Dragan Aleksandrić</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Lyricist</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Jugodisk</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>MusicPublisher</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <DisplayArtistName>Dragan Aleksandrić</DisplayArtistName>
+                <LabelName>JD Production</LabelName>
+                <OriginalResourceReleaseDate>2020-10-26</OriginalResourceReleaseDate>
+                <PLine>
+                    <Year>2020</Year>
+                    <PLineText>2020 JD Production</PLineText>
+                </PLine>
+                <Genre>
+                    <GenreText>Folk</GenreText>
+                </Genre>
+                <ParentalWarningType>NotExplicit</ParentalWarningType>
+                <TechnicalSoundRecordingDetails>
+                    <TechnicalResourceDetailsReference>TT10480</TechnicalResourceDetailsReference>
+                    <AudioCodecType>MP3</AudioCodecType>
+                    <IsPreview>false</IsPreview>
+                    <File>
+                        <FileName>763331950658_01_05.mp3</FileName>
+                        <FilePath>resources/</FilePath>
+                        <HashSum>
+                            <HashSum>eae90721c5a6958c486bcbe1869fe461</HashSum>
+                            <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+                        </HashSum>
+                    </File>
+                </TechnicalSoundRecordingDetails>
+            </SoundRecordingDetailsByTerritory>
+        </SoundRecording>
+        <SoundRecording LanguageAndScriptCode="sr">
+            <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+            <SoundRecordingId>
+                <ISRC>BAA052029420</ISRC>
+                <ProprietaryId Namespace="DPID:PADPIDA20010101000">23484</ProprietaryId>
+            </SoundRecordingId>
+            <ResourceReference>AT10481</ResourceReference>
+            <ReferenceTitle>
+                <TitleText>Najciganskije vašarsko kolo</TitleText>
+            </ReferenceTitle>
+            <LanguageOfPerformance>sr</LanguageOfPerformance>
+            <Duration>PT4M39S</Duration>
+            <CreationDate>2020-10-26</CreationDate>
+            <SoundRecordingDetailsByTerritory>
+                <TerritoryCode>Worldwide</TerritoryCode>
+                <Title TitleType="DisplayTitle">
+                    <TitleText>Najciganskije vašarsko kolo</TitleText>
+                </Title>
+                <DisplayArtist SequenceNumber="1">
+                    <PartyName>
+                        <FullName>Vladeta Kandić</FullName>
+                    </PartyName>
+                    <ArtistRole>MainArtist</ArtistRole>
+                </DisplayArtist>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>Vladeta Kandić</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>MainArtist</ResourceContributorRole>
+                </ResourceContributor>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>Producer</ResourceContributorRole>
+                </ResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Vladeta Kandić</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Lyricist</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Jugodisk</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>MusicPublisher</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <DisplayArtistName>Vladeta Kandić</DisplayArtistName>
+                <LabelName>JD Production</LabelName>
+                <OriginalResourceReleaseDate>2020-10-26</OriginalResourceReleaseDate>
+                <PLine>
+                    <Year>2020</Year>
+                    <PLineText>2020 JD Production</PLineText>
+                </PLine>
+                <Genre>
+                    <GenreText>Folk</GenreText>
+                </Genre>
+                <ParentalWarningType>NotExplicit</ParentalWarningType>
+                <TechnicalSoundRecordingDetails>
+                    <TechnicalResourceDetailsReference>TT10481</TechnicalResourceDetailsReference>
+                    <AudioCodecType>MP3</AudioCodecType>
+                    <IsPreview>false</IsPreview>
+                    <File>
+                        <FileName>763331950658_01_06.mp3</FileName>
+                        <FilePath>resources/</FilePath>
+                        <HashSum>
+                            <HashSum>9b590f7fb14e950b5b66fa30cef1cb72</HashSum>
+                            <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+                        </HashSum>
+                    </File>
+                </TechnicalSoundRecordingDetails>
+            </SoundRecordingDetailsByTerritory>
+        </SoundRecording>
+        <SoundRecording LanguageAndScriptCode="sr">
+            <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+            <SoundRecordingId>
+                <ISRC>BAA052029421</ISRC>
+                <ProprietaryId Namespace="DPID:PADPIDA20010101000">23485</ProprietaryId>
+            </SoundRecordingId>
+            <ResourceReference>AT10482</ResourceReference>
+            <ReferenceTitle>
+                <TitleText>Ciganski urnebes</TitleText>
+            </ReferenceTitle>
+            <LanguageOfPerformance>sr</LanguageOfPerformance>
+            <Duration>PT3M35S</Duration>
+            <CreationDate>2020-10-26</CreationDate>
+            <SoundRecordingDetailsByTerritory>
+                <TerritoryCode>Worldwide</TerritoryCode>
+                <Title TitleType="DisplayTitle">
+                    <TitleText>Ciganski urnebes</TitleText>
+                </Title>
+                <DisplayArtist SequenceNumber="1">
+                    <PartyName>
+                        <FullName>Branimir Đokić</FullName>
+                    </PartyName>
+                    <ArtistRole>MainArtist</ArtistRole>
+                </DisplayArtist>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>Branimir Đokić</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>MainArtist</ResourceContributorRole>
+                </ResourceContributor>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>Producer</ResourceContributorRole>
+                </ResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Branimir Đokić</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Lyricist</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Jugodisk</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>MusicPublisher</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <DisplayArtistName>Branimir Đokić</DisplayArtistName>
+                <LabelName>JD Production</LabelName>
+                <OriginalResourceReleaseDate>2020-10-26</OriginalResourceReleaseDate>
+                <PLine>
+                    <Year>2020</Year>
+                    <PLineText>2020 JD Production</PLineText>
+                </PLine>
+                <Genre>
+                    <GenreText>Folk</GenreText>
+                </Genre>
+                <ParentalWarningType>NotExplicit</ParentalWarningType>
+                <TechnicalSoundRecordingDetails>
+                    <TechnicalResourceDetailsReference>TT10482</TechnicalResourceDetailsReference>
+                    <AudioCodecType>MP3</AudioCodecType>
+                    <IsPreview>false</IsPreview>
+                    <File>
+                        <FileName>763331950658_01_07.mp3</FileName>
+                        <FilePath>resources/</FilePath>
+                        <HashSum>
+                            <HashSum>a0d15f7822e7067de1c34c57b2d243a6</HashSum>
+                            <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+                        </HashSum>
+                    </File>
+                </TechnicalSoundRecordingDetails>
+            </SoundRecordingDetailsByTerritory>
+        </SoundRecording>
+        <SoundRecording LanguageAndScriptCode="sr">
+            <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+            <SoundRecordingId>
+                <ISRC>BAA052029422</ISRC>
+                <ProprietaryId Namespace="DPID:PADPIDA20010101000">23486</ProprietaryId>
+            </SoundRecordingId>
+            <ResourceReference>AT10483</ResourceReference>
+            <ReferenceTitle>
+                <TitleText>Šarplaninska šota</TitleText>
+            </ReferenceTitle>
+            <LanguageOfPerformance>sr</LanguageOfPerformance>
+            <Duration>PT4M54S</Duration>
+            <CreationDate>2020-10-26</CreationDate>
+            <SoundRecordingDetailsByTerritory>
+                <TerritoryCode>Worldwide</TerritoryCode>
+                <Title TitleType="DisplayTitle">
+                    <TitleText>Šarplaninska šota</TitleText>
+                </Title>
+                <DisplayArtist SequenceNumber="1">
+                    <PartyName>
+                        <FullName>Aca Krnjevac</FullName>
+                    </PartyName>
+                    <ArtistRole>MainArtist</ArtistRole>
+                </DisplayArtist>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>Aca Krnjevac</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>MainArtist</ResourceContributorRole>
+                </ResourceContributor>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>Producer</ResourceContributorRole>
+                </ResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Aca Krnjevac</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Lyricist</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Jugodisk</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>MusicPublisher</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <DisplayArtistName>Aca Krnjevac</DisplayArtistName>
+                <LabelName>JD Production</LabelName>
+                <OriginalResourceReleaseDate>2020-10-26</OriginalResourceReleaseDate>
+                <PLine>
+                    <Year>2020</Year>
+                    <PLineText>2020 JD Production</PLineText>
+                </PLine>
+                <Genre>
+                    <GenreText>Folk</GenreText>
+                </Genre>
+                <ParentalWarningType>NotExplicit</ParentalWarningType>
+                <TechnicalSoundRecordingDetails>
+                    <TechnicalResourceDetailsReference>TT10483</TechnicalResourceDetailsReference>
+                    <AudioCodecType>MP3</AudioCodecType>
+                    <IsPreview>false</IsPreview>
+                    <File>
+                        <FileName>763331950658_01_08.mp3</FileName>
+                        <FilePath>resources/</FilePath>
+                        <HashSum>
+                            <HashSum>b04bf4bd780c880c34501765cb6c5ab2</HashSum>
+                            <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+                        </HashSum>
+                    </File>
+                </TechnicalSoundRecordingDetails>
+            </SoundRecordingDetailsByTerritory>
+        </SoundRecording>
+        <SoundRecording LanguageAndScriptCode="sr">
+            <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+            <SoundRecordingId>
+                <ISRC>BAA052029423</ISRC>
+                <ProprietaryId Namespace="DPID:PADPIDA20010101000">23487</ProprietaryId>
+            </SoundRecordingId>
+            <ResourceReference>AT10484</ResourceReference>
+            <ReferenceTitle>
+                <TitleText>Romska šetnja</TitleText>
+            </ReferenceTitle>
+            <LanguageOfPerformance>sr</LanguageOfPerformance>
+            <Duration>PT4M20S</Duration>
+            <CreationDate>2020-10-26</CreationDate>
+            <SoundRecordingDetailsByTerritory>
+                <TerritoryCode>Worldwide</TerritoryCode>
+                <Title TitleType="DisplayTitle">
+                    <TitleText>Romska šetnja</TitleText>
+                </Title>
+                <DisplayArtist SequenceNumber="1">
+                    <PartyName>
+                        <FullName>Rajko Marinković</FullName>
+                    </PartyName>
+                    <ArtistRole>MainArtist</ArtistRole>
+                </DisplayArtist>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>Rajko Marinković</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>MainArtist</ResourceContributorRole>
+                </ResourceContributor>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>Producer</ResourceContributorRole>
+                </ResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Rajko Marinković</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Lyricist</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Jugodisk</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>MusicPublisher</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <DisplayArtistName>Rajko Marinković</DisplayArtistName>
+                <LabelName>JD Production</LabelName>
+                <OriginalResourceReleaseDate>2020-10-26</OriginalResourceReleaseDate>
+                <PLine>
+                    <Year>2020</Year>
+                    <PLineText>2020 JD Production</PLineText>
+                </PLine>
+                <Genre>
+                    <GenreText>Folk</GenreText>
+                </Genre>
+                <ParentalWarningType>NotExplicit</ParentalWarningType>
+                <TechnicalSoundRecordingDetails>
+                    <TechnicalResourceDetailsReference>TT10484</TechnicalResourceDetailsReference>
+                    <AudioCodecType>MP3</AudioCodecType>
+                    <IsPreview>false</IsPreview>
+                    <File>
+                        <FileName>763331950658_01_09.mp3</FileName>
+                        <FilePath>resources/</FilePath>
+                        <HashSum>
+                            <HashSum>832b20301f6602b7fd2a19cc2e057fce</HashSum>
+                            <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+                        </HashSum>
+                    </File>
+                </TechnicalSoundRecordingDetails>
+            </SoundRecordingDetailsByTerritory>
+        </SoundRecording>
+        <SoundRecording LanguageAndScriptCode="sr">
+            <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+            <SoundRecordingId>
+                <ISRC>BAA052029424</ISRC>
+                <ProprietaryId Namespace="DPID:PADPIDA20010101000">23488</ProprietaryId>
+            </SoundRecordingId>
+            <ResourceReference>AT10485</ResourceReference>
+            <ReferenceTitle>
+                <TitleText>Dunavski vihor</TitleText>
+            </ReferenceTitle>
+            <LanguageOfPerformance>sr</LanguageOfPerformance>
+            <Duration>PT2M54S</Duration>
+            <CreationDate>2020-10-26</CreationDate>
+            <SoundRecordingDetailsByTerritory>
+                <TerritoryCode>Worldwide</TerritoryCode>
+                <Title TitleType="DisplayTitle">
+                    <TitleText>Dunavski vihor</TitleText>
+                </Title>
+                <DisplayArtist SequenceNumber="1">
+                    <PartyName>
+                        <FullName>Perica Simonovic</FullName>
+                    </PartyName>
+                    <ArtistRole>MainArtist</ArtistRole>
+                </DisplayArtist>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>Perica Simonovic</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>MainArtist</ResourceContributorRole>
+                </ResourceContributor>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>D.Knežević</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>Producer</ResourceContributorRole>
+                </ResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Perica Simonovic</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Lyricist</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Jugodisk</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>MusicPublisher</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <DisplayArtistName>Perica Simonović</DisplayArtistName>
+                <LabelName>JD Production</LabelName>
+                <OriginalResourceReleaseDate>2020-10-26</OriginalResourceReleaseDate>
+                <PLine>
+                    <Year>2020</Year>
+                    <PLineText>2020 JD Production</PLineText>
+                </PLine>
+                <Genre>
+                    <GenreText>Folk</GenreText>
+                </Genre>
+                <ParentalWarningType>NotExplicit</ParentalWarningType>
+                <TechnicalSoundRecordingDetails>
+                    <TechnicalResourceDetailsReference>TT10485</TechnicalResourceDetailsReference>
+                    <AudioCodecType>MP3</AudioCodecType>
+                    <IsPreview>false</IsPreview>
+                    <File>
+                        <FileName>763331950658_01_10.mp3</FileName>
+                        <FilePath>resources/</FilePath>
+                        <HashSum>
+                            <HashSum>2b577f42ebf064499c6702194817db68</HashSum>
+                            <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+                        </HashSum>
+                    </File>
+                </TechnicalSoundRecordingDetails>
+            </SoundRecordingDetailsByTerritory>
+        </SoundRecording>
+        <SoundRecording LanguageAndScriptCode="sr">
+            <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+            <SoundRecordingId>
+                <ISRC>BAA052029425</ISRC>
+                <ProprietaryId Namespace="DPID:PADPIDA20010101000">23489</ProprietaryId>
+            </SoundRecordingId>
+            <ResourceReference>AT10486</ResourceReference>
+            <ReferenceTitle>
+                <TitleText>Biser kolo</TitleText>
+            </ReferenceTitle>
+            <LanguageOfPerformance>sr</LanguageOfPerformance>
+            <Duration>PT4M03S</Duration>
+            <CreationDate>2020-10-26</CreationDate>
+            <SoundRecordingDetailsByTerritory>
+                <TerritoryCode>Worldwide</TerritoryCode>
+                <Title TitleType="DisplayTitle">
+                    <TitleText>Biser kolo</TitleText>
+                </Title>
+                <DisplayArtist SequenceNumber="1">
+                    <PartyName>
+                        <FullName>Novica Negovanović</FullName>
+                    </PartyName>
+                    <ArtistRole>MainArtist</ArtistRole>
+                </DisplayArtist>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>Novica Negovanović</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>MainArtist</ResourceContributorRole>
+                </ResourceContributor>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>Producer</ResourceContributorRole>
+                </ResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Novica Negovanović</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Lyricist</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Jugodisk</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>MusicPublisher</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <DisplayArtistName>Novica Negovanović</DisplayArtistName>
+                <LabelName>JD Production</LabelName>
+                <OriginalResourceReleaseDate>2020-10-26</OriginalResourceReleaseDate>
+                <PLine>
+                    <Year>2020</Year>
+                    <PLineText>2020 JD Production</PLineText>
+                </PLine>
+                <Genre>
+                    <GenreText>Folk</GenreText>
+                </Genre>
+                <ParentalWarningType>NotExplicit</ParentalWarningType>
+                <TechnicalSoundRecordingDetails>
+                    <TechnicalResourceDetailsReference>TT10486</TechnicalResourceDetailsReference>
+                    <AudioCodecType>MP3</AudioCodecType>
+                    <IsPreview>false</IsPreview>
+                    <File>
+                        <FileName>763331950658_01_11.mp3</FileName>
+                        <FilePath>resources/</FilePath>
+                        <HashSum>
+                            <HashSum>845abbbb6faadd4155ce62a1a208aecf</HashSum>
+                            <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+                        </HashSum>
+                    </File>
+                </TechnicalSoundRecordingDetails>
+            </SoundRecordingDetailsByTerritory>
+        </SoundRecording>
+        <SoundRecording LanguageAndScriptCode="sr">
+            <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+            <SoundRecordingId>
+                <ISRC>BAA052029426</ISRC>
+                <ProprietaryId Namespace="DPID:PADPIDA20010101000">23490</ProprietaryId>
+            </SoundRecordingId>
+            <ResourceReference>AT10487</ResourceReference>
+            <ReferenceTitle>
+                <TitleText>Adranski vez</TitleText>
+            </ReferenceTitle>
+            <LanguageOfPerformance>sr</LanguageOfPerformance>
+            <Duration>PT4M05S</Duration>
+            <CreationDate>2020-10-26</CreationDate>
+            <SoundRecordingDetailsByTerritory>
+                <TerritoryCode>Worldwide</TerritoryCode>
+                <Title TitleType="DisplayTitle">
+                    <TitleText>Adranski vez</TitleText>
+                </Title>
+                <DisplayArtist SequenceNumber="1">
+                    <PartyName>
+                        <FullName>Dragan Zivkovic</FullName>
+                    </PartyName>
+                    <ArtistRole>MainArtist</ArtistRole>
+                </DisplayArtist>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>Dragan Zivkovic</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>MainArtist</ResourceContributorRole>
+                </ResourceContributor>
+                <ResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <ResourceContributorRole>Producer</ResourceContributorRole>
+                </ResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>N.Negovanović</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>N.Autor</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>Lyricist</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <IndirectResourceContributor>
+                    <PartyName>
+                        <FullName>Jugodisk</FullName>
+                    </PartyName>
+                    <IndirectResourceContributorRole>MusicPublisher</IndirectResourceContributorRole>
+                </IndirectResourceContributor>
+                <DisplayArtistName>Dragan Živković</DisplayArtistName>
+                <LabelName>JD Production</LabelName>
+                <OriginalResourceReleaseDate>2020-10-26</OriginalResourceReleaseDate>
+                <PLine>
+                    <Year>2020</Year>
+                    <PLineText>2020 JD Production</PLineText>
+                </PLine>
+                <Genre>
+                    <GenreText>Folk</GenreText>
+                </Genre>
+                <ParentalWarningType>NotExplicit</ParentalWarningType>
+                <TechnicalSoundRecordingDetails>
+                    <TechnicalResourceDetailsReference>TT10487</TechnicalResourceDetailsReference>
+                    <AudioCodecType>MP3</AudioCodecType>
+                    <IsPreview>false</IsPreview>
+                    <File>
+                        <FileName>763331950658_01_12.mp3</FileName>
+                        <FilePath>resources/</FilePath>
+                        <HashSum>
+                            <HashSum>831b1ed8e1cca5e7f7145eb9214f864f</HashSum>
+                            <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+                        </HashSum>
+                    </File>
+                </TechnicalSoundRecordingDetails>
+            </SoundRecordingDetailsByTerritory>
+        </SoundRecording>
+        <Image>
+            <ImageType>FrontCoverImage</ImageType>
+            <ImageId>
+                <ProprietaryId Namespace="DPID:PADPIDA20010101000">GGL_UIM_ID:PID1</ProprietaryId>
+            </ImageId>
+            <ResourceReference>AI1</ResourceReference>
+            <ImageDetailsByTerritory>
+                <TerritoryCode>Worldwide</TerritoryCode>
+                <TechnicalImageDetails>
+                    <TechnicalResourceDetailsReference>TI1</TechnicalResourceDetailsReference>
+                    <ImageCodecType>JPEG</ImageCodecType>
+                    <ImageHeight>3000</ImageHeight>
+                    <ImageWidth>3000</ImageWidth>
+                    <File>
+                        <FileName>763331950658.jpg</FileName>
+                        <FilePath>resources/</FilePath>
+                        <HashSum>
+                            <HashSum>e41b96f02bfbf930cfb224445e3a39fb</HashSum>
+                            <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+                        </HashSum>
+                    </File>
+                </TechnicalImageDetails>
+            </ImageDetailsByTerritory>
+        </Image>
+    </ResourceList>
+    <ReleaseList>
+        <Release LanguageAndScriptCode="sr">
+            <ReleaseId>
+                <ISRC>BAA052029415</ISRC>
+            </ReleaseId>
+            <ReleaseReference>R1</ReleaseReference>
+            <ReferenceTitle>
+                <TitleText>Sanela kolo</TitleText>
+            </ReferenceTitle>
+            <ReleaseResourceReferenceList>
+                <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10476</ReleaseResourceReference>
+            </ReleaseResourceReferenceList>
+            <ReleaseType>TrackRelease</ReleaseType>
+            <ReleaseDetailsByTerritory>
+                <TerritoryCode>Worldwide</TerritoryCode>
+                <DisplayArtistName>Mirko Kordić</DisplayArtistName>
+                <LabelName>JD Production</LabelName>
+                <Title TitleType="DisplayTitle">
+                    <TitleText>Sanela kolo</TitleText>
+                </Title>
+                <DisplayArtist SequenceNumber="1">
+                    <PartyName>
+                        <FullName>Mirko Kordić</FullName>
+                    </PartyName>
+                    <ArtistRole>MainArtist</ArtistRole>
+                </DisplayArtist>
+                <ParentalWarningType>NotExplicit</ParentalWarningType>
+                <ResourceGroup>
+                    <ResourceGroupContentItem>
+                        <SequenceNumber>1</SequenceNumber>
+                        <ResourceType>SoundRecording</ResourceType>
+                        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10476</ReleaseResourceReference>
+                    </ResourceGroupContentItem>
+                </ResourceGroup>
+                <Genre>
+                    <GenreText>Folk</GenreText>
+                </Genre>
+                <OriginalReleaseDate>2020-10-26</OriginalReleaseDate>
+            </ReleaseDetailsByTerritory>
+            <PLine>
+                <Year>2020</Year>
+                <PLineText>2020 JD Production</PLineText>
+            </PLine>
+            <CLine>
+                <Year>1982</Year>
+                <CLineText>1982 JD Production</CLineText>
+            </CLine>
+        </Release>
+        <Release LanguageAndScriptCode="sr">
+            <ReleaseId>
+                <ISRC>BAA052029416</ISRC>
+            </ReleaseId>
+            <ReleaseReference>R2</ReleaseReference>
+            <ReferenceTitle>
+                <TitleText>Dunavski vrtlog</TitleText>
+            </ReferenceTitle>
+            <ReleaseResourceReferenceList>
+                <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10477</ReleaseResourceReference>
+            </ReleaseResourceReferenceList>
+            <ReleaseType>TrackRelease</ReleaseType>
+            <ReleaseDetailsByTerritory>
+                <TerritoryCode>Worldwide</TerritoryCode>
+                <DisplayArtistName>Slobodan Božinović</DisplayArtistName>
+                <LabelName>JD Production</LabelName>
+                <Title TitleType="DisplayTitle">
+                    <TitleText>Dunavski vrtlog</TitleText>
+                </Title>
+                <DisplayArtist SequenceNumber="1">
+                    <PartyName>
+                        <FullName>Slobodan Bozinovic</FullName>
+                    </PartyName>
+                    <ArtistRole>MainArtist</ArtistRole>
+                </DisplayArtist>
+                <ParentalWarningType>NotExplicit</ParentalWarningType>
+                <ResourceGroup>
+                    <ResourceGroupContentItem>
+                        <SequenceNumber>2</SequenceNumber>
+                        <ResourceType>SoundRecording</ResourceType>
+                        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10477</ReleaseResourceReference>
+                    </ResourceGroupContentItem>
+                </ResourceGroup>
+                <Genre>
+                    <GenreText>Folk</GenreText>
+                </Genre>
+                <OriginalReleaseDate>2020-10-26</OriginalReleaseDate>
+            </ReleaseDetailsByTerritory>
+            <PLine>
+                <Year>2020</Year>
+                <PLineText>2020 JD Production</PLineText>
+            </PLine>
+            <CLine>
+                <Year>1982</Year>
+                <CLineText>1982 JD Production</CLineText>
+            </CLine>
+        </Release>
+        <Release LanguageAndScriptCode="sr">
+            <ReleaseId>
+                <ICPN IsEan="false">763331950658</ICPN>
+                <CatalogNumber Namespace="DPID:PADPIDA20010101000">BDN0208</CatalogNumber>
+                <ProprietaryId Namespace="DPID:PADPIDA20010101000">2393</ProprietaryId>
+            </ReleaseId>
+            <ReleaseReference>R0</ReleaseReference>
+            <ReferenceTitle>
+                <TitleText>12 zlatnih kola</TitleText>
+            </ReferenceTitle>
+            <ReleaseResourceReferenceList>
+                <ReleaseResourceReference ReleaseResourceType="SecondaryResource">AI1</ReleaseResourceReference>
+                <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10476</ReleaseResourceReference>
+                <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10477</ReleaseResourceReference>
+                <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10478</ReleaseResourceReference>
+                <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10479</ReleaseResourceReference>
+                <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10480</ReleaseResourceReference>
+                <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10481</ReleaseResourceReference>
+                <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10482</ReleaseResourceReference>
+                <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10483</ReleaseResourceReference>
+                <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10484</ReleaseResourceReference>
+                <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10485</ReleaseResourceReference>
+                <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10486</ReleaseResourceReference>
+                <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10487</ReleaseResourceReference>
+            </ReleaseResourceReferenceList>
+            <ReleaseType UserDefinedValue="EP">UserDefined</ReleaseType>
+            <ReleaseDetailsByTerritory>
+                <TerritoryCode>Worldwide</TerritoryCode>
+                <DisplayArtistName>Various Artists</DisplayArtistName>
+                <LabelName>JD Production</LabelName>
+                <Title TitleType="DisplayTitle">
+                    <TitleText>12 zlatnih kola</TitleText>
+                </Title>
+                <DisplayArtist SequenceNumber="1">
+                    <PartyName>
+                        <FullName>Various Artists</FullName>
+                    </PartyName>
+                    <ArtistRole>MainArtist</ArtistRole>
+                </DisplayArtist>
+                <ParentalWarningType>NotExplicit</ParentalWarningType>
+                <ResourceGroup>
+                    <ResourceGroup>
+                        <SequenceNumber>1</SequenceNumber>
+                        <ResourceGroupContentItem>
+                            <SequenceNumber>1</SequenceNumber>
+                            <ResourceType>SoundRecording</ResourceType>
+                            <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10476</ReleaseResourceReference>
+                        </ResourceGroupContentItem>
+                        <ResourceGroupContentItem>
+                            <SequenceNumber>2</SequenceNumber>
+                            <ResourceType>SoundRecording</ResourceType>
+                            <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10477</ReleaseResourceReference>
+                        </ResourceGroupContentItem>
+                        <ResourceGroupContentItem>
+                            <SequenceNumber>3</SequenceNumber>
+                            <ResourceType>SoundRecording</ResourceType>
+                            <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10478</ReleaseResourceReference>
+                        </ResourceGroupContentItem>
+                        <ResourceGroupContentItem>
+                            <SequenceNumber>4</SequenceNumber>
+                            <ResourceType>SoundRecording</ResourceType>
+                            <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10479</ReleaseResourceReference>
+                        </ResourceGroupContentItem>
+                        <ResourceGroupContentItem>
+                            <SequenceNumber>5</SequenceNumber>
+                            <ResourceType>SoundRecording</ResourceType>
+                            <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10480</ReleaseResourceReference>
+                        </ResourceGroupContentItem>
+                        <ResourceGroupContentItem>
+                            <SequenceNumber>6</SequenceNumber>
+                            <ResourceType>SoundRecording</ResourceType>
+                            <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10481</ReleaseResourceReference>
+                        </ResourceGroupContentItem>
+                        <ResourceGroupContentItem>
+                            <SequenceNumber>7</SequenceNumber>
+                            <ResourceType>SoundRecording</ResourceType>
+                            <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10482</ReleaseResourceReference>
+                        </ResourceGroupContentItem>
+                        <ResourceGroupContentItem>
+                            <SequenceNumber>8</SequenceNumber>
+                            <ResourceType>SoundRecording</ResourceType>
+                            <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10483</ReleaseResourceReference>
+                        </ResourceGroupContentItem>
+                        <ResourceGroupContentItem>
+                            <SequenceNumber>9</SequenceNumber>
+                            <ResourceType>SoundRecording</ResourceType>
+                            <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10484</ReleaseResourceReference>
+                        </ResourceGroupContentItem>
+                        <ResourceGroupContentItem>
+                            <SequenceNumber>10</SequenceNumber>
+                            <ResourceType>SoundRecording</ResourceType>
+                            <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10485</ReleaseResourceReference>
+                        </ResourceGroupContentItem>
+                        <ResourceGroupContentItem>
+                            <SequenceNumber>11</SequenceNumber>
+                            <ResourceType>SoundRecording</ResourceType>
+                            <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10486</ReleaseResourceReference>
+                        </ResourceGroupContentItem>
+                        <ResourceGroupContentItem>
+                            <SequenceNumber>12</SequenceNumber>
+                            <ResourceType>SoundRecording</ResourceType>
+                            <ReleaseResourceReference ReleaseResourceType="PrimaryResource">AT10487</ReleaseResourceReference>
+                        </ResourceGroupContentItem>
+                    </ResourceGroup>
+                    <ResourceGroupContentItem>
+                        <ResourceType>Image</ResourceType>
+                        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">AI1</ReleaseResourceReference>
+                    </ResourceGroupContentItem>
+                </ResourceGroup>
+                <Genre>
+                    <GenreText>Folk</GenreText>
+                </Genre>
+                <OriginalReleaseDate>2020-10-26</OriginalReleaseDate>
+            </ReleaseDetailsByTerritory>
+            <Duration>PT48M14S</Duration>
+            <PLine>
+                <Year>2020</Year>
+                <PLineText>2020 JD Production</PLineText>
+            </PLine>
+            <CLine>
+                <Year>1982</Year>
+                <CLineText>1982 JD Production</CLineText>
+            </CLine>
+        </Release>
+    </ReleaseList>
+    <DealList>
+        <ReleaseDeal>
+            <DealReleaseReference>R0</DealReleaseReference>
+            <Deal>
+                <DealTerms>
+                    <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+                    <Usage>
+                        <UseType>PermanentDownload</UseType>
+                    </Usage>
+                    <TerritoryCode>Worldwide</TerritoryCode>
+                    <ValidityPeriod>
+                        <StartDateTime>2020-10-26T00:00:00</StartDateTime>
+                    </ValidityPeriod>
+                    <PreOrderPreviewDate>2020-10-26</PreOrderPreviewDate>
+                </DealTerms>
+            </Deal>
+            <Deal>
+                <DealTerms>
+                    <CommercialModelType>SubscriptionModel</CommercialModelType>
+                    <Usage>
+                        <UseType>ConditionalDownload</UseType>
+                        <UseType>OnDemandStream</UseType>
+                    </Usage>
+                    <TerritoryCode>Worldwide</TerritoryCode>
+                    <ValidityPeriod>
+                        <StartDateTime>2020-10-26T00:00:00</StartDateTime>
+                    </ValidityPeriod>
+                    <PreOrderPreviewDate>2020-10-26</PreOrderPreviewDate>
+                </DealTerms>
+            </Deal>
+            <EffectiveDate>2021-09-29</EffectiveDate>
+        </ReleaseDeal>
+        <ReleaseDeal>
+            <DealReleaseReference>R1</DealReleaseReference>
+            <Deal>
+                <DealTerms>
+                    <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+                    <Usage>
+                        <UseType>PermanentDownload</UseType>
+                    </Usage>
+                    <TerritoryCode>Worldwide</TerritoryCode>
+                    <ValidityPeriod>
+                        <StartDateTime>2020-10-26T00:00:00</StartDateTime>
+                    </ValidityPeriod>
+                </DealTerms>
+            </Deal>
+            <Deal>
+                <DealTerms>
+                    <CommercialModelType>SubscriptionModel</CommercialModelType>
+                    <Usage>
+                        <UseType>ConditionalDownload</UseType>
+                        <UseType>OnDemandStream</UseType>
+                    </Usage>
+                    <TerritoryCode>Worldwide</TerritoryCode>
+                    <ValidityPeriod>
+                        <StartDateTime>2020-10-26T00:00:00</StartDateTime>
+                    </ValidityPeriod>
+                </DealTerms>
+            </Deal>
+            <EffectiveDate>2021-09-29</EffectiveDate>
+        </ReleaseDeal>
+        <ReleaseDeal>
+            <DealReleaseReference>R2</DealReleaseReference>
+            <Deal>
+                <DealTerms>
+                    <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+                    <Usage>
+                        <UseType>PermanentDownload</UseType>
+                    </Usage>
+                    <TerritoryCode>Worldwide</TerritoryCode>
+                    <ValidityPeriod>
+                        <StartDateTime>2020-10-26T00:00:00</StartDateTime>
+                    </ValidityPeriod>
+                </DealTerms>
+            </Deal>
+            <Deal>
+                <DealTerms>
+                    <CommercialModelType>SubscriptionModel</CommercialModelType>
+                    <Usage>
+                        <UseType>ConditionalDownload</UseType>
+                        <UseType>OnDemandStream</UseType>
+                    </Usage>
+                    <TerritoryCode>Worldwide</TerritoryCode>
+                    <ValidityPeriod>
+                        <StartDateTime>2020-10-26T00:00:00</StartDateTime>
+                    </ValidityPeriod>
+                </DealTerms>
+            </Deal>
+            <EffectiveDate>2021-09-29</EffectiveDate>
+        </ReleaseDeal>
+    </DealList>
+</ernm:NewReleaseMessage>

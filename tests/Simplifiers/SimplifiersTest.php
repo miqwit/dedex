@@ -87,7 +87,16 @@ class SimplifiersTest extends TestCase {
     // Track deal
     $this->assertContains("PayAsYouGoModel", $track->getDeal()->getCommercialModelTypes());
   }
-  
+
+  public function testSimpleAlbumWithUserDefinedReleaseType() {
+    $parser = new ErnParserController();
+    $ern = $parser->parse("tests/samples/017_user_defined_release_type.xml");
+
+    $album = new SimpleAlbum($ern);
+
+    $this->assertSame("EP", $album->getDdexRelease()->getReleaseType()[0]->getUserDefinedValue());
+  }
+
   public function testResourcePath() {
     $parser = new ErnParserController();
     $ern = $parser->parse("tests/samples/016_utf8_artists.xml");
