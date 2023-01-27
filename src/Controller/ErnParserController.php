@@ -772,10 +772,16 @@ class ErnParserController {
 
     // Parse XML now
     while ($data = fread($fp, 4096)) {
-      if (!xml_parse($this->xml_parser, $data, feof($fp))) {
+      try {
+        if (!xml_parse($this->xml_parser, $data, feof($fp))) {
+          throw new XmlParseException(sprintf("XML Error: %s at line %d\n",
+                          xml_error_string(xml_get_error_code($this->xml_parser)),
+                          xml_get_current_line_number($this->xml_parser)));
+        }
+      } catch (\Error $er) {
         throw new XmlParseException(sprintf("XML Error: %s at line %d\n",
-                        xml_error_string(xml_get_error_code($this->xml_parser)),
-                        xml_get_current_line_number($this->xml_parser)));
+                          $er->getMessage(),
+                          $er->getLine()));
       }
     }
 
