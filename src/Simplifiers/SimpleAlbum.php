@@ -113,7 +113,7 @@ class SimpleAlbum extends SimpleEntity {
 		// Find release of type MainRelease from this ERN
 		foreach ($this->ern->getReleaseList()->getRelease() as $release) {
 			foreach ($release->getReleaseType() as $type) {
-				if (in_array(strtolower($type->value()), ["album", "classicalalbum"])) {
+				if (in_array(strtolower($type->value()), ["album", "classicalalbum", "single"])) {
 					$this->ddexReleaseAlbum = $release;
 				} else {
 					$this->trackReleasesByReference[$release->getReleaseReference()[0]] = $release;
@@ -523,5 +523,50 @@ class SimpleAlbum extends SimpleEntity {
 			return null;
 		}
 	}
+  
+  /**
+   * Assumption: there is only one ReleaseId
+   * 
+   * @return string|null
+   */
+  public function getGrid(): ?string {
+    try {
+			return $this->ddexReleaseAlbum->getReleaseId()[0]->getGRid();
+		} catch (Throwable $ex) {
+			return null;
+		} catch (Exception $ex) {
+			return null;
+		}
+  }
+  
+  /**
+   * Assumption: there is only one ReleaseId
+   * 
+   * @return string|null
+   */
+  public function getIcpn(): ?string {
+    try {
+			return $this->ddexReleaseAlbum->getReleaseId()[0]->getICPN();
+		} catch (Throwable $ex) {
+			return null;
+		} catch (Exception $ex) {
+			return null;
+		}
+  }
+  
+  /**
+   * Assumption: there is only one ReleaseId
+   * 
+   * @return string|null
+   */
+  public function getCatalogNumber(): ?string {
+    try {
+			return $this->ddexReleaseAlbum->getReleaseId()[0]->getCatalogNumber();
+		} catch (Throwable $ex) {
+			return null;
+		} catch (Exception $ex) {
+			return null;
+		}
+  }
 
 }
