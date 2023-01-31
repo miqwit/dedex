@@ -242,7 +242,7 @@ class SimpleTrack extends SimpleEntity {
 	 * 
 	 * @return SimpleArtist[]
 	 */
-	private function getDisplayArtists() {
+	public function getDisplayArtists() {
 		$artists = [];
 		
 		foreach ($this->ddexDetails->getDisplayArtist() as $artist) {
@@ -263,7 +263,7 @@ class SimpleTrack extends SimpleEntity {
 	 * 
 	 * @return SimpleArtist
 	 */
-	private function getArtistsFromResourceContributors() {
+	public function getArtistsFromResourceContributors() {
 		$artists = [];
 		
 		foreach ($this->ddexDetails->getResourceContributor() as $artist) {
@@ -284,7 +284,7 @@ class SimpleTrack extends SimpleEntity {
 	 * 
 	 * @return SimpleArtist
 	 */
-	private function getArtistsFromIndirectResourceContributors() {
+	public function getArtistsFromIndirectResourceContributors() {
 		$artists = [];
 		
 		foreach ($this->ddexDetails->getIndirectResourceContributor() as $artist) {
@@ -307,7 +307,7 @@ class SimpleTrack extends SimpleEntity {
 	 * 
 	 * Ignores sequence numbering. Keep the order as written in the XML.
 	 * 
-	 * @return SimpleArtist
+	 * @return SimpleArtist[]
 	 */
 	public function getArtists() {
 		// Display artists
