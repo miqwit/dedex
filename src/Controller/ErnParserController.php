@@ -77,6 +77,8 @@ class ErnParserController {
    * NewReleaseMessage object from the right entity based on version, like:
    *     \DedexBundle\Entity\Ern382\NewReleaseMessage
    * or  \DedexBundle\Entity\Ern41\NewReleaseMessage
+   * or  \DedexBundle\Entity\Ern382\PurgeReleaseMessage
+   * or  \DedexBundle\Entity\Ern41\PurgeReleaseMessage
    */
   private $ern = null;
 
@@ -150,12 +152,12 @@ class ErnParserController {
   public function addRule(Rule $rule) {
     $this->rules[] = $rule;
   }
-	
-	public function addRuleSet(array $rules) {
-		foreach ($rules as $rule) {
-			$this->addRule($rule);
-		}
-	}
+
+  public function addRuleSet(array $rules) {
+    foreach ($rules as $rule) {
+      $this->addRule($rule);
+    }
+  }
 
   /**
    * Activate or deactivate logs
@@ -216,10 +218,15 @@ class ErnParserController {
     }
 
     // Create element here. But to know its type, call its parent getter if any.
-    // There is only one case when there is no parent: ern:NewReleaseMessage.
+    // There is only one case when there is no parent: NewReleaseMessage or PurgeReleaseMessage.
     if ($name === "ern:NewReleaseMessage" || $name === "ernm:NewReleaseMessage") {
-      $class_name = $this->ern;
       $name = "NewReleaseMessage";
+      $class_name = "DedexBundle\\Entity\\Ern{$this->version}\\$name";
+      $this->ern = new $class_name();
+    } else if ($name === "ern:PurgeReleaseMessage" || $name === "ernm:PurgeReleaseMessage") {
+      $name = "PurgeReleaseMessage";
+      $class_name = "DedexBundle\\Entity\\Ern{$this->version}\\$name";
+      $this->ern = new $class_name();
     } else {
       $parent = end($this->pile);
       
@@ -704,10 +711,10 @@ class ErnParserController {
    */
   private function getInvalidatedRuleMessages() {
     $message = "";
-		
-		foreach (array_merge($this->rule_messages[Rule::LEVEL_WARNING], $this->rule_messages[Rule::LEVEL_ERROR]) as $msg) {
-			$message .= "\n- ".$msg;
-		}
+
+    foreach (array_merge($this->rule_messages[Rule::LEVEL_WARNING], $this->rule_messages[Rule::LEVEL_ERROR]) as $msg) {
+      $message .= "\n- ".$msg;
+    }
     
     return $message;
   }
@@ -765,10 +772,6 @@ class ErnParserController {
     $this->version = $this->detectVersion($fp); // 382 or 41
     // Validate xml against XSD
     $this->validateXml($file_path);
-
-    // Main entity that will link all entities from XML file
-    $classname_with_version = "DedexBundle\\Entity\\Ern{$this->version}\\NewReleaseMessage";
-    $this->ern = new $classname_with_version();
 
     // Parse XML now
     while ($data = fread($fp, 4096)) {

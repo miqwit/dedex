@@ -95,4 +95,20 @@ class SimplifiersTest extends TestCase {
     $album = new SimpleAlbum($ern);
     $this->assertEquals("resources/763331950658_01_01.mp3", $album->getTracksPerCd()[1][1]->getFullPath());
   }
+	
+	/**
+	 * Test the tag PurgedRelease
+	 */
+	public function testSample017PurgedAlbum() {
+		$xml_path = "tests/samples/017_purged_release.xml";
+    $parser_controller = new ErnParserController();
+    // Set this to true to see logs from the parser
+    $parser_controller->setDisplayLog(false);
+    /* @var $ddex NewReleaseMessage */
+    $ddex = $parser_controller->parse($xml_path);
+		
+		$album = new SimpleAlbum($ddex);
+		$this->assertTrue($album->isTakedown());
+		$this->assertTrue($album->isPurge());
+	}
 }
