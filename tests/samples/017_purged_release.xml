@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ernm:PurgeReleaseMessage MessageSchemaVersionId="/ern/382" LanguageAndScriptCode="en" xsi:schemaLocation="http://ddex.net/xml/ern/382 http://ddex.net/xml/ern/382/release-notification.xsd" xmlns:ernm="http://ddex.net/xml/ern/382" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <MessageHeader>
+        <MessageThreadId>16687354369</MessageThreadId>
+        <MessageId>56779846</MessageId>
+        <MessageSender>
+            <PartyId>PADPIDAXXXX</PartyId>
+            <PartyName>
+                <FullName>Sender</FullName>
+            </PartyName>
+        </MessageSender>
+        <MessageRecipient>
+            <PartyId>PADPIDAYYYY</PartyId>
+            <PartyName>
+                <FullName>Recipient</FullName>
+            </PartyName>
+        </MessageRecipient>
+        <MessageCreatedDateTime>2023-01-12T21:45:10.345+01:00</MessageCreatedDateTime>
+        <MessageControlType>TestMessage</MessageControlType>
+    </MessageHeader>
+    <PurgedRelease>
+        <ReleaseId>
+            <GRid>AxxxxxxxxxxxZ</GRid>
+            <ICPN>7665431654967</ICPN>
+            <CatalogNumber Namespace="PADPIDAXXXX">46567987654</CatalogNumber>
+        </ReleaseId>
+        <Title LanguageAndScriptCode="en" TitleType="FormalTitle">
+            <TitleText>Whoa</TitleText>
+        </Title>
+        <Title LanguageAndScriptCode="en" TitleType="DisplayTitle">
+            <TitleText>Whoa</TitleText>
+        </Title>
+    </PurgedRelease>
+</ernm:PurgeReleaseMessage>
