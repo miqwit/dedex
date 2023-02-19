@@ -239,7 +239,7 @@ class SimpleAlbum extends SimpleEntity {
 					
 					// Find deal for this track (sound recording)
 					// Find release first. Assumption: one release per track
-					$track_deal = array_key_exists($track_reference, $this->dealsByResourceReference) 
+					$track_deal = array_key_exists($track_reference, $this->dealsByResourceReference ?? []) 
 									? new SimpleDeal($this->dealsByResourceReference[$track_reference]) 
 									: null;
 					
