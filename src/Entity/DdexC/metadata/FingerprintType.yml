@@ -1,0 +1,34 @@
+DedexBundle\Entity\DdexC\FingerprintType:
+    properties:
+        fingerprint:
+            expose: true
+            access_type: public_method
+            serialized_name: Fingerprint
+            accessor:
+                getter: getFingerprint
+                setter: setFingerprint
+            type: string
+        fingerprintAlgorithmType:
+            expose: true
+            access_type: public_method
+            serialized_name: FingerprintAlgorithmType
+            accessor:
+                getter: getFingerprintAlgorithmType
+                setter: setFingerprintAlgorithmType
+            type: DedexBundle\Entity\DdexC\FingerprintAlgorithmTypeType
+        fingerprintAlgorithmVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: FingerprintAlgorithmVersion
+            accessor:
+                getter: getFingerprintAlgorithmVersion
+                setter: setFingerprintAlgorithmVersion
+            type: string
+        fingerprintAlgorithmParameter:
+            expose: true
+            access_type: public_method
+            serialized_name: FingerprintAlgorithmParameter
+            accessor:
+                getter: getFingerprintAlgorithmParameter
+                setter: setFingerprintAlgorithmParameter
+            type: string

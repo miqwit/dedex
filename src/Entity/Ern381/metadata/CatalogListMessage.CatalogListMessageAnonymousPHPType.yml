@@ -1,0 +1,65 @@
+DedexBundle\Entity\Ern381\CatalogListMessage\CatalogListMessageAnonymousPHPType:
+    properties:
+        messageSchemaVersionId:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageSchemaVersionId
+            accessor:
+                getter: getMessageSchemaVersionId
+                setter: setMessageSchemaVersionId
+            xml_attribute: true
+            type: string
+        businessProfileVersionId:
+            expose: true
+            access_type: public_method
+            serialized_name: BusinessProfileVersionId
+            accessor:
+                getter: getBusinessProfileVersionId
+                setter: setBusinessProfileVersionId
+            xml_attribute: true
+            type: string
+        releaseProfileVersionId:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseProfileVersionId
+            accessor:
+                getter: getReleaseProfileVersionId
+                setter: setReleaseProfileVersionId
+            xml_attribute: true
+            type: string
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        messageHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageHeader
+            accessor:
+                getter: getMessageHeader
+                setter: setMessageHeader
+            type: DedexBundle\Entity\Ern381\MessageHeaderType
+        publicationDate:
+            expose: true
+            access_type: public_method
+            serialized_name: PublicationDate
+            accessor:
+                getter: getPublicationDate
+                setter: setPublicationDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        catalogItem:
+            expose: true
+            access_type: public_method
+            serialized_name: CatalogItem
+            accessor:
+                getter: getCatalogItem
+                setter: setCatalogItem
+            xml_list:
+                inline: true
+                entry_name: CatalogItem
+            type: array<DedexBundle\Entity\Ern381\CatalogItemType>

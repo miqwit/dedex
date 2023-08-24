@@ -1,0 +1,51 @@
+DedexBundle\Entity\Ern383\ArtistDelegatedUsageRightsType:
+    properties:
+        useType:
+            expose: true
+            access_type: public_method
+            serialized_name: UseType
+            accessor:
+                getter: getUseType
+                setter: setUseType
+            xml_list:
+                inline: true
+                entry_name: UseType
+            type: array<DedexBundle\Entity\Ern383\UseTypeType>
+        userInterfaceType:
+            expose: true
+            access_type: public_method
+            serialized_name: UserInterfaceType
+            accessor:
+                getter: getUserInterfaceType
+                setter: setUserInterfaceType
+            xml_list:
+                inline: true
+                entry_name: UserInterfaceType
+            type: array<DedexBundle\Entity\Ern383\UserInterfaceTypeType>
+        periodOfRightsDelegation:
+            expose: true
+            access_type: public_method
+            serialized_name: PeriodOfRightsDelegation
+            accessor:
+                getter: getPeriodOfRightsDelegation
+                setter: setPeriodOfRightsDelegation
+            type: DedexBundle\Entity\Ern383\PeriodType
+        territoryOfRightsDelegation:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryOfRightsDelegation
+            accessor:
+                getter: getTerritoryOfRightsDelegation
+                setter: setTerritoryOfRightsDelegation
+            xml_list:
+                inline: true
+                entry_name: TerritoryOfRightsDelegation
+            type: array<DedexBundle\Entity\Ern383\AllTerritoryCodeType>
+        membershipType:
+            expose: true
+            access_type: public_method
+            serialized_name: MembershipType
+            accessor:
+                getter: getMembershipType
+                setter: setMembershipType
+            type: string

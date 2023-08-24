@@ -1,0 +1,102 @@
+DedexBundle\Entity\Ern383\MusicalWorkType:
+    properties:
+        isUpdated:
+            expose: true
+            access_type: public_method
+            serialized_name: IsUpdated
+            accessor:
+                getter: getIsUpdated
+                setter: setIsUpdated
+            xml_attribute: true
+            type: bool
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        musicalWorkId:
+            expose: true
+            access_type: public_method
+            serialized_name: MusicalWorkId
+            accessor:
+                getter: getMusicalWorkId
+                setter: setMusicalWorkId
+            xml_list:
+                inline: true
+                entry_name: MusicalWorkId
+            type: array<DedexBundle\Entity\Ern383\MusicalWorkIdType>
+        musicalWorkReference:
+            expose: true
+            access_type: public_method
+            serialized_name: MusicalWorkReference
+            accessor:
+                getter: getMusicalWorkReference
+                setter: setMusicalWorkReference
+            type: string
+        referenceTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: ReferenceTitle
+            accessor:
+                getter: getReferenceTitle
+                setter: setReferenceTitle
+            xml_list:
+                inline: true
+                entry_name: ReferenceTitle
+            type: array<DedexBundle\Entity\Ern383\ReferenceTitleType>
+        rightsAgreementId:
+            expose: true
+            access_type: public_method
+            serialized_name: RightsAgreementId
+            accessor:
+                getter: getRightsAgreementId
+                setter: setRightsAgreementId
+            type: DedexBundle\Entity\Ern383\RightsAgreementIdType
+        musicalWorkContributor:
+            expose: true
+            access_type: public_method
+            serialized_name: MusicalWorkContributor
+            accessor:
+                getter: getMusicalWorkContributor
+                setter: setMusicalWorkContributor
+            xml_list:
+                inline: true
+                entry_name: MusicalWorkContributor
+            type: array<DedexBundle\Entity\Ern383\MusicalWorkContributorType>
+        musicalWorkType:
+            expose: true
+            access_type: public_method
+            serialized_name: MusicalWorkType
+            accessor:
+                getter: getMusicalWorkType
+                setter: setMusicalWorkType
+            xml_list:
+                inline: true
+                entry_name: MusicalWorkType
+            type: array<DedexBundle\Entity\Ern383\MusicalWorkTypeType>
+        rightShare:
+            expose: true
+            access_type: public_method
+            serialized_name: RightShare
+            accessor:
+                getter: getRightShare
+                setter: setRightShare
+            xml_list:
+                inline: true
+                entry_name: RightShare
+            type: array<DedexBundle\Entity\Ern383\RightShareType>
+        musicalWorkDetailsByTerritory:
+            expose: true
+            access_type: public_method
+            serialized_name: MusicalWorkDetailsByTerritory
+            accessor:
+                getter: getMusicalWorkDetailsByTerritory
+                setter: setMusicalWorkDetailsByTerritory
+            xml_list:
+                inline: true
+                entry_name: MusicalWorkDetailsByTerritory
+            type: array<DedexBundle\Entity\Ern383\MusicalWorkDetailsByTerritoryType>

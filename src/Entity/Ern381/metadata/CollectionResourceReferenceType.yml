@@ -1,0 +1,26 @@
+DedexBundle\Entity\Ern381\CollectionResourceReferenceType:
+    properties:
+        sequenceNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumber
+            accessor:
+                getter: getSequenceNumber
+                setter: setSequenceNumber
+            type: int
+        collectionResourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: CollectionResourceReference
+            accessor:
+                getter: getCollectionResourceReference
+                setter: setCollectionResourceReference
+            type: string
+        duration:
+            expose: true
+            access_type: public_method
+            serialized_name: Duration
+            accessor:
+                getter: getDuration
+                setter: setDuration
+            type: DateInterval

@@ -1,0 +1,32 @@
+DedexBundle\Entity\DdexC\SocietyAffiliationType:
+    properties:
+        territoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryCode
+            accessor:
+                getter: getTerritoryCode
+                setter: setTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: TerritoryCode
+            type: array<string>
+        excludedTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ExcludedTerritoryCode
+            accessor:
+                getter: getExcludedTerritoryCode
+                setter: setExcludedTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: ExcludedTerritoryCode
+            type: array<string>
+        musicRightsSociety:
+            expose: true
+            access_type: public_method
+            serialized_name: MusicRightsSociety
+            accessor:
+                getter: getMusicRightsSociety
+                setter: setMusicRightsSociety
+            type: DedexBundle\Entity\DdexC\PartyDescriptorType

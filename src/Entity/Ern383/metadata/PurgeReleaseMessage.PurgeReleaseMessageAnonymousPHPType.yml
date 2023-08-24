@@ -1,0 +1,36 @@
+DedexBundle\Entity\Ern383\PurgeReleaseMessage\PurgeReleaseMessageAnonymousPHPType:
+    properties:
+        messageSchemaVersionId:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageSchemaVersionId
+            accessor:
+                getter: getMessageSchemaVersionId
+                setter: setMessageSchemaVersionId
+            xml_attribute: true
+            type: string
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        messageHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageHeader
+            accessor:
+                getter: getMessageHeader
+                setter: setMessageHeader
+            type: DedexBundle\Entity\Ern383\MessageHeaderType
+        purgedRelease:
+            expose: true
+            access_type: public_method
+            serialized_name: PurgedRelease
+            accessor:
+                getter: getPurgedRelease
+                setter: setPurgedRelease
+            type: DedexBundle\Entity\Ern383\PurgedReleaseType

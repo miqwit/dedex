@@ -1,0 +1,18 @@
+DedexBundle\Entity\DdexC\AvRatingType:
+    properties:
+        ratingText:
+            expose: true
+            access_type: public_method
+            serialized_name: RatingText
+            accessor:
+                getter: getRatingText
+                setter: setRatingText
+            type: string
+        ratingAgency:
+            expose: true
+            access_type: public_method
+            serialized_name: RatingAgency
+            accessor:
+                getter: getRatingAgency
+                setter: setRatingAgency
+            type: DedexBundle\Entity\DdexC\RatingAgencyType
