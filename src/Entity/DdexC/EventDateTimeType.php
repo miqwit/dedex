@@ -8,7 +8,7 @@ namespace DedexBundle\Entity\DdexC;
  * A ddex:Composite containing details of the ddex:DateTime and ddex:Place of an ddex:Event.
  * XSD Type: EventDateTime
  */
-class EventDateTimeType
+class EventDateTimeType extends \DedexBundle\Entity\EventDateTimeType
 {
     /**
      * @var \DateTime $__value

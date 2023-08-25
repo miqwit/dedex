@@ -29,6 +29,8 @@ namespace DedexBundle\Controller;
 use DateInterval;
 use DateTime;
 use DedexBundle\Entity\Ddex;
+use DedexBundle\Entity\EventDateTimeType;
+use DedexBundle\Entity\EventDateType;
 use DedexBundle\Exception\FileNotFoundException;
 use DedexBundle\Exception\RuleValidationException;
 use DedexBundle\Exception\VersionNotSupportedException;
@@ -40,6 +42,12 @@ use Exception;
 use ReflectionMethod;
 use ReflectionParameter;
 use XMLReader;
+use DedexBundle\Entity\DdexC\EventDateTimeType as DdexCEventDateTimeType;
+use DedexBundle\Entity\Ern41\EventDateTimeType as Ern41EventDateTimeType;
+use DedexBundle\Entity\Ern381\EventDateTimeType as Ern381EventDateTimeType;
+use DedexBundle\Entity\Ern383\EventDateTimeType as Ern383EventDateTimeType;
+use DedexBundle\Entity\Ern382\EventDateTimeType as Ern382EventDateTimeType;
+use DedexBundle\Entity\Ern411\EventDateTimeType as Ern411EventDateTimeType;
 
 /**
  * The main generic parser for XML files. Will load elements one by one
@@ -273,6 +281,11 @@ class ErnParserController {
 
     if ($class_name === '\DateTime') {
       return new $class_name('');
+    }
+
+    if (is_subclass_of($class_name, EventDateType::class) || is_subclass_of($class_name, EventDateTimeType::class)) {
+        $dt = new DateTime();
+        return new $class_name($dt);
     }
 
     if ($class_name === "\DedexBundle\Entity\Ern382\EventDateTimeType") {
@@ -584,6 +597,12 @@ class ErnParserController {
       // Support both ATOM or regular datetime format
       $format = (mb_strlen($value) > mb_strlen('0000-00-00T00:00:00')) ? "Y-m-d\TH:i:sP" : "Y-m-d\TH:i:s";
       $new_elem = DateTime::createFromFormat($format, $value);
+    } elseif ($type == "\DateInterval") {
+        // Check for ISO8601:2004 format
+        preg_match('/PT([0-9.,]*H)?([0-9.,]*M)?([0-9.,]*S)?/i', $value_default, $matches);
+        $new_elem = (empty($matches))
+            ? new DateInterval($value_default)
+            : $this->intervalFromIso86012004String($value_default);
     } else {
       try {
         $new_elem = new $type($value_default);
@@ -594,6 +613,32 @@ class ErnParserController {
       }
     }
     return $new_elem;
+  }
+
+  protected function intervalFromIso86012004String(string $value): DateInterval
+  {
+      preg_match('/PT([0-9.,]*H)?([0-9.,]*M)?([0-9.,]*S)?/i', $value, $matches);
+      [, $hours, $minutes, $seconds] = $matches;
+
+      $hours = (!empty($hours)) ? str_replace('H', '', $hours) : 0;
+      $minutes = (!empty($minutes)) ? str_replace('M', '', $minutes) : 0;
+      $seconds = (!empty($seconds)) ? str_replace('S', '', $seconds) : 0;
+
+      $split = explode('.', $seconds);
+      $seconds = $split[0];
+      $fraction = $split[1] ?? null;
+
+      $now = new DateTime();
+      $next = clone $now;
+
+      $next->add(DateInterval::createFromDateString(sprintf('%s hours', $hours)));
+      $next->add(DateInterval::createFromDateString(sprintf('%s minutes', $minutes)));
+      $next->add(DateInterval::createFromDateString(sprintf('%s seconds', $seconds)));
+      if (!empty($fraction)) {
+          $next->add(DateInterval::createFromDateString(sprintf('%s microseconds', $fraction)));
+      }
+
+      return $now->diff($next);
   }
 
   /**
@@ -645,7 +690,14 @@ class ErnParserController {
    */
   private function detectVersion($fp) {
     $version = null;
-    $supported_versions = ["411", "41", "382"];
+    $supported_versions = [
+        "411",
+        "41",
+        "382",
+        "381",
+        "383",
+        "341",
+    ];
 
     while (($buffer = fgets($fp, 4096)) !== false) {
       $trimed = trim($buffer);

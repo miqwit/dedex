@@ -9,7 +9,7 @@ namespace DedexBundle\Entity\Ern383;
  *  and Place of an Event.
  * XSD Type: EventDateTime
  */
-class EventDateTimeType
+class EventDateTimeType extends \DedexBundle\Entity\EventDateTimeType
 {
     /**
      * @var \DateTime $__value
