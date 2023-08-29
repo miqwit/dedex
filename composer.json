@@ -1,6 +1,6 @@
 {
     "type": "symfony-bundle",
-    "name": "nwilging/dedex",
+    "name": "sauceindustries/dedex",
     "description": "Parse DDEX ERN files and provide a convenient API to use it",
 	  "keywords": ["ddex", "parsing", "music", "xml"],
 	  "homepage": "https://github.com/miqwit/dedex",
