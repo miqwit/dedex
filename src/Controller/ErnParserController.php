@@ -623,7 +623,10 @@ class ErnParserController {
   protected function intervalFromIso86012004String(string $value): DateInterval
   {
       preg_match('/PT([0-9.,]*H)?([0-9.,]*M)?([0-9.,]*S)?/i', $value, $matches);
-      [, $hours, $minutes, $seconds] = $matches;
+
+      $hours = $matches[1] ?? null;
+      $minutes = $matches[2] ?? null;
+      $seconds = $matches[3] ?? null;
 
       $hours = (!empty($hours)) ? str_replace('H', '', $hours) : 0;
       $minutes = (!empty($minutes)) ? str_replace('M', '', $minutes) : 0;
