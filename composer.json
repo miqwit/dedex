@@ -3,12 +3,16 @@
     "name": "sauceindustries/dedex",
     "description": "Parse DDEX ERN files and provide a convenient API to use it",
 	  "keywords": ["ddex", "parsing", "music", "xml"],
-	  "homepage": "https://github.com/miqwit/dedex",
+	  "homepage": "https://github.com/SauceIndustries/dedex",
 	  "authors": [
         {
             "name": "Mickaël Arcos",
             "role": "Developer"
-        }
+        },
+      {
+          "name": "Nicole Wilging",
+          "role": "Developer"
+      }
 		],
     "license": "MIT",
     "require": {
