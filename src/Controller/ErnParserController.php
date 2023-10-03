@@ -606,8 +606,10 @@ class ErnParserController {
         $new_elem = (empty($matches))
             ? new DateInterval($value_default)
             : $this->intervalFromIso86012004String($value_default);
-    } elseif (is_subclass_of($type, EventDateType::class) || is_subclass_of($type, EventDateTimeType::class)) {
+    } elseif (is_subclass_of($type, EventDateTimeType::class)) {
         $new_elem = new $type(new DateTime($value_default));
+    } elseif (is_subclass_of($type, EventDateType::class)) {
+        $new_elem = new $type($value_default);
     } else {
       try {
         $new_elem = new $type($value_default);
