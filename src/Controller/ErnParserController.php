@@ -29,6 +29,7 @@ namespace DedexBundle\Controller;
 use DateInterval;
 use DateTime;
 use DedexBundle\Entity\Ddex;
+use DedexBundle\Entity\DdexC\EventDateType as Ern341EventDateType;
 use DedexBundle\Entity\EventDateTimeType;
 use DedexBundle\Entity\EventDateType;
 use DedexBundle\Exception\FileNotFoundException;
@@ -608,9 +609,10 @@ class ErnParserController {
             : $this->intervalFromIso86012004String($value_default);
     } elseif (is_subclass_of($type, EventDateTimeType::class)) {
         $new_elem = new $type(new DateTime($value_default));
+    } elseif ($type === '\\' . Ern341EventDateType::class) {
+        $new_elem = new $type(new DateTime($value_default));
     } elseif (is_subclass_of($type, EventDateType::class)) {
-        $value = $this->instanciateTypeFromDoc($type, '__construct', $value_default);
-        $new_elem = new $type($value);
+        $new_elem = new $type($value_default);
     } else {
       try {
         $new_elem = new $type($value_default);
