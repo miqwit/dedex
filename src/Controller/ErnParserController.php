@@ -609,7 +609,8 @@ class ErnParserController {
     } elseif (is_subclass_of($type, EventDateTimeType::class)) {
         $new_elem = new $type(new DateTime($value_default));
     } elseif (is_subclass_of($type, EventDateType::class)) {
-        $new_elem = new $type($value_default);
+        $value = $this->instanciateTypeFromDoc($type, '__construct', $value_default);
+        $new_elem = new $type($value);
     } else {
       try {
         $new_elem = new $type($value_default);
