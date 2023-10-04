@@ -1,0 +1,13 @@
+DedexBundle\Entity\Ern383\ReleaseResourceReferenceListType:
+    properties:
+        releaseResourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseResourceReference
+            accessor:
+                getter: getReleaseResourceReference
+                setter: setReleaseResourceReference
+            xml_list:
+                inline: true
+                entry_name: ReleaseResourceReference
+            type: array<DedexBundle\Entity\Ern383\ReleaseResourceReferenceType>

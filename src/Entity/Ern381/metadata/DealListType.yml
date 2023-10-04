@@ -1,0 +1,22 @@
+DedexBundle\Entity\Ern381\DealListType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        releaseDeal:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseDeal
+            accessor:
+                getter: getReleaseDeal
+                setter: setReleaseDeal
+            xml_list:
+                inline: true
+                entry_name: ReleaseDeal
+            type: array<DedexBundle\Entity\Ern381\ReleaseDealType>

@@ -1,0 +1,69 @@
+DedexBundle\Entity\DdexC\ErnMessageInBatchType:
+    properties:
+        messageType:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageType
+            accessor:
+                getter: getMessageType
+                setter: setMessageType
+            type: string
+        messageId:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageId
+            accessor:
+                getter: getMessageId
+                setter: setMessageId
+            type: string
+        uRL:
+            expose: true
+            access_type: public_method
+            serialized_name: URL
+            accessor:
+                getter: getURL
+                setter: setURL
+            type: string
+        includedReleaseId:
+            expose: true
+            access_type: public_method
+            serialized_name: IncludedReleaseId
+            accessor:
+                getter: getIncludedReleaseId
+                setter: setIncludedReleaseId
+            xml_list:
+                inline: true
+                entry_name: IncludedReleaseId
+            type: array<DedexBundle\Entity\DdexC\ReleaseIdType>
+        deliveryType:
+            expose: true
+            access_type: public_method
+            serialized_name: DeliveryType
+            accessor:
+                getter: getDeliveryType
+                setter: setDeliveryType
+            type: DedexBundle\Entity\DdexC\MessageActionTypeType
+        productType:
+            expose: true
+            access_type: public_method
+            serialized_name: ProductType
+            accessor:
+                getter: getProductType
+                setter: setProductType
+            type: DedexBundle\Entity\DdexC\ProductTypeType
+        hashSum:
+            expose: true
+            access_type: public_method
+            serialized_name: HashSum
+            accessor:
+                getter: getHashSum
+                setter: setHashSum
+            type: DedexBundle\Entity\DdexC\HashSumType
+        signature:
+            expose: true
+            access_type: public_method
+            serialized_name: Signature
+            accessor:
+                getter: getSignature
+                setter: setSignature
+            type: string

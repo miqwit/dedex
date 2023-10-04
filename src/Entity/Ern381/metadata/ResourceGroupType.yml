@@ -1,0 +1,146 @@
+DedexBundle\Entity\Ern381\ResourceGroupType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        title:
+            expose: true
+            access_type: public_method
+            serialized_name: Title
+            accessor:
+                getter: getTitle
+                setter: setTitle
+            xml_list:
+                inline: true
+                entry_name: Title
+            type: array<DedexBundle\Entity\Ern381\TitleType>
+        sequenceNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumber
+            accessor:
+                getter: getSequenceNumber
+                setter: setSequenceNumber
+            type: int
+        displayArtist:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayArtist
+            accessor:
+                getter: getDisplayArtist
+                setter: setDisplayArtist
+            xml_list:
+                inline: true
+                entry_name: DisplayArtist
+            type: array<DedexBundle\Entity\Ern381\ArtistType>
+        displayConductor:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayConductor
+            accessor:
+                getter: getDisplayConductor
+                setter: setDisplayConductor
+            xml_list:
+                inline: true
+                entry_name: DisplayConductor
+            type: array<DedexBundle\Entity\Ern381\ArtistType>
+        displayComposer:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayComposer
+            accessor:
+                getter: getDisplayComposer
+                setter: setDisplayComposer
+            xml_list:
+                inline: true
+                entry_name: DisplayComposer
+            type: array<DedexBundle\Entity\Ern381\ArtistType>
+        resourceContributor:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceContributor
+            accessor:
+                getter: getResourceContributor
+                setter: setResourceContributor
+            xml_list:
+                inline: true
+                entry_name: ResourceContributor
+            type: array<DedexBundle\Entity\Ern381\DetailedResourceContributorType>
+        indirectResourceContributor:
+            expose: true
+            access_type: public_method
+            serialized_name: IndirectResourceContributor
+            accessor:
+                getter: getIndirectResourceContributor
+                setter: setIndirectResourceContributor
+            xml_list:
+                inline: true
+                entry_name: IndirectResourceContributor
+            type: array<DedexBundle\Entity\Ern381\IndirectResourceContributorType>
+        carrierType:
+            expose: true
+            access_type: public_method
+            serialized_name: CarrierType
+            accessor:
+                getter: getCarrierType
+                setter: setCarrierType
+            xml_list:
+                inline: true
+                entry_name: CarrierType
+            type: array<DedexBundle\Entity\Ern381\CarrierTypeType>
+        resourceGroup:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceGroup
+            accessor:
+                getter: getResourceGroup
+                setter: setResourceGroup
+            xml_list:
+                inline: true
+                entry_name: ResourceGroup
+            type: array<DedexBundle\Entity\Ern381\ResourceGroupType>
+        resourceGroupContentItem:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceGroupContentItem
+            accessor:
+                getter: getResourceGroupContentItem
+                setter: setResourceGroupContentItem
+            xml_list:
+                inline: true
+                entry_name: ResourceGroupContentItem
+            type: array<DedexBundle\Entity\Ern381\ExtendedResourceGroupContentItemType>
+        resourceGroupResourceReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceGroupResourceReferenceList
+            accessor:
+                getter: getResourceGroupResourceReferenceList
+                setter: setResourceGroupResourceReferenceList
+            type: array<string>
+            xml_list:
+                inline: false
+                entry_name: ResourceGroupResourceReference
+                skip_when_empty: true
+        resourceGroupReleaseReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceGroupReleaseReference
+            accessor:
+                getter: getResourceGroupReleaseReference
+                setter: setResourceGroupReleaseReference
+            type: string
+        releaseId:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseId
+            accessor:
+                getter: getReleaseId
+                setter: setReleaseId
+            type: DedexBundle\Entity\Ern381\ReleaseIdType

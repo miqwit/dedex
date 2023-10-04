@@ -1,0 +1,26 @@
+DedexBundle\Entity\Ern383\SalesReportingProxyReleaseIdType:
+    properties:
+        releaseId:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseId
+            accessor:
+                getter: getReleaseId
+                setter: setReleaseId
+            type: DedexBundle\Entity\Ern383\ReleaseIdType
+        reason:
+            expose: true
+            access_type: public_method
+            serialized_name: Reason
+            accessor:
+                getter: getReason
+                setter: setReason
+            type: DedexBundle\Entity\Ern383\ReasonType
+        reasonType:
+            expose: true
+            access_type: public_method
+            serialized_name: ReasonType
+            accessor:
+                getter: getReasonType
+                setter: setReasonType
+            type: DedexBundle\Entity\Ern383\ReasonTypeType
