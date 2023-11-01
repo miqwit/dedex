@@ -710,6 +710,7 @@ class ErnParserController {
         "381",
         "383",
         "341",
+        "371",
     ];
 
     while (($buffer = fgets($fp, 4096)) !== false) {
