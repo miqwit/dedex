@@ -1,0 +1,10 @@
+DedexBundle\Entity\Ern371\VideoCueSheetReferenceType:
+    properties:
+        videoCueSheetReference:
+            expose: true
+            access_type: public_method
+            serialized_name: VideoCueSheetReference
+            accessor:
+                getter: getVideoCueSheetReference
+                setter: setVideoCueSheetReference
+            type: string

@@ -1,0 +1,18 @@
+DedexBundle\Entity\Ern371\PhysicalReturnsType:
+    properties:
+        physicalReturnsAllowed:
+            expose: true
+            access_type: public_method
+            serialized_name: PhysicalReturnsAllowed
+            accessor:
+                getter: getPhysicalReturnsAllowed
+                setter: setPhysicalReturnsAllowed
+            type: bool
+        latestDateForPhysicalReturns:
+            expose: true
+            access_type: public_method
+            serialized_name: LatestDateForPhysicalReturns
+            accessor:
+                getter: getLatestDateForPhysicalReturns
+                setter: setLatestDateForPhysicalReturns
+            type: string

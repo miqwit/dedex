@@ -1,0 +1,193 @@
+DedexBundle\Entity\Ern371\RightShareType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        rightShareId:
+            expose: true
+            access_type: public_method
+            serialized_name: RightShareId
+            accessor:
+                getter: getRightShareId
+                setter: setRightShareId
+            type: DedexBundle\Entity\Ern371\RightsAgreementIdType
+        rightShareReference:
+            expose: true
+            access_type: public_method
+            serialized_name: RightShareReference
+            accessor:
+                getter: getRightShareReference
+                setter: setRightShareReference
+            type: string
+        rightShareCreationReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: RightShareCreationReferenceList
+            accessor:
+                getter: getRightShareCreationReferenceList
+                setter: setRightShareCreationReferenceList
+            type: DedexBundle\Entity\Ern371\RightShareCreationReferenceListType
+        territoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryCode
+            accessor:
+                getter: getTerritoryCode
+                setter: setTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: TerritoryCode
+            type: array<DedexBundle\Entity\Ern371\CurrentTerritoryCodeType>
+        excludedTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ExcludedTerritoryCode
+            accessor:
+                getter: getExcludedTerritoryCode
+                setter: setExcludedTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: ExcludedTerritoryCode
+            type: array<DedexBundle\Entity\Ern371\CurrentTerritoryCodeType>
+        rightsType:
+            expose: true
+            access_type: public_method
+            serialized_name: RightsType
+            accessor:
+                getter: getRightsType
+                setter: setRightsType
+            xml_list:
+                inline: true
+                entry_name: RightsType
+            type: array<DedexBundle\Entity\Ern371\RightsTypeType>
+        useType:
+            expose: true
+            access_type: public_method
+            serialized_name: UseType
+            accessor:
+                getter: getUseType
+                setter: setUseType
+            xml_list:
+                inline: true
+                entry_name: UseType
+            type: array<DedexBundle\Entity\Ern371\UseTypeType>
+        userInterfaceType:
+            expose: true
+            access_type: public_method
+            serialized_name: UserInterfaceType
+            accessor:
+                getter: getUserInterfaceType
+                setter: setUserInterfaceType
+            xml_list:
+                inline: true
+                entry_name: UserInterfaceType
+            type: array<DedexBundle\Entity\Ern371\UserInterfaceTypeType>
+        distributionChannelType:
+            expose: true
+            access_type: public_method
+            serialized_name: DistributionChannelType
+            accessor:
+                getter: getDistributionChannelType
+                setter: setDistributionChannelType
+            xml_list:
+                inline: true
+                entry_name: DistributionChannelType
+            type: array<DedexBundle\Entity\Ern371\DistributionChannelTypeType>
+        carrierType:
+            expose: true
+            access_type: public_method
+            serialized_name: CarrierType
+            accessor:
+                getter: getCarrierType
+                setter: setCarrierType
+            xml_list:
+                inline: true
+                entry_name: CarrierType
+            type: array<DedexBundle\Entity\Ern371\CarrierTypeType>
+        commercialModelType:
+            expose: true
+            access_type: public_method
+            serialized_name: CommercialModelType
+            accessor:
+                getter: getCommercialModelType
+                setter: setCommercialModelType
+            xml_list:
+                inline: true
+                entry_name: CommercialModelType
+            type: array<DedexBundle\Entity\Ern371\CommercialModelTypeType>
+        musicalWorkRightsClaimType:
+            expose: true
+            access_type: public_method
+            serialized_name: MusicalWorkRightsClaimType
+            accessor:
+                getter: getMusicalWorkRightsClaimType
+                setter: setMusicalWorkRightsClaimType
+            xml_list:
+                inline: true
+                entry_name: MusicalWorkRightsClaimType
+            type: array<string>
+        rightsController:
+            expose: true
+            access_type: public_method
+            serialized_name: RightsController
+            accessor:
+                getter: getRightsController
+                setter: setRightsController
+            xml_list:
+                inline: true
+                entry_name: RightsController
+            type: array<DedexBundle\Entity\Ern371\RightsControllerType>
+        validityPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: ValidityPeriod
+            accessor:
+                getter: getValidityPeriod
+                setter: setValidityPeriod
+            type: DedexBundle\Entity\Ern371\PeriodType
+        rightShareUnknown:
+            expose: true
+            access_type: public_method
+            serialized_name: RightShareUnknown
+            accessor:
+                getter: getRightShareUnknown
+                setter: setRightShareUnknown
+            type: bool
+        rightSharePercentage:
+            expose: true
+            access_type: public_method
+            serialized_name: RightSharePercentage
+            accessor:
+                getter: getRightSharePercentage
+                setter: setRightSharePercentage
+            type: float
+        tariffReference:
+            expose: true
+            access_type: public_method
+            serialized_name: TariffReference
+            accessor:
+                getter: getTariffReference
+                setter: setTariffReference
+            type: DedexBundle\Entity\Ern371\TariffReferenceType
+        licenseStatus:
+            expose: true
+            access_type: public_method
+            serialized_name: LicenseStatus
+            accessor:
+                getter: getLicenseStatus
+                setter: setLicenseStatus
+            type: string
+        hasFirstLicenseRefusal:
+            expose: true
+            access_type: public_method
+            serialized_name: HasFirstLicenseRefusal
+            accessor:
+                getter: getHasFirstLicenseRefusal
+                setter: setHasFirstLicenseRefusal
+            type: bool
