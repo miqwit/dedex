@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e209127a2f29f819a035b3c689e0bb5b",
+    "content-hash": "87522d0361a3d8843e43d206a321c275",
     "packages": [
         {
             "name": "doctrine/instantiator",
@@ -155,16 +155,22 @@
         },
         {
             "name": "goetas-webservices/xsd2php-runtime",
-            "version": "dev-master",
+            "version": "v0.2.17",
             "source": {
                 "type": "git",
-                "url": "git@github.com:Chris53897/xsd2php-runtime.git",
-                "reference": "4a24dc8ead032dae6cf82168a46702a31f7db42f"
+                "url": "https://github.com/goetas-webservices/xsd2php-runtime.git",
+                "reference": "be15c48cda6adfab82e180a69dfa1937e208cfe1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/goetas-webservices/xsd2php-runtime/zipball/be15c48cda6adfab82e180a69dfa1937e208cfe1",
+                "reference": "be15c48cda6adfab82e180a69dfa1937e208cfe1",
+                "shasum": ""
             },
             "require": {
                 "jms/serializer": "^1.2|^2.0|^3.0",
                 "php": ">=7.1",
-                "symfony/yaml": "^2.2|^3.0|^4.0|^5.0|^6.0"
+                "symfony/yaml": "^2.2|^3.0|^4.0|^5.0|^6.0|^7.0"
             },
             "conflict": {
                 "jms/serializer": "1.4.1|1.6.1|1.6.2"
@@ -172,7 +178,6 @@
             "require-dev": {
                 "phpunit/phpunit": "^7.0|^8.0|^9.0"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -184,11 +189,7 @@
                     "GoetasWebservices\\Xsd\\XsdToPhpRuntime\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "GoetasWebservices\\Xsd\\XsdToPhpRuntime\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -206,7 +207,11 @@
                 "xml",
                 "xsd"
             ],
-            "time": "2022-02-04T09:31:42+00:00"
+            "support": {
+                "issues": "https://github.com/goetas-webservices/xsd2php-runtime/issues",
+                "source": "https://github.com/goetas-webservices/xsd2php-runtime/tree/v0.2.17"
+            },
+            "time": "2024-04-12T22:55:31+00:00"
         },
         {
             "name": "jms/metadata",
@@ -5114,9 +5119,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "goetas-webservices/xsd2php-runtime": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
