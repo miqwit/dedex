@@ -1,0 +1,46 @@
+DedexBundle\Entity\DdexC\AppliedRoyaltyRateType:
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: float
+        valueType:
+            expose: true
+            access_type: public_method
+            serialized_name: ValueType
+            accessor:
+                getter: getValueType
+                setter: setValueType
+            xml_attribute: true
+            type: string
+        royaltyRateType:
+            expose: true
+            access_type: public_method
+            serialized_name: RoyaltyRateType
+            accessor:
+                getter: getRoyaltyRateType
+                setter: setRoyaltyRateType
+            xml_attribute: true
+            type: string
+        namespace:
+            expose: true
+            access_type: public_method
+            serialized_name: Namespace
+            accessor:
+                getter: getNamespace
+                setter: setNamespace
+            xml_attribute: true
+            type: string
+        userDefinedValue:
+            expose: true
+            access_type: public_method
+            serialized_name: UserDefinedValue
+            accessor:
+                getter: getUserDefinedValue
+                setter: setUserDefinedValue
+            xml_attribute: true
+            type: string

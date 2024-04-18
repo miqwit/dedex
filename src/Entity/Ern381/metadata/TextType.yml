@@ -1,0 +1,120 @@
+DedexBundle\Entity\Ern381\TextType:
+    properties:
+        isUpdated:
+            expose: true
+            access_type: public_method
+            serialized_name: IsUpdated
+            accessor:
+                getter: getIsUpdated
+                setter: setIsUpdated
+            xml_attribute: true
+            type: bool
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        textType:
+            expose: true
+            access_type: public_method
+            serialized_name: TextType
+            accessor:
+                getter: getTextType
+                setter: setTextType
+            type: DedexBundle\Entity\Ern381\TextTypeType
+        isArtistRelated:
+            expose: true
+            access_type: public_method
+            serialized_name: IsArtistRelated
+            accessor:
+                getter: getIsArtistRelated
+                setter: setIsArtistRelated
+            type: bool
+        textId:
+            expose: true
+            access_type: public_method
+            serialized_name: TextId
+            accessor:
+                getter: getTextId
+                setter: setTextId
+            xml_list:
+                inline: true
+                entry_name: TextId
+            type: array<DedexBundle\Entity\Ern381\TextIdType>
+        indirectTextId:
+            expose: true
+            access_type: public_method
+            serialized_name: IndirectTextId
+            accessor:
+                getter: getIndirectTextId
+                setter: setIndirectTextId
+            xml_list:
+                inline: true
+                entry_name: IndirectTextId
+            type: array<DedexBundle\Entity\Ern381\MusicalWorkIdType>
+        resourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceReference
+            accessor:
+                getter: getResourceReference
+                setter: setResourceReference
+            type: string
+        resourceMusicalWorkReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceMusicalWorkReferenceList
+            accessor:
+                getter: getResourceMusicalWorkReferenceList
+                setter: setResourceMusicalWorkReferenceList
+            type: array<DedexBundle\Entity\Ern381\ResourceMusicalWorkReferenceType>
+            xml_list:
+                inline: false
+                entry_name: ResourceMusicalWorkReference
+                skip_when_empty: true
+        resourceContainedResourceReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceContainedResourceReferenceList
+            accessor:
+                getter: getResourceContainedResourceReferenceList
+                setter: setResourceContainedResourceReferenceList
+            type: array<DedexBundle\Entity\Ern381\ResourceContainedResourceReferenceType>
+            xml_list:
+                inline: false
+                entry_name: ResourceContainedResourceReference
+                skip_when_empty: true
+        title:
+            expose: true
+            access_type: public_method
+            serialized_name: Title
+            accessor:
+                getter: getTitle
+                setter: setTitle
+            xml_list:
+                inline: true
+                entry_name: Title
+            type: array<DedexBundle\Entity\Ern381\TitleType>
+        creationDate:
+            expose: true
+            access_type: public_method
+            serialized_name: CreationDate
+            accessor:
+                getter: getCreationDate
+                setter: setCreationDate
+            type: DedexBundle\Entity\Ern381\EventDateType
+        textDetailsByTerritory:
+            expose: true
+            access_type: public_method
+            serialized_name: TextDetailsByTerritory
+            accessor:
+                getter: getTextDetailsByTerritory
+                setter: setTextDetailsByTerritory
+            xml_list:
+                inline: true
+                entry_name: TextDetailsByTerritory
+            type: array<DedexBundle\Entity\Ern381\TextDetailsByTerritoryType>

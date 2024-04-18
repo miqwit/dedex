@@ -1,0 +1,34 @@
+DedexBundle\Entity\Ern383\PreviewDetailsType:
+    properties:
+        partType:
+            expose: true
+            access_type: public_method
+            serialized_name: PartType
+            accessor:
+                getter: getPartType
+                setter: setPartType
+            type: DedexBundle\Entity\Ern383\DescriptionType
+        topLeftCorner:
+            expose: true
+            access_type: public_method
+            serialized_name: TopLeftCorner
+            accessor:
+                getter: getTopLeftCorner
+                setter: setTopLeftCorner
+            type: float
+        bottomRightCorner:
+            expose: true
+            access_type: public_method
+            serialized_name: BottomRightCorner
+            accessor:
+                getter: getBottomRightCorner
+                setter: setBottomRightCorner
+            type: float
+        expressionType:
+            expose: true
+            access_type: public_method
+            serialized_name: ExpressionType
+            accessor:
+                getter: getExpressionType
+                setter: setExpressionType
+            type: string

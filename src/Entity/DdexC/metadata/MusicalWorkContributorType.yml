@@ -1,0 +1,52 @@
+DedexBundle\Entity\DdexC\MusicalWorkContributorType:
+    properties:
+        sequenceNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumber
+            accessor:
+                getter: getSequenceNumber
+                setter: setSequenceNumber
+            xml_attribute: true
+            type: int
+        partyId:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyId
+            accessor:
+                getter: getPartyId
+                setter: setPartyId
+            type: DedexBundle\Entity\DdexC\PartyIdType
+        partyName:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyName
+            accessor:
+                getter: getPartyName
+                setter: setPartyName
+            xml_list:
+                inline: true
+                entry_name: PartyName
+            type: array<DedexBundle\Entity\DdexC\PartyNameType>
+        musicalWorkContributorRole:
+            expose: true
+            access_type: public_method
+            serialized_name: MusicalWorkContributorRole
+            accessor:
+                getter: getMusicalWorkContributorRole
+                setter: setMusicalWorkContributorRole
+            xml_list:
+                inline: true
+                entry_name: MusicalWorkContributorRole
+            type: array<DedexBundle\Entity\DdexC\MusicalWorkContributorRoleType>
+        societyAffiliation:
+            expose: true
+            access_type: public_method
+            serialized_name: SocietyAffiliation
+            accessor:
+                getter: getSocietyAffiliation
+                setter: setSocietyAffiliation
+            xml_list:
+                inline: true
+                entry_name: SocietyAffiliation
+            type: array<DedexBundle\Entity\DdexC\SocietyAffiliationType>

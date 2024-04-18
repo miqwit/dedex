@@ -1,0 +1,28 @@
+DedexBundle\Entity\Ern383\TariffReferenceType:
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: string
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        tariffSubReference:
+            expose: true
+            access_type: public_method
+            serialized_name: TariffSubReference
+            accessor:
+                getter: getTariffSubReference
+                setter: setTariffSubReference
+            xml_attribute: true
+            type: string

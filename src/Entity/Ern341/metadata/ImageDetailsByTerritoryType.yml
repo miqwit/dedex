@@ -1,0 +1,150 @@
+DedexBundle\Entity\Ern341\ImageDetailsByTerritoryType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        territoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryCode
+            accessor:
+                getter: getTerritoryCode
+                setter: setTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: TerritoryCode
+            type: array<string>
+        excludedTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ExcludedTerritoryCode
+            accessor:
+                getter: getExcludedTerritoryCode
+                setter: setExcludedTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: ExcludedTerritoryCode
+            type: array<string>
+        resourceContributor:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceContributor
+            accessor:
+                getter: getResourceContributor
+                setter: setResourceContributor
+            xml_list:
+                inline: true
+                entry_name: ResourceContributor
+            type: array<DedexBundle\Entity\DdexC\ResourceContributorType>
+        indirectResourceContributor:
+            expose: true
+            access_type: public_method
+            serialized_name: IndirectResourceContributor
+            accessor:
+                getter: getIndirectResourceContributor
+                setter: setIndirectResourceContributor
+            xml_list:
+                inline: true
+                entry_name: IndirectResourceContributor
+            type: array<DedexBundle\Entity\DdexC\IndirectResourceContributorType>
+        cLine:
+            expose: true
+            access_type: public_method
+            serialized_name: CLine
+            accessor:
+                getter: getCLine
+                setter: setCLine
+            xml_list:
+                inline: true
+                entry_name: CLine
+            type: array<DedexBundle\Entity\DdexC\CLineType>
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            type: DedexBundle\Entity\DdexC\DescriptionType
+        courtesyLine:
+            expose: true
+            access_type: public_method
+            serialized_name: CourtesyLine
+            accessor:
+                getter: getCourtesyLine
+                setter: setCourtesyLine
+            type: DedexBundle\Entity\DdexC\CourtesyLineType
+        originalResourceReleaseDate:
+            expose: true
+            access_type: public_method
+            serialized_name: OriginalResourceReleaseDate
+            accessor:
+                getter: getOriginalResourceReleaseDate
+                setter: setOriginalResourceReleaseDate
+            type: DedexBundle\Entity\DdexC\EventDateType
+        fulfillmentDate:
+            expose: true
+            access_type: public_method
+            serialized_name: FulfillmentDate
+            accessor:
+                getter: getFulfillmentDate
+                setter: setFulfillmentDate
+            type: DedexBundle\Entity\DdexC\FulfillmentDateType
+        keywords:
+            expose: true
+            access_type: public_method
+            serialized_name: Keywords
+            accessor:
+                getter: getKeywords
+                setter: setKeywords
+            xml_list:
+                inline: true
+                entry_name: Keywords
+            type: array<DedexBundle\Entity\DdexC\KeywordsType>
+        synopsis:
+            expose: true
+            access_type: public_method
+            serialized_name: Synopsis
+            accessor:
+                getter: getSynopsis
+                setter: setSynopsis
+            type: DedexBundle\Entity\DdexC\SynopsisType
+        genre:
+            expose: true
+            access_type: public_method
+            serialized_name: Genre
+            accessor:
+                getter: getGenre
+                setter: setGenre
+            xml_list:
+                inline: true
+                entry_name: Genre
+            type: array<DedexBundle\Entity\DdexC\GenreType>
+        parentalWarningType:
+            expose: true
+            access_type: public_method
+            serialized_name: ParentalWarningType
+            accessor:
+                getter: getParentalWarningType
+                setter: setParentalWarningType
+            xml_list:
+                inline: true
+                entry_name: ParentalWarningType
+            type: array<DedexBundle\Entity\DdexC\ParentalWarningTypeType>
+        technicalImageDetails:
+            expose: true
+            access_type: public_method
+            serialized_name: TechnicalImageDetails
+            accessor:
+                getter: getTechnicalImageDetails
+                setter: setTechnicalImageDetails
+            xml_list:
+                inline: true
+                entry_name: TechnicalImageDetails
+            type: array<DedexBundle\Entity\Ern341\TechnicalImageDetailsType>

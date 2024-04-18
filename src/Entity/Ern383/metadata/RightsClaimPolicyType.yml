@@ -1,0 +1,21 @@
+DedexBundle\Entity\Ern383\RightsClaimPolicyType:
+    properties:
+        condition:
+            expose: true
+            access_type: public_method
+            serialized_name: Condition
+            accessor:
+                getter: getCondition
+                setter: setCondition
+            xml_list:
+                inline: true
+                entry_name: Condition
+            type: array<DedexBundle\Entity\Ern383\ConditionType>
+        rightsClaimPolicyType:
+            expose: true
+            access_type: public_method
+            serialized_name: RightsClaimPolicyType
+            accessor:
+                getter: getRightsClaimPolicyType
+                setter: setRightsClaimPolicyType
+            type: string

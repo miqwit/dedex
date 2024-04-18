@@ -1,0 +1,24 @@
+DedexBundle\Entity\Ern381\ResourceUsageType:
+    properties:
+        dealResourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: DealResourceReference
+            accessor:
+                getter: getDealResourceReference
+                setter: setDealResourceReference
+            xml_list:
+                inline: true
+                entry_name: DealResourceReference
+            type: array<string>
+        usage:
+            expose: true
+            access_type: public_method
+            serialized_name: Usage
+            accessor:
+                getter: getUsage
+                setter: setUsage
+            xml_list:
+                inline: true
+                entry_name: Usage
+            type: array<DedexBundle\Entity\Ern381\UsageType>

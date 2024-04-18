@@ -1,0 +1,18 @@
+DedexBundle\Entity\Ern381\PerformanceType:
+    properties:
+        territory:
+            expose: true
+            access_type: public_method
+            serialized_name: Territory
+            accessor:
+                getter: getTerritory
+                setter: setTerritory
+            type: DedexBundle\Entity\Ern381\AllTerritoryCodeType
+        date:
+            expose: true
+            access_type: public_method
+            serialized_name: Date
+            accessor:
+                getter: getDate
+                setter: setDate
+            type: DedexBundle\Entity\Ern381\EventDateType

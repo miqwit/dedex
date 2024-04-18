@@ -1,0 +1,44 @@
+DedexBundle\Entity\Ern381\ResourceContributorType:
+    properties:
+        sequenceNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumber
+            accessor:
+                getter: getSequenceNumber
+                setter: setSequenceNumber
+            xml_attribute: true
+            type: int
+        partyId:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyId
+            accessor:
+                getter: getPartyId
+                setter: setPartyId
+            xml_list:
+                inline: true
+                entry_name: PartyId
+            type: array<DedexBundle\Entity\Ern381\PartyIdType>
+        partyName:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyName
+            accessor:
+                getter: getPartyName
+                setter: setPartyName
+            xml_list:
+                inline: true
+                entry_name: PartyName
+            type: array<DedexBundle\Entity\Ern381\PartyNameType>
+        resourceContributorRole:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceContributorRole
+            accessor:
+                getter: getResourceContributorRole
+                setter: setResourceContributorRole
+            xml_list:
+                inline: true
+                entry_name: ResourceContributorRole
+            type: array<DedexBundle\Entity\Ern381\ResourceContributorRoleType>

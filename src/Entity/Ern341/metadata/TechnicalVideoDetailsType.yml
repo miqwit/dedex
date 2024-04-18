@@ -1,0 +1,236 @@
+DedexBundle\Entity\Ern341\TechnicalVideoDetailsType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        technicalResourceDetailsReference:
+            expose: true
+            access_type: public_method
+            serialized_name: TechnicalResourceDetailsReference
+            accessor:
+                getter: getTechnicalResourceDetailsReference
+                setter: setTechnicalResourceDetailsReference
+            type: string
+        drmPlatformType:
+            expose: true
+            access_type: public_method
+            serialized_name: DrmPlatformType
+            accessor:
+                getter: getDrmPlatformType
+                setter: setDrmPlatformType
+            type: DedexBundle\Entity\DdexC\DrmPlatformTypeType
+        overallBitRate:
+            expose: true
+            access_type: public_method
+            serialized_name: OverallBitRate
+            accessor:
+                getter: getOverallBitRate
+                setter: setOverallBitRate
+            type: DedexBundle\Entity\DdexC\BitRateType
+        containerFormat:
+            expose: true
+            access_type: public_method
+            serialized_name: ContainerFormat
+            accessor:
+                getter: getContainerFormat
+                setter: setContainerFormat
+            type: DedexBundle\Entity\DdexC\ContainerFormatType
+        videoCodecType:
+            expose: true
+            access_type: public_method
+            serialized_name: VideoCodecType
+            accessor:
+                getter: getVideoCodecType
+                setter: setVideoCodecType
+            type: DedexBundle\Entity\DdexC\VideoCodecTypeType
+        videoBitRate:
+            expose: true
+            access_type: public_method
+            serialized_name: VideoBitRate
+            accessor:
+                getter: getVideoBitRate
+                setter: setVideoBitRate
+            type: DedexBundle\Entity\DdexC\BitRateType
+        frameRate:
+            expose: true
+            access_type: public_method
+            serialized_name: FrameRate
+            accessor:
+                getter: getFrameRate
+                setter: setFrameRate
+            type: DedexBundle\Entity\DdexC\FrameRateType
+        imageHeight:
+            expose: true
+            access_type: public_method
+            serialized_name: ImageHeight
+            accessor:
+                getter: getImageHeight
+                setter: setImageHeight
+            type: DedexBundle\Entity\DdexC\ExtentType
+        imageWidth:
+            expose: true
+            access_type: public_method
+            serialized_name: ImageWidth
+            accessor:
+                getter: getImageWidth
+                setter: setImageWidth
+            type: DedexBundle\Entity\DdexC\ExtentType
+        aspectRatio:
+            expose: true
+            access_type: public_method
+            serialized_name: AspectRatio
+            accessor:
+                getter: getAspectRatio
+                setter: setAspectRatio
+            type: float
+        colorDepth:
+            expose: true
+            access_type: public_method
+            serialized_name: ColorDepth
+            accessor:
+                getter: getColorDepth
+                setter: setColorDepth
+            type: int
+        videoDefinitionType:
+            expose: true
+            access_type: public_method
+            serialized_name: VideoDefinitionType
+            accessor:
+                getter: getVideoDefinitionType
+                setter: setVideoDefinitionType
+            type: string
+        audioCodecType:
+            expose: true
+            access_type: public_method
+            serialized_name: AudioCodecType
+            accessor:
+                getter: getAudioCodecType
+                setter: setAudioCodecType
+            type: DedexBundle\Entity\DdexC\AudioCodecTypeType
+        audioBitRate:
+            expose: true
+            access_type: public_method
+            serialized_name: AudioBitRate
+            accessor:
+                getter: getAudioBitRate
+                setter: setAudioBitRate
+            type: DedexBundle\Entity\DdexC\BitRateType
+        numberOfAudioChannels:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfAudioChannels
+            accessor:
+                getter: getNumberOfAudioChannels
+                setter: setNumberOfAudioChannels
+            type: int
+        audioSamplingRate:
+            expose: true
+            access_type: public_method
+            serialized_name: AudioSamplingRate
+            accessor:
+                getter: getAudioSamplingRate
+                setter: setAudioSamplingRate
+            type: DedexBundle\Entity\DdexC\SamplingRateType
+        audioBitsPerSample:
+            expose: true
+            access_type: public_method
+            serialized_name: AudioBitsPerSample
+            accessor:
+                getter: getAudioBitsPerSample
+                setter: setAudioBitsPerSample
+            type: int
+        duration:
+            expose: true
+            access_type: public_method
+            serialized_name: Duration
+            accessor:
+                getter: getDuration
+                setter: setDuration
+            type: DateInterval
+        resourceProcessingRequired:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceProcessingRequired
+            accessor:
+                getter: getResourceProcessingRequired
+                setter: setResourceProcessingRequired
+            type: bool
+        usableResourceDuration:
+            expose: true
+            access_type: public_method
+            serialized_name: UsableResourceDuration
+            accessor:
+                getter: getUsableResourceDuration
+                setter: setUsableResourceDuration
+            type: DateInterval
+        isPreview:
+            expose: true
+            access_type: public_method
+            serialized_name: IsPreview
+            accessor:
+                getter: getIsPreview
+                setter: setIsPreview
+            type: bool
+        previewDetails:
+            expose: true
+            access_type: public_method
+            serialized_name: PreviewDetails
+            accessor:
+                getter: getPreviewDetails
+                setter: setPreviewDetails
+            type: DedexBundle\Entity\Ern341\SoundRecordingPreviewDetailsType
+        fulfillmentDate:
+            expose: true
+            access_type: public_method
+            serialized_name: FulfillmentDate
+            accessor:
+                getter: getFulfillmentDate
+                setter: setFulfillmentDate
+            type: DedexBundle\Entity\DdexC\FulfillmentDateType
+        consumerFulfillmentDate:
+            expose: true
+            access_type: public_method
+            serialized_name: ConsumerFulfillmentDate
+            accessor:
+                getter: getConsumerFulfillmentDate
+                setter: setConsumerFulfillmentDate
+            type: DedexBundle\Entity\DdexC\FulfillmentDateType
+        fileAvailabilityDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: FileAvailabilityDescription
+            accessor:
+                getter: getFileAvailabilityDescription
+                setter: setFileAvailabilityDescription
+            xml_list:
+                inline: true
+                entry_name: FileAvailabilityDescription
+            type: array<DedexBundle\Entity\DdexC\DescriptionType>
+        file:
+            expose: true
+            access_type: public_method
+            serialized_name: File
+            accessor:
+                getter: getFile
+                setter: setFile
+            xml_list:
+                inline: true
+                entry_name: File
+            type: array<DedexBundle\Entity\DdexC\FileType>
+        fingerprint:
+            expose: true
+            access_type: public_method
+            serialized_name: Fingerprint
+            accessor:
+                getter: getFingerprint
+                setter: setFingerprint
+            xml_list:
+                inline: true
+                entry_name: Fingerprint
+            type: array<DedexBundle\Entity\DdexC\FingerprintType>

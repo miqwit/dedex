@@ -1,0 +1,56 @@
+DedexBundle\Entity\DdexC\WebPageType:
+    properties:
+        partyId:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyId
+            accessor:
+                getter: getPartyId
+                setter: setPartyId
+            xml_list:
+                inline: true
+                entry_name: PartyId
+            type: array<DedexBundle\Entity\DdexC\PartyIdType>
+        releaseId:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseId
+            accessor:
+                getter: getReleaseId
+                setter: setReleaseId
+            xml_list:
+                inline: true
+                entry_name: ReleaseId
+            type: array<DedexBundle\Entity\DdexC\ReleaseIdType>
+        pageName:
+            expose: true
+            access_type: public_method
+            serialized_name: PageName
+            accessor:
+                getter: getPageName
+                setter: setPageName
+            type: DedexBundle\Entity\DdexC\NameType
+        uRL:
+            expose: true
+            access_type: public_method
+            serialized_name: URL
+            accessor:
+                getter: getURL
+                setter: setURL
+            type: string
+        userName:
+            expose: true
+            access_type: public_method
+            serialized_name: UserName
+            accessor:
+                getter: getUserName
+                setter: setUserName
+            type: string
+        password:
+            expose: true
+            access_type: public_method
+            serialized_name: Password
+            accessor:
+                getter: getPassword
+                setter: setPassword
+            type: string

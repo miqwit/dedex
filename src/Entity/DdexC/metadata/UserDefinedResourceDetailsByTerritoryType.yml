@@ -1,0 +1,96 @@
+DedexBundle\Entity\DdexC\UserDefinedResourceDetailsByTerritoryType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        territoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryCode
+            accessor:
+                getter: getTerritoryCode
+                setter: setTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: TerritoryCode
+            type: array<string>
+        excludedTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ExcludedTerritoryCode
+            accessor:
+                getter: getExcludedTerritoryCode
+                setter: setExcludedTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: ExcludedTerritoryCode
+            type: array<string>
+        resourceContributor:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceContributor
+            accessor:
+                getter: getResourceContributor
+                setter: setResourceContributor
+            xml_list:
+                inline: true
+                entry_name: ResourceContributor
+            type: array<DedexBundle\Entity\DdexC\ResourceContributorType>
+        indirectResourceContributor:
+            expose: true
+            access_type: public_method
+            serialized_name: IndirectResourceContributor
+            accessor:
+                getter: getIndirectResourceContributor
+                setter: setIndirectResourceContributor
+            xml_list:
+                inline: true
+                entry_name: IndirectResourceContributor
+            type: array<DedexBundle\Entity\DdexC\IndirectResourceContributorType>
+        userDefinedValue:
+            expose: true
+            access_type: public_method
+            serialized_name: UserDefinedValue
+            accessor:
+                getter: getUserDefinedValue
+                setter: setUserDefinedValue
+            xml_list:
+                inline: true
+                entry_name: UserDefinedValue
+            type: array<DedexBundle\Entity\DdexC\UserDefinedValueType>
+        pLine:
+            expose: true
+            access_type: public_method
+            serialized_name: PLine
+            accessor:
+                getter: getPLine
+                setter: setPLine
+            xml_list:
+                inline: true
+                entry_name: PLine
+            type: array<DedexBundle\Entity\DdexC\PLineType>
+        cLine:
+            expose: true
+            access_type: public_method
+            serialized_name: CLine
+            accessor:
+                getter: getCLine
+                setter: setCLine
+            xml_list:
+                inline: true
+                entry_name: CLine
+            type: array<DedexBundle\Entity\DdexC\CLineType>
+        originalResourceReleaseDate:
+            expose: true
+            access_type: public_method
+            serialized_name: OriginalResourceReleaseDate
+            accessor:
+                getter: getOriginalResourceReleaseDate
+                setter: setOriginalResourceReleaseDate
+            type: DedexBundle\Entity\DdexC\EventDateType

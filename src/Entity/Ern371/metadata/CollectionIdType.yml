@@ -1,0 +1,70 @@
+DedexBundle\Entity\Ern371\CollectionIdType:
+    properties:
+        isReplaced:
+            expose: true
+            access_type: public_method
+            serialized_name: IsReplaced
+            accessor:
+                getter: getIsReplaced
+                setter: setIsReplaced
+            xml_attribute: true
+            type: bool
+        gRid:
+            expose: true
+            access_type: public_method
+            serialized_name: GRid
+            accessor:
+                getter: getGRid
+                setter: setGRid
+            type: string
+        iSRC:
+            expose: true
+            access_type: public_method
+            serialized_name: ISRC
+            accessor:
+                getter: getISRC
+                setter: setISRC
+            type: string
+        iSAN:
+            expose: true
+            access_type: public_method
+            serialized_name: ISAN
+            accessor:
+                getter: getISAN
+                setter: setISAN
+            type: string
+        vISAN:
+            expose: true
+            access_type: public_method
+            serialized_name: VISAN
+            accessor:
+                getter: getVISAN
+                setter: setVISAN
+            type: string
+        iCPN:
+            expose: true
+            access_type: public_method
+            serialized_name: ICPN
+            accessor:
+                getter: getICPN
+                setter: setICPN
+            type: DedexBundle\Entity\Ern371\ICPNType
+        catalogNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: CatalogNumber
+            accessor:
+                getter: getCatalogNumber
+                setter: setCatalogNumber
+            type: DedexBundle\Entity\Ern371\CatalogNumberType
+        proprietaryId:
+            expose: true
+            access_type: public_method
+            serialized_name: ProprietaryId
+            accessor:
+                getter: getProprietaryId
+                setter: setProprietaryId
+            xml_list:
+                inline: true
+                entry_name: ProprietaryId
+            type: array<DedexBundle\Entity\Ern371\ProprietaryIdType>

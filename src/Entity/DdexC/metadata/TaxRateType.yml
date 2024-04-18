@@ -1,0 +1,32 @@
+DedexBundle\Entity\DdexC\TaxRateType:
+    properties:
+        rate:
+            expose: true
+            access_type: public_method
+            serialized_name: Rate
+            accessor:
+                getter: getRate
+                setter: setRate
+            type: float
+        taxType:
+            expose: true
+            access_type: public_method
+            serialized_name: TaxType
+            accessor:
+                getter: getTaxType
+                setter: setTaxType
+            xml_list:
+                inline: true
+                entry_name: TaxType
+            type: array<DedexBundle\Entity\DdexC\TaxTypeType>
+        taxScope:
+            expose: true
+            access_type: public_method
+            serialized_name: TaxScope
+            accessor:
+                getter: getTaxScope
+                setter: setTaxScope
+            xml_list:
+                inline: true
+                entry_name: TaxScope
+            type: array<DedexBundle\Entity\DdexC\TaxScopeType>

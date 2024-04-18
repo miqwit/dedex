@@ -1,0 +1,3 @@
+DedexBundle\Entity\Ern381\CatalogListMessage:
+    xml_root_name: 'ns-59af6a32:CatalogListMessage'
+    xml_root_namespace: 'http://ddex.net/xml/ern/381'

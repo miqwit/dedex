@@ -1,0 +1,114 @@
+DedexBundle\Entity\Ern341\NewReleaseMessage\NewReleaseMessageAnonymousPHPType:
+    properties:
+        messageSchemaVersionId:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageSchemaVersionId
+            accessor:
+                getter: getMessageSchemaVersionId
+                setter: setMessageSchemaVersionId
+            xml_attribute: true
+            type: string
+        businessProfileVersionId:
+            expose: true
+            access_type: public_method
+            serialized_name: BusinessProfileVersionId
+            accessor:
+                getter: getBusinessProfileVersionId
+                setter: setBusinessProfileVersionId
+            xml_attribute: true
+            type: string
+        releaseProfileVersionId:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseProfileVersionId
+            accessor:
+                getter: getReleaseProfileVersionId
+                setter: setReleaseProfileVersionId
+            xml_attribute: true
+            type: string
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        messageHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageHeader
+            accessor:
+                getter: getMessageHeader
+                setter: setMessageHeader
+            type: DedexBundle\Entity\DdexC\MessageHeaderType
+        updateIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: UpdateIndicator
+            accessor:
+                getter: getUpdateIndicator
+                setter: setUpdateIndicator
+            type: string
+        catalogTransfer:
+            expose: true
+            access_type: public_method
+            serialized_name: CatalogTransfer
+            accessor:
+                getter: getCatalogTransfer
+                setter: setCatalogTransfer
+            type: DedexBundle\Entity\Ern341\CatalogTransferType
+        workList:
+            expose: true
+            access_type: public_method
+            serialized_name: WorkList
+            accessor:
+                getter: getWorkList
+                setter: setWorkList
+            type: DedexBundle\Entity\DdexC\WorkListType
+        cueSheetList:
+            expose: true
+            access_type: public_method
+            serialized_name: CueSheetList
+            accessor:
+                getter: getCueSheetList
+                setter: setCueSheetList
+            type: array<DedexBundle\Entity\Ern341\CueSheetType>
+            xml_list:
+                inline: false
+                entry_name: CueSheet
+                skip_when_empty: true
+        resourceList:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceList
+            accessor:
+                getter: getResourceList
+                setter: setResourceList
+            type: DedexBundle\Entity\Ern341\ResourceListType
+        collectionList:
+            expose: true
+            access_type: public_method
+            serialized_name: CollectionList
+            accessor:
+                getter: getCollectionList
+                setter: setCollectionList
+            type: DedexBundle\Entity\Ern341\CollectionListType
+        releaseList:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseList
+            accessor:
+                getter: getReleaseList
+                setter: setReleaseList
+            type: DedexBundle\Entity\Ern341\ReleaseListType
+        dealList:
+            expose: true
+            access_type: public_method
+            serialized_name: DealList
+            accessor:
+                getter: getDealList
+                setter: setDealList
+            type: DedexBundle\Entity\Ern341\DealListType

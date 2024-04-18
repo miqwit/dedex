@@ -1,0 +1,13 @@
+DedexBundle\Entity\DdexC\CueSheetListType:
+    properties:
+        cueSheet:
+            expose: true
+            access_type: public_method
+            serialized_name: CueSheet
+            accessor:
+                getter: getCueSheet
+                setter: setCueSheet
+            xml_list:
+                inline: true
+                entry_name: CueSheet
+            type: array<DedexBundle\Entity\DdexC\CueSheetType>

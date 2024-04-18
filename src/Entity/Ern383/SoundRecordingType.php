@@ -1,0 +1,1633 @@
+<?php
+
+namespace DedexBundle\Entity\Ern383;
+
+/**
+ * Class representing SoundRecordingType
+ *
+ * A Composite containing details of a
+ *  SoundRecording.
+ * XSD Type: SoundRecording
+ */
+class SoundRecordingType
+{
+    /**
+     * The Flag indicating whether the
+     *  SoundRecording Element was updated (=true) or not (=false). When this Boolean Flag is
+     *  set to true, the MessageRecipient is expected to replace any previously provided
+     *  SoundRecording data with the now provided data. This attribute is deprecated. DDEX
+     *  advises that it may be removed at a future date and therefore recommends against
+     *  using it.
+     *
+     * @var bool $isUpdated
+     */
+    private $isUpdated = null;
+
+    /**
+     * The Language and script for the Elements of
+     *  the SoundRecording as defined in IETF RfC 5646. The default is the same as indicated
+     *  for the containing composite. Language and Script are provided as
+     *  lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML
+     *  Attribute.
+     *
+     * @var string $languageAndScriptCode
+     */
+    private $languageAndScriptCode = null;
+
+    /**
+     * A Composite containing details of the Type
+     *  of the SoundRecording.
+     *
+     * @var \DedexBundle\Entity\Ern383\SoundRecordingTypeType $soundRecordingType
+     */
+    private $soundRecordingType = null;
+
+    /**
+     * The Flag indicating whether the
+     *  SoundRecording is related to an Artist (=true) or not (=false).
+     *
+     * @var bool $isArtistRelated
+     */
+    private $isArtistRelated = null;
+
+    /**
+     * A Composite containing details of a
+     *  SoundRecordingId.
+     *
+     * @var \DedexBundle\Entity\Ern383\SoundRecordingIdType[] $soundRecordingId
+     */
+    private $soundRecordingId = [
+        
+    ];
+
+    /**
+     * A Composite containing details of a
+     *  MusicalWorkId of a MusicalWork used in the SoundRecording.
+     *
+     * @var \DedexBundle\Entity\Ern383\MusicalWorkIdType[] $indirectSoundRecordingId
+     */
+    private $indirectSoundRecordingId = [
+        
+    ];
+
+    /**
+     * The Identifier (specific to the Message)
+     *  of the SoundRecording within the Release which contains it. This is a
+     *  LocalResourceAnchor starting with the letter A.
+     *
+     * @var string $resourceReference
+     */
+    private $resourceReference = null;
+
+    /**
+     * A Composite containing details of the
+     *  ReferenceTitle of the SoundRecording.
+     *
+     * @var \DedexBundle\Entity\Ern383\ReferenceTitleType $referenceTitle
+     */
+    private $referenceTitle = null;
+
+    /**
+     * A Composite containing a Description of
+     *  the Type of instrumentation of the MusicalWork(s) in the
+     *  SoundRecording.
+     *
+     * @var \DedexBundle\Entity\Ern383\DescriptionType $instrumentationDescription
+     */
+    private $instrumentationDescription = null;
+
+    /**
+     * The Flag indicating whether the
+     *  SoundRecording is a Medley (=true) or not (=false).
+     *
+     * @var bool $isMedley
+     */
+    private $isMedley = null;
+
+    /**
+     * The Flag indicating whether the
+     *  SoundRecording is a Potpourri (=true) or not (=false).
+     *
+     * @var bool $isPotpourri
+     */
+    private $isPotpourri = null;
+
+    /**
+     * The Flag indicating whether the
+     *  SoundRecording is instrumental (=true) or not (=false).
+     *
+     * @var bool $isInstrumental
+     */
+    private $isInstrumental = null;
+
+    /**
+     * The Flag indicating whether the
+     *  SoundRecording is used as background to other audio or audiovisual material
+     *  (=true) or not (=false).
+     *
+     * @var bool $isBackground
+     */
+    private $isBackground = null;
+
+    /**
+     * The Flag indicating whether the
+     *  SoundRecording is hidden in some way from the Consumer (=true) or not
+     *  (=false).
+     *
+     * @var bool $isHiddenResource
+     */
+    private $isHiddenResource = null;
+
+    /**
+     * The Flag indicating whether the
+     *  SoundRecording is additional to those on the original Release of which this is a
+     *  Version (=true) or not (=false). This element is deprecated. DDEX advises that it
+     *  may be removed at a future date and therefore recommends against using it. The
+     *  IsBonusResource element in ResourceGroupContentItem should be used
+     *  instead.
+     *
+     * @var bool $isBonusResource
+     */
+    private $isBonusResource = null;
+
+    /**
+     * A Flag indicating whether a DSP shall
+     *  (=true) or shall not (=false) make the SoundRecording available during the
+     *  pre-oder period. If the Flag is not set or set to false, the SoundRecording shall
+     *  not be made available.
+     *
+     * @var bool $hasPreOrderFulfillment
+     */
+    private $hasPreOrderFulfillment = null;
+
+    /**
+     * The Flag indicating whether the
+     *  SoundRecording is generated by a computer (=true) or not
+     *  (=false).
+     *
+     * @var bool $isComputerGenerated
+     */
+    private $isComputerGenerated = null;
+
+    /**
+     * The Flag indicating whether the
+     *  SoundRecording is remastered (=true) or not (=false).
+     *
+     * @var bool $isRemastered
+     */
+    private $isRemastered = null;
+
+    /**
+     * The Flag indicating whether the
+     *  SoundRecording is preceded by a period of silence (=false) or not (=true).
+     *
+     * @var bool $noSilenceBefore
+     */
+    private $noSilenceBefore = null;
+
+    /**
+     * The Flag indicating whether the
+     *  SoundRecording is followed by a period of silence (=false) or not (=true).
+     *
+     * @var bool $noSilenceAfter
+     */
+    private $noSilenceAfter = null;
+
+    /**
+     * A Flag indicating whether performer
+     *  information is required (=true) or not (=false) when communicating details of the
+     *  SoundRecording.
+     *
+     * @var bool $performerInformationRequired
+     */
+    private $performerInformationRequired = null;
+
+    /**
+     * The Language of the Performance recorded
+     *  in the SoundRecording (represented by an ISO 639-2
+     *  LanguageCode).
+     *
+     * @var string $languageOfPerformance
+     */
+    private $languageOfPerformance = null;
+
+    /**
+     * The Duration of the SoundRecording (using
+     *  the ISO 8601:2004 PT[[hhH]mmM]ssS format, where lower case characters indicate
+     *  variables, upper case characters are part of the xs:string, e.g. one hour, two
+     *  minutes and three seconds would be PT1H2M3S). The seconds section ss may include
+     *  fractions (e.g. one minute and 30.5 seconds would be
+     *  PT1M30.5S).
+     *
+     * @var \DateInterval $duration
+     */
+    private $duration = null;
+
+    /**
+     * A Composite containing details of
+     *  Identifiers of a License, Claim, RightShare or contract for the MusicalWork(s)
+     *  used in the SoundRecording.
+     *
+     * @var \DedexBundle\Entity\Ern383\RightsAgreementIdType $rightsAgreementId
+     */
+    private $rightsAgreementId = null;
+
+    /**
+     * A Composite containing details of one or
+     *  more Collections. The referenced Collection has to be of CollectionType
+     *  AudioChapter.
+     *
+     * @var \DedexBundle\Entity\Ern383\SoundRecordingCollectionReferenceListType $soundRecordingCollectionReferenceList
+     */
+    private $soundRecordingCollectionReferenceList = null;
+
+    /**
+     * A Composite containing details of one or
+     *  more MusicalWorks contained in the SoundRecording.
+     *
+     * @var \DedexBundle\Entity\Ern383\ResourceMusicalWorkReferenceType[] $resourceMusicalWorkReferenceList
+     */
+    private $resourceMusicalWorkReferenceList = null;
+
+    /**
+     * A Composite containing details of
+     *  ResourceContainedResourceReferences referring to a Resource that is contained in
+     *  the current SoundRecording.
+     *
+     * @var \DedexBundle\Entity\Ern383\ResourceContainedResourceReferenceType[] $resourceContainedResourceReferenceList
+     */
+    private $resourceContainedResourceReferenceList = null;
+
+    /**
+     * A Composite containing details of the Date
+     *  and Place of the Event in which the SoundRecording was created. This is a string
+     *  with the syntax YYYY[-MM[-DD]].
+     *
+     * @var \DedexBundle\Entity\Ern383\EventDateType $creationDate
+     */
+    private $creationDate = null;
+
+    /**
+     * A Composite containing details of the Date
+     *  and Place of the Event in which the SoundRecording was originally mastered (in
+     *  either analogue or digital form). This is a string with the syntax
+     *  YYYY[-MM[-DD]].
+     *
+     * @var \DedexBundle\Entity\Ern383\EventDateType $masteredDate
+     */
+    private $masteredDate = null;
+
+    /**
+     * A Composite containing details of the Date
+     *  and Place of the Event in which the SoundRecording was re-mastered (usually
+     *  digitally). This is a string with the syntax YYYY[-MM[-DD]].
+     *
+     * @var \DedexBundle\Entity\Ern383\EventDateType $remasteredDate
+     */
+    private $remasteredDate = null;
+
+    /**
+     * A Composite containing details of
+     *  Descriptors and other attributes of the SoundRecording which may vary according to
+     *  Territory.
+     *
+     * @var \DedexBundle\Entity\Ern383\SoundRecordingDetailsByTerritoryType[] $soundRecordingDetailsByTerritory
+     */
+    private $soundRecordingDetailsByTerritory = [
+        
+    ];
+
+    /**
+     * The country of
+     *  commissioning.
+     *
+     * @var \DedexBundle\Entity\Ern383\AllTerritoryCodeType $territoryOfCommissioning
+     */
+    private $territoryOfCommissioning = null;
+
+    /**
+     * The number of FeaturedArtists associated
+     *  with the SoundRecording.
+     *
+     * @var int $numberOfFeaturedArtists
+     */
+    private $numberOfFeaturedArtists = null;
+
+    /**
+     * The number of NonFeaturedArtists
+     *  associated with the SoundRecording.
+     *
+     * @var int $numberOfNonFeaturedArtists
+     */
+    private $numberOfNonFeaturedArtists = null;
+
+    /**
+     * The number of ContractedArtists associated
+     *  with the SoundRecording.
+     *
+     * @var int $numberOfContractedArtists
+     */
+    private $numberOfContractedArtists = null;
+
+    /**
+     * The number of NonContractedArtists
+     *  associated with the SoundRecording.
+     *
+     * @var int $numberOfNonContractedArtists
+     */
+    private $numberOfNonContractedArtists = null;
+
+    /**
+     * Gets as isUpdated
+     *
+     * The Flag indicating whether the
+     *  SoundRecording Element was updated (=true) or not (=false). When this Boolean Flag is
+     *  set to true, the MessageRecipient is expected to replace any previously provided
+     *  SoundRecording data with the now provided data. This attribute is deprecated. DDEX
+     *  advises that it may be removed at a future date and therefore recommends against
+     *  using it.
+     *
+     * @return bool
+     */
+    public function getIsUpdated()
+    {
+        return $this->isUpdated;
+    }
+
+    /**
+     * Sets a new isUpdated
+     *
+     * The Flag indicating whether the
+     *  SoundRecording Element was updated (=true) or not (=false). When this Boolean Flag is
+     *  set to true, the MessageRecipient is expected to replace any previously provided
+     *  SoundRecording data with the now provided data. This attribute is deprecated. DDEX
+     *  advises that it may be removed at a future date and therefore recommends against
+     *  using it.
+     *
+     * @param bool $isUpdated
+     * @return self
+     */
+    public function setIsUpdated($isUpdated)
+    {
+        $this->isUpdated = $isUpdated;
+        return $this;
+    }
+
+    /**
+     * Gets as languageAndScriptCode
+     *
+     * The Language and script for the Elements of
+     *  the SoundRecording as defined in IETF RfC 5646. The default is the same as indicated
+     *  for the containing composite. Language and Script are provided as
+     *  lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML
+     *  Attribute.
+     *
+     * @return string
+     */
+    public function getLanguageAndScriptCode()
+    {
+        return $this->languageAndScriptCode;
+    }
+
+    /**
+     * Sets a new languageAndScriptCode
+     *
+     * The Language and script for the Elements of
+     *  the SoundRecording as defined in IETF RfC 5646. The default is the same as indicated
+     *  for the containing composite. Language and Script are provided as
+     *  lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML
+     *  Attribute.
+     *
+     * @param string $languageAndScriptCode
+     * @return self
+     */
+    public function setLanguageAndScriptCode($languageAndScriptCode)
+    {
+        $this->languageAndScriptCode = $languageAndScriptCode;
+        return $this;
+    }
+
+    /**
+     * Gets as soundRecordingType
+     *
+     * A Composite containing details of the Type
+     *  of the SoundRecording.
+     *
+     * @return \DedexBundle\Entity\Ern383\SoundRecordingTypeType
+     */
+    public function getSoundRecordingType()
+    {
+        return $this->soundRecordingType;
+    }
+
+    /**
+     * Sets a new soundRecordingType
+     *
+     * A Composite containing details of the Type
+     *  of the SoundRecording.
+     *
+     * @param \DedexBundle\Entity\Ern383\SoundRecordingTypeType $soundRecordingType
+     * @return self
+     */
+    public function setSoundRecordingType(?\DedexBundle\Entity\Ern383\SoundRecordingTypeType $soundRecordingType = null)
+    {
+        $this->soundRecordingType = $soundRecordingType;
+        return $this;
+    }
+
+    /**
+     * Gets as isArtistRelated
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is related to an Artist (=true) or not (=false).
+     *
+     * @return bool
+     */
+    public function getIsArtistRelated()
+    {
+        return $this->isArtistRelated;
+    }
+
+    /**
+     * Sets a new isArtistRelated
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is related to an Artist (=true) or not (=false).
+     *
+     * @param bool $isArtistRelated
+     * @return self
+     */
+    public function setIsArtistRelated($isArtistRelated)
+    {
+        $this->isArtistRelated = $isArtistRelated;
+        return $this;
+    }
+
+    /**
+     * Adds as soundRecordingId
+     *
+     * A Composite containing details of a
+     *  SoundRecordingId.
+     *
+     * @return self
+     * @param \DedexBundle\Entity\Ern383\SoundRecordingIdType $soundRecordingId
+     */
+    public function addToSoundRecordingId(\DedexBundle\Entity\Ern383\SoundRecordingIdType $soundRecordingId)
+    {
+        $this->soundRecordingId[] = $soundRecordingId;
+        return $this;
+    }
+
+    /**
+     * isset soundRecordingId
+     *
+     * A Composite containing details of a
+     *  SoundRecordingId.
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetSoundRecordingId($index)
+    {
+        return isset($this->soundRecordingId[$index]);
+    }
+
+    /**
+     * unset soundRecordingId
+     *
+     * A Composite containing details of a
+     *  SoundRecordingId.
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetSoundRecordingId($index)
+    {
+        unset($this->soundRecordingId[$index]);
+    }
+
+    /**
+     * Gets as soundRecordingId
+     *
+     * A Composite containing details of a
+     *  SoundRecordingId.
+     *
+     * @return \DedexBundle\Entity\Ern383\SoundRecordingIdType[]
+     */
+    public function getSoundRecordingId()
+    {
+        return $this->soundRecordingId;
+    }
+
+    /**
+     * Sets a new soundRecordingId
+     *
+     * A Composite containing details of a
+     *  SoundRecordingId.
+     *
+     * @param \DedexBundle\Entity\Ern383\SoundRecordingIdType[] $soundRecordingId
+     * @return self
+     */
+    public function setSoundRecordingId(array $soundRecordingId)
+    {
+        $this->soundRecordingId = $soundRecordingId;
+        return $this;
+    }
+
+    /**
+     * Adds as indirectSoundRecordingId
+     *
+     * A Composite containing details of a
+     *  MusicalWorkId of a MusicalWork used in the SoundRecording.
+     *
+     * @return self
+     * @param \DedexBundle\Entity\Ern383\MusicalWorkIdType $indirectSoundRecordingId
+     */
+    public function addToIndirectSoundRecordingId(\DedexBundle\Entity\Ern383\MusicalWorkIdType $indirectSoundRecordingId)
+    {
+        $this->indirectSoundRecordingId[] = $indirectSoundRecordingId;
+        return $this;
+    }
+
+    /**
+     * isset indirectSoundRecordingId
+     *
+     * A Composite containing details of a
+     *  MusicalWorkId of a MusicalWork used in the SoundRecording.
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetIndirectSoundRecordingId($index)
+    {
+        return isset($this->indirectSoundRecordingId[$index]);
+    }
+
+    /**
+     * unset indirectSoundRecordingId
+     *
+     * A Composite containing details of a
+     *  MusicalWorkId of a MusicalWork used in the SoundRecording.
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetIndirectSoundRecordingId($index)
+    {
+        unset($this->indirectSoundRecordingId[$index]);
+    }
+
+    /**
+     * Gets as indirectSoundRecordingId
+     *
+     * A Composite containing details of a
+     *  MusicalWorkId of a MusicalWork used in the SoundRecording.
+     *
+     * @return \DedexBundle\Entity\Ern383\MusicalWorkIdType[]
+     */
+    public function getIndirectSoundRecordingId()
+    {
+        return $this->indirectSoundRecordingId;
+    }
+
+    /**
+     * Sets a new indirectSoundRecordingId
+     *
+     * A Composite containing details of a
+     *  MusicalWorkId of a MusicalWork used in the SoundRecording.
+     *
+     * @param \DedexBundle\Entity\Ern383\MusicalWorkIdType[] $indirectSoundRecordingId
+     * @return self
+     */
+    public function setIndirectSoundRecordingId(array $indirectSoundRecordingId = null)
+    {
+        $this->indirectSoundRecordingId = $indirectSoundRecordingId;
+        return $this;
+    }
+
+    /**
+     * Gets as resourceReference
+     *
+     * The Identifier (specific to the Message)
+     *  of the SoundRecording within the Release which contains it. This is a
+     *  LocalResourceAnchor starting with the letter A.
+     *
+     * @return string
+     */
+    public function getResourceReference()
+    {
+        return $this->resourceReference;
+    }
+
+    /**
+     * Sets a new resourceReference
+     *
+     * The Identifier (specific to the Message)
+     *  of the SoundRecording within the Release which contains it. This is a
+     *  LocalResourceAnchor starting with the letter A.
+     *
+     * @param string $resourceReference
+     * @return self
+     */
+    public function setResourceReference($resourceReference)
+    {
+        $this->resourceReference = $resourceReference;
+        return $this;
+    }
+
+    /**
+     * Gets as referenceTitle
+     *
+     * A Composite containing details of the
+     *  ReferenceTitle of the SoundRecording.
+     *
+     * @return \DedexBundle\Entity\Ern383\ReferenceTitleType
+     */
+    public function getReferenceTitle()
+    {
+        return $this->referenceTitle;
+    }
+
+    /**
+     * Sets a new referenceTitle
+     *
+     * A Composite containing details of the
+     *  ReferenceTitle of the SoundRecording.
+     *
+     * @param \DedexBundle\Entity\Ern383\ReferenceTitleType $referenceTitle
+     * @return self
+     */
+    public function setReferenceTitle(\DedexBundle\Entity\Ern383\ReferenceTitleType $referenceTitle)
+    {
+        $this->referenceTitle = $referenceTitle;
+        return $this;
+    }
+
+    /**
+     * Gets as instrumentationDescription
+     *
+     * A Composite containing a Description of
+     *  the Type of instrumentation of the MusicalWork(s) in the
+     *  SoundRecording.
+     *
+     * @return \DedexBundle\Entity\Ern383\DescriptionType
+     */
+    public function getInstrumentationDescription()
+    {
+        return $this->instrumentationDescription;
+    }
+
+    /**
+     * Sets a new instrumentationDescription
+     *
+     * A Composite containing a Description of
+     *  the Type of instrumentation of the MusicalWork(s) in the
+     *  SoundRecording.
+     *
+     * @param \DedexBundle\Entity\Ern383\DescriptionType $instrumentationDescription
+     * @return self
+     */
+    public function setInstrumentationDescription(?\DedexBundle\Entity\Ern383\DescriptionType $instrumentationDescription = null)
+    {
+        $this->instrumentationDescription = $instrumentationDescription;
+        return $this;
+    }
+
+    /**
+     * Gets as isMedley
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is a Medley (=true) or not (=false).
+     *
+     * @return bool
+     */
+    public function getIsMedley()
+    {
+        return $this->isMedley;
+    }
+
+    /**
+     * Sets a new isMedley
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is a Medley (=true) or not (=false).
+     *
+     * @param bool $isMedley
+     * @return self
+     */
+    public function setIsMedley($isMedley)
+    {
+        $this->isMedley = $isMedley;
+        return $this;
+    }
+
+    /**
+     * Gets as isPotpourri
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is a Potpourri (=true) or not (=false).
+     *
+     * @return bool
+     */
+    public function getIsPotpourri()
+    {
+        return $this->isPotpourri;
+    }
+
+    /**
+     * Sets a new isPotpourri
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is a Potpourri (=true) or not (=false).
+     *
+     * @param bool $isPotpourri
+     * @return self
+     */
+    public function setIsPotpourri($isPotpourri)
+    {
+        $this->isPotpourri = $isPotpourri;
+        return $this;
+    }
+
+    /**
+     * Gets as isInstrumental
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is instrumental (=true) or not (=false).
+     *
+     * @return bool
+     */
+    public function getIsInstrumental()
+    {
+        return $this->isInstrumental;
+    }
+
+    /**
+     * Sets a new isInstrumental
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is instrumental (=true) or not (=false).
+     *
+     * @param bool $isInstrumental
+     * @return self
+     */
+    public function setIsInstrumental($isInstrumental)
+    {
+        $this->isInstrumental = $isInstrumental;
+        return $this;
+    }
+
+    /**
+     * Gets as isBackground
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is used as background to other audio or audiovisual material
+     *  (=true) or not (=false).
+     *
+     * @return bool
+     */
+    public function getIsBackground()
+    {
+        return $this->isBackground;
+    }
+
+    /**
+     * Sets a new isBackground
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is used as background to other audio or audiovisual material
+     *  (=true) or not (=false).
+     *
+     * @param bool $isBackground
+     * @return self
+     */
+    public function setIsBackground($isBackground)
+    {
+        $this->isBackground = $isBackground;
+        return $this;
+    }
+
+    /**
+     * Gets as isHiddenResource
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is hidden in some way from the Consumer (=true) or not
+     *  (=false).
+     *
+     * @return bool
+     */
+    public function getIsHiddenResource()
+    {
+        return $this->isHiddenResource;
+    }
+
+    /**
+     * Sets a new isHiddenResource
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is hidden in some way from the Consumer (=true) or not
+     *  (=false).
+     *
+     * @param bool $isHiddenResource
+     * @return self
+     */
+    public function setIsHiddenResource($isHiddenResource)
+    {
+        $this->isHiddenResource = $isHiddenResource;
+        return $this;
+    }
+
+    /**
+     * Gets as isBonusResource
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is additional to those on the original Release of which this is a
+     *  Version (=true) or not (=false). This element is deprecated. DDEX advises that it
+     *  may be removed at a future date and therefore recommends against using it. The
+     *  IsBonusResource element in ResourceGroupContentItem should be used
+     *  instead.
+     *
+     * @return bool
+     */
+    public function getIsBonusResource()
+    {
+        return $this->isBonusResource;
+    }
+
+    /**
+     * Sets a new isBonusResource
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is additional to those on the original Release of which this is a
+     *  Version (=true) or not (=false). This element is deprecated. DDEX advises that it
+     *  may be removed at a future date and therefore recommends against using it. The
+     *  IsBonusResource element in ResourceGroupContentItem should be used
+     *  instead.
+     *
+     * @param bool $isBonusResource
+     * @return self
+     */
+    public function setIsBonusResource($isBonusResource)
+    {
+        $this->isBonusResource = $isBonusResource;
+        return $this;
+    }
+
+    /**
+     * Gets as hasPreOrderFulfillment
+     *
+     * A Flag indicating whether a DSP shall
+     *  (=true) or shall not (=false) make the SoundRecording available during the
+     *  pre-oder period. If the Flag is not set or set to false, the SoundRecording shall
+     *  not be made available.
+     *
+     * @return bool
+     */
+    public function getHasPreOrderFulfillment()
+    {
+        return $this->hasPreOrderFulfillment;
+    }
+
+    /**
+     * Sets a new hasPreOrderFulfillment
+     *
+     * A Flag indicating whether a DSP shall
+     *  (=true) or shall not (=false) make the SoundRecording available during the
+     *  pre-oder period. If the Flag is not set or set to false, the SoundRecording shall
+     *  not be made available.
+     *
+     * @param bool $hasPreOrderFulfillment
+     * @return self
+     */
+    public function setHasPreOrderFulfillment($hasPreOrderFulfillment)
+    {
+        $this->hasPreOrderFulfillment = $hasPreOrderFulfillment;
+        return $this;
+    }
+
+    /**
+     * Gets as isComputerGenerated
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is generated by a computer (=true) or not
+     *  (=false).
+     *
+     * @return bool
+     */
+    public function getIsComputerGenerated()
+    {
+        return $this->isComputerGenerated;
+    }
+
+    /**
+     * Sets a new isComputerGenerated
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is generated by a computer (=true) or not
+     *  (=false).
+     *
+     * @param bool $isComputerGenerated
+     * @return self
+     */
+    public function setIsComputerGenerated($isComputerGenerated)
+    {
+        $this->isComputerGenerated = $isComputerGenerated;
+        return $this;
+    }
+
+    /**
+     * Gets as isRemastered
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is remastered (=true) or not (=false).
+     *
+     * @return bool
+     */
+    public function getIsRemastered()
+    {
+        return $this->isRemastered;
+    }
+
+    /**
+     * Sets a new isRemastered
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is remastered (=true) or not (=false).
+     *
+     * @param bool $isRemastered
+     * @return self
+     */
+    public function setIsRemastered($isRemastered)
+    {
+        $this->isRemastered = $isRemastered;
+        return $this;
+    }
+
+    /**
+     * Gets as noSilenceBefore
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is preceded by a period of silence (=false) or not (=true).
+     *
+     * @return bool
+     */
+    public function getNoSilenceBefore()
+    {
+        return $this->noSilenceBefore;
+    }
+
+    /**
+     * Sets a new noSilenceBefore
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is preceded by a period of silence (=false) or not (=true).
+     *
+     * @param bool $noSilenceBefore
+     * @return self
+     */
+    public function setNoSilenceBefore($noSilenceBefore)
+    {
+        $this->noSilenceBefore = $noSilenceBefore;
+        return $this;
+    }
+
+    /**
+     * Gets as noSilenceAfter
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is followed by a period of silence (=false) or not (=true).
+     *
+     * @return bool
+     */
+    public function getNoSilenceAfter()
+    {
+        return $this->noSilenceAfter;
+    }
+
+    /**
+     * Sets a new noSilenceAfter
+     *
+     * The Flag indicating whether the
+     *  SoundRecording is followed by a period of silence (=false) or not (=true).
+     *
+     * @param bool $noSilenceAfter
+     * @return self
+     */
+    public function setNoSilenceAfter($noSilenceAfter)
+    {
+        $this->noSilenceAfter = $noSilenceAfter;
+        return $this;
+    }
+
+    /**
+     * Gets as performerInformationRequired
+     *
+     * A Flag indicating whether performer
+     *  information is required (=true) or not (=false) when communicating details of the
+     *  SoundRecording.
+     *
+     * @return bool
+     */
+    public function getPerformerInformationRequired()
+    {
+        return $this->performerInformationRequired;
+    }
+
+    /**
+     * Sets a new performerInformationRequired
+     *
+     * A Flag indicating whether performer
+     *  information is required (=true) or not (=false) when communicating details of the
+     *  SoundRecording.
+     *
+     * @param bool $performerInformationRequired
+     * @return self
+     */
+    public function setPerformerInformationRequired($performerInformationRequired)
+    {
+        $this->performerInformationRequired = $performerInformationRequired;
+        return $this;
+    }
+
+    /**
+     * Gets as languageOfPerformance
+     *
+     * The Language of the Performance recorded
+     *  in the SoundRecording (represented by an ISO 639-2
+     *  LanguageCode).
+     *
+     * @return string
+     */
+    public function getLanguageOfPerformance()
+    {
+        return $this->languageOfPerformance;
+    }
+
+    /**
+     * Sets a new languageOfPerformance
+     *
+     * The Language of the Performance recorded
+     *  in the SoundRecording (represented by an ISO 639-2
+     *  LanguageCode).
+     *
+     * @param string $languageOfPerformance
+     * @return self
+     */
+    public function setLanguageOfPerformance($languageOfPerformance)
+    {
+        $this->languageOfPerformance = $languageOfPerformance;
+        return $this;
+    }
+
+    /**
+     * Gets as duration
+     *
+     * The Duration of the SoundRecording (using
+     *  the ISO 8601:2004 PT[[hhH]mmM]ssS format, where lower case characters indicate
+     *  variables, upper case characters are part of the xs:string, e.g. one hour, two
+     *  minutes and three seconds would be PT1H2M3S). The seconds section ss may include
+     *  fractions (e.g. one minute and 30.5 seconds would be
+     *  PT1M30.5S).
+     *
+     * @return \DateInterval
+     */
+    public function getDuration()
+    {
+        return $this->duration;
+    }
+
+    /**
+     * Sets a new duration
+     *
+     * The Duration of the SoundRecording (using
+     *  the ISO 8601:2004 PT[[hhH]mmM]ssS format, where lower case characters indicate
+     *  variables, upper case characters are part of the xs:string, e.g. one hour, two
+     *  minutes and three seconds would be PT1H2M3S). The seconds section ss may include
+     *  fractions (e.g. one minute and 30.5 seconds would be
+     *  PT1M30.5S).
+     *
+     * @param \DateInterval $duration
+     * @return self
+     */
+    public function setDuration(\DateInterval $duration)
+    {
+        $this->duration = $duration;
+        return $this;
+    }
+
+    /**
+     * Gets as rightsAgreementId
+     *
+     * A Composite containing details of
+     *  Identifiers of a License, Claim, RightShare or contract for the MusicalWork(s)
+     *  used in the SoundRecording.
+     *
+     * @return \DedexBundle\Entity\Ern383\RightsAgreementIdType
+     */
+    public function getRightsAgreementId()
+    {
+        return $this->rightsAgreementId;
+    }
+
+    /**
+     * Sets a new rightsAgreementId
+     *
+     * A Composite containing details of
+     *  Identifiers of a License, Claim, RightShare or contract for the MusicalWork(s)
+     *  used in the SoundRecording.
+     *
+     * @param \DedexBundle\Entity\Ern383\RightsAgreementIdType $rightsAgreementId
+     * @return self
+     */
+    public function setRightsAgreementId(?\DedexBundle\Entity\Ern383\RightsAgreementIdType $rightsAgreementId = null)
+    {
+        $this->rightsAgreementId = $rightsAgreementId;
+        return $this;
+    }
+
+    /**
+     * Gets as soundRecordingCollectionReferenceList
+     *
+     * A Composite containing details of one or
+     *  more Collections. The referenced Collection has to be of CollectionType
+     *  AudioChapter.
+     *
+     * @return \DedexBundle\Entity\Ern383\SoundRecordingCollectionReferenceListType
+     */
+    public function getSoundRecordingCollectionReferenceList()
+    {
+        return $this->soundRecordingCollectionReferenceList;
+    }
+
+    /**
+     * Sets a new soundRecordingCollectionReferenceList
+     *
+     * A Composite containing details of one or
+     *  more Collections. The referenced Collection has to be of CollectionType
+     *  AudioChapter.
+     *
+     * @param \DedexBundle\Entity\Ern383\SoundRecordingCollectionReferenceListType $soundRecordingCollectionReferenceList
+     * @return self
+     */
+    public function setSoundRecordingCollectionReferenceList(?\DedexBundle\Entity\Ern383\SoundRecordingCollectionReferenceListType $soundRecordingCollectionReferenceList = null)
+    {
+        $this->soundRecordingCollectionReferenceList = $soundRecordingCollectionReferenceList;
+        return $this;
+    }
+
+    /**
+     * Adds as resourceMusicalWorkReference
+     *
+     * A Composite containing details of one or
+     *  more MusicalWorks contained in the SoundRecording.
+     *
+     * @return self
+     * @param \DedexBundle\Entity\Ern383\ResourceMusicalWorkReferenceType $resourceMusicalWorkReference
+     */
+    public function addToResourceMusicalWorkReferenceList(\DedexBundle\Entity\Ern383\ResourceMusicalWorkReferenceType $resourceMusicalWorkReference)
+    {
+        $this->resourceMusicalWorkReferenceList[] = $resourceMusicalWorkReference;
+        return $this;
+    }
+
+    /**
+     * isset resourceMusicalWorkReferenceList
+     *
+     * A Composite containing details of one or
+     *  more MusicalWorks contained in the SoundRecording.
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetResourceMusicalWorkReferenceList($index)
+    {
+        return isset($this->resourceMusicalWorkReferenceList[$index]);
+    }
+
+    /**
+     * unset resourceMusicalWorkReferenceList
+     *
+     * A Composite containing details of one or
+     *  more MusicalWorks contained in the SoundRecording.
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetResourceMusicalWorkReferenceList($index)
+    {
+        unset($this->resourceMusicalWorkReferenceList[$index]);
+    }
+
+    /**
+     * Gets as resourceMusicalWorkReferenceList
+     *
+     * A Composite containing details of one or
+     *  more MusicalWorks contained in the SoundRecording.
+     *
+     * @return \DedexBundle\Entity\Ern383\ResourceMusicalWorkReferenceType[]
+     */
+    public function getResourceMusicalWorkReferenceList()
+    {
+        return $this->resourceMusicalWorkReferenceList;
+    }
+
+    /**
+     * Sets a new resourceMusicalWorkReferenceList
+     *
+     * A Composite containing details of one or
+     *  more MusicalWorks contained in the SoundRecording.
+     *
+     * @param \DedexBundle\Entity\Ern383\ResourceMusicalWorkReferenceType[] $resourceMusicalWorkReferenceList
+     * @return self
+     */
+    public function setResourceMusicalWorkReferenceList(array $resourceMusicalWorkReferenceList = null)
+    {
+        $this->resourceMusicalWorkReferenceList = $resourceMusicalWorkReferenceList;
+        return $this;
+    }
+
+    /**
+     * Adds as resourceContainedResourceReference
+     *
+     * A Composite containing details of
+     *  ResourceContainedResourceReferences referring to a Resource that is contained in
+     *  the current SoundRecording.
+     *
+     * @return self
+     * @param \DedexBundle\Entity\Ern383\ResourceContainedResourceReferenceType $resourceContainedResourceReference
+     */
+    public function addToResourceContainedResourceReferenceList(\DedexBundle\Entity\Ern383\ResourceContainedResourceReferenceType $resourceContainedResourceReference)
+    {
+        $this->resourceContainedResourceReferenceList[] = $resourceContainedResourceReference;
+        return $this;
+    }
+
+    /**
+     * isset resourceContainedResourceReferenceList
+     *
+     * A Composite containing details of
+     *  ResourceContainedResourceReferences referring to a Resource that is contained in
+     *  the current SoundRecording.
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetResourceContainedResourceReferenceList($index)
+    {
+        return isset($this->resourceContainedResourceReferenceList[$index]);
+    }
+
+    /**
+     * unset resourceContainedResourceReferenceList
+     *
+     * A Composite containing details of
+     *  ResourceContainedResourceReferences referring to a Resource that is contained in
+     *  the current SoundRecording.
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetResourceContainedResourceReferenceList($index)
+    {
+        unset($this->resourceContainedResourceReferenceList[$index]);
+    }
+
+    /**
+     * Gets as resourceContainedResourceReferenceList
+     *
+     * A Composite containing details of
+     *  ResourceContainedResourceReferences referring to a Resource that is contained in
+     *  the current SoundRecording.
+     *
+     * @return \DedexBundle\Entity\Ern383\ResourceContainedResourceReferenceType[]
+     */
+    public function getResourceContainedResourceReferenceList()
+    {
+        return $this->resourceContainedResourceReferenceList;
+    }
+
+    /**
+     * Sets a new resourceContainedResourceReferenceList
+     *
+     * A Composite containing details of
+     *  ResourceContainedResourceReferences referring to a Resource that is contained in
+     *  the current SoundRecording.
+     *
+     * @param \DedexBundle\Entity\Ern383\ResourceContainedResourceReferenceType[] $resourceContainedResourceReferenceList
+     * @return self
+     */
+    public function setResourceContainedResourceReferenceList(array $resourceContainedResourceReferenceList = null)
+    {
+        $this->resourceContainedResourceReferenceList = $resourceContainedResourceReferenceList;
+        return $this;
+    }
+
+    /**
+     * Gets as creationDate
+     *
+     * A Composite containing details of the Date
+     *  and Place of the Event in which the SoundRecording was created. This is a string
+     *  with the syntax YYYY[-MM[-DD]].
+     *
+     * @return \DedexBundle\Entity\Ern383\EventDateType
+     */
+    public function getCreationDate()
+    {
+        return $this->creationDate;
+    }
+
+    /**
+     * Sets a new creationDate
+     *
+     * A Composite containing details of the Date
+     *  and Place of the Event in which the SoundRecording was created. This is a string
+     *  with the syntax YYYY[-MM[-DD]].
+     *
+     * @param \DedexBundle\Entity\Ern383\EventDateType $creationDate
+     * @return self
+     */
+    public function setCreationDate(?\DedexBundle\Entity\Ern383\EventDateType $creationDate = null)
+    {
+        $this->creationDate = $creationDate;
+        return $this;
+    }
+
+    /**
+     * Gets as masteredDate
+     *
+     * A Composite containing details of the Date
+     *  and Place of the Event in which the SoundRecording was originally mastered (in
+     *  either analogue or digital form). This is a string with the syntax
+     *  YYYY[-MM[-DD]].
+     *
+     * @return \DedexBundle\Entity\Ern383\EventDateType
+     */
+    public function getMasteredDate()
+    {
+        return $this->masteredDate;
+    }
+
+    /**
+     * Sets a new masteredDate
+     *
+     * A Composite containing details of the Date
+     *  and Place of the Event in which the SoundRecording was originally mastered (in
+     *  either analogue or digital form). This is a string with the syntax
+     *  YYYY[-MM[-DD]].
+     *
+     * @param \DedexBundle\Entity\Ern383\EventDateType $masteredDate
+     * @return self
+     */
+    public function setMasteredDate(?\DedexBundle\Entity\Ern383\EventDateType $masteredDate = null)
+    {
+        $this->masteredDate = $masteredDate;
+        return $this;
+    }
+
+    /**
+     * Gets as remasteredDate
+     *
+     * A Composite containing details of the Date
+     *  and Place of the Event in which the SoundRecording was re-mastered (usually
+     *  digitally). This is a string with the syntax YYYY[-MM[-DD]].
+     *
+     * @return \DedexBundle\Entity\Ern383\EventDateType
+     */
+    public function getRemasteredDate()
+    {
+        return $this->remasteredDate;
+    }
+
+    /**
+     * Sets a new remasteredDate
+     *
+     * A Composite containing details of the Date
+     *  and Place of the Event in which the SoundRecording was re-mastered (usually
+     *  digitally). This is a string with the syntax YYYY[-MM[-DD]].
+     *
+     * @param \DedexBundle\Entity\Ern383\EventDateType $remasteredDate
+     * @return self
+     */
+    public function setRemasteredDate(?\DedexBundle\Entity\Ern383\EventDateType $remasteredDate = null)
+    {
+        $this->remasteredDate = $remasteredDate;
+        return $this;
+    }
+
+    /**
+     * Adds as soundRecordingDetailsByTerritory
+     *
+     * A Composite containing details of
+     *  Descriptors and other attributes of the SoundRecording which may vary according to
+     *  Territory.
+     *
+     * @return self
+     * @param \DedexBundle\Entity\Ern383\SoundRecordingDetailsByTerritoryType $soundRecordingDetailsByTerritory
+     */
+    public function addToSoundRecordingDetailsByTerritory(\DedexBundle\Entity\Ern383\SoundRecordingDetailsByTerritoryType $soundRecordingDetailsByTerritory)
+    {
+        $this->soundRecordingDetailsByTerritory[] = $soundRecordingDetailsByTerritory;
+        return $this;
+    }
+
+    /**
+     * isset soundRecordingDetailsByTerritory
+     *
+     * A Composite containing details of
+     *  Descriptors and other attributes of the SoundRecording which may vary according to
+     *  Territory.
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetSoundRecordingDetailsByTerritory($index)
+    {
+        return isset($this->soundRecordingDetailsByTerritory[$index]);
+    }
+
+    /**
+     * unset soundRecordingDetailsByTerritory
+     *
+     * A Composite containing details of
+     *  Descriptors and other attributes of the SoundRecording which may vary according to
+     *  Territory.
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetSoundRecordingDetailsByTerritory($index)
+    {
+        unset($this->soundRecordingDetailsByTerritory[$index]);
+    }
+
+    /**
+     * Gets as soundRecordingDetailsByTerritory
+     *
+     * A Composite containing details of
+     *  Descriptors and other attributes of the SoundRecording which may vary according to
+     *  Territory.
+     *
+     * @return \DedexBundle\Entity\Ern383\SoundRecordingDetailsByTerritoryType[]
+     */
+    public function getSoundRecordingDetailsByTerritory()
+    {
+        return $this->soundRecordingDetailsByTerritory;
+    }
+
+    /**
+     * Sets a new soundRecordingDetailsByTerritory
+     *
+     * A Composite containing details of
+     *  Descriptors and other attributes of the SoundRecording which may vary according to
+     *  Territory.
+     *
+     * @param \DedexBundle\Entity\Ern383\SoundRecordingDetailsByTerritoryType[] $soundRecordingDetailsByTerritory
+     * @return self
+     */
+    public function setSoundRecordingDetailsByTerritory(array $soundRecordingDetailsByTerritory)
+    {
+        $this->soundRecordingDetailsByTerritory = $soundRecordingDetailsByTerritory;
+        return $this;
+    }
+
+    /**
+     * Gets as territoryOfCommissioning
+     *
+     * The country of
+     *  commissioning.
+     *
+     * @return \DedexBundle\Entity\Ern383\AllTerritoryCodeType
+     */
+    public function getTerritoryOfCommissioning()
+    {
+        return $this->territoryOfCommissioning;
+    }
+
+    /**
+     * Sets a new territoryOfCommissioning
+     *
+     * The country of
+     *  commissioning.
+     *
+     * @param \DedexBundle\Entity\Ern383\AllTerritoryCodeType $territoryOfCommissioning
+     * @return self
+     */
+    public function setTerritoryOfCommissioning(?\DedexBundle\Entity\Ern383\AllTerritoryCodeType $territoryOfCommissioning = null)
+    {
+        $this->territoryOfCommissioning = $territoryOfCommissioning;
+        return $this;
+    }
+
+    /**
+     * Gets as numberOfFeaturedArtists
+     *
+     * The number of FeaturedArtists associated
+     *  with the SoundRecording.
+     *
+     * @return int
+     */
+    public function getNumberOfFeaturedArtists()
+    {
+        return $this->numberOfFeaturedArtists;
+    }
+
+    /**
+     * Sets a new numberOfFeaturedArtists
+     *
+     * The number of FeaturedArtists associated
+     *  with the SoundRecording.
+     *
+     * @param int $numberOfFeaturedArtists
+     * @return self
+     */
+    public function setNumberOfFeaturedArtists($numberOfFeaturedArtists)
+    {
+        $this->numberOfFeaturedArtists = $numberOfFeaturedArtists;
+        return $this;
+    }
+
+    /**
+     * Gets as numberOfNonFeaturedArtists
+     *
+     * The number of NonFeaturedArtists
+     *  associated with the SoundRecording.
+     *
+     * @return int
+     */
+    public function getNumberOfNonFeaturedArtists()
+    {
+        return $this->numberOfNonFeaturedArtists;
+    }
+
+    /**
+     * Sets a new numberOfNonFeaturedArtists
+     *
+     * The number of NonFeaturedArtists
+     *  associated with the SoundRecording.
+     *
+     * @param int $numberOfNonFeaturedArtists
+     * @return self
+     */
+    public function setNumberOfNonFeaturedArtists($numberOfNonFeaturedArtists)
+    {
+        $this->numberOfNonFeaturedArtists = $numberOfNonFeaturedArtists;
+        return $this;
+    }
+
+    /**
+     * Gets as numberOfContractedArtists
+     *
+     * The number of ContractedArtists associated
+     *  with the SoundRecording.
+     *
+     * @return int
+     */
+    public function getNumberOfContractedArtists()
+    {
+        return $this->numberOfContractedArtists;
+    }
+
+    /**
+     * Sets a new numberOfContractedArtists
+     *
+     * The number of ContractedArtists associated
+     *  with the SoundRecording.
+     *
+     * @param int $numberOfContractedArtists
+     * @return self
+     */
+    public function setNumberOfContractedArtists($numberOfContractedArtists)
+    {
+        $this->numberOfContractedArtists = $numberOfContractedArtists;
+        return $this;
+    }
+
+    /**
+     * Gets as numberOfNonContractedArtists
+     *
+     * The number of NonContractedArtists
+     *  associated with the SoundRecording.
+     *
+     * @return int
+     */
+    public function getNumberOfNonContractedArtists()
+    {
+        return $this->numberOfNonContractedArtists;
+    }
+
+    /**
+     * Sets a new numberOfNonContractedArtists
+     *
+     * The number of NonContractedArtists
+     *  associated with the SoundRecording.
+     *
+     * @param int $numberOfNonContractedArtists
+     * @return self
+     */
+    public function setNumberOfNonContractedArtists($numberOfNonContractedArtists)
+    {
+        $this->numberOfNonContractedArtists = $numberOfNonContractedArtists;
+        return $this;
+    }
+}
+

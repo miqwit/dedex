@@ -1,0 +1,206 @@
+DedexBundle\Entity\Ern383\DetailedResourceContributorType:
+    properties:
+        sequenceNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumber
+            accessor:
+                getter: getSequenceNumber
+                setter: setSequenceNumber
+            xml_attribute: true
+            type: int
+        partyId:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyId
+            accessor:
+                getter: getPartyId
+                setter: setPartyId
+            xml_list:
+                inline: true
+                entry_name: PartyId
+            type: array<DedexBundle\Entity\Ern383\PartyIdType>
+        partyName:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyName
+            accessor:
+                getter: getPartyName
+                setter: setPartyName
+            xml_list:
+                inline: true
+                entry_name: PartyName
+            type: array<DedexBundle\Entity\Ern383\PartyNameType>
+        resourceContributorRole:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceContributorRole
+            accessor:
+                getter: getResourceContributorRole
+                setter: setResourceContributorRole
+            xml_list:
+                inline: true
+                entry_name: ResourceContributorRole
+            type: array<DedexBundle\Entity\Ern383\ResourceContributorRoleType>
+        isFeaturedArtist:
+            expose: true
+            access_type: public_method
+            serialized_name: IsFeaturedArtist
+            accessor:
+                getter: getIsFeaturedArtist
+                setter: setIsFeaturedArtist
+            type: bool
+        isContractedArtist:
+            expose: true
+            access_type: public_method
+            serialized_name: IsContractedArtist
+            accessor:
+                getter: getIsContractedArtist
+                setter: setIsContractedArtist
+            type: bool
+        instrumentType:
+            expose: true
+            access_type: public_method
+            serialized_name: InstrumentType
+            accessor:
+                getter: getInstrumentType
+                setter: setInstrumentType
+            xml_list:
+                inline: true
+                entry_name: InstrumentType
+            type: array<string>
+        artistDelegatedUsageRights:
+            expose: true
+            access_type: public_method
+            serialized_name: ArtistDelegatedUsageRights
+            accessor:
+                getter: getArtistDelegatedUsageRights
+                setter: setArtistDelegatedUsageRights
+            type: DedexBundle\Entity\Ern383\ArtistDelegatedUsageRightsType
+        sex:
+            expose: true
+            access_type: public_method
+            serialized_name: Sex
+            accessor:
+                getter: getSex
+                setter: setSex
+            type: string
+        nationality:
+            expose: true
+            access_type: public_method
+            serialized_name: Nationality
+            accessor:
+                getter: getNationality
+                setter: setNationality
+            xml_list:
+                inline: true
+                entry_name: Nationality
+            type: array<DedexBundle\Entity\Ern383\AllTerritoryCodeType>
+        dateAndPlaceOfBirth:
+            expose: true
+            access_type: public_method
+            serialized_name: DateAndPlaceOfBirth
+            accessor:
+                getter: getDateAndPlaceOfBirth
+                setter: setDateAndPlaceOfBirth
+            type: DedexBundle\Entity\Ern383\EventDateType
+        dateAndPlaceOfDeath:
+            expose: true
+            access_type: public_method
+            serialized_name: DateAndPlaceOfDeath
+            accessor:
+                getter: getDateAndPlaceOfDeath
+                setter: setDateAndPlaceOfDeath
+            type: DedexBundle\Entity\Ern383\EventDateType
+        primaryRole:
+            expose: true
+            access_type: public_method
+            serialized_name: PrimaryRole
+            accessor:
+                getter: getPrimaryRole
+                setter: setPrimaryRole
+            type: DedexBundle\Entity\Ern383\ArtistRoleType
+        performance:
+            expose: true
+            access_type: public_method
+            serialized_name: Performance
+            accessor:
+                getter: getPerformance
+                setter: setPerformance
+            xml_list:
+                inline: true
+                entry_name: Performance
+            type: array<DedexBundle\Entity\Ern383\PerformanceType>
+        primaryInstrumentType:
+            expose: true
+            access_type: public_method
+            serialized_name: PrimaryInstrumentType
+            accessor:
+                getter: getPrimaryInstrumentType
+                setter: setPrimaryInstrumentType
+            type: string
+        governingAgreementType:
+            expose: true
+            access_type: public_method
+            serialized_name: GoverningAgreementType
+            accessor:
+                getter: getGoverningAgreementType
+                setter: setGoverningAgreementType
+            type: DedexBundle\Entity\Ern383\GoverningAgreementTypeType
+        contactInformation:
+            expose: true
+            access_type: public_method
+            serialized_name: ContactInformation
+            accessor:
+                getter: getContactInformation
+                setter: setContactInformation
+            type: DedexBundle\Entity\Ern383\ContactIdType
+        territoryOfResidency:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryOfResidency
+            accessor:
+                getter: getTerritoryOfResidency
+                setter: setTerritoryOfResidency
+            type: DedexBundle\Entity\Ern383\AllTerritoryCodeType
+        citizenship:
+            expose: true
+            access_type: public_method
+            serialized_name: Citizenship
+            accessor:
+                getter: getCitizenship
+                setter: setCitizenship
+            type: DedexBundle\Entity\Ern383\AllTerritoryCodeType
+        additionalRoles:
+            expose: true
+            access_type: public_method
+            serialized_name: AdditionalRoles
+            accessor:
+                getter: getAdditionalRoles
+                setter: setAdditionalRoles
+            xml_list:
+                inline: true
+                entry_name: AdditionalRoles
+            type: array<DedexBundle\Entity\Ern383\ArtistRoleType>
+        genre:
+            expose: true
+            access_type: public_method
+            serialized_name: Genre
+            accessor:
+                getter: getGenre
+                setter: setGenre
+            xml_list:
+                inline: true
+                entry_name: Genre
+            type: array<DedexBundle\Entity\Ern383\GenreType>
+        membership:
+            expose: true
+            access_type: public_method
+            serialized_name: Membership
+            accessor:
+                getter: getMembership
+                setter: setMembership
+            xml_list:
+                inline: true
+                entry_name: Membership
+            type: array<DedexBundle\Entity\Ern383\MembershipType>

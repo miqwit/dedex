@@ -1,0 +1,133 @@
+DedexBundle\Entity\Ern341\SheetMusicType:
+    properties:
+        isUpdated:
+            expose: true
+            access_type: public_method
+            serialized_name: IsUpdated
+            accessor:
+                getter: getIsUpdated
+                setter: setIsUpdated
+            xml_attribute: true
+            type: bool
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        sheetMusicType:
+            expose: true
+            access_type: public_method
+            serialized_name: SheetMusicType
+            accessor:
+                getter: getSheetMusicType
+                setter: setSheetMusicType
+            type: DedexBundle\Entity\DdexC\SheetMusicTypeType
+        isArtistRelated:
+            expose: true
+            access_type: public_method
+            serialized_name: IsArtistRelated
+            accessor:
+                getter: getIsArtistRelated
+                setter: setIsArtistRelated
+            type: bool
+        sheetMusicId:
+            expose: true
+            access_type: public_method
+            serialized_name: SheetMusicId
+            accessor:
+                getter: getSheetMusicId
+                setter: setSheetMusicId
+            xml_list:
+                inline: true
+                entry_name: SheetMusicId
+            type: array<DedexBundle\Entity\DdexC\SheetMusicIdType>
+        indirectSheetMusicId:
+            expose: true
+            access_type: public_method
+            serialized_name: IndirectSheetMusicId
+            accessor:
+                getter: getIndirectSheetMusicId
+                setter: setIndirectSheetMusicId
+            xml_list:
+                inline: true
+                entry_name: IndirectSheetMusicId
+            type: array<DedexBundle\Entity\DdexC\MusicalWorkIdType>
+        resourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceReference
+            accessor:
+                getter: getResourceReference
+                setter: setResourceReference
+            type: string
+        languageOfLyrics:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageOfLyrics
+            accessor:
+                getter: getLanguageOfLyrics
+                setter: setLanguageOfLyrics
+            type: string
+        rightsAgreementId:
+            expose: true
+            access_type: public_method
+            serialized_name: RightsAgreementId
+            accessor:
+                getter: getRightsAgreementId
+                setter: setRightsAgreementId
+            type: DedexBundle\Entity\DdexC\RightsAgreementIdType
+        resourceMusicalWorkReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceMusicalWorkReferenceList
+            accessor:
+                getter: getResourceMusicalWorkReferenceList
+                setter: setResourceMusicalWorkReferenceList
+            type: array<DedexBundle\Entity\DdexC\ResourceMusicalWorkReferenceType>
+            xml_list:
+                inline: false
+                entry_name: ResourceMusicalWorkReference
+                skip_when_empty: true
+        resourceContainedResourceReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceContainedResourceReferenceList
+            accessor:
+                getter: getResourceContainedResourceReferenceList
+                setter: setResourceContainedResourceReferenceList
+            type: array<DedexBundle\Entity\DdexC\ResourceContainedResourceReferenceType>
+            xml_list:
+                inline: false
+                entry_name: ResourceContainedResourceReference
+                skip_when_empty: true
+        referenceTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: ReferenceTitle
+            accessor:
+                getter: getReferenceTitle
+                setter: setReferenceTitle
+            type: DedexBundle\Entity\DdexC\ReferenceTitleType
+        creationDate:
+            expose: true
+            access_type: public_method
+            serialized_name: CreationDate
+            accessor:
+                getter: getCreationDate
+                setter: setCreationDate
+            type: DedexBundle\Entity\DdexC\EventDateType
+        sheetMusicDetailsByTerritory:
+            expose: true
+            access_type: public_method
+            serialized_name: SheetMusicDetailsByTerritory
+            accessor:
+                getter: getSheetMusicDetailsByTerritory
+                setter: setSheetMusicDetailsByTerritory
+            xml_list:
+                inline: true
+                entry_name: SheetMusicDetailsByTerritory
+            type: array<DedexBundle\Entity\Ern341\SheetMusicDetailsByTerritoryType>

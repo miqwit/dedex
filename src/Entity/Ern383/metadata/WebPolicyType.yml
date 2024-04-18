@@ -1,0 +1,66 @@
+DedexBundle\Entity\Ern383\WebPolicyType:
+    properties:
+        condition:
+            expose: true
+            access_type: public_method
+            serialized_name: Condition
+            accessor:
+                getter: getCondition
+                setter: setCondition
+            type: DedexBundle\Entity\Ern383\ConditionType
+        accessBlockingRequested:
+            expose: true
+            access_type: public_method
+            serialized_name: AccessBlockingRequested
+            accessor:
+                getter: getAccessBlockingRequested
+                setter: setAccessBlockingRequested
+            type: bool
+        accessLimitation:
+            expose: true
+            access_type: public_method
+            serialized_name: AccessLimitation
+            accessor:
+                getter: getAccessLimitation
+                setter: setAccessLimitation
+            type: string
+        embeddingAllowed:
+            expose: true
+            access_type: public_method
+            serialized_name: EmbeddingAllowed
+            accessor:
+                getter: getEmbeddingAllowed
+                setter: setEmbeddingAllowed
+            type: bool
+        userRatingAllowed:
+            expose: true
+            access_type: public_method
+            serialized_name: UserRatingAllowed
+            accessor:
+                getter: getUserRatingAllowed
+                setter: setUserRatingAllowed
+            type: bool
+        userCommentAllowed:
+            expose: true
+            access_type: public_method
+            serialized_name: UserCommentAllowed
+            accessor:
+                getter: getUserCommentAllowed
+                setter: setUserCommentAllowed
+            type: bool
+        userResponsesAllowed:
+            expose: true
+            access_type: public_method
+            serialized_name: UserResponsesAllowed
+            accessor:
+                getter: getUserResponsesAllowed
+                setter: setUserResponsesAllowed
+            type: bool
+        syndicationAllowed:
+            expose: true
+            access_type: public_method
+            serialized_name: SyndicationAllowed
+            accessor:
+                getter: getSyndicationAllowed
+                setter: setSyndicationAllowed
+            type: bool

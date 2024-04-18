@@ -1,0 +1,356 @@
+DedexBundle\Entity\Ern381\VideoType:
+    properties:
+        isUpdated:
+            expose: true
+            access_type: public_method
+            serialized_name: IsUpdated
+            accessor:
+                getter: getIsUpdated
+                setter: setIsUpdated
+            xml_attribute: true
+            type: bool
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        videoType:
+            expose: true
+            access_type: public_method
+            serialized_name: VideoType
+            accessor:
+                getter: getVideoType
+                setter: setVideoType
+            type: DedexBundle\Entity\Ern381\VideoTypeType
+        isArtistRelated:
+            expose: true
+            access_type: public_method
+            serialized_name: IsArtistRelated
+            accessor:
+                getter: getIsArtistRelated
+                setter: setIsArtistRelated
+            type: bool
+        videoId:
+            expose: true
+            access_type: public_method
+            serialized_name: VideoId
+            accessor:
+                getter: getVideoId
+                setter: setVideoId
+            xml_list:
+                inline: true
+                entry_name: VideoId
+            type: array<DedexBundle\Entity\Ern381\VideoIdType>
+        indirectVideoId:
+            expose: true
+            access_type: public_method
+            serialized_name: IndirectVideoId
+            accessor:
+                getter: getIndirectVideoId
+                setter: setIndirectVideoId
+            xml_list:
+                inline: true
+                entry_name: IndirectVideoId
+            type: array<DedexBundle\Entity\Ern381\MusicalWorkIdType>
+        resourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceReference
+            accessor:
+                getter: getResourceReference
+                setter: setResourceReference
+            type: string
+        videoCueSheetReference:
+            expose: true
+            access_type: public_method
+            serialized_name: VideoCueSheetReference
+            accessor:
+                getter: getVideoCueSheetReference
+                setter: setVideoCueSheetReference
+            xml_list:
+                inline: true
+                entry_name: VideoCueSheetReference
+            type: array<DedexBundle\Entity\Ern381\VideoCueSheetReferenceType>
+        reasonForCueSheetAbsence:
+            expose: true
+            access_type: public_method
+            serialized_name: ReasonForCueSheetAbsence
+            accessor:
+                getter: getReasonForCueSheetAbsence
+                setter: setReasonForCueSheetAbsence
+            type: DedexBundle\Entity\Ern381\ReasonType
+        referenceTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: ReferenceTitle
+            accessor:
+                getter: getReferenceTitle
+                setter: setReferenceTitle
+            type: DedexBundle\Entity\Ern381\ReferenceTitleType
+        title:
+            expose: true
+            access_type: public_method
+            serialized_name: Title
+            accessor:
+                getter: getTitle
+                setter: setTitle
+            xml_list:
+                inline: true
+                entry_name: Title
+            type: array<DedexBundle\Entity\Ern381\TitleType>
+        instrumentationDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: InstrumentationDescription
+            accessor:
+                getter: getInstrumentationDescription
+                setter: setInstrumentationDescription
+            type: DedexBundle\Entity\Ern381\DescriptionType
+        isMedley:
+            expose: true
+            access_type: public_method
+            serialized_name: IsMedley
+            accessor:
+                getter: getIsMedley
+                setter: setIsMedley
+            type: bool
+        isPotpourri:
+            expose: true
+            access_type: public_method
+            serialized_name: IsPotpourri
+            accessor:
+                getter: getIsPotpourri
+                setter: setIsPotpourri
+            type: bool
+        isInstrumental:
+            expose: true
+            access_type: public_method
+            serialized_name: IsInstrumental
+            accessor:
+                getter: getIsInstrumental
+                setter: setIsInstrumental
+            type: bool
+        isBackground:
+            expose: true
+            access_type: public_method
+            serialized_name: IsBackground
+            accessor:
+                getter: getIsBackground
+                setter: setIsBackground
+            type: bool
+        isHiddenResource:
+            expose: true
+            access_type: public_method
+            serialized_name: IsHiddenResource
+            accessor:
+                getter: getIsHiddenResource
+                setter: setIsHiddenResource
+            type: bool
+        isBonusResource:
+            expose: true
+            access_type: public_method
+            serialized_name: IsBonusResource
+            accessor:
+                getter: getIsBonusResource
+                setter: setIsBonusResource
+            type: bool
+        hasPreOrderFulfillment:
+            expose: true
+            access_type: public_method
+            serialized_name: HasPreOrderFulfillment
+            accessor:
+                getter: getHasPreOrderFulfillment
+                setter: setHasPreOrderFulfillment
+            type: bool
+        isRemastered:
+            expose: true
+            access_type: public_method
+            serialized_name: IsRemastered
+            accessor:
+                getter: getIsRemastered
+                setter: setIsRemastered
+            type: bool
+        noSilenceBefore:
+            expose: true
+            access_type: public_method
+            serialized_name: NoSilenceBefore
+            accessor:
+                getter: getNoSilenceBefore
+                setter: setNoSilenceBefore
+            type: bool
+        noSilenceAfter:
+            expose: true
+            access_type: public_method
+            serialized_name: NoSilenceAfter
+            accessor:
+                getter: getNoSilenceAfter
+                setter: setNoSilenceAfter
+            type: bool
+        performerInformationRequired:
+            expose: true
+            access_type: public_method
+            serialized_name: PerformerInformationRequired
+            accessor:
+                getter: getPerformerInformationRequired
+                setter: setPerformerInformationRequired
+            type: bool
+        languageOfPerformance:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageOfPerformance
+            accessor:
+                getter: getLanguageOfPerformance
+                setter: setLanguageOfPerformance
+            xml_list:
+                inline: true
+                entry_name: LanguageOfPerformance
+            type: array<string>
+        languageOfDubbing:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageOfDubbing
+            accessor:
+                getter: getLanguageOfDubbing
+                setter: setLanguageOfDubbing
+            xml_list:
+                inline: true
+                entry_name: LanguageOfDubbing
+            type: array<string>
+        subTitleLanguage:
+            expose: true
+            access_type: public_method
+            serialized_name: SubTitleLanguage
+            accessor:
+                getter: getSubTitleLanguage
+                setter: setSubTitleLanguage
+            xml_list:
+                inline: true
+                entry_name: SubTitleLanguage
+            type: array<string>
+        duration:
+            expose: true
+            access_type: public_method
+            serialized_name: Duration
+            accessor:
+                getter: getDuration
+                setter: setDuration
+            type: DateInterval
+        rightsAgreementId:
+            expose: true
+            access_type: public_method
+            serialized_name: RightsAgreementId
+            accessor:
+                getter: getRightsAgreementId
+                setter: setRightsAgreementId
+            type: DedexBundle\Entity\Ern381\RightsAgreementIdType
+        videoCollectionReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: VideoCollectionReferenceList
+            accessor:
+                getter: getVideoCollectionReferenceList
+                setter: setVideoCollectionReferenceList
+            type: DedexBundle\Entity\Ern381\SoundRecordingCollectionReferenceListType
+        resourceMusicalWorkReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceMusicalWorkReferenceList
+            accessor:
+                getter: getResourceMusicalWorkReferenceList
+                setter: setResourceMusicalWorkReferenceList
+            type: array<DedexBundle\Entity\Ern381\ResourceMusicalWorkReferenceType>
+            xml_list:
+                inline: false
+                entry_name: ResourceMusicalWorkReference
+                skip_when_empty: true
+        resourceContainedResourceReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceContainedResourceReferenceList
+            accessor:
+                getter: getResourceContainedResourceReferenceList
+                setter: setResourceContainedResourceReferenceList
+            type: array<DedexBundle\Entity\Ern381\ResourceContainedResourceReferenceType>
+            xml_list:
+                inline: false
+                entry_name: ResourceContainedResourceReference
+                skip_when_empty: true
+        creationDate:
+            expose: true
+            access_type: public_method
+            serialized_name: CreationDate
+            accessor:
+                getter: getCreationDate
+                setter: setCreationDate
+            type: DedexBundle\Entity\Ern381\EventDateType
+        masteredDate:
+            expose: true
+            access_type: public_method
+            serialized_name: MasteredDate
+            accessor:
+                getter: getMasteredDate
+                setter: setMasteredDate
+            type: DedexBundle\Entity\Ern381\EventDateType
+        remasteredDate:
+            expose: true
+            access_type: public_method
+            serialized_name: RemasteredDate
+            accessor:
+                getter: getRemasteredDate
+                setter: setRemasteredDate
+            type: DedexBundle\Entity\Ern381\EventDateType
+        videoDetailsByTerritory:
+            expose: true
+            access_type: public_method
+            serialized_name: VideoDetailsByTerritory
+            accessor:
+                getter: getVideoDetailsByTerritory
+                setter: setVideoDetailsByTerritory
+            xml_list:
+                inline: true
+                entry_name: VideoDetailsByTerritory
+            type: array<DedexBundle\Entity\Ern381\VideoDetailsByTerritoryType>
+        territoryOfCommissioning:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryOfCommissioning
+            accessor:
+                getter: getTerritoryOfCommissioning
+                setter: setTerritoryOfCommissioning
+            type: DedexBundle\Entity\Ern381\AllTerritoryCodeType
+        numberOfFeaturedArtists:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfFeaturedArtists
+            accessor:
+                getter: getNumberOfFeaturedArtists
+                setter: setNumberOfFeaturedArtists
+            type: int
+        numberOfNonFeaturedArtists:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfNonFeaturedArtists
+            accessor:
+                getter: getNumberOfNonFeaturedArtists
+                setter: setNumberOfNonFeaturedArtists
+            type: int
+        numberOfContractedArtists:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfContractedArtists
+            accessor:
+                getter: getNumberOfContractedArtists
+                setter: setNumberOfContractedArtists
+            type: int
+        numberOfNonContractedArtists:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfNonContractedArtists
+            accessor:
+                getter: getNumberOfNonContractedArtists
+                setter: setNumberOfNonContractedArtists
+            type: int

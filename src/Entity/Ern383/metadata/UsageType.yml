@@ -1,0 +1,62 @@
+DedexBundle\Entity\Ern383\UsageType:
+    properties:
+        useType:
+            expose: true
+            access_type: public_method
+            serialized_name: UseType
+            accessor:
+                getter: getUseType
+                setter: setUseType
+            xml_list:
+                inline: true
+                entry_name: UseType
+            type: array<DedexBundle\Entity\Ern383\UseTypeType>
+        userInterfaceType:
+            expose: true
+            access_type: public_method
+            serialized_name: UserInterfaceType
+            accessor:
+                getter: getUserInterfaceType
+                setter: setUserInterfaceType
+            xml_list:
+                inline: true
+                entry_name: UserInterfaceType
+            type: array<DedexBundle\Entity\Ern383\UserInterfaceTypeType>
+        distributionChannelType:
+            expose: true
+            access_type: public_method
+            serialized_name: DistributionChannelType
+            accessor:
+                getter: getDistributionChannelType
+                setter: setDistributionChannelType
+            xml_list:
+                inline: true
+                entry_name: DistributionChannelType
+            type: array<DedexBundle\Entity\Ern383\DistributionChannelTypeType>
+        carrierType:
+            expose: true
+            access_type: public_method
+            serialized_name: CarrierType
+            accessor:
+                getter: getCarrierType
+                setter: setCarrierType
+            xml_list:
+                inline: true
+                entry_name: CarrierType
+            type: array<DedexBundle\Entity\Ern383\CarrierTypeType>
+        technicalInstantiation:
+            expose: true
+            access_type: public_method
+            serialized_name: TechnicalInstantiation
+            accessor:
+                getter: getTechnicalInstantiation
+                setter: setTechnicalInstantiation
+            type: DedexBundle\Entity\Ern383\TechnicalInstantiationType
+        numberOfUsages:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfUsages
+            accessor:
+                getter: getNumberOfUsages
+                setter: setNumberOfUsages
+            type: int

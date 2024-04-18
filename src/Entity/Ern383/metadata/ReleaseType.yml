@@ -1,0 +1,220 @@
+DedexBundle\Entity\Ern383\ReleaseType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        isMainRelease:
+            expose: true
+            access_type: public_method
+            serialized_name: IsMainRelease
+            accessor:
+                getter: getIsMainRelease
+                setter: setIsMainRelease
+            xml_attribute: true
+            type: bool
+        releaseId:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseId
+            accessor:
+                getter: getReleaseId
+                setter: setReleaseId
+            xml_list:
+                inline: true
+                entry_name: ReleaseId
+            type: array<DedexBundle\Entity\Ern383\ReleaseIdType>
+        releaseReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseReference
+            accessor:
+                getter: getReleaseReference
+                setter: setReleaseReference
+            xml_list:
+                inline: true
+                entry_name: ReleaseReference
+            type: array<string>
+        externalResourceLink:
+            expose: true
+            access_type: public_method
+            serialized_name: ExternalResourceLink
+            accessor:
+                getter: getExternalResourceLink
+                setter: setExternalResourceLink
+            xml_list:
+                inline: true
+                entry_name: ExternalResourceLink
+            type: array<DedexBundle\Entity\Ern383\ExternalResourceLinkType>
+        salesReportingProxyReleaseId:
+            expose: true
+            access_type: public_method
+            serialized_name: SalesReportingProxyReleaseId
+            accessor:
+                getter: getSalesReportingProxyReleaseId
+                setter: setSalesReportingProxyReleaseId
+            xml_list:
+                inline: true
+                entry_name: SalesReportingProxyReleaseId
+            type: array<DedexBundle\Entity\Ern383\SalesReportingProxyReleaseIdType>
+        referenceTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: ReferenceTitle
+            accessor:
+                getter: getReferenceTitle
+                setter: setReferenceTitle
+            type: DedexBundle\Entity\Ern383\ReferenceTitleType
+        releaseResourceReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseResourceReferenceList
+            accessor:
+                getter: getReleaseResourceReferenceList
+                setter: setReleaseResourceReferenceList
+            type: array<DedexBundle\Entity\Ern383\ReleaseResourceReferenceType>
+            xml_list:
+                inline: false
+                entry_name: ReleaseResourceReference
+                skip_when_empty: true
+        resourceOmissionReason:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceOmissionReason
+            accessor:
+                getter: getResourceOmissionReason
+                setter: setResourceOmissionReason
+            type: DedexBundle\Entity\Ern383\ResourceOmissionReasonType
+        releaseCollectionReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseCollectionReferenceList
+            accessor:
+                getter: getReleaseCollectionReferenceList
+                setter: setReleaseCollectionReferenceList
+            type: DedexBundle\Entity\Ern383\ReleaseCollectionReferenceListType
+        releaseType:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseType
+            accessor:
+                getter: getReleaseType
+                setter: setReleaseType
+            xml_list:
+                inline: true
+                entry_name: ReleaseType
+            type: array<DedexBundle\Entity\Ern383\ReleaseTypeType>
+        releaseDetailsByTerritory:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseDetailsByTerritory
+            accessor:
+                getter: getReleaseDetailsByTerritory
+                setter: setReleaseDetailsByTerritory
+            xml_list:
+                inline: true
+                entry_name: ReleaseDetailsByTerritory
+            type: array<DedexBundle\Entity\Ern383\ReleaseDetailsByTerritoryType>
+        languageOfPerformance:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageOfPerformance
+            accessor:
+                getter: getLanguageOfPerformance
+                setter: setLanguageOfPerformance
+            xml_list:
+                inline: true
+                entry_name: LanguageOfPerformance
+            type: array<string>
+        languageOfDubbing:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageOfDubbing
+            accessor:
+                getter: getLanguageOfDubbing
+                setter: setLanguageOfDubbing
+            xml_list:
+                inline: true
+                entry_name: LanguageOfDubbing
+            type: array<string>
+        subTitleLanguage:
+            expose: true
+            access_type: public_method
+            serialized_name: SubTitleLanguage
+            accessor:
+                getter: getSubTitleLanguage
+                setter: setSubTitleLanguage
+            xml_list:
+                inline: true
+                entry_name: SubTitleLanguage
+            type: array<string>
+        duration:
+            expose: true
+            access_type: public_method
+            serialized_name: Duration
+            accessor:
+                getter: getDuration
+                setter: setDuration
+            type: DateInterval
+        rightsAgreementId:
+            expose: true
+            access_type: public_method
+            serialized_name: RightsAgreementId
+            accessor:
+                getter: getRightsAgreementId
+                setter: setRightsAgreementId
+            type: DedexBundle\Entity\Ern383\RightsAgreementIdType
+        pLine:
+            expose: true
+            access_type: public_method
+            serialized_name: PLine
+            accessor:
+                getter: getPLine
+                setter: setPLine
+            xml_list:
+                inline: true
+                entry_name: PLine
+            type: array<DedexBundle\Entity\Ern383\PLineType>
+        cLine:
+            expose: true
+            access_type: public_method
+            serialized_name: CLine
+            accessor:
+                getter: getCLine
+                setter: setCLine
+            xml_list:
+                inline: true
+                entry_name: CLine
+            type: array<DedexBundle\Entity\Ern383\CLineType>
+        artistProfilePage:
+            expose: true
+            access_type: public_method
+            serialized_name: ArtistProfilePage
+            accessor:
+                getter: getArtistProfilePage
+                setter: setArtistProfilePage
+            xml_list:
+                inline: true
+                entry_name: ArtistProfilePage
+            type: array<DedexBundle\Entity\Ern383\WebPageType>
+        globalReleaseDate:
+            expose: true
+            access_type: public_method
+            serialized_name: GlobalReleaseDate
+            accessor:
+                getter: getGlobalReleaseDate
+                setter: setGlobalReleaseDate
+            type: DedexBundle\Entity\Ern383\EventDateType
+        globalOriginalReleaseDate:
+            expose: true
+            access_type: public_method
+            serialized_name: GlobalOriginalReleaseDate
+            accessor:
+                getter: getGlobalOriginalReleaseDate
+                setter: setGlobalOriginalReleaseDate
+            type: DedexBundle\Entity\Ern383\EventDateType

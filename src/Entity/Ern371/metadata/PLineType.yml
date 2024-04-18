@@ -1,0 +1,44 @@
+DedexBundle\Entity\Ern371\PLineType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        pLineType:
+            expose: true
+            access_type: public_method
+            serialized_name: PLineType
+            accessor:
+                getter: getPLineType
+                setter: setPLineType
+            xml_attribute: true
+            type: string
+        year:
+            expose: true
+            access_type: public_method
+            serialized_name: Year
+            accessor:
+                getter: getYear
+                setter: setYear
+            type: int
+        pLineCompany:
+            expose: true
+            access_type: public_method
+            serialized_name: PLineCompany
+            accessor:
+                getter: getPLineCompany
+                setter: setPLineCompany
+            type: string
+        pLineText:
+            expose: true
+            access_type: public_method
+            serialized_name: PLineText
+            accessor:
+                getter: getPLineText
+                setter: setPLineText
+            type: string

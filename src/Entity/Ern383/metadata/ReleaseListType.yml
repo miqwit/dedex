@@ -1,0 +1,22 @@
+DedexBundle\Entity\Ern383\ReleaseListType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        release:
+            expose: true
+            access_type: public_method
+            serialized_name: Release
+            accessor:
+                getter: getRelease
+                setter: setRelease
+            xml_list:
+                inline: true
+                entry_name: Release
+            type: array<DedexBundle\Entity\Ern383\ReleaseType>

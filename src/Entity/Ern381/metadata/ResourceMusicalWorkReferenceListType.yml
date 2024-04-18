@@ -1,0 +1,13 @@
+DedexBundle\Entity\Ern381\ResourceMusicalWorkReferenceListType:
+    properties:
+        resourceMusicalWorkReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceMusicalWorkReference
+            accessor:
+                getter: getResourceMusicalWorkReference
+                setter: setResourceMusicalWorkReference
+            xml_list:
+                inline: true
+                entry_name: ResourceMusicalWorkReference
+            type: array<DedexBundle\Entity\Ern381\ResourceMusicalWorkReferenceType>

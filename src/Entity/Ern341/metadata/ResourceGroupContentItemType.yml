@@ -1,0 +1,88 @@
+DedexBundle\Entity\Ern341\ResourceGroupContentItemType:
+    properties:
+        sequenceNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumber
+            accessor:
+                getter: getSequenceNumber
+                setter: setSequenceNumber
+            type: int
+        sequenceSubNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceSubNumber
+            accessor:
+                getter: getSequenceSubNumber
+                setter: setSequenceSubNumber
+            type: int
+        resourceType:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceType
+            accessor:
+                getter: getResourceType
+                setter: setResourceType
+            xml_list:
+                inline: true
+                entry_name: ResourceType
+            type: array<DedexBundle\Entity\DdexC\ResourceTypeType>
+        releaseResourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseResourceReference
+            accessor:
+                getter: getReleaseResourceReference
+                setter: setReleaseResourceReference
+            type: DedexBundle\Entity\DdexC\ReleaseResourceReferenceType
+        linkedReleaseResourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: LinkedReleaseResourceReference
+            accessor:
+                getter: getLinkedReleaseResourceReference
+                setter: setLinkedReleaseResourceReference
+            xml_list:
+                inline: true
+                entry_name: LinkedReleaseResourceReference
+            type: array<DedexBundle\Entity\DdexC\LinkedReleaseResourceReferenceType>
+        resourceGroupContentItemReleaseReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceGroupContentItemReleaseReference
+            accessor:
+                getter: getResourceGroupContentItemReleaseReference
+                setter: setResourceGroupContentItemReleaseReference
+            type: string
+        releaseId:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseId
+            accessor:
+                getter: getReleaseId
+                setter: setReleaseId
+            type: DedexBundle\Entity\DdexC\ReleaseIdType
+        duration:
+            expose: true
+            access_type: public_method
+            serialized_name: Duration
+            accessor:
+                getter: getDuration
+                setter: setDuration
+            type: DateInterval
+        isHiddenResource:
+            expose: true
+            access_type: public_method
+            serialized_name: IsHiddenResource
+            accessor:
+                getter: getIsHiddenResource
+                setter: setIsHiddenResource
+            type: bool
+        isBonusResource:
+            expose: true
+            access_type: public_method
+            serialized_name: IsBonusResource
+            accessor:
+                getter: getIsBonusResource
+                setter: setIsBonusResource
+            type: bool

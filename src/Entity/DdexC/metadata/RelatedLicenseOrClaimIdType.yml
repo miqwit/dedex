@@ -1,0 +1,18 @@
+DedexBundle\Entity\DdexC\RelatedLicenseOrClaimIdType:
+    properties:
+        licenseOrClaimId:
+            expose: true
+            access_type: public_method
+            serialized_name: LicenseOrClaimId
+            accessor:
+                getter: getLicenseOrClaimId
+                setter: setLicenseOrClaimId
+            type: DedexBundle\Entity\DdexC\RightsAgreementIdType
+        licenseOrClaimUpdateReason:
+            expose: true
+            access_type: public_method
+            serialized_name: LicenseOrClaimUpdateReason
+            accessor:
+                getter: getLicenseOrClaimUpdateReason
+                setter: setLicenseOrClaimUpdateReason
+            type: DedexBundle\Entity\DdexC\LicenseOrClaimUpdateReasonType

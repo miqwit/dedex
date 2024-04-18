@@ -1,0 +1,21 @@
+DedexBundle\Entity\DdexC\ReleaseCollectionReferenceListType:
+    properties:
+        numberOfCollections:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfCollections
+            accessor:
+                getter: getNumberOfCollections
+                setter: setNumberOfCollections
+            type: int
+        releaseCollectionReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseCollectionReference
+            accessor:
+                getter: getReleaseCollectionReference
+                setter: setReleaseCollectionReference
+            xml_list:
+                inline: true
+                entry_name: ReleaseCollectionReference
+            type: array<DedexBundle\Entity\DdexC\ReleaseCollectionReferenceType>

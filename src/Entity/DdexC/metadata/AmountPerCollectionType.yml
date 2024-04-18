@@ -1,0 +1,18 @@
+DedexBundle\Entity\DdexC\AmountPerCollectionType:
+    properties:
+        amount:
+            expose: true
+            access_type: public_method
+            serialized_name: Amount
+            accessor:
+                getter: getAmount
+                setter: setAmount
+            type: float
+        collectionType:
+            expose: true
+            access_type: public_method
+            serialized_name: CollectionType
+            accessor:
+                getter: getCollectionType
+                setter: setCollectionType
+            type: DedexBundle\Entity\DdexC\CollectionTypeType

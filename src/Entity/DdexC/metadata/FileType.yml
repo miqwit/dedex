@@ -1,0 +1,34 @@
+DedexBundle\Entity\DdexC\FileType:
+    properties:
+        fileName:
+            expose: true
+            access_type: public_method
+            serialized_name: FileName
+            accessor:
+                getter: getFileName
+                setter: setFileName
+            type: string
+        filePath:
+            expose: true
+            access_type: public_method
+            serialized_name: FilePath
+            accessor:
+                getter: getFilePath
+                setter: setFilePath
+            type: string
+        uRL:
+            expose: true
+            access_type: public_method
+            serialized_name: URL
+            accessor:
+                getter: getURL
+                setter: setURL
+            type: string
+        hashSum:
+            expose: true
+            access_type: public_method
+            serialized_name: HashSum
+            accessor:
+                getter: getHashSum
+                setter: setHashSum
+            type: DedexBundle\Entity\DdexC\HashSumType

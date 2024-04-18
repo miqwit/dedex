@@ -1,0 +1,18 @@
+DedexBundle\Entity\Ern371\CueCreationReferenceType:
+    properties:
+        cueWorkReference:
+            expose: true
+            access_type: public_method
+            serialized_name: CueWorkReference
+            accessor:
+                getter: getCueWorkReference
+                setter: setCueWorkReference
+            type: string
+        cueResourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: CueResourceReference
+            accessor:
+                getter: getCueResourceReference
+                setter: setCueResourceReference
+            type: string

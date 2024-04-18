@@ -1,0 +1,68 @@
+DedexBundle\Entity\Ern371\CatalogTransferType:
+    properties:
+        catalogTransferCompleted:
+            expose: true
+            access_type: public_method
+            serialized_name: CatalogTransferCompleted
+            accessor:
+                getter: getCatalogTransferCompleted
+                setter: setCatalogTransferCompleted
+            type: bool
+        effectiveTransferDate:
+            expose: true
+            access_type: public_method
+            serialized_name: EffectiveTransferDate
+            accessor:
+                getter: getEffectiveTransferDate
+                setter: setEffectiveTransferDate
+            type: DedexBundle\Entity\Ern371\EventDateType
+        catalogReleaseReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: CatalogReleaseReferenceList
+            accessor:
+                getter: getCatalogReleaseReferenceList
+                setter: setCatalogReleaseReferenceList
+            type: array<string>
+            xml_list:
+                inline: false
+                entry_name: CatalogReleaseReference
+                skip_when_empty: false
+        territoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryCode
+            accessor:
+                getter: getTerritoryCode
+                setter: setTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: TerritoryCode
+            type: array<DedexBundle\Entity\Ern371\AllTerritoryCodeType>
+        excludedTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ExcludedTerritoryCode
+            accessor:
+                getter: getExcludedTerritoryCode
+                setter: setExcludedTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: ExcludedTerritoryCode
+            type: array<DedexBundle\Entity\Ern371\AllTerritoryCodeType>
+        transferringFrom:
+            expose: true
+            access_type: public_method
+            serialized_name: TransferringFrom
+            accessor:
+                getter: getTransferringFrom
+                setter: setTransferringFrom
+            type: DedexBundle\Entity\Ern371\PartyDescriptorType
+        transferringTo:
+            expose: true
+            access_type: public_method
+            serialized_name: TransferringTo
+            accessor:
+                getter: getTransferringTo
+                setter: setTransferringTo
+            type: DedexBundle\Entity\Ern371\PartyDescriptorType

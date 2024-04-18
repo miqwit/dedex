@@ -1,0 +1,34 @@
+DedexBundle\Entity\Ern381\MembershipType:
+    properties:
+        organization:
+            expose: true
+            access_type: public_method
+            serialized_name: Organization
+            accessor:
+                getter: getOrganization
+                setter: setOrganization
+            type: DedexBundle\Entity\Ern381\PartyDescriptorType
+        membershipType:
+            expose: true
+            access_type: public_method
+            serialized_name: MembershipType
+            accessor:
+                getter: getMembershipType
+                setter: setMembershipType
+            type: string
+        startDate:
+            expose: true
+            access_type: public_method
+            serialized_name: StartDate
+            accessor:
+                getter: getStartDate
+                setter: setStartDate
+            type: string
+        endDate:
+            expose: true
+            access_type: public_method
+            serialized_name: EndDate
+            accessor:
+                getter: getEndDate
+                setter: setEndDate
+            type: string

@@ -1,0 +1,34 @@
+DedexBundle\Entity\DdexC\ResourceContainedResourceReferenceType:
+    properties:
+        resourceContainedResourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceContainedResourceReference
+            accessor:
+                getter: getResourceContainedResourceReference
+                setter: setResourceContainedResourceReference
+            type: string
+        durationUsed:
+            expose: true
+            access_type: public_method
+            serialized_name: DurationUsed
+            accessor:
+                getter: getDurationUsed
+                setter: setDurationUsed
+            type: DateInterval
+        startPoint:
+            expose: true
+            access_type: public_method
+            serialized_name: StartPoint
+            accessor:
+                getter: getStartPoint
+                setter: setStartPoint
+            type: float
+        purpose:
+            expose: true
+            access_type: public_method
+            serialized_name: Purpose
+            accessor:
+                getter: getPurpose
+                setter: setPurpose
+            type: DedexBundle\Entity\DdexC\PurposeType

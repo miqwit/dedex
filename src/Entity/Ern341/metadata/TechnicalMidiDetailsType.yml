@@ -1,0 +1,124 @@
+DedexBundle\Entity\Ern341\TechnicalMidiDetailsType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        technicalResourceDetailsReference:
+            expose: true
+            access_type: public_method
+            serialized_name: TechnicalResourceDetailsReference
+            accessor:
+                getter: getTechnicalResourceDetailsReference
+                setter: setTechnicalResourceDetailsReference
+            type: string
+        duration:
+            expose: true
+            access_type: public_method
+            serialized_name: Duration
+            accessor:
+                getter: getDuration
+                setter: setDuration
+            type: DateInterval
+        resourceProcessingRequired:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceProcessingRequired
+            accessor:
+                getter: getResourceProcessingRequired
+                setter: setResourceProcessingRequired
+            type: bool
+        usableResourceDuration:
+            expose: true
+            access_type: public_method
+            serialized_name: UsableResourceDuration
+            accessor:
+                getter: getUsableResourceDuration
+                setter: setUsableResourceDuration
+            type: DateInterval
+        isPreview:
+            expose: true
+            access_type: public_method
+            serialized_name: IsPreview
+            accessor:
+                getter: getIsPreview
+                setter: setIsPreview
+            type: bool
+        previewDetails:
+            expose: true
+            access_type: public_method
+            serialized_name: PreviewDetails
+            accessor:
+                getter: getPreviewDetails
+                setter: setPreviewDetails
+            type: DedexBundle\Entity\Ern341\SoundRecordingPreviewDetailsType
+        fulfillmentDate:
+            expose: true
+            access_type: public_method
+            serialized_name: FulfillmentDate
+            accessor:
+                getter: getFulfillmentDate
+                setter: setFulfillmentDate
+            type: DedexBundle\Entity\DdexC\FulfillmentDateType
+        consumerFulfillmentDate:
+            expose: true
+            access_type: public_method
+            serialized_name: ConsumerFulfillmentDate
+            accessor:
+                getter: getConsumerFulfillmentDate
+                setter: setConsumerFulfillmentDate
+            type: DedexBundle\Entity\DdexC\FulfillmentDateType
+        fileAvailabilityDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: FileAvailabilityDescription
+            accessor:
+                getter: getFileAvailabilityDescription
+                setter: setFileAvailabilityDescription
+            xml_list:
+                inline: true
+                entry_name: FileAvailabilityDescription
+            type: array<DedexBundle\Entity\DdexC\DescriptionType>
+        file:
+            expose: true
+            access_type: public_method
+            serialized_name: File
+            accessor:
+                getter: getFile
+                setter: setFile
+            xml_list:
+                inline: true
+                entry_name: File
+            type: array<DedexBundle\Entity\DdexC\FileType>
+        numberOfVoices:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfVoices
+            accessor:
+                getter: getNumberOfVoices
+                setter: setNumberOfVoices
+            type: int
+        soundProcessorType:
+            expose: true
+            access_type: public_method
+            serialized_name: SoundProcessorType
+            accessor:
+                getter: getSoundProcessorType
+                setter: setSoundProcessorType
+            type: DedexBundle\Entity\DdexC\SoundProcessorTypeType
+        fingerprint:
+            expose: true
+            access_type: public_method
+            serialized_name: Fingerprint
+            accessor:
+                getter: getFingerprint
+                setter: setFingerprint
+            xml_list:
+                inline: true
+                entry_name: Fingerprint
+            type: array<DedexBundle\Entity\DdexC\FingerprintType>

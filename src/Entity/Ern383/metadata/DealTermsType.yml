@@ -1,0 +1,308 @@
+DedexBundle\Entity\Ern383\DealTermsType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        isPreOrderDeal:
+            expose: true
+            access_type: public_method
+            serialized_name: IsPreOrderDeal
+            accessor:
+                getter: getIsPreOrderDeal
+                setter: setIsPreOrderDeal
+            type: bool
+        commercialModelType:
+            expose: true
+            access_type: public_method
+            serialized_name: CommercialModelType
+            accessor:
+                getter: getCommercialModelType
+                setter: setCommercialModelType
+            xml_list:
+                inline: true
+                entry_name: CommercialModelType
+            type: array<DedexBundle\Entity\Ern383\CommercialModelTypeType>
+        usage:
+            expose: true
+            access_type: public_method
+            serialized_name: Usage
+            accessor:
+                getter: getUsage
+                setter: setUsage
+            xml_list:
+                inline: true
+                entry_name: Usage
+            type: array<DedexBundle\Entity\Ern383\UsageType>
+        allDealsCancelled:
+            expose: true
+            access_type: public_method
+            serialized_name: AllDealsCancelled
+            accessor:
+                getter: getAllDealsCancelled
+                setter: setAllDealsCancelled
+            type: bool
+        takeDown:
+            expose: true
+            access_type: public_method
+            serialized_name: TakeDown
+            accessor:
+                getter: getTakeDown
+                setter: setTakeDown
+            type: bool
+        territoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryCode
+            accessor:
+                getter: getTerritoryCode
+                setter: setTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: TerritoryCode
+            type: array<DedexBundle\Entity\Ern383\CurrentTerritoryCodeType>
+        excludedTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ExcludedTerritoryCode
+            accessor:
+                getter: getExcludedTerritoryCode
+                setter: setExcludedTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: ExcludedTerritoryCode
+            type: array<DedexBundle\Entity\Ern383\CurrentTerritoryCodeType>
+        distributionChannel:
+            expose: true
+            access_type: public_method
+            serialized_name: DistributionChannel
+            accessor:
+                getter: getDistributionChannel
+                setter: setDistributionChannel
+            xml_list:
+                inline: true
+                entry_name: DistributionChannel
+            type: array<DedexBundle\Entity\Ern383\DSPType>
+        excludedDistributionChannel:
+            expose: true
+            access_type: public_method
+            serialized_name: ExcludedDistributionChannel
+            accessor:
+                getter: getExcludedDistributionChannel
+                setter: setExcludedDistributionChannel
+            xml_list:
+                inline: true
+                entry_name: ExcludedDistributionChannel
+            type: array<DedexBundle\Entity\Ern383\DSPType>
+        priceInformation:
+            expose: true
+            access_type: public_method
+            serialized_name: PriceInformation
+            accessor:
+                getter: getPriceInformation
+                setter: setPriceInformation
+            xml_list:
+                inline: true
+                entry_name: PriceInformation
+            type: array<DedexBundle\Entity\Ern383\PriceInformationType>
+        isPromotional:
+            expose: true
+            access_type: public_method
+            serialized_name: IsPromotional
+            accessor:
+                getter: getIsPromotional
+                setter: setIsPromotional
+            type: bool
+        promotionalCode:
+            expose: true
+            access_type: public_method
+            serialized_name: PromotionalCode
+            accessor:
+                getter: getPromotionalCode
+                setter: setPromotionalCode
+            type: DedexBundle\Entity\Ern383\PromotionalCodeType
+        validityPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: ValidityPeriod
+            accessor:
+                getter: getValidityPeriod
+                setter: setValidityPeriod
+            xml_list:
+                inline: true
+                entry_name: ValidityPeriod
+            type: array<DedexBundle\Entity\Ern383\PeriodType>
+        consumerRentalPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: ConsumerRentalPeriod
+            accessor:
+                getter: getConsumerRentalPeriod
+                setter: setConsumerRentalPeriod
+            type: DedexBundle\Entity\Ern383\ConsumerRentalPeriodType
+        preOrderReleaseDate:
+            expose: true
+            access_type: public_method
+            serialized_name: PreOrderReleaseDate
+            accessor:
+                getter: getPreOrderReleaseDate
+                setter: setPreOrderReleaseDate
+            type: DedexBundle\Entity\Ern383\EventDateType
+        releaseDisplayStartDate:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseDisplayStartDate
+            accessor:
+                getter: getReleaseDisplayStartDate
+                setter: setReleaseDisplayStartDate
+            type: string
+        trackListingPreviewStartDate:
+            expose: true
+            access_type: public_method
+            serialized_name: TrackListingPreviewStartDate
+            accessor:
+                getter: getTrackListingPreviewStartDate
+                setter: setTrackListingPreviewStartDate
+            type: string
+        coverArtPreviewStartDate:
+            expose: true
+            access_type: public_method
+            serialized_name: CoverArtPreviewStartDate
+            accessor:
+                getter: getCoverArtPreviewStartDate
+                setter: setCoverArtPreviewStartDate
+            type: string
+        clipPreviewStartDate:
+            expose: true
+            access_type: public_method
+            serialized_name: ClipPreviewStartDate
+            accessor:
+                getter: getClipPreviewStartDate
+                setter: setClipPreviewStartDate
+            type: string
+        releaseDisplayStartDateTime:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseDisplayStartDateTime
+            accessor:
+                getter: getReleaseDisplayStartDateTime
+                setter: setReleaseDisplayStartDateTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        trackListingPreviewStartDateTime:
+            expose: true
+            access_type: public_method
+            serialized_name: TrackListingPreviewStartDateTime
+            accessor:
+                getter: getTrackListingPreviewStartDateTime
+                setter: setTrackListingPreviewStartDateTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        coverArtPreviewStartDateTime:
+            expose: true
+            access_type: public_method
+            serialized_name: CoverArtPreviewStartDateTime
+            accessor:
+                getter: getCoverArtPreviewStartDateTime
+                setter: setCoverArtPreviewStartDateTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        clipPreviewStartDateTime:
+            expose: true
+            access_type: public_method
+            serialized_name: ClipPreviewStartDateTime
+            accessor:
+                getter: getClipPreviewStartDateTime
+                setter: setClipPreviewStartDateTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        preOrderPreviewDate:
+            expose: true
+            access_type: public_method
+            serialized_name: PreOrderPreviewDate
+            accessor:
+                getter: getPreOrderPreviewDate
+                setter: setPreOrderPreviewDate
+            type: DedexBundle\Entity\Ern383\EventDateType
+        preOrderPreviewDateTime:
+            expose: true
+            access_type: public_method
+            serialized_name: PreOrderPreviewDateTime
+            accessor:
+                getter: getPreOrderPreviewDateTime
+                setter: setPreOrderPreviewDateTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        preOrderIncentiveResourceList:
+            expose: true
+            access_type: public_method
+            serialized_name: PreOrderIncentiveResourceList
+            accessor:
+                getter: getPreOrderIncentiveResourceList
+                setter: setPreOrderIncentiveResourceList
+            type: DedexBundle\Entity\Ern383\DealResourceReferenceListType
+        instantGratificationResourceList:
+            expose: true
+            access_type: public_method
+            serialized_name: InstantGratificationResourceList
+            accessor:
+                getter: getInstantGratificationResourceList
+                setter: setInstantGratificationResourceList
+            type: DedexBundle\Entity\Ern383\DealResourceReferenceListType
+        isExclusive:
+            expose: true
+            access_type: public_method
+            serialized_name: IsExclusive
+            accessor:
+                getter: getIsExclusive
+                setter: setIsExclusive
+            type: bool
+        relatedReleaseOfferSet:
+            expose: true
+            access_type: public_method
+            serialized_name: RelatedReleaseOfferSet
+            accessor:
+                getter: getRelatedReleaseOfferSet
+                setter: setRelatedReleaseOfferSet
+            xml_list:
+                inline: true
+                entry_name: RelatedReleaseOfferSet
+            type: array<DedexBundle\Entity\Ern383\RelatedReleaseOfferSetType>
+        physicalReturns:
+            expose: true
+            access_type: public_method
+            serialized_name: PhysicalReturns
+            accessor:
+                getter: getPhysicalReturns
+                setter: setPhysicalReturns
+            type: DedexBundle\Entity\Ern383\PhysicalReturnsType
+        numberOfProductsPerCarton:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfProductsPerCarton
+            accessor:
+                getter: getNumberOfProductsPerCarton
+                setter: setNumberOfProductsPerCarton
+            type: int
+        rightsClaimPolicy:
+            expose: true
+            access_type: public_method
+            serialized_name: RightsClaimPolicy
+            accessor:
+                getter: getRightsClaimPolicy
+                setter: setRightsClaimPolicy
+            xml_list:
+                inline: true
+                entry_name: RightsClaimPolicy
+            type: array<DedexBundle\Entity\Ern383\RightsClaimPolicyType>
+        webPolicy:
+            expose: true
+            access_type: public_method
+            serialized_name: WebPolicy
+            accessor:
+                getter: getWebPolicy
+                setter: setWebPolicy
+            xml_list:
+                inline: true
+                entry_name: WebPolicy
+            type: array<DedexBundle\Entity\Ern383\WebPolicyType>

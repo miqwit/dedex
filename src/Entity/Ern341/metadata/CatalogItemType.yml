@@ -1,0 +1,111 @@
+DedexBundle\Entity\Ern341\CatalogItemType:
+    properties:
+        territoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryCode
+            accessor:
+                getter: getTerritoryCode
+                setter: setTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: TerritoryCode
+            type: array<string>
+        releaseId:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseId
+            accessor:
+                getter: getReleaseId
+                setter: setReleaseId
+            xml_list:
+                inline: true
+                entry_name: ReleaseId
+            type: array<DedexBundle\Entity\DdexC\ReleaseIdType>
+        title:
+            expose: true
+            access_type: public_method
+            serialized_name: Title
+            accessor:
+                getter: getTitle
+                setter: setTitle
+            type: DedexBundle\Entity\DdexC\TitleType
+        displayArtistName:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayArtistName
+            accessor:
+                getter: getDisplayArtistName
+                setter: setDisplayArtistName
+            type: DedexBundle\Entity\DdexC\NameType
+        contributorName:
+            expose: true
+            access_type: public_method
+            serialized_name: ContributorName
+            accessor:
+                getter: getContributorName
+                setter: setContributorName
+            xml_list:
+                inline: true
+                entry_name: ContributorName
+            type: array<DedexBundle\Entity\DdexC\NameType>
+        displayTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayTitle
+            accessor:
+                getter: getDisplayTitle
+                setter: setDisplayTitle
+            type: DedexBundle\Entity\DdexC\ReferenceTitleType
+        labelName:
+            expose: true
+            access_type: public_method
+            serialized_name: LabelName
+            accessor:
+                getter: getLabelName
+                setter: setLabelName
+            xml_list:
+                inline: true
+                entry_name: LabelName
+            type: array<DedexBundle\Entity\DdexC\LabelNameType>
+        genre:
+            expose: true
+            access_type: public_method
+            serialized_name: Genre
+            accessor:
+                getter: getGenre
+                setter: setGenre
+            xml_list:
+                inline: true
+                entry_name: Genre
+            type: array<DedexBundle\Entity\DdexC\GenreType>
+        pLine:
+            expose: true
+            access_type: public_method
+            serialized_name: PLine
+            accessor:
+                getter: getPLine
+                setter: setPLine
+            xml_list:
+                inline: true
+                entry_name: PLine
+            type: array<DedexBundle\Entity\DdexC\PLineType>
+        cLine:
+            expose: true
+            access_type: public_method
+            serialized_name: CLine
+            accessor:
+                getter: getCLine
+                setter: setCLine
+            xml_list:
+                inline: true
+                entry_name: CLine
+            type: array<DedexBundle\Entity\DdexC\CLineType>
+        releaseDate:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseDate
+            accessor:
+                getter: getReleaseDate
+                setter: setReleaseDate
+            type: DedexBundle\Entity\DdexC\EventDateType

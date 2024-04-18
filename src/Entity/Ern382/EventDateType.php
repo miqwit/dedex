@@ -9,7 +9,7 @@ namespace DedexBundle\Entity\Ern382;
  *  Place of an Event.
  * XSD Type: EventDate
  */
-class EventDateType
+class EventDateType extends \DedexBundle\Entity\EventDateType
 {
 
     /**

@@ -1,0 +1,50 @@
+DedexBundle\Entity\Ern383\SoundRecordingCollectionReferenceType:
+    properties:
+        sequenceNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumber
+            accessor:
+                getter: getSequenceNumber
+                setter: setSequenceNumber
+            type: int
+        soundRecordingCollectionReference:
+            expose: true
+            access_type: public_method
+            serialized_name: SoundRecordingCollectionReference
+            accessor:
+                getter: getSoundRecordingCollectionReference
+                setter: setSoundRecordingCollectionReference
+            type: string
+        startTime:
+            expose: true
+            access_type: public_method
+            serialized_name: StartTime
+            accessor:
+                getter: getStartTime
+                setter: setStartTime
+            type: DateInterval
+        duration:
+            expose: true
+            access_type: public_method
+            serialized_name: Duration
+            accessor:
+                getter: getDuration
+                setter: setDuration
+            type: DateInterval
+        endTime:
+            expose: true
+            access_type: public_method
+            serialized_name: EndTime
+            accessor:
+                getter: getEndTime
+                setter: setEndTime
+            type: DateInterval
+        releaseResourceType:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseResourceType
+            accessor:
+                getter: getReleaseResourceType
+                setter: setReleaseResourceType
+            type: string
