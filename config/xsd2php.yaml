@@ -1,6 +1,7 @@
 xsd2php:
   namespaces:
     'http://ddex.net/xml/ern/341': 'DedexBundle/Entity/Ern341'
+    'http://ddex.net/xml/ern/371': 'DedexBundle/Entity/Ern371'
     'http://ddex.net/xml/ern/381': 'DedexBundle/Entity/Ern381'
     'http://ddex.net/xml/ern/382': 'DedexBundle/Entity/Ern382'
     'http://ddex.net/xml/ern/383': 'DedexBundle/Entity/Ern383'
@@ -15,6 +16,7 @@ xsd2php:
 
   destinations_php: 
     'DedexBundle\Entity\Ern341': src/Entity/Ern341
+    'DedexBundle\Entity\Ern371': src/Entity/Ern371
     'DedexBundle\Entity\Ern381': src/Entity/Ern381
     'DedexBundle\Entity\Ern382': src/Entity/Ern382
     'DedexBundle\Entity\Ern383': src/Entity/Ern383
@@ -29,6 +31,7 @@ xsd2php:
 
   destinations_jms:
     'DedexBundle\Entity\Ern341': src/Entity/Ern341/metadata
+    'DedexBundle\Entity\Ern371': src/Entity/Ern371/metadata
     'DedexBundle\Entity\Ern381': src/Entity/Ern381/metadata
     'DedexBundle\Entity\Ern382': src/Entity/Ern382/metadata
     'DedexBundle\Entity\Ern383': src/Entity/Ern383/metadata

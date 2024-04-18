@@ -1,0 +1,13 @@
+DedexBundle\Entity\Ern371\ResourceContainedResourceReferenceListType:
+    properties:
+        resourceContainedResourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceContainedResourceReference
+            accessor:
+                getter: getResourceContainedResourceReference
+                setter: setResourceContainedResourceReference
+            xml_list:
+                inline: true
+                entry_name: ResourceContainedResourceReference
+            type: array<DedexBundle\Entity\Ern371\ResourceContainedResourceReferenceType>
