@@ -206,6 +206,7 @@ class ParserControllerTest extends TestCase {
     /* @var $srdbt_zero SoundRecordingDetailsByTerritoryType */
     $srdbt_zero = $resource_zero->getSoundRecordingDetailsByTerritory()[0];
     $this->assertEquals("Mirko Kordić", $srdbt_zero->getDisplayArtist()[0]->getPartyName()[0]->getFullName());
+    $this->assertEquals("N. Áutor", $srdbt_zero->getResourceContributor()[1]->getPartyName()[0]->getFullName());
     
     // Check that Reference Title of Sound Recording 3 (idx 2) is Zvečansko kolo
     /* @var $resource_two \DedexBundle\Entity\Ern382\SoundRecordingType */
