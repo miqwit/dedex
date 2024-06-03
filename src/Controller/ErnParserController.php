@@ -434,9 +434,6 @@ class ErnParserController {
    * @param string $value Value to set
    */
   private function setCurrentElement($value) {
-    $value_clean = trim($value);
-    $this->log($value_clean . ": " . implode("->", array_keys($this->pile)));
-
     // Use last element in pile
     $keys = array_keys($this->pile);
 
@@ -452,8 +449,9 @@ class ErnParserController {
     // xml_parser is known to split values when encountering multibyte chars and call the character_data_handler multiple times
     if (!empty($this->lastElement) && $this->lastElement[0] === $elem && $this->lastElement[1] === $tag) {
       $value = $this->lastElement[2] . $value;
-      $value_clean = trim($value);
     }
+    $value_clean = trim($value);
+    $this->log($value_clean . ": " . implode("->", array_keys($this->pile)));
     [$func_name, $elem] = $this->getValidFunctionName("set", $tag, $elem);
 
     // It's possible we're trying to set a text but it's expecting an
