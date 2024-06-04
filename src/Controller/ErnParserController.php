@@ -431,11 +431,9 @@ class ErnParserController {
    * 'MESSAGERECIPIENT', 'PARTYID'], then will call 
    * $this->ern->getMESSAGEHEADER()->getMESSAGERECIPIENT()->setPARTYID($value)
    * 
-   * @param type $value Value to set
+   * @param string $value Value to set
    */
   private function setCurrentElement($value) {
-    $this->log($value . ": " . implode("->", array_keys($this->pile)));
-
     // Use last element in pile
     $keys = array_keys($this->pile);
 
@@ -452,11 +450,13 @@ class ErnParserController {
     if (!empty($this->lastElement) && $this->lastElement[0] === $elem && $this->lastElement[1] === $tag) {
       $value = $this->lastElement[2] . $value;
     }
+    $value_clean = trim($value);
+    $this->log($value_clean . ": " . implode("->", array_keys($this->pile)));
     [$func_name, $elem] = $this->getValidFunctionName("set", $tag, $elem);
 
     // It's possible we're trying to set a text but it's expecting an
     // object (where text should be placed in value).
-    $value_inst = $this->instanciateTypeFromDoc($elem, $func_name, $value);
+    $value_inst = $this->instanciateTypeFromDoc($elem, $func_name, $value_clean);
 
     $this->lastElement = [$elem, $tag, $value];
 
@@ -603,13 +603,12 @@ class ErnParserController {
    * @param string $data
    */
   private function callbackCharacterData($parser, string $data) {
-    $data_clean = trim($data);
-    if ($data_clean === "") {
+    if (trim($data) === "") {
       // do nothing
       return;
     }
 
-    $this->setCurrentElement($data_clean);
+    $this->setCurrentElement($data);
   }
 
   /**
