@@ -7,6 +7,8 @@ xsd2php:
     'http://ddex.net/xml/ern/383': 'DedexBundle/Entity/Ern383'
     'http://ddex.net/xml/ern/41': 'DedexBundle/Entity/Ern41'
     'http://ddex.net/xml/ern/411': 'DedexBundle/Entity/Ern411'
+    'http://ddex.net/xml/ern/43': 'DedexBundle/Entity/Ern43'
+    'http://ddex.net/xml/allowed-value-sets': 'DedexBundle/Entity/allowed-value-sets'
     'http://ddex.net/xml/avs/avs': 'DedexBundle/Entity/Avs'
     'http://ddex.net/xml/20120404/ddexC': 'DedexBundle/Entity/DdexC'
     'http://ddex.net/xml/20120404/ddex': 'DedexBundle/Entity/Ddex'
@@ -14,7 +16,7 @@ xsd2php:
     'http://ddex.net/xml/20120404/iso4217a': 'DedexBundle/Entity/ISO4217A'
     'http://ddex.net/xml/20120404/iso3166a2': 'DedexBundle/Entity/ISO3166A2'
 
-  destinations_php: 
+  destinations_php:
     'DedexBundle\Entity\Ern341': src/Entity/Ern341
     'DedexBundle\Entity\Ern371': src/Entity/Ern371
     'DedexBundle\Entity\Ern381': src/Entity/Ern381
@@ -22,6 +24,8 @@ xsd2php:
     'DedexBundle\Entity\Ern383': src/Entity/Ern383
     'DedexBundle\Entity\Ern41': src/Entity/Ern41
     'DedexBundle\Entity\Ern411': src/Entity/Ern411
+    'DedexBundle\Entity\Ern43': src/Entity/Ern43
+    'DedexBundle\Entity\allowed-value-sets': src/Entity/allowed-value-sets
     'DedexBundle\Entity\Avs': src/Entity/Avs
     'DedexBundle\Entity\DdexC': src/Entity/DdexC
     'DedexBundle\Entity\Ddex': src/Entity/Ddex
@@ -37,21 +41,23 @@ xsd2php:
     'DedexBundle\Entity\Ern383': src/Entity/Ern383/metadata
     'DedexBundle\Entity\Ern41': src/Entity/Ern41/metadata
     'DedexBundle\Entity\Ern411': src/Entity/Ern411/metadata
+    'DedexBundle\Entity\Ern43': src/Entity/Ern43/metadata
+    'DedexBundle\Entity\allowed-value-sets': src/Entity/allowed-value-sets/metadata
     'DedexBundle\Entity\Avs': src/Entity/Avs/metadata
     'DedexBundle\Entity\DdexC': src/Entity/DdexC/metadata
     'DedexBundle\Entity\Ddex': src/Entity/Ddex/metadata
     'DedexBundle\Entity\ISO638A2': src/Entity/ISO638A2/metadata
     'DedexBundle\Entity\ISO4217A': src/Entity/ISO4217A/metadata
     'DedexBundle\Entity\ISO3166A2': src/Entity/ISO3166A2/metadata
- 
-#  Uncomment this section if you want to have also symfony/validator metadata to be generated from XSD    
-#  destinations_validation:
-#    'TestNs\MyApp': soap/validation
-#    'TestNs\MyApp': soap\validation  #  on Windows
-    
-#  aliases: # optional
-#    'http://www.example.org/test/':
-#      MyCustomXSDType:  'MyCustomMappedPHPType'
+
+    #  Uncomment this section if you want to have also symfony/validator metadata to be generated from XSD
+    #  destinations_validation:
+    #    'TestNs\MyApp': soap/validation
+    #    'TestNs\MyApp': soap\validation  #  on Windows
+
+  #  aliases: # optional
+  #    'http://www.example.org/test/':
+  #      MyCustomXSDType:  'MyCustomMappedPHPType'
   naming_strategy: long
 #  path_generator: psr4 # optional and default
 #  known_locations: # optional
