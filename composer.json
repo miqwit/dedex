@@ -28,7 +28,7 @@
         "symfony/yaml": "^2.2|^3.0|^4.0|^5.0|^6.0|^7.0"
     },
     "require-dev": {
-        "goetas-webservices/xsd2php": "^0.4.4",
+        "goetas-webservices/xsd2php": "dev-master",
         "phpunit/phpunit": "^9.5",
         "symfony/maker-bundle": "^1.14",
         "symfony/phpunit-bridge": "^6.1"

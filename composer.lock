@@ -4,84 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "87522d0361a3d8843e43d206a321c275",
+    "content-hash": "4d4ed256943140f182c7f1b5483e9383",
     "packages": [
-        {
-            "name": "doctrine/annotations",
-            "version": "2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/annotations.git",
-                "reference": "e157ef3f3124bbf6fe7ce0ffd109e8a8ef284e7f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/e157ef3f3124bbf6fe7ce0ffd109e8a8ef284e7f",
-                "reference": "e157ef3f3124bbf6fe7ce0ffd109e8a8ef284e7f",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/lexer": "^2 || ^3",
-                "ext-tokenizer": "*",
-                "php": "^7.2 || ^8.0",
-                "psr/cache": "^1 || ^2 || ^3"
-            },
-            "require-dev": {
-                "doctrine/cache": "^2.0",
-                "doctrine/coding-standard": "^10",
-                "phpstan/phpstan": "^1.8.0",
-                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
-                "symfony/cache": "^5.4 || ^6",
-                "vimeo/psalm": "^4.10"
-            },
-            "suggest": {
-                "php": "PHP 8.0 or higher comes with attributes, a native replacement for annotations"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Common\\Annotations\\": "lib/Doctrine/Common/Annotations"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                }
-            ],
-            "description": "Docblock Annotations Parser",
-            "homepage": "https://www.doctrine-project.org/projects/annotations.html",
-            "keywords": [
-                "annotations",
-                "docblock",
-                "parser"
-            ],
-            "support": {
-                "issues": "https://github.com/doctrine/annotations/issues",
-                "source": "https://github.com/doctrine/annotations/tree/2.0.1"
-            },
-            "time": "2023-02-02T22:02:53+00:00"
-        },
         {
             "name": "doctrine/instantiator",
             "version": "2.0.0",
@@ -1278,10 +1202,6 @@
                 "php": ">=8.2",
                 "psr/log": "^1|^2|^3",
                 "symfony/var-dumper": "^6.4|^7.0"
-            },
-            "conflict": {
-                "symfony/deprecation-contracts": "<2.5",
-                "symfony/http-kernel": "<6.4"
             },
             "conflict": {
                 "symfony/deprecation-contracts": "<2.5"
@@ -3145,16 +3065,16 @@
         },
         {
             "name": "goetas-webservices/xsd2php",
-            "version": "0.4.13",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/goetas-webservices/xsd2php.git",
-                "reference": "95db4b604bab8a893e59a403474e87430ef9972b"
+                "reference": "2b91509d7490547cf18676c7e9fdcd0b06bbd6db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/goetas-webservices/xsd2php/zipball/95db4b604bab8a893e59a403474e87430ef9972b",
-                "reference": "95db4b604bab8a893e59a403474e87430ef9972b",
+                "url": "https://api.github.com/repos/goetas-webservices/xsd2php/zipball/2b91509d7490547cf18676c7e9fdcd0b06bbd6db",
+                "reference": "2b91509d7490547cf18676c7e9fdcd0b06bbd6db",
                 "shasum": ""
             },
             "require": {
@@ -3175,6 +3095,7 @@
                 "phpunit/phpunit": "^6.0|^7.0|^8.0|^9.0",
                 "symfony/validator": "^2.3.24|^3.0|^4.0|^5.0|^6.0|^7.0"
             },
+            "default-branch": true,
             "bin": [
                 "bin/xsd2php"
             ],
@@ -3210,7 +3131,7 @@
             ],
             "support": {
                 "issues": "https://github.com/goetas-webservices/xsd2php/issues",
-                "source": "https://github.com/goetas-webservices/xsd2php/tree/0.4.13"
+                "source": "https://github.com/goetas-webservices/xsd2php/tree/master"
             },
             "funding": [
                 {
@@ -3226,7 +3147,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2024-03-22T12:45:50+00:00"
+            "time": "2024-09-19T16:32:11+00:00"
         },
         {
             "name": "laminas/laminas-code",
@@ -5198,7 +5119,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "goetas-webservices/xsd2php": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
