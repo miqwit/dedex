@@ -1,0 +1,37 @@
+DedexBundle\Entity\Ern43\RelatedResourceType:
+    properties:
+        resourceRelationshipType:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceRelationshipType
+            accessor:
+                getter: getResourceRelationshipType
+                setter: setResourceRelationshipType
+            type: string
+        resourceRelatedResourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceRelatedResourceReference
+            accessor:
+                getter: getResourceRelatedResourceReference
+                setter: setResourceRelatedResourceReference
+            type: string
+        resourceId:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceId
+            accessor:
+                getter: getResourceId
+                setter: setResourceId
+            type: DedexBundle\Entity\Ern43\ResourceIdType
+        timing:
+            expose: true
+            access_type: public_method
+            serialized_name: Timing
+            accessor:
+                getter: getTiming
+                setter: setTiming
+            xml_list:
+                inline: true
+                entry_name: Timing
+            type: array<DedexBundle\Entity\Ern43\TimingType>

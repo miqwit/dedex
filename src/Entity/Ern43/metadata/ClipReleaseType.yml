@@ -1,0 +1,92 @@
+DedexBundle\Entity\Ern43\ClipReleaseType:
+    properties:
+        releaseReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseReference
+            accessor:
+                getter: getReleaseReference
+                setter: setReleaseReference
+            type: string
+        releaseId:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseId
+            accessor:
+                getter: getReleaseId
+                setter: setReleaseId
+            type: DedexBundle\Entity\Ern43\ReleaseIdType
+        displayTitleText:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayTitleText
+            accessor:
+                getter: getDisplayTitleText
+                setter: setDisplayTitleText
+            xml_list:
+                inline: true
+                entry_name: DisplayTitleText
+            type: array<DedexBundle\Entity\Ern43\DisplayTitleTextType>
+        displayTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayTitle
+            accessor:
+                getter: getDisplayTitle
+                setter: setDisplayTitle
+            xml_list:
+                inline: true
+                entry_name: DisplayTitle
+            type: array<DedexBundle\Entity\Ern43\DisplayTitleType>
+        additionalTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: AdditionalTitle
+            accessor:
+                getter: getAdditionalTitle
+                setter: setAdditionalTitle
+            xml_list:
+                inline: true
+                entry_name: AdditionalTitle
+            type: array<DedexBundle\Entity\Ern43\AdditionalTitleType>
+        releaseResourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseResourceReference
+            accessor:
+                getter: getReleaseResourceReference
+                setter: setReleaseResourceReference
+            type: string
+        releaseLabelReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseLabelReference
+            accessor:
+                getter: getReleaseLabelReference
+                setter: setReleaseLabelReference
+            xml_list:
+                inline: true
+                entry_name: ReleaseLabelReference
+            type: array<DedexBundle\Entity\Ern43\ReleaseLabelReferenceWithPartyType>
+        genre:
+            expose: true
+            access_type: public_method
+            serialized_name: Genre
+            accessor:
+                getter: getGenre
+                setter: setGenre
+            xml_list:
+                inline: true
+                entry_name: Genre
+            type: array<DedexBundle\Entity\Ern43\GenreWithTerritoryType>
+        relatedRelease:
+            expose: true
+            access_type: public_method
+            serialized_name: RelatedRelease
+            accessor:
+                getter: getRelatedRelease
+                setter: setRelatedRelease
+            xml_list:
+                inline: true
+                entry_name: RelatedRelease
+            type: array<DedexBundle\Entity\Ern43\RelatedReleaseType>

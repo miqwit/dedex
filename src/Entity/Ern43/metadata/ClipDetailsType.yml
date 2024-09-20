@@ -1,0 +1,34 @@
+DedexBundle\Entity\Ern43\ClipDetailsType:
+    properties:
+        clipType:
+            expose: true
+            access_type: public_method
+            serialized_name: ClipType
+            accessor:
+                getter: getClipType
+                setter: setClipType
+            type: DedexBundle\Entity\Ern43\ClipTypeType
+        topLeftCorner:
+            expose: true
+            access_type: public_method
+            serialized_name: TopLeftCorner
+            accessor:
+                getter: getTopLeftCorner
+                setter: setTopLeftCorner
+            type: string
+        bottomRightCorner:
+            expose: true
+            access_type: public_method
+            serialized_name: BottomRightCorner
+            accessor:
+                getter: getBottomRightCorner
+                setter: setBottomRightCorner
+            type: string
+        expressionType:
+            expose: true
+            access_type: public_method
+            serialized_name: ExpressionType
+            accessor:
+                getter: getExpressionType
+                setter: setExpressionType
+            type: string

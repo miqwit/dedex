@@ -1,0 +1,28 @@
+DedexBundle\Entity\Ern43\AspectRatioType:
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: float
+        aspectRatioType:
+            expose: true
+            access_type: public_method
+            serialized_name: AspectRatioType
+            accessor:
+                getter: getAspectRatioType
+                setter: setAspectRatioType
+            xml_attribute: true
+            type: string
+        appliesToCroppedResource:
+            expose: true
+            access_type: public_method
+            serialized_name: AppliesToCroppedResource
+            accessor:
+                getter: getAppliesToCroppedResource
+                setter: setAppliesToCroppedResource
+            xml_attribute: true
+            type: bool

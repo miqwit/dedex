@@ -1,0 +1,62 @@
+DedexBundle\Entity\Ern43\SoundRecordingEditionType:
+    properties:
+        type:
+            expose: true
+            access_type: public_method
+            serialized_name: Type
+            accessor:
+                getter: getType
+                setter: setType
+            type: string
+        resourceId:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceId
+            accessor:
+                getter: getResourceId
+                setter: setResourceId
+            xml_list:
+                inline: true
+                entry_name: ResourceId
+            type: array<DedexBundle\Entity\Ern43\SoundRecordingIdType>
+        editionContributor:
+            expose: true
+            access_type: public_method
+            serialized_name: EditionContributor
+            accessor:
+                getter: getEditionContributor
+                setter: setEditionContributor
+            xml_list:
+                inline: true
+                entry_name: EditionContributor
+            type: array<DedexBundle\Entity\Ern43\EditionContributorType>
+        pLine:
+            expose: true
+            access_type: public_method
+            serialized_name: PLine
+            accessor:
+                getter: getPLine
+                setter: setPLine
+            xml_list:
+                inline: true
+                entry_name: PLine
+            type: array<DedexBundle\Entity\Ern43\PLineWithDefaultType>
+        recordingMode:
+            expose: true
+            access_type: public_method
+            serialized_name: RecordingMode
+            accessor:
+                getter: getRecordingMode
+                setter: setRecordingMode
+            type: string
+        technicalDetails:
+            expose: true
+            access_type: public_method
+            serialized_name: TechnicalDetails
+            accessor:
+                getter: getTechnicalDetails
+                setter: setTechnicalDetails
+            xml_list:
+                inline: true
+                entry_name: TechnicalDetails
+            type: array<DedexBundle\Entity\Ern43\TechnicalSoundRecordingDetailsType>

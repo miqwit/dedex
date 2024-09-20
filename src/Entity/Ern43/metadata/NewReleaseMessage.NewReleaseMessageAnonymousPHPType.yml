@@ -1,0 +1,125 @@
+DedexBundle\Entity\Ern43\NewReleaseMessage\NewReleaseMessageAnonymousPHPType:
+    properties:
+        releaseProfileVersionId:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseProfileVersionId
+            accessor:
+                getter: getReleaseProfileVersionId
+                setter: setReleaseProfileVersionId
+            xml_attribute: true
+            type: string
+        releaseProfileVariantVersionId:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseProfileVariantVersionId
+            accessor:
+                getter: getReleaseProfileVariantVersionId
+                setter: setReleaseProfileVariantVersionId
+            xml_attribute: true
+            type: string
+        avsVersionId:
+            expose: true
+            access_type: public_method
+            serialized_name: AvsVersionId
+            accessor:
+                getter: getAvsVersionId
+                setter: setAvsVersionId
+            xml_attribute: true
+            type: string
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        messageHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageHeader
+            accessor:
+                getter: getMessageHeader
+                setter: setMessageHeader
+            type: DedexBundle\Entity\Ern43\MessageHeaderType
+        releaseAdmin:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseAdmin
+            accessor:
+                getter: getReleaseAdmin
+                setter: setReleaseAdmin
+            xml_list:
+                inline: true
+                entry_name: ReleaseAdmin
+            type: array<DedexBundle\Entity\Ern43\ReleaseAdminType>
+        partyList:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyList
+            accessor:
+                getter: getPartyList
+                setter: setPartyList
+            type: array<DedexBundle\Entity\Ern43\PartyType>
+            xml_list:
+                inline: false
+                entry_name: Party
+                skip_when_empty: false
+        cueSheetList:
+            expose: true
+            access_type: public_method
+            serialized_name: CueSheetList
+            accessor:
+                getter: getCueSheetList
+                setter: setCueSheetList
+            type: array<DedexBundle\Entity\Ern43\CueSheetType>
+            xml_list:
+                inline: false
+                entry_name: CueSheet
+                skip_when_empty: true
+        resourceList:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceList
+            accessor:
+                getter: getResourceList
+                setter: setResourceList
+            type: DedexBundle\Entity\Ern43\ResourceListType
+        chapterList:
+            expose: true
+            access_type: public_method
+            serialized_name: ChapterList
+            accessor:
+                getter: getChapterList
+                setter: setChapterList
+            type: DedexBundle\Entity\Ern43\ChapterListType
+        releaseList:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseList
+            accessor:
+                getter: getReleaseList
+                setter: setReleaseList
+            type: DedexBundle\Entity\Ern43\ReleaseListType
+        dealList:
+            expose: true
+            access_type: public_method
+            serialized_name: DealList
+            accessor:
+                getter: getDealList
+                setter: setDealList
+            type: DedexBundle\Entity\Ern43\DealListType
+        supplementalDocumentList:
+            expose: true
+            access_type: public_method
+            serialized_name: SupplementalDocumentList
+            accessor:
+                getter: getSupplementalDocumentList
+                setter: setSupplementalDocumentList
+            type: array<DedexBundle\Entity\Ern43\FileType>
+            xml_list:
+                inline: false
+                entry_name: SupplementalDocument
+                skip_when_empty: true

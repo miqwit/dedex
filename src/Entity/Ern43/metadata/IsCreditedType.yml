@@ -1,0 +1,19 @@
+DedexBundle\Entity\Ern43\IsCreditedType:
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: bool
+        mayBeShared:
+            expose: true
+            access_type: public_method
+            serialized_name: MayBeShared
+            accessor:
+                getter: getMayBeShared
+                setter: setMayBeShared
+            xml_attribute: true
+            type: bool

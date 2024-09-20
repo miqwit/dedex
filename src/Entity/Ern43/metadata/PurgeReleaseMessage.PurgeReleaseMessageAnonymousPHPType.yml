@@ -1,0 +1,36 @@
+DedexBundle\Entity\Ern43\PurgeReleaseMessage\PurgeReleaseMessageAnonymousPHPType:
+    properties:
+        avsVersionId:
+            expose: true
+            access_type: public_method
+            serialized_name: AvsVersionId
+            accessor:
+                getter: getAvsVersionId
+                setter: setAvsVersionId
+            xml_attribute: true
+            type: string
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        messageHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: MessageHeader
+            accessor:
+                getter: getMessageHeader
+                setter: setMessageHeader
+            type: DedexBundle\Entity\Ern43\MessageHeaderType
+        purgedRelease:
+            expose: true
+            access_type: public_method
+            serialized_name: PurgedRelease
+            accessor:
+                getter: getPurgedRelease
+                setter: setPurgedRelease
+            type: DedexBundle\Entity\Ern43\PurgedReleaseType

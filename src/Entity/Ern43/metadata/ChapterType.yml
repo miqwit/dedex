@@ -1,0 +1,125 @@
+DedexBundle\Entity\Ern43\ChapterType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        chapterReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ChapterReference
+            accessor:
+                getter: getChapterReference
+                setter: setChapterReference
+            type: string
+        chapterId:
+            expose: true
+            access_type: public_method
+            serialized_name: ChapterId
+            accessor:
+                getter: getChapterId
+                setter: setChapterId
+            xml_list:
+                inline: true
+                entry_name: ChapterId
+            type: array<DedexBundle\Entity\Ern43\ProprietaryIdType>
+        displayTitleText:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayTitleText
+            accessor:
+                getter: getDisplayTitleText
+                setter: setDisplayTitleText
+            xml_list:
+                inline: true
+                entry_name: DisplayTitleText
+            type: array<DedexBundle\Entity\Ern43\DisplayTitleTextType>
+        displayTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayTitle
+            accessor:
+                getter: getDisplayTitle
+                setter: setDisplayTitle
+            xml_list:
+                inline: true
+                entry_name: DisplayTitle
+            type: array<DedexBundle\Entity\Ern43\DisplayTitleType>
+        additionalTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: AdditionalTitle
+            accessor:
+                getter: getAdditionalTitle
+                setter: setAdditionalTitle
+            xml_list:
+                inline: true
+                entry_name: AdditionalTitle
+            type: array<DedexBundle\Entity\Ern43\AdditionalTitleType>
+        sequenceNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumber
+            accessor:
+                getter: getSequenceNumber
+                setter: setSequenceNumber
+            type: int
+        contributor:
+            expose: true
+            access_type: public_method
+            serialized_name: Contributor
+            accessor:
+                getter: getContributor
+                setter: setContributor
+            xml_list:
+                inline: true
+                entry_name: Contributor
+            type: array<DedexBundle\Entity\Ern43\ContributorType>
+        character:
+            expose: true
+            access_type: public_method
+            serialized_name: Character
+            accessor:
+                getter: getCharacter
+                setter: setCharacter
+            xml_list:
+                inline: true
+                entry_name: Character
+            type: array<DedexBundle\Entity\Ern43\CharacterType>
+        representativeImageReference:
+            expose: true
+            access_type: public_method
+            serialized_name: RepresentativeImageReference
+            accessor:
+                getter: getRepresentativeImageReference
+                setter: setRepresentativeImageReference
+            type: string
+        startTime:
+            expose: true
+            access_type: public_method
+            serialized_name: StartTime
+            accessor:
+                getter: getStartTime
+                setter: setStartTime
+            type: DateInterval
+        duration:
+            expose: true
+            access_type: public_method
+            serialized_name: Duration
+            accessor:
+                getter: getDuration
+                setter: setDuration
+            type: DateInterval
+        endTime:
+            expose: true
+            access_type: public_method
+            serialized_name: EndTime
+            accessor:
+                getter: getEndTime
+                setter: setEndTime
+            type: DateInterval

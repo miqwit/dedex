@@ -1,0 +1,142 @@
+DedexBundle\Entity\Ern43\TechnicalImageDetailsType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        applicableTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ApplicableTerritoryCode
+            accessor:
+                getter: getApplicableTerritoryCode
+                setter: setApplicableTerritoryCode
+            xml_attribute: true
+            type: string
+        isDefault:
+            expose: true
+            access_type: public_method
+            serialized_name: IsDefault
+            accessor:
+                getter: getIsDefault
+                setter: setIsDefault
+            xml_attribute: true
+            type: bool
+        technicalResourceDetailsReference:
+            expose: true
+            access_type: public_method
+            serialized_name: TechnicalResourceDetailsReference
+            accessor:
+                getter: getTechnicalResourceDetailsReference
+                setter: setTechnicalResourceDetailsReference
+            type: string
+        imageCodecType:
+            expose: true
+            access_type: public_method
+            serialized_name: ImageCodecType
+            accessor:
+                getter: getImageCodecType
+                setter: setImageCodecType
+            type: DedexBundle\Entity\Ern43\ImageCodecTypeType
+        imageHeight:
+            expose: true
+            access_type: public_method
+            serialized_name: ImageHeight
+            accessor:
+                getter: getImageHeight
+                setter: setImageHeight
+            type: DedexBundle\Entity\Ern43\ExtentType
+        imageWidth:
+            expose: true
+            access_type: public_method
+            serialized_name: ImageWidth
+            accessor:
+                getter: getImageWidth
+                setter: setImageWidth
+            type: DedexBundle\Entity\Ern43\ExtentType
+        aspectRatio:
+            expose: true
+            access_type: public_method
+            serialized_name: AspectRatio
+            accessor:
+                getter: getAspectRatio
+                setter: setAspectRatio
+            xml_list:
+                inline: true
+                entry_name: AspectRatio
+            type: array<DedexBundle\Entity\Ern43\AspectRatioType>
+        colorDepth:
+            expose: true
+            access_type: public_method
+            serialized_name: ColorDepth
+            accessor:
+                getter: getColorDepth
+                setter: setColorDepth
+            type: int
+        imageResolution:
+            expose: true
+            access_type: public_method
+            serialized_name: ImageResolution
+            accessor:
+                getter: getImageResolution
+                setter: setImageResolution
+            type: int
+        bitDepth:
+            expose: true
+            access_type: public_method
+            serialized_name: BitDepth
+            accessor:
+                getter: getBitDepth
+                setter: setBitDepth
+            type: int
+        isClip:
+            expose: true
+            access_type: public_method
+            serialized_name: IsClip
+            accessor:
+                getter: getIsClip
+                setter: setIsClip
+            type: bool
+        clipDetails:
+            expose: true
+            access_type: public_method
+            serialized_name: ClipDetails
+            accessor:
+                getter: getClipDetails
+                setter: setClipDetails
+            xml_list:
+                inline: true
+                entry_name: ClipDetails
+            type: array<DedexBundle\Entity\Ern43\ClipDetailsType>
+        file:
+            expose: true
+            access_type: public_method
+            serialized_name: File
+            accessor:
+                getter: getFile
+                setter: setFile
+            type: DedexBundle\Entity\Ern43\FileType
+        isProvidedInDelivery:
+            expose: true
+            access_type: public_method
+            serialized_name: IsProvidedInDelivery
+            accessor:
+                getter: getIsProvidedInDelivery
+                setter: setIsProvidedInDelivery
+            type: bool
+        fingerprint:
+            expose: true
+            access_type: public_method
+            serialized_name: Fingerprint
+            accessor:
+                getter: getFingerprint
+                setter: setFingerprint
+            xml_list:
+                inline: true
+                entry_name: Fingerprint
+            type: array<DedexBundle\Entity\Ern43\FingerprintType>

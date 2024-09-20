@@ -1,0 +1,28 @@
+DedexBundle\Entity\Ern43\HdrVideoDynamicMetadataTypeType:
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: string
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: Version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        sdrDerivationPermitted:
+            expose: true
+            access_type: public_method
+            serialized_name: SdrDerivationPermitted
+            accessor:
+                getter: getSdrDerivationPermitted
+                setter: setSdrDerivationPermitted
+            xml_attribute: true
+            type: bool

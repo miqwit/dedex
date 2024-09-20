@@ -1,0 +1,121 @@
+DedexBundle\Entity\Ern43\PartyNameWithTerritoryType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        isNickname:
+            expose: true
+            access_type: public_method
+            serialized_name: IsNickname
+            accessor:
+                getter: getIsNickname
+                setter: setIsNickname
+            xml_attribute: true
+            type: bool
+        isStageName:
+            expose: true
+            access_type: public_method
+            serialized_name: IsStageName
+            accessor:
+                getter: getIsStageName
+                setter: setIsStageName
+            xml_attribute: true
+            type: bool
+        isLegalName:
+            expose: true
+            access_type: public_method
+            serialized_name: IsLegalName
+            accessor:
+                getter: getIsLegalName
+                setter: setIsLegalName
+            xml_attribute: true
+            type: bool
+        applicableTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ApplicableTerritoryCode
+            accessor:
+                getter: getApplicableTerritoryCode
+                setter: setApplicableTerritoryCode
+            xml_attribute: true
+            type: string
+        isDefault:
+            expose: true
+            access_type: public_method
+            serialized_name: IsDefault
+            accessor:
+                getter: getIsDefault
+                setter: setIsDefault
+            xml_attribute: true
+            type: bool
+        isInOriginalLanguage:
+            expose: true
+            access_type: public_method
+            serialized_name: IsInOriginalLanguage
+            accessor:
+                getter: getIsInOriginalLanguage
+                setter: setIsInOriginalLanguage
+            xml_attribute: true
+            type: bool
+        fullName:
+            expose: true
+            access_type: public_method
+            serialized_name: FullName
+            accessor:
+                getter: getFullName
+                setter: setFullName
+            type: DedexBundle\Entity\Ern43\NameType
+        fullNameAsciiTranscribed:
+            expose: true
+            access_type: public_method
+            serialized_name: FullNameAsciiTranscribed
+            accessor:
+                getter: getFullNameAsciiTranscribed
+                setter: setFullNameAsciiTranscribed
+            type: string
+        fullNameIndexed:
+            expose: true
+            access_type: public_method
+            serialized_name: FullNameIndexed
+            accessor:
+                getter: getFullNameIndexed
+                setter: setFullNameIndexed
+            type: DedexBundle\Entity\Ern43\NameType
+        namesBeforeKeyName:
+            expose: true
+            access_type: public_method
+            serialized_name: NamesBeforeKeyName
+            accessor:
+                getter: getNamesBeforeKeyName
+                setter: setNamesBeforeKeyName
+            type: DedexBundle\Entity\Ern43\NameType
+        keyName:
+            expose: true
+            access_type: public_method
+            serialized_name: KeyName
+            accessor:
+                getter: getKeyName
+                setter: setKeyName
+            type: DedexBundle\Entity\Ern43\NameType
+        namesAfterKeyName:
+            expose: true
+            access_type: public_method
+            serialized_name: NamesAfterKeyName
+            accessor:
+                getter: getNamesAfterKeyName
+                setter: setNamesAfterKeyName
+            type: DedexBundle\Entity\Ern43\NameType
+        abbreviatedName:
+            expose: true
+            access_type: public_method
+            serialized_name: AbbreviatedName
+            accessor:
+                getter: getAbbreviatedName
+                setter: setAbbreviatedName
+            type: DedexBundle\Entity\Ern43\NameType

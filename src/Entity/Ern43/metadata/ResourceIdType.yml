@@ -1,0 +1,86 @@
+DedexBundle\Entity\Ern43\ResourceIdType:
+    properties:
+        isReplaced:
+            expose: true
+            access_type: public_method
+            serialized_name: IsReplaced
+            accessor:
+                getter: getIsReplaced
+                setter: setIsReplaced
+            xml_attribute: true
+            type: bool
+        iSRC:
+            expose: true
+            access_type: public_method
+            serialized_name: ISRC
+            accessor:
+                getter: getISRC
+                setter: setISRC
+            type: string
+        iSMN:
+            expose: true
+            access_type: public_method
+            serialized_name: ISMN
+            accessor:
+                getter: getISMN
+                setter: setISMN
+            type: string
+        iSAN:
+            expose: true
+            access_type: public_method
+            serialized_name: ISAN
+            accessor:
+                getter: getISAN
+                setter: setISAN
+            type: string
+        vISAN:
+            expose: true
+            access_type: public_method
+            serialized_name: VISAN
+            accessor:
+                getter: getVISAN
+                setter: setVISAN
+            type: string
+        iSBN:
+            expose: true
+            access_type: public_method
+            serialized_name: ISBN
+            accessor:
+                getter: getISBN
+                setter: setISBN
+            type: string
+        iSSN:
+            expose: true
+            access_type: public_method
+            serialized_name: ISSN
+            accessor:
+                getter: getISSN
+                setter: setISSN
+            type: string
+        sICI:
+            expose: true
+            access_type: public_method
+            serialized_name: SICI
+            accessor:
+                getter: getSICI
+                setter: setSICI
+            type: string
+        catalogNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: CatalogNumber
+            accessor:
+                getter: getCatalogNumber
+                setter: setCatalogNumber
+            type: DedexBundle\Entity\Ern43\CatalogNumberType
+        proprietaryId:
+            expose: true
+            access_type: public_method
+            serialized_name: ProprietaryId
+            accessor:
+                getter: getProprietaryId
+                setter: setProprietaryId
+            xml_list:
+                inline: true
+                entry_name: ProprietaryId
+            type: array<DedexBundle\Entity\Ern43\ProprietaryIdType>

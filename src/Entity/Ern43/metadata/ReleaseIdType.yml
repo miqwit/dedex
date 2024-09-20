@@ -1,0 +1,37 @@
+DedexBundle\Entity\Ern43\ReleaseIdType:
+    properties:
+        gRid:
+            expose: true
+            access_type: public_method
+            serialized_name: GRid
+            accessor:
+                getter: getGRid
+                setter: setGRid
+            type: string
+        iCPN:
+            expose: true
+            access_type: public_method
+            serialized_name: ICPN
+            accessor:
+                getter: getICPN
+                setter: setICPN
+            type: string
+        catalogNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: CatalogNumber
+            accessor:
+                getter: getCatalogNumber
+                setter: setCatalogNumber
+            type: DedexBundle\Entity\Ern43\CatalogNumberType
+        proprietaryId:
+            expose: true
+            access_type: public_method
+            serialized_name: ProprietaryId
+            accessor:
+                getter: getProprietaryId
+                setter: setProprietaryId
+            xml_list:
+                inline: true
+                entry_name: ProprietaryId
+            type: array<DedexBundle\Entity\Ern43\ProprietaryIdType>

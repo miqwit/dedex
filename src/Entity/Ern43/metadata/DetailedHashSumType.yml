@@ -1,0 +1,42 @@
+DedexBundle\Entity\Ern43\DetailedHashSumType:
+    properties:
+        algorithm:
+            expose: true
+            access_type: public_method
+            serialized_name: Algorithm
+            accessor:
+                getter: getAlgorithm
+                setter: setAlgorithm
+            type: DedexBundle\Entity\Ern43\HashSumAlgorithmTypeType
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: Version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            type: string
+        parameter:
+            expose: true
+            access_type: public_method
+            serialized_name: Parameter
+            accessor:
+                getter: getParameter
+                setter: setParameter
+            type: string
+        dataType:
+            expose: true
+            access_type: public_method
+            serialized_name: DataType
+            accessor:
+                getter: getDataType
+                setter: setDataType
+            type: string
+        hashSumValue:
+            expose: true
+            access_type: public_method
+            serialized_name: HashSumValue
+            accessor:
+                getter: getHashSumValue
+                setter: setHashSumValue
+            type: string

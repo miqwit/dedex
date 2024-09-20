@@ -1,0 +1,34 @@
+DedexBundle\Entity\Ern43\PeriodType:
+    properties:
+        startDate:
+            expose: true
+            access_type: public_method
+            serialized_name: StartDate
+            accessor:
+                getter: getStartDate
+                setter: setStartDate
+            type: DedexBundle\Entity\Ern43\EventDateType
+        endDate:
+            expose: true
+            access_type: public_method
+            serialized_name: EndDate
+            accessor:
+                getter: getEndDate
+                setter: setEndDate
+            type: DedexBundle\Entity\Ern43\EventDateType
+        startDateTime:
+            expose: true
+            access_type: public_method
+            serialized_name: StartDateTime
+            accessor:
+                getter: getStartDateTime
+                setter: setStartDateTime
+            type: DedexBundle\Entity\Ern43\EventDateTimeType
+        endDateTime:
+            expose: true
+            access_type: public_method
+            serialized_name: EndDateTime
+            accessor:
+                getter: getEndDateTime
+                setter: setEndDateTime
+            type: DedexBundle\Entity\Ern43\EventDateTimeType

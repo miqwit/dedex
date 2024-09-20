@@ -1,0 +1,175 @@
+DedexBundle\Entity\Ern43\TrackReleaseType:
+    properties:
+        isMainRelease:
+            expose: true
+            access_type: public_method
+            serialized_name: IsMainRelease
+            accessor:
+                getter: getIsMainRelease
+                setter: setIsMainRelease
+            xml_attribute: true
+            type: bool
+        releaseReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseReference
+            accessor:
+                getter: getReleaseReference
+                setter: setReleaseReference
+            type: string
+        releaseId:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseId
+            accessor:
+                getter: getReleaseId
+                setter: setReleaseId
+            type: DedexBundle\Entity\Ern43\ReleaseIdType
+        displayTitleText:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayTitleText
+            accessor:
+                getter: getDisplayTitleText
+                setter: setDisplayTitleText
+            xml_list:
+                inline: true
+                entry_name: DisplayTitleText
+            type: array<DedexBundle\Entity\Ern43\DisplayTitleTextType>
+        displayTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayTitle
+            accessor:
+                getter: getDisplayTitle
+                setter: setDisplayTitle
+            xml_list:
+                inline: true
+                entry_name: DisplayTitle
+            type: array<DedexBundle\Entity\Ern43\DisplayTitleType>
+        additionalTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: AdditionalTitle
+            accessor:
+                getter: getAdditionalTitle
+                setter: setAdditionalTitle
+            xml_list:
+                inline: true
+                entry_name: AdditionalTitle
+            type: array<DedexBundle\Entity\Ern43\AdditionalTitleType>
+        releaseResourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseResourceReference
+            accessor:
+                getter: getReleaseResourceReference
+                setter: setReleaseResourceReference
+            type: string
+        linkedReleaseResourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: LinkedReleaseResourceReference
+            accessor:
+                getter: getLinkedReleaseResourceReference
+                setter: setLinkedReleaseResourceReference
+            xml_list:
+                inline: true
+                entry_name: LinkedReleaseResourceReference
+            type: array<DedexBundle\Entity\Ern43\LinkedReleaseResourceReferenceType>
+        releaseLabelReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseLabelReference
+            accessor:
+                getter: getReleaseLabelReference
+                setter: setReleaseLabelReference
+            xml_list:
+                inline: true
+                entry_name: ReleaseLabelReference
+            type: array<DedexBundle\Entity\Ern43\ReleaseLabelReferenceWithPartyType>
+        genre:
+            expose: true
+            access_type: public_method
+            serialized_name: Genre
+            accessor:
+                getter: getGenre
+                setter: setGenre
+            xml_list:
+                inline: true
+                entry_name: Genre
+            type: array<DedexBundle\Entity\Ern43\GenreWithTerritoryType>
+        releaseVisibilityReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseVisibilityReference
+            accessor:
+                getter: getReleaseVisibilityReference
+                setter: setReleaseVisibilityReference
+            xml_list:
+                inline: true
+                entry_name: ReleaseVisibilityReference
+            type: array<string>
+        relatedRelease:
+            expose: true
+            access_type: public_method
+            serialized_name: RelatedRelease
+            accessor:
+                getter: getRelatedRelease
+                setter: setRelatedRelease
+            xml_list:
+                inline: true
+                entry_name: RelatedRelease
+            type: array<DedexBundle\Entity\Ern43\RelatedReleaseType>
+        relatedResource:
+            expose: true
+            access_type: public_method
+            serialized_name: RelatedResource
+            accessor:
+                getter: getRelatedResource
+                setter: setRelatedResource
+            xml_list:
+                inline: true
+                entry_name: RelatedResource
+            type: array<DedexBundle\Entity\Ern43\RelatedResourceType>
+        targetURL:
+            expose: true
+            access_type: public_method
+            serialized_name: TargetURL
+            accessor:
+                getter: getTargetURL
+                setter: setTargetURL
+            type: string
+        keywords:
+            expose: true
+            access_type: public_method
+            serialized_name: Keywords
+            accessor:
+                getter: getKeywords
+                setter: setKeywords
+            xml_list:
+                inline: true
+                entry_name: Keywords
+            type: array<DedexBundle\Entity\Ern43\KeywordsWithTerritoryType>
+        synopsis:
+            expose: true
+            access_type: public_method
+            serialized_name: Synopsis
+            accessor:
+                getter: getSynopsis
+                setter: setSynopsis
+            xml_list:
+                inline: true
+                entry_name: Synopsis
+            type: array<DedexBundle\Entity\Ern43\SynopsisWithTerritoryType>
+        marketingComment:
+            expose: true
+            access_type: public_method
+            serialized_name: MarketingComment
+            accessor:
+                getter: getMarketingComment
+                setter: setMarketingComment
+            xml_list:
+                inline: true
+                entry_name: MarketingComment
+            type: array<DedexBundle\Entity\Ern43\MarketingCommentType>

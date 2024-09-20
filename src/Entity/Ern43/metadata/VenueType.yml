@@ -1,0 +1,42 @@
+DedexBundle\Entity\Ern43\VenueType:
+    properties:
+        venueName:
+            expose: true
+            access_type: public_method
+            serialized_name: VenueName
+            accessor:
+                getter: getVenueName
+                setter: setVenueName
+            type: string
+        venueAddress:
+            expose: true
+            access_type: public_method
+            serialized_name: VenueAddress
+            accessor:
+                getter: getVenueAddress
+                setter: setVenueAddress
+            type: string
+        territoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryCode
+            accessor:
+                getter: getTerritoryCode
+                setter: setTerritoryCode
+            type: DedexBundle\Entity\Ern43\AllTerritoryCodeType
+        locationCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LocationCode
+            accessor:
+                getter: getLocationCode
+                setter: setLocationCode
+            type: string
+        venueRoom:
+            expose: true
+            access_type: public_method
+            serialized_name: VenueRoom
+            accessor:
+                getter: getVenueRoom
+                setter: setVenueRoom
+            type: string

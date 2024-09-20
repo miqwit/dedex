@@ -1,0 +1,72 @@
+DedexBundle\Entity\Ern43\WorkRightsControllerType:
+    properties:
+        rightsControllerPartyReference:
+            expose: true
+            access_type: public_method
+            serialized_name: RightsControllerPartyReference
+            accessor:
+                getter: getRightsControllerPartyReference
+                setter: setRightsControllerPartyReference
+            type: string
+        rightsControlType:
+            expose: true
+            access_type: public_method
+            serialized_name: RightsControlType
+            accessor:
+                getter: getRightsControlType
+                setter: setRightsControlType
+            xml_list:
+                inline: true
+                entry_name: RightsControlType
+            type: array<string>
+        rightsControllerType:
+            expose: true
+            access_type: public_method
+            serialized_name: RightsControllerType
+            accessor:
+                getter: getRightsControllerType
+                setter: setRightsControllerType
+            type: string
+        rightShareUnknown:
+            expose: true
+            access_type: public_method
+            serialized_name: RightShareUnknown
+            accessor:
+                getter: getRightShareUnknown
+                setter: setRightShareUnknown
+            type: bool
+        rightSharePercentage:
+            expose: true
+            access_type: public_method
+            serialized_name: RightSharePercentage
+            accessor:
+                getter: getRightSharePercentage
+                setter: setRightSharePercentage
+            type: float
+        territory:
+            expose: true
+            access_type: public_method
+            serialized_name: Territory
+            accessor:
+                getter: getTerritory
+                setter: setTerritory
+            xml_list:
+                inline: true
+                entry_name: Territory
+            type: array<DedexBundle\Entity\Ern43\AllTerritoryCodeType>
+        startDate:
+            expose: true
+            access_type: public_method
+            serialized_name: StartDate
+            accessor:
+                getter: getStartDate
+                setter: setStartDate
+            type: string
+        endDate:
+            expose: true
+            access_type: public_method
+            serialized_name: EndDate
+            accessor:
+                getter: getEndDate
+                setter: setEndDate
+            type: string

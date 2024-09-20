@@ -1,0 +1,18 @@
+DedexBundle\Entity\Ern43\RelatedPartyType:
+    properties:
+        partyRelatedPartyReference:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyRelatedPartyReference
+            accessor:
+                getter: getPartyRelatedPartyReference
+                setter: setPartyRelatedPartyReference
+            type: string
+        partyRelationshipType:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyRelationshipType
+            accessor:
+                getter: getPartyRelationshipType
+                setter: setPartyRelationshipType
+            type: DedexBundle\Entity\Ern43\PartyRelationshipTypeType

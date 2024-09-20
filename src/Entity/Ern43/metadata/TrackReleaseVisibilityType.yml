@@ -1,0 +1,57 @@
+DedexBundle\Entity\Ern43\TrackReleaseVisibilityType:
+    properties:
+        doNotDisplayDates:
+            expose: true
+            access_type: public_method
+            serialized_name: DoNotDisplayDates
+            accessor:
+                getter: getDoNotDisplayDates
+                setter: setDoNotDisplayDates
+            xml_attribute: true
+            type: bool
+        visibilityReference:
+            expose: true
+            access_type: public_method
+            serialized_name: VisibilityReference
+            accessor:
+                getter: getVisibilityReference
+                setter: setVisibilityReference
+            type: string
+        territoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryCode
+            accessor:
+                getter: getTerritoryCode
+                setter: setTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: TerritoryCode
+            type: array<DedexBundle\Entity\Ern43\CurrentTerritoryCodeType>
+        excludedTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ExcludedTerritoryCode
+            accessor:
+                getter: getExcludedTerritoryCode
+                setter: setExcludedTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: ExcludedTerritoryCode
+            type: array<DedexBundle\Entity\Ern43\CurrentTerritoryCodeType>
+        trackListingPreviewStartDateTime:
+            expose: true
+            access_type: public_method
+            serialized_name: TrackListingPreviewStartDateTime
+            accessor:
+                getter: getTrackListingPreviewStartDateTime
+                setter: setTrackListingPreviewStartDateTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        clipPreviewStartDateTime:
+            expose: true
+            access_type: public_method
+            serialized_name: ClipPreviewStartDateTime
+            accessor:
+                getter: getClipPreviewStartDateTime
+                setter: setClipPreviewStartDateTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
