@@ -117,3 +117,9 @@ $parser->addRuleSet();
 ```
 
 Will store a set of Rule (array). For example, each provider could be check with a specific rule set.
+
+# Standard updates
+
+## Official email in September 2024
+
+>  From March 1, 2025, all the versions 3 as well as version 4.0 of the Electronic Release Notification standard, their respective profiles, and choreographies will no longer be supported. This means that from that date, no further updates, bug fixes, or AVS additions will be made to these versions of the ERN standard. Also, the XML schemas and all articles or implementation advice about ERN- 3 and ERN 4.0 will be removed from all DDEX websites. All schemas, standard texts, and supporting information about ERN -4.1, 4.2, and, of course, 4.3.1 will remain.
