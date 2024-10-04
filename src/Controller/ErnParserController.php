@@ -293,6 +293,10 @@ class ErnParserController {
       return new \DedexBundle\Entity\Ern382\EventDateTimeType(new \DateTime()); // TODO
     }
 
+    if ($class_name === "\DedexBundle\Entity\Ern43\EventDateTimeWithoutFlagsType") {
+      return new \DedexBundle\Entity\Ern43\EventDateTimeWithoutFlagsType(new \DateTime()); // TODO
+    }
+
     return new $class_name(null);
   }
 
