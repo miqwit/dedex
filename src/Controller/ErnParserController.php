@@ -603,7 +603,8 @@ class ErnParserController {
       $new_elem = DateTime::createFromFormat($format, $value);
     } elseif ($type == "\DateInterval") {
         // Check for ISO8601:2004 format
-        preg_match('/PT([0-9.,]*H)?([0-9.,]*M)?([0-9.,]*S)?/i', $value_default, $matches);
+        //preg_match('/PT([0-9.,]*H)?([0-9.,]*M)?([0-9.,]*S)?/i', $value_default, $matches);
+        preg_match('/^P(?:(\d+D))?(T(?:(\d+H))?(?:(\d+M))?(?:(\d+(?:\.\d+)?S))?)?$/i', $value_default, $matches);
         $new_elem = (empty($matches))
             ? new DateInterval($value_default)
             : $this->intervalFromIso86012004String($value_default);
