@@ -9,9 +9,6 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 RUN php -r "unlink('composer-setup.php');"
 
-# Install symfony command globally
-RUN mv /root/.symfony/bin/symfony /usr/local/bin/symfony
-
 # Setup git
 RUN git config --global user.email "your-email-here"
 RUN git config --global user.name "your-name-here"
