@@ -1,0 +1,39 @@
+DedexBundle\Entity\Ern43\TitleDisplayInformationType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        sequenceNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumber
+            accessor:
+                getter: getSequenceNumber
+                setter: setSequenceNumber
+            xml_attribute: true
+            type: int
+        isDisplayedInTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: IsDisplayedInTitle
+            accessor:
+                getter: getIsDisplayedInTitle
+                setter: setIsDisplayedInTitle
+            type: bool
+        prefix:
+            expose: true
+            access_type: public_method
+            serialized_name: Prefix
+            accessor:
+                getter: getPrefix
+                setter: setPrefix
+            xml_list:
+                inline: true
+                entry_name: Prefix
+            type: array<DedexBundle\Entity\Ern43\PrefixType>

@@ -1,0 +1,19 @@
+DedexBundle\Entity\Ern371\ICPNType:
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: string
+        isEan:
+            expose: true
+            access_type: public_method
+            serialized_name: IsEan
+            accessor:
+                getter: getIsEan
+                setter: setIsEan
+            xml_attribute: true
+            type: bool

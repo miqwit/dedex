@@ -1,0 +1,224 @@
+DedexBundle\Entity\Ern43\VideoDeliveryFileType:
+    properties:
+        type:
+            expose: true
+            access_type: public_method
+            serialized_name: Type
+            accessor:
+                getter: getType
+                setter: setType
+            type: string
+        containerFormat:
+            expose: true
+            access_type: public_method
+            serialized_name: ContainerFormat
+            accessor:
+                getter: getContainerFormat
+                setter: setContainerFormat
+            type: DedexBundle\Entity\Ern43\ContainerFormatType
+        videoCodecType:
+            expose: true
+            access_type: public_method
+            serialized_name: VideoCodecType
+            accessor:
+                getter: getVideoCodecType
+                setter: setVideoCodecType
+            type: DedexBundle\Entity\Ern43\VideoCodecTypeType
+        videoBitRate:
+            expose: true
+            access_type: public_method
+            serialized_name: VideoBitRate
+            accessor:
+                getter: getVideoBitRate
+                setter: setVideoBitRate
+            type: DedexBundle\Entity\Ern43\BitRateType
+        frameRate:
+            expose: true
+            access_type: public_method
+            serialized_name: FrameRate
+            accessor:
+                getter: getFrameRate
+                setter: setFrameRate
+            type: DedexBundle\Entity\Ern43\FrameRateType
+        imageHeight:
+            expose: true
+            access_type: public_method
+            serialized_name: ImageHeight
+            accessor:
+                getter: getImageHeight
+                setter: setImageHeight
+            type: DedexBundle\Entity\Ern43\ExtentType
+        imageWidth:
+            expose: true
+            access_type: public_method
+            serialized_name: ImageWidth
+            accessor:
+                getter: getImageWidth
+                setter: setImageWidth
+            type: DedexBundle\Entity\Ern43\ExtentType
+        aspectRatio:
+            expose: true
+            access_type: public_method
+            serialized_name: AspectRatio
+            accessor:
+                getter: getAspectRatio
+                setter: setAspectRatio
+            xml_list:
+                inline: true
+                entry_name: AspectRatio
+            type: array<DedexBundle\Entity\Ern43\AspectRatioType>
+        coreArea:
+            expose: true
+            access_type: public_method
+            serialized_name: CoreArea
+            accessor:
+                getter: getCoreArea
+                setter: setCoreArea
+            type: DedexBundle\Entity\Ern43\CoreAreaType
+        colorDepth:
+            expose: true
+            access_type: public_method
+            serialized_name: ColorDepth
+            accessor:
+                getter: getColorDepth
+                setter: setColorDepth
+            type: int
+        videoDefinitionType:
+            expose: true
+            access_type: public_method
+            serialized_name: VideoDefinitionType
+            accessor:
+                getter: getVideoDefinitionType
+                setter: setVideoDefinitionType
+            type: DedexBundle\Entity\Ern43\VideoDefinitionTypeType
+        audioCodecType:
+            expose: true
+            access_type: public_method
+            serialized_name: AudioCodecType
+            accessor:
+                getter: getAudioCodecType
+                setter: setAudioCodecType
+            type: DedexBundle\Entity\Ern43\AudioCodecTypeType
+        hasImmersiveAudioMetadata:
+            expose: true
+            access_type: public_method
+            serialized_name: HasImmersiveAudioMetadata
+            accessor:
+                getter: getHasImmersiveAudioMetadata
+                setter: setHasImmersiveAudioMetadata
+            type: bool
+        electroOpticalTransferFunctionType:
+            expose: true
+            access_type: public_method
+            serialized_name: ElectroOpticalTransferFunctionType
+            accessor:
+                getter: getElectroOpticalTransferFunctionType
+                setter: setElectroOpticalTransferFunctionType
+            type: string
+        primaryColorType:
+            expose: true
+            access_type: public_method
+            serialized_name: PrimaryColorType
+            accessor:
+                getter: getPrimaryColorType
+                setter: setPrimaryColorType
+            type: string
+        hdrVideoDynamicMetadataType:
+            expose: true
+            access_type: public_method
+            serialized_name: HdrVideoDynamicMetadataType
+            accessor:
+                getter: getHdrVideoDynamicMetadataType
+                setter: setHdrVideoDynamicMetadataType
+            type: DedexBundle\Entity\Ern43\HdrVideoDynamicMetadataTypeType
+        hdrVideoStaticMetadataType:
+            expose: true
+            access_type: public_method
+            serialized_name: HdrVideoStaticMetadataType
+            accessor:
+                getter: getHdrVideoStaticMetadataType
+                setter: setHdrVideoStaticMetadataType
+            type: string
+        audioBitRate:
+            expose: true
+            access_type: public_method
+            serialized_name: AudioBitRate
+            accessor:
+                getter: getAudioBitRate
+                setter: setAudioBitRate
+            type: DedexBundle\Entity\Ern43\BitRateType
+        numberOfAudioChannels:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfAudioChannels
+            accessor:
+                getter: getNumberOfAudioChannels
+                setter: setNumberOfAudioChannels
+            type: int
+        numberOfAudioObjects:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfAudioObjects
+            accessor:
+                getter: getNumberOfAudioObjects
+                setter: setNumberOfAudioObjects
+            type: int
+        audioSamplingRate:
+            expose: true
+            access_type: public_method
+            serialized_name: AudioSamplingRate
+            accessor:
+                getter: getAudioSamplingRate
+                setter: setAudioSamplingRate
+            type: DedexBundle\Entity\Ern43\SamplingRateType
+        audioBitsPerSample:
+            expose: true
+            access_type: public_method
+            serialized_name: AudioBitsPerSample
+            accessor:
+                getter: getAudioBitsPerSample
+                setter: setAudioBitsPerSample
+            type: int
+        duration:
+            expose: true
+            access_type: public_method
+            serialized_name: Duration
+            accessor:
+                getter: getDuration
+                setter: setDuration
+            type: DateInterval
+        bitDepth:
+            expose: true
+            access_type: public_method
+            serialized_name: BitDepth
+            accessor:
+                getter: getBitDepth
+                setter: setBitDepth
+            type: int
+        file:
+            expose: true
+            access_type: public_method
+            serialized_name: File
+            accessor:
+                getter: getFile
+                setter: setFile
+            type: DedexBundle\Entity\Ern43\FileType
+        fingerprint:
+            expose: true
+            access_type: public_method
+            serialized_name: Fingerprint
+            accessor:
+                getter: getFingerprint
+                setter: setFingerprint
+            xml_list:
+                inline: true
+                entry_name: Fingerprint
+            type: array<DedexBundle\Entity\Ern43\FingerprintType>
+        isProvidedInDelivery:
+            expose: true
+            access_type: public_method
+            serialized_name: IsProvidedInDelivery
+            accessor:
+                getter: getIsProvidedInDelivery
+                setter: setIsProvidedInDelivery
+            type: bool

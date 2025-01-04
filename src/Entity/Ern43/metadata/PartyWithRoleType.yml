@@ -1,0 +1,61 @@
+DedexBundle\Entity\Ern43\PartyWithRoleType:
+    properties:
+        iSNI:
+            expose: true
+            access_type: public_method
+            serialized_name: ISNI
+            accessor:
+                getter: getISNI
+                setter: setISNI
+            type: string
+        dPID:
+            expose: true
+            access_type: public_method
+            serialized_name: DPID
+            accessor:
+                getter: getDPID
+                setter: setDPID
+            type: string
+        ipiNameNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: IpiNameNumber
+            accessor:
+                getter: getIpiNameNumber
+                setter: setIpiNameNumber
+            type: string
+        iPN:
+            expose: true
+            access_type: public_method
+            serialized_name: IPN
+            accessor:
+                getter: getIPN
+                setter: setIPN
+            type: string
+        proprietaryId:
+            expose: true
+            access_type: public_method
+            serialized_name: ProprietaryId
+            accessor:
+                getter: getProprietaryId
+                setter: setProprietaryId
+            xml_list:
+                inline: true
+                entry_name: ProprietaryId
+            type: array<DedexBundle\Entity\Ern43\ProprietaryIdType>
+        partyName:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyName
+            accessor:
+                getter: getPartyName
+                setter: setPartyName
+            type: DedexBundle\Entity\Ern43\PartyNameWithTerritoryType
+        role:
+            expose: true
+            access_type: public_method
+            serialized_name: Role
+            accessor:
+                getter: getRole
+                setter: setRole
+            type: DedexBundle\Entity\Ern43\ResourceContributorRoleType

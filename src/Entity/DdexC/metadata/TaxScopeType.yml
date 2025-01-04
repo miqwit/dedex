@@ -1,0 +1,28 @@
+DedexBundle\Entity\DdexC\TaxScopeType:
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: string
+        namespace:
+            expose: true
+            access_type: public_method
+            serialized_name: Namespace
+            accessor:
+                getter: getNamespace
+                setter: setNamespace
+            xml_attribute: true
+            type: string
+        userDefinedValue:
+            expose: true
+            access_type: public_method
+            serialized_name: UserDefinedValue
+            accessor:
+                getter: getUserDefinedValue
+                setter: setUserDefinedValue
+            xml_attribute: true
+            type: string

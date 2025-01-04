@@ -1,0 +1,191 @@
+DedexBundle\Entity\Ern43\DealTermsType:
+    properties:
+        territoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryCode
+            accessor:
+                getter: getTerritoryCode
+                setter: setTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: TerritoryCode
+            type: array<DedexBundle\Entity\Ern43\CurrentTerritoryCodeType>
+        excludedTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ExcludedTerritoryCode
+            accessor:
+                getter: getExcludedTerritoryCode
+                setter: setExcludedTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: ExcludedTerritoryCode
+            type: array<DedexBundle\Entity\Ern43\CurrentTerritoryCodeType>
+        validityPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: ValidityPeriod
+            accessor:
+                getter: getValidityPeriod
+                setter: setValidityPeriod
+            xml_list:
+                inline: true
+                entry_name: ValidityPeriod
+            type: array<DedexBundle\Entity\Ern43\PeriodWithStartDateType>
+        commercialModelType:
+            expose: true
+            access_type: public_method
+            serialized_name: CommercialModelType
+            accessor:
+                getter: getCommercialModelType
+                setter: setCommercialModelType
+            xml_list:
+                inline: true
+                entry_name: CommercialModelType
+            type: array<DedexBundle\Entity\Ern43\CommercialModelTypeType>
+        useType:
+            expose: true
+            access_type: public_method
+            serialized_name: UseType
+            accessor:
+                getter: getUseType
+                setter: setUseType
+            xml_list:
+                inline: true
+                entry_name: UseType
+            type: array<DedexBundle\Entity\Ern43\DiscoverableUseTypeType>
+        userInterfaceType:
+            expose: true
+            access_type: public_method
+            serialized_name: UserInterfaceType
+            accessor:
+                getter: getUserInterfaceType
+                setter: setUserInterfaceType
+            xml_list:
+                inline: true
+                entry_name: UserInterfaceType
+            type: array<DedexBundle\Entity\Ern43\UserInterfaceTypeType>
+        carrierType:
+            expose: true
+            access_type: public_method
+            serialized_name: CarrierType
+            accessor:
+                getter: getCarrierType
+                setter: setCarrierType
+            xml_list:
+                inline: true
+                entry_name: CarrierType
+            type: array<DedexBundle\Entity\Ern43\CarrierTypeType>
+        technicalInstantiation:
+            expose: true
+            access_type: public_method
+            serialized_name: TechnicalInstantiation
+            accessor:
+                getter: getTechnicalInstantiation
+                setter: setTechnicalInstantiation
+            type: DedexBundle\Entity\Ern43\DealTermsTechnicalInstantiationType
+        numberOfUsages:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfUsages
+            accessor:
+                getter: getNumberOfUsages
+                setter: setNumberOfUsages
+            type: int
+        distributionChannel:
+            expose: true
+            access_type: public_method
+            serialized_name: DistributionChannel
+            accessor:
+                getter: getDistributionChannel
+                setter: setDistributionChannel
+            xml_list:
+                inline: true
+                entry_name: DistributionChannel
+            type: array<DedexBundle\Entity\Ern43\DSPType>
+        excludedDistributionChannel:
+            expose: true
+            access_type: public_method
+            serialized_name: ExcludedDistributionChannel
+            accessor:
+                getter: getExcludedDistributionChannel
+                setter: setExcludedDistributionChannel
+            xml_list:
+                inline: true
+                entry_name: ExcludedDistributionChannel
+            type: array<DedexBundle\Entity\Ern43\DSPType>
+        rightsClaimPolicy:
+            expose: true
+            access_type: public_method
+            serialized_name: RightsClaimPolicy
+            accessor:
+                getter: getRightsClaimPolicy
+                setter: setRightsClaimPolicy
+            xml_list:
+                inline: true
+                entry_name: RightsClaimPolicy
+            type: array<DedexBundle\Entity\Ern43\RightsClaimPolicyType>
+        priceInformation:
+            expose: true
+            access_type: public_method
+            serialized_name: PriceInformation
+            accessor:
+                getter: getPriceInformation
+                setter: setPriceInformation
+            xml_list:
+                inline: true
+                entry_name: PriceInformation
+            type: array<DedexBundle\Entity\Ern43\PriceInformationWithTypeType>
+        isPromotional:
+            expose: true
+            access_type: public_method
+            serialized_name: IsPromotional
+            accessor:
+                getter: getIsPromotional
+                setter: setIsPromotional
+            type: bool
+        promotionalCode:
+            expose: true
+            access_type: public_method
+            serialized_name: PromotionalCode
+            accessor:
+                getter: getPromotionalCode
+                setter: setPromotionalCode
+            type: DedexBundle\Entity\Ern43\PromotionalCodeType
+        isPreOrderDeal:
+            expose: true
+            access_type: public_method
+            serialized_name: IsPreOrderDeal
+            accessor:
+                getter: getIsPreOrderDeal
+                setter: setIsPreOrderDeal
+            type: bool
+        instantGratificationResourceList:
+            expose: true
+            access_type: public_method
+            serialized_name: InstantGratificationResourceList
+            accessor:
+                getter: getInstantGratificationResourceList
+                setter: setInstantGratificationResourceList
+            type: array<string>
+            xml_list:
+                inline: false
+                entry_name: DealResourceReference
+                skip_when_empty: true
+        physicalReturns:
+            expose: true
+            access_type: public_method
+            serialized_name: PhysicalReturns
+            accessor:
+                getter: getPhysicalReturns
+                setter: setPhysicalReturns
+            type: DedexBundle\Entity\Ern43\PhysicalReturnsType
+        numberOfProductsPerCarton:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfProductsPerCarton
+            accessor:
+                getter: getNumberOfProductsPerCarton
+                setter: setNumberOfProductsPerCarton
+            type: int

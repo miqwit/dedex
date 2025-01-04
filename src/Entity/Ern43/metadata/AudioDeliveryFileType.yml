@@ -1,0 +1,125 @@
+DedexBundle\Entity\Ern43\AudioDeliveryFileType:
+    properties:
+        type:
+            expose: true
+            access_type: public_method
+            serialized_name: Type
+            accessor:
+                getter: getType
+                setter: setType
+            type: string
+        containerFormat:
+            expose: true
+            access_type: public_method
+            serialized_name: ContainerFormat
+            accessor:
+                getter: getContainerFormat
+                setter: setContainerFormat
+            type: DedexBundle\Entity\Ern43\ContainerFormatType
+        audioCodecType:
+            expose: true
+            access_type: public_method
+            serialized_name: AudioCodecType
+            accessor:
+                getter: getAudioCodecType
+                setter: setAudioCodecType
+            type: DedexBundle\Entity\Ern43\AudioCodecTypeType
+        bitRate:
+            expose: true
+            access_type: public_method
+            serialized_name: BitRate
+            accessor:
+                getter: getBitRate
+                setter: setBitRate
+            type: DedexBundle\Entity\Ern43\BitRateType
+        originalBitRate:
+            expose: true
+            access_type: public_method
+            serialized_name: OriginalBitRate
+            accessor:
+                getter: getOriginalBitRate
+                setter: setOriginalBitRate
+            type: DedexBundle\Entity\Ern43\BitRateType
+        numberOfChannels:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfChannels
+            accessor:
+                getter: getNumberOfChannels
+                setter: setNumberOfChannels
+            type: string
+        numberOfAudioObjects:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfAudioObjects
+            accessor:
+                getter: getNumberOfAudioObjects
+                setter: setNumberOfAudioObjects
+            type: int
+        samplingRate:
+            expose: true
+            access_type: public_method
+            serialized_name: SamplingRate
+            accessor:
+                getter: getSamplingRate
+                setter: setSamplingRate
+            type: DedexBundle\Entity\Ern43\SamplingRateType
+        originalSamplingRate:
+            expose: true
+            access_type: public_method
+            serialized_name: OriginalSamplingRate
+            accessor:
+                getter: getOriginalSamplingRate
+                setter: setOriginalSamplingRate
+            type: DedexBundle\Entity\Ern43\SamplingRateType
+        bitsPerSample:
+            expose: true
+            access_type: public_method
+            serialized_name: BitsPerSample
+            accessor:
+                getter: getBitsPerSample
+                setter: setBitsPerSample
+            type: int
+        duration:
+            expose: true
+            access_type: public_method
+            serialized_name: Duration
+            accessor:
+                getter: getDuration
+                setter: setDuration
+            type: DateInterval
+        bitDepth:
+            expose: true
+            access_type: public_method
+            serialized_name: BitDepth
+            accessor:
+                getter: getBitDepth
+                setter: setBitDepth
+            type: int
+        file:
+            expose: true
+            access_type: public_method
+            serialized_name: File
+            accessor:
+                getter: getFile
+                setter: setFile
+            type: DedexBundle\Entity\Ern43\FileType
+        fingerprint:
+            expose: true
+            access_type: public_method
+            serialized_name: Fingerprint
+            accessor:
+                getter: getFingerprint
+                setter: setFingerprint
+            xml_list:
+                inline: true
+                entry_name: Fingerprint
+            type: array<DedexBundle\Entity\Ern43\FingerprintType>
+        isProvidedInDelivery:
+            expose: true
+            access_type: public_method
+            serialized_name: IsProvidedInDelivery
+            accessor:
+                getter: getIsProvidedInDelivery
+                setter: setIsProvidedInDelivery
+            type: bool

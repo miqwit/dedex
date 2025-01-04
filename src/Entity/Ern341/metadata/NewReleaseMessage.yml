@@ -1,0 +1,3 @@
+DedexBundle\Entity\Ern341\NewReleaseMessage:
+    xml_root_name: 'ns-b281cff8:NewReleaseMessage'
+    xml_root_namespace: 'http://ddex.net/xml/ern/341'

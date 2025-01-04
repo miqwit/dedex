@@ -1,0 +1,40 @@
+DedexBundle\Entity\Ern383\CueSheetType:
+    properties:
+        cueSheetId:
+            expose: true
+            access_type: public_method
+            serialized_name: CueSheetId
+            accessor:
+                getter: getCueSheetId
+                setter: setCueSheetId
+            xml_list:
+                inline: true
+                entry_name: CueSheetId
+            type: array<DedexBundle\Entity\Ern383\ProprietaryIdType>
+        cueSheetReference:
+            expose: true
+            access_type: public_method
+            serialized_name: CueSheetReference
+            accessor:
+                getter: getCueSheetReference
+                setter: setCueSheetReference
+            type: string
+        cueSheetType:
+            expose: true
+            access_type: public_method
+            serialized_name: CueSheetType
+            accessor:
+                getter: getCueSheetType
+                setter: setCueSheetType
+            type: DedexBundle\Entity\Ern383\CueSheetTypeType
+        cue:
+            expose: true
+            access_type: public_method
+            serialized_name: Cue
+            accessor:
+                getter: getCue
+                setter: setCue
+            xml_list:
+                inline: true
+                entry_name: Cue
+            type: array<DedexBundle\Entity\Ern383\CueType>

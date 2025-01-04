@@ -29,6 +29,9 @@ namespace DedexBundle\Controller;
 use DateInterval;
 use DateTime;
 use DedexBundle\Entity\Ddex;
+use DedexBundle\Entity\DdexC\EventDateType as Ern341EventDateType;
+use DedexBundle\Entity\EventDateTimeType;
+use DedexBundle\Entity\EventDateType;
 use DedexBundle\Exception\FileNotFoundException;
 use DedexBundle\Exception\RuleValidationException;
 use DedexBundle\Exception\VersionNotSupportedException;
@@ -40,24 +43,30 @@ use Exception;
 use ReflectionMethod;
 use ReflectionParameter;
 use XMLReader;
+use DedexBundle\Entity\DdexC\EventDateTimeType as DdexCEventDateTimeType;
+use DedexBundle\Entity\Ern41\EventDateTimeType as Ern41EventDateTimeType;
+use DedexBundle\Entity\Ern381\EventDateTimeType as Ern381EventDateTimeType;
+use DedexBundle\Entity\Ern383\EventDateTimeType as Ern383EventDateTimeType;
+use DedexBundle\Entity\Ern382\EventDateTimeType as Ern382EventDateTimeType;
+use DedexBundle\Entity\Ern411\EventDateTimeType as Ern411EventDateTimeType;
 
 /**
  * The main generic parser for XML files. Will load elements one by one
- * while browsing. 
- * 
+ * while browsing.
+ *
  * It uses the xml_parser_create function and xml_parser_* set.
- * 
- * Three callbacks are used while browsing the XML file, 
+ *
+ * Three callbacks are used while browsing the XML file,
  * depending on the encountered event:
- * 
+ *
  * - callbackCharacterData
  * - callbackEndElement
  * - callbackStartElement
- * 
+ *
  * On top of the regular parsing, rules are tested against the parsed data
  * to validate them. They are run in the validateRules() function, once
  * the parsing is over.
- * 
+ *
  * @author Mickaël Arcos <miqwit>
  */
 class ErnParserController {
@@ -84,15 +93,15 @@ class ErnParserController {
 
   /**
    * key=tag_name and value=current element (object)
-   * @var type 
+   * @var type
    */
   private $pile = array();
 
   /**
    * Contains a list of ids (spl_object_id) of objects that had a closed
    * element, so they are not reused for data erasement.
-   * 
-   * @var array 
+   *
+   * @var array
    */
   private $closed_objects = [];
 
@@ -104,26 +113,26 @@ class ErnParserController {
 
   /**
    * If true, will validate XML against XSD
-   * @var type 
+   * @var type
    */
   private $xsd_validation = false;
-  
+
   /**
    * List of rules applied to this parser to validate
    * @var Rule[]
    */
   private $rules = array();
-  
+
   /**
    * Messages from rules
-   * @var string[] 
+   * @var string[]
    */
   private $rule_messages = [Rule::LEVEL_ERROR => [], Rule::LEVEL_WARNING => []];
 
   /**
    * Array of arrays (by depth level) of attributes to process.
    * Process the attributes of the current level when we leave the level (element ends)
-   * @var type 
+   * @var type
    */
   private $attrs_to_process = [];
 
@@ -144,7 +153,7 @@ class ErnParserController {
       echo $message . "\n";
     }
   }
-  
+
   /**
    * Add a new rule to validate
    * @param Rule $rule
@@ -183,11 +192,11 @@ class ErnParserController {
   private bool $set_to_parent = false;
 
   /**
-   * Indicates the tag name under which the next parsed data must be attached to 
+   * Indicates the tag name under which the next parsed data must be attached to
    * the parent. If it's isBackFill, then will attach to $parent->setIsBackFill().
    * This property is used to guess the function name.
-   * 
-   * @var type 
+   *
+   * @var type
    */
   private string $set_to_parent_tag = "";
 
@@ -207,7 +216,7 @@ class ErnParserController {
 
   /**
    * Function called when the parser encounters a tag opening
-   * 
+   *
    * @param type $parser
    * @param string $name The name of the tag
    * @param array $attrs The attributes of the tag
@@ -229,7 +238,7 @@ class ErnParserController {
       $this->ern = new $class_name();
     } else {
       $parent = end($this->pile);
-      
+
       $class_name = $this->getTypeOfElementFromDoc(get_class($parent), $name);
 
       if (!class_exists($class_name)) {
@@ -247,7 +256,7 @@ class ErnParserController {
     } else {
       $this->pile[$name . "##" . random_int(2, 99999)] = $elem;
     }
-    
+
     // Will process attributes later
     $this->attrs_to_process[count($this->pile)] = $attrs;
   }
@@ -258,10 +267,10 @@ class ErnParserController {
    * When we create an element (callbackStartElement), we don't have access to that
    * textual value yet, so we pass null and the actual valu will be set later
    * (in the callbackCharacterData).
-   * 
+   *
    * Handles a special case for DateInterval which needs a specific string for
    * construction. Instanciate it with 0 seconds.
-   * 
+   *
    * @param type $class_name
    * @return DateInterval|\DedexBundle\Controller\class_name
    */
@@ -275,8 +284,17 @@ class ErnParserController {
       return new $class_name('');
     }
 
+    if (is_subclass_of($class_name, EventDateType::class) || is_subclass_of($class_name, EventDateTimeType::class)) {
+        $dt = new DateTime();
+        return new $class_name($dt);
+    }
+
     if ($class_name === "\DedexBundle\Entity\Ern382\EventDateTimeType") {
       return new \DedexBundle\Entity\Ern382\EventDateTimeType(new \DateTime()); // TODO
+    }
+
+    if ($class_name === "\DedexBundle\Entity\Ern43\EventDateTimeWithoutFlagsType") {
+      return new \DedexBundle\Entity\Ern43\EventDateTimeWithoutFlagsType(new \DateTime()); // TODO
     }
 
     return new $class_name(null);
@@ -286,7 +304,7 @@ class ErnParserController {
    * Function called when the parser encounters a tag ending.
    * Will process attributes of the current element (last in pile) and attach it
    * to its parent. Will delete this element (contained in the parent now).
-   * 
+   *
    * @param type $parser
    * @param string $name
    */
@@ -294,7 +312,7 @@ class ErnParserController {
     if (in_array($name, $this->ignore_these_tags_or_attributes)) {
       return;
     }
-    
+
     $properties = array_filter(array_values((array) end($this->pile)));
     if (count($properties) == 0 && !$this->set_to_parent) {
       // If we are leaving an element that is completely empty (the object
@@ -317,18 +335,21 @@ class ErnParserController {
           $this->callbackCharacterData($parser, $val);
           $this->callbackEndElement($parser, $key);
         }
+
         array_pop($this->attrs_to_process);
       }
 
       $this->attachToParent();
 
-      array_pop($this->pile);
+      if ($name !== 'ResourceMusicalWorkReference') {
+          array_pop($this->pile);
+      }
     }
 
     // Reset parent setting
     $this->set_to_parent = false;
     $this->set_to_parent_tag = "";
-    
+
     // Reset last element
     $this->lastElement = [];
   }
@@ -338,7 +359,7 @@ class ErnParserController {
    * Guess the function of the parent to attach the child.
    * If only one element, set it to this->ern and return. This is the end
    * of the parsing.
-   * 
+   *
    * @return type
    */
   private function attachToParent() {
@@ -351,7 +372,7 @@ class ErnParserController {
     $keys = array_keys($this->pile);
     $child_tag = end($keys);
     $child = $this->pile[$child_tag];
-    
+
     [$func_name, $parent] = $this->getValidFunctionName("set", $child_tag, $child);
 
     $parent->$func_name($child);
@@ -360,7 +381,7 @@ class ErnParserController {
   /**
    * Return a clean version of tag with symbols compatible with function names.
    * : becomes _
-   * 
+   *
    * @param string $tag string to clean
    * @return string
    */
@@ -370,7 +391,7 @@ class ErnParserController {
 
   /**
    * Guess functions for a getter or a setter in the DDEX classes.
-   * 
+   *
    * @param type $prefix "get" or "set"
    * @param type $tag
    * @return type
@@ -381,16 +402,16 @@ class ErnParserController {
     if (strpos($tag, "##") !== false) {
       $tag = preg_replace("/##\d+/", "", $tag);
     }
-    
+
     $func_names = [];
-    
+
     switch ($prefix) {
       case "get":
         $func_names[] = $prefix . $tag;
         $func_names[] = $prefix . $tag . "s";
         $func_names[] = $prefix . $tag . "List";
       //        $prefix . $tag . "Type",
-        
+
         // Hack for release deals. DDEX 4.1.1 is not consistent. It has a DealList
         // and ReleaseDeals in it. This parser would expect a ReleaseDealList instead
         // of the actual DealList
@@ -409,14 +430,14 @@ class ErnParserController {
         $func_names[] = $prefix . $tag;
         $func_names[] = $prefix . $tag . "s";
         $func_names[] = $prefix . $tag . "List";
-        
+
         // Hack for release deals. DDEX 4.1.1 is not consistent. It has a DealList
         // and ReleaseDeals in it. This parser would expect a ReleaseDealList instead
         // of the actual DealList
         if ($tag == "ReleaseDeal") {
           $func_names[] = "addToDealList";
         }
-        
+
         break;
       default:
         throw new \Exception("Prefix must be get or set");
@@ -427,11 +448,11 @@ class ErnParserController {
 
   /**
    * From the current pile of tag, set the value to the last element.
-   * If the pile is ['ERN:NEWRELEASEMESSAGE', 'MESSAGEHEADER', 
-   * 'MESSAGERECIPIENT', 'PARTYID'], then will call 
+   * If the pile is ['ERN:NEWRELEASEMESSAGE', 'MESSAGEHEADER',
+   * 'MESSAGERECIPIENT', 'PARTYID'], then will call
    * $this->ern->getMESSAGEHEADER()->getMESSAGERECIPIENT()->setPARTYID($value)
-   * 
-   * @param string $value Value to set
+   *
+   * @param type $value Value to set
    */
   private function setCurrentElement($value) {
     // Use last element in pile
@@ -471,7 +492,7 @@ class ErnParserController {
    * Tries all funtion of listPossibleFunctionNames on the current element and
    * return the first one that exists.
    * If none exist, throws an exception
-   * 
+   *
    * @param string $prefix "set" or "get"
    * @param type $tag
    * @return type
@@ -479,15 +500,15 @@ class ErnParserController {
    */
   private function getValidFunctionName($prefix, $tag, $value = null) {
     $func_names = $this->listPossibleFunctionNames($prefix, $tag);
-    
+
     $elem = end($this->pile);
-    
-    // If type is complex, always start at previous than end, 
+
+    // If type is complex, always start at previous than end,
     // as end will be itself
     if ($value != null && !$this->set_to_parent && !in_array(get_class($value), ["string", "int", "bool", "float", "mixed"])) {
       $elem = prev($this->pile);
     }
-    
+
     while (true) {
       $function_used = false;
       foreach ($func_names as $func_name) {
@@ -526,14 +547,14 @@ class ErnParserController {
   /**
    * From the doc of a class and function (guessed from $tag), return the type
    * as a string of the element.
-   * 
+   *
    * @param type $class
    * @param type $tag
    * @return string
    */
   private function getTypeOfElementFromDoc($class, $tag) {
     [$function_name, $class] = $this->getValidFunctionName("get", $tag);
-    
+
     $rc = new ReflectionMethod($class, $function_name);
     $doc = $rc->getDocComment();
     preg_match("/@return (\S+).*/", $doc, $matches);
@@ -542,7 +563,7 @@ class ErnParserController {
     } else {
       $type = "\\DedexBundle\\Entity\\Ern{$this->version}\\{$tag}Type";
     }
-    
+
     return $type;
   }
 
@@ -552,7 +573,7 @@ class ErnParserController {
    *
    * Based on documentation rather than parameters type because documentation
    * is more comprehensive (as generated by xsd2php)
-   * 
+   *
    * @param mixed $class
    * @param string $function
    * @param mixed $value_default
@@ -584,6 +605,19 @@ class ErnParserController {
       // Support both ATOM or regular datetime format
       $format = (mb_strlen($value) > mb_strlen('0000-00-00T00:00:00')) ? "Y-m-d\TH:i:sP" : "Y-m-d\TH:i:s";
       $new_elem = DateTime::createFromFormat($format, $value);
+    } elseif ($type == "\DateInterval") {
+        // Check for ISO8601:2004 format
+        //preg_match('/PT([0-9.,]*H)?([0-9.,]*M)?([0-9.,]*S)?/i', $value_default, $matches);
+        preg_match('/^P(?:(\d+D))?(T(?:(\d+H))?(?:(\d+M))?(?:(\d+(?:\.\d+)?S))?)?$/i', $value_default, $matches);
+        $new_elem = (empty($matches))
+            ? new DateInterval($value_default)
+            : $this->intervalFromIso86012004String($value_default);
+    } elseif (is_subclass_of($type, EventDateTimeType::class)) {
+        $new_elem = new $type(new DateTime($value_default));
+    } elseif ($type === '\\' . Ern341EventDateType::class) {
+        $new_elem = new $type(new DateTime($value_default));
+    } elseif (is_subclass_of($type, EventDateType::class)) {
+        $new_elem = new $type($value_default);
     } else {
       try {
         $new_elem = new $type($value_default);
@@ -596,9 +630,38 @@ class ErnParserController {
     return $new_elem;
   }
 
+  protected function intervalFromIso86012004String(string $value): DateInterval
+  {
+      preg_match('/PT([0-9.,]*H)?([0-9.,]*M)?([0-9.,]*S)?/i', $value, $matches);
+
+      $hours = $matches[1] ?? null;
+      $minutes = $matches[2] ?? null;
+      $seconds = $matches[3] ?? null;
+
+      $hours = (!empty($hours)) ? str_replace('H', '', $hours) : 0;
+      $minutes = (!empty($minutes)) ? str_replace('M', '', $minutes) : 0;
+      $seconds = (!empty($seconds)) ? str_replace('S', '', $seconds) : 0;
+
+      $split = explode('.', $seconds);
+      $seconds = $split[0];
+      $fraction = $split[1] ?? null;
+
+      $now = new DateTime();
+      $next = clone $now;
+
+      $next->add(DateInterval::createFromDateString(sprintf('%s hours', $hours)));
+      $next->add(DateInterval::createFromDateString(sprintf('%s minutes', $minutes)));
+      $next->add(DateInterval::createFromDateString(sprintf('%s seconds', $seconds)));
+      if (!empty($fraction)) {
+          $next->add(DateInterval::createFromDateString(sprintf('%s microseconds', $fraction)));
+      }
+
+      return $now->diff($next);
+  }
+
   /**
    * Function called when data is encountered in the XML file
-   * 
+   *
    * @param type $parser
    * @param string $data
    */
@@ -613,7 +676,7 @@ class ErnParserController {
 
   /**
    * Creates the parser and affect the callback functions
-   * 
+   *
    * @param string $file
    * @return boolean
    */
@@ -644,7 +707,16 @@ class ErnParserController {
    */
   private function detectVersion($fp) {
     $version = null;
-    $supported_versions = ["411", "41", "382"];
+    $supported_versions = [
+        "43",
+        "411",
+        "41",
+        "382",
+        "381",
+        "383",
+        "341",
+        "371",
+    ];
 
     while (($buffer = fgets($fp, 4096)) !== false) {
       $trimed = trim($buffer);
@@ -679,7 +751,7 @@ class ErnParserController {
   /**
    * Validates XML against XSD (according to version).
    * Will load both files in memory.
-   * 
+   *
    * @param string $file_path
    * @throws XsdCompliantException
    */
@@ -702,10 +774,10 @@ class ErnParserController {
       throw new XsdCompliantException("This XML file $file_path does not validates XSD $xsd_file_path. Error: {$ex->getMessage()}");
     }
   }
-  
+
   /**
    * Display all warning messages then error messages, one per line.
-   * 
+   *
    * @return type
    */
   private function getInvalidatedRuleMessages() {
@@ -714,14 +786,14 @@ class ErnParserController {
     foreach (array_merge($this->rule_messages[Rule::LEVEL_WARNING], $this->rule_messages[Rule::LEVEL_ERROR]) as $msg) {
       $message .= "\n- ".$msg;
     }
-    
+
     return $message;
   }
-  
+
   /**
    * Check the new release message validates all rules.
    * Will raise an exception and display all messages if one error pops up.
-   * 
+   *
    * @throws RuleValidationException
    */
   private function validateRules() {
@@ -729,20 +801,20 @@ class ErnParserController {
       if (!in_array($this->version, $rule->getSupportedVersions())) {
         continue;
       }
-      
+
       $valid = $rule->validates($this->ern);
       if (!$valid) {
         $this->rule_messages[$rule->getLevel()][] = $rule->getMessage();
       }
     }
-    
+
     if (count($this->rule_messages[Rule::LEVEL_ERROR]) > 0) {
       throw new RuleValidationException("Some rules with level ERROR did not pass.\n"
               . $this->getInvalidatedRuleMessages()
       );
     }
   }
-  
+
   /**
    * Return all messages generated by rules.
    * @return string
@@ -753,7 +825,7 @@ class ErnParserController {
 
   /**
    * This is the main parsing function that will go through the whole XML
-   * 
+   *
    * @param string $file_path Location of XML path
    * @return Ddex The main entity modelling the full DDex file
    * @throws Exception If file not found or XML can't be loaded
@@ -789,7 +861,7 @@ class ErnParserController {
 
     // Free parser memory
     xml_parser_free($this->xml_parser);
-    
+
     // Check for rules
     $this->validateRules();
 

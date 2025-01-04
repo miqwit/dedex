@@ -1,0 +1,51 @@
+DedexBundle\Entity\Ern43\LocationAndDateOfSessionType:
+    properties:
+        sessionType:
+            expose: true
+            access_type: public_method
+            serialized_name: SessionType
+            accessor:
+                getter: getSessionType
+                setter: setSessionType
+            xml_list:
+                inline: true
+                entry_name: SessionType
+            type: array<DedexBundle\Entity\Ern43\SessionTypeType>
+        period:
+            expose: true
+            access_type: public_method
+            serialized_name: Period
+            accessor:
+                getter: getPeriod
+                setter: setPeriod
+            type: DedexBundle\Entity\Ern43\PeriodType
+        venue:
+            expose: true
+            access_type: public_method
+            serialized_name: Venue
+            accessor:
+                getter: getVenue
+                setter: setVenue
+            xml_list:
+                inline: true
+                entry_name: Venue
+            type: array<DedexBundle\Entity\Ern43\VenueType>
+        comment:
+            expose: true
+            access_type: public_method
+            serialized_name: Comment
+            accessor:
+                getter: getComment
+                setter: setComment
+            type: DedexBundle\Entity\Ern43\TextWithFormatType
+        contributor:
+            expose: true
+            access_type: public_method
+            serialized_name: Contributor
+            accessor:
+                getter: getContributor
+                setter: setContributor
+            xml_list:
+                inline: true
+                entry_name: Contributor
+            type: array<DedexBundle\Entity\Ern43\PartyWithRoleType>

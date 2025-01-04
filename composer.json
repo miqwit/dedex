@@ -1,30 +1,34 @@
 {
     "type": "symfony-bundle",
-    "name": "miqwit/dedex",
+    "name": "sauceindustries/dedex-fork",
     "description": "Parse DDEX ERN files and provide a convenient API to use it",
 	  "keywords": ["ddex", "parsing", "music", "xml"],
-	  "homepage": "https://github.com/miqwit/dedex",
+	  "homepage": "https://github.com/SauceIndustries/dedex",
 	  "authors": [
         {
             "name": "Mickaël Arcos",
             "role": "Developer"
-        }
+        },
+      {
+          "name": "Nicole Wilging",
+          "role": "Developer"
+      }
 		],
     "license": "MIT",
     "require": {
         "php": "^7.2|^8.0",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "goetas-webservices/xsd2php-runtime": "v0.2.16",
-        "symfony/console": "^2.7|^3.0|^4.0|^5.0|^6.0",
-        "symfony/dotenv": "^4.0|^5.0|^6.0",
+        "goetas-webservices/xsd2php-runtime": "v0.2.17",
+        "symfony/console": "^2.7|^3.0|^4.0|^5.0|^6.0|^7.0",
+        "symfony/dotenv": "^4.0|^5.0|^6.0|^7.0",
         "symfony/flex": "^1.18",
-        "symfony/framework-bundle": "^4.0|^5.0|^6.0",
-        "symfony/http-kernel": "^4.0|^5.1.5|^6.0",
-        "symfony/yaml": "^2.2|^3.0|^4.0|^5.0|^6.0"
+        "symfony/framework-bundle": "^4.0|^5.0|^6.0|^7.0",
+        "symfony/http-kernel": "^4.0|^5.1.5|^6.0|^7.0",
+        "symfony/yaml": "^2.2|^3.0|^4.0|^5.0|^6.0|^7.0"
     },
     "require-dev": {
-        "goetas-webservices/xsd2php": "^0.4.4",
+        "goetas-webservices/xsd2php": "dev-master",
         "phpunit/phpunit": "^9.5",
         "symfony/maker-bundle": "^1.14",
         "symfony/phpunit-bridge": "^6.1"

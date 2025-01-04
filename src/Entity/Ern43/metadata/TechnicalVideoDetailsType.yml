@@ -1,0 +1,75 @@
+DedexBundle\Entity\Ern43\TechnicalVideoDetailsType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        applicableTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ApplicableTerritoryCode
+            accessor:
+                getter: getApplicableTerritoryCode
+                setter: setApplicableTerritoryCode
+            xml_attribute: true
+            type: string
+        isDefault:
+            expose: true
+            access_type: public_method
+            serialized_name: IsDefault
+            accessor:
+                getter: getIsDefault
+                setter: setIsDefault
+            xml_attribute: true
+            type: bool
+        technicalResourceDetailsReference:
+            expose: true
+            access_type: public_method
+            serialized_name: TechnicalResourceDetailsReference
+            accessor:
+                getter: getTechnicalResourceDetailsReference
+                setter: setTechnicalResourceDetailsReference
+            type: string
+        overallBitRate:
+            expose: true
+            access_type: public_method
+            serialized_name: OverallBitRate
+            accessor:
+                getter: getOverallBitRate
+                setter: setOverallBitRate
+            type: DedexBundle\Entity\Ern43\BitRateType
+        deliveryFile:
+            expose: true
+            access_type: public_method
+            serialized_name: DeliveryFile
+            accessor:
+                getter: getDeliveryFile
+                setter: setDeliveryFile
+            xml_list:
+                inline: true
+                entry_name: DeliveryFile
+            type: array<DedexBundle\Entity\Ern43\VideoDeliveryFileType>
+        isClip:
+            expose: true
+            access_type: public_method
+            serialized_name: IsClip
+            accessor:
+                getter: getIsClip
+                setter: setIsClip
+            type: bool
+        clipDetails:
+            expose: true
+            access_type: public_method
+            serialized_name: ClipDetails
+            accessor:
+                getter: getClipDetails
+                setter: setClipDetails
+            xml_list:
+                inline: true
+                entry_name: ClipDetails
+            type: array<DedexBundle\Entity\Ern43\VideoClipDetailsType>

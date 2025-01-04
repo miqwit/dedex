@@ -1,0 +1,37 @@
+DedexBundle\Entity\DdexC\DeductionRateType:
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: float
+        deductionRateType:
+            expose: true
+            access_type: public_method
+            serialized_name: DeductionRateType
+            accessor:
+                getter: getDeductionRateType
+                setter: setDeductionRateType
+            xml_attribute: true
+            type: string
+        deductionDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: DeductionDescription
+            accessor:
+                getter: getDeductionDescription
+                setter: setDeductionDescription
+            xml_attribute: true
+            type: string
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string

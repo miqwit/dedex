@@ -1,0 +1,175 @@
+DedexBundle\Entity\Ern381\CueType:
+    properties:
+        cueUseType:
+            expose: true
+            access_type: public_method
+            serialized_name: CueUseType
+            accessor:
+                getter: getCueUseType
+                setter: setCueUseType
+            type: DedexBundle\Entity\Ern381\CueUseTypeType
+        cueThemeType:
+            expose: true
+            access_type: public_method
+            serialized_name: CueThemeType
+            accessor:
+                getter: getCueThemeType
+                setter: setCueThemeType
+            type: DedexBundle\Entity\Ern381\CueThemeTypeType
+        cueVocalType:
+            expose: true
+            access_type: public_method
+            serialized_name: CueVocalType
+            accessor:
+                getter: getCueVocalType
+                setter: setCueVocalType
+            type: DedexBundle\Entity\Ern381\CueVocalTypeType
+        isDance:
+            expose: true
+            access_type: public_method
+            serialized_name: IsDance
+            accessor:
+                getter: getIsDance
+                setter: setIsDance
+            type: bool
+        cueVisualPerceptionType:
+            expose: true
+            access_type: public_method
+            serialized_name: CueVisualPerceptionType
+            accessor:
+                getter: getCueVisualPerceptionType
+                setter: setCueVisualPerceptionType
+            type: DedexBundle\Entity\Ern381\CueVisualPerceptionTypeType
+        cueOrigin:
+            expose: true
+            access_type: public_method
+            serialized_name: CueOrigin
+            accessor:
+                getter: getCueOrigin
+                setter: setCueOrigin
+            type: DedexBundle\Entity\Ern381\CueOriginType
+        cueCreationReference:
+            expose: true
+            access_type: public_method
+            serialized_name: CueCreationReference
+            accessor:
+                getter: getCueCreationReference
+                setter: setCueCreationReference
+            xml_list:
+                inline: true
+                entry_name: CueCreationReference
+            type: array<DedexBundle\Entity\Ern381\CueCreationReferenceType>
+        referencedCreationType:
+            expose: true
+            access_type: public_method
+            serialized_name: ReferencedCreationType
+            accessor:
+                getter: getReferencedCreationType
+                setter: setReferencedCreationType
+            type: string
+        referencedCreationId:
+            expose: true
+            access_type: public_method
+            serialized_name: ReferencedCreationId
+            accessor:
+                getter: getReferencedCreationId
+                setter: setReferencedCreationId
+            type: DedexBundle\Entity\Ern381\CreationIdType
+        referencedCreationTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: ReferencedCreationTitle
+            accessor:
+                getter: getReferencedCreationTitle
+                setter: setReferencedCreationTitle
+            xml_list:
+                inline: true
+                entry_name: ReferencedCreationTitle
+            type: array<DedexBundle\Entity\Ern381\TitleType>
+        referencedCreationContributor:
+            expose: true
+            access_type: public_method
+            serialized_name: ReferencedCreationContributor
+            accessor:
+                getter: getReferencedCreationContributor
+                setter: setReferencedCreationContributor
+            xml_list:
+                inline: true
+                entry_name: ReferencedCreationContributor
+            type: array<DedexBundle\Entity\Ern381\DetailedResourceContributorType>
+        referencedIndirectCreationContributor:
+            expose: true
+            access_type: public_method
+            serialized_name: ReferencedIndirectCreationContributor
+            accessor:
+                getter: getReferencedIndirectCreationContributor
+                setter: setReferencedIndirectCreationContributor
+            xml_list:
+                inline: true
+                entry_name: ReferencedIndirectCreationContributor
+            type: array<DedexBundle\Entity\Ern381\MusicalWorkContributorType>
+        referencedCreationCharacter:
+            expose: true
+            access_type: public_method
+            serialized_name: ReferencedCreationCharacter
+            accessor:
+                getter: getReferencedCreationCharacter
+                setter: setReferencedCreationCharacter
+            xml_list:
+                inline: true
+                entry_name: ReferencedCreationCharacter
+            type: array<DedexBundle\Entity\Ern381\CharacterType>
+        hasMusicalContent:
+            expose: true
+            access_type: public_method
+            serialized_name: HasMusicalContent
+            accessor:
+                getter: getHasMusicalContent
+                setter: setHasMusicalContent
+            type: bool
+        startTime:
+            expose: true
+            access_type: public_method
+            serialized_name: StartTime
+            accessor:
+                getter: getStartTime
+                setter: setStartTime
+            type: DateInterval
+        duration:
+            expose: true
+            access_type: public_method
+            serialized_name: Duration
+            accessor:
+                getter: getDuration
+                setter: setDuration
+            type: DateInterval
+        endTime:
+            expose: true
+            access_type: public_method
+            serialized_name: EndTime
+            accessor:
+                getter: getEndTime
+                setter: setEndTime
+            type: DateInterval
+        pLine:
+            expose: true
+            access_type: public_method
+            serialized_name: PLine
+            accessor:
+                getter: getPLine
+                setter: setPLine
+            xml_list:
+                inline: true
+                entry_name: PLine
+            type: array<DedexBundle\Entity\Ern381\PLineType>
+        cLine:
+            expose: true
+            access_type: public_method
+            serialized_name: CLine
+            accessor:
+                getter: getCLine
+                setter: setCLine
+            xml_list:
+                inline: true
+                entry_name: CLine
+            type: array<DedexBundle\Entity\Ern381\CLineType>

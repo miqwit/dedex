@@ -1,0 +1,48 @@
+DedexBundle\Entity\Ern43\SoundRecordingClipDetailsType:
+    properties:
+        technicalResourceDetailsReference:
+            expose: true
+            access_type: public_method
+            serialized_name: TechnicalResourceDetailsReference
+            accessor:
+                getter: getTechnicalResourceDetailsReference
+                setter: setTechnicalResourceDetailsReference
+            type: string
+        clipType:
+            expose: true
+            access_type: public_method
+            serialized_name: ClipType
+            accessor:
+                getter: getClipType
+                setter: setClipType
+            type: DedexBundle\Entity\Ern43\ClipTypeType
+        timing:
+            expose: true
+            access_type: public_method
+            serialized_name: Timing
+            accessor:
+                getter: getTiming
+                setter: setTiming
+            xml_list:
+                inline: true
+                entry_name: Timing
+            type: array<DedexBundle\Entity\Ern43\TimingType>
+        expressionType:
+            expose: true
+            access_type: public_method
+            serialized_name: ExpressionType
+            accessor:
+                getter: getExpressionType
+                setter: setExpressionType
+            type: string
+        deliveryFile:
+            expose: true
+            access_type: public_method
+            serialized_name: DeliveryFile
+            accessor:
+                getter: getDeliveryFile
+                setter: setDeliveryFile
+            xml_list:
+                inline: true
+                entry_name: DeliveryFile
+            type: array<DedexBundle\Entity\Ern43\AudioDeliveryFileType>

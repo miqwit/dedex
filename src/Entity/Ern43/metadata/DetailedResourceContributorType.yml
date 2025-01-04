@@ -1,0 +1,82 @@
+DedexBundle\Entity\Ern43\DetailedResourceContributorType:
+    properties:
+        sequenceNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumber
+            accessor:
+                getter: getSequenceNumber
+                setter: setSequenceNumber
+            xml_attribute: true
+            type: int
+        partyId:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyId
+            accessor:
+                getter: getPartyId
+                setter: setPartyId
+            xml_list:
+                inline: true
+                entry_name: PartyId
+            type: array<DedexBundle\Entity\Ern43\DetailedPartyIdType>
+        partyName:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyName
+            accessor:
+                getter: getPartyName
+                setter: setPartyName
+            xml_list:
+                inline: true
+                entry_name: PartyName
+            type: array<DedexBundle\Entity\Ern43\PartyNameType>
+        role:
+            expose: true
+            access_type: public_method
+            serialized_name: Role
+            accessor:
+                getter: getRole
+                setter: setRole
+            xml_list:
+                inline: true
+                entry_name: Role
+            type: array<DedexBundle\Entity\Ern43\ContributorRoleType>
+        instrumentType:
+            expose: true
+            access_type: public_method
+            serialized_name: InstrumentType
+            accessor:
+                getter: getInstrumentType
+                setter: setInstrumentType
+            xml_list:
+                inline: true
+                entry_name: InstrumentType
+            type: array<DedexBundle\Entity\Ern43\InstrumentTypeType>
+        hasMadeFeaturedContribution:
+            expose: true
+            access_type: public_method
+            serialized_name: HasMadeFeaturedContribution
+            accessor:
+                getter: getHasMadeFeaturedContribution
+                setter: setHasMadeFeaturedContribution
+            type: bool
+        hasMadeContractedContribution:
+            expose: true
+            access_type: public_method
+            serialized_name: HasMadeContractedContribution
+            accessor:
+                getter: getHasMadeContractedContribution
+                setter: setHasMadeContractedContribution
+            type: bool
+        displayCredits:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayCredits
+            accessor:
+                getter: getDisplayCredits
+                setter: setDisplayCredits
+            xml_list:
+                inline: true
+                entry_name: DisplayCredits
+            type: array<DedexBundle\Entity\Ern43\DisplayCreditsType>

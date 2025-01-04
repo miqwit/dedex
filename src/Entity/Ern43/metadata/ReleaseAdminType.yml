@@ -1,0 +1,29 @@
+DedexBundle\Entity\Ern43\ReleaseAdminType:
+    properties:
+        releaseAdminId:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseAdminId
+            accessor:
+                getter: getReleaseAdminId
+                setter: setReleaseAdminId
+            type: string
+        personnelDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: PersonnelDescription
+            accessor:
+                getter: getPersonnelDescription
+                setter: setPersonnelDescription
+            type: string
+        systemDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: SystemDescription
+            accessor:
+                getter: getSystemDescription
+                setter: setSystemDescription
+            xml_list:
+                inline: true
+                entry_name: SystemDescription
+            type: array<string>

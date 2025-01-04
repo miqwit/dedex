@@ -1,0 +1,13 @@
+DedexBundle\Entity\Ern43\SubGenreCategoryType:
+    properties:
+        value:
+            expose: true
+            access_type: public_method
+            serialized_name: Value
+            accessor:
+                getter: getValue
+                setter: setValue
+            xml_list:
+                inline: true
+                entry_name: Value
+            type: array<DedexBundle\Entity\Ern43\SubGenreCategoryValueType>

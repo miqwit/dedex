@@ -1,0 +1,219 @@
+DedexBundle\Entity\Ern381\CollectionType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        collectionId:
+            expose: true
+            access_type: public_method
+            serialized_name: CollectionId
+            accessor:
+                getter: getCollectionId
+                setter: setCollectionId
+            xml_list:
+                inline: true
+                entry_name: CollectionId
+            type: array<DedexBundle\Entity\Ern381\CollectionIdType>
+        collectionType:
+            expose: true
+            access_type: public_method
+            serialized_name: CollectionType
+            accessor:
+                getter: getCollectionType
+                setter: setCollectionType
+            xml_list:
+                inline: true
+                entry_name: CollectionType
+            type: array<DedexBundle\Entity\Ern381\CollectionTypeType>
+        collectionReference:
+            expose: true
+            access_type: public_method
+            serialized_name: CollectionReference
+            accessor:
+                getter: getCollectionReference
+                setter: setCollectionReference
+            type: string
+        equivalentReleaseReference:
+            expose: true
+            access_type: public_method
+            serialized_name: EquivalentReleaseReference
+            accessor:
+                getter: getEquivalentReleaseReference
+                setter: setEquivalentReleaseReference
+            type: string
+        title:
+            expose: true
+            access_type: public_method
+            serialized_name: Title
+            accessor:
+                getter: getTitle
+                setter: setTitle
+            xml_list:
+                inline: true
+                entry_name: Title
+            type: array<DedexBundle\Entity\Ern381\TitleType>
+        sequenceNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumber
+            accessor:
+                getter: getSequenceNumber
+                setter: setSequenceNumber
+            type: int
+        contributor:
+            expose: true
+            access_type: public_method
+            serialized_name: Contributor
+            accessor:
+                getter: getContributor
+                setter: setContributor
+            xml_list:
+                inline: true
+                entry_name: Contributor
+            type: array<DedexBundle\Entity\Ern381\DetailedResourceContributorType>
+        character:
+            expose: true
+            access_type: public_method
+            serialized_name: Character
+            accessor:
+                getter: getCharacter
+                setter: setCharacter
+            xml_list:
+                inline: true
+                entry_name: Character
+            type: array<DedexBundle\Entity\Ern381\CharacterType>
+        collectionCollectionReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: CollectionCollectionReferenceList
+            accessor:
+                getter: getCollectionCollectionReferenceList
+                setter: setCollectionCollectionReferenceList
+            type: DedexBundle\Entity\Ern381\CollectionCollectionReferenceListType
+        isComplete:
+            expose: true
+            access_type: public_method
+            serialized_name: IsComplete
+            accessor:
+                getter: getIsComplete
+                setter: setIsComplete
+            type: bool
+        duration:
+            expose: true
+            access_type: public_method
+            serialized_name: Duration
+            accessor:
+                getter: getDuration
+                setter: setDuration
+            type: DateInterval
+        durationOfMusicalContent:
+            expose: true
+            access_type: public_method
+            serialized_name: DurationOfMusicalContent
+            accessor:
+                getter: getDurationOfMusicalContent
+                setter: setDurationOfMusicalContent
+            type: DateInterval
+        creationDate:
+            expose: true
+            access_type: public_method
+            serialized_name: CreationDate
+            accessor:
+                getter: getCreationDate
+                setter: setCreationDate
+            type: DedexBundle\Entity\Ern381\EventDateType
+        releaseDate:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseDate
+            accessor:
+                getter: getReleaseDate
+                setter: setReleaseDate
+            type: DedexBundle\Entity\Ern381\EventDateType
+        originalReleaseDate:
+            expose: true
+            access_type: public_method
+            serialized_name: OriginalReleaseDate
+            accessor:
+                getter: getOriginalReleaseDate
+                setter: setOriginalReleaseDate
+            type: DedexBundle\Entity\Ern381\EventDateType
+        originalLanguage:
+            expose: true
+            access_type: public_method
+            serialized_name: OriginalLanguage
+            accessor:
+                getter: getOriginalLanguage
+                setter: setOriginalLanguage
+            type: string
+        collectionDetailsByTerritory:
+            expose: true
+            access_type: public_method
+            serialized_name: CollectionDetailsByTerritory
+            accessor:
+                getter: getCollectionDetailsByTerritory
+                setter: setCollectionDetailsByTerritory
+            xml_list:
+                inline: true
+                entry_name: CollectionDetailsByTerritory
+            type: array<DedexBundle\Entity\Ern381\CollectionDetailsByTerritoryType>
+        collectionResourceReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: CollectionResourceReferenceList
+            accessor:
+                getter: getCollectionResourceReferenceList
+                setter: setCollectionResourceReferenceList
+            type: array<DedexBundle\Entity\Ern381\CollectionResourceReferenceType>
+            xml_list:
+                inline: false
+                entry_name: CollectionResourceReference
+                skip_when_empty: true
+        collectionWorkReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: CollectionWorkReferenceList
+            accessor:
+                getter: getCollectionWorkReferenceList
+                setter: setCollectionWorkReferenceList
+            type: array<DedexBundle\Entity\Ern381\CollectionWorkReferenceType>
+            xml_list:
+                inline: false
+                entry_name: CollectionWorkReference
+                skip_when_empty: true
+        representativeImageReference:
+            expose: true
+            access_type: public_method
+            serialized_name: RepresentativeImageReference
+            accessor:
+                getter: getRepresentativeImageReference
+                setter: setRepresentativeImageReference
+            type: string
+        pLine:
+            expose: true
+            access_type: public_method
+            serialized_name: PLine
+            accessor:
+                getter: getPLine
+                setter: setPLine
+            xml_list:
+                inline: true
+                entry_name: PLine
+            type: array<DedexBundle\Entity\Ern381\PLineType>
+        cLine:
+            expose: true
+            access_type: public_method
+            serialized_name: CLine
+            accessor:
+                getter: getCLine
+                setter: setCLine
+            xml_list:
+                inline: true
+                entry_name: CLine
+            type: array<DedexBundle\Entity\Ern381\CLineType>

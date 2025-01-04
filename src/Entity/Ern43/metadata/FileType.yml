@@ -1,0 +1,26 @@
+DedexBundle\Entity\Ern43\FileType:
+    properties:
+        uRI:
+            expose: true
+            access_type: public_method
+            serialized_name: URI
+            accessor:
+                getter: getURI
+                setter: setURI
+            type: string
+        hashSum:
+            expose: true
+            access_type: public_method
+            serialized_name: HashSum
+            accessor:
+                getter: getHashSum
+                setter: setHashSum
+            type: DedexBundle\Entity\Ern43\DetailedHashSumType
+        fileSize:
+            expose: true
+            access_type: public_method
+            serialized_name: FileSize
+            accessor:
+                getter: getFileSize
+                setter: setFileSize
+            type: float

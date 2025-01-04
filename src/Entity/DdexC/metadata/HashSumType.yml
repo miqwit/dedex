@@ -1,0 +1,18 @@
+DedexBundle\Entity\DdexC\HashSumType:
+    properties:
+        hashSum:
+            expose: true
+            access_type: public_method
+            serialized_name: HashSum
+            accessor:
+                getter: getHashSum
+                setter: setHashSum
+            type: string
+        hashSumAlgorithmType:
+            expose: true
+            access_type: public_method
+            serialized_name: HashSumAlgorithmType
+            accessor:
+                getter: getHashSumAlgorithmType
+                setter: setHashSumAlgorithmType
+            type: DedexBundle\Entity\DdexC\HashSumAlgorithmTypeType

@@ -1,0 +1,84 @@
+DedexBundle\Entity\Ern43\AdditionalTitleType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        applicableTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ApplicableTerritoryCode
+            accessor:
+                getter: getApplicableTerritoryCode
+                setter: setApplicableTerritoryCode
+            xml_attribute: true
+            type: string
+        titleType:
+            expose: true
+            access_type: public_method
+            serialized_name: TitleType
+            accessor:
+                getter: getTitleType
+                setter: setTitleType
+            xml_attribute: true
+            type: string
+        namespace:
+            expose: true
+            access_type: public_method
+            serialized_name: Namespace
+            accessor:
+                getter: getNamespace
+                setter: setNamespace
+            xml_attribute: true
+            type: string
+        userDefinedValue:
+            expose: true
+            access_type: public_method
+            serialized_name: UserDefinedValue
+            accessor:
+                getter: getUserDefinedValue
+                setter: setUserDefinedValue
+            xml_attribute: true
+            type: string
+        isDefault:
+            expose: true
+            access_type: public_method
+            serialized_name: IsDefault
+            accessor:
+                getter: getIsDefault
+                setter: setIsDefault
+            xml_attribute: true
+            type: bool
+        isInOriginalLanguage:
+            expose: true
+            access_type: public_method
+            serialized_name: IsInOriginalLanguage
+            accessor:
+                getter: getIsInOriginalLanguage
+                setter: setIsInOriginalLanguage
+            xml_attribute: true
+            type: bool
+        titleText:
+            expose: true
+            access_type: public_method
+            serialized_name: TitleText
+            accessor:
+                getter: getTitleText
+                setter: setTitleText
+            type: string
+        subTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: SubTitle
+            accessor:
+                getter: getSubTitle
+                setter: setSubTitle
+            xml_list:
+                inline: true
+                entry_name: SubTitle
+            type: array<DedexBundle\Entity\Ern43\DisplaySubTitleType>

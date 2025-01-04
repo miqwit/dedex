@@ -1,0 +1,37 @@
+DedexBundle\Entity\Ern43\DiscoverableUseTypeType:
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: string
+        namespace:
+            expose: true
+            access_type: public_method
+            serialized_name: Namespace
+            accessor:
+                getter: getNamespace
+                setter: setNamespace
+            xml_attribute: true
+            type: string
+        isDiscoverable:
+            expose: true
+            access_type: public_method
+            serialized_name: IsDiscoverable
+            accessor:
+                getter: getIsDiscoverable
+                setter: setIsDiscoverable
+            xml_attribute: true
+            type: bool
+        userDefinedValue:
+            expose: true
+            access_type: public_method
+            serialized_name: UserDefinedValue
+            accessor:
+                getter: getUserDefinedValue
+                setter: setUserDefinedValue
+            xml_attribute: true
+            type: string

@@ -1,0 +1,61 @@
+DedexBundle\Entity\Ern43\PriceInformationWithTypeType:
+    properties:
+        priceType:
+            expose: true
+            access_type: public_method
+            serialized_name: PriceType
+            accessor:
+                getter: getPriceType
+                setter: setPriceType
+            xml_attribute: true
+            type: string
+        namespace:
+            expose: true
+            access_type: public_method
+            serialized_name: Namespace
+            accessor:
+                getter: getNamespace
+                setter: setNamespace
+            xml_attribute: true
+            type: string
+        userDefinedValue:
+            expose: true
+            access_type: public_method
+            serialized_name: UserDefinedValue
+            accessor:
+                getter: getUserDefinedValue
+                setter: setUserDefinedValue
+            xml_attribute: true
+            type: string
+        priceCode:
+            expose: true
+            access_type: public_method
+            serialized_name: PriceCode
+            accessor:
+                getter: getPriceCode
+                setter: setPriceCode
+            type: DedexBundle\Entity\Ern43\PriceTypeType
+        wholesalePricePerUnit:
+            expose: true
+            access_type: public_method
+            serialized_name: WholesalePricePerUnit
+            accessor:
+                getter: getWholesalePricePerUnit
+                setter: setWholesalePricePerUnit
+            type: DedexBundle\Entity\Ern43\PriceType
+        bulkOrderWholesalePricePerUnit:
+            expose: true
+            access_type: public_method
+            serialized_name: BulkOrderWholesalePricePerUnit
+            accessor:
+                getter: getBulkOrderWholesalePricePerUnit
+                setter: setBulkOrderWholesalePricePerUnit
+            type: DedexBundle\Entity\Ern43\PriceType
+        suggestedRetailPrice:
+            expose: true
+            access_type: public_method
+            serialized_name: SuggestedRetailPrice
+            accessor:
+                getter: getSuggestedRetailPrice
+                setter: setSuggestedRetailPrice
+            type: DedexBundle\Entity\Ern43\PriceType

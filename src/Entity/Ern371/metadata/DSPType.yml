@@ -1,0 +1,60 @@
+DedexBundle\Entity\Ern371\DSPType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        partyId:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyId
+            accessor:
+                getter: getPartyId
+                setter: setPartyId
+            xml_list:
+                inline: true
+                entry_name: PartyId
+            type: array<DedexBundle\Entity\Ern371\PartyIdType>
+        partyName:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyName
+            accessor:
+                getter: getPartyName
+                setter: setPartyName
+            xml_list:
+                inline: true
+                entry_name: PartyName
+            type: array<DedexBundle\Entity\Ern371\PartyNameType>
+        tradingName:
+            expose: true
+            access_type: public_method
+            serialized_name: TradingName
+            accessor:
+                getter: getTradingName
+                setter: setTradingName
+            type: DedexBundle\Entity\Ern371\NameType
+        uRL:
+            expose: true
+            access_type: public_method
+            serialized_name: URL
+            accessor:
+                getter: getURL
+                setter: setURL
+            xml_list:
+                inline: true
+                entry_name: URL
+            type: array<string>
+        territoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryCode
+            accessor:
+                getter: getTerritoryCode
+                setter: setTerritoryCode
+            type: DedexBundle\Entity\Ern371\CurrentTerritoryCodeType

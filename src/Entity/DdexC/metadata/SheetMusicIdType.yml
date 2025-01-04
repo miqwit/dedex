@@ -1,0 +1,30 @@
+DedexBundle\Entity\DdexC\SheetMusicIdType:
+    properties:
+        isReplaced:
+            expose: true
+            access_type: public_method
+            serialized_name: IsReplaced
+            accessor:
+                getter: getIsReplaced
+                setter: setIsReplaced
+            xml_attribute: true
+            type: bool
+        iSMN:
+            expose: true
+            access_type: public_method
+            serialized_name: ISMN
+            accessor:
+                getter: getISMN
+                setter: setISMN
+            type: string
+        proprietaryId:
+            expose: true
+            access_type: public_method
+            serialized_name: ProprietaryId
+            accessor:
+                getter: getProprietaryId
+                setter: setProprietaryId
+            xml_list:
+                inline: true
+                entry_name: ProprietaryId
+            type: array<DedexBundle\Entity\DdexC\ProprietaryIdType>

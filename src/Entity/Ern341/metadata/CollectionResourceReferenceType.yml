@@ -1,0 +1,18 @@
+DedexBundle\Entity\Ern341\CollectionResourceReferenceType:
+    properties:
+        collectionResourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: CollectionResourceReference
+            accessor:
+                getter: getCollectionResourceReference
+                setter: setCollectionResourceReference
+            type: string
+        duration:
+            expose: true
+            access_type: public_method
+            serialized_name: Duration
+            accessor:
+                getter: getDuration
+                setter: setDuration
+            type: DateInterval
