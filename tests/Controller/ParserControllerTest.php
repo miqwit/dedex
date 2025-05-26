@@ -235,4 +235,50 @@ class ParserControllerTest extends TestCase {
     $this->assertEquals('DedexBundle\Entity\Ern411\NewReleaseMessage', get_class($ddex));
   }
 
+  /**
+   * Test ERN 41 is parsed correctly
+   */
+  public function testSample019Ern41() {
+    $xml_path = "tests/samples/019_ern41.xml";
+    $parser_controller = new ErnParserController();
+    // Set this to true to see logs from the parser
+    $parser_controller->setDisplayLog(true);
+    /* @var $ddex NewReleaseMessage */
+    $ddex = $parser_controller->parse($xml_path);
+
+    // ERN version is now 41. It is using classes with namespace 41.
+    $this->assertEquals('DedexBundle\Entity\Ern41\NewReleaseMessage', get_class($ddex));
+  }
+
+  /**
+   * Test ERN 383 is parsed correctly
+   */
+  public function testSample018Ern383() {
+    $xml_path = "tests/samples/018_ern383.xml";
+    $parser_controller = new ErnParserController();
+    // Set this to true to see logs from the parser
+    $parser_controller->setDisplayLog(false);
+    /* @var $ddex NewReleaseMessage */
+    $ddex = $parser_controller->parse($xml_path);
+
+    // ERN version is now 383. It is using classes with namespace 383.
+    $this->assertEquals("ern/383", $ddex->getMessageSchemaVersionId());
+  }
+
+  /**
+   * Test ERN 43 is parsed correctly
+   */
+  public function testSample020Ern43() {
+    $xml_path = "tests/samples/020_ern43.xml";
+    $parser_controller = new ErnParserController();
+    // Set this to true to see logs from the parser
+    $parser_controller->setDisplayLog(false);
+    /* @var $ddex NewReleaseMessage */
+    $ddex = $parser_controller->parse($xml_path);
+
+    // ERN version is now 43. It is using classes with namespace 43.
+    // ERN 43 does not have a getMessageSchemaVersionId() function
+    $this->assertEquals('DedexBundle\Entity\Ern43\NewReleaseMessage', get_class($ddex));
+  }
+
 }

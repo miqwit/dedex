@@ -14,6 +14,31 @@ If you find this useful, please star this repository.
 
 This repository provides **Simple Entities** that can be handy to parse your first XML files. They give a simplified model of an Album, with Tracks, Artists and Deals attached. You can ignored the Simple Entities and build your own set or superset of entities to serve your needs. Note that the Simple Entities give a limited usage of DDEX. Read the documentation carefully before using it.
 
+## Supported ERN versions
+
+| Version    | Dedex     | Tested     |
+|------------|------------|------------|
+| 3.4        | ❌        | ❌         |
+| 3.4.1      | ✅        | ❌         |
+| 3.5        | ❌        | ❌         |
+| 3.5.1      | ❌        | ❌         |
+| 3.6        | ❌        | ❌         |
+| 3.7        | ❌        | ❌         |
+| 3.7.1      | ❌        | ❌         |
+| 3.7D1      | ❌        | ❌         |
+| 3.7D2      | ❌        | ❌         |
+| 3.8        | ❌        | ❌         |
+| 3.7.1      | ✅        | ❌         |
+| 3.8.1      | ✅        | ❌         |
+| 3.8.2      | ✅        | ✅         |
+| 3.8.3      | ✅        | ✅         |
+| 4.0        | ❌        | ❌         |
+| 4.1        | ✅        | ❌         |
+| 4.1.1      | ✅        | ✅         |
+| 4.2        | ❌        | ❌         |
+| 4.3        | ✅        | ✅         |
+| 4.3.1      | ❌        | ❌         |
+
 ## Installation
 
 ```

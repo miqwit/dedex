@@ -8,7 +8,7 @@ namespace DedexBundle\Entity\Ern41;
  * A Composite containing details of the DateTime and Place of an Event.
  * XSD Type: EventDateTimeWithoutFlags
  */
-class EventDateTimeWithoutFlagsType
+class EventDateTimeWithoutFlagsType extends \DedexBundle\Entity\EventDateTimeType
 {
 
     /**
