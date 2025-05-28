@@ -14,10 +14,10 @@
     "require": {
         "php": "^7.2|^8.0",
         "ext-ctype": "*",
-        "ext-iconv": "*",
-        "goetas-webservices/xsd2php-runtime": "v0.2.16"
+        "ext-iconv": "*"
     },
     "require-dev": {
+        "goetas-webservices/xsd2php-runtime": "v0.2.16",
         "goetas-webservices/xsd2php": "^0.4.4",
         "phpunit/phpunit": "^9.5"
     },
