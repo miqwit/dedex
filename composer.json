@@ -1,5 +1,5 @@
 {
-    "type": "symfony-bundle",
+    "type": "library",
     "name": "miqwit/dedex",
     "description": "Parse DDEX ERN files and provide a convenient API to use it",
 	  "keywords": ["ddex", "parsing", "music", "xml"],
@@ -14,20 +14,12 @@
     "require": {
         "php": "^7.2|^8.0",
         "ext-ctype": "*",
-        "ext-iconv": "*",
-        "goetas-webservices/xsd2php-runtime": "v0.2.16",
-        "symfony/console": "^2.7|^3.0|^4.0|^5.0|^6.0",
-        "symfony/dotenv": "^4.0|^5.0|^6.0",
-        "symfony/flex": "^1.18",
-        "symfony/framework-bundle": "^4.0|^5.0|^6.0",
-        "symfony/http-kernel": "^4.0|^5.1.5|^6.0",
-        "symfony/yaml": "^2.2|^3.0|^4.0|^5.0|^6.0"
+        "ext-iconv": "*"
     },
     "require-dev": {
+        "goetas-webservices/xsd2php-runtime": "v0.2.16",
         "goetas-webservices/xsd2php": "^0.4.4",
-        "phpunit/phpunit": "^9.5",
-        "symfony/maker-bundle": "^1.14",
-        "symfony/phpunit-bridge": "^6.1"
+        "phpunit/phpunit": "^9.5"
     },
     "config": {
         "preferred-install": {
@@ -48,18 +40,5 @@
             "DedexBundle\\Tests\\": "tests/"
         }
     },
-    "scripts": {
-        "auto-scripts": {},
-        "post-install-cmd": [],
-        "post-update-cmd": []
-    },
-    "conflict": {
-        "symfony/symfony": "*"
-    },
-    "extra": {
-        "symfony": {
-            "allow-contrib": false,
-            "require": "5.0.*"
-        }
-    }
+    "scripts": {}
 }

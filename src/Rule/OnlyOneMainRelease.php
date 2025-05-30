@@ -38,7 +38,7 @@ class OnlyOneMainRelease extends Rule {
     $num_main = 0;
     
     foreach ($newReleaseMessage->getReleaseList()->getRelease() as $release) {
-      if (strtolower($release->getIsMainRelease()) === "true") {
+      if (strtolower((string) $release->getIsMainRelease()) === "true") {
         $num_main++;
       }
     }
