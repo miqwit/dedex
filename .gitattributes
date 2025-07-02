@@ -1,0 +1,10 @@
+* text=auto eol=lf
+
+# Do not include the following files when creating repo artifacts, e.g. the zip
+/.* export-ignore
+/build/ export-ignore
+/tests/ export-ignore
+/CHANGELOG.md export-ignore
+/CONTRIBUTING.md export-ignore
+/Dockerfile.dist export-ignore
+/phpunit.xml.dist export-ignore
