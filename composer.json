@@ -9,7 +9,7 @@
             "name": "Mickaël Arcos",
             "role": "Developer"
         }
-		],
+    ],
     "license": "MIT",
     "require": {
         "php": "^7.2|^8.0",
@@ -25,10 +25,7 @@
         "preferred-install": {
             "*": "dist"
         },
-        "sort-packages": true,
-        "allow-plugins": {
-            "symfony/flex": false
-        }
+        "sort-packages": true
     },
     "autoload": {
         "psr-4": {
