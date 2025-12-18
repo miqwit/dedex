@@ -235,4 +235,39 @@ class ParserControllerTest extends TestCase {
     $this->assertEquals('DedexBundle\Entity\Ern411\NewReleaseMessage', get_class($ddex));
   }
 
+  /**
+   * Test ERN 411 with incorrectly nested Extent elements in ImageHeight/ImageWidth
+   * This tests the fix for handling malformed XML like <ImageHeight><Extent>300</Extent></ImageHeight>
+   */
+  public function testSample018Ern411NestedExtent() {
+    $xml_path = "tests/samples/018_ern411_nested_extent.xml";
+    $parser_controller = new ErnParserController();
+    $parser_controller->setDisplayLog(false);
+    /* @var $ddex \DedexBundle\Entity\Ern411\NewReleaseMessage */
+    $ddex = $parser_controller->parse($xml_path);
+
+    // Verify it's ERN 411
+    $this->assertEquals('DedexBundle\Entity\Ern411\NewReleaseMessage', get_class($ddex));
+
+    // Get the Image resource
+    $this->assertCount(1, $ddex->getResourceList()->getImage());
+    $image = $ddex->getResourceList()->getImage()[0];
+    $this->assertEquals("IMG1", $image->getResourceReference());
+
+    // Get TechnicalDetails
+    $this->assertCount(1, $image->getTechnicalDetails());
+    $technicalDetails = $image->getTechnicalDetails()[0];
+
+    // Verify ImageHeight was parsed correctly from nested Extent
+    $this->assertNotNull($technicalDetails->getImageHeight());
+    $imageHeight = $technicalDetails->getImageHeight();
+    $this->assertEquals(300.0, $imageHeight->value());
+
+    // Verify ImageWidth was parsed correctly from nested Extent with UnitOfMeasure
+    $this->assertNotNull($technicalDetails->getImageWidth());
+    $imageWidth = $technicalDetails->getImageWidth();
+    $this->assertEquals(300.0, $imageWidth->value());
+    $this->assertEquals("Pixel", $imageWidth->getUnitOfMeasure());
+  }
+
 }

@@ -201,6 +201,26 @@ class ErnParserController {
   private string $set_to_parent_tag = "";
 
   /**
+   * Indicates that we're handling a nested <Extent> element inside an ExtentType.
+   * This is for incorrectly nested XML structures like <ImageHeight><Extent>300</Extent></ImageHeight>
+   * Enabled for all ERN versions.
+   * @var bool
+   */
+  private bool $handling_nested_extent = false;
+
+  /**
+   * Stores the UnitOfMeasure attribute from a nested <Extent> element
+   * @var string|null
+   */
+  private ?string $nested_extent_unit_of_measure = null;
+
+  /**
+   * Stores the accumulated value for a nested <Extent> element (for handling split values)
+   * @var string
+   */
+  private string $nested_extent_value = "";
+
+  /**
    * These tags and attributes should not be parsed like the other ones.
    * @var array
    */
@@ -238,8 +258,21 @@ class ErnParserController {
       $this->ern = new $class_name();
     } else {
       $parent = end($this->pile);
+      $parent_class = get_class($parent);
 
-      $class_name = $this->getTypeOfElementFromDoc(get_class($parent), $name);
+      // Special handling for incorrectly nested <Extent> elements inside ExtentType
+      // This handles malformed XML like <ImageHeight><Extent>300</Extent></ImageHeight>
+      // Enabled for all ERN versions
+      if ($name === "Extent" && $this->isExtentType($parent_class)) {
+        $this->handling_nested_extent = true;
+        // Store UnitOfMeasure attribute if present
+        $this->nested_extent_unit_of_measure = $attrs['UnitOfMeasure'] ?? null;
+        // Initialize value accumulator
+        $this->nested_extent_value = "";
+        return; // Don't create a new object, we'll handle this specially
+      }
+
+      $class_name = $this->getTypeOfElementFromDoc($parent_class, $name);
 
       if (!class_exists($class_name)) {
         // Set element to parent class
@@ -313,6 +346,37 @@ class ErnParserController {
       return;
     }
 
+    // Special handling for nested <Extent> elements
+    if ($this->handling_nested_extent && $name === "Extent") {
+      // Always reset flags first to prevent leaving parser in inconsistent state
+      $this->handling_nested_extent = false;
+      $unit_of_measure = $this->nested_extent_unit_of_measure;
+      $accumulated_value = $this->nested_extent_value;
+      $this->nested_extent_unit_of_measure = null;
+      $this->nested_extent_value = "";
+      
+      $parent = end($this->pile);
+      if ($parent && $this->isExtentType(get_class($parent))) {
+        // Set the accumulated value on the ExtentType parent
+        $value_clean = trim($accumulated_value);
+        if ($value_clean !== "" && is_numeric($value_clean)) {
+          $parent->value((float)$value_clean);
+        } else if ($value_clean !== "") {
+          // Log warning for non-numeric values (but don't throw error to maintain backward compatibility)
+          $this->log("Warning: Non-numeric value found in nested Extent element: " . $value_clean);
+        }
+        // Set UnitOfMeasure attribute if it was present on the nested Extent element
+        if ($unit_of_measure !== null) {
+          $parent->setUnitOfMeasure($unit_of_measure);
+        }
+        return; // Don't process this element further
+      } else {
+        // Safety: If parent is not ExtentType, log warning but flags are already reset
+        $this->log("Warning: Nested Extent element closed but parent is not ExtentType");
+        return; // Still return to avoid normal processing
+      }
+    }
+
     $properties = array_filter(array_values((array) end($this->pile)));
     if (count($properties) == 0 && !$this->set_to_parent) {
       // If we are leaving an element that is completely empty (the object
@@ -352,6 +416,31 @@ class ErnParserController {
 
     // Reset last element
     $this->lastElement = [];
+  }
+
+  /**
+   * Check if a class is an ExtentType (from any ERN version)
+   *
+   * @param string $class_name
+   * @return bool
+   */
+  private function isExtentType(string $class_name): bool {
+    // Check for ExtentType in various namespaces
+    $extent_type_patterns = [
+      'DedexBundle\\Entity\\Ern411\\ExtentType',
+      'DedexBundle\\Entity\\Ern41\\ExtentType',
+      'DedexBundle\\Entity\\Ern43\\ExtentType',
+      'DedexBundle\\Entity\\Ern382\\ExtentType',
+      'DedexBundle\\Entity\\Ern381\\ExtentType',
+      'DedexBundle\\Entity\\Ern383\\ExtentType',
+      'DedexBundle\\Entity\\Ern341\\ExtentType',
+      'DedexBundle\\Entity\\Ern371\\ExtentType',
+      'DedexBundle\\Entity\\Ern32\\ExtentType',
+      'DedexBundle\\Entity\\DdexC\\ExtentType',
+    ];
+
+    return in_array($class_name, $extent_type_patterns) || 
+           substr($class_name, -10) === 'ExtentType';
   }
 
   /**
@@ -465,7 +554,6 @@ class ErnParserController {
       $elem = $this->pile[$keys[count($keys) - 2]];
       $tag = end($keys);
     }
-
     // If the previous element was the same and had the same tag, concatenate value
     // xml_parser is known to split values when encountering multibyte chars and call the character_data_handler multiple times
     if (!empty($this->lastElement) && $this->lastElement[0] === $elem && $this->lastElement[1] === $tag) {
@@ -668,6 +756,13 @@ class ErnParserController {
   private function callbackCharacterData($parser, string $data) {
     if (trim($data) === "") {
       // do nothing
+      return;
+    }
+
+    // Special handling for nested <Extent> elements
+    if ($this->handling_nested_extent) {
+      // Accumulate value (XML parser may split values across multiple calls)
+      $this->nested_extent_value .= $data;
       return;
     }
 
