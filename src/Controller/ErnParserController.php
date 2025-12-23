@@ -700,11 +700,19 @@ class ErnParserController {
       $new_elem = DateTime::createFromFormat($format, $value);
     } elseif ($type == "\DateInterval") {
         // Check for ISO8601:2004 format
-        //preg_match('/PT([0-9.,]*H)?([0-9.,]*M)?([0-9.,]*S)?/i', $value_default, $matches);
         preg_match('/^P(?:(\d+D))?(T(?:(\d+H))?(?:(\d+M))?(?:(\d+(?:\.\d+)?S))?)?$/i', $value_default, $matches);
-        $new_elem = (empty($matches))
-            ? new DateInterval($value_default)
-            : $this->intervalFromIso86012004String($value_default);
+        if (!empty($matches)) {
+            $new_elem = $this->intervalFromIso86012004String($value_default);
+        } else {
+            // Try to create DateInterval, but handle invalid values gracefully
+            try {
+                $new_elem = new DateInterval($value_default);
+            } catch (\Exception $e) {
+                // If the value is invalid (e.g., "Invalid date"), create a zero interval
+                // This allows parsing to continue even with malformed duration values
+                $new_elem = new DateInterval("PT0S");
+            }
+        }
     } elseif (is_subclass_of($type, EventDateTimeType::class)) {
         $new_elem = new $type(new DateTime($value_default));
     } elseif ($type === '\\' . Ern341EventDateType::class) {
