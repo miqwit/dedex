@@ -43,6 +43,12 @@ use Exception;
 use ReflectionMethod;
 use ReflectionParameter;
 use XMLReader;
+use DedexBundle\Entity\DdexC\EventDateTimeType as DdexCEventDateTimeType;
+use DedexBundle\Entity\Ern41\EventDateTimeType as Ern41EventDateTimeType;
+use DedexBundle\Entity\Ern381\EventDateTimeType as Ern381EventDateTimeType;
+use DedexBundle\Entity\Ern383\EventDateTimeType as Ern383EventDateTimeType;
+use DedexBundle\Entity\Ern382\EventDateTimeType as Ern382EventDateTimeType;
+use DedexBundle\Entity\Ern411\EventDateTimeType as Ern411EventDateTimeType;
 
 /**
  * The main generic parser for XML files. Will load elements one by one
@@ -90,6 +96,14 @@ class ErnParserController {
    * @var type
    */
   private $pile = array();
+
+  /**
+   * Contains a list of ids (spl_object_id) of objects that had a closed
+   * element, so they are not reused for data erasement.
+   *
+   * @var array
+   */
+  private $closed_objects = [];
 
   /**
    * If true, display logs (for debugging purpose mainly)
@@ -172,17 +186,7 @@ class ErnParserController {
 
   /**
    * Indicates that the next parsed data must be attached to the parent and not
-   * as a new object. This is used for elements that only contain text and no
-   * nested elements.
-   * 
-   * For example, 
-   * <DealTerms>
-   *   <CommercialModelType>SubscriptionModel</CommercialModelType>
-   * </DealTerms>
-   * 
-   * will result in DealTerms->setCommercialModelType("SubscriptionModel").
-   * There is no such class as CommercialModelType to be instanciated.
-   * The value "SubscriptionModel" can be set to the parent DealTerms directly.
+   * as a new object.
    * @var bool
    */
   private bool $set_to_parent = false;
@@ -208,7 +212,6 @@ class ErnParserController {
       "xs:schemaLocation",
       "xsi:schemaLocation",
       "xmlns:avs",
-      "xmlns:ds"
   ];
 
   /**
@@ -217,17 +220,8 @@ class ErnParserController {
    * @param type $parser
    * @param string $name The name of the tag
    * @param array $attrs The attributes of the tag
-   * @param bool $is_attribute True when this "element" is in fact the attribute of an element
-   *   (in this case called manually by this code, not the parser)
    */
-  private function callbackStartElement($parser, string $name, array $attrs, bool $is_attribute = false) {
-    $is_attr_str = $is_attribute ? "@" : "";
-    $this->log("|> callbackStartElement $is_attr_str$name");
-
-    if ($is_attribute) {
-      $this->log($this->pileToStr());
-    }
-
+  private function callbackStartElement($parser, string $name, array $attrs) {
     if (in_array($name, $this->ignore_these_tags_or_attributes)) {
       return;
     }
@@ -263,19 +257,8 @@ class ErnParserController {
       $this->pile[$name . "##" . random_int(2, 99999)] = $elem;
     }
 
-    // Process attributes immediately after creating the element
-    if (count($attrs) > 0) {
-      $this->log("Process " . count($attrs) . " attributes: " . implode(', ', array_keys($attrs)));
-      foreach ($attrs as $key => $val) {
-        if (in_array($key, $this->ignore_these_tags_or_attributes)) {
-          continue;
-        }
-
-        $this->callbackStartElement($parser, $key, [], true);
-        $this->callbackCharacterData($parser, $val);
-        $this->callbackEndElement($parser, $key);
-      }
-    }
+    // Will process attributes later
+    $this->attrs_to_process[count($this->pile)] = $attrs;
   }
 
   /**
@@ -306,40 +289,15 @@ class ErnParserController {
         return new $class_name($dt);
     }
 
+    if ($class_name === "\DedexBundle\Entity\Ern382\EventDateTimeType") {
+      return new \DedexBundle\Entity\Ern382\EventDateTimeType(new \DateTime()); // TODO
+    }
+
+    if ($class_name === "\DedexBundle\Entity\Ern43\EventDateTimeWithoutFlagsType") {
+      return new \DedexBundle\Entity\Ern43\EventDateTimeWithoutFlagsType(new \DateTime()); // TODO
+    }
+
     return new $class_name(null);
-  }
-
-  /**
-   * @return string a one liner dump of the pile with attribute count @.
-   *   For example NewReleaseMessage_@5->DealList_@0->ReleaseDeal_@0->Deal_@0->DealTerms_@0->Usage_@0
-   */
-  private function pileToStr(): string {
-    $pile_str = "Pile: ";
-    $idx = 1;
-
-    foreach (array_keys($this->pile) as $key) {
-      $attrs = $this->attrs_to_process[$idx] ?? [];
-      $pile_str .= $key . "_@" . count($attrs) . "->";
-      $idx ++;
-    }
-    $pile_str = substr($pile_str, 0, strlen($pile_str) - 2);
-
-    return $pile_str;
-  }
-
-  /**
-   * Array pop the last element and the last attributes entry, since
-   * both are correlated.
-   * 
-   * Never pop root element.
-   */
-  private function popLastPileElement(): void {
-    if (count($this->pile) == 1) {
-      return;
-    }
-
-    $this->log("Pop " . array_key_last($this->pile));
-    array_pop($this->pile);
   }
 
   /**
@@ -351,23 +309,41 @@ class ErnParserController {
    * @param string $name
    */
   private function callbackEndElement($parser, string $name) {
-    $this->log("|< callbackEndElement " . $name . " " . $this->pileToStr() . "\n");
     if (in_array($name, $this->ignore_these_tags_or_attributes)) {
       return;
     }
 
     $properties = array_filter(array_values((array) end($this->pile)));
-
     if (count($properties) == 0 && !$this->set_to_parent) {
       // If we are leaving an element that is completely empty (the object
       // at the end of the pile, converted to an array, only contains emtpy
       // values), then to not add this element to parent. It's an empty List
       // element in DDEX, like ReleaseResourceReferenceList
-      $this->log("no properties");
-      $this->popLastPileElement();
+      array_pop($this->pile);
     } else if (!$this->set_to_parent) {
+      // Process attributes now.
+      // Consider each attribute as a setter of current element
+      // if attribute is MessageSchemaVersionId on ern:NewReleaseMessage
+      // then will call $this->ern->setMESSAGESCHEMAVERSIONID
+      if (array_key_exists(count($this->pile), $this->attrs_to_process)) {
+        foreach ($this->attrs_to_process[count($this->pile)] as $key => $val) {
+          if (in_array($key, $this->ignore_these_tags_or_attributes)) {
+            continue;
+          }
+
+          $this->callbackStartElement($parser, $key, []);
+          $this->callbackCharacterData($parser, $val);
+          $this->callbackEndElement($parser, $key);
+        }
+
+        array_pop($this->attrs_to_process);
+      }
+
       $this->attachToParent();
-      $this->popLastPileElement();
+
+      if ($name !== 'ResourceMusicalWorkReference') {
+          array_pop($this->pile);
+      }
     }
 
     // Reset parent setting
@@ -399,7 +375,6 @@ class ErnParserController {
 
     [$func_name, $parent] = $this->getValidFunctionName("set", $child_tag, $child);
 
-    $this->log("Call " . get_class($parent) . "->$func_name(" . get_class($child) . ")");
     $parent->$func_name($child);
   }
 
@@ -435,18 +410,13 @@ class ErnParserController {
         $func_names[] = $prefix . $tag;
         $func_names[] = $prefix . $tag . "s";
         $func_names[] = $prefix . $tag . "List";
-        // $prefix . $tag . "Type",
+      //        $prefix . $tag . "Type",
 
         // Hack for release deals. DDEX 4.1.1 is not consistent. It has a DealList
         // and ReleaseDeals in it. This parser would expect a ReleaseDealList instead
         // of the actual DealList
         if ($tag == "ReleaseDeal") {
           $func_names[] = $prefix . "DealList";
-        }
-
-        // Same for MessageAuditTrail which contains MessageAuditTrailEvents
-        if ($tag == "MessageAuditTrailEvent") {
-          $func_names[] = $prefix . "MessageAuditTrail";
         }
 
         break;
@@ -457,6 +427,7 @@ class ErnParserController {
         $func_names[] = "create" . $tag;
         $func_names[] = "create" . $tag . "List";
         $func_names[] = $prefix . $tag;
+        $func_names[] = $prefix . $tag;
         $func_names[] = $prefix . $tag . "s";
         $func_names[] = $prefix . $tag . "List";
 
@@ -465,11 +436,6 @@ class ErnParserController {
         // of the actual DealList
         if ($tag == "ReleaseDeal") {
           $func_names[] = "addToDealList";
-        }
-
-        // Same for MessageAuditTrail which contains MessageAuditTrailEvents
-        if ($tag == "MessageAuditTrailEvent") {
-          $func_names[] = "addToMessageAuditTrail";
         }
 
         break;
@@ -506,6 +472,7 @@ class ErnParserController {
       $value = $this->lastElement[2] . $value;
     }
     $value_clean = trim($value);
+    $this->log($value_clean . ": " . implode("->", array_keys($this->pile)));
     [$func_name, $elem] = $this->getValidFunctionName("set", $tag, $elem);
 
     // It's possible we're trying to set a text but it's expecting an
@@ -513,10 +480,8 @@ class ErnParserController {
     $value_inst = $this->instanciateTypeFromDoc($elem, $func_name, $value_clean);
 
     $this->lastElement = [$elem, $tag, $value];
-    $this->log("value: " . $value_clean);
 
     if ($this->set_to_parent) {
-      $this->log("Call " . get_class($elem) . "->$func_name($value_inst)");
       $elem->$func_name($value_inst);
     } else {
       $this->pile[$tag] = $value_inst;
@@ -557,12 +522,7 @@ class ErnParserController {
       // Continue with previous element if exists
       $elem = prev($this->pile);
       if ($elem === false) {
-        $triedMessage = ". Tried: ";
-        foreach ($func_names as $func_name) {
-          $triedMessage .= array_key_last($this->pile) . "->" . $func_name . "(), ";
-        }
-        $triedMessage = substr($triedMessage, 0, strlen($triedMessage) - 2);
-        throw new Exception("No functions found for this tag: $tag. Pile is " . implode("->", array_keys($this->pile)) . $triedMessage);
+        throw new Exception("No functions found for this tag: $tag. Path is " . implode(",", array_keys($this->pile)));
       }
     }
 
@@ -880,8 +840,7 @@ class ErnParserController {
       throw new XmlLoadException("Can't load XML file: $file_path");
     }
 
-    $this->version = $this->detectVersion($fp);
-
+    $this->version = $this->detectVersion($fp); // 382 or 41
     // Validate xml against XSD
     $this->validateXml($file_path);
 
