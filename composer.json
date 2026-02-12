@@ -1,9 +1,9 @@
 {
     "type": "symfony-bundle",
-    "name": "sauceindustries/dedex-fork",
+    "name": "miqwit/dedex",
     "description": "Parse DDEX ERN files and provide a convenient API to use it",
 	  "keywords": ["ddex", "parsing", "music", "xml"],
-	  "homepage": "https://github.com/SauceIndustries/dedex",
+	  "homepage": "https://github.com/miqwit/dedex",
 	  "authors": [
         {
             "name": "Mickaël Arcos",
