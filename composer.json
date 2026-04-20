@@ -19,7 +19,7 @@
     "require-dev": {
         "goetas-webservices/xsd2php-runtime": "v0.2.16",
         "goetas-webservices/xsd2php": "^0.4.4",
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5 || ^12.5.22"
     },
     "config": {
         "preferred-install": {
