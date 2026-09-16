@@ -2,17 +2,24 @@
 
 DeDEX is a DDEX XML file parser. DDEX is a standard used in the music industry to deliver rich media content. See more info at [ddex.net](https://ddex.net/). This covers only the ERN (Electronic Release Notification) standard, for versions 3.8.2 and 4.1.
 
-In my past experiences as a developer, I always had to develop or enhanced a DDEX parser for ERN. I created one here that is as convenient to use as I always hoped for.
+Supported versions:
+- `3.8.2`
+- `4.1`
+- `4.1.1`
+- `4.2`
+- `4.3`
 
-The **Rule** mechanism is pretty useful and flexible. The DDEX ERN standard is extremely vast and there are many ways to use it. Most providers generate a simplified yet comprehensive XML file covering most of the needs. The Rules helps checking during the parsing that not only the XML is valid, but contain the minimal consistent information.
+**Simple Entities** speak your language and will make you smoothly parse your first ERNs.
 
-It is possible to implement your own rules ([contribute](CONTRIBUTE.md) to this repository if you think other developers could make a use of it), and to implement a different set of rules for different provider.
+**Rule** (and **Rules Set**) contain the minimal consistent information YOU need in your system. XML may be valid, but inaccurate for your needs.
 
-For instance, it is possible to enforce that for a given XML the ISRC is provided for all recordings, but not for another one. Providers rules can be modelled in a **Rules Set**.
+I created this DDEX ERN parser that is as convenient as I always hoped for.
 
-If you find this useful, please star this repository.
+✍️ [Contribute](CONTRIBUTE.md) here if you feel like it. Make DeDEX the first repo you contribute for! 🙌
 
-This repository provides **Simple Entities** that can be handy to parse your first XML files. They give a simplified model of an Album, with Tracks, Artists and Deals attached. You can ignored the Simple Entities and build your own set or superset of entities to serve your needs. Note that the Simple Entities give a limited usage of DDEX. Read the documentation carefully before using it.
+⭐️ If you find this work useful, please star the repository.
+
+🐘 [DeDEX on packagist](https://packagist.org/packages/miqwit/dedex).
 
 ## Installation
 
