@@ -27,6 +27,8 @@ I created this DDEX ERN parser that is as convenient as I always hoped for.
 composer require miqwit/dedex
 ```
 
+⚠️  Runtime: PHP 7.4+. As per composer configuration, development and test tools need 8.1+ to work. It is not maintained for 7.4+ versions.
+
 ## Usage
 
 ### Convert a DDEX file to a SimpleAlbum
