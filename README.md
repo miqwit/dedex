@@ -1,6 +1,6 @@
 # DeDEX
 
-DeDEX is a DDEX XML file parser. DDEX is a standard used in the music industry to deliver rich media content. See more info at [ddex.net](https://ddex.net/). This covers only the ERN (Electronic Release Notification) standard, for versions 3.8.2 and 4.1.
+DeDEX is a DDEX XML file parser. DDEX is a standard used in the music industry to deliver rich media content. See more info at [ddex.net](https://ddex.net/). This covers only the ERN (Electronic Release Notification) standard, for the following versions.
 
 Supported versions:
 - `3.8.2`
