@@ -10,7 +10,7 @@ use DedexBundle\Exception\XmlParseException;
 use DedexBundle\Exception\XsdCompliantException;
 use PHPUnit\Framework\TestCase;
 
-class ParserControllerErrorTest extends TestCase {
+class ParserControllerErrorsTest extends TestCase {
 
   public function testFileNotFound() {
     $parser = new ErnParserController();
