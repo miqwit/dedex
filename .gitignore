@@ -6,7 +6,6 @@ docs/
 notes.txt
 Dockerfile
 .phpunit.result.cache
-composer.lock
 CLAUDE.md
 
 # PHPUnit

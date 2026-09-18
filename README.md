@@ -1,5 +1,11 @@
 # DeDEX
 
+[![CI](https://github.com/miqwit/dedex/actions/workflows/ci.yml/badge.svg)](https://github.com/miqwit/dedex/actions/workflows/ci.yml)
+[![Latest Version](https://img.shields.io/packagist/v/miqwit/dedex.svg)](https://packagist.org/packages/miqwit/dedex)
+[![Total Downloads](https://img.shields.io/packagist/dt/miqwit/dedex.svg)](https://packagist.org/packages/miqwit/dedex)
+[![PHP Version](https://img.shields.io/packagist/php-v/miqwit/dedex.svg)](https://packagist.org/packages/miqwit/dedex)
+[![License](https://img.shields.io/github/license/miqwit/dedex.svg)](https://github.com/miqwit/dedex/blob/master/LICENSE)
+
 DeDEX is a DDEX XML file parser. DDEX is a standard used in the music industry to deliver rich media content. See more info at [ddex.net](https://ddex.net/). This covers only the ERN (Electronic Release Notification) standard, for the following versions.
 
 Supported versions:
