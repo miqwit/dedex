@@ -12,6 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         php: ['8.1', '8.2', '8.3', '8.4']
+        dependency-version: [prefer-lowest, prefer-stable]
 
     steps:
       - name: Checkout
@@ -27,8 +28,8 @@ jobs:
       - name: Validate composer.json
         run: composer validate --strict
 
-      - name: Install dependencies
-        run: composer install --no-interaction --prefer-dist --no-progress
+      - name: Install dependencies (${{ matrix.dependency-version }})
+        run: composer update --no-interaction --prefer-dist --no-progress --${{ matrix.dependency-version }}
 
       - name: Run tests
         run: vendor/bin/phpunit
