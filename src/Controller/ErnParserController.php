@@ -704,12 +704,25 @@ class ErnParserController {
     $xsd_file_path = __DIR__ . "/../../xsd/release_notification/{$this->version}/release-notification.xsd";
     $xml_reader->setSchema($xsd_file_path);
 
+    // XMLReader::read() reports schema violations as PHP warnings rather
+    // than exceptions, and keeps reading past them. Capture them via libxml
+    // so validation errors are detected regardless of the error handler in place.
+    $previous_use_errors = libxml_use_internal_errors(true);
+    libxml_clear_errors();
+
     try {
-      while ($xml_reader->read()) {
+      while (@$xml_reader->read()) {
         continue;
       }
-    } catch (\Exception $ex) {
-      throw new XsdCompliantException("This XML file $file_path does not validates XSD $xsd_file_path. Error: {$ex->getMessage()}");
+
+      $errors = libxml_get_errors();
+      if (count($errors) > 0) {
+        $error_message = trim($errors[0]->message);
+        throw new XsdCompliantException("This XML file $file_path does not validates XSD $xsd_file_path. Error: XMLReader::read(): $error_message");
+      }
+    } finally {
+      libxml_clear_errors();
+      libxml_use_internal_errors($previous_use_errors);
     }
   }
   
