@@ -80,11 +80,13 @@ class ErnParserController {
    * or  \DedexBundle\Entity\Ern411\NewReleaseMessage
    * or  \DedexBundle\Entity\Ern42\NewReleaseMessage
    * or  \DedexBundle\Entity\Ern43\NewReleaseMessage
+   * or  \DedexBundle\Entity\Ern431\NewReleaseMessage
    * or  \DedexBundle\Entity\Ern382\PurgeReleaseMessage
    * or  \DedexBundle\Entity\Ern41\PurgeReleaseMessage
    * or  \DedexBundle\Entity\Ern411\PurgeReleaseMessage
    * or  \DedexBundle\Entity\Ern42\PurgeReleaseMessage
    * or  \DedexBundle\Entity\Ern43\PurgeReleaseMessage
+   * or  \DedexBundle\Entity\Ern431\PurgeReleaseMessage
    */
   private $ern = null;
 
@@ -654,7 +656,7 @@ class ErnParserController {
    */
   private function detectVersion($fp) {
     $version = null;
-    $supported_versions = ["43", "42", "411", "41", "382"];
+    $supported_versions = ["431", "43", "42", "411", "41", "382"];
 
     while (($buffer = fgets($fp, 4096)) !== false) {
       $trimed = trim($buffer);

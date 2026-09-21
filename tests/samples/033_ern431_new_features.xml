@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ern:NewReleaseMessage
+   xmlns:ern="http://ddex.net/xml/ern/431"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   ReleaseProfileVersionId="Audio" LanguageAndScriptCode="en"
+   AvsVersionId="4.3.1">
+   <MessageHeader>
+      <MessageThreadId>Test431</MessageThreadId>
+      <MessageId>Test431.1</MessageId>
+      <MessageSender>
+         <PartyId>PADPIDA2024021301T</PartyId>
+         <PartyName>
+            <FullName>Test Sender</FullName>
+         </PartyName>
+      </MessageSender>
+      <MessageRecipient>
+         <PartyId>PADPIDA2024021302R</PartyId>
+         <PartyName>
+            <FullName>Test Recipient</FullName>
+         </PartyName>
+      </MessageRecipient>
+      <MessageCreatedDateTime>2024-01-15T10:00:00+00:00</MessageCreatedDateTime>
+   </MessageHeader>
+   <PartyList>
+      <Party>
+         <PartyReference>PTestArtist</PartyReference>
+         <PartyName>
+            <FullName>Test Artist</FullName>
+         </PartyName>
+      </Party>
+      <Party>
+         <PartyReference>PLabel1</PartyReference>
+         <PartyName>
+            <FullName>Test Label</FullName>
+         </PartyName>
+      </Party>
+      <Brand>
+         <BrandReference>PBrand1</BrandReference>
+         <BrandName ApplicableTerritoryCode="Worldwide" IsDefault="true">
+            <FullName>Test Brand</FullName>
+         </BrandName>
+      </Brand>
+   </PartyList>
+   <ResourceList>
+      <SoundRecording>
+         <ResourceReference>A1</ResourceReference>
+         <Type>MusicalWorkSoundRecording</Type>
+         <SoundRecordingEdition>
+            <ResourceId>
+               <ISRC>TEST00000001</ISRC>
+            </ResourceId>
+            <PLine>
+               <Year>2024</Year>
+               <PLineText>(P) 2024 Test Label</PLineText>
+            </PLine>
+            <TechnicalDetails>
+               <TechnicalResourceDetailsReference>T1</TechnicalResourceDetailsReference>
+               <DeliveryFile>
+                  <Type>AudioFile</Type>
+                  <File>
+                     <URI>track_001.wav</URI>
+                  </File>
+               </DeliveryFile>
+            </TechnicalDetails>
+         </SoundRecordingEdition>
+         <DisplayTitleText>Track One</DisplayTitleText>
+         <DisplayTitle ApplicableTerritoryCode="Worldwide" IsDefault="true">
+            <TitleText>Track One</TitleText>
+         </DisplayTitle>
+         <DisplayArtistName ApplicableTerritoryCode="Worldwide" IsDefault="true">Test Artist</DisplayArtistName>
+         <DisplayArtist SequenceNumber="1">
+            <ArtistPartyReference>PTestArtist</ArtistPartyReference>
+            <DisplayArtistRole>MainArtist</DisplayArtistRole>
+         </DisplayArtist>
+         <Contributor SequenceNumber="1">
+            <ContributorPartyReference>PTestArtist</ContributorPartyReference>
+            <Role>
+               <Value>AssociatedPerformer</Value>
+               <InstrumentType>Guitar</InstrumentType>
+            </Role>
+            <AiContribution>None</AiContribution>
+         </Contributor>
+         <Contributor SequenceNumber="2">
+            <SpecialContributor>Traditional</SpecialContributor>
+            <Role>
+               <Value>Composer</Value>
+            </Role>
+         </Contributor>
+         <Duration>PT3M30S</Duration>
+         <ParentalWarningType ParentalWarningStandard="RiaaPal">NotExplicit</ParentalWarningType>
+         <ContainsAI>Partly</ContainsAI>
+      </SoundRecording>
+      <SoundRecording>
+         <ResourceReference>A2</ResourceReference>
+         <Type>MusicalWorkSoundRecording</Type>
+         <SoundRecordingEdition>
+            <ResourceId>
+               <ISRC>TEST00000002</ISRC>
+            </ResourceId>
+            <PLine>
+               <Year>2024</Year>
+               <PLineText>(P) 2024 Test Label</PLineText>
+            </PLine>
+            <TechnicalDetails>
+               <TechnicalResourceDetailsReference>T2</TechnicalResourceDetailsReference>
+               <DeliveryFile>
+                  <Type>AudioFile</Type>
+                  <File>
+                     <URI>track_002.wav</URI>
+                  </File>
+               </DeliveryFile>
+            </TechnicalDetails>
+         </SoundRecordingEdition>
+         <DisplayTitleText>Track Two</DisplayTitleText>
+         <DisplayTitle ApplicableTerritoryCode="Worldwide" IsDefault="true">
+            <TitleText>Track Two</TitleText>
+         </DisplayTitle>
+         <DisplayArtistName ApplicableTerritoryCode="Worldwide" IsDefault="true">Test Artist</DisplayArtistName>
+         <DisplayArtist SequenceNumber="1">
+            <ArtistPartyReference>PTestArtist</ArtistPartyReference>
+            <DisplayArtistRole>MainArtist</DisplayArtistRole>
+         </DisplayArtist>
+         <Duration>PT4M15S</Duration>
+      </SoundRecording>
+      <Image>
+         <ResourceReference>A3</ResourceReference>
+         <Type>FrontCoverImage</Type>
+         <ResourceId>
+            <ProprietaryId Namespace="TestLabel">COVER:TEST431</ProprietaryId>
+         </ResourceId>
+         <ParentalWarningType>NotExplicit</ParentalWarningType>
+         <TechnicalDetails>
+            <TechnicalResourceDetailsReference>T3</TechnicalResourceDetailsReference>
+            <File>
+               <URI>test_cover.jpg</URI>
+            </File>
+         </TechnicalDetails>
+      </Image>
+   </ResourceList>
+   <ReleaseList>
+      <Release>
+         <ReleaseReference>R0</ReleaseReference>
+         <ReleaseType>Album</ReleaseType>
+         <ReleaseId>
+            <ICPN>1234567890123</ICPN>
+         </ReleaseId>
+         <DisplayTitleText>Test Album ERN431</DisplayTitleText>
+         <DisplayTitle ApplicableTerritoryCode="Worldwide" IsDefault="true">
+            <TitleText>Test Album ERN431</TitleText>
+         </DisplayTitle>
+         <FormalTitle ApplicableTerritoryCode="Worldwide" IsDefault="true">
+            <TitleText>Test Album ERN431 (Formal)</TitleText>
+         </FormalTitle>
+         <GroupingTitle ApplicableTerritoryCode="Worldwide" IsDefault="true">
+            <TitleText>Test Grouping</TitleText>
+         </GroupingTitle>
+         <DisplayArtistName ApplicableTerritoryCode="Worldwide" IsDefault="true">Test Artist</DisplayArtistName>
+         <DisplayArtist SequenceNumber="1">
+            <ArtistPartyReference>PTestArtist</ArtistPartyReference>
+            <DisplayArtistRole>MainArtist</DisplayArtistRole>
+         </DisplayArtist>
+         <DisplayArtist SequenceNumber="2">
+            <SpecialDisplayArtist>VariousArtists</SpecialDisplayArtist>
+         </DisplayArtist>
+         <ReleaseLabelReference ApplicableTerritoryCode="Worldwide">PLabel1</ReleaseLabelReference>
+         <PLine>
+            <Year>2024</Year>
+            <PLineText>(P) 2024 Test Label</PLineText>
+         </PLine>
+         <CLine>
+            <Year>2024</Year>
+            <CLineText>(C) 2024 Test Label</CLineText>
+         </CLine>
+         <DisplayGenre ApplicableTerritoryCode="Worldwide">
+            <GenreText>Pop</GenreText>
+         </DisplayGenre>
+         <OriginalReleaseDate>2024-01-15</OriginalReleaseDate>
+         <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+               <SequenceNumber>1</SequenceNumber>
+               <ReleaseResourceReference>A1</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+            <ResourceGroupContentItem>
+               <SequenceNumber>2</SequenceNumber>
+               <ReleaseResourceReference>A2</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+            <LinkedReleaseResourceReference>A3</LinkedReleaseResourceReference>
+         </ResourceGroup>
+      </Release>
+      <TrackRelease>
+         <ReleaseReference>R1</ReleaseReference>
+         <ReleaseId>
+            <ProprietaryId Namespace="TestLabel">TEST431_R1</ProprietaryId>
+         </ReleaseId>
+         <ReleaseResourceReference>A1</ReleaseResourceReference>
+         <ReleaseLabelReference ApplicableTerritoryCode="Worldwide">PLabel1</ReleaseLabelReference>
+         <DisplayGenre ApplicableTerritoryCode="Worldwide">
+            <GenreText>Pop</GenreText>
+         </DisplayGenre>
+      </TrackRelease>
+      <TrackRelease>
+         <ReleaseReference>R2</ReleaseReference>
+         <ReleaseId>
+            <ProprietaryId Namespace="TestLabel">TEST431_R2</ProprietaryId>
+         </ReleaseId>
+         <ReleaseResourceReference>A2</ReleaseResourceReference>
+         <ReleaseLabelReference ApplicableTerritoryCode="Worldwide">PLabel1</ReleaseLabelReference>
+         <DisplayGenre ApplicableTerritoryCode="Worldwide">
+            <GenreText>Pop</GenreText>
+         </DisplayGenre>
+      </TrackRelease>
+   </ReleaseList>
+   <DealList>
+      <ReleaseDeal>
+         <DealReleaseReference>R0</DealReleaseReference>
+         <Deal>
+            <DealTerms>
+               <TerritoryCode>Worldwide</TerritoryCode>
+               <ValidityPeriod>
+                  <StartDate>2024-01-15</StartDate>
+               </ValidityPeriod>
+               <CommercialModelType>SubscriptionModel</CommercialModelType>
+               <UseType>OnDemandStream</UseType>
+            </DealTerms>
+         </Deal>
+      </ReleaseDeal>
+      <ReleaseDeal>
+         <DealReleaseReference>R1</DealReleaseReference>
+         <DealReleaseReference>R2</DealReleaseReference>
+         <Deal>
+            <DealTerms>
+               <TerritoryCode>Worldwide</TerritoryCode>
+               <ValidityPeriod>
+                  <StartDate>2024-01-15</StartDate>
+               </ValidityPeriod>
+               <CommercialModelType>SubscriptionModel</CommercialModelType>
+               <UseType>OnDemandStream</UseType>
+            </DealTerms>
+         </Deal>
+      </ReleaseDeal>
+   </DealList>
+</ern:NewReleaseMessage>

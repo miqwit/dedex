@@ -89,6 +89,34 @@ class SimpleEntity {
 	}
 
 	/**
+	 * Check if the version is ERN 4.3.1 or later (version string "431").
+	 * Do not derive this from isVersion43OrLater(): 4.3.1 introduced
+	 * breaking changes (DisplayGenre, ContributorRole/Value, ...).
+	 *
+	 * @param string $version version string as detected by ErnParserController
+	 * @return bool
+	 */
+	protected function isVersion431OrLater(string $version): bool {
+		return $this->isVersion4x($version) && intval(substr($version, 0, 3)) >= 431;
+	}
+
+	/**
+	 * Role of an ERN 4.x contributor. Since ERN 4.3.1, Role is a composite
+	 * (Value + optional InstrumentType) and no longer a plain AVS value.
+	 *
+	 * @param mixed $contributor Contributor object of an ERN 4.x
+	 * @return string
+	 */
+	protected function getContributorRole($contributor) {
+		$role = $contributor->getRole()[0];
+		if (method_exists($role, 'getValue')) {
+			// ERN 4.3.1+: ContributorRole composite, the AVS value is in Value
+			$role = $role->getValue();
+		}
+		return $this->getUserDefinedValue($role);
+	}
+
+	/**
 	 * Build an index of party references to full names from the PartyList.
 	 * Used for ERN 4.x where artist/contributor names are stored in a
 	 * central PartyList and referenced by ID.
@@ -101,7 +129,12 @@ class SimpleEntity {
 		if ($ern instanceof \DedexBundle\Entity\Ern382\NewReleaseMessage || $ern->getPartyList() === null) {
 			return $index;
 		}
-		foreach ($ern->getPartyList() as $party) {
+		$parties = $ern->getPartyList();
+		if (is_object($parties) && method_exists($parties, 'getParty')) {
+			// ERN 4.3.1: PartyList is a composite (Party + Brand), not an array of Party
+			$parties = $parties->getParty();
+		}
+		foreach ($parties as $party) {
 			$ref = $party->getPartyReference();
 			$fullName = $party->getPartyName()[0]->getFullName();
             // getFullName() returns a string in Ern41/411, a NameType object in Ern42
@@ -153,7 +186,7 @@ class SimpleEntity {
 			try {
 				if ($partyIndex !== null) {
 					$name = $partyIndex[$contributor->getContributorPartyReference()] ?? null;
-					$role = $this->getUserDefinedValue($contributor->getRole()[0]);
+					$role = $this->getContributorRole($contributor);
 				} else {
 					$name = $contributor->getPartyName()[0]->getFullName();
 					$role = $this->getUserDefinedValue($contributor->$roleGetter()[0]);

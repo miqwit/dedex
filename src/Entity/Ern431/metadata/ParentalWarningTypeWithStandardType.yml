@@ -1,0 +1,73 @@
+DedexBundle\Entity\Ern431\ParentalWarningTypeWithStandardType:
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: string
+        applicableTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ApplicableTerritoryCode
+            accessor:
+                getter: getApplicableTerritoryCode
+                setter: setApplicableTerritoryCode
+            xml_attribute: true
+            type: string
+        isDefault:
+            expose: true
+            access_type: public_method
+            serialized_name: IsDefault
+            accessor:
+                getter: getIsDefault
+                setter: setIsDefault
+            xml_attribute: true
+            type: bool
+        typeNamespace:
+            expose: true
+            access_type: public_method
+            serialized_name: TypeNamespace
+            accessor:
+                getter: getTypeNamespace
+                setter: setTypeNamespace
+            xml_attribute: true
+            type: string
+        typeUserDefinedValue:
+            expose: true
+            access_type: public_method
+            serialized_name: TypeUserDefinedValue
+            accessor:
+                getter: getTypeUserDefinedValue
+                setter: setTypeUserDefinedValue
+            xml_attribute: true
+            type: string
+        parentalWarningStandard:
+            expose: true
+            access_type: public_method
+            serialized_name: ParentalWarningStandard
+            accessor:
+                getter: getParentalWarningStandard
+                setter: setParentalWarningStandard
+            xml_attribute: true
+            type: string
+        standardNamespace:
+            expose: true
+            access_type: public_method
+            serialized_name: StandardNamespace
+            accessor:
+                getter: getStandardNamespace
+                setter: setStandardNamespace
+            xml_attribute: true
+            type: string
+        standardUserDefinedValue:
+            expose: true
+            access_type: public_method
+            serialized_name: StandardUserDefinedValue
+            accessor:
+                getter: getStandardUserDefinedValue
+                setter: setStandardUserDefinedValue
+            xml_attribute: true
+            type: string

@@ -624,6 +624,19 @@ class SimpleAlbum extends SimpleEntity {
   }
   
   /**
+   * First genre composite of the release. The element is named Genre up to
+   * ERN 4.3 and DisplayGenre from ERN 4.3.1.
+   *
+   * @return mixed the GenreWithTerritory object of the current ERN version
+   */
+  private function getGenreComposite() {
+    if ($this->isVersion431OrLater($this->version)) {
+      return $this->ddexDetails->getDisplayGenre()[0];
+    }
+    return $this->ddexDetails->getGenre()[0];
+  }
+
+  /**
    * Assumption: only one genre
    * 
    * @return string|null
@@ -632,7 +645,7 @@ class SimpleAlbum extends SimpleEntity {
     if ($this->isVersion4x($this->version)) {
       // ERN 4.x: GenreText is a string directly
       try {
-        return $this->ddexDetails->getGenre()[0]->getGenreText();
+        return $this->getGenreComposite()->getGenreText();
       } catch (Throwable $ex) {
         return null;
       }
@@ -654,7 +667,7 @@ class SimpleAlbum extends SimpleEntity {
     if ($this->isVersion4x($this->version)) {
       // ERN 4.x: SubGenre is a string directly
       try {
-        return $this->ddexDetails->getGenre()[0]->getSubGenre();
+        return $this->getGenreComposite()->getSubGenre();
       } catch (Throwable $ex) {
         return null;
       }

@@ -1,0 +1,32 @@
+DedexBundle\Entity\Ern431\BrandType:
+    properties:
+        brandReference:
+            expose: true
+            access_type: public_method
+            serialized_name: BrandReference
+            accessor:
+                getter: getBrandReference
+                setter: setBrandReference
+            type: string
+        brandId:
+            expose: true
+            access_type: public_method
+            serialized_name: BrandId
+            accessor:
+                getter: getBrandId
+                setter: setBrandId
+            xml_list:
+                inline: true
+                entry_name: BrandId
+            type: array<DedexBundle\Entity\Ern431\ProprietaryIdentifierType>
+        brandName:
+            expose: true
+            access_type: public_method
+            serialized_name: BrandName
+            accessor:
+                getter: getBrandName
+                setter: setBrandName
+            xml_list:
+                inline: true
+                entry_name: BrandName
+            type: array<DedexBundle\Entity\Ern431\PartyNameWithTerritoryType>
