@@ -1186,11 +1186,20 @@ class ParserControllerTest extends TestCase {
     $parser_controller->setXsdValidation(true);
     $ddex = $parser_controller->parse("tests/samples/033_ern431_new_features.xml");
 
+    // MessageHeader: SentAsRequestedBy
+    $this->assertEquals("Test Requester", (string) $ddex->getMessageHeader()->getSentAsRequestedBy()->getPartyName()->getFullName());
+
     // Brand
     $brands = $ddex->getPartyList()->getBrand();
     $this->assertCount(1, $brands);
     $this->assertEquals("PBrand1", $brands[0]->getBrandReference());
     $this->assertEquals("Test Brand", (string) $brands[0]->getBrandName()[0]->getFullName());
+
+    // ChapterList / ChapterId
+    $chapters = $ddex->getChapterList()->getChapter();
+    $this->assertCount(1, $chapters);
+    $this->assertEquals("X1", $chapters[0]->getChapterReference());
+    $this->assertEquals("TEST00000001", $chapters[0]->getChapterId()[0]->getISRC());
 
     // Release titles
     $release = $ddex->getReleaseList()->getRelease();
@@ -1201,11 +1210,37 @@ class ParserControllerTest extends TestCase {
     $this->assertEquals("VariousArtists", (string) $release->getDisplayArtist()[1]->getSpecialDisplayArtist());
     // ParentalWarningType is optional in 4.3.1
     $this->assertEmpty($release->getParentalWarningType());
+    // Release-level ContainsAI
+    $this->assertEquals("Partly", (string) $release->getContainsAI());
+    // AdministratingRecordCompany
+    $admin = $release->getAdministratingRecordCompany()[0];
+    $this->assertEquals("PLabel1", $admin->getRecordCompanyPartyReference());
+    $this->assertEquals("RightsAdministrator", (string) $admin->getRole());
+    // PLine/CLine now carry ApplicableTerritoryCode/IsDefault
+    $this->assertEquals("Worldwide", (string) $release->getPLine()[0]->getApplicableTerritoryCode());
+    $this->assertEquals("true", $release->getCLine()[0]->getIsDefault());
+    // SubGenreCategory/Description on DisplayGenre
+    $subGenre = $release->getDisplayGenre()[0]->getSubGenreCategory()[0];
+    $this->assertEquals("BoogieWoogie", (string) $subGenre->getValue()[0]);
+    $this->assertEquals("Test sub-genre description", (string) $subGenre->getDescription()[0]);
 
-    // Sound recording: AI flag, contributors, parental warning with standard
+    // Deal: RightsClaimPolicy / RightsClaimPolicyReason, PriceInformation
+    $dealTerms = $ddex->getDealList()->getReleaseDeal()[0]->getDeal()[0]->getDealTerms();
+    $policy = $dealTerms->getRightsClaimPolicy()[0];
+    $this->assertEquals("Monetize", (string) $policy->getRightsClaimPolicyType());
+    $this->assertEquals("PreReleaseTime", (string) $policy->getRightsClaimPolicyReason());
+    $this->assertEquals("9.99", $dealTerms->getPriceInformation()[0]->getSuggestedRetailPrice()->value());
+
+    // Sound recording: AI flag, contributors, parental warning with standard,
+    // DisplayCredits, IsInOriginalLanguage, EditionContributor
     $sr = $ddex->getResourceList()->getSoundRecording()[0];
     $this->assertEquals("Partly", (string) $sr->getContainsAI());
     $this->assertEquals("RiaaPal", (string) $sr->getParentalWarningType()[0]->getParentalWarningStandard());
+    $this->assertEquals("true", $sr->getDisplayArtistName()[0]->getIsInOriginalLanguage());
+    $this->assertEquals("Test Artist", $sr->getDisplayArtist()[0]->getDisplayCredits()[0]->getDisplayCreditText());
+    $editionContributor = $sr->getSoundRecordingEdition()[0]->getEditionContributor()[0];
+    $this->assertEquals("GenerativeAI", (string) $editionContributor->getSpecialContributor());
+    $this->assertEquals("All", (string) $editionContributor->getAiContribution());
     $c1 = $sr->getContributor()[0];
     $this->assertEquals("AssociatedPerformer", (string) $c1->getRole()[0]->getValue());
     $this->assertEquals("Guitar", (string) $c1->getRole()[0]->getInstrumentType()[0]);
@@ -1213,6 +1248,17 @@ class ParserControllerTest extends TestCase {
     $c2 = $sr->getContributor()[1];
     $this->assertEquals("Traditional", (string) $c2->getSpecialContributor());
     $this->assertEmpty($ddex->getResourceList()->getSoundRecording()[1]->getParentalWarningType());
+
+    // Image: FormalTitle/GroupingTitle, ContainsAI, ParentalWarningStandard,
+    // FirstPublicationDate (FulfillmentDate composite)
+    $image = $ddex->getResourceList()->getImage()[0];
+    $this->assertEquals("Test Album ERN431 Cover (Formal)", (string) $image->getFormalTitle()[0]->getTitleText());
+    $this->assertEquals("Test Cover Grouping", (string) $image->getGroupingTitle()[0]->getTitleText());
+    $this->assertEquals("None", (string) $image->getContainsAI());
+    $this->assertEquals("RiaaPal", (string) $image->getParentalWarningType()[0]->getParentalWarningStandard());
+    $firstPublication = $image->getFirstPublicationDate()[0];
+    $this->assertEquals("2024-01-15", (string) $firstPublication->getFulfillmentDate());
+    $this->assertEquals("R0", (string) $firstPublication->getResourceReleaseReference()[0]);
   }
 
   /**

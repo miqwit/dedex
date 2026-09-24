@@ -19,6 +19,12 @@
             <FullName>Test Recipient</FullName>
          </PartyName>
       </MessageRecipient>
+      <SentAsRequestedBy>
+         <PartyId>PADPIDA2024021303T</PartyId>
+         <PartyName>
+            <FullName>Test Requester</FullName>
+         </PartyName>
+      </SentAsRequestedBy>
       <MessageCreatedDateTime>2024-01-15T10:00:00+00:00</MessageCreatedDateTime>
    </MessageHeader>
    <PartyList>
@@ -49,6 +55,13 @@
             <ResourceId>
                <ISRC>TEST00000001</ISRC>
             </ResourceId>
+            <EditionContributor>
+               <SpecialContributor>GenerativeAI</SpecialContributor>
+               <Role>
+                  <Value>StudioProducer</Value>
+               </Role>
+               <AiContribution>All</AiContribution>
+            </EditionContributor>
             <PLine>
                <Year>2024</Year>
                <PLineText>(P) 2024 Test Label</PLineText>
@@ -67,10 +80,13 @@
          <DisplayTitle ApplicableTerritoryCode="Worldwide" IsDefault="true">
             <TitleText>Track One</TitleText>
          </DisplayTitle>
-         <DisplayArtistName ApplicableTerritoryCode="Worldwide" IsDefault="true">Test Artist</DisplayArtistName>
+         <DisplayArtistName ApplicableTerritoryCode="Worldwide" IsDefault="true" IsInOriginalLanguage="true">Test Artist</DisplayArtistName>
          <DisplayArtist SequenceNumber="1">
             <ArtistPartyReference>PTestArtist</ArtistPartyReference>
             <DisplayArtistRole>MainArtist</DisplayArtistRole>
+            <DisplayCredits>
+               <DisplayCreditText>Test Artist</DisplayCreditText>
+            </DisplayCredits>
          </DisplayArtist>
          <Contributor SequenceNumber="1">
             <ContributorPartyReference>PTestArtist</ContributorPartyReference>
@@ -128,7 +144,18 @@
          <ResourceId>
             <ProprietaryId Namespace="TestLabel">COVER:TEST431</ProprietaryId>
          </ResourceId>
-         <ParentalWarningType>NotExplicit</ParentalWarningType>
+         <FormalTitle ApplicableTerritoryCode="Worldwide" IsDefault="true">
+            <TitleText>Test Album ERN431 Cover (Formal)</TitleText>
+         </FormalTitle>
+         <GroupingTitle ApplicableTerritoryCode="Worldwide" IsDefault="true">
+            <TitleText>Test Cover Grouping</TitleText>
+         </GroupingTitle>
+         <FirstPublicationDate>
+            <FulfillmentDate>2024-01-15</FulfillmentDate>
+            <ResourceReleaseReference>R0</ResourceReleaseReference>
+         </FirstPublicationDate>
+         <ParentalWarningType ParentalWarningStandard="RiaaPal">NotExplicit</ParentalWarningType>
+         <ContainsAI>None</ContainsAI>
          <TechnicalDetails>
             <TechnicalResourceDetailsReference>T3</TechnicalResourceDetailsReference>
             <File>
@@ -137,6 +164,16 @@
          </TechnicalDetails>
       </Image>
    </ResourceList>
+   <ChapterList>
+      <Chapter>
+         <ChapterReference>X1</ChapterReference>
+         <ChapterId>
+            <ISRC>TEST00000001</ISRC>
+         </ChapterId>
+         <DisplayTitleText>Chapter One</DisplayTitleText>
+         <Duration>PT0S</Duration>
+      </Chapter>
+   </ChapterList>
    <ReleaseList>
       <Release>
          <ReleaseReference>R0</ReleaseReference>
@@ -163,16 +200,24 @@
             <SpecialDisplayArtist>VariousArtists</SpecialDisplayArtist>
          </DisplayArtist>
          <ReleaseLabelReference ApplicableTerritoryCode="Worldwide">PLabel1</ReleaseLabelReference>
-         <PLine>
+         <AdministratingRecordCompany>
+            <RecordCompanyPartyReference>PLabel1</RecordCompanyPartyReference>
+            <Role>RightsAdministrator</Role>
+         </AdministratingRecordCompany>
+         <PLine ApplicableTerritoryCode="Worldwide" IsDefault="true">
             <Year>2024</Year>
             <PLineText>(P) 2024 Test Label</PLineText>
          </PLine>
-         <CLine>
+         <CLine ApplicableTerritoryCode="Worldwide" IsDefault="true">
             <Year>2024</Year>
             <CLineText>(C) 2024 Test Label</CLineText>
          </CLine>
          <DisplayGenre ApplicableTerritoryCode="Worldwide">
-            <GenreText>Pop</GenreText>
+            <GenreText>Classical</GenreText>
+            <SubGenreCategory>
+               <Value>BoogieWoogie</Value>
+               <Description>Test sub-genre description</Description>
+            </SubGenreCategory>
          </DisplayGenre>
          <OriginalReleaseDate>2024-01-15</OriginalReleaseDate>
          <ResourceGroup>
@@ -187,6 +232,7 @@
             </ResourceGroupContentItem>
             <LinkedReleaseResourceReference>A3</LinkedReleaseResourceReference>
          </ResourceGroup>
+         <ContainsAI>Partly</ContainsAI>
       </Release>
       <TrackRelease>
          <ReleaseReference>R1</ReleaseReference>
@@ -222,6 +268,13 @@
                </ValidityPeriod>
                <CommercialModelType>SubscriptionModel</CommercialModelType>
                <UseType>OnDemandStream</UseType>
+               <RightsClaimPolicy>
+                  <RightsClaimPolicyType>Monetize</RightsClaimPolicyType>
+                  <RightsClaimPolicyReason>PreReleaseTime</RightsClaimPolicyReason>
+               </RightsClaimPolicy>
+               <PriceInformation>
+                  <SuggestedRetailPrice CurrencyCode="USD">9.99</SuggestedRetailPrice>
+               </PriceInformation>
             </DealTerms>
          </Deal>
       </ReleaseDeal>
