@@ -1,0 +1,16 @@
+# xsd2php configuration used to generate the Ern431 entity classes.
+# Adapt the version (namespaces, destinations) to generate another ERN version.
+#
+#   ./vendor/goetas-webservices/xsd2php/bin/xsd2php convert config/xsd2php.yaml xsd/release_notification/431/release-notification.xsd
+xsd2php:
+  namespaces:
+    'http://ddex.net/xml/ern/431': 'DedexBundle\Entity\Ern431'
+    'http://ddex.net/xml/allowed-value-sets': 'DedexBundle\Entity\Ern431\Avs'
+  destinations_php:
+    'DedexBundle\Entity\Ern431': src/Entity/Ern431
+    'DedexBundle\Entity\Ern431\Avs': src/Entity/Ern431/Avs
+  destinations_jms:
+    'DedexBundle\Entity\Ern431': src/Entity/Ern431/metadata
+
+  naming_strategy: long # needed to avoid conflicts on Type files
+  path_generator: psr4 # optional and default

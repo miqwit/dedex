@@ -48,7 +48,7 @@ abstract class Rule {
    * To which version this rule is applicable to
    * @var array 
    */
-  protected $supported_versions = ["382", "41", "411", "43"];
+  protected $supported_versions = ["382", "41", "411", "43", "431"];
   
   /**
    * Level of the rule.

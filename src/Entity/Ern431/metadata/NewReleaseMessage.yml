@@ -1,0 +1,3 @@
+DedexBundle\Entity\Ern431\NewReleaseMessage:
+    xml_root_name: 'ns-822e45b4:NewReleaseMessage'
+    xml_root_namespace: 'http://ddex.net/xml/ern/431'

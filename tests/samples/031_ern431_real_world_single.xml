@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ern:NewReleaseMessage xmlns:ern="http://ddex.net/xml/ern/431"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://ddex.net/xml/ern/431 http://ddex.net/xml/ern/431/release-notification.xsd"
+    ReleaseProfileVersionId="Audio" LanguageAndScriptCode="en" AvsVersionId="3">
+    <MessageHeader>
+        <MessageThreadId>KinjariInc_01kgag5tybcbnkf2pjfygm4fy8</MessageThreadId>
+        <MessageId>KinjariInc_01kgag5tybcbnkf2pjfygm4fy8_20260203131241</MessageId>
+        <MessageSender>
+            <PartyId>PADPIDA20250314036</PartyId>
+            <PartyName>
+                <FullName>Kinjari, Inc.</FullName>
+            </PartyName>
+        </MessageSender>
+        <MessageRecipient>
+            <PartyId>PADPIDA2024021301R</PartyId>
+            <PartyName>
+                <FullName>spotify</FullName>
+            </PartyName>
+        </MessageRecipient>
+        <MessageCreatedDateTime>2026-02-03T13:12:41.376839Z</MessageCreatedDateTime>
+    </MessageHeader>
+    <PartyList>
+        <Party>
+            <PartyReference>P1</PartyReference>
+            <PartyName>
+                <FullName>Lucas Avery</FullName>
+                <FullNameIndexed>Lucas Avery</FullNameIndexed>
+            </PartyName>
+        </Party>
+        <Party>
+            <PartyReference>P2</PartyReference>
+            <PartyName>
+                <FullName>Luke Hebblethwaite</FullName>
+                <FullNameIndexed>Luke Hebblethwaite</FullNameIndexed>
+            </PartyName>
+        </Party>
+        <Party>
+            <PartyReference>PLabel</PartyReference>
+            <PartyName>
+                <FullName>Sky High Trance</FullName>
+            </PartyName>
+        </Party>
+    </PartyList>
+    <ResourceList>
+        <SoundRecording>
+            <ResourceReference>A1</ResourceReference>
+            <Type>MusicalWorkSoundRecording</Type>
+            <SoundRecordingEdition>
+                <ResourceId>
+                    <ISRC>GXF3D2400001</ISRC>
+                </ResourceId>
+                <PLine>
+                    <Year>2025</Year>
+                    <PLineText>(P) 2025 Sky High Trance</PLineText>
+                </PLine>
+                <TechnicalDetails>
+                    <TechnicalResourceDetailsReference>T1</TechnicalResourceDetailsReference>
+                    <DeliveryFile>
+                        <Type>AudioFile</Type>
+                        <File>
+                            <URI>5063642055734_T1_001.wav</URI>
+                        </File>
+                    </DeliveryFile>
+                </TechnicalDetails>
+            </SoundRecordingEdition>
+            <DisplayTitleText ApplicableTerritoryCode="Worldwide" LanguageAndScriptCode="en"
+                IsDefault="true">Sakura</DisplayTitleText>
+            <DisplayTitle ApplicableTerritoryCode="Worldwide" IsDefault="true">
+                <TitleText>Sakura</TitleText>
+            </DisplayTitle>
+            <DisplayArtistName>Lucas Avery</DisplayArtistName>
+            <DisplayArtist SequenceNumber="1">
+                <ArtistPartyReference>P1</ArtistPartyReference>
+                <DisplayArtistRole>MainArtist</DisplayArtistRole>
+            </DisplayArtist>
+            <Contributor SequenceNumber="1">
+                <ContributorPartyReference>P2</ContributorPartyReference>
+                <Role><Value>Composer</Value></Role>
+            </Contributor>
+            <Duration>PT4M39S</Duration>
+            <ParentalWarningType>NotExplicit</ParentalWarningType>
+            <IsInstrumental>true</IsInstrumental>
+            <LanguageOfPerformance>zxx</LanguageOfPerformance>
+        </SoundRecording>
+        <SoundRecording>
+            <ResourceReference>A2</ResourceReference>
+            <Type>MusicalWorkSoundRecording</Type>
+            <SoundRecordingEdition>
+                <ResourceId>
+                    <ISRC>GXF3D2400002</ISRC>
+                </ResourceId>
+                <PLine>
+                    <Year>2025</Year>
+                    <PLineText>(P) 2025 Sky High Trance</PLineText>
+                </PLine>
+                <TechnicalDetails>
+                    <TechnicalResourceDetailsReference>T2</TechnicalResourceDetailsReference>
+                    <DeliveryFile>
+                        <Type>AudioFile</Type>
+                        <File>
+                            <URI>5063642055734_T2_002.wav</URI>
+                        </File>
+                    </DeliveryFile>
+                </TechnicalDetails>
+            </SoundRecordingEdition>
+            <DisplayTitleText ApplicableTerritoryCode="Worldwide" LanguageAndScriptCode="en"
+                IsDefault="true">Sakura</DisplayTitleText>
+            <DisplayTitle ApplicableTerritoryCode="Worldwide" IsDefault="true">
+                <TitleText>Sakura</TitleText>
+                <SubTitle>Radio Edit</SubTitle>
+            </DisplayTitle>
+            <DisplayArtistName>Lucas Avery</DisplayArtistName>
+            <DisplayArtist SequenceNumber="1">
+                <ArtistPartyReference>P1</ArtistPartyReference>
+                <DisplayArtistRole>MainArtist</DisplayArtistRole>
+            </DisplayArtist>
+            <Contributor SequenceNumber="1">
+                <ContributorPartyReference>P2</ContributorPartyReference>
+                <Role><Value>Composer</Value></Role>
+            </Contributor>
+            <Duration>PT2M45S</Duration>
+            <ParentalWarningType>NotExplicit</ParentalWarningType>
+            <IsInstrumental>true</IsInstrumental>
+            <LanguageOfPerformance>zxx</LanguageOfPerformance>
+        </SoundRecording>
+        <Image>
+            <ResourceReference>A3</ResourceReference>
+            <Type>FrontCoverImage</Type>
+            <ResourceId>
+                <ProprietaryId Namespace="PADPIDA20250314036">img01kgag5tybcbnkf2pjfygm4fy8</ProprietaryId>
+            </ResourceId>
+            <ParentalWarningType>NotExplicit</ParentalWarningType>
+            <TechnicalDetails>
+                <TechnicalResourceDetailsReference>T3</TechnicalResourceDetailsReference>
+                <File>
+                    <URI>5063642055734_T3.jpg</URI>
+                </File>
+            </TechnicalDetails>
+        </Image>
+    </ResourceList>
+    <ReleaseList>
+        <Release>
+            <ReleaseReference>R0</ReleaseReference>
+            <ReleaseType>Single</ReleaseType>
+            <ReleaseId>
+                <ICPN>5063642055734</ICPN>
+                <CatalogNumber Namespace="PADPIDA20250314036">SKT-001</CatalogNumber>
+            </ReleaseId>
+            <DisplayTitleText ApplicableTerritoryCode="Worldwide" LanguageAndScriptCode="en"
+                IsDefault="true">Sakura</DisplayTitleText>
+            <DisplayTitle ApplicableTerritoryCode="Worldwide" IsDefault="true">
+                <TitleText>Sakura</TitleText>
+            </DisplayTitle>
+            <DisplayArtistName>Lucas Avery</DisplayArtistName>
+            <DisplayArtist SequenceNumber="1">
+                <ArtistPartyReference>P1</ArtistPartyReference>
+                <DisplayArtistRole>MainArtist</DisplayArtistRole>
+            </DisplayArtist>
+            <ReleaseLabelReference ApplicableTerritoryCode="Worldwide">PLabel</ReleaseLabelReference>
+            <PLine>
+                <Year>2025</Year>
+                <PLineText>(P) 2025 Sky High Trance</PLineText>
+            </PLine>
+            <CLine>
+                <Year>2025</Year>
+                <CLineText>(C) 2025 Sky High Trance</CLineText>
+            </CLine>
+            <DisplayGenre ApplicableTerritoryCode="Worldwide">
+                <GenreText>Trance</GenreText>
+            </DisplayGenre>
+            <ParentalWarningType>NotExplicit</ParentalWarningType>
+            <ResourceGroup>
+                <SequenceNumber>1</SequenceNumber>
+                <ResourceGroupContentItem>
+                    <SequenceNumber>1</SequenceNumber>
+                    <ReleaseResourceReference>A1</ReleaseResourceReference>
+                </ResourceGroupContentItem>
+                <ResourceGroupContentItem>
+                    <SequenceNumber>2</SequenceNumber>
+                    <ReleaseResourceReference>A2</ReleaseResourceReference>
+                </ResourceGroupContentItem>
+                <LinkedReleaseResourceReference>A3</LinkedReleaseResourceReference>
+            </ResourceGroup>
+        </Release>
+        <TrackRelease>
+            <ReleaseReference>R1</ReleaseReference>
+            <ReleaseId>
+                <ProprietaryId Namespace="PADPIDA20250314036">PID1</ProprietaryId>
+            </ReleaseId>
+            <ReleaseResourceReference>A1</ReleaseResourceReference>
+            <ReleaseLabelReference ApplicableTerritoryCode="Worldwide">PLabel</ReleaseLabelReference>
+            <DisplayGenre ApplicableTerritoryCode="Worldwide">
+                <GenreText>Trance</GenreText>
+            </DisplayGenre>
+        </TrackRelease>
+        <TrackRelease>
+            <ReleaseReference>R2</ReleaseReference>
+            <ReleaseId>
+                <ProprietaryId Namespace="PADPIDA20250314036">PID2</ProprietaryId>
+            </ReleaseId>
+            <ReleaseResourceReference>A2</ReleaseResourceReference>
+            <ReleaseLabelReference ApplicableTerritoryCode="Worldwide">PLabel</ReleaseLabelReference>
+            <DisplayGenre ApplicableTerritoryCode="Worldwide">
+                <GenreText>Trance</GenreText>
+            </DisplayGenre>
+        </TrackRelease>
+    </ReleaseList>
+    <DealList>
+        <ReleaseDeal>
+            <DealReleaseReference>R0</DealReleaseReference>
+            <Deal>
+                <DealTerms>
+                    <TerritoryCode>Worldwide</TerritoryCode>
+                    <ValidityPeriod>
+                        <StartDate>2025-01-24</StartDate>
+                    </ValidityPeriod>
+                    <CommercialModelType>SubscriptionModel</CommercialModelType>
+                    <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+                    <UseType>OnDemandStream</UseType>
+                    <UseType>NonInteractiveStream</UseType>
+                </DealTerms>
+            </Deal>
+        </ReleaseDeal>
+        <ReleaseDeal>
+            <DealReleaseReference>R1</DealReleaseReference>
+            <Deal>
+                <DealTerms>
+                    <TerritoryCode>Worldwide</TerritoryCode>
+                    <ValidityPeriod>
+                        <StartDate>2025-01-24</StartDate>
+                    </ValidityPeriod>
+                    <CommercialModelType>SubscriptionModel</CommercialModelType>
+                    <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+                    <UseType>OnDemandStream</UseType>
+                    <UseType>NonInteractiveStream</UseType>
+                </DealTerms>
+            </Deal>
+        </ReleaseDeal>
+        <ReleaseDeal>
+            <DealReleaseReference>R2</DealReleaseReference>
+            <Deal>
+                <DealTerms>
+                    <TerritoryCode>Worldwide</TerritoryCode>
+                    <ValidityPeriod>
+                        <StartDate>2025-01-24</StartDate>
+                    </ValidityPeriod>
+                    <CommercialModelType>SubscriptionModel</CommercialModelType>
+                    <CommercialModelType>AdvertisementSupportedModel</CommercialModelType>
+                    <UseType>OnDemandStream</UseType>
+                    <UseType>NonInteractiveStream</UseType>
+                </DealTerms>
+            </Deal>
+        </ReleaseDeal>
+    </DealList>
+</ern:NewReleaseMessage>

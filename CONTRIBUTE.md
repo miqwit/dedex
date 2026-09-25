@@ -60,25 +60,25 @@ I used the superb [`xsd2php`](https://github.com/goetas-webservices/xsd2php) pac
 
 The parser is "filling" these objects while parsing the XML file line by line.
 
-Example for generating DDEX 411 entity classes:
+Example for generating DDEX 4.3.1 entity classes (the config file `config/xsd2php.yaml` is versioned and targets 431; copy and adapt it for another version):
 
 ```
-./vendor/goetas-webservices/xsd2php/bin/xsd2php convert config/xsd2php.yaml xsd/release_notification/411/*.xsd
+./vendor/goetas-webservices/xsd2php/bin/xsd2php convert config/xsd2php.yaml xsd/release_notification/431/release-notification.xsd
 ```
 
-With the following config file `config/xsd2php.yaml`:
+The XSD imports the allowed value set: save it next to it as `avs431.xsd` and point the `schemaLocation` of the import to it so that generation and validation work offline. Config file `config/xsd2php.yaml`:
 
 ```yaml
 xsd2php:
   namespaces:
-    'http://ddex.net/xml/ern/42': 'DedexBundle\Entity\Ern42'
-    'http://ddex.net/xml/avs/avs': 'DedexBundle\Entity\Ern42\Avs'
+    'http://ddex.net/xml/ern/431': 'DedexBundle\Entity\Ern431'
+    'http://ddex.net/xml/allowed-value-sets': 'DedexBundle\Entity\Ern431\Avs'
   destinations_php:
-    'DedexBundle\Entity\Ern42': src/Entity/Ern42
-    'DedexBundle\Entity\Ern42\Avs': src/Entity/Ern42/Avs
+    'DedexBundle\Entity\Ern431': src/Entity/Ern431
+    'DedexBundle\Entity\Ern431\Avs': src/Entity/Ern431/Avs
 
   destinations_jms:
-    'DedexBundle\Entity\Ern42': src/Entity/Ern42/metadata
+    'DedexBundle\Entity\Ern431': src/Entity/Ern431/metadata
 
   naming_strategy: long # needed to avoid conflicts on Type files
   path_generator: psr4 # optional and default
