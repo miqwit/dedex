@@ -180,7 +180,7 @@ class SimpleAlbum extends SimpleEntity {
 
     // index deals
     $this->indexDealsByReleaseReference();
-    $this->deal = $this->dealsByReleaseReference[$this->ddexReleaseAlbum->getReleaseReference()[0]];
+    $this->deal = $this->dealsByReleaseReference[$this->ddexReleaseAlbum->getReleaseReference()[0]] ?? null;
 
     // index resources
     $this->ddexDetails = $this->getDetailsByTerritory($this->ddexReleaseAlbum, "release", "worldwide");
