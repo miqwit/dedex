@@ -113,6 +113,30 @@ class SimplifiersTest extends TestCase {
 	}
 
   /**
+   * ERN 3.8.2 album with no separate TrackRelease: per-track releases are
+   * optional, so the album must still build with its track and deal.
+   * See https://github.com/miqwit/dedex/issues/45
+   */
+  public function testSimpleAlbumErn382WithoutTrackReleases() {
+    $parser = new ErnParserController();
+    $ern = $parser->parse("tests/samples/034_ern382_album_without_track_releases.xml");
+    $this->assertEquals("382", $parser->getVersion());
+
+    $album = new SimpleAlbum($ern, $parser->getVersion());
+    $this->assertEquals("Example Album", $album->getTitle());
+    $this->assertEquals("0000000000000", $album->getIcpn());
+
+    $tracks = $album->getTracksPerCd();
+    $this->assertCount(1, $tracks[1]);
+    $this->assertEquals("Example Track", $tracks[1][1]->getTitle());
+    $this->assertEquals("ZZZZZ2600001", $tracks[1][1]->getIsrc());
+
+    $this->assertNotNull($album->getDeal());
+    $this->assertContains("SubscriptionModel", $album->getDeal()->getCommercialModelTypes());
+    $this->assertFalse($album->isTakedown());
+  }
+
+  /**
    * Test SimpleAlbum with ERN 4.1.1.
    */
   public function testSimpleAlbum411() {

@@ -96,7 +96,7 @@ class SimpleAlbum extends SimpleEntity {
   /**
    * @var array
    */
-  private $trackReleasesByReference;
+  private $trackReleasesByReference = [];
   
   /**
    * @var SimpleDeal
