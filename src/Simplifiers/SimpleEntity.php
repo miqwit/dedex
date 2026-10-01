@@ -75,6 +75,23 @@ class SimpleEntity {
 	}
 
 	/**
+	 * ERN versions supported by this library, oldest to newest. Used by
+	 * isVersionAtLeast() to compare two version strings.
+	 *
+	 * Comparing the strings as numbers (e.g. intval(substr($version, 0, 2)))
+	 * breaks as soon as two versions don't encode to the same number of
+	 * digits: a hypothetical 4.4 ("44") would compare as 44, which is LESS
+	 * than 4.3.1's 431, wrongly ranking 4.4 before 4.3.1. An explicit,
+	 * ordered list has no such trap.
+	 *
+	 * Keep this in sync with ErnParserController::$supported_versions and
+	 * Rule::$supported_versions whenever a new ERN version is added.
+	 *
+	 * @var string[]
+	 */
+	private const VERSION_ORDER = ["382", "41", "411", "42", "43", "431"];
+
+	/**
 	 * Check if the version string corresponds to an ERN 4.x version.
 	 *
 	 * @param string $version version string as detected by ErnParserController
@@ -84,8 +101,26 @@ class SimpleEntity {
 		return $version[0] === '4';
 	}
 
+	/**
+	 * Check if $version is the same as, or comes after, $reference in
+	 * VERSION_ORDER. A version absent from VERSION_ORDER never compares as
+	 * being at least any reference (including itself).
+	 *
+	 * @param string $version
+	 * @param string $reference
+	 * @return bool
+	 */
+	private function isVersionAtLeast(string $version, string $reference): bool {
+		$versionRank = array_search($version, self::VERSION_ORDER, true);
+		$referenceRank = array_search($reference, self::VERSION_ORDER, true);
+		if ($versionRank === false || $referenceRank === false) {
+			return false;
+		}
+		return $versionRank >= $referenceRank;
+	}
+
 	protected function isVersion43OrLater(string $version): bool {
-		return $this->isVersion4x($version) && intval(substr($version, 0, 2)) >= 43;
+		return $this->isVersion4x($version) && $this->isVersionAtLeast($version, "43");
 	}
 
 	/**
@@ -97,7 +132,7 @@ class SimpleEntity {
 	 * @return bool
 	 */
 	protected function isVersion431OrLater(string $version): bool {
-		return $this->isVersion4x($version) && intval(substr($version, 0, 3)) >= 431;
+		return $this->isVersion4x($version) && $this->isVersionAtLeast($version, "431");
 	}
 
 	/**
