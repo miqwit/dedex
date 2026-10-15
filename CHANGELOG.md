@@ -1,4 +1,4 @@
-## [Unreleased]
+## [2.4.0]
 
 ### Added
 - ERN 4.3.1 support (`Ern431` entities generated from the official DDEX XSD, namespace `http://ddex.net/xml/ern/431`, AVS v12)
