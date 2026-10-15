@@ -164,7 +164,6 @@ class SimplifiersTest extends TestCase {
     $this->assertNull($album->getDeal());
     $this->assertTrue($album->isTakedown());
   }
-
   /**
    * Test SimpleAlbum with ERN 4.1.1.
    */
@@ -204,76 +203,6 @@ class SimplifiersTest extends TestCase {
       $this->assertContains("SubscriptionModel", $deal->getCommercialModelTypes());
       $this->assertContains("AdvertisementSupportedModel", $deal->getCommercialModelTypes());
     }
-  }
-
-  /**
-   * Test SimpleAlbum with ERN 4.1.1.
-   */
-  public function testSimpleAlbum411() {
-    $parser = new ErnParserController();
-    $ern = $parser->parse("tests/samples/015_ern411.xml");
-
-    $album = new SimpleAlbum($ern, $parser->getVersion());
-
-    // Album deal
-    $albumDeal = $album->getDeal();
-    $this->assertNotNull($albumDeal);
-
-    // The album deal is for Japan only, from 2004-04-01
-    $this->assertEquals(1, count($albumDeal->getTerritories()));
-    $this->assertEquals("JP", $albumDeal->getTerritories()[0]);
-    $this->assertEquals("2004-04-01", $albumDeal->getStartDate()->format('Y-m-d'));
-
-    // Tracks deal
-    $track01 = $album->getTracksPerCd()[1][1];
-    /* @var $track01 SimpleTrack */
-    $deal01 = $track01->getDeal();
-    $this->assertNotNull($deal01);
-
-    $track02 = $album->getTracksPerCd()[1][2];
-    /* @var $track02 SimpleTrack */
-    $deal02 = $track02->getDeal();
-    $this->assertNotNull($deal02);
-
-    // Loop over deal01 and deal02
-    foreach (array($deal01, $deal02) as $deal) {
-      $this->assertCount(1, $deal->getTerritories());
-      $this->assertEquals("JP", $deal->getTerritories()[0]);
-      $this->assertEquals("2004-04-01", $deal->getStartDate()->format('Y-m-d'));
-      $this->assertCount(3, $deal->getCommercialModelTypes());
-      $this->assertContains("AsPerContract", $deal->getCommercialModelTypes());
-      $this->assertContains("SubscriptionModel", $deal->getCommercialModelTypes());
-      $this->assertContains("AdvertisementSupportedModel", $deal->getCommercialModelTypes());
-    }
-  }
-
-  /**
-   * ERN 3.8.2 album with no deal referencing it (only the track release
-   * has a deal): the album must build without any PHP warning and be
-   * considered a takedown.
-   * See https://github.com/miqwit/dedex/issues/45
-   */
-  public function testSimpleAlbumErn382WithoutDeal() {
-    $parser = new ErnParserController();
-    $ern = $parser->parse("tests/samples/035_ern382_album_without_deal.xml");
-    $this->assertEquals("382", $parser->getVersion());
-
-    // Turn warnings into exceptions, as frameworks commonly do
-    set_error_handler(function ($errno, $errstr) {
-      throw new \ErrorException($errstr, 0, $errno);
-    });
-    try {
-      $album = new SimpleAlbum($ern, $parser->getVersion());
-    } finally {
-      restore_error_handler();
-    }
-
-    $this->assertEquals("Example Album", $album->getTitle());
-    $tracks = $album->getTracksPerCd();
-    $this->assertCount(1, $tracks[1]);
-    $this->assertContains("SubscriptionModel", $tracks[1][1]->getDeal()->getCommercialModelTypes());
-    $this->assertNull($album->getDeal());
-    $this->assertTrue($album->isTakedown());
   }
 
   /**
