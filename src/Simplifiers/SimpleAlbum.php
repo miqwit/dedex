@@ -261,7 +261,17 @@ class SimpleAlbum extends SimpleEntity {
    */
   private function indexDealsByReleaseReference4x() {
     try {
-      foreach ($this->ern->getDealList()->getReleaseDeal() as $releaseDeal) {
+      $dealsArray = [];
+
+      if (is_array($this->ern->getDealList())) {
+        // 4.1 and 4.1.x fashion. DealList is an actual list
+        $dealsArray = $this->ern->getDealList();
+      } else if (is_array($this->ern->getDealList()->getReleaseDeal())) {
+        // 4.3 fashion.
+        $dealsArray = $this->ern->getDealList()->getReleaseDeal();
+      }
+
+      foreach ($dealsArray as $releaseDeal) {
         $deal = new SimpleDeal($releaseDeal, $this->version);
         foreach ($releaseDeal->getDealReleaseReference() as $ref) {
           $this->dealsByReleaseReference[$ref] = $deal;
