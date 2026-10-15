@@ -11,6 +11,8 @@
 - `AllSoundRecordingsHaveIsrc` and default `Rule` supported versions include 4.3.1
 - Rules apply by default to every version listed in the new `ErnParserController::SUPPORTED_VERSIONS` constant, so they now also run on ERN 4.2
 - ERN version comparison in simplifiers no longer relies on a hard-coded version list
+### Fixed
+- `AllReleasesUsedInDeals` failed when deals list releases in a different order than the ReleaseList, and crashed on ERN 4.1 and 4.1.1 (DealList is an array there)
 
 ## [2.3.1] - 2026-10-15
 ### Fixed

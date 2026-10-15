@@ -390,12 +390,25 @@ class ParserControllerRulesTest extends TestCase {
       new AtLeastOneAlbumRelease(Rule::LEVEL_ERROR),
       new OnlyOneMainRelease(Rule::LEVEL_ERROR),
       new AllResourcesUsedInReleases(Rule::LEVEL_ERROR),
+      new AllReleasesUsedInDeals(Rule::LEVEL_ERROR),
     ] as $rule) {
       $parser = new ErnParserController();
       $parser->addRule($rule);
       $parser->parse($xml_path);
       $this->assertEquals("", $parser->getRuleMessages(), get_class($rule));
     }
+  }
+
+  /**
+   * ERN 4.1.1 has DealList as an array of ReleaseDeal, and the sample lists
+   * deals in a different order than releases (track releases first, album
+   * release R0 last).
+   */
+  public function testRuleAllReleasesCoveredByDealErn411() {
+    $parser = new ErnParserController();
+    $parser->addRule(new AllReleasesUsedInDeals(Rule::LEVEL_ERROR));
+    $parser->parse("tests/samples/015_ern411.xml");
+    $this->assertEquals("", $parser->getRuleMessages());
   }
 
   /**

@@ -73,7 +73,11 @@ class AllReleasesUsedInDeals extends Rule {
     }
     
     // Second, browse all releases to check all references are used at least once.
-    foreach ($newReleaseMessage->getDealList()->getReleaseDeal() as $rd) {
+    // ERN 4.1 and 4.1.1 return DealList as an array of ReleaseDeal; other
+    // versions return a DealList object.
+    $dealList = $newReleaseMessage->getDealList();
+    $releaseDeals = is_array($dealList) ? $dealList : $dealList->getReleaseDeal();
+    foreach ($releaseDeals as $rd) {
       foreach ($rd->getDealReleaseReference() as $drr) {
         $val = $drr;
         
@@ -85,11 +89,11 @@ class AllReleasesUsedInDeals extends Rule {
         $references_used[] = $val;
       }
     }
-    $references_used = array_unique($references_used);
-    
-    // All references must be in references_used
-    if (array_intersect($references_used, $references) != $references) {
-      $this->message .= " ".implode(", ", array_diff($references, $references_used))." not used in deals or not defined in ReleaseList.";
+    // All references must be in references_used, whatever the order in which
+    // deals list them
+    $references_not_used = array_diff($references, $references_used);
+    if (count($references_not_used) > 0) {
+      $this->message .= " ".implode(", ", $references_not_used)." not used in deals or not defined in ReleaseList.";
       $valid = false;
     }
     
