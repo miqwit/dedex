@@ -27,6 +27,7 @@
 namespace DedexBundle\Simplifiers;
 
 use Exception;
+use InvalidArgumentException;
 
 /**
  * This is a parent class for all the Simple Entities. Contains useful handlers
@@ -75,21 +76,37 @@ class SimpleEntity {
 	}
 
 	/**
-	 * ERN versions supported by this library, oldest to newest. Used by
-	 * isVersionAtLeast() to compare two version strings.
+	 * Turn an ERN version string into a number that can be compared.
 	 *
-	 * Comparing the strings as numbers (e.g. intval(substr($version, 0, 2)))
-	 * breaks as soon as two versions don't encode to the same number of
-	 * digits: a hypothetical 4.4 ("44") would compare as 44, which is LESS
-	 * than 4.3.1's 431, wrongly ranking 4.4 before 4.3.1. An explicit,
-	 * ordered list has no such trap.
+	 * Version strings are the version digits without dots ("382" for 3.8.2,
+	 * "41" for 4.1, "431" for 4.3.1) and have at most 3 digits. They don't all
+	 * have the same length, so they can't be compared as numbers directly
+	 * (41 < 382). Right padding with zeros to 3 digits gives each digit its
+	 * place: "4" is 400, "41" is 410, "43" is 430, "431" is 431, "382" is 382.
 	 *
-	 * Keep this in sync with ErnParserController::$supported_versions and
-	 * Rule::$supported_versions whenever a new ERN version is added.
-	 *
-	 * @var string[]
+	 * @param string $version version string as detected by ErnParserController
+	 * @return int
+	 * @throws InvalidArgumentException if $version is not 1 to 3 digits
 	 */
-	private const VERSION_ORDER = ["382", "41", "411", "42", "43", "431"];
+	private function versionToComparable(string $version): int {
+		if (!preg_match('/^\d{1,3}$/', $version)) {
+			throw new InvalidArgumentException(sprintf("Invalid ERN version '%s': expected 1 to 3 digits, like 382 or 431.", $version));
+		}
+		return (int) str_pad($version, 3, "0", STR_PAD_RIGHT);
+	}
+
+	/**
+	 * Check if $version is the same as, or comes after, $reference.
+	 * For example "4" >= "382", "431" >= "43" and "44" >= "431".
+	 *
+	 * @param string $version version string as detected by ErnParserController
+	 * @param string $reference version string to compare with, like "43"
+	 * @return bool
+	 * @throws InvalidArgumentException if a version is not 1 to 3 digits
+	 */
+	protected function isVersionAtLeast(string $version, string $reference): bool {
+		return $this->versionToComparable($version) >= $this->versionToComparable($reference);
+	}
 
 	/**
 	 * Check if the version string corresponds to an ERN 4.x version.
@@ -102,25 +119,13 @@ class SimpleEntity {
 	}
 
 	/**
-	 * Check if $version is the same as, or comes after, $reference in
-	 * VERSION_ORDER. A version absent from VERSION_ORDER never compares as
-	 * being at least any reference (including itself).
+	 * Check if the version is ERN 4.3 or later (version string "43").
 	 *
-	 * @param string $version
-	 * @param string $reference
+	 * @param string $version version string as detected by ErnParserController
 	 * @return bool
 	 */
-	private function isVersionAtLeast(string $version, string $reference): bool {
-		$versionRank = array_search($version, self::VERSION_ORDER, true);
-		$referenceRank = array_search($reference, self::VERSION_ORDER, true);
-		if ($versionRank === false || $referenceRank === false) {
-			return false;
-		}
-		return $versionRank >= $referenceRank;
-	}
-
 	protected function isVersion43OrLater(string $version): bool {
-		return $this->isVersion4x($version) && $this->isVersionAtLeast($version, "43");
+		return $this->isVersionAtLeast($version, "43");
 	}
 
 	/**
@@ -132,7 +137,7 @@ class SimpleEntity {
 	 * @return bool
 	 */
 	protected function isVersion431OrLater(string $version): bool {
-		return $this->isVersion4x($version) && $this->isVersionAtLeast($version, "431");
+		return $this->isVersionAtLeast($version, "431");
 	}
 
 	/**
