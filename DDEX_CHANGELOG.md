@@ -9,8 +9,7 @@ This document traces, version by version, how the DDEX Electronic Release Notifi
 
 > * Official release-notification.xsd files: 3.7, 3.8, 3.8.1, 3.8.2, 3.8.3 and 4.3.2 (supplied), 4.1, 4.1.1, 4.2, 4.3 and 4.3.1 (repository [miqwit/dedex](https://github.com/miqwit/dedex), branch version-431 for 4.3.1).  
 > * Available AVS (Allowed Value Sets) files: avs\_20161006 (3.8.2), avs\_20200108 (3.8.3), avs4 (4.1), avs411 (4.1.1), avs43 and avs431 (4.3 / 4.3.1, the AVS shared by all DDEX standards).  
-> * Official release notes: [ERN 4.3.2, Annex A](https://ern.ddex.net/electronic-release-notification-message-suite-part-1-definitions-of-messages/annex-a-\(informative\)-release-notes).  
-> * Description of the dedex ERN 4.3.1 PR (file PR\_431.md, recovered from the history of the version-431 branch, PR \#44).
+> * Official release notes: [ERN 4.3.2, Annex A](https://ern.ddex.net/electronic-release-notification-message-suite-part-1-definitions-of-messages/annex-a-\(informative\)-release-notes).
 
 **Method.** Each XSD was converted into a model (complex types, child elements with type and cardinality, attributes with type and required/optional status, simple types with patterns and enumerations), then compared with the previous version by a script. Every change listed here comes from that diff. The explanations of "why" come from the DDEX release notes and from the definitions inside the XSDs. The XML examples are illustrative: they show the expected shape, not a complete message.  
 **Limitations.**
@@ -404,11 +403,6 @@ A fix for a single schema error. In 4.3.1, Brand/BrandId was typed as Proprietar
 | Brand / BrandId | Type fixed | ProprietaryIdentifier (empty complex type) | ProprietaryId (string \+ required @Namespace) | \<Brand\>\<BrandReference\>P20\</BrandReference\>\<BrandId Namespace="PADPIDA2014120301R"\>brand-0042\</BrandId\>\</Brand\> |
 | ProprietaryIdentifier | Type removed | present | absent |  |
 
-## **Appendix: notes on the dedex 4.3.1 PR description**
+## **Appendix: shape changes to watch**
 
-The PR description (file PR\_431.md) is confirmed by the XSD diff, with two nuances:
-
-> * The IsInOriginalLanguage attribute is not new in 4.3.1: it already exists in 4.3 on DisplayArtistNameWithDefault (and on DisplayTitle, DisplayTitleText, AdditionalTitle, PartyNameWithTerritory). In 4.3.1 only the type name changes (DisplayArtistNameWithOriginalLanguage).  
-> * The 4.3.1 BrandId cannot be used in practice (empty type). This is exactly what 4.3.2 fixes: if dedex adds 4.3.2, the class generated for BrandId becomes a standard ProprietaryId.
-
-For dedex, the shape changes to watch in the 4 branch are, in order: the 3.8 → 4.1 rewrite, identifiers and technical details moving into SoundRecordingEdition / VideoEdition (4.3), then the composite Role, DisplayGenre and the composite PartyList (4.3.1).
+For a parser, the shape changes to watch in the 4 branch are, in order: the 3.8 → 4.1 rewrite, identifiers and technical details moving into SoundRecordingEdition / VideoEdition (4.3), then the composite Role, DisplayGenre and the composite PartyList (4.3.1).
