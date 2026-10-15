@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ern:NewReleaseMessage xmlns:ern="http://ddex.net/xml/ern/382" MessageSchemaVersionId="ern/382">
+  <MessageHeader>
+    <MessageId>M1</MessageId>
+    <MessageSender><PartyId>PADPIDA0000000000A</PartyId></MessageSender>
+    <MessageRecipient><PartyId>PADPIDA0000000000B</PartyId></MessageRecipient>
+    <MessageCreatedDateTime>2026-01-01T00:00:00Z</MessageCreatedDateTime>
+  </MessageHeader>
+  <UpdateIndicator>OriginalMessage</UpdateIndicator>
+  <ResourceList>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId><ISRC>ZZZZZ2600001</ISRC></SoundRecordingId>
+      <ResourceReference>A1</ResourceReference>
+      <ReferenceTitle><TitleText>Example Track</TitleText></ReferenceTitle>
+      <Duration>PT2M0S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="FormalTitle"><TitleText>Example Track</TitleText></Title>
+        <DisplayArtist>
+          <PartyName><FullName>Example Artist</FullName></PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+  </ResourceList>
+  <ReleaseList>
+    <Release>
+      <ReleaseId><ICPN>0000000000000</ICPN></ReleaseId>
+      <ReleaseReference>R0</ReleaseReference>
+      <ReferenceTitle><TitleText>Example Album</TitleText></ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>Album</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>Example Artist</DisplayArtistName>
+        <LabelName>Example Label</LabelName>
+        <Title TitleType="FormalTitle"><TitleText>Example Album</TitleText></Title>
+        <DisplayArtist>
+          <PartyName><FullName>Example Artist</FullName></PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+        </ResourceGroup>
+        <Genre><GenreText>Example</GenreText></Genre>
+      </ReleaseDetailsByTerritory>
+    </Release>
+  </ReleaseList>
+  <DealList>
+    <ReleaseDeal>
+      <DealReleaseReference>R0</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage><UseType>OnDemandStream</UseType></Usage>
+          <TerritoryCode>Worldwide</TerritoryCode>
+          <ValidityPeriod><StartDate>2026-01-01</StartDate></ValidityPeriod>
+        </DealTerms>
+      </Deal>
+    </ReleaseDeal>
+  </DealList>
+</ern:NewReleaseMessage>
