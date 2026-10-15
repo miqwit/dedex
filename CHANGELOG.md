@@ -9,6 +9,8 @@
 - Contributor roles are read from `Role/Value` on ERN 4.3.1 (Role became a composite)
 - `SimpleEntity::buildPartyIndex()` supports the PartyList composite of ERN 4.3.1 (Party + Brand)
 - `AllSoundRecordingsHaveIsrc` and default `Rule` supported versions include 4.3.1
+- Rules apply by default to every version listed in the new `ErnParserController::SUPPORTED_VERSIONS` constant, so they now also run on ERN 4.2
+- ERN version comparison in simplifiers no longer relies on a hard-coded version list
 
 ## [2.3.1] - 2026-10-15
 ### Fixed

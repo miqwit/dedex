@@ -63,6 +63,13 @@ use XMLReader;
 class ErnParserController {
 
   /**
+   * ERN versions this library can parse, as found in the ern namespace
+   * (e.g. "382" for http://ddex.net/xml/ern/382). This is the single list
+   * to update when adding a version; rules apply to all of them by default.
+   */
+  public const SUPPORTED_VERSIONS = ["431", "43", "42", "411", "41", "382"];
+
+  /**
    * The xml parser as returned by xml_parser_create
    * @var resource
    */
@@ -656,7 +663,7 @@ class ErnParserController {
    */
   private function detectVersion($fp) {
     $version = null;
-    $supported_versions = ["431", "43", "42", "411", "41", "382"];
+    $supported_versions = self::SUPPORTED_VERSIONS;
 
     while (($buffer = fgets($fp, 4096)) !== false) {
       $trimed = trim($buffer);
