@@ -6,6 +6,10 @@
 [![PHP Version](https://img.shields.io/packagist/php-v/miqwit/dedex.svg)](https://packagist.org/packages/miqwit/dedex)
 [![License](https://img.shields.io/github/license/miqwit/dedex.svg)](https://github.com/miqwit/dedex/blob/master/LICENSE)
 
+-----
+ℹ️ 🇨🇦 I will be at the 16-19 November Toronto, Canada 46th Plenary Meeting. Meet me there!
+-----
+
 DeDEX is a DDEX XML file parser. DDEX is a standard used in the music industry to deliver rich media content. See more info at [ddex.net](https://ddex.net/). This covers only the ERN (Electronic Release Notification) standard, for the following versions.
 
 Supported versions:

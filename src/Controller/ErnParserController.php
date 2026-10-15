@@ -822,8 +822,13 @@ class ErnParserController {
       }
     }
 
-    // Free parser memory
-    xml_parser_free($this->xml_parser);
+    // Free parser memory. Since PHP 8.0 the parser is an XMLParser object,
+    // freed when no longer referenced; xml_parser_free() has no effect and
+    // is deprecated since PHP 8.5.
+    if (PHP_VERSION_ID < 80000) {
+      xml_parser_free($this->xml_parser);
+    }
+    $this->xml_parser = null;
 
     // Check for rules
     $this->validateRules();
