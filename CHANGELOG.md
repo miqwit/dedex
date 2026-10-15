@@ -1,3 +1,19 @@
+## [Unreleased]
+
+### Added
+- ERN 4.3.1 support (`Ern431` entities generated from the official DDEX XSD, namespace `http://ddex.net/xml/ern/431`, AVS v12)
+- `config/xsd2php.yaml` used to generate entity classes
+- Test samples 030 to 033 for ERN 4.3.1
+### Changed
+- `SimpleAlbum::getGenre()`/`getSubGenre()` read `DisplayGenre` on ERN 4.3.1 (`Genre` before)
+- Contributor roles are read from `Role/Value` on ERN 4.3.1 (Role became a composite)
+- `SimpleEntity::buildPartyIndex()` supports the PartyList composite of ERN 4.3.1 (Party + Brand)
+- `AllSoundRecordingsHaveIsrc` and default `Rule` supported versions include 4.3.1
+- Rules apply by default to every version listed in the new `ErnParserController::SUPPORTED_VERSIONS` constant, so they now also run on ERN 4.2
+- ERN version comparison in simplifiers no longer relies on a hard-coded version list
+### Fixed
+- `AllReleasesUsedInDeals` failed when deals list releases in a different order than the ReleaseList, and crashed on ERN 4.1 and 4.1.1 (DealList is an array there)
+
 ## [2.3.1] - 2026-10-15
 ### Fixed
 - ERN 4.1 and 4.1.1 deals not attached to the album and tracks, so every release was reported as a takedown (#46)

@@ -1,0 +1,100 @@
+DedexBundle\Entity\Ern431\RelatedReleaseType:
+    properties:
+        releaseRelationshipType:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseRelationshipType
+            accessor:
+                getter: getReleaseRelationshipType
+                setter: setReleaseRelationshipType
+            type: DedexBundle\Entity\Ern431\ReleaseRelationshipTypeType
+        releaseId:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseId
+            accessor:
+                getter: getReleaseId
+                setter: setReleaseId
+            type: DedexBundle\Entity\Ern431\ReleaseIdType
+        displayTitleText:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayTitleText
+            accessor:
+                getter: getDisplayTitleText
+                setter: setDisplayTitleText
+            xml_list:
+                inline: true
+                entry_name: DisplayTitleText
+            type: array<DedexBundle\Entity\Ern431\DisplayTitleTextType>
+        displayTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayTitle
+            accessor:
+                getter: getDisplayTitle
+                setter: setDisplayTitle
+            xml_list:
+                inline: true
+                entry_name: DisplayTitle
+            type: array<DedexBundle\Entity\Ern431\DisplayTitleType>
+        formalTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: FormalTitle
+            accessor:
+                getter: getFormalTitle
+                setter: setFormalTitle
+            xml_list:
+                inline: true
+                entry_name: FormalTitle
+            type: array<DedexBundle\Entity\Ern431\DisplayTitleType>
+        groupingTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: GroupingTitle
+            accessor:
+                getter: getGroupingTitle
+                setter: setGroupingTitle
+            xml_list:
+                inline: true
+                entry_name: GroupingTitle
+            type: array<DedexBundle\Entity\Ern431\DisplayTitleType>
+        displayArtistName:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayArtistName
+            accessor:
+                getter: getDisplayArtistName
+                setter: setDisplayArtistName
+            xml_list:
+                inline: true
+                entry_name: DisplayArtistName
+            type: array<DedexBundle\Entity\Ern431\DisplayArtistNameWithOriginalLanguageType>
+        releaseLabelReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseLabelReference
+            accessor:
+                getter: getReleaseLabelReference
+                setter: setReleaseLabelReference
+            xml_list:
+                inline: true
+                entry_name: ReleaseLabelReference
+            type: array<DedexBundle\Entity\Ern431\ReleaseLabelReferenceType>
+        releaseDate:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseDate
+            accessor:
+                getter: getReleaseDate
+                setter: setReleaseDate
+            type: DedexBundle\Entity\Ern431\EventDateWithoutFlagsType
+        originalReleaseDate:
+            expose: true
+            access_type: public_method
+            serialized_name: OriginalReleaseDate
+            accessor:
+                getter: getOriginalReleaseDate
+                setter: setOriginalReleaseDate
+            type: DedexBundle\Entity\Ern431\EventDateWithoutFlagsType

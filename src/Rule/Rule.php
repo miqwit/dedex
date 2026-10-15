@@ -26,6 +26,8 @@
 
 namespace DedexBundle\Rule;
 
+use DedexBundle\Controller\ErnParserController;
+
 /**
  * A rule is a small bit of code that will be run against the current XML file
  * to check that certain elements are there.
@@ -45,10 +47,11 @@ abstract class Rule {
   const LEVEL_ERROR = "error";
   
   /**
-   * To which version this rule is applicable to
-   * @var array 
+   * To which version this rule is applicable to. All versions supported by
+   * the parser by default; a rule can override it to restrict itself.
+   * @var array
    */
-  protected $supported_versions = ["382", "41", "411", "43"];
+  protected $supported_versions = ErnParserController::SUPPORTED_VERSIONS;
   
   /**
    * Level of the rule.

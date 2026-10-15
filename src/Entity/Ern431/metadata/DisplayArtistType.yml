@@ -1,0 +1,68 @@
+DedexBundle\Entity\Ern431\DisplayArtistType:
+    properties:
+        sequenceNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumber
+            accessor:
+                getter: getSequenceNumber
+                setter: setSequenceNumber
+            xml_attribute: true
+            type: int
+        artistPartyReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ArtistPartyReference
+            accessor:
+                getter: getArtistPartyReference
+                setter: setArtistPartyReference
+            type: string
+        displayArtistRole:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayArtistRole
+            accessor:
+                getter: getDisplayArtistRole
+                setter: setDisplayArtistRole
+            type: DedexBundle\Entity\Ern431\DisplayArtistRoleType
+        specialDisplayArtist:
+            expose: true
+            access_type: public_method
+            serialized_name: SpecialDisplayArtist
+            accessor:
+                getter: getSpecialDisplayArtist
+                setter: setSpecialDisplayArtist
+            type: DedexBundle\Entity\Ern431\SpecialContributorTypeType
+        artisticRole:
+            expose: true
+            access_type: public_method
+            serialized_name: ArtisticRole
+            accessor:
+                getter: getArtisticRole
+                setter: setArtisticRole
+            xml_list:
+                inline: true
+                entry_name: ArtisticRole
+            type: array<DedexBundle\Entity\Ern431\ContributorRoleType>
+        titleDisplayInformation:
+            expose: true
+            access_type: public_method
+            serialized_name: TitleDisplayInformation
+            accessor:
+                getter: getTitleDisplayInformation
+                setter: setTitleDisplayInformation
+            xml_list:
+                inline: true
+                entry_name: TitleDisplayInformation
+            type: array<DedexBundle\Entity\Ern431\TitleDisplayInformationType>
+        displayCredits:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayCredits
+            accessor:
+                getter: getDisplayCredits
+                setter: setDisplayCredits
+            xml_list:
+                inline: true
+                entry_name: DisplayCredits
+            type: array<DedexBundle\Entity\Ern431\DisplayCreditsType>

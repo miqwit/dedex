@@ -368,4 +368,67 @@ class ParserControllerRulesTest extends TestCase {
     $this->assertTrue(true);
   }
 
+
+  /**
+   * Rules apply by default to every version the parser supports
+   */
+  public function testRulesSupportAllParserVersionsByDefault() {
+    $rule = new AtLeastOneImage();
+    $this->assertEquals(ErnParserController::SUPPORTED_VERSIONS, $rule->getSupportedVersions());
+  }
+
+  /**
+   * Test rules pass on valid ERN 4.2 XML
+   */
+  public function testRulesPassOnErn42() {
+    $xml_path = "tests/samples/018_ern42.xml";
+    foreach ([
+      new AtLeastOneSoundRecordingRule(Rule::LEVEL_ERROR),
+      new AtLeastOneImage(Rule::LEVEL_ERROR),
+      new AtLeastOneImageFrontCover(Rule::LEVEL_ERROR),
+      new AllSoundRecordingsHaveIsrc(Rule::LEVEL_ERROR),
+      new AtLeastOneAlbumRelease(Rule::LEVEL_ERROR),
+      new OnlyOneMainRelease(Rule::LEVEL_ERROR),
+      new AllResourcesUsedInReleases(Rule::LEVEL_ERROR),
+      new AllReleasesUsedInDeals(Rule::LEVEL_ERROR),
+    ] as $rule) {
+      $parser = new ErnParserController();
+      $parser->addRule($rule);
+      $parser->parse($xml_path);
+      $this->assertEquals("", $parser->getRuleMessages(), get_class($rule));
+    }
+  }
+
+  /**
+   * ERN 4.1.1 has DealList as an array of ReleaseDeal, and the sample lists
+   * deals in a different order than releases (track releases first, album
+   * release R0 last).
+   */
+  public function testRuleAllReleasesCoveredByDealErn411() {
+    $parser = new ErnParserController();
+    $parser->addRule(new AllReleasesUsedInDeals(Rule::LEVEL_ERROR));
+    $parser->parse("tests/samples/015_ern411.xml");
+    $this->assertEquals("", $parser->getRuleMessages());
+  }
+
+  /**
+   * Test rules pass on valid ERN 4.3.1 XML
+   */
+  public function testRulesPassOnErn431() {
+    $xml_path = "tests/samples/030_ern431_album.xml";
+    foreach ([
+      new AtLeastOneSoundRecordingRule(Rule::LEVEL_ERROR),
+      new AtLeastOneImage(Rule::LEVEL_ERROR),
+      new AtLeastOneImageFrontCover(Rule::LEVEL_ERROR),
+      new AllSoundRecordingsHaveIsrc(Rule::LEVEL_ERROR),
+      new AtLeastOneAlbumRelease(Rule::LEVEL_ERROR),
+      new OnlyOneMainRelease(Rule::LEVEL_ERROR),
+    ] as $rule) {
+      $parser = new ErnParserController();
+      $parser->addRule($rule);
+      $parser->parse($xml_path);
+      $this->assertEquals("", $parser->getRuleMessages(), get_class($rule));
+    }
+  }
+
 }

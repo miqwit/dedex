@@ -63,6 +63,13 @@ use XMLReader;
 class ErnParserController {
 
   /**
+   * ERN versions this library can parse, as found in the ern namespace
+   * (e.g. "382" for http://ddex.net/xml/ern/382). This is the single list
+   * to update when adding a version; rules apply to all of them by default.
+   */
+  public const SUPPORTED_VERSIONS = ["431", "43", "42", "411", "41", "382"];
+
+  /**
    * The xml parser as returned by xml_parser_create
    * @var resource
    */
@@ -80,11 +87,13 @@ class ErnParserController {
    * or  \DedexBundle\Entity\Ern411\NewReleaseMessage
    * or  \DedexBundle\Entity\Ern42\NewReleaseMessage
    * or  \DedexBundle\Entity\Ern43\NewReleaseMessage
+   * or  \DedexBundle\Entity\Ern431\NewReleaseMessage
    * or  \DedexBundle\Entity\Ern382\PurgeReleaseMessage
    * or  \DedexBundle\Entity\Ern41\PurgeReleaseMessage
    * or  \DedexBundle\Entity\Ern411\PurgeReleaseMessage
    * or  \DedexBundle\Entity\Ern42\PurgeReleaseMessage
    * or  \DedexBundle\Entity\Ern43\PurgeReleaseMessage
+   * or  \DedexBundle\Entity\Ern431\PurgeReleaseMessage
    */
   private $ern = null;
 
@@ -654,7 +663,7 @@ class ErnParserController {
    */
   private function detectVersion($fp) {
     $version = null;
-    $supported_versions = ["43", "42", "411", "41", "382"];
+    $supported_versions = self::SUPPORTED_VERSIONS;
 
     while (($buffer = fgets($fp, 4096)) !== false) {
       $trimed = trim($buffer);

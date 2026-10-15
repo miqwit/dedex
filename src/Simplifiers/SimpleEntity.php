@@ -27,6 +27,7 @@
 namespace DedexBundle\Simplifiers;
 
 use Exception;
+use InvalidArgumentException;
 
 /**
  * This is a parent class for all the Simple Entities. Contains useful handlers
@@ -75,6 +76,39 @@ class SimpleEntity {
 	}
 
 	/**
+	 * Turn an ERN version string into a number that can be compared.
+	 *
+	 * Version strings are the version digits without dots ("382" for 3.8.2,
+	 * "41" for 4.1, "431" for 4.3.1) and have at most 3 digits. They don't all
+	 * have the same length, so they can't be compared as numbers directly
+	 * (41 < 382). Right padding with zeros to 3 digits gives each digit its
+	 * place: "4" is 400, "41" is 410, "43" is 430, "431" is 431, "382" is 382.
+	 *
+	 * @param string $version version string as detected by ErnParserController
+	 * @return int
+	 * @throws InvalidArgumentException if $version is not 1 to 3 digits
+	 */
+	private function versionToComparable(string $version): int {
+		if (!preg_match('/^\d{1,3}$/', $version)) {
+			throw new InvalidArgumentException(sprintf("Invalid ERN version '%s': expected 1 to 3 digits, like 382 or 431.", $version));
+		}
+		return (int) str_pad($version, 3, "0", STR_PAD_RIGHT);
+	}
+
+	/**
+	 * Check if $version is the same as, or comes after, $reference.
+	 * For example "4" >= "382", "431" >= "43" and "44" >= "431".
+	 *
+	 * @param string $version version string as detected by ErnParserController
+	 * @param string $reference version string to compare with, like "43"
+	 * @return bool
+	 * @throws InvalidArgumentException if a version is not 1 to 3 digits
+	 */
+	protected function isVersionAtLeast(string $version, string $reference): bool {
+		return $this->versionToComparable($version) >= $this->versionToComparable($reference);
+	}
+
+	/**
 	 * Check if the version string corresponds to an ERN 4.x version.
 	 *
 	 * @param string $version version string as detected by ErnParserController
@@ -84,8 +118,42 @@ class SimpleEntity {
 		return $version[0] === '4';
 	}
 
+	/**
+	 * Check if the version is ERN 4.3 or later (version string "43").
+	 *
+	 * @param string $version version string as detected by ErnParserController
+	 * @return bool
+	 */
 	protected function isVersion43OrLater(string $version): bool {
-		return $this->isVersion4x($version) && intval(substr($version, 0, 2)) >= 43;
+		return $this->isVersionAtLeast($version, "43");
+	}
+
+	/**
+	 * Check if the version is ERN 4.3.1 or later (version string "431").
+	 * Do not derive this from isVersion43OrLater(): 4.3.1 introduced
+	 * breaking changes (DisplayGenre, ContributorRole/Value, ...).
+	 *
+	 * @param string $version version string as detected by ErnParserController
+	 * @return bool
+	 */
+	protected function isVersion431OrLater(string $version): bool {
+		return $this->isVersionAtLeast($version, "431");
+	}
+
+	/**
+	 * Role of an ERN 4.x contributor. Since ERN 4.3.1, Role is a composite
+	 * (Value + optional InstrumentType) and no longer a plain AVS value.
+	 *
+	 * @param mixed $contributor Contributor object of an ERN 4.x
+	 * @return string
+	 */
+	protected function getContributorRole($contributor) {
+		$role = $contributor->getRole()[0];
+		if (method_exists($role, 'getValue')) {
+			// ERN 4.3.1+: ContributorRole composite, the AVS value is in Value
+			$role = $role->getValue();
+		}
+		return $this->getUserDefinedValue($role);
 	}
 
 	/**
@@ -101,7 +169,12 @@ class SimpleEntity {
 		if ($ern instanceof \DedexBundle\Entity\Ern382\NewReleaseMessage || $ern->getPartyList() === null) {
 			return $index;
 		}
-		foreach ($ern->getPartyList() as $party) {
+		$parties = $ern->getPartyList();
+		if (is_object($parties) && method_exists($parties, 'getParty')) {
+			// ERN 4.3.1: PartyList is a composite (Party + Brand), not an array of Party
+			$parties = $parties->getParty();
+		}
+		foreach ($parties as $party) {
 			$ref = $party->getPartyReference();
 			$fullName = $party->getPartyName()[0]->getFullName();
             // getFullName() returns a string in Ern41/411, a NameType object in Ern42
@@ -153,7 +226,7 @@ class SimpleEntity {
 			try {
 				if ($partyIndex !== null) {
 					$name = $partyIndex[$contributor->getContributorPartyReference()] ?? null;
-					$role = $this->getUserDefinedValue($contributor->getRole()[0]);
+					$role = $this->getContributorRole($contributor);
 				} else {
 					$name = $contributor->getPartyName()[0]->getFullName();
 					$role = $this->getUserDefinedValue($contributor->$roleGetter()[0]);

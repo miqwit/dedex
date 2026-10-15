@@ -1,0 +1,21 @@
+DedexBundle\Entity\Ern431\ContributorRoleType:
+    properties:
+        value:
+            expose: true
+            access_type: public_method
+            serialized_name: Value
+            accessor:
+                getter: getValue
+                setter: setValue
+            type: DedexBundle\Entity\Ern431\ContributorRoleValueType
+        instrumentType:
+            expose: true
+            access_type: public_method
+            serialized_name: InstrumentType
+            accessor:
+                getter: getInstrumentType
+                setter: setInstrumentType
+            xml_list:
+                inline: true
+                entry_name: InstrumentType
+            type: array<DedexBundle\Entity\Ern431\InstrumentTypeType>
