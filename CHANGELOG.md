@@ -1,3 +1,11 @@
+## [2.5.0]
+### Added
+- ERN 4.3.2 support (`Ern432` entities, namespace `http://ddex.net/xml/ern/432`), added to `ErnParserController::SUPPORTED_VERSIONS`
+- `xsd/release_notification/432/` schema (derived from 4.3.1 with the single 4.3.2 corrective change) and `tests/Ern432` with a sample exercising the fix
+### Changed
+- `Brand/BrandId` is now typed as `ProprietaryId` (string value + required `@Namespace`) on ERN 4.3.2, instead of the empty `ProprietaryIdentifier` type of 4.3.1; the unused `ProprietaryIdentifier` type was removed
+- `config/xsd2php.yaml` now targets 4.3.2 (see `CONTRIBUTE.md`)
+
 ## [2.4.1] - 2026-10-16
 ### Changed
 - Test suite reorganised so each ERN version has its own folder under `tests/` (`Ern382`, `Ern411`, `Ern42`, `Ern43`, `Ern431`), each holding its own samples and `ParserTest`/`RulesTest`/`SimplifiersTest`
