@@ -1,3 +1,9 @@
+## [2.4.1] - 2026-10-16
+### Changed
+- Test suite reorganised so each ERN version has its own folder under `tests/` (`Ern382`, `Ern411`, `Ern42`, `Ern43`, `Ern431`), each holding its own samples and `ParserTest`/`RulesTest`/`SimplifiersTest`
+- Version-agnostic tests moved to `tests/Common` (parser error handling, tag cleaning, default rule versions, version comparison helpers)
+- Test sample files renamed to drop their numeric prefixes; the `with_assets` fixture folders renamed to describe their scenario (`complete_wav`, `missing_audio`, `image_wrong_ext`, `complete_flac`)
+
 ## [2.4.0]
 
 ### Added

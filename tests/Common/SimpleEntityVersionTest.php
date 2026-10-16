@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Tests\Controller;
+namespace DedexBundle\Tests\Common;
 
 use DedexBundle\Simplifiers\SimpleEntity;
 use InvalidArgumentException;
