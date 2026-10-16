@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Tests\Controller;
+namespace DedexBundle\Tests\Ern43;
 
 use DedexBundle\Controller\ErnParserController;
 use DedexBundle\Simplifiers\SimpleAlbum;
@@ -9,208 +9,12 @@ use PHPUnit\Framework\TestCase;
 
 class SimplifiersTest extends TestCase {
 
-  public function testSimpleAlbum() {
-    $parser = new ErnParserController();
-    $ern = $parser->parse("tests/samples/with_assets/004_complete/1199119911991.xml");
-
-    $album = new SimpleAlbum($ern, $parser->getVersion());
-
-    // Album
-    $this->assertEquals("Album Title", $album->getTitle());
-    $this->assertCount(1, $album->getArtists());
-    $this->assertEquals("Artist 1", $album->getArtists()[0]->getName());
-    $this->assertEquals("MainArtist", $album->getArtists()[0]->getRole());
-    $this->assertEquals("NotExplicit", $album->getParentalWarningType());
-    $this->assertEquals(2013, $album->getPLineYear());
-    $this->assertEquals("2013 Label 1", $album->getPLineText());
-    $this->assertEquals(2013, $album->getCLineYear());
-    $this->assertEquals("2013 Label 1", $album->getCLineText());
-
-    // Album deal
-    $this->assertContains("PayAsYouGoModel", $album->getDeal()->getCommercialModelTypes());
-    $this->assertContains("AdvertisementSupportedModel", $album->getDeal()->getCommercialModelTypes());
-    $this->assertContains("SubscriptionModel", $album->getDeal()->getCommercialModelTypes());
-    $this->assertContains("PermanentDownload", $album->getDeal()->getUseTypes());
-    $this->assertContains("OnDemandStream", $album->getDeal()->getUseTypes());
-    $this->assertContains("NonInteractiveStream", $album->getDeal()->getUseTypes());
-    $this->assertContains("InternetAndMobile", $album->getDeal()->getDistributionChannelTypes());
-    $this->assertStringContainsString("Worldwide", $album->getDeal()->getTerritories()[0]);
-    $this->assertEquals("2017-01-01", $album->getDeal()->getStartDate()->format("Y-m-d"));
-    $this->assertEquals(null, $album->getDeal()->getEndDate());
-
-    // Image
-    $this->assertEquals("1199119911991_FrontCoverImage.jpg", $album->getImageFrontCover()->getFileName());
-    $this->assertEquals("assets/1199119911991_FrontCoverImage.jpg", $album->getImageFrontCover()->getFullPath());
-    $this->assertEquals("AABBCCDDEEFF11223344556677889900", $album->getImageFrontCover()->getHashSum());
-    $this->assertEquals("MD5", $album->getImageFrontCover()->getHashSumAlgorithm());
-
-    // Tracks
-    $tracks = $album->getTracksPerCd();
-    $this->assertCount(1, $tracks);
-    $this->assertCount(9, $tracks[1]);
-    $this->assertEquals("1199119911991_001.flac", $tracks[1][1]->getFileName());
-    $this->assertEquals("assets/1199119911991_001.flac", $tracks[1][1]->getFullPath());
-    $this->assertEquals("1199119911991_002.flac", $tracks[1][2]->getFileName());
-    $this->assertEquals("1199119911991_003.flac", $tracks[1][3]->getFileName());
-    $this->assertEquals("1199119911991_004.flac", $tracks[1][4]->getFileName());
-    $this->assertEquals("1199119911991_005.flac", $tracks[1][5]->getFileName());
-    $this->assertEquals("1199119911991_006.flac", $tracks[1][6]->getFileName());
-    $this->assertEquals("1199119911991_007.flac", $tracks[1][7]->getFileName());
-    $this->assertEquals("1199119911991_008.flac", $tracks[1][8]->getFileName());
-    $this->assertEquals("1199119911991_009.flac", $tracks[1][9]->getFileName());
-
-    /* @var $track SimpleTrack */
-    $track = $tracks[1][1];
-    $this->assertEquals("BE0000000001", $track->getIsrc());
-    $this->assertEquals("Track Title 1", $track->getTitle());
-    $this->assertEquals("PT0H8M7S", $track->getDurationIso());
-    $this->assertEquals(487, $track->getDurationInSeconds());
-    $this->assertEquals("AABBCCDDEEFF11223344556677889900", $track->getHashSum());
-    $this->assertEquals("MD5", $track->getHashSumAlgorithm());
-
-    // Artists
-    $this->assertCount(3, $track->getArtists());
-    $this->assertEquals("Artist 1", $track->getArtists()[0]->getName());
-    $this->assertEquals("MainArtist", $track->getArtists()[0]->getRole());
-    $this->assertEquals("Artist 2", $track->getArtists()[1]->getName());
-    $this->assertEquals("Conductor", $track->getArtists()[1]->getRole());
-    $this->assertEquals("Composer 1", $track->getArtists()[2]->getName());
-    $this->assertEquals("Composer", $track->getArtists()[2]->getRole());
-
-    $this->assertEquals("Label 1", $track->getLabelName());
-    $this->assertEquals(2013, $track->getPLineYear());
-    $this->assertEquals("2013 Label 1", $track->getPLineText());
-    $this->assertEquals("Classical", $track->getGenre());
-    $this->assertEquals(null, $track->getSubGenre());
-    $this->assertEquals("NotExplicit", $track->getParentalWarningType());
-
-    // Track deal
-    $this->assertContains("PayAsYouGoModel", $track->getDeal()->getCommercialModelTypes());
-  }
-  
-  public function testResourcePath() {
-    $parser = new ErnParserController();
-    $ern = $parser->parse("tests/samples/016_utf8_artists.xml");
-
-    $album = new SimpleAlbum($ern, $parser->getVersion());
-    $this->assertEquals("resources/763331950658_01_01.mp3", $album->getTracksPerCd()[1][1]->getFullPath());
-  }
-	
-	/**
-	 * Test the tag PurgedRelease
-	 */
-	public function testSample017PurgedAlbum() {
-		$xml_path = "tests/samples/017_purged_release.xml";
-    $parser_controller = new ErnParserController();
-    // Set this to true to see logs from the parser
-    $parser_controller->setDisplayLog(false);
-    /* @var $ddex NewReleaseMessage */
-    $ddex = $parser_controller->parse($xml_path);
-
-		$album = new SimpleAlbum($ddex, $parser_controller->getVersion());
-		$this->assertTrue($album->isTakedown());
-		$this->assertTrue($album->isPurge());
-	}
-
-  /**
-   * ERN 3.8.2 album with no separate TrackRelease: per-track releases are
-   * optional, so the album must still build with its track and deal.
-   * See https://github.com/miqwit/dedex/issues/45
-   */
-  public function testSimpleAlbumErn382WithoutTrackReleases() {
-    $parser = new ErnParserController();
-    $ern = $parser->parse("tests/samples/034_ern382_album_without_track_releases.xml");
-    $this->assertEquals("382", $parser->getVersion());
-
-    $album = new SimpleAlbum($ern, $parser->getVersion());
-    $this->assertEquals("Example Album", $album->getTitle());
-    $this->assertEquals("0000000000000", $album->getIcpn());
-
-    $tracks = $album->getTracksPerCd();
-    $this->assertCount(1, $tracks[1]);
-    $this->assertEquals("Example Track", $tracks[1][1]->getTitle());
-    $this->assertEquals("ZZZZZ2600001", $tracks[1][1]->getIsrc());
-
-    $this->assertNotNull($album->getDeal());
-    $this->assertContains("SubscriptionModel", $album->getDeal()->getCommercialModelTypes());
-    $this->assertFalse($album->isTakedown());
-  }
-
-  /**
-   * ERN 3.8.2 album with no deal referencing it (only the track release
-   * has a deal): the album must build without any PHP warning and be
-   * considered a takedown.
-   * See https://github.com/miqwit/dedex/issues/45
-   */
-  public function testSimpleAlbumErn382WithoutDeal() {
-    $parser = new ErnParserController();
-    $ern = $parser->parse("tests/samples/035_ern382_album_without_deal.xml");
-    $this->assertEquals("382", $parser->getVersion());
-
-    // Turn warnings into exceptions, as frameworks commonly do
-    set_error_handler(function ($errno, $errstr) {
-      throw new \ErrorException($errstr, 0, $errno);
-    });
-    try {
-      $album = new SimpleAlbum($ern, $parser->getVersion());
-    } finally {
-      restore_error_handler();
-    }
-
-    $this->assertEquals("Example Album", $album->getTitle());
-    $tracks = $album->getTracksPerCd();
-    $this->assertCount(1, $tracks[1]);
-    $this->assertContains("SubscriptionModel", $tracks[1][1]->getDeal()->getCommercialModelTypes());
-    $this->assertNull($album->getDeal());
-    $this->assertTrue($album->isTakedown());
-  }
-  /**
-   * Test SimpleAlbum with ERN 4.1.1.
-   */
-  public function testSimpleAlbum411() {
-    $parser = new ErnParserController();
-    $ern = $parser->parse("tests/samples/015_ern411.xml");
-
-    $album = new SimpleAlbum($ern, $parser->getVersion());
-
-    // Album deal
-    $albumDeal = $album->getDeal();
-    $this->assertNotNull($albumDeal);
-
-    // The album deal is for Japan only, from 2004-04-01
-    $this->assertEquals(1, count($albumDeal->getTerritories()));
-    $this->assertEquals("JP", $albumDeal->getTerritories()[0]);
-    $this->assertEquals("2004-04-01", $albumDeal->getStartDate()->format('Y-m-d'));
-
-    // Tracks deal
-    $track01 = $album->getTracksPerCd()[1][1];
-    /* @var $track01 SimpleTrack */
-    $deal01 = $track01->getDeal();
-    $this->assertNotNull($deal01);
-
-    $track02 = $album->getTracksPerCd()[1][2];
-    /* @var $track02 SimpleTrack */
-    $deal02 = $track02->getDeal();
-    $this->assertNotNull($deal02);
-
-    // Loop over deal01 and deal02
-    foreach (array($deal01, $deal02) as $deal) {
-      $this->assertCount(1, $deal->getTerritories());
-      $this->assertEquals("JP", $deal->getTerritories()[0]);
-      $this->assertEquals("2004-04-01", $deal->getStartDate()->format('Y-m-d'));
-      $this->assertCount(3, $deal->getCommercialModelTypes());
-      $this->assertContains("AsPerContract", $deal->getCommercialModelTypes());
-      $this->assertContains("SubscriptionModel", $deal->getCommercialModelTypes());
-      $this->assertContains("AdvertisementSupportedModel", $deal->getCommercialModelTypes());
-    }
-  }
-
   /**
    * Test SimpleAlbum with ERN 4.3 data - comprehensive test matching depth of testSimpleAlbum
    */
   public function testSimpleAlbumErn43() {
     $parser = new ErnParserController();
-    $ern = $parser->parse("tests/samples/018_ern43.xml");
+    $ern = $parser->parse("tests/Ern43/samples/ern43.xml");
 
     $album = new SimpleAlbum($ern, $parser->getVersion());
 
@@ -298,7 +102,7 @@ class SimplifiersTest extends TestCase {
    */
   public function testSimpleAlbumErn43RealWorldSingle() {
     $parser = new ErnParserController();
-    $ern = $parser->parse("tests/samples/019_ern_43.xml");
+    $ern = $parser->parse("tests/Ern43/samples/ern_43.xml");
 
     $album = new SimpleAlbum($ern, $parser->getVersion());
 
@@ -375,7 +179,7 @@ class SimplifiersTest extends TestCase {
    */
   public function testSimpleAlbumErn43Audio() {
     $parser = new ErnParserController();
-    $ern = $parser->parse("tests/samples/020_ern43_audio.xml");
+    $ern = $parser->parse("tests/Ern43/samples/ern43_audio.xml");
 
     $album = new SimpleAlbum($ern, $parser->getVersion());
 
@@ -433,7 +237,7 @@ class SimplifiersTest extends TestCase {
    */
   public function testSimpleAlbumErn43MixedMedia() {
     $parser = new ErnParserController();
-    $ern = $parser->parse("tests/samples/022_ern43_mixed_media.xml");
+    $ern = $parser->parse("tests/Ern43/samples/ern43_mixed_media.xml");
 
     $album = new SimpleAlbum($ern, $parser->getVersion());
 
@@ -483,7 +287,7 @@ class SimplifiersTest extends TestCase {
    */
   public function testSimpleAlbumErn43SimpleAudioSingle() {
     $parser = new ErnParserController();
-    $ern = $parser->parse("tests/samples/023_ern43_simple_audio_single.xml");
+    $ern = $parser->parse("tests/Ern43/samples/ern43_simple_audio_single.xml");
 
     $album = new SimpleAlbum($ern, $parser->getVersion());
 
@@ -537,7 +341,7 @@ class SimplifiersTest extends TestCase {
    */
   public function testSimpleAlbumErn43Ringtone() {
     $parser = new ErnParserController();
-    $ern = $parser->parse("tests/samples/025_ern43_ringtone.xml");
+    $ern = $parser->parse("tests/Ern43/samples/ern43_ringtone.xml");
 
     $album = new SimpleAlbum($ern, $parser->getVersion());
 
@@ -583,7 +387,7 @@ class SimplifiersTest extends TestCase {
    */
   public function testSimpleAlbumErn43Sample029SingleInlineImage() {
     $parser = new ErnParserController();
-    $ern = $parser->parse("tests/samples/029_ern43_single_inline_image.xml");
+    $ern = $parser->parse("tests/Ern43/samples/ern43_single_inline_image.xml");
 
     $album = new SimpleAlbum($ern, $parser->getVersion());
 
@@ -675,7 +479,7 @@ class SimplifiersTest extends TestCase {
    */
   public function testSimpleAlbumErn43DjMix() {
     $parser = new ErnParserController();
-    $ern = $parser->parse("tests/samples/027_ern43_dj_mix.xml");
+    $ern = $parser->parse("tests/Ern43/samples/ern43_dj_mix.xml");
 
     $album = new SimpleAlbum($ern, $parser->getVersion());
 
@@ -715,137 +519,6 @@ class SimplifiersTest extends TestCase {
     $this->assertEquals("USWE34255410", $track1->getIsrc());
     $this->assertEquals("PT0H12M31S", $track1->getDurationIso());
     $this->assertEquals(751, $track1->getDurationInSeconds());
-  }
-
-	/**
-	 * Test SimpleAlbum with ERN 4.2 sample, verifying PartyList resolution
-	 */
-	public function testSimpleAlbumErn42() {
-		$parser = new ErnParserController();
-		$ern = $parser->parse("tests/samples/018_ern42.xml");
-
-		$album = new SimpleAlbum($ern, $parser->getVersion());
-
-		// Album title from DisplayTitleText fallback
-		$this->assertEquals("Yume no Hajmari", $album->getTitle());
-
-		// Album artists resolved from PartyList
-		$this->assertCount(1, $album->getArtists());
-		$this->assertEquals("Saeko Shu", $album->getArtists()[0]->getName());
-		$this->assertEquals("MainArtist", $album->getArtists()[0]->getRole());
-
-        // No Album catalog number provided
-        $this->assertNull($album->getCatalogNumber());
-
-        // No Cline, Pline
-        $this->assertNull($album->getCLineText());
-        $this->assertNull($album->getPLineText());
-
-        // Parental warning
-        $this->assertEquals("NoAdviceAvailable", $album->getParentalWarningType());
-
-        // Genre & Subgenre
-        $this->assertEquals("J-Pop", $album->getGenre());
-        $this->assertNull($album->getSubGenre());
-
-        // Original Release Date
-        $this->assertNull($album->getOriginalReleaseDate());
-
-        // ICPN
-        $this->assertEquals("00094631432057", $album->getIcpn());
-
-        // Image Front Cover
-        $image = $album->getImageFrontCover();
-        $this->assertEquals("0094631432057.jpg", $image->getFileName());
-
-		// Tracks
-		$tracks = $album->getTracksPerCd();
-		$this->assertCount(1, $tracks);
-		$this->assertCount(21, $tracks[1]);
-
-		/* @var $track SimpleTrack */
-		$track = $tracks[1][1];
-
-		// Track title from DisplayTitleText fallback
-		$this->assertEquals("Yume no Lullaby", $track->getTitle());
-
-		// Track display artist resolved from PartyList
-		$this->assertCount(1, $track->getDisplayArtists());
-		$this->assertEquals("Saeko Shu", $track->getDisplayArtists()[0]->getName());
-		$this->assertEquals("MainArtist", $track->getDisplayArtists()[0]->getRole());
-
-		// Track contributors resolved from PartyList
-		$contributors = $track->getArtistsFromResourceContributors();
-		$this->assertCount(1, $contributors);
-		$this->assertEquals("Saeko Shu", $contributors[0]->getName());
-		$this->assertEquals("Artist", $contributors[0]->getRole());
-
-        // Get the deal of this Album
-        $deal = $album->getDeal();
-        $this->assertNotNull($deal);
-        $this->assertEquals(["JP"], $deal->getTerritories());
-        $this->assertEquals("2004-04-01", $deal->getStartDate()->format("Y-m-d"));
-        $this->assertEquals(["PayAsYouGoModel"], $deal->getCommercialModelTypes());
-        $this->assertEquals(["PermanentDownload", "ConditionalDownload"], $deal->getUseTypes());
-	}
-
-
-  /**
-   * Test SimpleAlbum with ERN 4.3.1 (DisplayGenre, Role/Value, ...)
-   */
-  public function testSimpleAlbumErn431() {
-    $parser = new ErnParserController();
-    $ern = $parser->parse("tests/samples/030_ern431_album.xml");
-    $this->assertEquals("431", $parser->getVersion());
-
-    $album = new SimpleAlbum($ern, $parser->getVersion());
-    $this->assertEquals("Test Album ERN431", $album->getTitle());
-    $this->assertEquals("1234567890123", $album->getIcpn());
-    $this->assertEquals("Test Label", $album->getLabelName());
-    $this->assertEquals(2024, $album->getPLineYear());
-    $this->assertEquals("(C) 2024 Test Label", $album->getCLineText());
-    // DisplayGenre
-    $this->assertEquals("Pop", $album->getGenre());
-    $this->assertEquals("NotExplicit", $album->getParentalWarningType());
-    $this->assertEquals("Test Artist", $album->getArtists()[0]->getName());
-    $this->assertEquals("MainArtist", $album->getArtists()[0]->getRole());
-
-    $tracks = $album->getTracksPerCd();
-    $this->assertCount(2, $tracks[1]);
-    $this->assertEquals("Track One", $tracks[1][1]->getTitle());
-    $this->assertEquals("TEST00000001", $tracks[1][1]->getIsrc());
-    $this->assertEquals(210, $tracks[1][1]->getDurationInSeconds());
-    $this->assertEquals("test_cover.jpg", $album->getImageFrontCover()->getFileName());
-  }
-
-  /**
-   * ERN 4.3.1 contributors: role is read from Role/Value
-   */
-  public function testSimpleTrackContributorsErn431() {
-    $parser = new ErnParserController();
-    $ern = $parser->parse("tests/samples/033_ern431_new_features.xml");
-    $album = new SimpleAlbum($ern, $parser->getVersion());
-
-    $track1 = $album->getTracksPerCd()[1][1];
-    $contributors = $track1->getArtistsFromResourceContributors();
-    // Contributor 1 has a party reference; contributor 2 is a
-    // SpecialContributor (no party) and is skipped as it has no name
-    $this->assertNotEmpty($contributors);
-    $this->assertEquals("Test Artist", $contributors[0]->getName());
-    $this->assertEquals("AssociatedPerformer", $contributors[0]->getRole());
-    $this->assertEquals("Test Album ERN431", $album->getTitle());
-  }
-
-  /**
-   * ERN 4.3.1 real-world single: contributors with Role/Value
-   */
-  public function testSimpleAlbumErn431RealWorldSingle() {
-    $parser = new ErnParserController();
-    $ern = $parser->parse("tests/samples/031_ern431_real_world_single.xml");
-    $album = new SimpleAlbum($ern, $parser->getVersion());
-    $track = $album->getTracksPerCd()[1][1];
-    $roles = array_map(function ($a) { return $a->getRole(); }, $track->getArtistsFromResourceContributors());
-    $this->assertContains("Composer", $roles);
   }
 
 }

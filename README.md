@@ -26,7 +26,7 @@ Supported versions:
 
 I created this DDEX ERN parser that is as convenient as I always hoped for.
 
-✍️ [Contribute](CONTRIBUTE.md) here if you feel like it. Make DeDEX the first repo you contribute for! 🙌
+✍️ [Contribute](CONTRIBUTE.md) here if you feel like it. Make DeDEX the first repo you contribute to! 🙌
 
 ⭐️ If you find this work useful, please star the repository.
 
@@ -48,7 +48,7 @@ composer require miqwit/dedex
 use DedexBundle\Controller\ErnParserController;
 use DedexBundle\Simplifiers\SimpleAlbum;
 
-$xml_path = "tests/samples/with_assets/004_complete/1199119911991.xml";
+$xml_path = "tests/Ern382/samples/with_assets/complete_flac/1199119911991.xml";
 $parser = new ErnParserController();
 $ern = $parser->parse($xml_path);
 $album = new SimpleAlbum($ern);
@@ -70,7 +70,7 @@ $ddex_track = $tracks_for_cd_1[1]->getDdexSoundRecording()->getDuration(); // di
 ```php
 use DedexBundle\Controller\ErnParserController;
 
-$xml_path = "tests/samples/001_audioalbum_complete.xml";
+$xml_path = "tests/Ern382/samples/audioalbum_complete.xml";
 $parser = new ErnParserController();
 $ern = $parser->parse($xml_path);
 
@@ -85,7 +85,7 @@ XSD validation will load all XML and XSD in memory, making this library less eff
 ```php
 use DedexBundle\Controller\ErnParserController;
 
-$xml_path = "tests/samples/001_audioalbum_complete.xml";
+$xml_path = "tests/Ern382/samples/audioalbum_complete.xml";
 $parser = new ErnParserController();
 $parser->setXsdValidation(true);
 $ern = $parser->parse($xml_path);
@@ -98,7 +98,7 @@ use DedexBundle\Controller\ErnParserController;
 use DedexBundle\Rule\AtLeastOneImage;
 use DedexBundle\Exception\RuleValidationException;
 
-$xml_path = "tests/samples/001_audioalbum_complete.xml";
+$xml_path = "tests/Ern382/samples/audioalbum_complete.xml";
 $parser = new ErnParserController();
 $parser->addRule(new AtLeastOneImage(Rule::LEVEL_ERROR));
 // ... can add multiple rules one by one

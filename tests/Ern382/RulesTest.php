@@ -1,6 +1,6 @@
 <?php
 
-namespace DedexBundle\Tests\Controller;
+namespace DedexBundle\Tests\Ern382;
 
 use DedexBundle\Controller\ErnParserController;
 use DedexBundle\Entity\Ern382\NewReleaseMessage;
@@ -18,13 +18,13 @@ use DedexBundle\Rule\Rule;
 use DedexBundle\Rule\RuleSet;
 use PHPUnit\Framework\TestCase;
 
-class ParserControllerRulesTest extends TestCase {
+class RulesTest extends TestCase {
 
   public function testErrorRule() {
-    $xml_path = "tests/samples/006_zero_sound_recordings.xml";
+    $xml_path = "tests/Ern382/samples/zero_sound_recordings.xml";
     $parser_controller = new ErnParserController();
     $parser_controller->addRule(new AtLeastOneSoundRecordingRule(Rule::LEVEL_ERROR));
-    
+
     /* @var $ddex NewReleaseMessage */
     try {
       $ddex = $parser_controller->parse($xml_path);
@@ -32,22 +32,22 @@ class ParserControllerRulesTest extends TestCase {
     } catch (RuleValidationException $ex) {
       $this->assertTrue(true);
     }
-    
+
     // With no rules, it passes
     $parser_controller = new ErnParserController();
     $ddex = $parser_controller->parse($xml_path);
     $this->assertTrue(true);
   }
-  
+
   /**
-   * A rule by default ERROR will raise exception. 
+   * A rule by default ERROR will raise exception.
    * If this rule is overridden by WARNING, will not raise exception
    */
   public function testOverrideLevel() {
-    $xml_path = "tests/samples/006_zero_sound_recordings.xml";
+    $xml_path = "tests/Ern382/samples/zero_sound_recordings.xml";
     $parser_controller = new ErnParserController();
     $parser_controller->addRule(new AtLeastOneSoundRecordingRule(Rule::LEVEL_ERROR));
-    
+
     // Raise exception because ERROR
     /* @var $ddex NewReleaseMessage */
     try {
@@ -56,26 +56,26 @@ class ParserControllerRulesTest extends TestCase {
     } catch (RuleValidationException $ex) {
       $this->assertTrue(true);
     }
-    
+
     // Does not raise exception because just WARNING
     $parser_controller = new ErnParserController();
     $parser_controller->addRule(new AtLeastOneSoundRecordingRule(Rule::LEVEL_WARNING));
     $ddex = $parser_controller->parse($xml_path);
     $this->assertTrue(true);
-    
+
     // Check the warning message
     $this->assertStringContainsString("Must have at least one SoundRecording", $parser_controller->getRuleMessages());
   }
-  
+
   /**
    * XML must describe one image
    */
   public function testRuleNoImage() {
-    $xml_path = "tests/samples/007_zero_image.xml";
+    $xml_path = "tests/Ern382/samples/zero_image.xml";
     $parser = new ErnParserController();
     $parser->addRule(new AtLeastOneImage(Rule::LEVEL_ERROR));
-    
-    
+
+
     /* @var $ddex NewReleaseMessage */
     try {
       $ddex = $parser->parse($xml_path);
@@ -84,16 +84,16 @@ class ParserControllerRulesTest extends TestCase {
       $this->assertTrue(true);
     }
   }
-  
+
   /**
    * XML must describe one image of type FrontCoverImage
    */
   public function testRuleNoImageFrontCover() {
-    $xml_path = "tests/samples/008_one_image_not_front.xml";
+    $xml_path = "tests/Ern382/samples/one_image_not_front.xml";
     $parser = new ErnParserController();
     $parser->addRule(new AtLeastOneImageFrontCover(Rule::LEVEL_ERROR));
-    
-    
+
+
     /* @var $ddex NewReleaseMessage */
     try {
       $ddex = $parser->parse($xml_path);
@@ -102,25 +102,25 @@ class ParserControllerRulesTest extends TestCase {
       $this->assertTrue(true);
     }
   }
-  
+
   /**
    * Audio files and image files described in ResourceList must exist
    */
   public function testRuleMissingFile() {
-    $xml_path = "tests/samples/with_assets/001_complete/001_audioalbum_complete.xml";
+    $xml_path = "tests/Ern382/samples/with_assets/complete_wav/001_audioalbum_complete.xml";
     $parser = new ErnParserController();
-    $parser->addRule(new AllResourceFileExist(Rule::LEVEL_ERROR, "tests/samples/with_assets/001_complete/"));
-    
+    $parser->addRule(new AllResourceFileExist(Rule::LEVEL_ERROR, "tests/Ern382/samples/with_assets/complete_wav/"));
+
     /* @var $ddex NewReleaseMessage */
     $ddex = $parser->parse($xml_path);
     $this->assertTrue(true);
-    
+
     // Here, one audio file is missing
-    
-    $xml_path = "tests/samples/with_assets/002_missing_audio/001_audioalbum_complete.xml";
+
+    $xml_path = "tests/Ern382/samples/with_assets/missing_audio/001_audioalbum_complete.xml";
     $parser = new ErnParserController();
-    $parser->addRule(new AllResourceFileExist(Rule::LEVEL_ERROR, "tests/samples/with_assets/002_missing_audio/"));
-    
+    $parser->addRule(new AllResourceFileExist(Rule::LEVEL_ERROR, "tests/Ern382/samples/with_assets/missing_audio/"));
+
     /* @var $ddex NewReleaseMessage */
     try {
       $ddex = $parser->parse($xml_path);
@@ -128,13 +128,13 @@ class ParserControllerRulesTest extends TestCase {
     } catch (RuleValidationException $ex) {
       $this->assertTrue(true);
     }
-    
+
     // Here, the image file is missing (in fact, wrong extension jpg instead of jpeg)
-    
-    $xml_path = "tests/samples/with_assets/002_missing_audio/001_audioalbum_complete.xml";
+
+    $xml_path = "tests/Ern382/samples/with_assets/missing_audio/001_audioalbum_complete.xml";
     $parser = new ErnParserController();
-    $parser->addRule(new AllResourceFileExist(Rule::LEVEL_ERROR, "tests/samples/with_assets/003_image_wrong_ext/"));
-    
+    $parser->addRule(new AllResourceFileExist(Rule::LEVEL_ERROR, "tests/Ern382/samples/with_assets/image_wrong_ext/"));
+
     /* @var $ddex NewReleaseMessage */
     try {
       $ddex = $parser->parse($xml_path);
@@ -143,20 +143,20 @@ class ParserControllerRulesTest extends TestCase {
       $this->assertTrue(true);
     }
   }
-  
+
   /**
    * XML must describe one image of type FrontCoverImage
    */
   public function testRuleOneMainRelease() {
-    $xml_path = "tests/samples/001_audioalbum_complete.xml";
+    $xml_path = "tests/Ern382/samples/audioalbum_complete.xml";
     $parser = new ErnParserController();
     $parser->addRule(new OnlyOneMainRelease(Rule::LEVEL_ERROR));
-    
+
     $ddex = $parser->parse($xml_path);
     $this->assertTrue(true);
-    
+
     // No main release
-    $xml_path = "tests/samples/009_no_main_release.xml";
+    $xml_path = "tests/Ern382/samples/no_main_release.xml";
     $parser = new ErnParserController();
     $parser->addRule(new OnlyOneMainRelease(Rule::LEVEL_ERROR));
     try {
@@ -166,20 +166,20 @@ class ParserControllerRulesTest extends TestCase {
       $this->assertTrue(true);
     }
   }
-  
+
   /**
    * XML must describe one image of type FrontCoverImage
    */
   public function testRuleOneAlbumRelease() {
-    $xml_path = "tests/samples/001_audioalbum_complete.xml";
+    $xml_path = "tests/Ern382/samples/audioalbum_complete.xml";
     $parser = new ErnParserController();
     $parser->addRule(new AtLeastOneAlbumRelease(Rule::LEVEL_ERROR));
-    
+
     $ddex = $parser->parse($xml_path);
     $this->assertTrue(true);
-    
+
     // No main release
-    $xml_path = "tests/samples/010_no_album_release.xml";
+    $xml_path = "tests/Ern382/samples/no_album_release.xml";
     $parser = new ErnParserController();
     $parser->addRule(new AtLeastOneAlbumRelease(Rule::LEVEL_ERROR));
     try {
@@ -189,21 +189,21 @@ class ParserControllerRulesTest extends TestCase {
       $this->assertTrue(true);
     }
   }
-  
+
   /**
    * All resources must be used
    */
   public function testRuleAllResourcesUsed() {
-    $xml_path = "tests/samples/001_audioalbum_complete.xml";
+    $xml_path = "tests/Ern382/samples/audioalbum_complete.xml";
     $parser = new ErnParserController();
     $parser->addRule(new AllResourcesUsedInReleases(Rule::LEVEL_ERROR));
-    
+
     $ddex = $parser->parse($xml_path);
     $this->assertTrue(true);
-    
+
     // A2 is unused
     /* @var $ddex NewReleaseMessage */
-    $xml_path = "tests/samples/011_one_resource_unused.xml";
+    $xml_path = "tests/Ern382/samples/one_resource_unused.xml";
     $parser = new ErnParserController();
     $parser->addRule(new AllResourcesUsedInReleases(Rule::LEVEL_ERROR));
     try {
@@ -214,21 +214,21 @@ class ParserControllerRulesTest extends TestCase {
       $this->assertTrue(true);
     }
   }
-  
+
   /**
    * All resources must be used
    */
   public function testRuleAllSoundRecordingIsrc() {
-    $xml_path = "tests/samples/001_audioalbum_complete.xml";
+    $xml_path = "tests/Ern382/samples/audioalbum_complete.xml";
     $parser = new ErnParserController();
     $parser->addRule(new AllSoundRecordingsHaveIsrc(Rule::LEVEL_ERROR));
-    
+
     $ddex = $parser->parse($xml_path);
     $this->assertTrue(true);
-    
+
     // A3 has no ISRC
     /* @var $ddex NewReleaseMessage */
-    $xml_path = "tests/samples/012_missing_isrc.xml";
+    $xml_path = "tests/Ern382/samples/missing_isrc.xml";
     $parser = new ErnParserController();
     $parser->addRule(new AllSoundRecordingsHaveIsrc(Rule::LEVEL_ERROR));
     try {
@@ -237,10 +237,10 @@ class ParserControllerRulesTest extends TestCase {
     } catch (RuleValidationException $ex) {
       $this->assertTrue(true);
     }
-    
+
     // A2 has empty ISRC
     /* @var $ddex NewReleaseMessage */
-    $xml_path = "tests/samples/013_isrc_empty_string.xml";
+    $xml_path = "tests/Ern382/samples/isrc_empty_string.xml";
     $parser = new ErnParserController();
     $parser->addRule(new AllSoundRecordingsHaveIsrc(Rule::LEVEL_ERROR));
     try {
@@ -249,32 +249,32 @@ class ParserControllerRulesTest extends TestCase {
     } catch (RuleValidationException $ex) {
       $this->assertTrue(true);
     }
-    
+
     // On another file
-    $xml_path = "tests/samples/with_assets/004_complete/1199119911991.xml";
+    $xml_path = "tests/Ern382/samples/with_assets/complete_flac/1199119911991.xml";
     $parser = new ErnParserController();
     $parser->addRule(new AllSoundRecordingsHaveIsrc(Rule::LEVEL_ERROR));
-    
+
     $ddex = $parser->parse($xml_path);
     $this->assertTrue(true);
   }
-  
-  
-  
+
+
+
   /**
    * All resources must be used
    */
   public function testRuleAllReleasesCoveredByDeal() {
-    $xml_path = "tests/samples/with_assets/004_complete/1199119911991.xml";
+    $xml_path = "tests/Ern382/samples/with_assets/complete_flac/1199119911991.xml";
     $parser = new ErnParserController();
     $parser->addRule(new AllReleasesUsedInDeals(Rule::LEVEL_ERROR));
-    
+
     $ddex = $parser->parse($xml_path);
     $this->assertTrue(true);
-    
+
     // R9 has no deal
     /* @var $ddex NewReleaseMessage */
-    $xml_path = "tests/samples/014_missing_deal.xml";
+    $xml_path = "tests/Ern382/samples/missing_deal.xml";
     $parser = new ErnParserController();
     $parser->addRule(new AllReleasesUsedInDeals(Rule::LEVEL_ERROR));
     try {
@@ -285,150 +285,39 @@ class ParserControllerRulesTest extends TestCase {
       $this->assertTrue(true);
     }
   }
-  
+
   /**
    * All resources must be used
    */
   public function testRuleSetAllReleasesCoveredByDeal() {
     // R9 has no deal
     /* @var $ddex NewReleaseMessage */
-    $xml_path = "tests/samples/014_missing_deal.xml";
+    $xml_path = "tests/Ern382/samples/missing_deal.xml";
     $parser = new ErnParserController();
-		
-    $parser->addRuleSet(RuleSet::MUSICAL_ALBUM());
-		
-		$ddex = $parser->parse($xml_path);
-		$this->assertTrue(true); // Will pass because all rules are WARNING
 
-		$this->assertStringContainsString("R9 not used in deals or not defined in ReleaseList", $parser->getRuleMessages());
+    $parser->addRuleSet(RuleSet::MUSICAL_ALBUM());
+
+    $ddex = $parser->parse($xml_path);
+    $this->assertTrue(true); // Will pass because all rules are WARNING
+
+    $this->assertStringContainsString("R9 not used in deals or not defined in ReleaseList", $parser->getRuleMessages());
   }
-  
+
   /**
    * RuleSet all good
    */
   public function testRuleSetAllGood() {
     // R9 has no deal
     /* @var $ddex NewReleaseMessage */
-    $xml_path = "tests/samples/with_assets/004_complete/1199119911991.xml";
+    $xml_path = "tests/Ern382/samples/with_assets/complete_flac/1199119911991.xml";
     $parser = new ErnParserController();
 
-    $parser->addRuleSet(RuleSet::MUSICAL_ALBUM("tests/samples/with_assets/004_complete/"));
+    $parser->addRuleSet(RuleSet::MUSICAL_ALBUM("tests/Ern382/samples/with_assets/complete_flac/"));
 
-		$ddex = $parser->parse($xml_path);
-		$this->assertTrue(true); // Will pass because all rules are WARNING
-
-		$this->assertEquals("", $parser->getRuleMessages());
-  }
-
-  /**
-   * Test rules pass on valid ERN 4.3 XML
-   */
-  public function testRulesPassOnErn43() {
-    $xml_path = "tests/samples/018_ern43.xml";
-
-    // Test each rule individually
-    $parser = new ErnParserController();
-    $parser->addRule(new AtLeastOneSoundRecordingRule(Rule::LEVEL_ERROR));
     $ddex = $parser->parse($xml_path);
-    $this->assertTrue(true);
+    $this->assertTrue(true); // Will pass because all rules are WARNING
 
-    $parser = new ErnParserController();
-    $parser->addRule(new AtLeastOneImage(Rule::LEVEL_ERROR));
-    $ddex = $parser->parse($xml_path);
-    $this->assertTrue(true);
-
-    $parser = new ErnParserController();
-    $parser->addRule(new AtLeastOneImageFrontCover(Rule::LEVEL_ERROR));
-    $ddex = $parser->parse($xml_path);
-    $this->assertTrue(true);
-
-    $parser = new ErnParserController();
-    $parser->addRule(new AllSoundRecordingsHaveIsrc(Rule::LEVEL_ERROR));
-    $ddex = $parser->parse($xml_path);
-    $this->assertTrue(true);
-
-    $parser = new ErnParserController();
-    $parser->addRule(new OnlyOneMainRelease(Rule::LEVEL_ERROR));
-    $ddex = $parser->parse($xml_path);
-    $this->assertTrue(true);
-
-    $parser = new ErnParserController();
-    $parser->addRule(new AtLeastOneAlbumRelease(Rule::LEVEL_ERROR));
-    $ddex = $parser->parse($xml_path);
-    $this->assertTrue(true);
-
-    $parser = new ErnParserController();
-    $parser->addRule(new AllResourcesUsedInReleases(Rule::LEVEL_ERROR));
-    $ddex = $parser->parse($xml_path);
-    $this->assertTrue(true);
-
-    $parser = new ErnParserController();
-    $parser->addRule(new AllReleasesUsedInDeals(Rule::LEVEL_ERROR));
-    $ddex = $parser->parse($xml_path);
-    $this->assertTrue(true);
-  }
-
-
-  /**
-   * Rules apply by default to every version the parser supports
-   */
-  public function testRulesSupportAllParserVersionsByDefault() {
-    $rule = new AtLeastOneImage();
-    $this->assertEquals(ErnParserController::SUPPORTED_VERSIONS, $rule->getSupportedVersions());
-  }
-
-  /**
-   * Test rules pass on valid ERN 4.2 XML
-   */
-  public function testRulesPassOnErn42() {
-    $xml_path = "tests/samples/018_ern42.xml";
-    foreach ([
-      new AtLeastOneSoundRecordingRule(Rule::LEVEL_ERROR),
-      new AtLeastOneImage(Rule::LEVEL_ERROR),
-      new AtLeastOneImageFrontCover(Rule::LEVEL_ERROR),
-      new AllSoundRecordingsHaveIsrc(Rule::LEVEL_ERROR),
-      new AtLeastOneAlbumRelease(Rule::LEVEL_ERROR),
-      new OnlyOneMainRelease(Rule::LEVEL_ERROR),
-      new AllResourcesUsedInReleases(Rule::LEVEL_ERROR),
-      new AllReleasesUsedInDeals(Rule::LEVEL_ERROR),
-    ] as $rule) {
-      $parser = new ErnParserController();
-      $parser->addRule($rule);
-      $parser->parse($xml_path);
-      $this->assertEquals("", $parser->getRuleMessages(), get_class($rule));
-    }
-  }
-
-  /**
-   * ERN 4.1.1 has DealList as an array of ReleaseDeal, and the sample lists
-   * deals in a different order than releases (track releases first, album
-   * release R0 last).
-   */
-  public function testRuleAllReleasesCoveredByDealErn411() {
-    $parser = new ErnParserController();
-    $parser->addRule(new AllReleasesUsedInDeals(Rule::LEVEL_ERROR));
-    $parser->parse("tests/samples/015_ern411.xml");
     $this->assertEquals("", $parser->getRuleMessages());
-  }
-
-  /**
-   * Test rules pass on valid ERN 4.3.1 XML
-   */
-  public function testRulesPassOnErn431() {
-    $xml_path = "tests/samples/030_ern431_album.xml";
-    foreach ([
-      new AtLeastOneSoundRecordingRule(Rule::LEVEL_ERROR),
-      new AtLeastOneImage(Rule::LEVEL_ERROR),
-      new AtLeastOneImageFrontCover(Rule::LEVEL_ERROR),
-      new AllSoundRecordingsHaveIsrc(Rule::LEVEL_ERROR),
-      new AtLeastOneAlbumRelease(Rule::LEVEL_ERROR),
-      new OnlyOneMainRelease(Rule::LEVEL_ERROR),
-    ] as $rule) {
-      $parser = new ErnParserController();
-      $parser->addRule($rule);
-      $parser->parse($xml_path);
-      $this->assertEquals("", $parser->getRuleMessages(), get_class($rule));
-    }
   }
 
 }

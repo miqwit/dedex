@@ -1,261 +1,17 @@
 <?php
 
-namespace DedexBundle\Tests\Controller;
+namespace DedexBundle\Tests\Ern43;
 
 use DedexBundle\Controller\ErnParserController;
-use DedexBundle\Entity\Ern382\GenreType;
-use DedexBundle\Entity\Ern382\ImageDetailsByTerritoryType;
-use DedexBundle\Entity\Ern382\ImageType;
-use DedexBundle\Entity\Ern382\IndirectResourceContributor;
-use DedexBundle\Entity\Ern382\NewReleaseMessage;
-use DedexBundle\Entity\Ern382\ReleaseDetailsByTerritoryType;
-use DedexBundle\Entity\Ern382\ReleaseType;
-use DedexBundle\Entity\Ern382\ResourceContributor;
-use DedexBundle\Entity\Ern382\SoundRecordingDetailsByTerritoryType;
-use DedexBundle\Entity\Ern382\TechnicalSoundRecordingDetailsType;
-use DedexBundle\Exception\FileNotFoundException;
-use DedexBundle\Exception\XmlLoadException;
-use DedexBundle\Exception\XmlParseException;
 use PHPUnit\Framework\TestCase;
 
-class ParserControllerTest extends TestCase {
-
-  public function testCleanTag() {
-    $parser_controller = new ErnParserController();
-    $this->assertEquals("MYTAG", $parser_controller->cleanTag("MYTAG"));
-    $this->assertEquals("MY_TAG", $parser_controller->cleanTag("MY:TAG"));
-  }
-
-  public function testSample001() {
-    $xml_path = "tests/samples/001_audioalbum_complete.xml";
-    $parser_controller = new ErnParserController();
-    // Set this to true to see logs from the parser
-    $parser_controller->setDisplayLog(false);
-    /* @var $ddex NewReleaseMessage */
-    $ddex = $parser_controller->parse($xml_path);
-
-    // ERN attributes
-    $this->assertEquals("ern/382", $ddex->getMessageSchemaVersionId());
-    $this->assertEquals("CommonReleaseTypesTypes/14/AudioAlbumMusicOnly", $ddex->getReleaseProfileVersionId());
-    $this->assertEquals("en", $ddex->getLanguageAndScriptCode());
-
-    // Message header
-    $this->assertEquals(null, $ddex->getMessageHeader()->getMessageThreadId());
-    $this->assertEquals(null, $ddex->getMessageHeader()->getMessageId());
-    $this->assertEquals("DPID_OF_THE_SENDER", $ddex->getMessageHeader()->getMessageSender()->getPartyId()[0]->value());
-    $this->assertEquals("DPID_OF_THE_RECIPIENT", $ddex->getMessageHeader()->getMessageRecipient()[0]->getPartyId()[0]->value());
-    $this->assertEquals("2012-12-11T15:50:00+00:00", $ddex->getMessageHeader()->getMessageCreatedDateTime()->format("Y-m-d\TH:i:sP"));
-
-    // Is backfill
-    $this->assertEquals("true", $ddex->getIsBackfill());
-
-    // Resources
-    
-    // SoundRecording
-    $this->assertCount(6, $ddex->getResourceList()->getSoundRecording());
-    /* @var $resource_zero \DedexBundle\Entity\Ern382\Ern\SoundRecordingType */
-    $resource_zero = $ddex->getResourceList()->getSoundRecording()[0];
-    $this->assertEquals("MusicalWorkSoundRecording", $resource_zero->getSoundRecordingType()->value());
-    $this->assertEquals("CASE00000001", $resource_zero->getSoundRecordingId()[0]->getIsrc());
-    $this->assertEquals("T1234567890", $resource_zero->getIndirectSoundRecordingId()[0]->getIswc());
-    $this->assertEquals("A1", $resource_zero->getResourceReference());
-    $this->assertEquals("Can you feel ...the Monkey Claw!", $resource_zero->getReferenceTitle()->getTitleText());
-    $this->assertEquals("PT13M31S", $resource_zero->getDuration()->format("PT%iM%sS"));
-    /* @var $srdbt_zero SoundRecordingDetailsByTerritoryType */
-    $srdbt_zero = $resource_zero->getSoundRecordingDetailsByTerritory()[0];
-    $this->assertEquals("Worldwide", $srdbt_zero->getTerritoryCode()[0]);
-    $this->assertCount(2, $srdbt_zero->getTitle());
-    $this->assertEquals("FormalTitle", $srdbt_zero->getTitle()[0]->getTitleType());
-    $this->assertEquals("Can you feel ...the Monkey Claw! formal", $srdbt_zero->getTitle()[0]->getTitleText()->value());
-    $this->assertEquals("DisplayTitle", $srdbt_zero->getTitle()[1]->getTitleType());
-    $this->assertEquals("Can you feel ...the Monkey Claw!", $srdbt_zero->getTitle()[1]->getTitleText());
-
-    $this->assertCount(2, $srdbt_zero->getDisplayArtist());
-    $this->assertEquals("1", $srdbt_zero->getDisplayArtist()[0]->getSequenceNumber());
-    $this->assertEquals("Monkey Claw", $srdbt_zero->getDisplayArtist()[0]->getPartyName()[0]->getFullName());
-    $this->assertEquals("MainArtist", $srdbt_zero->getDisplayArtist()[0]->getArtistRole()[0]);
-    $this->assertEquals("2", $srdbt_zero->getDisplayArtist()[1]->getSequenceNumber());
-    $this->assertEquals("Second Artist", $srdbt_zero->getDisplayArtist()[1]->getPartyName()[0]->getFullName());
-    $this->assertEquals("MainArtist", $srdbt_zero->getDisplayArtist()[1]->getArtistRole()[0]);
-
-    // Resource Contributors
-    $this->assertCount(1, $srdbt_zero->getResourceContributor());
-    /* @var $rescont_one ResourceContributor */
-    $rescont_one = $srdbt_zero->getResourceContributor()[0];
-    $this->assertEquals("1", $rescont_one->getSequenceNumber());
-    $this->assertEquals("Steve Albino", $rescont_one->getPartyName()[0]->getFullName());
-    $this->assertEquals("Producer", $rescont_one->getResourceContributorRole()[0]);
-
-    // Indirect Resource Contributors
-    $this->assertCount(1, $srdbt_zero->getIndirectResourceContributor());
-    /* @var $resindcont_one IndirectResourceContributor */
-    $resindcont_one = $srdbt_zero->getIndirectResourceContributor()[0];
-    $this->assertEquals("1", $resindcont_one->getSequenceNumber());
-    $this->assertEquals("Bob Black", $resindcont_one->getPartyName()[0]->getFullName());
-    $this->assertEquals("Composer", $resindcont_one->getIndirectResourceContributorRole()[0]);
-    
-    // ResourceReleaseDate
-    $this->assertEquals("2011", $srdbt_zero->getResourceReleaseDate());
-
-    // PLine
-    $pline = $srdbt_zero->getPLine()[0];
-    $this->assertEquals("2010", $pline->getYear());
-    $this->assertEquals("(P) 2010 Iron Crown Music", $pline->getPLineText());
-    
-    // Genres
-    $this->assertCount(1, $srdbt_zero->getGenre());
-    /* @var $genre GenreType */
-    $genre = $srdbt_zero->getGenre()[0];
-    $this->assertEquals("Metal", $genre->getGenreText());
-    $this->assertEquals("Progressive Metal", $genre->getSubGenre());
-    
-    // ParentalWarningType
-    $this->assertCount(1, $srdbt_zero->getParentalWarningType());
-    $this->assertEquals("NotExplicit", $srdbt_zero->getParentalWarningType()[0]);
-    
-    // TechnicalSoundRecordingDetails
-    $this->assertCount(1, $srdbt_zero->getTechnicalSoundRecordingDetails());
-    /* @var $technicalSRD TechnicalSoundRecordingDetailsType */
-    $technicalSRD = $srdbt_zero->getTechnicalSoundRecordingDetails()[0];
-    $this->assertEquals("T1", $technicalSRD->getTechnicalResourceDetailsReference());
-    $this->assertEquals("A1UCASE0000000401X_01_01.wav", $technicalSRD->getFile()[0]->getFileName());
-    
-    // Image
-    $this->assertCount(1, $ddex->getResourceList()->getImage());
-    /* @var $image ImageType */
-    $image = $ddex->getResourceList()->getImage()[0];
-    $this->assertEquals("FrontCoverImage", $image->getImageType());
-    $this->assertCount(1, $image->getImageId());
-    $this->assertCount(1, $image->getImageId()[0]->getProprietaryId());
-    $this->assertEquals("DPID:PADPIDA0000000001A", $image->getImageId()[0]->getProprietaryId()[0]->getNamespace());
-    $this->assertEquals("A7", $image->getResourceReference());
-    
-    // ImageDetailsByTerritory
-    $this->assertCount(1, $image->getImageDetailsByTerritory());
-    /* @var $image_dbt ImageDetailsByTerritoryType */
-    $image_dbt = $image->getImageDetailsByTerritory()[0];
-    $this->assertCount(1, $image_dbt->getTerritoryCode());
-    $this->assertEquals("Worldwide", $image_dbt->getTerritoryCode()[0]);
-    $this->assertCount(1, $image_dbt->getParentalWarningType());
-    $this->assertEquals("NotExplicit", $image_dbt->getParentalWarningType()[0]->value());
-    $this->assertCount(1, $image_dbt->getTechnicalImageDetails());
-    $this->assertEquals("T7", $image_dbt->getTechnicalImageDetails()[0]->getTechnicalResourceDetailsReference());
-    $this->assertCount(1, $image_dbt->getTechnicalImageDetails()[0]->getFile());
-    $this->assertEquals("A1UCASE0000000401X.jpeg", $image_dbt->getTechnicalImageDetails()[0]->getFile()[0]->getFileName());
-    
-    // Releases
-    $this->assertCount(7, $ddex->getReleaseList()->getRelease());
-    
-    // Main release
-    /* @var $main_release ReleaseType */
-    $main_release = $ddex->getReleaseList()->getRelease()[0];
-    $this->assertEquals("true", $main_release->getIsMainRelease());
-    $this->assertCount(1, $main_release->getReleaseId());
-    $this->assertEquals("A1UCASE0000000401X", $main_release->getReleaseId()[0]->getGRid());
-    $this->assertCount(1, $main_release->getReleaseReference());
-    $this->assertEquals("R0", $main_release->getReleaseReference()[0]);
-    $this->assertEquals("A Monkey Claw in a Velvet Glove", $main_release->getReferenceTitle()->getTitleText());
-    
-    // Check first and last reference in list
-    $this->assertCount(7, $main_release->getReleaseResourceReferenceList());
-    $this->assertEquals("PrimaryResource", $main_release->getReleaseResourceReferenceList()[0]->getReleaseResourceType());
-    $this->assertEquals("A1", $main_release->getReleaseResourceReferenceList()[0]->value());
-    $this->assertEquals("SecondaryResource", $main_release->getReleaseResourceReferenceList()[6]->getReleaseResourceType());
-    $this->assertEquals("A7", $main_release->getReleaseResourceReferenceList()[6]->value());
-
-    $this->assertCount(1, $main_release->getReleaseType());
-    $this->assertEquals("Album", $main_release->getReleaseType()[0]);
-
-    $this->assertCount(1, $main_release->getReleaseDetailsByTerritory());
-    /* @var $release_dbt ReleaseDetailsByTerritoryType */
-    $release_dbt = $main_release->getReleaseDetailsByTerritory()[0];
-    $this->assertCount(1, $release_dbt->getTerritoryCode());
-    $this->assertEquals("Worldwide", $release_dbt->getTerritoryCode()[0]);
-    $this->assertCount(1, $release_dbt->getDisplayArtistName());
-    $this->assertEquals("Monkey Claw", $release_dbt->getDisplayArtistName()[0]);
-    $this->assertCount(1, $release_dbt->getLabelName());
-    $this->assertEquals("Iron Crown Music", $release_dbt->getLabelName()[0]);
-    
-    $this->assertCount(2, $release_dbt->getTitle());
-    $this->assertEquals("FormalTitle", $release_dbt->getTitle()[0]->getTitleType());  
-    $this->assertEquals("A Monkey Claw in a Velvet Glove formal", $release_dbt->getTitle()[0]->getTitleText()->value());  
-    $this->assertEquals("DisplayTitle", $release_dbt->getTitle()[1]->getTitleType());  
-    $this->assertEquals("A Monkey Claw in a Velvet Glove", $release_dbt->getTitle()[1]->getTitleText()->value());
-    
-    $this->assertCount(1, $release_dbt->getDisplayArtist());
-    $this->assertEquals("1", $release_dbt->getDisplayArtist()[0]->getSequenceNumber());
-  }
-  
-  /**
-   * Test that artists with UTF-8 names in it are parsed properly, such 
-   * as Zvečansko kolo or Šumadijsko lagano kolo.
-   * @see https://github.com/miqwit/dedex/issues/6
-   */
-  public function testSample016Utf8Artist() {
-    $xml_path = "tests/samples/016_utf8_artists.xml";
-    $parser_controller = new ErnParserController();
-    // Set this to true to see logs from the parser
-    $parser_controller->setDisplayLog(false);
-    /* @var $ddex NewReleaseMessage */
-    $ddex = $parser_controller->parse($xml_path);
-    
-    
-    // In first sound recording, check that display artist is Mirko Kordić
-    /* @var $resource_zero \DedexBundle\Entity\Ern382\Ern\SoundRecordingType */
-    $resource_zero = $ddex->getResourceList()->getSoundRecording()[0];
-    /* @var $srdbt_zero SoundRecordingDetailsByTerritoryType */
-    $srdbt_zero = $resource_zero->getSoundRecordingDetailsByTerritory()[0];
-    $this->assertEquals("Mirko Kordić", $srdbt_zero->getDisplayArtist()[0]->getPartyName()[0]->getFullName());
-    $this->assertEquals("N. Áutor", $srdbt_zero->getResourceContributor()[1]->getPartyName()[0]->getFullName());
-    
-    // Check that Reference Title of Sound Recording 3 (idx 2) is Zvečansko kolo
-    /* @var $resource_two \DedexBundle\Entity\Ern382\SoundRecordingType */
-    $resource_two = $ddex->getResourceList()->getSoundRecording()[2];
-    $this->assertEquals("Zvečansko kolo", $resource_two->getReferenceTitle()->getTitleText());
-    
-    // Check that Reference Title of Sound Recording 4 (idx 3) is Šumadijsko lagano kolo
-    /* @var $resource_three \DedexBundle\Entity\Ern382\SoundRecordingType */
-    $resource_three = $ddex->getResourceList()->getSoundRecording()[3];
-    $this->assertEquals("Šumadijsko lagano kolo", $resource_three->getReferenceTitle()->getTitleText());
-  }
-
-    /**
-     * Test ERN 411 is parsed correctly
-     */
-    public function testSample015Ern411() {
-        $xml_path = "tests/samples/015_ern411.xml";
-        $parser_controller = new ErnParserController();
-        // Set this to true to see logs from the parser
-        $parser_controller->setDisplayLog(false);
-        /* @var $ddex NewReleaseMessage */
-        $ddex = $parser_controller->parse($xml_path);
-
-        // ERN version is now 411. It is using classes with namespace 411.
-        // ERN 411 does not have a getMessageSchemaVersionId() function
-        $this->assertEquals('DedexBundle\Entity\Ern411\NewReleaseMessage', get_class($ddex));
-    }
-
-    /**
-     * Test ERN 42 is parsed correctly
-     */
-    public function testSample015Ern42() {
-        $xml_path = "tests/samples/018_ern42.xml";
-        $parser_controller = new ErnParserController();
-        // Set this to true to see logs from the parser
-        $parser_controller->setDisplayLog(false);
-        /* @var $ddex NewReleaseMessage */
-        $ddex = $parser_controller->parse($xml_path);
-
-        // ERN version is now 42. It is using classes with namespace 42.
-        // ERN 42 does not have a getMessageSchemaVersionId() function
-        $this->assertEquals('DedexBundle\Entity\Ern42\NewReleaseMessage', get_class($ddex));
-    }
+class ParserTest extends TestCase {
 
   /**
    * Test ERN 43 is parsed correctly - comprehensive test matching depth of testSample001
    */
   public function testSample018Ern43() {
-    $xml_path = "tests/samples/018_ern43.xml";
+    $xml_path = "tests/Ern43/samples/ern43.xml";
     $parser_controller = new ErnParserController();
     $parser_controller->setDisplayLog(false);
     $ddex = $parser_controller->parse($xml_path);
@@ -356,7 +112,7 @@ class ParserControllerTest extends TestCase {
    * Test ERN 4.3 real-world single with contributors, catalog number, party resolution
    */
   public function testSample019Ern43RealWorldSingle() {
-    $xml_path = "tests/samples/019_ern_43.xml";
+    $xml_path = "tests/Ern43/samples/ern_43.xml";
     $parser_controller = new ErnParserController();
     $parser_controller->setDisplayLog(false);
     $ddex = $parser_controller->parse($xml_path);
@@ -438,7 +194,7 @@ class ParserControllerTest extends TestCase {
    * Test ERN 4.3 large audio album with Japanese multi-script party names
    */
   public function testSample020Ern43LargeAlbum() {
-    $xml_path = "tests/samples/020_ern43_audio.xml";
+    $xml_path = "tests/Ern43/samples/ern43_audio.xml";
     $parser_controller = new ErnParserController();
     $parser_controller->setDisplayLog(false);
     $ddex = $parser_controller->parse($xml_path);
@@ -464,7 +220,7 @@ class ParserControllerTest extends TestCase {
    * Test ERN 4.3 video release with multi-territory deals
    */
   public function testSample021Ern43Video() {
-    $xml_path = "tests/samples/021_ern43_video.xml";
+    $xml_path = "tests/Ern43/samples/ern43_video.xml";
     $parser_controller = new ErnParserController();
     $parser_controller->setDisplayLog(false);
     $ddex = $parser_controller->parse($xml_path);
@@ -506,7 +262,7 @@ class ParserControllerTest extends TestCase {
    * Test ERN 4.3 classical album with many contributors
    */
   public function testSample028Ern43Classical() {
-    $xml_path = "tests/samples/028_ern43_classical.xml";
+    $xml_path = "tests/Ern43/samples/ern43_classical.xml";
     $parser_controller = new ErnParserController();
     $parser_controller->setDisplayLog(false);
     $ddex = $parser_controller->parse($xml_path);
@@ -548,7 +304,7 @@ class ParserControllerTest extends TestCase {
    * Audio + Video + Images + Text (PDF booklet), multi-territory deals
    */
   public function testSample022Ern43MixedMedia() {
-    $xml_path = "tests/samples/022_ern43_mixed_media.xml";
+    $xml_path = "tests/Ern43/samples/ern43_mixed_media.xml";
     $parser_controller = new ErnParserController();
     $parser_controller->setDisplayLog(false);
     $ddex = $parser_controller->parse($xml_path);
@@ -625,7 +381,7 @@ class ParserControllerTest extends TestCase {
    * Single sound recording + image, FLAC codec, fractional duration, Classical genre
    */
   public function testSample023Ern43SimpleAudioSingle() {
-    $xml_path = "tests/samples/023_ern43_simple_audio_single.xml";
+    $xml_path = "tests/Ern43/samples/ern43_simple_audio_single.xml";
     $parser_controller = new ErnParserController();
     $parser_controller->setDisplayLog(false);
     $ddex = $parser_controller->parse($xml_path);
@@ -704,7 +460,7 @@ class ParserControllerTest extends TestCase {
    * Video resource + VideoScreenCapture image, Explicit content, South Africa territory
    */
   public function testSample024Ern43SimpleVideoSingle() {
-    $xml_path = "tests/samples/024_ern43_simple_video_single.xml";
+    $xml_path = "tests/Ern43/samples/ern43_simple_video_single.xml";
     $parser_controller = new ErnParserController();
     $parser_controller->setDisplayLog(false);
     $ddex = $parser_controller->parse($xml_path);
@@ -773,7 +529,7 @@ class ParserControllerTest extends TestCase {
    * 30-second ringtone, 15 contributors, Country genre, 2 technical detail sets
    */
   public function testSample025Ern43Ringtone() {
-    $xml_path = "tests/samples/025_ern43_ringtone.xml";
+    $xml_path = "tests/Ern43/samples/ern43_ringtone.xml";
     $parser_controller = new ErnParserController();
     $parser_controller->setDisplayLog(false);
     $ddex = $parser_controller->parse($xml_path);
@@ -842,7 +598,7 @@ class ParserControllerTest extends TestCase {
    * Concert film + trailer, 14 images, CueSheet, Chapters, Easy Listening
    */
   public function testSample026Ern43LongformVideo() {
-    $xml_path = "tests/samples/026_ern43_longform_video.xml";
+    $xml_path = "tests/Ern43/samples/ern43_longform_video.xml";
     $parser_controller = new ErnParserController();
     $parser_controller->setDisplayLog(false);
     $ddex = $parser_controller->parse($xml_path);
@@ -928,15 +684,11 @@ class ParserControllerTest extends TestCase {
   }
 
   /**
-   * Test ERN 4.3 DJ Mix (sample 027)
-   * 1 main mix + 8 supplemental source tracks, Nu Disco genre, HasContentFrom relationships
-   */
-  /**
    * Test ERN 4.3 real-world LabelGrid single (sample 029)
    * 2 sound recordings + 1 image, Single release type, 3 deals, contributor
    */
   public function testSample029Ern43SingleInlineImage() {
-    $xml_path = "tests/samples/029_ern43_single_inline_image.xml";
+    $xml_path = "tests/Ern43/samples/ern43_single_inline_image.xml";
     $parser_controller = new ErnParserController();
     $parser_controller->setDisplayLog(true);
     $parser_controller->setXsdValidation(true);
@@ -1029,8 +781,12 @@ class ParserControllerTest extends TestCase {
     $this->assertEquals("PermanentDownload", (string) $deals[2]->getDealTerms()->getUseType()[0]);
   }
 
+  /**
+   * Test ERN 4.3 DJ Mix (sample 027)
+   * 1 main mix + 8 supplemental source tracks, Nu Disco genre, HasContentFrom relationships
+   */
   public function testSample027Ern43DjMix() {
-    $xml_path = "tests/samples/027_ern43_dj_mix.xml";
+    $xml_path = "tests/Ern43/samples/ern43_dj_mix.xml";
     $parser_controller = new ErnParserController();
     $parser_controller->setDisplayLog(false);
     $ddex = $parser_controller->parse($xml_path);
@@ -1113,160 +869,11 @@ class ParserControllerTest extends TestCase {
   }
 
   /**
-   * ERN 4.3.1: version detection, entity namespace and the 4.3.1-specific
-   * elements (DisplayGenre, FormalTitle, GroupingTitle, Role/Value)
-   */
-  public function testSample030Ern431() {
-    $xml_path = "tests/samples/030_ern431_album.xml";
-    $parser_controller = new ErnParserController();
-    $parser_controller->setDisplayLog(false);
-    $parser_controller->setXsdValidation(true);
-    $ddex = $parser_controller->parse($xml_path);
-
-    // ERN version is 431. It uses classes with namespace Ern431.
-    $this->assertEquals("431", $parser_controller->getVersion());
-    $this->assertEquals('DedexBundle\Entity\Ern431\NewReleaseMessage', get_class($ddex));
-
-    $this->assertEquals("Test431", $ddex->getMessageHeader()->getMessageThreadId());
-    $this->assertCount(2, $ddex->getResourceList()->getSoundRecording());
-    $this->assertCount(1, $ddex->getResourceList()->getImage());
-    $this->assertCount(2, $ddex->getReleaseList()->getTrackRelease());
-
-    $release = $ddex->getReleaseList()->getRelease();
-    $this->assertEquals("Test Album ERN431", (string) $release->getDisplayTitleText()[0]);
-
-    // Genre is renamed DisplayGenre in 4.3.1
-    $this->assertCount(1, $release->getDisplayGenre());
-    $this->assertEquals("Pop", (string) $release->getDisplayGenre()[0]->getGenreText());
-    $this->assertFalse(method_exists($release, "getGenre"));
-    $this->assertFalse(method_exists($release, "getAdditionalTitle"));
-    $this->assertEquals("2024", $release->getPLine()[0]->getYear());
-    $this->assertEquals("NotExplicit", (string) $release->getParentalWarningType()[0]);
-  }
-
-  /**
-   * ERN 4.3.1 real-world single: Role is a composite (Role/Value)
-   */
-  public function testSample031Ern431RealWorldSingle() {
-    $parser_controller = new ErnParserController();
-    $parser_controller->setDisplayLog(false);
-    $parser_controller->setXsdValidation(true);
-    $ddex = $parser_controller->parse("tests/samples/031_ern431_real_world_single.xml");
-
-    $this->assertEquals('DedexBundle\Entity\Ern431\NewReleaseMessage', get_class($ddex));
-    $sr = $ddex->getResourceList()->getSoundRecording()[0];
-    $role = $sr->getContributor()[0]->getRole()[0];
-    $this->assertInstanceOf('DedexBundle\Entity\Ern431\ContributorRoleType', $role);
-    $this->assertEquals("Composer", (string) $role->getValue());
-  }
-
-  /**
-   * ERN 4.3.1 classical: FormalTitle replaces AdditionalTitle[@TitleType=FormalTitle]
-   */
-  public function testSample032Ern431Classical() {
-    $parser_controller = new ErnParserController();
-    $parser_controller->setDisplayLog(false);
-    $parser_controller->setXsdValidation(true);
-    $ddex = $parser_controller->parse("tests/samples/032_ern431_classical.xml");
-
-    $sr = $ddex->getResourceList()->getSoundRecording()[0];
-    $this->assertCount(1, $sr->getFormalTitle());
-    $this->assertStringContainsString("La Primavera", (string) $sr->getFormalTitle()[0]->getTitleText());
-    $this->assertNotEmpty($sr->getContributor());
-  }
-
-  /**
-   * ERN 4.3.1 new optional elements: Brand, ContainsAI, AiContribution,
-   * SpecialContributor, SpecialDisplayArtist, Role/InstrumentType,
-   * FormalTitle, GroupingTitle, optional ParentalWarningType.
-   */
-  public function testSample033Ern431NewFeatures() {
-    $parser_controller = new ErnParserController();
-    $parser_controller->setDisplayLog(false);
-    $parser_controller->setXsdValidation(true);
-    $ddex = $parser_controller->parse("tests/samples/033_ern431_new_features.xml");
-
-    // MessageHeader: SentAsRequestedBy
-    $this->assertEquals("Test Requester", (string) $ddex->getMessageHeader()->getSentAsRequestedBy()->getPartyName()->getFullName());
-
-    // Brand
-    $brands = $ddex->getPartyList()->getBrand();
-    $this->assertCount(1, $brands);
-    $this->assertEquals("PBrand1", $brands[0]->getBrandReference());
-    $this->assertEquals("Test Brand", (string) $brands[0]->getBrandName()[0]->getFullName());
-
-    // ChapterList / ChapterId
-    $chapters = $ddex->getChapterList()->getChapter();
-    $this->assertCount(1, $chapters);
-    $this->assertEquals("X1", $chapters[0]->getChapterReference());
-    $this->assertEquals("TEST00000001", $chapters[0]->getChapterId()[0]->getISRC());
-
-    // Release titles
-    $release = $ddex->getReleaseList()->getRelease();
-    $this->assertEquals("Test Album ERN431 (Formal)", (string) $release->getFormalTitle()[0]->getTitleText());
-    $this->assertEquals("Test Grouping", (string) $release->getGroupingTitle()[0]->getTitleText());
-    // Special display artist
-    $this->assertCount(2, $release->getDisplayArtist());
-    $this->assertEquals("VariousArtists", (string) $release->getDisplayArtist()[1]->getSpecialDisplayArtist());
-    // ParentalWarningType is optional in 4.3.1
-    $this->assertEmpty($release->getParentalWarningType());
-    // Release-level ContainsAI
-    $this->assertEquals("Partly", (string) $release->getContainsAI());
-    // AdministratingRecordCompany
-    $admin = $release->getAdministratingRecordCompany()[0];
-    $this->assertEquals("PLabel1", $admin->getRecordCompanyPartyReference());
-    $this->assertEquals("RightsAdministrator", (string) $admin->getRole());
-    // PLine/CLine now carry ApplicableTerritoryCode/IsDefault
-    $this->assertEquals("Worldwide", (string) $release->getPLine()[0]->getApplicableTerritoryCode());
-    $this->assertEquals("true", $release->getCLine()[0]->getIsDefault());
-    // SubGenreCategory/Description on DisplayGenre
-    $subGenre = $release->getDisplayGenre()[0]->getSubGenreCategory()[0];
-    $this->assertEquals("BoogieWoogie", (string) $subGenre->getValue()[0]);
-    $this->assertEquals("Test sub-genre description", (string) $subGenre->getDescription()[0]);
-
-    // Deal: RightsClaimPolicy / RightsClaimPolicyReason, PriceInformation
-    $dealTerms = $ddex->getDealList()->getReleaseDeal()[0]->getDeal()[0]->getDealTerms();
-    $policy = $dealTerms->getRightsClaimPolicy()[0];
-    $this->assertEquals("Monetize", (string) $policy->getRightsClaimPolicyType());
-    $this->assertEquals("PreReleaseTime", (string) $policy->getRightsClaimPolicyReason());
-    $this->assertEquals("9.99", $dealTerms->getPriceInformation()[0]->getSuggestedRetailPrice()->value());
-
-    // Sound recording: AI flag, contributors, parental warning with standard,
-    // DisplayCredits, IsInOriginalLanguage, EditionContributor
-    $sr = $ddex->getResourceList()->getSoundRecording()[0];
-    $this->assertEquals("Partly", (string) $sr->getContainsAI());
-    $this->assertEquals("RiaaPal", (string) $sr->getParentalWarningType()[0]->getParentalWarningStandard());
-    $this->assertEquals("true", $sr->getDisplayArtistName()[0]->getIsInOriginalLanguage());
-    $this->assertEquals("Test Artist", $sr->getDisplayArtist()[0]->getDisplayCredits()[0]->getDisplayCreditText());
-    $editionContributor = $sr->getSoundRecordingEdition()[0]->getEditionContributor()[0];
-    $this->assertEquals("GenerativeAI", (string) $editionContributor->getSpecialContributor());
-    $this->assertEquals("All", (string) $editionContributor->getAiContribution());
-    $c1 = $sr->getContributor()[0];
-    $this->assertEquals("AssociatedPerformer", (string) $c1->getRole()[0]->getValue());
-    $this->assertEquals("Guitar", (string) $c1->getRole()[0]->getInstrumentType()[0]);
-    $this->assertEquals("None", (string) $c1->getAiContribution());
-    $c2 = $sr->getContributor()[1];
-    $this->assertEquals("Traditional", (string) $c2->getSpecialContributor());
-    $this->assertEmpty($ddex->getResourceList()->getSoundRecording()[1]->getParentalWarningType());
-
-    // Image: FormalTitle/GroupingTitle, ContainsAI, ParentalWarningStandard,
-    // FirstPublicationDate (FulfillmentDate composite)
-    $image = $ddex->getResourceList()->getImage()[0];
-    $this->assertEquals("Test Album ERN431 Cover (Formal)", (string) $image->getFormalTitle()[0]->getTitleText());
-    $this->assertEquals("Test Cover Grouping", (string) $image->getGroupingTitle()[0]->getTitleText());
-    $this->assertEquals("None", (string) $image->getContainsAI());
-    $this->assertEquals("RiaaPal", (string) $image->getParentalWarningType()[0]->getParentalWarningStandard());
-    $firstPublication = $image->getFirstPublicationDate()[0];
-    $this->assertEquals("2024-01-15", (string) $firstPublication->getFulfillmentDate());
-    $this->assertEquals("R0", (string) $firstPublication->getResourceReleaseReference()[0]);
-  }
-
-  /**
    * A 4.3 file must still be detected as 43 (not 431)
    */
   public function testErn43IsNotDetectedAs431() {
     $parser_controller = new ErnParserController();
-    $ddex = $parser_controller->parse("tests/samples/018_ern43.xml");
+    $ddex = $parser_controller->parse("tests/Ern43/samples/ern43.xml");
     $this->assertEquals("43", $parser_controller->getVersion());
     $this->assertEquals('DedexBundle\Entity\Ern43\NewReleaseMessage', get_class($ddex));
   }
