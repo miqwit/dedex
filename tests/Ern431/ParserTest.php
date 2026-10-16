@@ -3,9 +3,29 @@
 namespace DedexBundle\Tests\Ern431;
 
 use DedexBundle\Controller\ErnParserController;
+use DedexBundle\Exception\XsdCompliantException;
 use PHPUnit\Framework\TestCase;
 
 class ParserTest extends TestCase {
+
+  /**
+   * ERN 4.3.1 bug (fixed in 4.3.2): Brand/BrandId is typed as the empty
+   * ProprietaryIdentifier type, so a BrandId can hold neither text nor a
+   * @Namespace. A message that gives BrandId a value and a Namespace is
+   * therefore rejected by the 4.3.1 XSD. This is the counterpart of
+   * \DedexBundle\Tests\Ern432\ParserTest::testBrandIdHasValueAndNamespace.
+   */
+  public function testBrandIdWithValueAndNamespaceFailsXsdValidation() {
+    $parser = new ErnParserController();
+    $parser->setDisplayLog(false);
+    $parser->setXsdValidation(true);
+    try {
+      $parser->parse("tests/Ern431/samples/invalid_brand_id.xml");
+      $this->fail("Expected XsdCompliantException: BrandId cannot carry a value or @Namespace in ERN 4.3.1");
+    } catch (XsdCompliantException $ex) {
+      $this->assertStringContainsString("Element 'BrandId', attribute 'Namespace': The attribute 'Namespace' is not allowed", $ex->getMessage());
+    }
+  }
 
   /**
    * ERN 4.3.1: version detection, entity namespace and the 4.3.1-specific
