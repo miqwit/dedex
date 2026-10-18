@@ -19,6 +19,7 @@ Supported versions:
 - `4.2`
 - `4.3`
 - `4.3.1`
+- `4.3.2`
 
 **Simple Entities** speak your language and will make you smoothly parse your first ERNs.
 

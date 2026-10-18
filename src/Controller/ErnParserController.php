@@ -67,7 +67,7 @@ class ErnParserController {
    * (e.g. "382" for http://ddex.net/xml/ern/382). This is the single list
    * to update when adding a version; rules apply to all of them by default.
    */
-  public const SUPPORTED_VERSIONS = ["431", "43", "42", "411", "41", "382"];
+  public const SUPPORTED_VERSIONS = ["432", "431", "43", "42", "411", "41", "382"];
 
   /**
    * The xml parser as returned by xml_parser_create
