@@ -67,7 +67,7 @@ class ErnParserController {
    * (e.g. "382" for http://ddex.net/xml/ern/382). This is the single list
    * to update when adding a version; rules apply to all of them by default.
    */
-  public const SUPPORTED_VERSIONS = ["432", "431", "43", "42", "411", "41", "382"];
+  public const SUPPORTED_VERSIONS = ["432", "431", "43", "42", "411", "41", "382", "381"];
 
   /**
    * The xml parser as returned by xml_parser_create
@@ -82,12 +82,14 @@ class ErnParserController {
 
   /**
    * NewReleaseMessage object from the right entity based on version, like:
-   *     \DedexBundle\Entity\Ern382\NewReleaseMessage
+   *     \DedexBundle\Entity\Ern381\NewReleaseMessage
+   * or  \DedexBundle\Entity\Ern382\NewReleaseMessage
    * or  \DedexBundle\Entity\Ern41\NewReleaseMessage
    * or  \DedexBundle\Entity\Ern411\NewReleaseMessage
    * or  \DedexBundle\Entity\Ern42\NewReleaseMessage
    * or  \DedexBundle\Entity\Ern43\NewReleaseMessage
    * or  \DedexBundle\Entity\Ern431\NewReleaseMessage
+   * or  \DedexBundle\Entity\Ern381\PurgeReleaseMessage
    * or  \DedexBundle\Entity\Ern382\PurgeReleaseMessage
    * or  \DedexBundle\Entity\Ern41\PurgeReleaseMessage
    * or  \DedexBundle\Entity\Ern411\PurgeReleaseMessage
@@ -290,8 +292,9 @@ class ErnParserController {
       return new $class_name('');
     }
 
-    if ($class_name === "\DedexBundle\Entity\Ern382\EventDateTimeType") {
-      return new \DedexBundle\Entity\Ern382\EventDateTimeType(new \DateTime()); // TODO
+    // ERN 3.8.x EventDateTimeType requires a DateTime in its constructor
+    if (in_array($class_name, ["\DedexBundle\Entity\Ern381\EventDateTimeType", "\DedexBundle\Entity\Ern382\EventDateTimeType"])) {
+      return new $class_name(new \DateTime()); // TODO
     }
 
     return new $class_name(null);

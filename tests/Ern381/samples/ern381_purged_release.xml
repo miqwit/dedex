@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ern:PurgeReleaseMessage xmlns:ern="http://ddex.net/xml/ern/381" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ddex.net/xml/ern/381 http://ddex.net/xml/ern/381/release-notification.xsd" MessageSchemaVersionId="ern/381" LanguageAndScriptCode="en">
+  <MessageHeader>
+    <MessageThreadId>R381-0002</MessageThreadId>
+    <MessageId>2017031000001</MessageId>
+    <MessageSender>
+      <PartyId>PADPIDA2017031001S</PartyId>
+      <PartyName>
+        <FullName>Example Records</FullName>
+      </PartyName>
+    </MessageSender>
+    <MessageRecipient>
+      <PartyId>PADPIDA2017031002R</PartyId>
+      <PartyName>
+        <FullName>Example DSP</FullName>
+      </PartyName>
+    </MessageRecipient>
+    <MessageCreatedDateTime>2017-03-01T10:15:00+01:00</MessageCreatedDateTime>
+    <MessageControlType>LiveMessage</MessageControlType>
+  </MessageHeader>
+  <PurgedRelease>
+    <ReleaseId>
+      <ICPN IsEan="true">3610159000010</ICPN>
+      <CatalogNumber Namespace="DPID:PADPIDA2017031001S">EXR017</CatalogNumber>
+    </ReleaseId>
+    <Title TitleType="DisplayTitle">
+      <TitleText>Northern Lights</TitleText>
+    </Title>
+  </PurgedRelease>
+</ern:PurgeReleaseMessage>

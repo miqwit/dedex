@@ -109,6 +109,17 @@ class SimpleEntity {
 	}
 
 	/**
+	 * Check if a DDEX object (message, release, resource...) comes from an
+	 * ERN 3.x entity namespace, like \DedexBundle\Entity\Ern382.
+	 *
+	 * @param object $ddexObject
+	 * @return bool
+	 */
+	protected function isErn3x($ddexObject): bool {
+		return strpos(get_class($ddexObject), 'DedexBundle\\Entity\\Ern3') === 0;
+	}
+
+	/**
 	 * Check if the version string corresponds to an ERN 4.x version.
 	 *
 	 * @param string $version version string as detected by ErnParserController
@@ -166,7 +177,7 @@ class SimpleEntity {
 	 */
 	protected function buildPartyIndex($ern): array {
 		$index = [];
-		if ($ern instanceof \DedexBundle\Entity\Ern382\NewReleaseMessage || $ern->getPartyList() === null) {
+		if ($this->isErn3x($ern) || $ern->getPartyList() === null) {
 			return $index;
 		}
 		$parties = $ern->getPartyList();

@@ -1,0 +1,35 @@
+DedexBundle\Entity\Ern381\ContactIdType:
+    properties:
+        emailAddress:
+            expose: true
+            access_type: public_method
+            serialized_name: EmailAddress
+            accessor:
+                getter: getEmailAddress
+                setter: setEmailAddress
+            xml_list:
+                inline: true
+                entry_name: EmailAddress
+            type: array<string>
+        phoneNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: PhoneNumber
+            accessor:
+                getter: getPhoneNumber
+                setter: setPhoneNumber
+            xml_list:
+                inline: true
+                entry_name: PhoneNumber
+            type: array<string>
+        faxNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: FaxNumber
+            accessor:
+                getter: getFaxNumber
+                setter: setFaxNumber
+            xml_list:
+                inline: true
+                entry_name: FaxNumber
+            type: array<string>

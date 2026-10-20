@@ -210,4 +210,31 @@ class ParserTest extends TestCase {
     $this->assertEquals("Šumadijsko lagano kolo", $resource_three->getReferenceTitle()->getTitleText());
   }
 
+  /**
+   * Since ERN 3.8.2, a RightsClaimPolicy can have several Conditions, and a
+   * Condition can have a ReferenceCreation. Both are rejected by the 3.8.1
+   * XSD (see tests/Ern381/ParserTest.php).
+   */
+  public function testRightsClaimPolicyConditionsWithReferenceCreation() {
+    $parser_controller = new ErnParserController();
+    $parser_controller->setXsdValidation(true);
+    /* @var $ddex NewReleaseMessage */
+    $ddex = $parser_controller->parse("tests/Ern382/samples/rights_claim_policy_conditions.xml");
+
+    $policies = $ddex->getDealList()->getReleaseDeal()[0]->getDeal()[0]->getDealTerms()->getRightsClaimPolicy();
+    $this->assertCount(1, $policies);
+    $this->assertEquals("Monetize", $policies[0]->getRightsClaimPolicyType());
+
+    $conditions = $policies[0]->getCondition();
+    $this->assertCount(2, $conditions);
+    $this->assertEquals("30", $conditions[0]->getValue());
+    $this->assertEquals("Second", $conditions[0]->getUnit());
+    $this->assertEquals("ReferenceResource", $conditions[0]->getReferenceCreation());
+    $this->assertEquals("MoreThanOrEqualTo", $conditions[0]->getRelationalRelator());
+    $this->assertEquals("50", $conditions[1]->getValue());
+    $this->assertEquals("Percent", $conditions[1]->getUnit());
+    $this->assertEquals("ConsumerResource", $conditions[1]->getReferenceCreation());
+    $this->assertEquals("MoreThan", $conditions[1]->getRelationalRelator());
+  }
+
 }

@@ -107,4 +107,16 @@ abstract class Rule {
   public function getSupportedVersions(): array {
     return $this->supported_versions;
   }
+
+  /**
+   * Check if a DDEX object (message, release, resource...) comes from an
+   * ERN 3.x entity namespace, like \DedexBundle\Entity\Ern382.
+   * ERN 3.x and 4.x structures differ, so rules use this to pick the right accessors.
+   *
+   * @param object $ddexObject
+   * @return bool
+   */
+  protected function isErn3x($ddexObject): bool {
+    return strpos(get_class($ddexObject), 'DedexBundle\\Entity\\Ern3') === 0;
+  }
 }
