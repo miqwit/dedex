@@ -1,0 +1,18 @@
+# xsd2php configuration used to generate the Ern381 entity classes.
+# ERN 3.x schemas import the allowed value sets from the http://ddex.net/xml/avs/avs
+# namespace (not http://ddex.net/xml/allowed-value-sets as in ERN 4.x).
+#
+#   ./vendor/goetas-webservices/xsd2php/bin/xsd2php convert config/xsd2php.381.yaml xsd/release_notification/381/release-notification.xsd
+xsd2php:
+  namespaces:
+    'http://ddex.net/xml/ern/381': 'DedexBundle\Entity\Ern381'
+    'http://ddex.net/xml/avs/avs': 'DedexBundle\Entity\Ern381\Avs'
+  destinations_php:
+    'DedexBundle\Entity\Ern381': src/Entity/Ern381
+    'DedexBundle\Entity\Ern381\Avs': src/Entity/Ern381/Avs
+  destinations_jms:
+    'DedexBundle\Entity\Ern381': src/Entity/Ern381/metadata
+    'DedexBundle\Entity\Ern381\Avs': src/Entity/Ern381/Avs/metadata
+
+  naming_strategy: long # needed to avoid conflicts on Type files
+  path_generator: psr4 # optional and default

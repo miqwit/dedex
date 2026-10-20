@@ -22,6 +22,9 @@ class SimpleEntityVersionTest extends TestCase {
       public function is431OrLater(string $version): bool {
         return $this->isVersion431OrLater($version);
       }
+      public function is3x($ddexObject): bool {
+        return $this->isErn3x($ddexObject);
+      }
     };
   }
 
@@ -35,6 +38,9 @@ class SimpleEntityVersionTest extends TestCase {
     $this->assertTrue($entity->atLeast("44", "431"));
     $this->assertTrue($entity->atLeast("411", "41"));
 
+    $this->assertTrue($entity->atLeast("382", "381"));
+
+    $this->assertFalse($entity->atLeast("381", "382"));
     $this->assertFalse($entity->atLeast("382", "41"));
     $this->assertFalse($entity->atLeast("43", "431"));
     $this->assertFalse($entity->atLeast("42", "43"));
@@ -51,7 +57,7 @@ class SimpleEntityVersionTest extends TestCase {
     foreach (["43", "431", "432", "44", "5"] as $version) {
       $this->assertTrue($entity->is43OrLater($version), $version);
     }
-    foreach (["382", "41", "411", "42"] as $version) {
+    foreach (["381", "382", "41", "411", "42"] as $version) {
       $this->assertFalse($entity->is43OrLater($version), $version);
     }
   }
@@ -62,9 +68,22 @@ class SimpleEntityVersionTest extends TestCase {
     foreach (["431", "432", "44", "5"] as $version) {
       $this->assertTrue($entity->is431OrLater($version), $version);
     }
-    foreach (["382", "41", "411", "42", "43"] as $version) {
+    foreach (["381", "382", "41", "411", "42", "43"] as $version) {
       $this->assertFalse($entity->is431OrLater($version), $version);
     }
+  }
+
+  /**
+   * ERN 3.x is detected from the entity namespace of a DDEX object.
+   */
+  public function testIsErn3x() {
+    $entity = $this->entity();
+
+    $this->assertTrue($entity->is3x(new \DedexBundle\Entity\Ern381\NewReleaseMessage()));
+    $this->assertTrue($entity->is3x(new \DedexBundle\Entity\Ern382\NewReleaseMessage()));
+    $this->assertTrue($entity->is3x(new \DedexBundle\Entity\Ern381\ReleaseListType()));
+    $this->assertFalse($entity->is3x(new \DedexBundle\Entity\Ern41\NewReleaseMessage()));
+    $this->assertFalse($entity->is3x(new \DedexBundle\Entity\Ern432\ReleaseListType()));
   }
 
   public function testInvalidVersionIsRejected() {

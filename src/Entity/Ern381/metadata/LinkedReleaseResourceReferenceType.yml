@@ -1,0 +1,28 @@
+DedexBundle\Entity\Ern381\LinkedReleaseResourceReferenceType:
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: string
+        linkDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: LinkDescription
+            accessor:
+                getter: getLinkDescription
+                setter: setLinkDescription
+            xml_attribute: true
+            type: string
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string

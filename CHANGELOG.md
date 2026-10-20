@@ -1,3 +1,14 @@
+## [Unreleased]
+### Added
+- ERN 3.8.1 support (`Ern381` entities generated with xsd2php, namespace `http://ddex.net/xml/ern/381`), added to `ErnParserController::SUPPORTED_VERSIONS` (#53)
+- `xsd/release_notification/381/` schema, with its AVS import pointed to a local `avs_20161006.xsd` so validation works offline, and `config/xsd2php.381.yaml`
+- `tests/Ern381` (parser, simplifiers, rules) with samples covering the 3.8.1 specifics: deal display/preview start date-times, `PreOrderPreviewDateTime`, one `Condition` per `RightsClaimPolicy` and no `ReferenceCreation`
+- `tests/Ern382` test for several `Condition`s with `ReferenceCreation` in a `RightsClaimPolicy` (3.8.2 only)
+### Changed
+- Rules and simplifiers detect ERN 3.x with a new `isErn3x()` helper (entity namespace starts with `Ern3`) instead of `instanceof \DedexBundle\Entity\Ern382\...`, so they apply to every 3.x version
+### Fixed
+- `AllSoundRecordingsHaveIsrc` no longer calls `trim(null)` (deprecated) when a `SoundRecordingId` has no ISRC
+
 ## [2.5.0]
 ### Added
 - ERN 4.3.2 support (`Ern432` entities, namespace `http://ddex.net/xml/ern/432`), added to `ErnParserController::SUPPORTED_VERSIONS`
