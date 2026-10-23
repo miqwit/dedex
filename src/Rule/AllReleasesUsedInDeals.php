@@ -38,6 +38,11 @@ class AllReleasesUsedInDeals extends Rule {
   protected $message = "All releases must be used in deals.";
   
   public function validates($newReleaseMessage): bool {
+    // Nothing to check in a PurgeReleaseMessage
+    if ($this->isPurgeMessage($newReleaseMessage)) {
+      return true;
+    }
+    $this->resetMessage();
     $references = [];
     $references_used = [];
     $valid = true;
@@ -74,9 +79,14 @@ class AllReleasesUsedInDeals extends Rule {
     
     // Second, browse all releases to check all references are used at least once.
     // ERN 4.1 and 4.1.1 return DealList as an array of ReleaseDeal; other
-    // versions return a DealList object.
+    // versions return a DealList object. DealList is optional: without it,
+    // no release is used in a deal.
     $dealList = $newReleaseMessage->getDealList();
-    $releaseDeals = is_array($dealList) ? $dealList : $dealList->getReleaseDeal();
+    if ($dealList === null) {
+      $releaseDeals = [];
+    } else {
+      $releaseDeals = is_array($dealList) ? $dealList : $dealList->getReleaseDeal();
+    }
     foreach ($releaseDeals as $rd) {
       foreach ($rd->getDealReleaseReference() as $drr) {
         $val = $drr;

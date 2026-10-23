@@ -27,14 +27,18 @@
 namespace DedexBundle\Rule;
 
 /**
- * Description of AtLeastOneSoundRecording
+ * Check there is at least one Image in the ResourceList
  *
  * @author Mickaël Arcos <@miqwit>
  */
 class AtLeastOneImage extends Rule {
-  protected $message = "Must have at least one SoundRecording";
+  protected $message = "Must have at least one Image";
   
   public function validates($newReleaseMessage): bool {
+    // Nothing to check in a PurgeReleaseMessage
+    if ($this->isPurgeMessage($newReleaseMessage)) {
+      return true;
+    }
     return count($newReleaseMessage->getResourceList()->getImage()) > 0;
   }
 }

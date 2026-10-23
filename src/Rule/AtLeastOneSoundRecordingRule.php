@@ -35,6 +35,10 @@ class AtLeastOneSoundRecordingRule extends Rule {
   protected $message = "Must have at least one SoundRecording";
   
   public function validates($newReleaseMessage): bool {
+    // Nothing to check in a PurgeReleaseMessage
+    if ($this->isPurgeMessage($newReleaseMessage)) {
+      return true;
+    }
     return count($newReleaseMessage->getResourceList()->getSoundRecording()) > 0;
   }
 }

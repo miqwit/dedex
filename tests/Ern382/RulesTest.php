@@ -81,7 +81,7 @@ class RulesTest extends TestCase {
       $ddex = $parser->parse($xml_path);
       $this->assertTrue(false);
     } catch (RuleValidationException $ex) {
-      $this->assertTrue(true);
+      $this->assertStringContainsString("ERROR: Must have at least one Image", $ex->getMessage());
     }
   }
 
