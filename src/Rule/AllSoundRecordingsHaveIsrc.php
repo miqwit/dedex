@@ -30,23 +30,33 @@ namespace DedexBundle\Rule;
  * Check ISRC here are SoundRecording level only. ISRC could also be 
  * described at Release level
  * 
+ * In ERN 4.3 and later, a SoundRecording can have several editions, each
+ * with its own ResourceId. Every ResourceId of every edition must have an
+ * ISRC, as an edition without one can't be identified.
+ * 
  * @author Mickaël Arcos <@miqwit>
  */
 class AllSoundRecordingsHaveIsrc extends Rule {
   protected $message = "All tracks (SoundRecording) must have an ISRC.";
   
   public function validates($newReleaseMessage): bool {
+    // Nothing to check in a PurgeReleaseMessage
+    if ($this->isPurgeMessage($newReleaseMessage)) {
+      return true;
+    }
     /* @var $newReleaseMessage \DedexBundle\Entity\Ern382\NewReleaseMessage */
     $valid = true;
     
     foreach ($newReleaseMessage->getResourceList()->getSoundRecording() as $sr) {
-      // ERN 3.x uses getSoundRecordingId(), ERN 4.3 and 4.3.1 store ResourceId in editions, other 4.x use getResourceId()
+      // ERN 3.x uses getSoundRecordingId(). ERN 4.3 and later store the
+      // ResourceId in editions; earlier 4.x versions have getResourceId().
       if ($this->isErn3x($sr)) {
         $ids = $sr->getSoundRecordingId();
-      } elseif ($sr instanceof \DedexBundle\Entity\Ern43\SoundRecordingType
-          || $sr instanceof \DedexBundle\Entity\Ern431\SoundRecordingType) {
-        $editions = $sr->getSoundRecordingEdition();
-        $ids = !empty($editions) ? $editions[0]->getResourceId() : [];
+      } elseif (method_exists($sr, 'getSoundRecordingEdition')) {
+        $ids = [];
+        foreach ($sr->getSoundRecordingEdition() as $edition) {
+          $ids = array_merge($ids, $edition->getResourceId());
+        }
       } else {
         $ids = $sr->getResourceId();
       }
