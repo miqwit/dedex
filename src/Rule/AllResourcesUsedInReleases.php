@@ -38,11 +38,17 @@ class AllResourcesUsedInReleases extends Rule {
   protected $message = "All resources must be used in releases.";
 
   private function collectResourceRefsFromGroup($group, array &$refs): void {
-    // Collect from content items
+    // Collect from content items, including the resources linked to an
+    // item (like a per-track image)
     foreach ($group->getResourceGroupContentItem() as $item) {
       $ref = $item->getReleaseResourceReference();
       if ($ref !== null) {
         $refs[] = (string) $ref;
+      }
+      if (method_exists($item, 'getLinkedReleaseResourceReference')) {
+        foreach ($item->getLinkedReleaseResourceReference() as $linked) {
+          $refs[] = (string) $linked->value();
+        }
       }
     }
     // Collect from linked resource references
@@ -56,16 +62,25 @@ class AllResourcesUsedInReleases extends Rule {
   }
 
   public function validates($newReleaseMessage): bool {
+    // Nothing to check in a PurgeReleaseMessage
+    if ($this->isPurgeMessage($newReleaseMessage)) {
+      return true;
+    }
+    $this->resetMessage();
     $references = [];
     $references_used = [];
     $valid = true;
     
-    // First get all resource references from SoundRecordings and Images
-    foreach ($newReleaseMessage->getResourceList()->getSoundRecording() as $sr) {
-      $references[] = $sr->getResourceReference();
-    }
-    foreach ($newReleaseMessage->getResourceList()->getImage() as $im) {
-      $references[] = $im->getResourceReference();
+    // First get all resource references. ERN 3.x: SoundRecordings and Images.
+    // ERN 4.x: every resource type.
+    $resourceList = $newReleaseMessage->getResourceList();
+    $resourceGetters = $this->isErn3x($resourceList)
+        ? ['getSoundRecording', 'getImage']
+        : ['getSoundRecording', 'getVideo', 'getImage', 'getText', 'getSheetMusic', 'getSoftware'];
+    foreach ($resourceGetters as $getter) {
+      foreach ($resourceList->$getter() as $resource) {
+        $references[] = (string) $resource->getResourceReference();
+      }
     }
     
     // Second, browse all releases to check all references are used at least once.
@@ -97,9 +112,11 @@ class AllResourcesUsedInReleases extends Rule {
     }
     $references_used = array_unique($references_used);
     
-    // All references must be in references_used
-    if (array_intersect($references_used, $references) != $references) {
-      $this->message .= " ".implode(", ", array_diff($references, $references_used))." not used or not defined.";
+    // All references must be in references_used, whatever the order in
+    // which releases list them
+    $references_not_used = array_diff($references, $references_used);
+    if (count($references_not_used) > 0) {
+      $this->message .= " ".implode(", ", $references_not_used)." not used or not defined.";
       $valid = false;
     }
     

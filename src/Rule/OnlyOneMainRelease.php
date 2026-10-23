@@ -35,6 +35,10 @@ class OnlyOneMainRelease extends Rule {
   protected $message = "Must have one and only one main release";
   
   public function validates($newReleaseMessage): bool {
+    // Nothing to check in a PurgeReleaseMessage
+    if ($this->isPurgeMessage($newReleaseMessage)) {
+      return true;
+    }
     // ERN 4.3 returns single Release object (always the main release)
     $releases = $newReleaseMessage->getReleaseList()->getRelease();
     if (!is_array($releases)) {

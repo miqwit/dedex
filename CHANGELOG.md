@@ -4,10 +4,20 @@
 - `xsd/release_notification/381/` schema, with its AVS import pointed to a local `avs_20161006.xsd` so validation works offline, and `config/xsd2php.381.yaml`
 - `tests/Ern381` (parser, simplifiers, rules) with samples covering the 3.8.1 specifics: deal display/preview start date-times, `PreOrderPreviewDateTime`, one `Condition` per `RightsClaimPolicy` and no `ReferenceCreation`
 - `tests/Ern382` test for several `Condition`s with `ReferenceCreation` in a `RightsClaimPolicy` (3.8.2 only)
+- `tests/Common/RulesOnAllSamplesTest`: every rule runs on every sample of every version and must not throw; every supported version must have a sample (#57)
+- `tests/Common/RulesOnErn4xSamplesTest`: expected result of every rule on every ERN 4.x sample, and `AllResourceFileExist` checked against the `File/URI` elements of each sample (#57)
+- `tests/Ern41` sample (4.1 had none), `tests/Ern432/RulesTest` and 4.3.2 samples for each rule fix (#57)
 ### Changed
 - Rules and simplifiers detect ERN 3.x with a new `isErn3x()` helper (entity namespace starts with `Ern3`) instead of `instanceof \DedexBundle\Entity\Ern382\...`, so they apply to every 3.x version
 ### Fixed
 - `AllSoundRecordingsHaveIsrc` no longer calls `trim(null)` (deprecated) when a `SoundRecordingId` has no ISRC
+- `AllResourceFileExist` crashed on every ERN 4.x message: it now checks the `File/URI` of every 4.x resource type (editions and clips included), relative to the root folder, and skips remote URIs (#57)
+- `AllSoundRecordingsHaveIsrc` crashed on ERN 4.3.2: it now finds the ISRC in the editions of any 4.3+ version, and checks every edition, not only the first (#57)
+- `AllResourcesUsedInReleases` reported false warnings with an empty list on ERN 4.x: the comparison no longer depends on order, and resources linked from a `ResourceGroupContentItem` count as used. Every 4.x resource type is now checked, not only SoundRecordings and Images (#57)
+- `AllReleasesUsedInDeals` crashed on a message without `DealList` (optional in every version): it now reports every release as not used in deals (#57)
+- Every rule crashed on a `PurgeReleaseMessage`: rules now pass on purge messages, which have nothing to check (#57)
+- `AtLeastOneImage` said "Must have at least one SoundRecording" instead of "Must have at least one Image" (#57)
+- Rule messages no longer keep the details of a previous validation when a rule object validates several messages (#57)
 
 ## [2.5.0]
 ### Added

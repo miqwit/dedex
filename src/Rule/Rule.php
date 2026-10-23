@@ -69,6 +69,14 @@ abstract class Rule {
   protected $message = "";
   
   /**
+   * The message as declared by the rule, before validates() adds details
+   * to it. Used to reset the message when a rule object validates several
+   * messages.
+   * @var string
+   */
+  private $base_message = "";
+  
+  /**
    * Validates this rule agains the newReleaseMessage object.
    * This object can be of different types according to the version.
    */
@@ -82,6 +90,15 @@ abstract class Rule {
     if ($level !== null) {
       $this->level = $level;
     }
+    $this->base_message = $this->message;
+  }
+  
+  /**
+   * Rules adding details to their message must call this at the start of
+   * validates(), so that details from a previous validation don't remain.
+   */
+  protected function resetMessage(): void {
+    $this->message = $this->base_message;
   }
   
   /**
@@ -118,5 +135,19 @@ abstract class Rule {
    */
   protected function isErn3x($ddexObject): bool {
     return strpos(get_class($ddexObject), 'DedexBundle\\Entity\\Ern3') === 0;
+  }
+
+  /**
+   * Check if the parsed message is a PurgeReleaseMessage, in any version.
+   * A purge message only identifies the release to remove: it has no
+   * resources, releases or deals, so content rules have nothing to check
+   * and must pass.
+   *
+   * @param object $message as given to validates()
+   * @return bool
+   */
+  protected function isPurgeMessage($message): bool {
+    $class = get_class($message);
+    return substr($class, -strlen('\\PurgeReleaseMessage')) === '\\PurgeReleaseMessage';
   }
 }

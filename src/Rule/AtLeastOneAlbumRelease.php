@@ -35,6 +35,10 @@ class AtLeastOneAlbumRelease extends Rule {
   protected $message = "Must have at least one release of type Album";
   
   public function validates($newReleaseMessage): bool {
+    // Nothing to check in a PurgeReleaseMessage
+    if ($this->isPurgeMessage($newReleaseMessage)) {
+      return true;
+    }
     // ERN 4.3 returns single Release object; other versions return array
     $releases = $newReleaseMessage->getReleaseList()->getRelease();
     if (!is_array($releases)) {
