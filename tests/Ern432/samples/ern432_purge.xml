@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ern:PurgeReleaseMessage
+   xmlns:ern="http://ddex.net/xml/ern/432"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   AvsVersionId="4.3.2" LanguageAndScriptCode="en">
+   <MessageHeader>
+      <MessageThreadId>Purge432</MessageThreadId>
+      <MessageId>Purge432.1</MessageId>
+      <MessageSender>
+         <PartyId>PADPIDA2024021301T</PartyId>
+         <PartyName>
+            <FullName>Test Sender</FullName>
+         </PartyName>
+      </MessageSender>
+      <MessageRecipient>
+         <PartyId>PADPIDA2024021302R</PartyId>
+         <PartyName>
+            <FullName>Test Recipient</FullName>
+         </PartyName>
+      </MessageRecipient>
+      <MessageCreatedDateTime>2024-02-01T10:00:00+00:00</MessageCreatedDateTime>
+   </MessageHeader>
+   <PurgedRelease>
+      <ReleaseId>
+         <ICPN>1234567890123</ICPN>
+      </ReleaseId>
+   </PurgedRelease>
+</ern:PurgeReleaseMessage>

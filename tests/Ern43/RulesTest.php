@@ -21,47 +21,56 @@ class RulesTest extends TestCase {
    */
   public function testRulesPassOnErn43() {
     $xml_path = "tests/Ern43/samples/ern43.xml";
+    foreach ([
+      new AtLeastOneSoundRecordingRule(Rule::LEVEL_ERROR),
+      new AtLeastOneImage(Rule::LEVEL_ERROR),
+      new AtLeastOneImageFrontCover(Rule::LEVEL_ERROR),
+      new AllSoundRecordingsHaveIsrc(Rule::LEVEL_ERROR),
+      new OnlyOneMainRelease(Rule::LEVEL_ERROR),
+      new AtLeastOneAlbumRelease(Rule::LEVEL_ERROR),
+      new AllResourcesUsedInReleases(Rule::LEVEL_ERROR),
+      new AllReleasesUsedInDeals(Rule::LEVEL_ERROR),
+    ] as $rule) {
+      $parser = new ErnParserController();
+      $parser->addRule($rule);
+      $parser->parse($xml_path);
+      $this->assertEquals("", $parser->getRuleMessages(), get_class($rule));
+    }
+  }
 
-    // Test each rule individually
-    $parser = new ErnParserController();
-    $parser->addRule(new AtLeastOneSoundRecordingRule(Rule::LEVEL_ERROR));
-    $ddex = $parser->parse($xml_path);
-    $this->assertTrue(true);
-
-    $parser = new ErnParserController();
-    $parser->addRule(new AtLeastOneImage(Rule::LEVEL_ERROR));
-    $ddex = $parser->parse($xml_path);
-    $this->assertTrue(true);
-
-    $parser = new ErnParserController();
-    $parser->addRule(new AtLeastOneImageFrontCover(Rule::LEVEL_ERROR));
-    $ddex = $parser->parse($xml_path);
-    $this->assertTrue(true);
-
-    $parser = new ErnParserController();
-    $parser->addRule(new AllSoundRecordingsHaveIsrc(Rule::LEVEL_ERROR));
-    $ddex = $parser->parse($xml_path);
-    $this->assertTrue(true);
-
-    $parser = new ErnParserController();
-    $parser->addRule(new OnlyOneMainRelease(Rule::LEVEL_ERROR));
-    $ddex = $parser->parse($xml_path);
-    $this->assertTrue(true);
-
-    $parser = new ErnParserController();
-    $parser->addRule(new AtLeastOneAlbumRelease(Rule::LEVEL_ERROR));
-    $ddex = $parser->parse($xml_path);
-    $this->assertTrue(true);
-
+  /**
+   * The release-level cover (A0) is linked in the parent ResourceGroup,
+   * before the sub-groups of tracks: references are found in a different
+   * order than resources are declared (#57)
+   */
+  public function testResourcesUsedWhateverTheOrder() {
     $parser = new ErnParserController();
     $parser->addRule(new AllResourcesUsedInReleases(Rule::LEVEL_ERROR));
-    $ddex = $parser->parse($xml_path);
-    $this->assertTrue(true);
+    $parser->parse("tests/Ern43/samples/ern43_classical.xml");
+    $this->assertEquals("", $parser->getRuleMessages());
+  }
 
+  /**
+   * Resources linked from a ResourceGroupContentItem (like the image of a
+   * track or video) are used (#57)
+   */
+  public function testResourcesLinkedFromContentItemsAreUsed() {
+    foreach (["ern43_simple_audio_single.xml", "ern43_ringtone.xml", "ern43_video.xml", "ern43_mixed_media.xml"] as $file) {
+      $parser = new ErnParserController();
+      $parser->addRule(new AllResourcesUsedInReleases(Rule::LEVEL_ERROR));
+      $parser->parse("tests/Ern43/samples/$file");
+      $this->assertEquals("", $parser->getRuleMessages(), $file);
+    }
+  }
+
+  /**
+   * SoundRecordings mixed into a DJ mix are not in any release
+   */
+  public function testUnusedSoundRecordingsAreReported() {
     $parser = new ErnParserController();
-    $parser->addRule(new AllReleasesUsedInDeals(Rule::LEVEL_ERROR));
-    $ddex = $parser->parse($xml_path);
-    $this->assertTrue(true);
+    $parser->addRule(new AllResourcesUsedInReleases());
+    $parser->parse("tests/Ern43/samples/ern43_dj_mix.xml");
+    $this->assertStringContainsString("A2, A3, A4, A5, A6, A7, A8, A9 not used or not defined.", $parser->getRuleMessages());
   }
 
 }
