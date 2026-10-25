@@ -55,7 +55,67 @@ class RulesOnAllSamplesTest extends TestCase {
       $this->assertIsBool($first, $context);
       $this->assertSame($first, $second, $context);
       $this->assertSame($first_message, $rule->getMessage(), "$context: message must not grow when the rule is reused");
+
+      // check() gives the same result, as violations
+      $violations = $rule->check($ern);
+      $this->assertNull($rule->getThrowable(), $context);
+      $this->assertSame($first, count($violations) === 0, "$context: check() and validates() disagree");
+      $this->assertSame($first_message, $rule->getMessage(), $context);
     }
+  }
+
+  /**
+   * Every violation of every rule, on every sample, points to exactly one
+   * element of the sample. When it has a subject (a reference, an id, a
+   * file), that element is about the subject: the subject is in its text.
+   */
+  #[DataProvider('sampleProvider')]
+  public function testViolationPathsResolve(string $sample) {
+    if (in_array($sample, Samples::UNPARSEABLE)) {
+      $this->markTestSkipped("Not meant to be parsed");
+    }
+    $parser = new ErnParserController();
+    $ern = $parser->parse($sample);
+
+    foreach (Samples::ruleClasses() as $class) {
+      $rule = Samples::newRule($class, dirname($sample));
+      $violations = $rule->check($ern);
+      $this->assertIsArray($violations);
+      foreach ($violations as $violation) {
+        $context = Samples::shortName($class) . " on $sample: " . $violation->getMessage();
+        $this->assertSame(Samples::shortName($class), $violation->getRule(), $context);
+        $this->assertSame($rule->getLevel(), $violation->getLevel(), $context);
+        $this->assertNotNull($violation->getPath(), "$context: built-in rules give a path");
+
+        $nodes = Samples::resolvePath($sample, $violation->getPath());
+        $this->assertCount(1, $nodes, "$context: path '{$violation->getPath()}' must point to one element");
+
+        if ($violation->getSubject() !== null) {
+          $this->assertTrue($this->isAbout($sample, $violation->getPath(), $nodes[0], $violation->getSubject()),
+                  "$context: element at '{$violation->getPath()}' is not about '{$violation->getSubject()}'");
+        }
+      }
+    }
+  }
+
+  /**
+   * Whether the element at a violation path is about its subject: the
+   * subject is in the text of the element, or of the top-level record it
+   * is in (like "ResourceList/SoundRecording[2]" for an ISRC missing in
+   * one of its ResourceIds). For 3.x files the subject is
+   * FilePath/FileName and the element is FileName.
+   */
+  private function isAbout(string $sample, string $path, \DOMNode $node, string $subject): bool {
+    $text = trim($node->textContent);
+    if (strpos($text, $subject) !== false || ($text !== "" && substr($subject, -strlen($text)) === $text)) {
+      return true;
+    }
+    $segments = explode("/", $path);
+    if (count($segments) > 2) {
+      $record = Samples::resolvePath($sample, implode("/", array_slice($segments, 0, 2)));
+      return count($record) === 1 && strpos($record[0]->textContent, $subject) !== false;
+    }
+    return false;
   }
 
   /**

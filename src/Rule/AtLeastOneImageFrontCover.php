@@ -35,22 +35,22 @@ class AtLeastOneImageFrontCover extends Rule {
   protected $message = "Must have at least one Image in the ResourceList of type FrontCoverImage";
   
   public function validates($newReleaseMessage): bool {
+    $this->resetMessage();
     // Nothing to check in a PurgeReleaseMessage
     if ($this->isPurgeMessage($newReleaseMessage)) {
       return true;
     }
-    $valid = false;
     foreach ($newReleaseMessage->getResourceList()->getImage() as $image) {
       // ERN 3.x uses getImageType(), all 4.x versions use getType()
       $type = $this->isErn3x($image)
         ? $image->getImageType()
         : $image->getType();
       if ($type !== null && $type->value() === "FrontCoverImage") {
-        $valid = true;
-        break;
+        return true;
       }
     }
 
-    return $valid;
+    $this->fail($this->message, null, "ResourceList");
+    return false;
   }
 }

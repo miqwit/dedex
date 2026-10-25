@@ -70,7 +70,7 @@ class RulesTest extends TestCase {
     $parser = new ErnParserController();
     $parser->addRule(new AllResourcesUsedInReleases());
     $parser->parse("tests/Ern43/samples/ern43_dj_mix.xml");
-    $this->assertStringContainsString("A2, A3, A4, A5, A6, A7, A8, A9 not used or not defined.", $parser->getRuleMessages());
+    $this->assertStringContainsString("Resource A2 is not used in any release. Resource A3 is not used in any release. Resource A4 is not used in any release. Resource A5 is not used in any release. Resource A6 is not used in any release. Resource A7 is not used in any release. Resource A8 is not used in any release. Resource A9 is not used in any release.", $parser->getRuleMessages());
   }
 
 }

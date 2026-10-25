@@ -101,6 +101,38 @@ class Samples {
   }
 
   /**
+   * Find the elements a Violation path points to, with the XPath
+   * conversion documented in Violation: "/*" followed by
+   * "/*[local-name()='Segment'][n]" for each segment.
+   *
+   * @param string $sample XML file
+   * @param string $path like "ResourceList/SoundRecording[3]/ResourceId"
+   * @return \DOMNode[]
+   */
+  public static function resolvePath(string $sample, string $path): array {
+    static $xpaths = [];
+    if (!isset($xpaths[$sample])) {
+      $dom = new \DOMDocument();
+      $dom->load($sample);
+      $xpaths[$sample] = new \DOMXPath($dom);
+    }
+    $query = "/*";
+    if ($path !== "") {
+      foreach (explode("/", $path) as $segment) {
+        if (!preg_match('/^([A-Za-z_][\w.-]*)(?:\[(\d+)\])?$/', $segment, $m)) {
+          throw new \InvalidArgumentException("Invalid path segment '$segment' in '$path'");
+        }
+        $query .= sprintf("/*[local-name()='%s'][%d]", $m[1], isset($m[2]) ? (int) $m[2] : 1);
+      }
+    }
+    $nodes = [];
+    foreach ($xpaths[$sample]->query($query) as $node) {
+      $nodes[] = $node;
+    }
+    return $nodes;
+  }
+
+  /**
    * @param string $class
    * @return string the class name without its namespace
    */

@@ -37,84 +37,98 @@ namespace DedexBundle\Rule;
 class AllResourcesUsedInReleases extends Rule {
   protected $message = "All resources must be used in releases.";
 
-  private function collectResourceRefsFromGroup($group, array &$refs): void {
-    // Collect from content items, including the resources linked to an
-    // item (like a per-track image)
-    foreach ($group->getResourceGroupContentItem() as $item) {
+  /**
+   * Collect resource references used in a 4.x ResourceGroup and its
+   * sub-groups, with the path of each reference.
+   *
+   * @param object $group
+   * @param string $path path of the group
+   * @param array $refs [reference, path] pairs, completed by this function
+   */
+  private function collectResourceRefsFromGroup($group, string $path, array &$refs): void {
+    // Content items, including the resources linked to an item (like a
+    // per-track image)
+    foreach (array_values($group->getResourceGroupContentItem()) as $i => $item) {
+      $itemPath = sprintf("%s/ResourceGroupContentItem[%d]", $path, $i + 1);
       $ref = $item->getReleaseResourceReference();
       if ($ref !== null) {
-        $refs[] = (string) $ref;
+        $refs[] = [(string) $ref, "$itemPath/ReleaseResourceReference"];
       }
       if (method_exists($item, 'getLinkedReleaseResourceReference')) {
-        foreach ($item->getLinkedReleaseResourceReference() as $linked) {
-          $refs[] = (string) $linked->value();
+        foreach (array_values($item->getLinkedReleaseResourceReference()) as $j => $linked) {
+          $refs[] = [(string) $linked->value(), sprintf("%s/LinkedReleaseResourceReference[%d]", $itemPath, $j + 1)];
         }
       }
     }
-    // Collect from linked resource references
-    foreach ($group->getLinkedReleaseResourceReference() as $linked) {
-      $refs[] = (string) $linked->value();
+    // Resources linked to the group (like the release cover)
+    foreach (array_values($group->getLinkedReleaseResourceReference()) as $j => $linked) {
+      $refs[] = [(string) $linked->value(), sprintf("%s/LinkedReleaseResourceReference[%d]", $path, $j + 1)];
     }
-    // Recurse into sub-groups
-    foreach ($group->getResourceGroup() as $subGroup) {
-      $this->collectResourceRefsFromGroup($subGroup, $refs);
+    // Sub-groups
+    foreach (array_values($group->getResourceGroup()) as $k => $subGroup) {
+      $this->collectResourceRefsFromGroup($subGroup, sprintf("%s/ResourceGroup[%d]", $path, $k + 1), $refs);
     }
   }
 
   public function validates($newReleaseMessage): bool {
+    $this->resetMessage();
     // Nothing to check in a PurgeReleaseMessage
     if ($this->isPurgeMessage($newReleaseMessage)) {
       return true;
     }
-    $this->resetMessage();
-    $references = [];
-    $references_used = [];
-    $valid = true;
-    
-    // First get all resource references, of every resource type
-    foreach ($this->getResourcesByType($newReleaseMessage->getResourceList()) as $resources) {
-      foreach ($resources as $resource) {
-        $references[] = (string) $resource->getResourceReference();
+
+    // First get all declared resources, of every resource type, with their path
+    $declared = [];  // reference => path
+    foreach ($this->getResourcesByType($newReleaseMessage->getResourceList()) as $type => $resources) {
+      foreach (array_values($resources) as $i => $resource) {
+        $reference = (string) $resource->getResourceReference();
+        if (!isset($declared[$reference])) {
+          $declared[$reference] = sprintf("ResourceList/%s[%d]", $type, $i + 1);
+        }
       }
     }
-    
-    // Second, browse all releases to check all references are used at least once.
-    // ERN 4.3 returns single Release object; other versions return array
-    $releases = $newReleaseMessage->getReleaseList()->getRelease();
-    if (!is_array($releases)) {
-      $releases = $releases !== null ? [$releases] : [];
-    }
-    foreach ($releases as $rel) {
+
+    // Second, collect all references used by releases, with their path
+    $used = [];  // [reference, path] pairs
+    foreach ($this->getReleasesWithPath($newReleaseMessage) as list($release, $releasePath)) {
       // ERN 3.x uses getReleaseResourceReferenceList(); all 4.x use ResourceGroup
-      if ($this->isErn3x($rel)) {
-        foreach ($rel->getReleaseResourceReferenceList() as $rrrl) {
-          $val = $rrrl->value();
-          $references_used[] = $val;
+      if ($this->isErn3x($release)) {
+        foreach (array_values($release->getReleaseResourceReferenceList()) as $j => $rrr) {
+          $used[] = [(string) $rrr->value(), sprintf("%s/ReleaseResourceReferenceList/ReleaseResourceReference[%d]", $releasePath, $j + 1)];
         }
-      } elseif ($rel->getResourceGroup() !== null) {
-        $this->collectResourceRefsFromGroup($rel->getResourceGroup(), $references_used);
+      } elseif ($release->getResourceGroup() !== null) {
+        $this->collectResourceRefsFromGroup($release->getResourceGroup(), "$releasePath/ResourceGroup", $used);
       }
     }
     // Include track releases (ERN 4.x — all 4.x versions have getTrackRelease, 3.x does not)
     $releaseList = $newReleaseMessage->getReleaseList();
     if (!$this->isErn3x($releaseList)) {
-      foreach ($releaseList->getTrackRelease() as $tr) {
+      foreach (array_values($releaseList->getTrackRelease()) as $i => $tr) {
         $ref = $tr->getReleaseResourceReference();
         if ($ref !== null) {
-          $references_used[] = (string) $ref;
+          $used[] = [(string) $ref, sprintf("ReleaseList/TrackRelease[%d]/ReleaseResourceReference", $i + 1)];
         }
       }
     }
-    $references_used = array_unique($references_used);
-    
-    // All references must be in references_used, whatever the order in
-    // which releases list them
-    $references_not_used = array_diff($references, $references_used);
-    if (count($references_not_used) > 0) {
-      $this->message .= " ".implode(", ", $references_not_used)." not used or not defined.";
-      $valid = false;
+
+    // Every declared resource must be used, whatever the order in which
+    // releases list them
+    $usedReferences = array_column($used, 0);
+    foreach ($declared as $reference => $path) {
+      if (!in_array($reference, $usedReferences, true)) {
+        $this->fail("Resource $reference is not used in any release", $reference, $path);
+      }
     }
-    
-    return $valid;
+
+    // Every used reference must be declared (reported once per reference)
+    $reported = [];
+    foreach ($used as list($reference, $path)) {
+      if (!isset($declared[$reference]) && !isset($reported[$reference])) {
+        $this->fail("Resource $reference is used in a release but not defined in the ResourceList", $reference, $path);
+        $reported[$reference] = true;
+      }
+    }
+
+    return count($this->getViolations()) === 0;
   }
 }

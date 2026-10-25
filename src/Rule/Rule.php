@@ -71,14 +71,33 @@ abstract class Rule {
   /**
    * The message as declared by the rule, before validates() adds details
    * to it. Used to reset the message when a rule object validates several
-   * messages.
-   * @var string
+   * messages. Captured on the first reset, so that a message set in the
+   * constructor of a subclass is kept.
+   * @var string|null
    */
-  private $base_message = "";
+  private $base_message = null;
+  
+  /**
+   * Problems found by the last validation
+   * @var Violation[]
+   */
+  private $violations = [];
+  
+  /**
+   * What the rule threw during the last check(), if it crashed
+   * @var \Throwable|null
+   */
+  private $throwable = null;
   
   /**
    * Validates this rule agains the newReleaseMessage object.
    * This object can be of different types according to the version.
+   * 
+   * Rules call fail() for each problem they find, and return false when
+   * they found one. Rules that only return false (without calling fail())
+   * still work: check() then records their message as one violation.
+   * 
+   * New code should call check(), which runs this on a fresh state.
    */
   abstract protected function validates($newReleaseMessage): bool;
   
@@ -90,15 +109,80 @@ abstract class Rule {
     if ($level !== null) {
       $this->level = $level;
     }
-    $this->base_message = $this->message;
   }
   
   /**
-   * Rules adding details to their message must call this at the start of
-   * validates(), so that details from a previous validation don't remain.
+   * Reset the state left by a previous validation: details added to the
+   * message, and violations. Rules call this at the start of validates(),
+   * so that a rule object can validate several messages. check() calls it
+   * too.
    */
   protected function resetMessage(): void {
-    $this->message = $this->base_message;
+    if ($this->base_message === null) {
+      $this->base_message = $this->message;
+    } else {
+      $this->message = $this->base_message;
+    }
+    $this->violations = [];
+    $this->throwable = null;
+  }
+  
+  /**
+   * Record one problem. Call it once per problem found, so that callers
+   * get one Violation per resource, release or file.
+   * 
+   * @param string $message one problem, short and self-contained, without
+   *   final period, like "Resource A9 is not used in any release"
+   * @param string|null $subject the DDEX reference or id it is about, like "A9"
+   * @param string|null $path where it is in the XML (see Violation)
+   */
+  protected function fail(string $message, ?string $subject = null, ?string $path = null): void {
+    $this->violations[] = new Violation($this->getName(), $this->level, $message, $subject, $path);
+  }
+  
+  /**
+   * Run the rule on a fresh state and return its violations: empty when the
+   * rule passes. It never throws: if the rule throws, the throwable is
+   * recorded as a "Rule crashed" violation and available with getThrowable().
+   * 
+   * @param object $newReleaseMessage the parsed message
+   * @return Violation[]
+   */
+  public function check($newReleaseMessage): array {
+    $this->resetMessage();
+    try {
+      $valid = $this->validates($newReleaseMessage);
+    } catch (\Throwable $throwable) {
+      $this->throwable = $throwable;
+      $this->fail("Rule crashed: " . get_class($throwable) . ": " . $throwable->getMessage());
+      return $this->violations;
+    }
+    if (!$valid && count($this->violations) === 0) {
+      // Rule that only returns false: its message is the violation
+      $this->fail($this->message);
+    }
+    return $this->violations;
+  }
+  
+  /**
+   * @return Violation[] problems found by the last validation
+   */
+  public function getViolations(): array {
+    return $this->violations;
+  }
+  
+  /**
+   * @return \Throwable|null what the rule threw during the last check()
+   */
+  public function getThrowable(): ?\Throwable {
+    return $this->throwable;
+  }
+  
+  /**
+   * @return string short class name of the rule, like "AllResourcesUsedInReleases"
+   */
+  public function getName(): string {
+    return (new \ReflectionClass($this))->getShortName();
   }
   
   /**
@@ -110,11 +194,30 @@ abstract class Rule {
   }
   
   /**
+   * The message of the rule with its level, like "WARNING: ...".
+   * After a validation that found problems, the message of each violation
+   * follows the rule message, like
+   * "WARNING: All resources must be used in releases. Resource A9 is not used in any release."
    * 
    * @return string
    */
   public function getMessage(): string {
-    return strtoupper($this->level).": ".$this->message;
+    $message = $this->message;
+    $details = [];
+    foreach ($this->violations as $violation) {
+      if ($violation->getMessage() !== $this->message) {
+        $details[] = $violation->getMessage();
+      }
+    }
+    if (count($details) > 0) {
+      if ($message === "") {
+        $message = implode(". ", $details) . ".";
+      } else {
+        $separator = preg_match('/[.:]$/', $message) ? " " : ". ";
+        $message .= $separator . implode(". ", $details) . ".";
+      }
+    }
+    return strtoupper($this->level).": ".$message;
   }
   
   /**
@@ -156,6 +259,27 @@ abstract class Rule {
       }
     }
     return $resources;
+  }
+
+  /**
+   * Releases of a NewReleaseMessage (not TrackReleases), each with its path
+   * in the XML (see Violation). ERN 4.3 and later have a single Release, at
+   * "ReleaseList/Release"; other versions have a list, at
+   * "ReleaseList/Release[n]".
+   *
+   * @param object $newReleaseMessage
+   * @return array[] list of [release object, path]
+   */
+  protected function getReleasesWithPath($newReleaseMessage): array {
+    $releases = $newReleaseMessage->getReleaseList()->getRelease();
+    if (!is_array($releases)) {
+      return $releases !== null ? [[$releases, "ReleaseList/Release"]] : [];
+    }
+    $result = [];
+    foreach (array_values($releases) as $i => $release) {
+      $result[] = [$release, sprintf("ReleaseList/Release[%d]", $i + 1)];
+    }
+    return $result;
   }
 
   /**
