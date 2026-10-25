@@ -83,3 +83,9 @@ xsd2php:
   naming_strategy: long # needed to avoid conflicts on Type files
   path_generator: psr4 # optional and default
 ```
+
+ERN 3.x schemas import the allowed value sets from another namespace (`http://ddex.net/xml/avs/avs`) and are not published on ddex.net anymore. ERN 3.8.1 has its own config file, `config/xsd2php.381.yaml`, and its XSD imports the local `avs_20161006.xsd`:
+
+```
+./vendor/goetas-webservices/xsd2php/bin/xsd2php convert config/xsd2php.381.yaml xsd/release_notification/381/release-notification.xsd
+```

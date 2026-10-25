@@ -58,9 +58,9 @@ class AllReleasesUsedInDeals extends Rule {
         $references[] = $rr;
       }
     }
-    // Include track releases (ERN 4.x — all 4.x versions have getTrackRelease, 382 does not)
+    // Include track releases (ERN 4.x — all 4.x versions have getTrackRelease, 3.x does not)
     $releaseList = $newReleaseMessage->getReleaseList();
-    if (!$releaseList instanceof \DedexBundle\Entity\Ern382\ReleaseListType) {
+    if (!$this->isErn3x($releaseList)) {
       foreach ($releaseList->getTrackRelease() as $tr) {
         $ref = $tr->getReleaseReference();
         if (!is_array($ref)) {

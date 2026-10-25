@@ -75,8 +75,8 @@ class AllResourcesUsedInReleases extends Rule {
       $releases = $releases !== null ? [$releases] : [];
     }
     foreach ($releases as $rel) {
-      // ERN 382 uses getReleaseResourceReferenceList(); all 4.x use ResourceGroup
-      if ($rel instanceof \DedexBundle\Entity\Ern382\ReleaseType) {
+      // ERN 3.x uses getReleaseResourceReferenceList(); all 4.x use ResourceGroup
+      if ($this->isErn3x($rel)) {
         foreach ($rel->getReleaseResourceReferenceList() as $rrrl) {
           $val = $rrrl->value();
           $references_used[] = $val;
@@ -85,9 +85,9 @@ class AllResourcesUsedInReleases extends Rule {
         $this->collectResourceRefsFromGroup($rel->getResourceGroup(), $references_used);
       }
     }
-    // Include track releases (ERN 4.x — all 4.x versions have getTrackRelease, 382 does not)
+    // Include track releases (ERN 4.x — all 4.x versions have getTrackRelease, 3.x does not)
     $releaseList = $newReleaseMessage->getReleaseList();
-    if (!$releaseList instanceof \DedexBundle\Entity\Ern382\ReleaseListType) {
+    if (!$this->isErn3x($releaseList)) {
       foreach ($releaseList->getTrackRelease() as $tr) {
         $ref = $tr->getReleaseResourceReference();
         if ($ref !== null) {

@@ -1,0 +1,131 @@
+DedexBundle\Entity\Ern381\UserDefinedResourceType:
+    properties:
+        isUpdated:
+            expose: true
+            access_type: public_method
+            serialized_name: IsUpdated
+            accessor:
+                getter: getIsUpdated
+                setter: setIsUpdated
+            xml_attribute: true
+            type: bool
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        userDefinedResourceType:
+            expose: true
+            access_type: public_method
+            serialized_name: UserDefinedResourceType
+            accessor:
+                getter: getUserDefinedResourceType
+                setter: setUserDefinedResourceType
+            type: DedexBundle\Entity\Ern381\UserDefinedResourceTypeType
+        isArtistRelated:
+            expose: true
+            access_type: public_method
+            serialized_name: IsArtistRelated
+            accessor:
+                getter: getIsArtistRelated
+                setter: setIsArtistRelated
+            type: bool
+        userDefinedResourceId:
+            expose: true
+            access_type: public_method
+            serialized_name: UserDefinedResourceId
+            accessor:
+                getter: getUserDefinedResourceId
+                setter: setUserDefinedResourceId
+            xml_list:
+                inline: true
+                entry_name: UserDefinedResourceId
+            type: array<DedexBundle\Entity\Ern381\ResourceProprietaryIdType>
+        indirectUserDefinedResourceId:
+            expose: true
+            access_type: public_method
+            serialized_name: IndirectUserDefinedResourceId
+            accessor:
+                getter: getIndirectUserDefinedResourceId
+                setter: setIndirectUserDefinedResourceId
+            xml_list:
+                inline: true
+                entry_name: IndirectUserDefinedResourceId
+            type: array<DedexBundle\Entity\Ern381\MusicalWorkIdType>
+        resourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceReference
+            accessor:
+                getter: getResourceReference
+                setter: setResourceReference
+            type: string
+        resourceMusicalWorkReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceMusicalWorkReferenceList
+            accessor:
+                getter: getResourceMusicalWorkReferenceList
+                setter: setResourceMusicalWorkReferenceList
+            type: array<DedexBundle\Entity\Ern381\ResourceMusicalWorkReferenceType>
+            xml_list:
+                inline: false
+                entry_name: ResourceMusicalWorkReference
+                skip_when_empty: true
+        resourceContainedResourceReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceContainedResourceReferenceList
+            accessor:
+                getter: getResourceContainedResourceReferenceList
+                setter: setResourceContainedResourceReferenceList
+            type: array<DedexBundle\Entity\Ern381\ResourceContainedResourceReferenceType>
+            xml_list:
+                inline: false
+                entry_name: ResourceContainedResourceReference
+                skip_when_empty: true
+        title:
+            expose: true
+            access_type: public_method
+            serialized_name: Title
+            accessor:
+                getter: getTitle
+                setter: setTitle
+            xml_list:
+                inline: true
+                entry_name: Title
+            type: array<DedexBundle\Entity\Ern381\TitleType>
+        userDefinedValue:
+            expose: true
+            access_type: public_method
+            serialized_name: UserDefinedValue
+            accessor:
+                getter: getUserDefinedValue
+                setter: setUserDefinedValue
+            xml_list:
+                inline: true
+                entry_name: UserDefinedValue
+            type: array<DedexBundle\Entity\Ern381\UserDefinedValueType>
+        creationDate:
+            expose: true
+            access_type: public_method
+            serialized_name: CreationDate
+            accessor:
+                getter: getCreationDate
+                setter: setCreationDate
+            type: DedexBundle\Entity\Ern381\EventDateType
+        userDefinedResourceDetailsByTerritory:
+            expose: true
+            access_type: public_method
+            serialized_name: UserDefinedResourceDetailsByTerritory
+            accessor:
+                getter: getUserDefinedResourceDetailsByTerritory
+                setter: setUserDefinedResourceDetailsByTerritory
+            xml_list:
+                inline: true
+                entry_name: UserDefinedResourceDetailsByTerritory
+            type: array<DedexBundle\Entity\Ern381\UserDefinedResourceDetailsByTerritoryType>
