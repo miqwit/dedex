@@ -146,6 +146,27 @@ abstract class Rule {
    * @param object $message as given to validates()
    * @return bool
    */
+  /**
+   * Resources of every type in a ResourceList, ERN 3.x and 4.x alike,
+   * indexed by type (the element name in the XML), like
+   * ["SoundRecording" => [...], "Video" => [...], ...].
+   * MIDI and UserDefinedResource only exist in ERN 3.x: a type that the
+   * version doesn't have is skipped.
+   *
+   * @param object $resourceList
+   * @return array[]
+   */
+  protected function getResourcesByType($resourceList): array {
+    $resources = [];
+    foreach (["SoundRecording", "MIDI", "Video", "Image", "Text", "SheetMusic", "Software", "UserDefinedResource"] as $type) {
+      $getter = "get$type";
+      if (method_exists($resourceList, $getter)) {
+        $resources[$type] = $resourceList->$getter();
+      }
+    }
+    return $resources;
+  }
+
   protected function isPurgeMessage($message): bool {
     $class = get_class($message);
     return substr($class, -strlen('\\PurgeReleaseMessage')) === '\\PurgeReleaseMessage';

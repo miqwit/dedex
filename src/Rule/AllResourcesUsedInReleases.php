@@ -71,14 +71,9 @@ class AllResourcesUsedInReleases extends Rule {
     $references_used = [];
     $valid = true;
     
-    // First get all resource references. ERN 3.x: SoundRecordings and Images.
-    // ERN 4.x: every resource type.
-    $resourceList = $newReleaseMessage->getResourceList();
-    $resourceGetters = $this->isErn3x($resourceList)
-        ? ['getSoundRecording', 'getImage']
-        : ['getSoundRecording', 'getVideo', 'getImage', 'getText', 'getSheetMusic', 'getSoftware'];
-    foreach ($resourceGetters as $getter) {
-      foreach ($resourceList->$getter() as $resource) {
+    // First get all resource references, of every resource type
+    foreach ($this->getResourcesByType($newReleaseMessage->getResourceList()) as $resources) {
+      foreach ($resources as $resource) {
         $references[] = (string) $resource->getResourceReference();
       }
     }

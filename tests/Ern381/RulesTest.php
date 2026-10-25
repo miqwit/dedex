@@ -5,6 +5,7 @@ namespace DedexBundle\Tests\Ern381;
 use DedexBundle\Controller\ErnParserController;
 use DedexBundle\Exception\RuleValidationException;
 use DedexBundle\Rule\AllReleasesUsedInDeals;
+use DedexBundle\Rule\AllResourceFileExist;
 use DedexBundle\Rule\AllResourcesUsedInReleases;
 use DedexBundle\Rule\AllSoundRecordingsHaveIsrc;
 use DedexBundle\Rule\AtLeastOneImageFrontCover;
@@ -72,6 +73,55 @@ class RulesTest extends TestCase {
 
     $this->expectException(RuleValidationException::class);
     $this->parseWithRule(new AllReleasesUsedInDeals(Rule::LEVEL_ERROR), "ern381_track_release_without_deal.xml");
+  }
+
+  /**
+   * Every resource type is checked, as in ERN 4.x, not only SoundRecordings
+   * and Images: the music video A5 is used by the album, the booklet A6
+   * (a Text resource) is not used by any release
+   */
+  public function testUnusedResourceOfAnyType() {
+    $parser = $this->parseWithRule(new AllResourcesUsedInReleases(), "ern381_video_and_unused_booklet.xml");
+    $this->assertEquals("\n- WARNING: All resources must be used in releases. A6 not used or not defined.", $parser->getRuleMessages());
+  }
+
+  /**
+   * Files of every resource type are checked, as in ERN 4.x: here the
+   * video and the booklet, besides the audio and the cover
+   */
+  public function testFilesOfEveryResourceType() {
+    $root = sys_get_temp_dir() . DIRECTORY_SEPARATOR . "dedex_381_" . uniqid();
+    $files = ["3610159000010_01_01.flac", "3610159000010_01_02.flac", "3610159000010_01_03.flac",
+      "3610159000010_video_01.mp4", "3610159000010.jpg"];
+    mkdir($root . DIRECTORY_SEPARATOR . "resources", 0777, true);
+    foreach ($files as $file) {
+      touch($root . DIRECTORY_SEPARATOR . "resources" . DIRECTORY_SEPARATOR . $file);
+    }
+    try {
+      // Only the booklet is missing
+      $parser = $this->parseWithRule(new AllResourceFileExist(null, $root), "ern381_video_and_unused_booklet.xml");
+      $this->assertEquals("\n- WARNING: Missing files described in the resource: 3610159000010_booklet.pdf", $parser->getRuleMessages());
+
+      // Without the video either
+      unlink($root . DIRECTORY_SEPARATOR . "resources" . DIRECTORY_SEPARATOR . "3610159000010_video_01.mp4");
+      $parser = $this->parseWithRule(new AllResourceFileExist(null, $root), "ern381_video_and_unused_booklet.xml");
+      $this->assertEquals("\n- WARNING: Missing files described in the resource: 3610159000010_video_01.mp4 3610159000010_booklet.pdf", $parser->getRuleMessages());
+
+      // All files
+      $files[] = "3610159000010_video_01.mp4";
+      $files[] = "3610159000010_booklet.pdf";
+      foreach ($files as $file) {
+        touch($root . DIRECTORY_SEPARATOR . "resources" . DIRECTORY_SEPARATOR . $file);
+      }
+      $parser = $this->parseWithRule(new AllResourceFileExist(Rule::LEVEL_ERROR, $root), "ern381_video_and_unused_booklet.xml");
+      $this->assertEquals("", $parser->getRuleMessages());
+    } finally {
+      foreach ($files as $file) {
+        @unlink($root . DIRECTORY_SEPARATOR . "resources" . DIRECTORY_SEPARATOR . $file);
+      }
+      @rmdir($root . DIRECTORY_SEPARATOR . "resources");
+      @rmdir($root);
+    }
   }
 
 }

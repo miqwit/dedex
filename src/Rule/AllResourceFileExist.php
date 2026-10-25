@@ -69,8 +69,9 @@ class AllResourceFileExist extends Rule {
   }
   
   /**
-   * ERN 3.x: SoundRecording and Image files, described by a FilePath and a
-   * FileName in the TechnicalDetails of each territory.
+   * ERN 3.x: files of every resource type, described by a FilePath and a
+   * FileName in the TechnicalDetails of each territory, like
+   * Video/VideoDetailsByTerritory/TechnicalVideoDetails/File.
    * 
    * @param object $newReleaseMessage
    * @return string[] FileName, indexed by path relative to the root folder
@@ -78,23 +79,17 @@ class AllResourceFileExist extends Rule {
   private function getFilePaths3x($newReleaseMessage): array {
     $paths = [];
     
-    // SoundRecording
-    foreach ($newReleaseMessage->getResourceList()->getSoundRecording() as $sr) {
-      foreach ($sr->getSoundRecordingDetailsByTerritory() as $srt) {
-        foreach ($srt->getTechnicalSoundRecordingDetails() as $srtd) {
-          foreach ($srtd->getFile() as $file) {
-            $paths[$file->getFilePath().DIRECTORY_SEPARATOR.$file->getFileName()] = $file->getFileName();
-          }
-        }
-      }
-    }
-    
-    //Image
-    foreach ($newReleaseMessage->getResourceList()->getImage() as $im) {
-      foreach ($im->getImageDetailsByTerritory() as $imt) {
-        foreach ($imt->getTechnicalImageDetails() as $imtd) {
-          foreach ($imtd->getFile() as $file) {
-            $paths[$file->getFilePath().DIRECTORY_SEPARATOR.$file->getFileName()] = $file->getFileName();
+    foreach ($this->getResourcesByType($newReleaseMessage->getResourceList()) as $type => $resources) {
+      // MIDI details are named "Midi": MidiDetailsByTerritory, TechnicalMidiDetails
+      $name = $type === "MIDI" ? "Midi" : $type;
+      $territoryGetter = "get{$name}DetailsByTerritory";
+      $technicalGetter = "getTechnical{$name}Details";
+      foreach ($resources as $resource) {
+        foreach ($resource->$territoryGetter() as $territory) {
+          foreach ($territory->$technicalGetter() as $details) {
+            foreach ($details->getFile() as $file) {
+              $paths[$file->getFilePath().DIRECTORY_SEPARATOR.$file->getFileName()] = $file->getFileName();
+            }
           }
         }
       }
@@ -117,15 +112,7 @@ class AllResourceFileExist extends Rule {
    * @return string[] URI, indexed by the same URI (relative to the root folder)
    */
   private function getFilePaths4x($newReleaseMessage): array {
-    $resourceList = $newReleaseMessage->getResourceList();
-    $resources = array_merge(
-        $resourceList->getSoundRecording(),
-        $resourceList->getVideo(),
-        $resourceList->getImage(),
-        $resourceList->getText(),
-        $resourceList->getSheetMusic(),
-        $resourceList->getSoftware()
-    );
+    $resources = array_merge(...array_values($this->getResourcesByType($newReleaseMessage->getResourceList())));
     
     $paths = [];
     foreach ($resources as $resource) {

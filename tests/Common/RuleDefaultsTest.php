@@ -36,4 +36,26 @@ class RuleDefaultsTest extends TestCase {
     $this->assertFalse($rule->is3x(new \DedexBundle\Entity\Ern411\SoundRecordingType()));
     $this->assertFalse($rule->is3x(new \DedexBundle\Entity\Ern432\SoundRecordingType()));
   }
+
+  /**
+   * Rules look at the same resource types in ERN 3.x and 4.x: every type
+   * the version has. MIDI and UserDefinedResource only exist in 3.x.
+   */
+  public function testResourcesByTypeIsTheSameFor3xAnd4x() {
+    $rule = new class extends AtLeastOneImage {
+      public function types($resourceList): array {
+        return array_keys($this->getResourcesByType($resourceList));
+      }
+    };
+
+    $all = ["SoundRecording", "MIDI", "Video", "Image", "Text", "SheetMusic", "Software", "UserDefinedResource"];
+    $this->assertSame($all, $rule->types(new \DedexBundle\Entity\Ern381\ResourceListType()));
+    $this->assertSame($all, $rule->types(new \DedexBundle\Entity\Ern382\ResourceListType()));
+
+    $all4x = ["SoundRecording", "Video", "Image", "Text", "SheetMusic", "Software"];
+    foreach (["Ern41", "Ern411", "Ern42", "Ern43", "Ern431", "Ern432"] as $version) {
+      $class = "\\DedexBundle\\Entity\\$version\\ResourceListType";
+      $this->assertSame($all4x, $rule->types(new $class()), $version);
+    }
+  }
 }
