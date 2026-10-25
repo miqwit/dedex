@@ -35,16 +35,12 @@ class AtLeastOneAlbumRelease extends Rule {
   protected $message = "Must have at least one release of type Album";
   
   public function validates($newReleaseMessage): bool {
+    $this->resetMessage();
     // Nothing to check in a PurgeReleaseMessage
     if ($this->isPurgeMessage($newReleaseMessage)) {
       return true;
     }
-    // ERN 4.3 returns single Release object; other versions return array
-    $releases = $newReleaseMessage->getReleaseList()->getRelease();
-    if (!is_array($releases)) {
-      $releases = $releases !== null ? [$releases] : [];
-    }
-    foreach ($releases as $release) {
+    foreach ($this->getReleasesWithPath($newReleaseMessage) as list($release, $path)) {
       foreach ($release->getReleaseType() as $type) {
         if ($type->value() === "Album") {
           return true;
@@ -52,6 +48,7 @@ class AtLeastOneAlbumRelease extends Rule {
       }
     }
 
+    $this->fail($this->message, null, "ReleaseList");
     return false;
   }
 }

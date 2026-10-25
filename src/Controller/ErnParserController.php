@@ -36,6 +36,8 @@ use DedexBundle\Exception\XmlLoadException;
 use DedexBundle\Exception\XmlParseException;
 use DedexBundle\Exception\XsdCompliantException;
 use DedexBundle\Rule\Rule;
+use DedexBundle\Rule\RuleResult;
+use DedexBundle\Rule\RuleRunner;
 use Exception;
 use ReflectionMethod;
 use ReflectionParameter;
@@ -138,6 +140,19 @@ class ErnParserController {
   private $rule_messages = [Rule::LEVEL_ERROR => [], Rule::LEVEL_WARNING => []];
 
   /**
+   * Result of each rule, from the last parse
+   * @var RuleResult[]
+   */
+  private $rule_results = [];
+
+  /**
+   * If true (default), parse() throws a RuleValidationException when a rule
+   * with level ERROR fails
+   * @var bool
+   */
+  private $throw_on_rule_error = true;
+
+  /**
    * Array of arrays (by depth level) of attributes to process.
    * Process the attributes of the current level when we leave the level (element ends)
    * @var type 
@@ -190,6 +205,17 @@ class ErnParserController {
    */
   public function setXsdValidation(bool $val) {
     $this->xsd_validation = $val;
+  }
+
+  /**
+   * Whether parse() throws a RuleValidationException when a rule with level
+   * ERROR fails (true by default). With false, parse() returns the message
+   * and the failures are available with getRuleResults() and
+   * getRuleMessages().
+   * @param bool $val
+   */
+  public function setThrowOnRuleError(bool $val) {
+    $this->throw_on_rule_error = $val;
   }
 
   /**
@@ -760,18 +786,16 @@ class ErnParserController {
    * @throws RuleValidationException
    */
   private function validateRules() {
-    foreach ($this->rules as $rule) {
-      if (!in_array($this->version, $rule->getSupportedVersions())) {
-        continue;
-      }
-      
-      $valid = $rule->validates($this->ern);
-      if (!$valid) {
-        $this->rule_messages[$rule->getLevel()][] = $rule->getMessage();
+    $this->rule_messages = [Rule::LEVEL_ERROR => [], Rule::LEVEL_WARNING => []];
+    $this->rule_results = RuleRunner::run($this->rules, $this->ern, $this->version);
+
+    foreach ($this->rule_results as $result) {
+      if ($result->isFailed()) {
+        $this->rule_messages[$result->getRule()->getLevel()][] = $result->getMessage();
       }
     }
     
-    if (count($this->rule_messages[Rule::LEVEL_ERROR]) > 0) {
+    if ($this->throw_on_rule_error && count($this->rule_messages[Rule::LEVEL_ERROR]) > 0) {
       throw new RuleValidationException("Some rules with level ERROR did not pass.\n"
               . $this->getInvalidatedRuleMessages()
       );
@@ -784,6 +808,18 @@ class ErnParserController {
    */
   public function getRuleMessages() {
     return $this->getInvalidatedRuleMessages();
+  }
+
+  /**
+   * Result of every rule added, in the order they were added: passed,
+   * failed (with one Violation per problem) or skipped (the rule does not
+   * apply to this ERN version). Available after parse(), even when it threw
+   * a RuleValidationException.
+   *
+   * @return RuleResult[]
+   */
+  public function getRuleResults(): array {
+    return $this->rule_results;
   }
 
   /**

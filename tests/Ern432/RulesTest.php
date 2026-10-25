@@ -42,7 +42,7 @@ class RulesTest extends TestCase {
     $parser->parse("tests/Ern432/samples/ern432_brand_id.xml");
 
     $this->assertEquals(
-            "\n- WARNING: Missing files described in the resource: track_001.wav track_002.wav test_cover.jpg",
+            "\n- WARNING: Missing files described in the resource: File track_001.wav is missing. File track_002.wav is missing. File test_cover.jpg is missing.",
             $parser->getRuleMessages());
   }
 
@@ -84,7 +84,7 @@ class RulesTest extends TestCase {
    */
   public function testUnusedTextIsReported() {
     $this->assertEquals(
-            "\n- WARNING: All resources must be used in releases. A5 not used or not defined.",
+            "\n- WARNING: All resources must be used in releases. Resource A5 is not used in any release.",
             $this->parseWithRule(new AllResourcesUsedInReleases(), "ern432_unused_text.xml"));
   }
 
@@ -93,7 +93,7 @@ class RulesTest extends TestCase {
    */
   public function testNoDealList() {
     $this->assertEquals(
-            "\n- WARNING: All releases must be used in deals. R0, R1, R2 not used in deals or not defined in ReleaseList.",
+            "\n- WARNING: All releases must be used in deals. Release R0 is not used in any deal. Release R1 is not used in any deal. Release R2 is not used in any deal.",
             $this->parseWithRule(new AllReleasesUsedInDeals(), "ern432_no_deal_list.xml"));
   }
 
@@ -118,7 +118,7 @@ class RulesTest extends TestCase {
     try {
       // images/test_cover.jpg is missing; track_002.wav is remote
       $this->assertEquals(
-              "\n- WARNING: Missing files described in the resource: images/test_cover.jpg",
+              "\n- WARNING: Missing files described in the resource: File images/test_cover.jpg is missing.",
               $this->parseWithRule(new AllResourceFileExist(null, $root), "ern432_file_uris.xml"));
 
       touch($root . DIRECTORY_SEPARATOR . "images" . DIRECTORY_SEPARATOR . "test_cover.jpg");
@@ -137,7 +137,7 @@ class RulesTest extends TestCase {
    */
   public function testRuleReusedOnSeveralMessages() {
     $rule = new AllReleasesUsedInDeals();
-    $expected = "\n- WARNING: All releases must be used in deals. R0, R1, R2 not used in deals or not defined in ReleaseList.";
+    $expected = "\n- WARNING: All releases must be used in deals. Release R0 is not used in any deal. Release R1 is not used in any deal. Release R2 is not used in any deal.";
     $this->assertEquals($expected, $this->parseWithRule($rule, "ern432_no_deal_list.xml"));
     $this->assertEquals($expected, $this->parseWithRule($rule, "ern432_no_deal_list.xml"));
   }

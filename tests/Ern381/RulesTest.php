@@ -82,7 +82,12 @@ class RulesTest extends TestCase {
    */
   public function testUnusedResourceOfAnyType() {
     $parser = $this->parseWithRule(new AllResourcesUsedInReleases(), "ern381_video_and_unused_booklet.xml");
-    $this->assertEquals("\n- WARNING: All resources must be used in releases. A6 not used or not defined.", $parser->getRuleMessages());
+    $this->assertEquals("\n- WARNING: All resources must be used in releases. Resource A6 is not used in any release.", $parser->getRuleMessages());
+
+    $violations = $parser->getRuleResults()[0]->getViolations();
+    $this->assertCount(1, $violations);
+    $this->assertSame("A6", $violations[0]->getSubject());
+    $this->assertSame("ResourceList/Text[1]", $violations[0]->getPath());
   }
 
   /**
@@ -100,12 +105,16 @@ class RulesTest extends TestCase {
     try {
       // Only the booklet is missing
       $parser = $this->parseWithRule(new AllResourceFileExist(null, $root), "ern381_video_and_unused_booklet.xml");
-      $this->assertEquals("\n- WARNING: Missing files described in the resource: 3610159000010_booklet.pdf", $parser->getRuleMessages());
+      $this->assertEquals("\n- WARNING: Missing files described in the resource: File resources/3610159000010_booklet.pdf is missing.", $parser->getRuleMessages());
 
       // Without the video either
       unlink($root . DIRECTORY_SEPARATOR . "resources" . DIRECTORY_SEPARATOR . "3610159000010_video_01.mp4");
       $parser = $this->parseWithRule(new AllResourceFileExist(null, $root), "ern381_video_and_unused_booklet.xml");
-      $this->assertEquals("\n- WARNING: Missing files described in the resource: 3610159000010_video_01.mp4 3610159000010_booklet.pdf", $parser->getRuleMessages());
+      $this->assertEquals("\n- WARNING: Missing files described in the resource: File resources/3610159000010_video_01.mp4 is missing. File resources/3610159000010_booklet.pdf is missing.", $parser->getRuleMessages());
+      $this->assertSame([
+        "ResourceList/Video[1]/VideoDetailsByTerritory[1]/TechnicalVideoDetails[1]/File[1]/FileName",
+        "ResourceList/Text[1]/TextDetailsByTerritory[1]/TechnicalTextDetails[1]/File[1]/FileName",
+      ], array_map(function ($v) { return $v->getPath(); }, $parser->getRuleResults()[0]->getViolations()));
 
       // All files
       $files[] = "3610159000010_video_01.mp4";

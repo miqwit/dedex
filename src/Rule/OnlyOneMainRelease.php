@@ -35,6 +35,7 @@ class OnlyOneMainRelease extends Rule {
   protected $message = "Must have one and only one main release";
   
   public function validates($newReleaseMessage): bool {
+    $this->resetMessage();
     // Nothing to check in a PurgeReleaseMessage
     if ($this->isPurgeMessage($newReleaseMessage)) {
       return true;
@@ -42,17 +43,41 @@ class OnlyOneMainRelease extends Rule {
     // ERN 4.3 returns single Release object (always the main release)
     $releases = $newReleaseMessage->getReleaseList()->getRelease();
     if (!is_array($releases)) {
-      // ERN 4.3: single release is the main release by definition
-      return $releases !== null;
+      if ($releases === null) {
+        $this->fail("No release is marked as main release", null, "ReleaseList");
+        return false;
+      }
+      return true;
     }
 
-    $num_main = 0;
-    foreach ($releases as $release) {
+    $main_releases = [];
+    foreach ($this->getReleasesWithPath($newReleaseMessage) as list($release, $path)) {
       if (strtolower((string) $release->getIsMainRelease()) === "true") {
-        $num_main++;
+        $main_releases[] = [$release, $path];
       }
     }
 
-    return $num_main === 1;
+    if (count($main_releases) === 0) {
+      $this->fail("No release is marked as main release", null, "ReleaseList");
+    }
+    // One violation per main release after the first one
+    foreach (array_slice($main_releases, 1) as list($release, $path)) {
+      $reference = $this->getFirstReleaseReference($release);
+      $this->fail("Release $reference is also marked as main release", $reference, $path);
+    }
+
+    return count($this->getViolations()) === 0;
+  }
+
+  /**
+   * @param object $release
+   * @return string the first ReleaseReference (3.x and 4.1 to 4.2 have a list)
+   */
+  private function getFirstReleaseReference($release): string {
+    $references = $release->getReleaseReference();
+    if (is_array($references)) {
+      $references = count($references) > 0 ? reset($references) : "";
+    }
+    return (string) $references;
   }
 }

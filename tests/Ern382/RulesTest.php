@@ -210,7 +210,7 @@ class RulesTest extends TestCase {
       $ddex = $parser->parse($xml_path);
       $this->assertTrue(false);
     } catch (RuleValidationException $ex) {
-      $this->assertStringContainsString("A2 not used or not defined", $parser->getRuleMessages());
+      $this->assertStringContainsString("Resource A2 is not used in any release", $parser->getRuleMessages());
       $this->assertTrue(true);
     }
   }
@@ -281,7 +281,7 @@ class RulesTest extends TestCase {
       $ddex = $parser->parse($xml_path);
       $this->assertTrue(false);
     } catch (RuleValidationException $ex) {
-      $this->assertStringContainsString("R9 not used in deals or not defined in ReleaseList", $parser->getRuleMessages());
+      $this->assertStringContainsString("Release R9 is not used in any deal", $parser->getRuleMessages());
       $this->assertTrue(true);
     }
   }
@@ -300,7 +300,7 @@ class RulesTest extends TestCase {
     $ddex = $parser->parse($xml_path);
     $this->assertTrue(true); // Will pass because all rules are WARNING
 
-    $this->assertStringContainsString("R9 not used in deals or not defined in ReleaseList", $parser->getRuleMessages());
+    $this->assertStringContainsString("Release R9 is not used in any deal", $parser->getRuleMessages());
   }
 
   /**

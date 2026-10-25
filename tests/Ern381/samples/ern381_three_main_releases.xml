@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ern:NewReleaseMessage xmlns:ern="http://ddex.net/xml/ern/381" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ddex.net/xml/ern/381 http://ddex.net/xml/ern/381/release-notification.xsd" MessageSchemaVersionId="ern/381" LanguageAndScriptCode="en">
+  <MessageHeader>
+    <MessageThreadId>R381-0009</MessageThreadId>
+    <MessageId>2017031000009</MessageId>
+    <MessageSender>
+      <PartyId>PADPIDA2017031001S</PartyId>
+      <PartyName>
+        <FullName>Example Records</FullName>
+      </PartyName>
+    </MessageSender>
+    <MessageRecipient>
+      <PartyId>PADPIDA2017031002R</PartyId>
+      <PartyName>
+        <FullName>Example DSP</FullName>
+      </PartyName>
+    </MessageRecipient>
+    <MessageCreatedDateTime>2017-03-01T10:15:00+01:00</MessageCreatedDateTime>
+    <MessageControlType>LiveMessage</MessageControlType>
+  </MessageHeader>
+  <UpdateIndicator>OriginalMessage</UpdateIndicator>
+  <ResourceList>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>FRX811700001</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2017031001S">EXR-3610159000010-1</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A1</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>Aurora</TitleText>
+      </ReferenceTitle>
+      <Duration>PT4M12S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Aurora</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>The Example Ensemble</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor SequenceNumber="1">
+          <PartyName>
+            <FullName>Lena Varga</FullName>
+          </PartyName>
+          <ResourceContributorRole>Producer</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor SequenceNumber="1">
+          <PartyName>
+            <FullName>Mira Holm</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>The Example Ensemble</DisplayArtistName>
+        <LabelName>Example Records</LabelName>
+        <PLine>
+          <Year>2017</Year>
+          <PLineText>(P) 2017 Example Records</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Electronic</GenreText>
+          <SubGenre>Ambient</SubGenre>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T1</TechnicalResourceDetailsReference>
+          <AudioCodecType>FLAC</AudioCodecType>
+          <NumberOfChannels>2</NumberOfChannels>
+          <SamplingRate UnitOfMeasure="kHz">44.1</SamplingRate>
+          <BitsPerSample>16</BitsPerSample>
+          <File>
+            <FileName>3610159000010_01_01.flac</FileName>
+            <FilePath>resources</FilePath>
+            <HashSum>
+              <HashSum>9E107D9D372BB6826BD81D3542A419D1</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>FRX811700002</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2017031001S">EXR-3610159000010-2</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A2</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>Polar Night</TitleText>
+      </ReferenceTitle>
+      <Duration>PT5M47.500S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Polar Night</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>The Example Ensemble</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor SequenceNumber="1">
+          <PartyName>
+            <FullName>Lena Varga</FullName>
+          </PartyName>
+          <ResourceContributorRole>Producer</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor SequenceNumber="1">
+          <PartyName>
+            <FullName>Mira Holm</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>The Example Ensemble</DisplayArtistName>
+        <LabelName>Example Records</LabelName>
+        <PLine>
+          <Year>2017</Year>
+          <PLineText>(P) 2017 Example Records</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Electronic</GenreText>
+          <SubGenre>Ambient</SubGenre>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T2</TechnicalResourceDetailsReference>
+          <AudioCodecType>FLAC</AudioCodecType>
+          <NumberOfChannels>2</NumberOfChannels>
+          <SamplingRate UnitOfMeasure="kHz">44.1</SamplingRate>
+          <BitsPerSample>16</BitsPerSample>
+          <File>
+            <FileName>3610159000010_01_02.flac</FileName>
+            <FilePath>resources</FilePath>
+            <HashSum>
+              <HashSum>9E107D9D372BB6826BD81D3542A419D2</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <SoundRecording>
+      <SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+      <SoundRecordingId>
+        <ISRC>FRX811700003</ISRC>
+        <ProprietaryId Namespace="DPID:PADPIDA2017031001S">EXR-3610159000010-3</ProprietaryId>
+      </SoundRecordingId>
+      <ResourceReference>A3</ResourceReference>
+      <ReferenceTitle>
+        <TitleText>Midnight Sun</TitleText>
+      </ReferenceTitle>
+      <Duration>PT3M58S</Duration>
+      <SoundRecordingDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Midnight Sun</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>The Example Ensemble</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ResourceContributor SequenceNumber="1">
+          <PartyName>
+            <FullName>Tomas Berg</FullName>
+          </PartyName>
+          <ResourceContributorRole UserDefinedValue="MixingEngineer">UserDefined</ResourceContributorRole>
+        </ResourceContributor>
+        <IndirectResourceContributor SequenceNumber="1">
+          <PartyName>
+            <FullName>Mira Holm</FullName>
+          </PartyName>
+          <IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+        </IndirectResourceContributor>
+        <DisplayArtistName>The Example Ensemble</DisplayArtistName>
+        <LabelName>Example Records</LabelName>
+        <PLine>
+          <Year>2017</Year>
+          <PLineText>(P) 2017 Example Records</PLineText>
+        </PLine>
+        <Genre>
+          <GenreText>Electronic</GenreText>
+          <SubGenre>Ambient</SubGenre>
+        </Genre>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalSoundRecordingDetails>
+          <TechnicalResourceDetailsReference>T3</TechnicalResourceDetailsReference>
+          <AudioCodecType>FLAC</AudioCodecType>
+          <NumberOfChannels>2</NumberOfChannels>
+          <SamplingRate UnitOfMeasure="kHz">44.1</SamplingRate>
+          <BitsPerSample>16</BitsPerSample>
+          <File>
+            <FileName>3610159000010_01_03.flac</FileName>
+            <FilePath>resources</FilePath>
+            <HashSum>
+              <HashSum>9E107D9D372BB6826BD81D3542A419D3</HashSum>
+              <HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+            </HashSum>
+          </File>
+        </TechnicalSoundRecordingDetails>
+      </SoundRecordingDetailsByTerritory>
+    </SoundRecording>
+    <Image>
+      <ImageType>FrontCoverImage</ImageType>
+      <ImageId>
+        <ProprietaryId Namespace="DPID:PADPIDA2017031001S">EXR-3610159000010-COVER</ProprietaryId>
+      </ImageId>
+      <ResourceReference>A4</ResourceReference>
+      <ImageDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <TechnicalImageDetails>
+          <TechnicalResourceDetailsReference>T4</TechnicalResourceDetailsReference>
+          <ImageCodecType>JPEG</ImageCodecType>
+          <ImageHeight>3000</ImageHeight>
+          <ImageWidth>3000</ImageWidth>
+          <File>
+            <FileName>3610159000010.jpg</FileName>
+            <FilePath>resources</FilePath>
+          </File>
+        </TechnicalImageDetails>
+      </ImageDetailsByTerritory>
+    </Image>
+  </ResourceList>
+  <ReleaseList>
+    <Release IsMainRelease="true">
+      <ReleaseId>
+        <ICPN IsEan="true">3610159000010</ICPN>
+        <CatalogNumber Namespace="DPID:PADPIDA2017031001S">EXR017</CatalogNumber>
+      </ReleaseId>
+      <ReleaseReference>R0</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>Northern Lights</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A2</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A3</ReleaseResourceReference>
+        <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A4</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>Album</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>The Example Ensemble</DisplayArtistName>
+        <LabelName>Example Records</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Northern Lights</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>The Example Ensemble</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroup>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceGroupContentItem>
+              <SequenceNumber>1</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+            <ResourceGroupContentItem>
+              <SequenceNumber>2</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A2</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+            <ResourceGroupContentItem>
+              <SequenceNumber>3</SequenceNumber>
+              <ResourceType>SoundRecording</ResourceType>
+              <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A3</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+          </ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>Image</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="SecondaryResource">A4</ReleaseResourceReference>
+          </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Electronic</GenreText>
+          <SubGenre>Ambient</SubGenre>
+        </Genre>
+        <OriginalReleaseDate>2017-03-10</OriginalReleaseDate>
+      </ReleaseDetailsByTerritory>
+      <Duration>PT13M57.500S</Duration>
+      <PLine>
+        <Year>2017</Year>
+        <PLineText>(P) 2017 Example Records</PLineText>
+      </PLine>
+      <CLine>
+        <Year>2017</Year>
+        <CLineText>(C) 2017 Example Records</CLineText>
+      </CLine>
+    </Release>
+    <Release IsMainRelease="true">
+      <ReleaseId>
+        <ISRC>FRX811700001</ISRC>
+      </ReleaseId>
+      <ReleaseReference>R1</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>Aurora</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>The Example Ensemble</DisplayArtistName>
+        <LabelName>Example Records</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Aurora</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>The Example Ensemble</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>SoundRecording</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Electronic</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2017</Year>
+        <PLineText>(P) 2017 Example Records</PLineText>
+      </PLine>
+    </Release>
+    <Release IsMainRelease="true">
+      <ReleaseId>
+        <ISRC>FRX811700002</ISRC>
+      </ReleaseId>
+      <ReleaseReference>R2</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>Polar Night</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A2</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>The Example Ensemble</DisplayArtistName>
+        <LabelName>Example Records</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Polar Night</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>The Example Ensemble</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>SoundRecording</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A2</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Electronic</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2017</Year>
+        <PLineText>(P) 2017 Example Records</PLineText>
+      </PLine>
+    </Release>
+    <Release>
+      <ReleaseId>
+        <ISRC>FRX811700003</ISRC>
+      </ReleaseId>
+      <ReleaseReference>R3</ReleaseReference>
+      <ReferenceTitle>
+        <TitleText>Midnight Sun</TitleText>
+      </ReferenceTitle>
+      <ReleaseResourceReferenceList>
+        <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A3</ReleaseResourceReference>
+      </ReleaseResourceReferenceList>
+      <ReleaseType>TrackRelease</ReleaseType>
+      <ReleaseDetailsByTerritory>
+        <TerritoryCode>Worldwide</TerritoryCode>
+        <DisplayArtistName>The Example Ensemble</DisplayArtistName>
+        <LabelName>Example Records</LabelName>
+        <Title TitleType="DisplayTitle">
+          <TitleText>Midnight Sun</TitleText>
+        </Title>
+        <DisplayArtist SequenceNumber="1">
+          <PartyName>
+            <FullName>The Example Ensemble</FullName>
+          </PartyName>
+          <ArtistRole>MainArtist</ArtistRole>
+        </DisplayArtist>
+        <ParentalWarningType>NotExplicit</ParentalWarningType>
+        <ResourceGroup>
+          <ResourceGroupContentItem>
+            <SequenceNumber>1</SequenceNumber>
+            <ResourceType>SoundRecording</ResourceType>
+            <ReleaseResourceReference ReleaseResourceType="PrimaryResource">A3</ReleaseResourceReference>
+            </ResourceGroupContentItem>
+        </ResourceGroup>
+        <Genre>
+          <GenreText>Electronic</GenreText>
+        </Genre>
+      </ReleaseDetailsByTerritory>
+      <PLine>
+        <Year>2017</Year>
+        <PLineText>(P) 2017 Example Records</PLineText>
+      </PLine>
+    </Release>
+  </ReleaseList>
+  <DealList>
+    <ReleaseDeal>
+      <DealReleaseReference>R0</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>FR</TerritoryCode>
+          <TerritoryCode>BE</TerritoryCode>
+          <TerritoryCode>CH</TerritoryCode>
+          <ValidityPeriod>
+            <StartDate>2017-03-10</StartDate>
+          </ValidityPeriod>
+          <ReleaseDisplayStartDateTime>2017-03-10T00:00:00+01:00</ReleaseDisplayStartDateTime>
+          <TrackListingPreviewStartDateTime>2017-03-03T09:00:00Z</TrackListingPreviewStartDateTime>
+          <CoverArtPreviewStartDateTime>2017-03-03T09:00:00Z</CoverArtPreviewStartDateTime>
+          <ClipPreviewStartDateTime>2017-03-06T18:30:00-05:00</ClipPreviewStartDateTime>
+          <RightsClaimPolicy>
+            <Condition>
+              <Value>30</Value>
+              <Unit>Second</Unit>
+              <RelationalRelator>MoreThanOrEqualTo</RelationalRelator>
+            </Condition>
+            <RightsClaimPolicyType>Monetize</RightsClaimPolicyType>
+          </RightsClaimPolicy>
+        </DealTerms>
+      </Deal>
+      <Deal>
+        <DealTerms>
+          <IsPreOrderDeal>true</IsPreOrderDeal>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>FR</TerritoryCode>
+          <TerritoryCode>BE</TerritoryCode>
+          <TerritoryCode>CH</TerritoryCode>
+          <ValidityPeriod>
+            <StartDate>2017-02-01</StartDate>
+            <EndDate>2017-03-09</EndDate>
+          </ValidityPeriod>
+          <PreOrderReleaseDate>2017-03-10</PreOrderReleaseDate>
+          <PreOrderPreviewDateTime>2017-02-01T00:00:00Z</PreOrderPreviewDateTime>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-02-01</EffectiveDate>
+    </ReleaseDeal>
+    <ReleaseDeal>
+      <DealReleaseReference>R1</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>FR</TerritoryCode>
+          <TerritoryCode>BE</TerritoryCode>
+          <TerritoryCode>CH</TerritoryCode>
+          <ValidityPeriod>
+            <StartDate>2017-03-10</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-03-10</EffectiveDate>
+    </ReleaseDeal>
+    <ReleaseDeal>
+      <DealReleaseReference>R2</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>FR</TerritoryCode>
+          <TerritoryCode>BE</TerritoryCode>
+          <TerritoryCode>CH</TerritoryCode>
+          <ValidityPeriod>
+            <StartDate>2017-03-10</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-03-10</EffectiveDate>
+    </ReleaseDeal>
+    <ReleaseDeal>
+      <DealReleaseReference>R3</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <CommercialModelType>SubscriptionModel</CommercialModelType>
+          <Usage>
+            <UseType>PermanentDownload</UseType>
+            <UseType>OnDemandStream</UseType>
+            <DistributionChannelType>InternetAndMobile</DistributionChannelType>
+          </Usage>
+          <TerritoryCode>FR</TerritoryCode>
+          <TerritoryCode>BE</TerritoryCode>
+          <TerritoryCode>CH</TerritoryCode>
+          <ValidityPeriod>
+            <StartDate>2017-03-10</StartDate>
+          </ValidityPeriod>
+        </DealTerms>
+      </Deal>
+      <EffectiveDate>2017-03-10</EffectiveDate>
+    </ReleaseDeal>
+  </DealList>
+</ern:NewReleaseMessage>

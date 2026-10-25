@@ -38,46 +38,43 @@ class AllReleasesUsedInDeals extends Rule {
   protected $message = "All releases must be used in deals.";
   
   public function validates($newReleaseMessage): bool {
+    $this->resetMessage();
     // Nothing to check in a PurgeReleaseMessage
     if ($this->isPurgeMessage($newReleaseMessage)) {
       return true;
     }
-    $this->resetMessage();
-    $references = [];
-    $references_used = [];
-    $valid = true;
 
-    // First get all release references
-    // ERN 4.3 returns single Release object; other versions return array
-    $releases = $newReleaseMessage->getReleaseList()->getRelease();
-    if (!is_array($releases)) {
-      $releases = $releases !== null ? [$releases] : [];
-    }
-    foreach ($releases as $r) {
+    // First get all release references, with the path of their release
+    $references = [];  // reference => path
+    foreach ($this->getReleasesWithPath($newReleaseMessage) as list($release, $path)) {
       // ERN 4.3 returns single string; other versions return array
-      $refs = $r->getReleaseReference();
+      $refs = $release->getReleaseReference();
       if (!is_array($refs)) {
         $refs = $refs !== null ? [$refs] : [];
       }
-      foreach ($refs as $rr) {
-        $references[] = $rr;
+      foreach ($refs as $ref) {
+        if (!isset($references[(string) $ref])) {
+          $references[(string) $ref] = $path;
+        }
       }
     }
     // Include track releases (ERN 4.x — all 4.x versions have getTrackRelease, 3.x does not)
     $releaseList = $newReleaseMessage->getReleaseList();
     if (!$this->isErn3x($releaseList)) {
-      foreach ($releaseList->getTrackRelease() as $tr) {
-        $ref = $tr->getReleaseReference();
-        if (!is_array($ref)) {
-          $ref = $ref !== null ? [$ref] : [];
+      foreach (array_values($releaseList->getTrackRelease()) as $i => $tr) {
+        $refs = $tr->getReleaseReference();
+        if (!is_array($refs)) {
+          $refs = $refs !== null ? [$refs] : [];
         }
-        foreach ($ref as $rr) {
-          $references[] = $rr;
+        foreach ($refs as $ref) {
+          if (!isset($references[(string) $ref])) {
+            $references[(string) $ref] = sprintf("ReleaseList/TrackRelease[%d]", $i + 1);
+          }
         }
       }
     }
     
-    // Second, browse all releases to check all references are used at least once.
+    // Second, browse all deals to check all references are used at least once.
     // ERN 4.1 and 4.1.1 return DealList as an array of ReleaseDeal; other
     // versions return a DealList object. DealList is optional: without it,
     // no release is used in a deal.
@@ -87,26 +84,25 @@ class AllReleasesUsedInDeals extends Rule {
     } else {
       $releaseDeals = is_array($dealList) ? $dealList : $dealList->getReleaseDeal();
     }
-    foreach ($releaseDeals as $rd) {
-      foreach ($rd->getDealReleaseReference() as $drr) {
-        $val = $drr;
-        
-        if (!in_array($val, $references)) {
-          $this->message .= " The reference $val is used in a deal and has not been described.";
-          $valid = false;
+    $references_used = [];
+    foreach (array_values($releaseDeals) as $n => $rd) {
+      foreach (array_values($rd->getDealReleaseReference()) as $m => $drr) {
+        $ref = (string) $drr;
+        if (!isset($references[$ref])) {
+          $this->fail("Release $ref is used in a deal but not defined in the ReleaseList", $ref,
+                  sprintf("DealList/ReleaseDeal[%d]/DealReleaseReference[%d]", $n + 1, $m + 1));
         }
-        
-        $references_used[] = $val;
+        $references_used[$ref] = true;
       }
     }
-    // All references must be in references_used, whatever the order in which
-    // deals list them
-    $references_not_used = array_diff($references, $references_used);
-    if (count($references_not_used) > 0) {
-      $this->message .= " ".implode(", ", $references_not_used)." not used in deals or not defined in ReleaseList.";
-      $valid = false;
+
+    // All references must be used, whatever the order in which deals list them
+    foreach ($references as $ref => $path) {
+      if (!isset($references_used[$ref])) {
+        $this->fail("Release $ref is not used in any deal", (string) $ref, $path);
+      }
     }
     
-    return $valid;
+    return count($this->getViolations()) === 0;
   }
 }

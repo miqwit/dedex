@@ -12,7 +12,8 @@ use PHPUnit\Framework\TestCase;
  *
  * Not crashing is not enough: a rule can return a wrong result on a version
  * it doesn't understand (see #57). So each 4.x sample lists the rules it is
- * expected to fail, with the exact message; every other rule must pass.
+ * expected to fail, with their exact violations (subject and path); every
+ * other rule must pass.
  *
  * Adding a 4.x sample makes testEvery4xSampleHasExpectedResults fail until
  * the sample is added to EXPECTED_FAILURES (with [] if all rules pass).
@@ -25,7 +26,8 @@ use PHPUnit\Framework\TestCase;
 class RulesOnErn4xSamplesTest extends TestCase {
 
   /**
-   * Sample => [rule short name => message without the level].
+   * Sample => [rule short name => its violations, as "subject @ path"
+   * ("@ path" when the violation has no subject)].
    */
   private const EXPECTED_FAILURES = [
     "tests/Ern41/samples/ern41.xml" => [],
@@ -37,76 +39,137 @@ class RulesOnErn4xSamplesTest extends TestCase {
     // Track releases R1 to R12 have no deal; the release-level cover is
     // linked before the tracks (#57, 3a)
     "tests/Ern43/samples/ern43_classical.xml" => [
-      "AllReleasesUsedInDeals" => "All releases must be used in deals. R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12 not used in deals or not defined in ReleaseList.",
+      "AllReleasesUsedInDeals" => [
+        "R1 @ ReleaseList/TrackRelease[1]",
+        "R2 @ ReleaseList/TrackRelease[2]",
+        "R3 @ ReleaseList/TrackRelease[3]",
+        "R4 @ ReleaseList/TrackRelease[4]",
+        "R5 @ ReleaseList/TrackRelease[5]",
+        "R6 @ ReleaseList/TrackRelease[6]",
+        "R7 @ ReleaseList/TrackRelease[7]",
+        "R8 @ ReleaseList/TrackRelease[8]",
+        "R9 @ ReleaseList/TrackRelease[9]",
+        "R10 @ ReleaseList/TrackRelease[10]",
+        "R11 @ ReleaseList/TrackRelease[11]",
+        "R12 @ ReleaseList/TrackRelease[12]",
+      ],
     ],
     // A2 to A9 are mixed into A1, without ISRC and not in any release
     "tests/Ern43/samples/ern43_dj_mix.xml" => [
-      "AllResourcesUsedInReleases" => "All resources must be used in releases. A2, A3, A4, A5, A6, A7, A8, A9 not used or not defined.",
-      "AllSoundRecordingsHaveIsrc" => "All tracks (SoundRecording) must have an ISRC.",
-      "AtLeastOneAlbumRelease" => "Must have at least one release of type Album",
+      "AllResourcesUsedInReleases" => [
+        "A2 @ ResourceList/SoundRecording[2]",
+        "A3 @ ResourceList/SoundRecording[3]",
+        "A4 @ ResourceList/SoundRecording[4]",
+        "A5 @ ResourceList/SoundRecording[5]",
+        "A6 @ ResourceList/SoundRecording[6]",
+        "A7 @ ResourceList/SoundRecording[7]",
+        "A8 @ ResourceList/SoundRecording[8]",
+        "A9 @ ResourceList/SoundRecording[9]",
+      ],
+      "AllSoundRecordingsHaveIsrc" => [
+        "A2 @ ResourceList/SoundRecording[2]/SoundRecordingEdition[1]/ResourceId[1]",
+        "A3 @ ResourceList/SoundRecording[3]/SoundRecordingEdition[1]/ResourceId[1]",
+        "A4 @ ResourceList/SoundRecording[4]/SoundRecordingEdition[1]/ResourceId[1]",
+        "A5 @ ResourceList/SoundRecording[5]/SoundRecordingEdition[1]/ResourceId[1]",
+        "A6 @ ResourceList/SoundRecording[6]/SoundRecordingEdition[1]/ResourceId[1]",
+        "A7 @ ResourceList/SoundRecording[7]/SoundRecordingEdition[1]/ResourceId[1]",
+        "A8 @ ResourceList/SoundRecording[8]/SoundRecordingEdition[1]/ResourceId[1]",
+        "A9 @ ResourceList/SoundRecording[9]/SoundRecordingEdition[1]/ResourceId[1]",
+      ],
+      "AtLeastOneAlbumRelease" => ["@ ReleaseList"],
     ],
     // Video only: no SoundRecording
     "tests/Ern43/samples/ern43_longform_video.xml" => [
-      "AtLeastOneAlbumRelease" => "Must have at least one release of type Album",
-      "AtLeastOneSoundRecordingRule" => "Must have at least one SoundRecording",
+      "AtLeastOneAlbumRelease" => ["@ ReleaseList"],
+      "AtLeastOneSoundRecordingRule" => ["@ ResourceList"],
     ],
     // A19 to A21 are linked from content items (#57, 3b); Bundle release
     "tests/Ern43/samples/ern43_mixed_media.xml" => [
-      "AllReleasesUsedInDeals" => "All releases must be used in deals. R7, R14 not used in deals or not defined in ReleaseList.",
-      "AtLeastOneAlbumRelease" => "Must have at least one release of type Album",
+      "AllReleasesUsedInDeals" => [
+        "R7 @ ReleaseList/TrackRelease[7]",
+        "R14 @ ReleaseList/TrackRelease[14]",
+      ],
+      "AtLeastOneAlbumRelease" => ["@ ReleaseList"],
     ],
     // A2 is linked from a content item (#57, 3b)
     "tests/Ern43/samples/ern43_ringtone.xml" => [
-      "AtLeastOneAlbumRelease" => "Must have at least one release of type Album",
+      "AtLeastOneAlbumRelease" => ["@ ReleaseList"],
     ],
     // A2 is linked from a content item (#57, 3b)
     "tests/Ern43/samples/ern43_simple_audio_single.xml" => [
-      "AtLeastOneAlbumRelease" => "Must have at least one release of type Album",
+      "AtLeastOneAlbumRelease" => ["@ ReleaseList"],
     ],
     // Video only: no SoundRecording, and no front cover
     "tests/Ern43/samples/ern43_simple_video_single.xml" => [
-      "AtLeastOneAlbumRelease" => "Must have at least one release of type Album",
-      "AtLeastOneImageFrontCover" => "Must have at least one Image in the ResourceList of type FrontCoverImage",
-      "AtLeastOneSoundRecordingRule" => "Must have at least one SoundRecording",
+      "AtLeastOneAlbumRelease" => ["@ ReleaseList"],
+      "AtLeastOneImageFrontCover" => ["@ ResourceList"],
+      "AtLeastOneSoundRecordingRule" => ["@ ResourceList"],
     ],
     "tests/Ern43/samples/ern43_single_inline_image.xml" => [
-      "AllReleasesUsedInDeals" => "All releases must be used in deals. RT1, RT2 not used in deals or not defined in ReleaseList.",
-      "AtLeastOneAlbumRelease" => "Must have at least one release of type Album",
+      "AllReleasesUsedInDeals" => [
+        "RT1 @ ReleaseList/TrackRelease[1]",
+        "RT2 @ ReleaseList/TrackRelease[2]",
+      ],
+      "AtLeastOneAlbumRelease" => ["@ ReleaseList"],
     ],
     // Video only; A4 and A5 are linked from content items (#57, 3b)
     "tests/Ern43/samples/ern43_video.xml" => [
-      "AllReleasesUsedInDeals" => "All releases must be used in deals. R1, R2 not used in deals or not defined in ReleaseList.",
-      "AtLeastOneAlbumRelease" => "Must have at least one release of type Album",
-      "AtLeastOneSoundRecordingRule" => "Must have at least one SoundRecording",
+      "AllReleasesUsedInDeals" => [
+        "R1 @ ReleaseList/TrackRelease[1]",
+        "R2 @ ReleaseList/TrackRelease[2]",
+      ],
+      "AtLeastOneAlbumRelease" => ["@ ReleaseList"],
+      "AtLeastOneSoundRecordingRule" => ["@ ResourceList"],
     ],
     "tests/Ern43/samples/ern_43.xml" => [
-      "AtLeastOneAlbumRelease" => "Must have at least one release of type Album",
+      "AtLeastOneAlbumRelease" => ["@ ReleaseList"],
     ],
 
     "tests/Ern431/samples/ern431_album.xml" => [],
     "tests/Ern431/samples/ern431_classical.xml" => [
-      "AllReleasesUsedInDeals" => "All releases must be used in deals. R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12 not used in deals or not defined in ReleaseList.",
+      "AllReleasesUsedInDeals" => [
+        "R1 @ ReleaseList/TrackRelease[1]",
+        "R2 @ ReleaseList/TrackRelease[2]",
+        "R3 @ ReleaseList/TrackRelease[3]",
+        "R4 @ ReleaseList/TrackRelease[4]",
+        "R5 @ ReleaseList/TrackRelease[5]",
+        "R6 @ ReleaseList/TrackRelease[6]",
+        "R7 @ ReleaseList/TrackRelease[7]",
+        "R8 @ ReleaseList/TrackRelease[8]",
+        "R9 @ ReleaseList/TrackRelease[9]",
+        "R10 @ ReleaseList/TrackRelease[10]",
+        "R11 @ ReleaseList/TrackRelease[11]",
+        "R12 @ ReleaseList/TrackRelease[12]",
+      ],
     ],
     "tests/Ern431/samples/ern431_new_features.xml" => [],
     "tests/Ern431/samples/ern431_real_world_single.xml" => [
-      "AtLeastOneAlbumRelease" => "Must have at least one release of type Album",
+      "AtLeastOneAlbumRelease" => ["@ ReleaseList"],
     ],
     // Not XSD valid (BrandId/@Namespace), but parseable
     "tests/Ern431/samples/invalid_brand_id.xml" => [],
 
     "tests/Ern432/samples/ern432_brand_id.xml" => [],
     "tests/Ern432/samples/ern432_cover_linked_first.xml" => [],
+    // A deal references R9, which is not in the ReleaseList
+    "tests/Ern432/samples/ern432_deal_unknown_release.xml" => [
+      "AllReleasesUsedInDeals" => ["R9 @ DealList/ReleaseDeal[2]/DealReleaseReference[3]"],
+    ],
     "tests/Ern432/samples/ern432_edition_without_isrc.xml" => [
-      "AllSoundRecordingsHaveIsrc" => "All tracks (SoundRecording) must have an ISRC.",
+      "AllSoundRecordingsHaveIsrc" => ["A1 @ ResourceList/SoundRecording[1]/SoundRecordingEdition[2]/ResourceId[1]"],
     ],
     "tests/Ern432/samples/ern432_file_uris.xml" => [],
     "tests/Ern432/samples/ern432_linked_in_content_item.xml" => [],
     "tests/Ern432/samples/ern432_no_deal_list.xml" => [
-      "AllReleasesUsedInDeals" => "All releases must be used in deals. R0, R1, R2 not used in deals or not defined in ReleaseList.",
+      "AllReleasesUsedInDeals" => [
+        "R0 @ ReleaseList/Release",
+        "R1 @ ReleaseList/TrackRelease[1]",
+        "R2 @ ReleaseList/TrackRelease[2]",
+      ],
     ],
     "tests/Ern432/samples/ern432_purge.xml" => [],
     "tests/Ern432/samples/ern432_unused_text.xml" => [
-      "AllResourcesUsedInReleases" => "All resources must be used in releases. A5 not used or not defined.",
+      "AllResourcesUsedInReleases" => ["A5 @ ResourceList/Text[1]"],
     ],
   ];
 
@@ -138,9 +201,8 @@ class RulesOnErn4xSamplesTest extends TestCase {
         continue;
       }
       $rule = Samples::newRule($class, dirname($sample));
-      if (!$rule->validates($ern)) {
-        // Remove the "WARNING: " prefix
-        $actual[Samples::shortName($class)] = substr($rule->getMessage(), strlen($rule->getLevel()) + 2);
+      foreach ($rule->check($ern) as $violation) {
+        $actual[Samples::shortName($class)][] = trim($violation->getSubject() . " @ " . $violation->getPath());
       }
     }
     ksort($expected);
@@ -182,35 +244,41 @@ class RulesOnErn4xSamplesTest extends TestCase {
       $rule = new AllResourceFileExist(null, $root);
 
       // Empty folder
-      $this->assertSame(count($uris) === 0, $rule->validates($ern));
-      if (count($uris) > 0) {
-        $this->assertEqualsCanonicalizing($uris, $this->missingFiles($rule));
-      }
+      $this->assertEqualsCanonicalizing($uris, $this->missingFiles($rule->check($ern), $sample));
 
       // All files but the first one
       foreach (array_slice($uris, 1) as $uri) {
         $this->touch($root, $uri);
       }
       if (count($uris) > 0) {
-        $this->assertFalse($rule->validates($ern));
-        $this->assertEquals([$uris[0]], $this->missingFiles($rule));
+        $this->assertEquals([$uris[0]], $this->missingFiles($rule->check($ern), $sample));
         $this->touch($root, $uris[0]);
       }
 
       // All files
-      $this->assertTrue($rule->validates($ern), $rule->getMessage());
+      $this->assertEquals([], $rule->check($ern), $rule->getMessage());
     } finally {
       $this->removeDir($root);
     }
   }
 
   /**
-   * @return string[] the files listed in the message of AllResourceFileExist
+   * @param \DedexBundle\Rule\Violation[] $violations of AllResourceFileExist
+   * @param string $sample
+   * @return string[] the missing files, after checking that each violation
+   *   points to the URI element of its file
    */
-  private function missingFiles(AllResourceFileExist $rule): array {
-    $prefix = "WARNING: Missing files described in the resource: ";
-    $this->assertStringStartsWith($prefix, $rule->getMessage());
-    return explode(" ", substr($rule->getMessage(), strlen($prefix)));
+  private function missingFiles(array $violations, string $sample): array {
+    $files = [];
+    foreach ($violations as $violation) {
+      $this->assertSame("File {$violation->getSubject()} is missing", $violation->getMessage());
+      $this->assertStringEndsWith("/File/URI", $violation->getPath());
+      $nodes = Samples::resolvePath($sample, $violation->getPath());
+      $this->assertCount(1, $nodes, $violation->getPath());
+      $this->assertSame($violation->getSubject(), trim($nodes[0]->textContent));
+      $files[] = $violation->getSubject();
+    }
+    return $files;
   }
 
   private function touch(string $root, string $uri): void {

@@ -7,8 +7,20 @@
 - `tests/Common/RulesOnAllSamplesTest`: every rule runs on every sample of every version and must not throw; every supported version must have a sample (#57)
 - `tests/Common/RulesOnErn4xSamplesTest`: expected result of every rule on every ERN 4.x sample, and `AllResourceFileExist` checked against the `File/URI` elements of each sample (#57)
 - `tests/Ern41` sample (4.1 had none), `tests/Ern432/RulesTest` and 4.3.2 samples for each rule fix, and a 3.8.1 sample with a video and an unused booklet (#57)
+- Structured rule results (#58), backwards compatible:
+  - `Violation`: one problem found by a rule, with its rule, level, message, subject (the reference or id it is about, like `A9`) and path in the XML (like `ResourceList/SoundRecording[3]`)
+  - `Rule::fail()` to record a violation, `Rule::check()` to run a rule on a fresh state and get its violations (never throws: a crash becomes a "Rule crashed" violation), `Rule::getViolations()`, `Rule::getThrowable()`, `Rule::getName()`
+  - `RuleResult`: status of a rule on a message (`PASSED`, `FAILED`, or `SKIPPED` when the rule does not apply to the version), with its violations
+  - `RuleRunner::run($rules, $ern, $version)` to run rules on an already parsed message
+  - `ErnParserController::getRuleResults()` and `ErnParserController::setThrowOnRuleError(false)`, so that `parse()` returns the message when an `ERROR` rule fails
+- `tests/Common/RuleViolationsTest`, and every violation path of every rule on every sample checked to point to one element (`RulesOnAllSamplesTest`) (#58)
 ### Changed
 - Rules and simplifiers detect ERN 3.x with a new `isErn3x()` helper (entity namespace starts with `Ern3`) instead of `instanceof \DedexBundle\Entity\Ern382\...`, so they apply to every 3.x version
+- Built-in rules give one violation per problem, with its subject and path. Their messages list each problem, so `getRuleMessages()` text is more detailed, like "All resources must be used in releases. Resource A2 is not used in any release." instead of "All resources must be used in releases. A2 not used or not defined." Code that matches the exact text must be updated (#58)
+- `AllResourcesUsedInReleases` also reports references to resources that are not in the `ResourceList` (#58)
+- `AllSoundRecordingsHaveIsrc` reports every SoundRecording without ISRC, not only the first one; `OnlyOneMainRelease` reports each extra main release (#58)
+- A rule that throws no longer makes `parse()` throw: it is reported as failed, with a "Rule crashed" violation, and the other rules still run (#58)
+- `getRuleMessages()` and `getRuleResults()` only hold the results of the last `parse()`; they were accumulated when the parser was reused (#58)
 ### Fixed
 - `AllSoundRecordingsHaveIsrc` no longer calls `trim(null)` (deprecated) when a `SoundRecordingId` has no ISRC
 - `AllResourceFileExist` crashed on every ERN 4.x message: it now checks the `File/URI` of every 4.x resource type (editions and clips included), relative to the root folder, and skips remote URIs. On ERN 3.x it now checks the files of every resource type too (Video, Text, MIDI, SheetMusic, Software, UserDefinedResource), not only SoundRecordings and Images (#57)

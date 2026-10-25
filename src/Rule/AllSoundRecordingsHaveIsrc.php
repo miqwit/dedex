@@ -40,40 +40,56 @@ class AllSoundRecordingsHaveIsrc extends Rule {
   protected $message = "All tracks (SoundRecording) must have an ISRC.";
   
   public function validates($newReleaseMessage): bool {
+    $this->resetMessage();
     // Nothing to check in a PurgeReleaseMessage
     if ($this->isPurgeMessage($newReleaseMessage)) {
       return true;
     }
-    /* @var $newReleaseMessage \DedexBundle\Entity\Ern382\NewReleaseMessage */
-    $valid = true;
     
-    foreach ($newReleaseMessage->getResourceList()->getSoundRecording() as $sr) {
+    foreach (array_values($newReleaseMessage->getResourceList()->getSoundRecording()) as $i => $sr) {
+      $srPath = sprintf("ResourceList/SoundRecording[%d]", $i + 1);
+      
+      // Identifiers of the recording, each with its path [id, path].
       // ERN 3.x uses getSoundRecordingId(). ERN 4.3 and later store the
       // ResourceId in editions; earlier 4.x versions have getResourceId().
+      $ids = [];
+      $containerPath = $srPath;  // where an ISRC should be when there is no id
       if ($this->isErn3x($sr)) {
-        $ids = $sr->getSoundRecordingId();
+        foreach (array_values($sr->getSoundRecordingId()) as $j => $id) {
+          $ids[] = [$id, sprintf("%s/SoundRecordingId[%d]", $srPath, $j + 1)];
+        }
       } elseif (method_exists($sr, 'getSoundRecordingEdition')) {
-        $ids = [];
-        foreach ($sr->getSoundRecordingEdition() as $edition) {
-          $ids = array_merge($ids, $edition->getResourceId());
+        foreach (array_values($sr->getSoundRecordingEdition()) as $k => $edition) {
+          $editionPath = sprintf("%s/SoundRecordingEdition[%d]", $srPath, $k + 1);
+          if ($k === 0) {
+            $containerPath = $editionPath;
+          }
+          foreach (array_values($edition->getResourceId()) as $j => $id) {
+            $ids[] = [$id, sprintf("%s/ResourceId[%d]", $editionPath, $j + 1)];
+          }
         }
       } else {
-        $ids = $sr->getResourceId();
-      }
-      if (empty($ids)) {
-        return false;
-      }
-
-      foreach ($ids as $sri) {
-        $isrc = $sri->getISRC();
-
-        // ISRC is optional in SoundRecordingId (null when absent)
-        if (empty(trim((string) $isrc))) {
-          return false;
+        foreach (array_values($sr->getResourceId()) as $j => $id) {
+          $ids[] = [$id, sprintf("%s/ResourceId[%d]", $srPath, $j + 1)];
         }
+      }
+      
+      // Path of the first identifier without ISRC, or of the element that
+      // should contain one
+      $missingPath = count($ids) === 0 ? $containerPath : null;
+      foreach ($ids as list($id, $idPath)) {
+        // ISRC is optional in SoundRecordingId (null when absent)
+        if ($missingPath === null && empty(trim((string) $id->getISRC()))) {
+          $missingPath = $idPath;
+        }
+      }
+      
+      if ($missingPath !== null) {
+        $reference = (string) $sr->getResourceReference();
+        $this->fail("SoundRecording $reference has no ISRC", $reference, $missingPath);
       }
     }
     
-    return true;
+    return count($this->getViolations()) === 0;
   }
 }

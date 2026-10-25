@@ -51,11 +51,12 @@ In the docker, run the phpunit test command:
 Rules have different code paths per ERN version. Two tests in `tests/Common` run them on every sample, so a version a rule doesn't handle fails the build:
 
 - `RulesOnAllSamplesTest` runs every rule of `src/Rule` on every sample of `tests/Ern*/samples`. No rule may throw, and every supported version must have at least one sample.
-- `RulesOnErn4xSamplesTest` checks the exact result of every rule on every ERN 4.x sample (the `EXPECTED_FAILURES` table), and checks `AllResourceFileExist` against the `File/URI` elements read from the XML.
+- `RulesOnAllSamplesTest` also checks that every violation path points to exactly one element of the sample.
+- `RulesOnErn4xSamplesTest` checks the exact violations (subject and path) of every rule on every ERN 4.x sample (the `EXPECTED_FAILURES` table), and checks `AllResourceFileExist` against the `File/URI` elements read from the XML.
 
 Nothing is listed by hand, so:
 
-- **New rule:** it runs on every sample. It must pass on each of them, or its expected failures must be added to `EXPECTED_FAILURES`. Branch on the structure of the entities (`isErn3x()`, `method_exists()`) rather than on a list of classes, so that the next version works too.
+- **New rule:** call `fail($message, $subject, $path)` for each problem (see "Write a rule" in the README), so that callers get one violation per problem. It runs on every sample. It must pass on each of them, or its expected failures must be added to `EXPECTED_FAILURES`. Branch on the structure of the entities (`isErn3x()`, `method_exists()`) rather than on a list of classes, so that the next version works too.
 - **New 4.x sample:** add it to `EXPECTED_FAILURES`, with `[]` if every rule passes.
 - **New version:** add at least one sample in `tests/Ern<version>/samples`.
 - A sample that is not meant to be parsed goes in `Samples::UNPARSEABLE`.
