@@ -1,4 +1,4 @@
-## [Unreleased]
+## [2.6.0] - 2026-10-25
 ### Added
 - ERN 3.8.1 support (`Ern381` entities generated with xsd2php, namespace `http://ddex.net/xml/ern/381`), added to `ErnParserController::SUPPORTED_VERSIONS` (#53)
 - `xsd/release_notification/381/` schema, with its AVS import pointed to a local `avs_20161006.xsd` so validation works offline, and `config/xsd2php.381.yaml`
@@ -31,7 +31,7 @@
 - `AtLeastOneImage` said "Must have at least one SoundRecording" instead of "Must have at least one Image" (#57)
 - Rule messages no longer keep the details of a previous validation when a rule object validates several messages (#57)
 
-## [2.5.0]
+## [2.5.0] - 2026-10-18
 ### Added
 - ERN 4.3.2 support (`Ern432` entities, namespace `http://ddex.net/xml/ern/432`), added to `ErnParserController::SUPPORTED_VERSIONS`
 - `xsd/release_notification/432/` schema (derived from 4.3.1 with the single 4.3.2 corrective change) and `tests/Ern432` with a sample exercising the fix
