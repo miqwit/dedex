@@ -138,15 +138,6 @@ abstract class Rule {
   }
 
   /**
-   * Check if the parsed message is a PurgeReleaseMessage, in any version.
-   * A purge message only identifies the release to remove: it has no
-   * resources, releases or deals, so content rules have nothing to check
-   * and must pass.
-   *
-   * @param object $message as given to validates()
-   * @return bool
-   */
-  /**
    * Resources of every type in a ResourceList, ERN 3.x and 4.x alike,
    * indexed by type (the element name in the XML), like
    * ["SoundRecording" => [...], "Video" => [...], ...].
@@ -167,6 +158,15 @@ abstract class Rule {
     return $resources;
   }
 
+  /**
+   * Check if the parsed message is a PurgeReleaseMessage, in any version.
+   * A purge message only identifies the release to remove: it has no
+   * resources, releases or deals, so content rules have nothing to check
+   * and must pass.
+   *
+   * @param object $message as given to validates()
+   * @return bool
+   */
   protected function isPurgeMessage($message): bool {
     $class = get_class($message);
     return substr($class, -strlen('\\PurgeReleaseMessage')) === '\\PurgeReleaseMessage';
