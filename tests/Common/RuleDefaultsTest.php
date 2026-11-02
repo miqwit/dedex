@@ -33,6 +33,7 @@ class RuleDefaultsTest extends TestCase {
 
     $this->assertTrue($rule->is3x(new \DedexBundle\Entity\Ern381\SoundRecordingType()));
     $this->assertTrue($rule->is3x(new \DedexBundle\Entity\Ern382\SoundRecordingType()));
+    $this->assertTrue($rule->is3x(new \DedexBundle\Entity\Ern383\SoundRecordingType()));
     $this->assertFalse($rule->is3x(new \DedexBundle\Entity\Ern411\SoundRecordingType()));
     $this->assertFalse($rule->is3x(new \DedexBundle\Entity\Ern432\SoundRecordingType()));
   }
@@ -51,6 +52,7 @@ class RuleDefaultsTest extends TestCase {
     $all = ["SoundRecording", "MIDI", "Video", "Image", "Text", "SheetMusic", "Software", "UserDefinedResource"];
     $this->assertSame($all, $rule->types(new \DedexBundle\Entity\Ern381\ResourceListType()));
     $this->assertSame($all, $rule->types(new \DedexBundle\Entity\Ern382\ResourceListType()));
+    $this->assertSame($all, $rule->types(new \DedexBundle\Entity\Ern383\ResourceListType()));
 
     $all4x = ["SoundRecording", "Video", "Image", "Text", "SheetMusic", "Software"];
     foreach (["Ern41", "Ern411", "Ern42", "Ern43", "Ern431", "Ern432"] as $version) {

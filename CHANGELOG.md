@@ -1,3 +1,13 @@
+## [Unreleased]
+### Added
+- ERN 3.8.3 support (`Ern383` entities generated with xsd2php, namespace `http://ddex.net/xml/ern/383`), added to `ErnParserController::SUPPORTED_VERSIONS` (#54)
+- `xsd/release_notification/383/` schema (from [sshaw/ddex](https://github.com/sshaw/ddex/tree/master/etc/schemas/ern/383), 3.x XSDs are not published on ddex.net anymore), importing the local `avs_20200108.xsd` (the current file served at http://ddex.net/xml/avs/avs_20200108.xsd), and `config/xsd2php.383.yaml`
+- `tests/Ern383` (parser, simplifiers, rules) with samples covering the 3.8.3 specifics: historical territory codes (ISO 3166-3, like `YUCS`) as artist and contributor nationality and citizenship, `EventDate/@TerritoryCode` checked against the allowed territory codes, new allowed values (`CoProducer` role, `AudioDramaRelease` release type)
+- `tests/Ern382` tests showing the 3.8.2 XSD rejects a historical nationality, and that 3.8.2 nationalities are plain strings
+### Changed
+- In 3.8.3 entities, `Nationality` (on artists and contributors) returns `AllTerritoryCodeType` objects (use `value()`), where 3.8.2 returns strings. The simplifiers don't use it
+- `DDEX_CHANGELOG.md`: historical territory examples are ISO 3166-3 codes (`YUCS`, `SUHH`), not `YU` / `SU`
+
 ## [2.6.0] - 2026-10-25
 ### Added
 - ERN 3.8.1 support (`Ern381` entities generated with xsd2php, namespace `http://ddex.net/xml/ern/381`), added to `ErnParserController::SUPPORTED_VERSIONS` (#53)

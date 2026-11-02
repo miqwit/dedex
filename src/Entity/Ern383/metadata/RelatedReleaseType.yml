@@ -1,0 +1,73 @@
+DedexBundle\Entity\Ern383\RelatedReleaseType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        releaseId:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseId
+            accessor:
+                getter: getReleaseId
+                setter: setReleaseId
+            xml_list:
+                inline: true
+                entry_name: ReleaseId
+            type: array<DedexBundle\Entity\Ern383\ReleaseIdType>
+        referenceTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: ReferenceTitle
+            accessor:
+                getter: getReferenceTitle
+                setter: setReferenceTitle
+            type: DedexBundle\Entity\Ern383\ReferenceTitleType
+        releaseSummaryDetailsByTerritory:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseSummaryDetailsByTerritory
+            accessor:
+                getter: getReleaseSummaryDetailsByTerritory
+                setter: setReleaseSummaryDetailsByTerritory
+            xml_list:
+                inline: true
+                entry_name: ReleaseSummaryDetailsByTerritory
+            type: array<DedexBundle\Entity\Ern383\ReleaseSummaryDetailsByTerritoryType>
+        rightsAgreementId:
+            expose: true
+            access_type: public_method
+            serialized_name: RightsAgreementId
+            accessor:
+                getter: getRightsAgreementId
+                setter: setRightsAgreementId
+            type: DedexBundle\Entity\Ern383\RightsAgreementIdType
+        releaseRelationshipType:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseRelationshipType
+            accessor:
+                getter: getReleaseRelationshipType
+                setter: setReleaseRelationshipType
+            type: DedexBundle\Entity\Ern383\ReleaseRelationshipTypeType
+        releaseDate:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseDate
+            accessor:
+                getter: getReleaseDate
+                setter: setReleaseDate
+            type: DedexBundle\Entity\Ern383\EventDateType
+        originalReleaseDate:
+            expose: true
+            access_type: public_method
+            serialized_name: OriginalReleaseDate
+            accessor:
+                getter: getOriginalReleaseDate
+                setter: setOriginalReleaseDate
+            type: DedexBundle\Entity\Ern383\EventDateType

@@ -3,6 +3,7 @@
 namespace DedexBundle\Tests\Ern382;
 
 use DedexBundle\Controller\ErnParserController;
+use DedexBundle\Exception\XsdCompliantException;
 use DedexBundle\Entity\Ern382\GenreType;
 use DedexBundle\Entity\Ern382\ImageDetailsByTerritoryType;
 use DedexBundle\Entity\Ern382\ImageType;
@@ -235,6 +236,34 @@ class ParserTest extends TestCase {
     $this->assertEquals("Percent", $conditions[1]->getUnit());
     $this->assertEquals("ConsumerResource", $conditions[1]->getReferenceCreation());
     $this->assertEquals("MoreThan", $conditions[1]->getRelationalRelator());
+  }
+
+  /**
+   * Historical territory codes (ISO 3166-3, like YUCS) are only allowed as
+   * nationality since ERN 3.8.3 (see tests/Ern383/ParserTest.php): the
+   * 3.8.2 XSD rejects them.
+   */
+  public function testHistoricalNationalityIsRejectedByXsd() {
+    $parser_controller = new ErnParserController();
+    $parser_controller->setXsdValidation(true);
+
+    $this->expectException(XsdCompliantException::class);
+    $this->expectExceptionMessage("Element 'Nationality': [facet 'enumeration'] The value 'YUCS' is not an element of the set");
+
+    $parser_controller->parse("tests/Ern382/samples/historical_nationality.xml");
+  }
+
+  /**
+   * Without XSD validation, a 3.8.2 nationality is a plain string (an
+   * AllTerritoryCodeType object in 3.8.3).
+   */
+  public function testNationalityIsAString() {
+    $parser_controller = new ErnParserController();
+    /* @var $ddex NewReleaseMessage */
+    $ddex = $parser_controller->parse("tests/Ern382/samples/historical_nationality.xml");
+
+    $artist = $ddex->getReleaseList()->getRelease()[0]->getReleaseDetailsByTerritory()[0]->getDisplayArtist()[0];
+    $this->assertSame(["YUCS"], $artist->getNationality());
   }
 
 }

@@ -1,0 +1,50 @@
+DedexBundle\Entity\Ern383\CollectionCollectionReferenceType:
+    properties:
+        sequenceNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumber
+            accessor:
+                getter: getSequenceNumber
+                setter: setSequenceNumber
+            type: int
+        collectionCollectionReference:
+            expose: true
+            access_type: public_method
+            serialized_name: CollectionCollectionReference
+            accessor:
+                getter: getCollectionCollectionReference
+                setter: setCollectionCollectionReference
+            type: string
+        startTime:
+            expose: true
+            access_type: public_method
+            serialized_name: StartTime
+            accessor:
+                getter: getStartTime
+                setter: setStartTime
+            type: DateInterval
+        duration:
+            expose: true
+            access_type: public_method
+            serialized_name: Duration
+            accessor:
+                getter: getDuration
+                setter: setDuration
+            type: DateInterval
+        endTime:
+            expose: true
+            access_type: public_method
+            serialized_name: EndTime
+            accessor:
+                getter: getEndTime
+                setter: setEndTime
+            type: DateInterval
+        inclusionDate:
+            expose: true
+            access_type: public_method
+            serialized_name: InclusionDate
+            accessor:
+                getter: getInclusionDate
+                setter: setInclusionDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime

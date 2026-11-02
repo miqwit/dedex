@@ -1,0 +1,309 @@
+DedexBundle\Entity\Ern383\SoundRecordingType:
+    properties:
+        isUpdated:
+            expose: true
+            access_type: public_method
+            serialized_name: IsUpdated
+            accessor:
+                getter: getIsUpdated
+                setter: setIsUpdated
+            xml_attribute: true
+            type: bool
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        soundRecordingType:
+            expose: true
+            access_type: public_method
+            serialized_name: SoundRecordingType
+            accessor:
+                getter: getSoundRecordingType
+                setter: setSoundRecordingType
+            type: DedexBundle\Entity\Ern383\SoundRecordingTypeType
+        isArtistRelated:
+            expose: true
+            access_type: public_method
+            serialized_name: IsArtistRelated
+            accessor:
+                getter: getIsArtistRelated
+                setter: setIsArtistRelated
+            type: bool
+        soundRecordingId:
+            expose: true
+            access_type: public_method
+            serialized_name: SoundRecordingId
+            accessor:
+                getter: getSoundRecordingId
+                setter: setSoundRecordingId
+            xml_list:
+                inline: true
+                entry_name: SoundRecordingId
+            type: array<DedexBundle\Entity\Ern383\SoundRecordingIdType>
+        indirectSoundRecordingId:
+            expose: true
+            access_type: public_method
+            serialized_name: IndirectSoundRecordingId
+            accessor:
+                getter: getIndirectSoundRecordingId
+                setter: setIndirectSoundRecordingId
+            xml_list:
+                inline: true
+                entry_name: IndirectSoundRecordingId
+            type: array<DedexBundle\Entity\Ern383\MusicalWorkIdType>
+        resourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceReference
+            accessor:
+                getter: getResourceReference
+                setter: setResourceReference
+            type: string
+        referenceTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: ReferenceTitle
+            accessor:
+                getter: getReferenceTitle
+                setter: setReferenceTitle
+            type: DedexBundle\Entity\Ern383\ReferenceTitleType
+        instrumentationDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: InstrumentationDescription
+            accessor:
+                getter: getInstrumentationDescription
+                setter: setInstrumentationDescription
+            type: DedexBundle\Entity\Ern383\DescriptionType
+        isMedley:
+            expose: true
+            access_type: public_method
+            serialized_name: IsMedley
+            accessor:
+                getter: getIsMedley
+                setter: setIsMedley
+            type: bool
+        isPotpourri:
+            expose: true
+            access_type: public_method
+            serialized_name: IsPotpourri
+            accessor:
+                getter: getIsPotpourri
+                setter: setIsPotpourri
+            type: bool
+        isInstrumental:
+            expose: true
+            access_type: public_method
+            serialized_name: IsInstrumental
+            accessor:
+                getter: getIsInstrumental
+                setter: setIsInstrumental
+            type: bool
+        isBackground:
+            expose: true
+            access_type: public_method
+            serialized_name: IsBackground
+            accessor:
+                getter: getIsBackground
+                setter: setIsBackground
+            type: bool
+        isHiddenResource:
+            expose: true
+            access_type: public_method
+            serialized_name: IsHiddenResource
+            accessor:
+                getter: getIsHiddenResource
+                setter: setIsHiddenResource
+            type: bool
+        isBonusResource:
+            expose: true
+            access_type: public_method
+            serialized_name: IsBonusResource
+            accessor:
+                getter: getIsBonusResource
+                setter: setIsBonusResource
+            type: bool
+        hasPreOrderFulfillment:
+            expose: true
+            access_type: public_method
+            serialized_name: HasPreOrderFulfillment
+            accessor:
+                getter: getHasPreOrderFulfillment
+                setter: setHasPreOrderFulfillment
+            type: bool
+        isComputerGenerated:
+            expose: true
+            access_type: public_method
+            serialized_name: IsComputerGenerated
+            accessor:
+                getter: getIsComputerGenerated
+                setter: setIsComputerGenerated
+            type: bool
+        isRemastered:
+            expose: true
+            access_type: public_method
+            serialized_name: IsRemastered
+            accessor:
+                getter: getIsRemastered
+                setter: setIsRemastered
+            type: bool
+        noSilenceBefore:
+            expose: true
+            access_type: public_method
+            serialized_name: NoSilenceBefore
+            accessor:
+                getter: getNoSilenceBefore
+                setter: setNoSilenceBefore
+            type: bool
+        noSilenceAfter:
+            expose: true
+            access_type: public_method
+            serialized_name: NoSilenceAfter
+            accessor:
+                getter: getNoSilenceAfter
+                setter: setNoSilenceAfter
+            type: bool
+        performerInformationRequired:
+            expose: true
+            access_type: public_method
+            serialized_name: PerformerInformationRequired
+            accessor:
+                getter: getPerformerInformationRequired
+                setter: setPerformerInformationRequired
+            type: bool
+        languageOfPerformance:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageOfPerformance
+            accessor:
+                getter: getLanguageOfPerformance
+                setter: setLanguageOfPerformance
+            type: string
+        duration:
+            expose: true
+            access_type: public_method
+            serialized_name: Duration
+            accessor:
+                getter: getDuration
+                setter: setDuration
+            type: DateInterval
+        rightsAgreementId:
+            expose: true
+            access_type: public_method
+            serialized_name: RightsAgreementId
+            accessor:
+                getter: getRightsAgreementId
+                setter: setRightsAgreementId
+            type: DedexBundle\Entity\Ern383\RightsAgreementIdType
+        soundRecordingCollectionReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: SoundRecordingCollectionReferenceList
+            accessor:
+                getter: getSoundRecordingCollectionReferenceList
+                setter: setSoundRecordingCollectionReferenceList
+            type: DedexBundle\Entity\Ern383\SoundRecordingCollectionReferenceListType
+        resourceMusicalWorkReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceMusicalWorkReferenceList
+            accessor:
+                getter: getResourceMusicalWorkReferenceList
+                setter: setResourceMusicalWorkReferenceList
+            type: array<DedexBundle\Entity\Ern383\ResourceMusicalWorkReferenceType>
+            xml_list:
+                inline: false
+                entry_name: ResourceMusicalWorkReference
+                skip_when_empty: true
+        resourceContainedResourceReferenceList:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceContainedResourceReferenceList
+            accessor:
+                getter: getResourceContainedResourceReferenceList
+                setter: setResourceContainedResourceReferenceList
+            type: array<DedexBundle\Entity\Ern383\ResourceContainedResourceReferenceType>
+            xml_list:
+                inline: false
+                entry_name: ResourceContainedResourceReference
+                skip_when_empty: true
+        creationDate:
+            expose: true
+            access_type: public_method
+            serialized_name: CreationDate
+            accessor:
+                getter: getCreationDate
+                setter: setCreationDate
+            type: DedexBundle\Entity\Ern383\EventDateType
+        masteredDate:
+            expose: true
+            access_type: public_method
+            serialized_name: MasteredDate
+            accessor:
+                getter: getMasteredDate
+                setter: setMasteredDate
+            type: DedexBundle\Entity\Ern383\EventDateType
+        remasteredDate:
+            expose: true
+            access_type: public_method
+            serialized_name: RemasteredDate
+            accessor:
+                getter: getRemasteredDate
+                setter: setRemasteredDate
+            type: DedexBundle\Entity\Ern383\EventDateType
+        soundRecordingDetailsByTerritory:
+            expose: true
+            access_type: public_method
+            serialized_name: SoundRecordingDetailsByTerritory
+            accessor:
+                getter: getSoundRecordingDetailsByTerritory
+                setter: setSoundRecordingDetailsByTerritory
+            xml_list:
+                inline: true
+                entry_name: SoundRecordingDetailsByTerritory
+            type: array<DedexBundle\Entity\Ern383\SoundRecordingDetailsByTerritoryType>
+        territoryOfCommissioning:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryOfCommissioning
+            accessor:
+                getter: getTerritoryOfCommissioning
+                setter: setTerritoryOfCommissioning
+            type: DedexBundle\Entity\Ern383\AllTerritoryCodeType
+        numberOfFeaturedArtists:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfFeaturedArtists
+            accessor:
+                getter: getNumberOfFeaturedArtists
+                setter: setNumberOfFeaturedArtists
+            type: int
+        numberOfNonFeaturedArtists:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfNonFeaturedArtists
+            accessor:
+                getter: getNumberOfNonFeaturedArtists
+                setter: setNumberOfNonFeaturedArtists
+            type: int
+        numberOfContractedArtists:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfContractedArtists
+            accessor:
+                getter: getNumberOfContractedArtists
+                setter: setNumberOfContractedArtists
+            type: int
+        numberOfNonContractedArtists:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfNonContractedArtists
+            accessor:
+                getter: getNumberOfNonContractedArtists
+                setter: setNumberOfNonContractedArtists
+            type: int

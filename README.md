@@ -15,6 +15,7 @@ DeDEX is a DDEX XML file parser. DDEX is a standard used in the music industry t
 Supported versions:
 - `3.8.1`
 - `3.8.2`
+- `3.8.3`
 - `4.1`
 - `4.1.1`
 - `4.2`

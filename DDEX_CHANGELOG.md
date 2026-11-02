@@ -89,14 +89,14 @@ A fix to rights claim policies (Content ID and similar): a RightsClaimPolicy can
 
 ### **Overview**
 
-The last version of the 3 branch. Several fields move from CurrentTerritoryCode (current territories) to AllTerritoryCode, which includes historical territories (for example "YU" or "SU"). This is needed to describe correctly the nationality of artists or older recording locations. The associated AVS (avs\_20200108) also adds a few values.
+The last version of the 3 branch. Several fields move from CurrentTerritoryCode (current territories) to AllTerritoryCode, which includes historical territories: the ISO 3166-3 four-letter codes (for example "YUCS" for Yugoslavia or "SUHH" for the USSR; two-letter "YU" or "SU" are not valid). This is needed to describe correctly the nationality of artists or older recording locations. The associated AVS (avs\_20200108) also adds a few values.
 
 ### **Field-by-field changes**
 
 | Composite / path | Change | 3.8.2 | 3.8.3 | Example |
 | :---- | :---- | :---- | :---- | :---- |
-| Artist / Nationality; DetailedResourceContributor / Nationality | Type widened | ddexC\_CurrentTerritoryCode | AllTerritoryCode | \<Nationality\>YU\</Nationality\> becomes valid. |
-| DetailedResourceContributor / Citizenship | Type widened | CurrentTerritoryCode | AllTerritoryCode | \<Citizenship\>SU\</Citizenship\> |
+| Artist / Nationality; DetailedResourceContributor / Nationality | Type widened | ddexC\_CurrentTerritoryCode | AllTerritoryCode | \<Nationality\>YUCS\</Nationality\> becomes valid. |
+| DetailedResourceContributor / Citizenship | Type widened | CurrentTerritoryCode | AllTerritoryCode | \<Citizenship\>SUHH\</Citizenship\> |
 | ArtistDelegatedUsageRights / TerritoryOfRightsDelegation | Type widened | CurrentTerritoryCode | AllTerritoryCode |  |
 | RightShare, SocietyAffiliation / TerritoryCode and ExcludedTerritoryCode | Type widened | CurrentTerritoryCode | AllTerritoryCode |  |
 | EventDate / @TerritoryCode (used by \~50 date fields) | Explicit type | untyped (any string) | avs:AllTerritoryCode | \<ReleaseDate TerritoryCode="DE"\>2020-05-01\</ReleaseDate\>: a value outside the list becomes invalid. |

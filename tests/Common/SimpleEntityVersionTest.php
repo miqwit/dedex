@@ -57,7 +57,7 @@ class SimpleEntityVersionTest extends TestCase {
     foreach (["43", "431", "432", "44", "5"] as $version) {
       $this->assertTrue($entity->is43OrLater($version), $version);
     }
-    foreach (["381", "382", "41", "411", "42"] as $version) {
+    foreach (["381", "382", "383", "41", "411", "42"] as $version) {
       $this->assertFalse($entity->is43OrLater($version), $version);
     }
   }
@@ -68,7 +68,7 @@ class SimpleEntityVersionTest extends TestCase {
     foreach (["431", "432", "44", "5"] as $version) {
       $this->assertTrue($entity->is431OrLater($version), $version);
     }
-    foreach (["381", "382", "41", "411", "42", "43"] as $version) {
+    foreach (["381", "382", "383", "41", "411", "42", "43"] as $version) {
       $this->assertFalse($entity->is431OrLater($version), $version);
     }
   }
@@ -81,6 +81,7 @@ class SimpleEntityVersionTest extends TestCase {
 
     $this->assertTrue($entity->is3x(new \DedexBundle\Entity\Ern381\NewReleaseMessage()));
     $this->assertTrue($entity->is3x(new \DedexBundle\Entity\Ern382\NewReleaseMessage()));
+    $this->assertTrue($entity->is3x(new \DedexBundle\Entity\Ern383\NewReleaseMessage()));
     $this->assertTrue($entity->is3x(new \DedexBundle\Entity\Ern381\ReleaseListType()));
     $this->assertFalse($entity->is3x(new \DedexBundle\Entity\Ern41\NewReleaseMessage()));
     $this->assertFalse($entity->is3x(new \DedexBundle\Entity\Ern432\ReleaseListType()));

@@ -1,0 +1,65 @@
+DedexBundle\Entity\Ern383\CollectionDetailsByTerritoryType:
+    properties:
+        territoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryCode
+            accessor:
+                getter: getTerritoryCode
+                setter: setTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: TerritoryCode
+            type: array<DedexBundle\Entity\Ern383\CurrentTerritoryCodeType>
+        excludedTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ExcludedTerritoryCode
+            accessor:
+                getter: getExcludedTerritoryCode
+                setter: setExcludedTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: ExcludedTerritoryCode
+            type: array<DedexBundle\Entity\Ern383\CurrentTerritoryCodeType>
+        title:
+            expose: true
+            access_type: public_method
+            serialized_name: Title
+            accessor:
+                getter: getTitle
+                setter: setTitle
+            xml_list:
+                inline: true
+                entry_name: Title
+            type: array<DedexBundle\Entity\Ern383\TitleType>
+        contributor:
+            expose: true
+            access_type: public_method
+            serialized_name: Contributor
+            accessor:
+                getter: getContributor
+                setter: setContributor
+            xml_list:
+                inline: true
+                entry_name: Contributor
+            type: array<DedexBundle\Entity\Ern383\DetailedResourceContributorType>
+        isComplete:
+            expose: true
+            access_type: public_method
+            serialized_name: IsComplete
+            accessor:
+                getter: getIsComplete
+                setter: setIsComplete
+            type: bool
+        character:
+            expose: true
+            access_type: public_method
+            serialized_name: Character
+            accessor:
+                getter: getCharacter
+                setter: setCharacter
+            xml_list:
+                inline: true
+                entry_name: Character
+            type: array<DedexBundle\Entity\Ern383\CharacterType>

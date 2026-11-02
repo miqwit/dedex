@@ -1,0 +1,85 @@
+DedexBundle\Entity\Ern383\ImageType:
+    properties:
+        isUpdated:
+            expose: true
+            access_type: public_method
+            serialized_name: IsUpdated
+            accessor:
+                getter: getIsUpdated
+                setter: setIsUpdated
+            xml_attribute: true
+            type: bool
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        imageType:
+            expose: true
+            access_type: public_method
+            serialized_name: ImageType
+            accessor:
+                getter: getImageType
+                setter: setImageType
+            type: DedexBundle\Entity\Ern383\ImageTypeType
+        isArtistRelated:
+            expose: true
+            access_type: public_method
+            serialized_name: IsArtistRelated
+            accessor:
+                getter: getIsArtistRelated
+                setter: setIsArtistRelated
+            type: bool
+        imageId:
+            expose: true
+            access_type: public_method
+            serialized_name: ImageId
+            accessor:
+                getter: getImageId
+                setter: setImageId
+            xml_list:
+                inline: true
+                entry_name: ImageId
+            type: array<DedexBundle\Entity\Ern383\ResourceProprietaryIdType>
+        resourceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ResourceReference
+            accessor:
+                getter: getResourceReference
+                setter: setResourceReference
+            type: string
+        title:
+            expose: true
+            access_type: public_method
+            serialized_name: Title
+            accessor:
+                getter: getTitle
+                setter: setTitle
+            xml_list:
+                inline: true
+                entry_name: Title
+            type: array<DedexBundle\Entity\Ern383\TitleType>
+        creationDate:
+            expose: true
+            access_type: public_method
+            serialized_name: CreationDate
+            accessor:
+                getter: getCreationDate
+                setter: setCreationDate
+            type: DedexBundle\Entity\Ern383\EventDateType
+        imageDetailsByTerritory:
+            expose: true
+            access_type: public_method
+            serialized_name: ImageDetailsByTerritory
+            accessor:
+                getter: getImageDetailsByTerritory
+                setter: setImageDetailsByTerritory
+            xml_list:
+                inline: true
+                entry_name: ImageDetailsByTerritory
+            type: array<DedexBundle\Entity\Ern383\ImageDetailsByTerritoryType>
