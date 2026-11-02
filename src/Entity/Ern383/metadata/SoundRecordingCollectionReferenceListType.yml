@@ -1,0 +1,21 @@
+DedexBundle\Entity\Ern383\SoundRecordingCollectionReferenceListType:
+    properties:
+        numberOfCollections:
+            expose: true
+            access_type: public_method
+            serialized_name: NumberOfCollections
+            accessor:
+                getter: getNumberOfCollections
+                setter: setNumberOfCollections
+            type: int
+        soundRecordingCollectionReference:
+            expose: true
+            access_type: public_method
+            serialized_name: SoundRecordingCollectionReference
+            accessor:
+                getter: getSoundRecordingCollectionReference
+                setter: setSoundRecordingCollectionReference
+            xml_list:
+                inline: true
+                entry_name: SoundRecordingCollectionReference
+            type: array<DedexBundle\Entity\Ern383\SoundRecordingCollectionReferenceType>

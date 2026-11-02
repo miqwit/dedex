@@ -104,3 +104,9 @@ ERN 3.x schemas import the allowed value sets from another namespace (`http://dd
 ```
 ./vendor/goetas-webservices/xsd2php/bin/xsd2php convert config/xsd2php.381.yaml xsd/release_notification/381/release-notification.xsd
 ```
+
+ERN 3.8.3 too, with `config/xsd2php.383.yaml`. Its XSD imports the local `avs_20200108.xsd`, a copy of http://ddex.net/xml/avs/avs_20200108.xsd (still served by DDEX):
+
+```
+./vendor/goetas-webservices/xsd2php/bin/xsd2php convert config/xsd2php.383.yaml xsd/release_notification/383/release-notification.xsd
+```

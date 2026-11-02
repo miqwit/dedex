@@ -1,0 +1,3 @@
+DedexBundle\Entity\Ern383\NewReleaseMessage:
+    xml_root_name: 'ns-19cd1b9b:NewReleaseMessage'
+    xml_root_namespace: 'http://ddex.net/xml/ern/383'

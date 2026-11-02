@@ -1,0 +1,18 @@
+DedexBundle\Entity\Ern383\CollectionWorkReferenceType:
+    properties:
+        collectionWorkReference:
+            expose: true
+            access_type: public_method
+            serialized_name: CollectionWorkReference
+            accessor:
+                getter: getCollectionWorkReference
+                setter: setCollectionWorkReference
+            type: string
+        duration:
+            expose: true
+            access_type: public_method
+            serialized_name: Duration
+            accessor:
+                getter: getDuration
+                setter: setDuration
+            type: DateInterval

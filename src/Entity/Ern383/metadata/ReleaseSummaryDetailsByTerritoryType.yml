@@ -1,0 +1,63 @@
+DedexBundle\Entity\Ern383\ReleaseSummaryDetailsByTerritoryType:
+    properties:
+        languageAndScriptCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageAndScriptCode
+            accessor:
+                getter: getLanguageAndScriptCode
+                setter: setLanguageAndScriptCode
+            xml_attribute: true
+            type: string
+        territoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TerritoryCode
+            accessor:
+                getter: getTerritoryCode
+                setter: setTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: TerritoryCode
+            type: array<DedexBundle\Entity\Ern383\CurrentTerritoryCodeType>
+        excludedTerritoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ExcludedTerritoryCode
+            accessor:
+                getter: getExcludedTerritoryCode
+                setter: setExcludedTerritoryCode
+            xml_list:
+                inline: true
+                entry_name: ExcludedTerritoryCode
+            type: array<DedexBundle\Entity\Ern383\CurrentTerritoryCodeType>
+        displayArtistName:
+            expose: true
+            access_type: public_method
+            serialized_name: DisplayArtistName
+            accessor:
+                getter: getDisplayArtistName
+                setter: setDisplayArtistName
+            xml_list:
+                inline: true
+                entry_name: DisplayArtistName
+            type: array<DedexBundle\Entity\Ern383\NameType>
+        labelName:
+            expose: true
+            access_type: public_method
+            serialized_name: LabelName
+            accessor:
+                getter: getLabelName
+                setter: setLabelName
+            xml_list:
+                inline: true
+                entry_name: LabelName
+            type: array<DedexBundle\Entity\Ern383\LabelNameType>
+        rightsAgreementId:
+            expose: true
+            access_type: public_method
+            serialized_name: RightsAgreementId
+            accessor:
+                getter: getRightsAgreementId
+                setter: setRightsAgreementId
+            type: DedexBundle\Entity\Ern383\RightsAgreementIdType
