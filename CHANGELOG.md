@@ -1,4 +1,4 @@
-## [Unreleased]
+## [2.7.0] - 2026-11-02
 ### Added
 - ERN 3.8.3 support (`Ern383` entities generated with xsd2php, namespace `http://ddex.net/xml/ern/383`), added to `ErnParserController::SUPPORTED_VERSIONS` (#54)
 - `xsd/release_notification/383/` schema, importing the local `avs_20200108.xsd` (the current file served at http://ddex.net/xml/avs/avs_20200108.xsd), and `config/xsd2php.383.yaml`
